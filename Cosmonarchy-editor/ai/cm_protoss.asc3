@@ -1,0 +1,5291 @@
+script_name Protoss Expansion Custom Level
+script_id PMCx
+# Cosmonarchy Protoss melee AI
+
+	call custom_town_check
+	wait 1
+	unstart_campaign
+	start_town
+	wait 1
+	set_free_id
+	default_min 230
+	defaultbuild_off
+	wait 1
+	aictrl dont_build_gas
+	aictrl unit_mover_enabled
+	aictrl dont_focus_disabled
+	transports_off
+	guard_all
+	farms_timing
+	creep 4
+	i_orders DisableBuiltin 0 0 0 0 0 0 0
+	var Set town_count_var 1 13
+	var Set mining_count_var 1 13
+	var Add can_worker_var 1 13
+#	dth 13 Set 1 start_location blank
+	queue 1 scribe nexus 255 Local Loc.63 200
+	multi core_runtime
+	wait 1
+	multi core_town
+	wait 1
+	multi core_spending
+	wait 1
+	multi core_military
+	wait 1
+	goto select_personality
+	
+	:core_runtime
+	dth 13 AtL_C 1 start_location debug_display_messages
+	dth 13 Ex_C 0 scanner_sweep debug_script_active
+	dth 13 Ex_C 99 dark_swarm_unit custom_build_order_defined
+	dth 13 AtL_C 101 dark_swarm_unit custom_timers_defined
+	dth 13 AtL_C 101 plasma_shell custom_timers_defined_2
+	res 13 AtL_C Ore 1000 ignore_timings
+	stop
+	
+	:core_town
+	wait 24
+	multi town_handling
+	multi expansion_loop
+	multi tech_handling
+	multi anti_grief
+	stop
+	
+	:core_military
+	wait 24
+	multi define_maxes
+	multi defense_handling
+	multi attack_handling
+	multi early_military
+	stop
+	
+	:core_spending
+	wait 24
+	multi cheat_resource
+	multi under_attack_conditions
+	multi wait_resources
+	multi gas_conditions
+	multi save_money_for_expansion
+	stop
+	
+	:debug_display_messages
+	var Set debug_ai_messages_var 1 13
+	return
+	
+	:debug_script_active
+	dth 13 Set 1 scanner_sweep blank
+	return
+	
+	:custom_build_order_defined
+	var Set skip_building_var 1 13
+	return
+	
+	:custom_timers_defined
+	var Set use_custom_timers_var 1 13
+	dth 13 Sub 100 dark_swarm_unit blank
+	return
+	
+	:custom_timers_defined_2
+	var Set use_custom_timers_var 1 13
+	dth 13 Sub 100 plasma_shell blank
+	return
+	
+	:select_personality
+	dth 13 AtL 1 disruption_web_unit select_build_type
+	dth 13 Rand 4 disruption_web_unit blank
+	dth 13 Add 1 disruption_web_unit blank
+	groundmap_jump select_build_type
+	dth 13 Set 3 disruption_web_unit blank
+	
+	:select_build_type
+	dth 13 AtL 1 dark_swarm_unit select_preferences
+	dth 13 Ex 1 plasma_shell select_build_type_timing
+	dth 13 Ex 2 plasma_shell select_build_type_rush
+	dth 13 Ex 3 plasma_shell select_build_type_greed
+	dth 13 Ex 4 plasma_shell select_build_type_random_timing_rush
+	dth 13 Ex 5 plasma_shell select_build_type_random_rush_greed
+	dth 13 Ex 6 plasma_shell select_build_type_random_greed_timing
+	wait 1
+	kills 15 14 AtL 2 mineral_field2 select_build_type_timing
+	rand_j 85 select_build_type_rush
+	kills 15 14 AtL 1 mineral_field3 select_build_type_timing
+	rand_j 128 select_build_type_greed
+	
+	:select_build_type_timing
+	var Set build_type_is_timing_var 1 13
+	goto select_preferences
+	
+	:select_build_type_rush
+	kills 15 14 Add 1 mineral_field2 blank
+	var Set build_type_is_rush_var 1 13
+	goto select_preferences
+	
+	:select_build_type_greed
+	kills 15 14 Add 1 mineral_field3 blank
+	var Set build_type_is_greed_var 1 13
+	goto select_preferences
+	
+	:select_build_type_random_timing_rush
+	rand_j 128 select_build_type_timing
+	goto select_build_type_rush
+	
+	:select_build_type_random_rush_greed
+	rand_j 128 select_build_type_rush
+	goto select_build_type_greed
+	
+	:select_build_type_random_greed_timing
+	rand_j 128 select_build_type_greed
+	goto select_build_type_timing
+	
+	:select_preferences
+	# personalities
+	dth 13 Ex_C 69 cyprian prefPScenarioLite
+	dth 13 Ex_C 1 disruption_web_unit prefPRanger
+	dth 13 Ex_C 2 disruption_web_unit prefPTemplar
+	dth 13 Ex_C 3 disruption_web_unit prefPSkylord
+	dth 13 Ex_C 9 disruption_web_unit prefPScenario
+	# military
+	dth 13 AtL_C 1 clarion prefUClarion
+	dth 13 AtL_C 1 zealot prefUZealot
+	dth 13 AtL_C 1 dracadin prefUDracadin
+	dth 13 AtL_C 1 ecclesiast prefUEcclesiast
+	dth 13 AtL_C 1 legionnaire prefULegionnaire
+	dth 13 AtL_C 1 hierophant prefUHierophant
+	dth 13 AtL_C 1 amaranth prefUAmaranth
+	dth 13 AtL_C 1 atreus prefUAtreus
+	dth 13 AtL_C 1 cantavis prefUHerald
+	dth 13 AtL_C 1 cantavis prefUCantavis
+	dth 13 AtL_C 1 cabalist prefUVagrant
+	dth 13 AtL_C 1 cabalist prefUCabalist
+	dth 13 AtL_C 1 barghest prefUBarghest
+	dth 13 AtL_C 1 pariah prefUPariah
+#	dth 13 AtL_C 1 pariah prefUPotentate
+#	dth 13 AtL_C 1 pariah prefUSycophant
+	dth 13 AtL_C 1 charlatan prefUCharlatan
+	dth 13 AtL_C 1 mind_tyrant prefUMindTyrant
+	dth 13 AtL_C 1 archon prefUArchon
+	dth 13 AtL_C 1 archon prefUOptecton
+	dth 13 AtL_C 1 archon prefUPatriarch
+	dth 13 AtL_C 1 simulacrum prefUSimulacrum
+	dth 13 AtL_C 1 manifold prefUManifold
+	dth 13 AtL_C 1 vassal prefUVassal
+	dth 13 AtL_C 1 idol prefUIdol
+	dth 13 AtL_C 1 golem prefUGolem
+	dth 13 AtL_C 1 servitor prefUServitor
+	dth 13 AtL_C 1 positron prefUPositron
+	dth 13 AtL_C 1 analogue prefUAnalogue
+	dth 13 AtL_C 1 accantor prefUAccantor
+	dth 13 AtL_C 1 architect prefUArchitect
+	dth 13 AtL_C 1 demiurge prefUDemiurge
+	dth 13 AtL_C 1 empress prefUEmpress
+	dth 13 AtL_C 1 aurora prefUAurora
+	dth 13 AtL_C 1 panoptus prefUPanoptus
+	dth 13 AtL_C 1 lanifect prefULanifect
+	dth 13 AtL_C 1 exemplar prefUExemplar
+	dth 13 AtL_C 1 gladius prefUGladius
+	dth 13 AtL_C 1 magister prefUMagister
+	dth 13 AtL_C 1 empyrean prefUEpigraph
+	dth 13 AtL_C 1 didact prefUDidact
+	dth 13 AtL_C 1 empyrean prefUEmpyrean
+	dth 13 AtL_C 1 solarion prefUSolarion
+	dth 13 AtL_C 1 star_sovereign prefUStarSovereign
+	dth 13 AtL_C 1 anthelion prefUAnthelion
+	# production
+	dth 13 AtL_C 1 gateway prefBGateway
+	dth 13 AtL_C 1 cenotaph prefBCenotaph
+	dth 13 AtL_C 1 grand_library prefBGrandLibrary
+	dth 13 AtL_C 1 rogue_gallery prefBRogueGallery
+	dth 13 AtL_C 1 prostration_stage prefBProstrationStage
+	dth 13 AtL_C 1 ancestral_archives prefBAncestralArchives
+	dth 13 AtL_C 1 lattice prefBLattice
+	dth 13 AtL_C 1 automaton_register prefBAutomatonRegister
+	dth 13 AtL_C 1 sequestered_icon prefBSequesteredIcon
+	dth 13 AtL_C 1 synthetic_synod prefBSyntheticSynod
+	dth 13 AtL_C 1 stargate prefBStargate
+	dth 13 AtL_C 1 astral_omen prefBAstralOmen
+	dth 13 AtL_C 1 argosy prefBArgosy
+	dth 13 AtL_C 1 fleet_beacon prefBFleetBeacon
+	dth 13 AtL_C 1 monument_of_sin prefBMonumentOfSin
+	call select_preferencesDeathReset
+	multi pref_cycle_start
+	multi gas_timer_main # Reads build types, defaults to 4 minutes
+	goto idle
+	
+	:select_preferencesDeathReset
+	dth 13 Set 0 zealot blank
+	dth 13 Set 0 dracadin blank
+	dth 13 Set 0 ecclesiast blank
+	dth 13 Set 0 legionnaire blank
+	dth 13 Set 0 hierophant blank
+	dth 13 Set 0 cantavis blank
+	dth 13 Set 0 amaranth blank
+	dth 13 Set 0 atreus blank
+	dth 13 Set 0 archon blank
+	dth 13 Set 0 vassal blank
+	dth 13 Set 0 simulacrum blank
+	dth 13 Set 0 manifold blank
+	dth 13 Set 0 idol blank
+	dth 13 Set 0 golem blank
+	dth 13 Set 0 accantor blank
+	dth 13 Set 0 architect blank
+	dth 13 Set 0 clarion blank
+	dth 13 Set 0 demiurge blank
+	dth 13 Set 0 aurora blank
+	dth 13 Set 0 panoptus blank
+	dth 13 Set 0 lanifect blank
+	dth 13 Set 0 exemplar blank
+	dth 13 Set 0 gladius blank
+	dth 13 Set 0 magister blank
+	dth 13 Set 0 empyrean blank
+	dth 13 Set 0 didact blank
+	dth 13 Set 0 solarion blank
+	dth 13 Set 0 star_sovereign blank
+	dth 13 Set 0 cabalist blank
+	dth 13 Set 0 barghest blank
+	dth 13 Set 0 mind_tyrant blank
+	dth 13 Set 0 pariah blank
+	dth 13 Set 0 anthelion blank
+	dth 13 Set 0 aspirant blank
+	dth 13 Set 0 charlatan blank
+	dth 13 Set 0 axitrilisk blank
+	dth 13 Set 0 striga blank
+	dth 13 Set 0 luminary blank
+	dth 13 Set 0 empress blank
+	dth 13 Set 0 gateway blank
+	dth 13 Set 0 grand_library blank
+	dth 13 Set 0 lattice blank
+	dth 13 Set 0 sequestered_icon blank
+	dth 13 Set 0 stargate blank
+	dth 13 Set 0 argosy blank
+	dth 13 Set 0 prostration_stage blank
+	dth 13 Set 0 rogue_gallery blank
+	return
+	
+	:prefPRanger
+	var Set pref_ranger 1 13
+	var Set pref_templar 0 13
+	var Set pref_skylord 0 13
+	return
+	
+	:prefPTemplar
+	var Set pref_ranger 0 13
+	var Set pref_templar 1 13
+	var Set pref_skylord 0 13
+	return
+	
+	:prefPSkylord
+	var Set pref_ranger 0 13
+	var Set pref_templar 0 13
+	var Set pref_skylord 1 13
+	return
+	
+	:prefPScenario
+	var Set pref_ranger 0 13
+	var Set pref_templar 0 13
+	var Set pref_skylord 0 13
+	var Set pref_scenario 1 13
+	call pref_p_scenario_check
+	return
+	
+	:prefPScenarioLite
+	var Set pref_scenario_lite 1 13
+	dth 13 Set 0 cyprian blank
+	return
+	
+	:pref_p_scenario_check
+	dth 13 Ex 2 scanner_sweep prefPScenario_OneForTheFuture
+#	dth 13 Ex 3 scanner_sweep prefPScenario_TheLostGods
+	return
+	
+	:prefPScenario_OneForTheFuture
+	dth 13 Ex_M 4 right_pit_door prefPScenario_OneForTheFuture_PastaMasta
+	return
+	
+	:prefPScenario_OneForTheFuture_PastaMasta
+	var Set pref_skylord 1 13
+	stop
+	
+	:prefUClarion
+	var Set pref_clarion 1 13
+	var Set pref_stridentstratum_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_clarion
+	return
+	
+	:prefUZealot
+	var Set pref_zealot 1 13
+	var Set pref_dracadin 0 13
+	var Set pref_ecclesiast 1 13
+	var Set pref_gateway_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_zealot
+	return
+	
+	:prefUDracadin
+	var Set pref_zealot 0 13
+	var Set pref_dracadin 0 13
+	var Set pref_ecclesiast 1 13
+	var Set pref_gateway_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_dracadin
+	return
+	
+	:prefUEcclesiast
+	var Set pref_zealot 0 13
+	var Set pref_dracadin 0 13
+	var Set pref_ecclesiast 1 13
+	var Set pref_gateway_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_ecclesiast
+	return
+	
+	:prefULegionnaire
+	var Set pref_legionnaire 1 13
+	var Set pref_hierophant 0 13
+	var Set pref_cenotaph_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_legionnaire
+	return
+	
+	:prefUHierophant
+	var Set pref_legionnaire 0 13
+	var Set pref_hierophant 1 13
+	var Set pref_cenotaph_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_hierophant
+	return
+	
+	:prefUAmaranth
+	var Set pref_amaranth 1 13
+	var Set pref_atreus 0 13
+	var Set pref_grandlibrary_assault 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_amaranth
+	return
+	
+	:prefUAtreus
+	var Set pref_amaranth 0 13
+	var Set pref_atreus 1 13
+	var Set pref_grandlibrary_assault 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_atreus
+	return
+	
+	:prefUHerald
+	var Set pref_herald 1 13
+	var Set pref_cantavis 0 13
+	var Set pref_grandlibrary_infantry 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_herald
+	return
+	
+	:prefUCantavis
+	var Set pref_herald 0 13
+	var Set pref_cantavis 1 13
+	var Set pref_grandlibrary_infantry 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_cantavis
+	return
+	
+	:prefUVagrant
+	var Set pref_vagrant 1 13
+	var Set pref_cabalist 0 13
+	var Set pref_barghest 0 13
+	var Set pref_roguegallery_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_vagrant
+	return
+	
+	:prefUCabalist
+	var Set pref_vagrant 0 13
+	var Set pref_cabalist 1 13
+	var Set pref_barghest 0 13
+	var Set pref_roguegallery_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_cabalist
+	return
+	
+	:prefUBarghest
+	var Set pref_vagrant 0 13
+	var Set pref_cabalist 0 13
+	var Set pref_barghest 1 13
+	var Set pref_roguegallery_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_barghest
+	return
+	
+	:prefUPariah
+	var Set pref_pariah 1 13
+	var Set pref_charlatan 0 13
+	var Set pref_mind_tyrant 0 13
+	var Set pref_prostrationstage_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_pariah
+	return
+	
+	:prefUCharlatan
+	var Set pref_pariah 0 13
+	var Set pref_charlatan 1 13
+	var Set pref_mind_tyrant 0 13
+	var Set pref_prostrationstage_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_charlatan
+	return
+	
+	:prefUMindTyrant
+	var Set pref_pariah 0 13
+	var Set pref_charlatan 0 13
+	var Set pref_mind_tyrant 1 13
+	var Set pref_prostrationstage_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_mind_tyrant
+	return
+	
+	:prefUArchon
+	var Set pref_archon 1 13
+	var Set pref_optecton 0 13
+	var Set pref_patriarch 0 13
+	var Set pref_ancestralarchives_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_archon
+	return
+	
+	:prefUOptecton
+	var Set pref_archon 0 13
+	var Set pref_optecton 1 13
+	var Set pref_patriarch 0 13
+	var Set pref_ancestralarchives_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_optecton
+	return
+	
+	:prefUPatriarch
+	var Set pref_archon 0 13
+	var Set pref_optecton 0 13
+	var Set pref_patriarch 1 13
+	var Set pref_ancestralarchives_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_patriarch
+	return
+	
+	:prefUSimulacrum
+	var Set pref_manifold 0 13
+	var Set pref_simulacrum 1 13
+	var Set pref_vassal 0 13
+	var Set pref_lattice_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_simulacrum
+	return
+	
+	:prefUManifold
+	var Set pref_manifold 1 13
+	var Set pref_simulacrum 0 13
+	var Set pref_vassal 0 13
+	var Set pref_lattice_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_manifold
+	return
+	
+	:prefUVassal
+	var Set pref_manifold 0 13
+	var Set pref_simulacrum 0 13
+	var Set pref_vassal 1 13
+	var Set pref_lattice_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_vassal
+	return
+	
+	:prefUIdol
+	var Set pref_idol 1 13
+	var Set pref_golem 0 13
+	var Set pref_automatonregister_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_idol
+	return
+	
+	:prefUGolem
+	var Set pref_idol 0 13
+	var Set pref_golem 1 13
+	var Set pref_automatonregister_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_golem
+	return
+	
+	:prefUAccantor
+	var Set pref_accantor 1 13
+	var Set pref_architect 0 13
+	var Set pref_demiurge 0 13
+	var Set pref_sequesteredicon_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_accantor
+	return
+	
+	:prefUArchitect
+	var Set pref_accantor 0 13
+	var Set pref_architect 1 13
+	var Set pref_sequesteredicon_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_architect
+	return
+	
+	:prefUServitor
+	var Set pref_servitor 1 13
+	var Set pref_positron 0 13
+	var Set pref_analogue 0 13
+	var Set pref_ardentauthority_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_servitor
+	return
+	
+	:prefUPositron
+	var Set pref_servitor 0 13
+	var Set pref_positron 1 13
+	var Set pref_analogue 0 13
+	var Set pref_ardentauthority_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_positron
+	return
+	
+	:prefUAnalogue
+	var Set pref_servitor 0 13
+	var Set pref_positron 0 13
+	var Set pref_analogue 1 13
+	var Set pref_ardentauthority_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_analogue
+	return
+	
+	:prefUDemiurge
+	var Set pref_demiurge 1 13
+	var Set pref_empress 0 13
+	var Set pref_syntheticsynod_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_demiurge
+	return
+	
+	:prefUEmpress
+	var Set pref_demiurge 0 13
+	var Set pref_empress 1 13
+	var Set pref_syntheticsynod_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_empress
+	return
+	
+	:prefUAurora
+	var Set pref_aurora 1 13
+	var Set pref_panoptus 0 13
+	var Set pref_lanifect 0 13
+	var Set pref_stargate_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_aurora
+	return
+	
+	:prefUPanoptus
+	var Set pref_aurora 0 13
+	var Set pref_panoptus 1 13
+	var Set pref_lanifect 0 13
+	var Set pref_stargate_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_panoptus
+	return
+	
+	:prefULanifect
+	var Set pref_aurora 0 13
+	var Set pref_panoptus 0 13
+	var Set pref_lanifect 1 13
+	var Set pref_stargate_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_lanifect
+	return
+	
+	:prefUExemplar
+	var Set pref_exemplar 1 13
+	var Set pref_gladius 0 13
+	var Set pref_astralomen_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_exemplar
+	return
+	
+	:prefUGladius
+	var Set pref_exemplar 0 13
+	var Set pref_gladius 1 13
+	var Set pref_astralomen_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_gladius
+	return
+	
+	:prefUMagister
+	var Set pref_magister 1 13
+	var Set pref_epigraph 0 13
+	var Set pref_didact 0 13
+	var Set pref_argosy_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_magister
+	return
+	
+	:prefUEpigraph
+	var Set pref_magister 0 13
+	var Set pref_epigraph 1 13
+	var Set pref_didact 0 13
+	var Set pref_argosy_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_epigraph
+	return
+	
+	:prefUDidact
+	var Set pref_magister 0 13
+	var Set pref_epigraph 0 13
+	var Set pref_didact 1 13
+	var Set pref_argosy_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_didact
+	return
+	
+	:prefUEmpyrean
+	var Set pref_empyrean 1 13
+	var Set pref_solarion 0 13
+	var Set pref_fleetbeacon_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_empyrean
+	return
+	
+	:prefUSolarion
+	var Set pref_empyrean 0 13
+	var Set pref_solarion 1 13
+	var Set pref_fleetbeacon_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_solarion
+	return
+	
+	:prefUStarSovereign
+	var Set pref_starsovereign 1 13
+	var Set pref_anthelion 0 13
+	var Set pref_monumentofsin_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_starsovereign
+	return
+
+	:prefUAnthelion
+	var Set pref_starsovereign 0 13
+	var Set pref_anthelion 1 13
+	var Set pref_monumentofsin_units 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_anthelion
+	return
+	
+	:prefBGateway
+	var Set pref_gateway 1 13
+	var Set pref_grandlibrary 0 13
+	var Set pref_templar_production 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_gateway
+	return
+	
+	:prefBCenotaph
+	var Set pref_cenotaph 1 13
+	var Set pref_templar_production 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_cenotaph
+	return
+	
+	:prefBGrandLibrary
+	var Set pref_gateway 0 13
+	var Set pref_grandlibrary 1 13
+	var Set pref_templar_production 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_grandlibrary
+	return
+	
+	:prefBRogueGallery
+	var Set pref_prostrationstage 0 13
+	var Set pref_roguegallery 1 13
+	var Set pref_templar_specialist_production 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_roguegallery
+	return
+	
+	:prefBProstrationStage
+	var Set pref_prostrationstage 1 13
+	var Set pref_roguegallery 0 13
+	var Set pref_templar_specialist_production 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_prostrationstage
+	return
+	
+	:prefBAncestralArchives
+	var Set pref_ancestralarchives 1 13
+	var Set pref_templar_production 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_ancestralarchives
+	return
+	
+	:prefBLattice
+	var Set pref_lattice 1 13
+	var Set pref_sequesteredicon 0 13
+	var Set pref_ranger_production 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_lattice
+	return
+	
+	:prefBAutomatonRegister
+	var Set pref_automatonregister 1 13
+	var Set pref_ranger_production 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_automatonregister
+	return
+	
+	:prefBSequesteredIcon
+	var Set pref_lattice 0 13
+	var Set pref_sequesteredicon 1 13
+	var Set pref_ranger_production 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_sequesteredicon
+	return
+	
+	:prefBSyntheticSynod
+	var Set pref_syntheticsynod 1 13
+	var Set pref_ranger_production 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_syntheticsynod
+	return
+	
+	:prefBStargate
+	var Set pref_stargate 1 13
+	var Set pref_argosy 0 13
+	var Set pref_skylord_production 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_stargate
+	return
+	
+	:prefBAstralOmen
+	var Set pref_astralomen 1 13
+	var Set pref_skylord_production 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_astralomen
+	return
+	
+	:prefBArgosy
+	var Set pref_stargate 0 13
+	var Set pref_argosy 1 13
+	var Set pref_skylord_production 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_argosy
+	return
+	
+	:prefBFleetBeacon
+	var Set pref_fleetbeacon 1 13
+	var Set pref_skylord_production 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_fleetbeacon
+	return
+	
+	:prefBMonumentOfSin
+	var Set pref_monumentofsin 1 13
+	var Set pref_skylord_production 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank_return 13
+	print pref_monumentofsin
+	return
+	
+	:buildpref_stridentstratum_clarion
+	var Set pref_clarion 1 13
+	return
+	
+	:buildpref_gateway_zealot
+	var Set pref_zealot 1 13
+	return
+	
+	:buildpref_gateway_dracadin
+	var Set pref_dracadin 1 13
+	return
+	
+	:buildpref_gateway_ecclesiast
+	var Set pref_ecclesiast 1 13
+	return
+	
+	:buildpref_cenotaph_legionnaire
+	var Set pref_legionnaire 1 13
+	return
+	
+	:buildpref_cenotaph_hierophant
+	var Set pref_hierophant 1 13
+	return
+	
+	:buildpref_grandlibrary_assault_amaranth
+	var Set pref_amaranth 1 13
+	return
+	
+	:buildpref_grandlibrary_assault_atreus
+	var Set pref_atreus 1 13
+	return
+	
+	:buildpref_grandlibrary_infantry_herald
+	var Set pref_herald 1 13
+	return
+	
+	:buildpref_grandlibrary_infantry_cantavis
+	var Set pref_cantavis 1 13
+	return
+	
+	:buildpref_roguegallery_vagrant
+	var Set pref_vagrant 1 13
+	return
+	
+	:buildpref_roguegallery_cabalist
+	var Set pref_cabalist 1 13
+	return
+	
+	:buildpref_roguegallery_barghest
+	var Set pref_barghest 1 13
+	return
+	
+	:buildpref_prostrationstage_pariah
+	var Set pref_pariah 1 13
+	return
+	
+	:buildpref_prostrationstage_charlatan
+	var Set pref_charlatan 1 13
+	return
+	
+	:buildpref_prostrationstage_mindtyrant
+	var Set pref_mind_tyrant 1 13
+	return
+	
+	:build_pref_ancestralarchives_archon
+	var Set pref_archon 1 13
+	return
+	
+	:build_pref_ancestralarchives_optecton
+	var Set pref_optecton 1 13
+	return
+	
+	:build_pref_ancestralarchives_patriarch
+	var Set pref_patriarch 1 13
+	return
+	
+	:buildpref_lattice_manifold
+	var Set pref_manifold 1 13
+	return
+	
+	:buildpref_lattice_simulacrum
+	var Set pref_simulacrum 1 13
+	return
+	
+	:buildpref_lattice_vassal
+	var Set pref_vassal 1 13
+	return
+	
+	:buildpref_automatonregister_idol
+	var Set pref_idol 1 13
+	return
+	
+	:buildpref_automatonregister_golem
+	var Set pref_golem 1 13
+	return
+	
+	:buildpref_ardentauthority_servitor
+	var Set pref_servitor 1 13
+	return
+	
+	:buildpref_ardentauthority_positron
+	var Set pref_positron 1 13
+	return
+	
+	:buildpref_ardentauthority_analogue
+	var Set pref_analogue 1 13
+	return
+	
+	:buildpref_sequesteredicon_accantor
+	var Set pref_accantor 1 13
+	return
+	
+	:buildpref_sequesteredicon_architect
+	var Set pref_architect 1 13
+	return
+	
+	:buildpref_syntheticsynod_empress
+	var Set pref_empress 1 13
+	return
+	
+	:buildpref_syntheticsynod_demiurge
+	var Set pref_demiurge 1 13
+	return
+	
+	:buildpref_stargate_aurora
+	var Set pref_aurora 1 13
+	return
+	
+	:buildpref_stargate_panoptus
+	var Set pref_panoptus 1 13
+	return
+	
+	:buildpref_stargate_lanifect
+	var Set pref_lanifect 1 13
+	return
+	
+	:buildpref_astralomen_exemplar
+	var Set pref_exemplar 1 13
+	return
+	
+	:buildpref_astralomen_gladius
+	var Set pref_gladius 1 13
+	return
+	
+	:buildpref_argosy_magister
+	var Set pref_magister 1 13
+	return
+	
+	:buildpref_argosy_epigraph
+	var Set pref_epigraph 1 13
+	return
+	
+	:buildpref_argosy_didact
+	var Set pref_didact 1 13
+	return
+	
+	:buildpref_fleetbeacon_empyrean
+	var Set pref_empyrean 1 13
+	return
+	
+	:buildpref_fleetbeacon_solarion
+	var Set pref_solarion 1 13
+	return
+	
+	:buildpref_monumentofsin_starsovereign
+	var Set pref_starsovereign 1 13
+	return
+	
+	:buildpref_monumentofsin_anthelion
+	var Set pref_anthelion 1 13
+	return
+	
+	:buildpref_templar_production_gateway
+	var Set pref_gateway 1 13
+	return
+	
+	:buildpref_templar_production_cenotaph
+	var Set pref_cenotaph 1 13
+	return
+	
+	:buildpref_templar_production_grandlibrary
+	var Set pref_grandlibrary 1 13
+	return
+	
+	:buildpref_templar_production_roguegallery
+	var Set pref_roguegallery 1 13
+	return
+	
+	:buildpref_templar_production_prostrationstage
+	var Set pref_prostrationstage 1 13
+	return
+	
+	:buildpref_templar_production_ancestralarchives
+	var Set pref_ancestralarchives 1 13
+	return
+	
+	:buildpref_ranger_production_lattice
+	var Set pref_lattice 1 13
+	return
+	
+	:buildpref_ranger_production_automatonregister
+	var Set pref_automatonregister 1 13
+	return
+	
+	:buildpref_ranger_production_ardentauthority
+	var Set pref_ardentauthority 1 13
+	return
+	
+	:buildpref_ranger_production_sequesteredicon
+	var Set pref_sequesteredicon 1 13
+	return
+	
+	:buildpref_ranger_production_syntheticsynod
+	var Set pref_syntheticsynod 1 13
+	return
+	
+	:buildpref_skylord_production_stargate
+	var Set pref_stargate 1 13
+	return
+	
+	:buildpref_skylord_production_astralomen
+	var Set pref_astralomen 1 13
+	return
+	
+	:buildpref_skylord_production_argosy
+	var Set pref_argosy 1 13
+	return
+	
+	:buildpref_skylord_production_fleetbeacon
+	var Set pref_fleetbeacon 1 13
+	return
+	
+	:buildpref_skylord_production_monumentofsin
+	var Set pref_monumentofsin 1 13
+	return
+	
+	:pref_cycle_start
+	var Ex|Wait build_done_var 1 13
+	
+	:pref_cycle
+	wait 360
+	
+	:pref_cycle_templar
+	var Ex|Jump pref_templar_production 1 pref_cycle_ranger 13
+	var AtL|Call mining_count_var 5 resetpref_templar_production_ancestralarchives 13
+	var Ex|Call mining_count_var 4 resetpref_templar_production_grandlibrary 13
+	var Ex|Call mining_count_var 3 resetpref_templar_production_grandlibrary 13
+	var AtM|Call mining_count_var 2 resetpref_templar_production_gateway 13
+	
+	:pref_cycle_ranger
+	var Ex|Jump pref_ranger_production 1 pref_cycle_skylord 13
+	var AtL|Call mining_count_var 4 resetpref_ranger_production_sequesteredicon 13
+	var Ex|Call mining_count_var 3 resetpref_ranger_production_ardentauthority 13
+	var Ex|Call mining_count_var 2 resetpref_ranger_production_automatonregister 13
+	var AtM|Call mining_count_var 1 resetpref_ranger_production_lattice 13
+	
+	:pref_cycle_skylord
+	var Ex|Jump pref_skylord_production 1 blank_return 13
+	var AtL|Call mining_count_var 6 resetpref_skylord_production_monumentofsin 13
+	var Ex|Call mining_count_var 5 resetpref_skylord_production_fleetbeacon 13
+	var Ex|Call mining_count_var 4 resetpref_skylord_production_fleetbeacon 13
+	var Ex|Call mining_count_var 3 resetpref_skylord_production_argosy 13
+	var AtM|Call mining_count_var 2 resetpref_skylord_production_stargate 13
+	goto pref_cycle
+	
+	:resetpref_templar_production_gateway
+	var Set pref_gateway 1 13
+	var Set pref_grandlibrary 0 13
+	var Set pref_ancestralarchives 0 13
+	return
+	
+	:resetpref_templar_production_grandlibrary
+	var Set pref_gateway 0 13
+	var Set pref_grandlibrary 1 13
+	var Set pref_ancestralarchives 0 13
+	return
+	
+	:resetpref_templar_production_ancestralarchives
+	var Set pref_gateway 0 13
+	var Set pref_grandlibrary 0 13
+	var Set pref_ancestralarchives 1 13
+	return
+	
+	:resetpref_ranger_production_lattice
+	var Set pref_lattice 1 13
+	var Set pref_automatonregister 0 13
+	var Set pref_ardentauthority 0 13
+	var Set pref_sequesteredicon 0 13
+	return
+	
+	:resetpref_ranger_production_automatonregister
+	var Set pref_lattice 1 13
+	var Set pref_automatonregister 0 13
+	var Set pref_ardentauthority 0 13
+	var Set pref_sequesteredicon 0 13
+	return
+	
+	:resetpref_ranger_production_ardentauthority
+	var Set pref_lattice 0 13
+	var Set pref_automatonregister 0 13
+	var Set pref_ardentauthority 1 13
+	var Set pref_sequesteredicon 0 13
+	return
+	
+	:resetpref_ranger_production_sequesteredicon
+	var Set pref_lattice 0 13
+	var Set pref_automatonregister 0 13
+	var Set pref_ardentauthority 0 13
+	var Set pref_sequesteredicon 1 13
+	return
+	
+	:resetpref_skylord_production_stargate
+	var Set pref_stargate 1 13
+	var Set pref_astralomen 0 13
+	var Set pref_argosy 0 13
+	var Set pref_fleetbeacon 0 13
+	var Set pref_monumentofsin 0 13
+	return
+	
+	:resetpref_skylord_production_astralomen
+	var Set pref_stargate 0 13
+	var Set pref_astralomen 1 13
+	var Set pref_argosy 0 13
+	var Set pref_fleetbeacon 0 13
+	var Set pref_monumentofsin 0 13
+	return
+	
+	:resetpref_skylord_production_argosy
+	var Set pref_stargate 0 13
+	var Set pref_astralomen 0 13
+	var Set pref_argosy 1 13
+	var Set pref_fleetbeacon 0 13
+	var Set pref_monumentofsin 0 13
+	return
+	
+	:resetpref_skylord_production_fleetbeacon
+	var Set pref_stargate 0 13
+	var Set pref_astralomen 0 13
+	var Set pref_argosy 0 13
+	var Set pref_fleetbeacon 1 13
+	var Set pref_monumentofsin 0 13
+	return
+	
+	:resetpref_skylord_production_monumentofsin
+	var Set pref_stargate 0 13
+	var Set pref_astralomen 0 13
+	var Set pref_argosy 0 13
+	var Set pref_fleetbeacon 0 13
+	var Set pref_monumentofsin 1 13
+	return
+	
+	:idle
+	wait 25500
+	goto idle
+	
+	:blank
+	stop
+	
+	:blank_return
+	return
+	
+	:ignore_timings
+	wait 24
+	var Add can_worker_var 1 13
+	var Set build_supply_var 1 13
+	wait 720
+	var Set build_gas_var 1 13
+	wait 720
+	multi ignore_timings_ExpansionSequence
+	wait 720
+	var Set can_build_static_defense_var 1 13
+	wait 720
+	atk_c
+	send_suicide 0
+	var Set can_attack_var 1 13
+	return
+	
+	:ignore_timings_ExpansionSequence
+	res 13 AtL Ore 10000 ignore_timings_ExpansionSequence_4
+	res 13 AtL Ore 4000 ignore_timings_ExpansionSequence_3
+	res 13 AtL Ore 2000 ignore_timings_ExpansionSequence_2
+	res 13 AtM Ore 999 ignore_timings_ExpansionSequence_Var
+	call expansion_loop_normal
+	wait 24
+	goto ignore_timings_ExpansionSequence_End
+	
+	:ignore_timings_ExpansionSequence_4
+	call expansion_loop_normal
+	wait 24
+	call expansion_loop_normal
+	wait 24
+	call expansion_loop_normal
+	wait 24
+	call expansion_loop_normal
+	wait 24
+	goto ignore_timings_ExpansionSequence_End
+	
+	:ignore_timings_ExpansionSequence_3
+	call expansion_loop_normal
+	wait 24
+	call expansion_loop_normal
+	wait 24
+	call expansion_loop_normal
+	wait 24
+	goto ignore_timings_ExpansionSequence_End
+	
+	:ignore_timings_ExpansionSequence_2
+	call expansion_loop_normal
+	wait 24
+	call expansion_loop_normal
+	wait 24
+	goto ignore_timings_ExpansionSequence_End
+	
+	:ignore_timings_ExpansionSequence_End
+	wait 600
+	stop
+	
+	:ignore_timings_ExpansionSequence_Var
+	var Add can_expand_var 1 13
+	stop
+	
+	:cheat_resource
+	upg_j 13 AtL 18 1 blank
+	upg_j 13 Set 18 1 blank
+	stop
+	
+	:under_attack_conditions
+	wait 12
+	player_combat 17 13 63 True Wait Any Group_Buildings|scribe|artisan
+	var Set under_attack_var 1 13
+	wait 360
+	player_combat 17 13 63 True Call Any Group_Buildings|scribe|artisan under_attack_conditions_max 13
+	wait 120
+	
+	:under_attack_conditions_fin
+	var Set under_attack_var 0 13
+	var Set under_attack_by_ground_var 0 13
+	var Set under_attack_by_air_var 0 13
+	var Set can_build_production_var 1 13
+	goto under_attack_conditions
+	
+	:under_attack_conditions_max
+	player_combat 17 13 63 False WF(240) Any Group_Buildings|scribe|artisan
+	player_combat 17 13 63 False Jump Any Group_Buildings|scribe|artisan blank_return 13
+	var Set can_build_production_var 0 13
+	player_combat 17 13 63 False WF(480) Any Group_Buildings|scribe|artisan
+	return
+	
+	:under_attack_by_ground_calc
+	var AtL|Wait under_attack_var 1 13
+	player_combat 17 13 63 False Jump maverick|harakan|cyprian|eidolon|savant|madcap|heracles|apostle|siren|striga|olympian|autocrat|dilettante|sevenstep|hypnagogue|ambassador|heir|horseman|thespian|silvertongue|emperor|jester|vulture|cyclops|goliath|blackjack|matador|phalanx|phalanx_siege_mode|madrigal|ramesses|durendal|cataphract|paladin|cuirass|pazuzu|claymore|penumbra|anticthon|aion|zealot|dracadin|ecclesiast|legionnaire|hierophant|amaranth|atreus|herald|cantavis|vagrant|cabalist|pariah|charlatan|archon|optecton|patriarch|manifold|simulacrum|idol|golem|accantor|architect|demiurge|zethrokor|quazilisk|vorvrokor|liiralisk|cikralisk|protathalor|axitrilisk|mortothrokor|hydralisk|izirokor|bactalisk|tethzorokor|kagralisk|evigrilisk|keskathalor|zoryusthaleth|lakizilisk|konvilisk|vilgorokor|rilirokor|ultrokor|zobriolisk|aspirant|cohort|tarasque Any under_attack_by_ground_calc_fin 13
+	var Set under_attack_by_ground_var 1 13
+	
+	:under_attack_by_ground_calc_fin
+	wait 240
+	goto under_attack_by_ground_calc
+	
+	:under_attack_by_air_calc
+	var Ex|Wait under_attack_var 1 13
+	player_combat 17 13 63 False Jump talos|wraith|gorgon|wyvern|valkyrie|salamander|sundog|centaur|minotaur|magnetar|pegasus|hippogriff|oberon|phobos|artisan|barghest|vassal|empress|aurora|panoptus|lanifect|gladius|exemplar|magister|epigraph|didact|empyrean|solarion|star_sovereign|anthelion|gosvileth|nathrokor|kalkalisk|mutalisk|ghitorokor|sovroleth|tosgrilisk|skithrokor|vithrilisk|almaksalisk|geszithalor|algoztalisk|alkajelisk|gorgrokor|rililisk|zarcavrokor|tetcaerokor|akistrokor|luminary Any under_attack_by_air_calc_fin 13
+	var Set under_attack_by_air_var 1 13
+	
+	:under_attack_by_air_calc_fin
+	wait 240
+	goto under_attack_by_air_calc
+	
+	:wait_resources
+	aictrl wait_request_resources
+	res 13 AtL_W Ore 1000 blank
+	aictrl dont_wait_request_resources
+	wait 120
+	res 13 AtM_W Ore 999 blank
+	goto wait_resources
+	
+	:gas_timer_main
+	var Ex|Jump build_type_is_greed_var 1 gas_timer_greed 13
+	var Ex|Jump build_type_is_rush_var 1 gas_timer_rush 13
+	var Set gas_timer_loop_var 5760 13
+	goto gas_timer_loop
+	
+	:gas_timer_greed
+	var Set gas_timer_loop_var 2880 13
+	goto gas_timer_loop
+	
+	:gas_timer_rush
+	var Set gas_timer_loop_var 8640 13
+	goto gas_timer_loop
+	
+	:gas_timer_loop
+	wait 1
+	var Sub gas_timer_loop_var 1 13
+	var AtL|Jump gas_timer_loop_var 1 gas_timer_loop 13
+	var Set build_gas_var 1 13
+	stop
+	
+	:gas_conditions
+	var Ex|wait build_gas_var 1 13
+	aictrl build_gas
+	stop
+	
+	:define_maxes
+	def_max 14 witness
+	def_max 16 clarion
+	def_max 24 envoy
+	def_max 100 zealot
+	def_max 120 legionnaire
+	def_max 64 dracadin
+	def_max 52 hierophant
+	def_max 60 ecclesiast
+	def_max 46 atreus
+	def_max 56 amaranth
+	def_max 42 cantavis
+	def_max 52 cabalist
+	def_max 32 archon
+	def_max 30 mind_tyrant
+	def_max 32 pariah
+	def_max 120 vassal
+	def_max 100 simulacrum
+	def_max 80 manifold
+	def_max 60 idol
+	def_max 54 golem
+	def_max 42 accantor
+	def_max 60 barghest
+	def_max 24 architect
+	def_max 20 demiurge
+	def_max 80 aurora
+	def_max 64 panoptus
+	def_max 36 lanifect
+	def_max 52 exemplar
+	def_max 54 gladius
+	def_max 42 magister
+	def_max 36 empyrean
+	def_max 24 didact
+	def_max 26 solarion
+	def_max 24 star_sovereign
+	stop
+	
+	:defense_handling
+	call defense_handling_pick
+	var Ex|WF(480) under_attack_var 1 13
+	wait 120
+	var Ex|wait under_attack_var 0 13
+	defc_gg
+	defc_ga
+	defc_aa
+	defc_ag
+	goto defense_handling
+	
+	:defense_handling_pick
+	var Ex pref_ranger 1 defense_handling_ranger 13
+	var Ex pref_templar 1 defense_handling_templar 13
+	var Ex pref_skylord 1 defense_handling_skylord 13
+	
+	:defense_handling_general
+	unit_check 13 13 63 Greater|Jump 0 0 lattice|automaton_register|sequestered_icon|synthetic_synod gateway|cenotaph|grand_library|rogue_gallery|prostration_stage|ancestral_archives|stargate|astral_omen|argosy|fleet_beacon|monument_of_sin defense_handling_ranger 13
+	unit_check 13 13 63 Greater|Jump 0 0 gateway|cenotaph|grand_library|rogue_gallery|prostration_stage|ancestral_archives lattice|automaton_register|sequestered_icon|synthetic_synod|stargate|astral_omen|argosy|fleet_beacon|monument_of_sin defense_handling_templar 13
+	unit_check 13 13 63 Greater|Jump 0 0 stargate|astral_omen|argosy|fleet_beacon|monument_of_sin gateway|cenotaph|grand_library|rogue_gallery|prostration_stage|ancestral_archives|lattice|automaton_register|sequestered_icon|synthetic_synod defense_handling_skylord 13
+	return
+	
+	:defense_handling_ranger
+	call defense_wave_ranger
+	call defense_wave_skylord
+	call defense_wave_templar
+	return
+	
+	:defense_handling_templar
+	call defense_wave_templar
+	call defense_wave_skylord
+	call defense_wave_ranger
+	return
+	
+	:defense_handling_skylord
+	call defense_wave_skylord
+	call defense_wave_templar
+	call defense_wave_ranger
+	return
+	
+	:defense_wave_ranger
+	call defense_wave_ranger_sequesteredicon
+	call defense_wave_ranger_syntheticsynod
+	call defense_wave_ranger_automatonregister
+	call defense_wave_ranger_lattice
+	return
+	
+	:defense_wave_templar
+	call defense_wave_templar_ancestralarchives
+	call defense_wave_templar_grandlibrary
+	call defense_wave_templar_prostrationstage
+	call defense_wave_templar_cenotaph
+	call defense_wave_templar_gateway
+	call defense_wave_templar_roguegallery
+	return
+	
+	:defense_wave_skylord
+	call defense_wave_skylord_fleetbeacon
+	call defense_wave_skylord_argosy
+	call defense_wave_skylord_monumentofsin
+	call defense_wave_skylord_astralomen
+	call defense_wave_skylord_stargate
+	return
+	
+	:defense_wave_ranger_lattice
+	var AtL|Call pref_vassal 1 def_vassal 13
+	var AtL|Call pref_simulacrum 1 def_simulacrum 13
+	var AtL|Call pref_manifold 1 def_manifold 13
+	call def_vassal
+	call def_simulacrum
+	call def_manifold
+	return
+	
+	:defense_wave_ranger_automatonregister
+	var AtL|Call pref_idol 1 def_idol 13
+	var AtL|Call pref_golem 1 def_golem 13
+	call def_idol
+	call def_golem
+	return
+	
+	:defense_wave_ranger_ardentauthority
+	var AtL|Call pref_servitor 1 def_servitor 13
+	var AtL|Call pref_positron 1 def_positron 13
+	call def_servitor
+	call def_positron
+	return
+	
+	:defense_wave_ranger_sequesteredicon
+	var AtL|Call pref_accantor 1 def_accantor 13
+	var AtL|Call pref_architect 1 def_architect 13
+	call def_accantor
+	call def_architect
+	return
+	
+	:defense_wave_ranger_syntheticsynod
+	var AtL|Call pref_demiurge 1 def_demiurge 13
+	var AtL|Call pref_empress 1 def_empress 13
+	call def_demiurge
+	call def_empress
+	return
+	
+	:defense_wave_templar_gateway
+	var AtL|Call pref_zealot 1 def_zealot 13
+	var AtL|Call pref_dracadin 1 def_dracadin 13
+	var AtL|Call pref_ecclesiast 1 def_ecclesiast 13
+	call def_zealot
+	call def_dracadin
+	call def_ecclesiast
+	return
+	
+	:defense_wave_templar_cenotaph
+	var AtL|Call pref_legionnaire 1 def_legionnaire 13
+	var AtL|Call pref_hierophant 1 def_hierophant 13
+	call def_legionnaire
+	call def_hierophant
+	return
+	
+	:defense_wave_templar_grandlibrary
+	var AtL|Call pref_amaranth 1 def_amaranth 13
+	var AtL|Call pref_atreus 1 def_atreus 13
+	var AtL|Call pref_herald 1 def_herald 13
+	call def_amaranth
+	call def_atreus
+	call def_herald
+	return
+	
+	:defense_wave_templar_roguegallery
+	var AtL|Call pref_vagrant 1 def_vagrant 13
+	var AtL|Call pref_cabalist 1 def_cabalist 13
+	var AtL|Call pref_barghest 1 def_barghest 13
+	call def_vagrant
+	call def_cabalist
+	call def_barghest
+	return
+	
+	:defense_wave_templar_prostrationstage
+	var AtL|Call pref_pariah 1 def_pariah 13
+	var AtL|Call pref_charlatan 1 def_charlatan 13
+	call def_pariah
+	call def_charlatan
+	return
+	
+	:defense_wave_templar_ancestralarchives
+	var AtL|Call pref_archon 1 def_archon 13
+	var AtL|Call pref_optecton 1 def_optecton 13
+	var AtL|Call pref_patriarch 1 def_patriarch 13
+	call def_archon
+	call def_optecton
+	call def_patriarch
+	return
+	
+	:defense_wave_skylord_stargate
+	var AtL|Call pref_aurora 1 def_aurora 13
+	var AtL|Call pref_panoptus 1 defPanoptus 13
+	var AtL|Call pref_lanifect 1 defLanifect 13
+	call def_aurora
+	call defPanoptus
+	call defLanifect
+	return
+	
+	:defense_wave_skylord_astralomen
+	var AtL|Call pref_exemplar 1 def_exemplar 13
+	var AtL|Call pref_gladius 1 def_gladius 13
+	call def_exemplar
+	call def_gladius
+	return
+	
+	:defense_wave_skylord_argosy
+	var AtL|Call pref_magister 1 def_magister 13
+	var AtL|Call pref_epigraph 1 def_epigraph 13
+	var AtL|Call pref_didact 1 def_didact 13
+	call def_magister
+	call def_epigraph
+	call def_didact
+	return
+	
+	:defense_wave_skylord_fleetbeacon
+	var AtL|Call pref_empyrean 1 def_empyrean 13
+	var AtL|Call pref_solarion 1 def_solarion 13
+	call def_empyrean
+	call def_solarion
+	return
+	
+	:defense_wave_skylord_monumentofsin
+	var AtL|Call pref_starsovereign 1 def_starsovereign 13
+	call def_starsovereign
+	return
+	
+	:def_manifold
+	notowns lattice blank_return
+	defb_gg 1 manifold
+	defb_ag 1 manifold
+	defu_gg 1 manifold
+	defu_ag 1 manifold
+	return
+	
+	:def_simulacrum
+	notowns lattice blank_return
+	defb_gg 1 simulacrum
+	defb_ag 1 simulacrum
+	defu_gg 1 simulacrum
+	defu_ag 1 simulacrum
+	return
+	
+	:def_vassal
+	notowns lattice blank_return
+	defb_gg 1 vassal
+	defb_ga 1 vassal
+	defb_ag 1 vassal
+	defb_aa 1 vassal
+	defu_gg 1 vassal
+	defu_ga 1 vassal
+	defu_ag 1 vassal
+	defu_aa 1 vassal
+	return
+	
+	:def_servitor
+	notowns ardent_authority blank_return
+	defb_gg 1 servitor
+	defb_ag 1 servitor
+	defu_gg 1 servitor
+	defu_ag 1 servitor
+	return
+	
+	:def_positron
+	notowns ardent_authority blank_return
+	defb_gg 1 positron
+	defb_ag 1 positron
+	defu_gg 1 positron
+	defu_ag 1 positron
+	return
+	
+	:def_idol
+	notowns automaton_register blank_return
+	defb_gg 1 idol
+	defb_ag 1 idol
+	defu_gg 1 idol
+	defu_ag 1 idol
+	return
+	
+	:def_golem
+	notowns automaton_register blank_return
+	defb_gg 1 golem
+	defu_gg 1 golem
+	return
+	
+	:def_accantor
+	notowns sequestered_icon blank_return
+	defb_gg 1 accantor
+	defu_gg 1 accantor
+	return
+	
+	:def_architect
+	notowns sequestered_icon blank_return
+	defb_gg 1 architect
+	defb_ag 1 architect
+	defu_gg 1 architect
+	defu_ag 1 architect
+	return
+	
+	:def_demiurge
+	notowns synthetic_synod blank_return
+	defb_gg 1 demiurge
+	defb_ag 1 demiurge
+	defu_gg 1 demiurge
+	defu_ag 1 demiurge
+	return
+	
+	:def_empress
+	notowns synthetic_synod blank_return
+	defb_gg 1 empress
+	defb_ag 1 empress
+	defu_gg 1 empress
+	defu_ag 1 empress
+	return
+	
+	:def_zealot
+	notowns gateway blank_return
+	defb_gg 1 zealot
+	defu_gg 1 zealot
+	return
+	
+	:def_dracadin
+	notowns gateway blank_return
+	defb_gg 1 dracadin
+	defb_ag 1 dracadin
+	defu_gg 1 dracadin
+	defu_ag 1 dracadin
+	return
+	
+	:def_ecclesiast
+	notowns gateway blank_return
+	defb_gg 1 ecclesiast
+	defb_ag 1 ecclesiast
+	defu_gg 1 ecclesiast
+	defu_ag 1 ecclesiast
+	return
+	
+	:def_legionnaire
+	notowns cenotaph blank_return
+	defb_gg 1 legionnaire
+	defu_gg 1 legionnaire
+	return
+	
+	:def_hierophant
+	notowns cenotaph blank_return
+	defb_gg 1 hierophant
+	defb_ag 1 hierophant
+	defu_gg 1 hierophant
+	defu_ag 1 hierophant
+	return
+	
+	:def_amaranth
+	notowns grand_library blank_return
+	defb_gg 1 amaranth
+	defu_gg 1 amaranth
+	return
+	
+	:def_atreus
+	notowns grand_library blank_return
+	defb_gg 1 atreus
+	defb_ag 1 atreus
+	defu_gg 1 atreus
+	defu_ag 1 atreus
+	return
+	
+	:def_herald
+	notowns grand_library blank_return
+	defb_gg 1 herald
+	defb_ag 1 herald
+	defu_gg 1 herald
+	defu_ag 1 herald
+	return
+	
+	:def_vagrant
+	notowns rogue_gallery blank_return
+	defb_gg 1 vagrant
+	defb_ag 1 vagrant
+	defu_gg 1 vagrant
+	defu_ag 1 vagrant
+	return
+	
+	:def_cabalist
+	notowns rogue_gallery blank_return
+	defb_gg 1 cabalist
+	defu_gg 1 cabalist
+	return
+	
+	:def_barghest
+	notowns rogue_gallery blank_return
+	defb_gg 1 barghest
+	defb_ga 1 barghest
+	defb_ag 1 barghest
+	defb_aa 1 barghest
+	defu_gg 1 barghest
+	defu_ga 1 barghest
+	defu_ag 1 barghest
+	defu_aa 1 barghest
+	return
+	
+	:def_pariah
+	notowns prostration_stage blank_return
+	defb_gg 1 pariah
+	defb_ag 1 pariah
+	defu_gg 1 pariah
+	defu_ag 1 pariah
+	return
+	
+	:def_charlatan
+	notowns prostration_stage blank_return
+	defb_gg 1 charlatan
+	defb_ag 1 charlatan
+	defu_gg 1 charlatan
+	defu_ag 1 charlatan
+	return
+	
+	:def_archon
+	notowns ancestral_archives blank_return
+	defb_gg 1 archon
+	defb_ag 1 archon
+	defu_gg 1 archon
+	defu_ag 1 archon
+	return
+	
+	:def_optecton
+	notowns ancestral_archives blank_return
+	defb_gg 1 optecton
+	defb_ag 1 optecton
+	defu_gg 1 optecton
+	defu_ag 1 optecton
+	return
+	
+	:def_patriarch
+	notowns ancestral_archives blank_return
+	defb_gg 1 patriarch
+	defb_ag 1 patriarch
+	defu_gg 1 patriarch
+	defu_ag 1 patriarch
+	return
+	
+	:def_aurora
+	notowns stargate blank_return
+	defb_gg 1 aurora
+	defb_ga 1 aurora
+	defb_ag 1 aurora
+	defb_aa 1 aurora
+	defu_gg 1 aurora
+	defu_ga 1 aurora
+	defu_ag 1 aurora
+	defu_aa 1 aurora
+	return
+	
+	:defPanoptus
+	notowns stargate blank_return
+	defb_gg 1 panoptus
+	defb_ga 1 panoptus
+	defb_ag 1 panoptus
+	defb_aa 1 panoptus
+	defu_gg 1 panoptus
+	defu_ga 1 panoptus
+	defu_ag 1 panoptus
+	defu_aa 1 panoptus
+	return
+	
+	:defLanifect
+	notowns stargate blank_return
+	defb_ag 1 lanifect
+	defu_ag 1 lanifect
+	defu_aa 1 lanifect
+	return
+	
+	:def_exemplar
+	notowns astral_omen blank_return
+	defb_gg 1 exemplar
+	defb_ga 1 exemplar
+	defu_gg 1 exemplar
+	defu_ga 1 exemplar
+	return
+	
+	:def_gladius
+	notowns astral_omen blank_return
+	defb_gg 1 gladius
+	defb_ga 1 gladius
+	defb_ag 1 gladius
+	defb_aa 1 gladius
+	defu_gg 1 gladius
+	defu_ga 1 gladius
+	defu_ag 1 gladius
+	defu_aa 1 gladius
+	return
+	
+	:def_magister
+	notowns argosy blank_return
+	defb_gg 1 magister
+	defb_ga 1 magister
+	defb_ag 1 magister
+	defb_aa 1 magister
+	defu_gg 1 magister
+	defu_ga 1 magister
+	defu_ag 1 magister
+	defu_aa 1 magister
+	return
+	
+	:def_epigraph
+	notowns argosy blank_return
+	defb_gg 1 epigraph
+	defb_ga 1 epigraph
+	defb_ag 1 epigraph
+	defb_aa 1 epigraph
+	defu_gg 1 epigraph
+	defu_ga 1 epigraph
+	defu_ag 1 epigraph
+	defu_aa 1 epigraph
+	return
+	
+	:def_didact
+	notowns argosy blank_return
+	defb_gg 1 didact
+	defb_ga 1 didact
+	defb_ag 1 didact
+	defb_aa 1 didact
+	defu_gg 1 didact
+	defu_ga 1 didact
+	defu_ag 1 didact
+	defu_aa 1 didact
+	return
+	
+	:def_empyrean
+	notowns fleet_beacon blank_return
+	defb_gg 1 empyrean
+	defb_ga 1 empyrean
+	defb_ag 1 empyrean
+	defb_aa 1 empyrean
+	defu_gg 1 empyrean
+	defu_ga 1 empyrean
+	defu_ag 1 empyrean
+	defu_aa 1 empyrean
+	return
+	
+	:def_solarion
+	notowns fleet_beacon blank_return
+	defb_gg 1 solarion
+	defb_ga 1 solarion
+	defb_ag 1 solarion
+	defb_aa 1 solarion
+	defu_gg 1 solarion
+	defu_ga 1 solarion
+	defu_ag 1 solarion
+	defu_aa 1 solarion
+	return
+	
+	:def_starsovereign
+	notowns monument_of_sin blank_return
+	defb_gg 1 star_sovereign
+	defb_ga 1 star_sovereign
+	defb_ag 1 star_sovereign
+	defb_aa 1 star_sovereign
+	defu_gg 1 star_sovereign
+	defu_ga 1 star_sovereign
+	defu_ag 1 star_sovereign
+	defu_aa 1 star_sovereign
+	return
+	
+	:init_area_town
+	start_areatown
+	goto init_body
+	
+	:init_town
+	start_town
+	
+	:init_body
+	wait 1
+	set_free_id
+	return
+	
+	:town_handling
+	multi main_worker_start
+	multi main_transport
+	bld 1 nexus 110
+	w_bld 1 nexus
+	wait 24
+	multi build_order
+	call main_wait_1500
+	bld 1 pylon 100
+	w_bld 1 pylon
+	var Ex|Jump skip_building_var 1 idle 13
+	wait 300
+	call main_wait_300
+	multi request_pylon
+	call main_wait_600
+	multi request_static_defense
+	var Ex|Wait build_done_var 1 13
+	call main_wait_1800
+	p_need 1 embassy
+	call main_wait_3600
+	multi request_crucible
+	call main_wait_3600
+	p_need 1 strident_stratum
+	goto idle
+	
+	:worker_conditions
+	wait 12
+	res 13 AtL Ore 500 blank_return
+	var Ex|WF(360) under_attack_var 0 13
+	return
+	
+	:worker_request_advanced
+	local 255 AtL 28 scribe|artisan blank_return
+	local 255 Ex 0 strident_stratum blank_return
+	local 255 AtL 10 artisan blank_return
+	queue 1 artisan strident_stratum 255 Local Loc.63 200
+	wait 150
+	return
+	
+	:main_worker_start
+	multi worker_track
+	
+	:main_worker_loop
+	wait 150
+	var AtL|Wait can_worker_var 1 13
+	local 255 AtL 24 scribe main_worker_loop
+	res 13 AtL_W Ore 50 blank
+	call worker_conditions
+	c_queues train scribe|artisan 13
+	local 255 AtL 28 scribe|artisan main_worker_loop
+	res 13 AtL_C Any 100 worker_request_advanced
+	queue 1 scribe nexus 255 Local Loc.63 200
+	local 255 Ex 0 embassy main_worker_loop_2
+	queue 1 scribe embassy 255 Local Loc.63 200
+	:main_worker_loop_2
+	wait 300
+	goto main_worker_loop
+	
+	:worker_track
+	wait 120
+	local 255 AtL_W 10 scribe|artisan blank
+	var Add mining_count_var 1 13
+	local 255 AtM_W 9 scribe|artisan blank
+	var Sub mining_count_var 1 13
+	goto worker_track
+	
+	:main_transport
+	multi island_check
+	wait 150
+	call main_wait_150
+	multi main_transport_on
+	
+	:main_transport_loop
+	wait 12
+	bring 13 AtM_C 10 envoy Loc.63 main_wait_600
+	bring 13 Ex 0 embassy Loc.63 main_transport_loop
+	var Ex|WF(360) under_attack_var 0 13
+	bring 13 AtL 6 envoy Loc.63 main_transport_loop
+	bring 13 AtL 4 envoy Loc.63 main_transport_loop_2
+	queue 1 envoy embassy 255 Global Loc.63 100
+	wait 360
+	var Ex|Jump is_island_var 1 main_transport_wait 13
+	wait 360
+	goto main_transport_wait
+	
+	:main_transport_loop_2
+	queue 1 envoy embassy 255 Global Loc.63 100
+	wait 540
+	var Ex|Jump is_island_var 1 main_transport_wait 13
+	wait 540
+	goto main_transport_wait
+	
+	:main_transport_wait
+	var Ex|Jump pref_ranger 1 main_transport_loop 13
+	wait 720
+	var Ex|Jump pref_templar 1 main_transport_loop 13
+	wait 720
+	goto main_transport_loop
+	
+	:main_transport_on
+	bring 13 AtL_W 1 embassy|envoy Loc.63 blank
+	check_transports
+	stop
+	
+	:island_check
+	var Ex|Jump skip_building_var 1 blank 13
+	groundmap_jump blank
+	var Set is_island_var 1 13
+	bring 13 AtL_W 12 scribe Loc.63 blank
+	bld 1 embassy 105
+	stop
+	
+	:main_wait_150
+	wait 24
+	res 13 AtL Any 500 blank_return
+	wait 150
+	return
+	
+	:main_wait_300
+	wait 24
+	res 13 AtL Any 500 blank_return
+	wait 300
+	return
+	
+	:main_wait_450
+	wait 24
+	call main_wait_300
+	call main_wait_150
+	return
+	
+	:main_wait_600
+	wait 24
+	res 13 AtL Any 800 blank_return
+	res 13 AtL Any 500 main_wait_300
+	wait 600
+	return
+	
+	:main_wait_750
+	wait 24
+	call main_wait_600
+	call main_wait_150
+	return
+	
+	:main_wait_900
+	wait 24
+	res 13 AtL Any 1100 blank_return
+	res 13 AtL Any 800 main_wait_600
+	res 13 AtL Any 500 main_wait_300
+	wait 900
+	return
+	
+	:main_wait_1200
+	wait 24
+	call main_wait_900
+	call main_wait_300
+	return
+	
+	:main_wait_1500
+	wait 24
+	call main_wait_1200
+	call main_wait_300
+	return
+	
+	:main_wait_1800
+	wait 24
+	call main_wait_900
+	call main_wait_900
+	return
+	
+	:main_wait_2400
+	wait 24
+	call main_wait_1200
+	call main_wait_1200
+	return
+	
+	:main_wait_3600
+	wait 24
+	call main_wait_1200
+	call main_wait_1200
+	return
+	
+	:expansion_request_conditions
+	var AtM|Jump mining_count_var 1 blank_return 13
+	res 13 AtL Ore 600 blank_return
+	res 13 AtL Ore 350 expansion_request_cut_some
+	res 13 AtL Ore 250 expansion_request_cut_most
+	goto expansion_request_cut_all
+	
+	:expansion_request_cut_some
+	var Set can_queue_early_military_var 0 13
+	return
+	
+	:expansion_request_cut_most
+	call expansion_request_cut_some
+	var Set can_build_static_defense_var 0 13
+	var Set can_build_production_var 0 13
+	return
+	
+	:expansion_request_cut_all
+	call expansion_request_cut_most
+	var Set can_worker_var 0 13 # sub?
+	return
+	
+	:expansion_request_reset
+	var Set can_queue_early_military_var 1 13
+	var Set can_attack_var 1 13
+	var Set can_build_static_defense_var 1 13
+	var Set can_build_production_var 1 13
+	var Set can_worker_var 1 13 # add?
+	return
+	
+	:expansion_toggle
+	var Add can_expand_var 1 13
+	wait 720
+	var Sub can_expand_var 1 13
+	stop
+	
+	:expansion_loop
+	var AtL|Wait can_expand_var 1 13
+	call expansion_request_conditions
+	var Set try_expand_var 1 13
+	call expansion_loop_normal
+	wait 720
+	call expansion_request_reset
+	wait 1080
+	res 13 AtL Ore 800 expansion_loop
+	call expansion_loop_wait
+	goto expansion_loop
+	
+	:expansion_loop_normal
+	expand 9 expansion_init
+	return
+	
+	:expansion_loop_wait
+	var AtM|Jump mining_count_var 1 blank_return 13
+	wait 3600
+	var AtM|Jump mining_count_var 2 blank_return 13
+	wait 3600
+	var AtM|Jump mining_count_var 3 blank_return 13
+	wait 3600
+	var AtM|Jump mining_count_var 4 blank_return 13
+	wait 3600
+	var AtM|Jump mining_count_var 5 blank_return 13
+	wait 3600
+	return
+	
+	:expansion_init_area_town
+	call init_area_town
+	goto expansion_body
+	
+	:expansion_init
+	call init_town
+	
+	:expansion_body
+	bld 1 nexus 180
+	multi expansion_worker_start
+	w_bldstart 1 nexus
+	var Set try_expand_var 0 13
+	w_bld 1 nexus
+	multi count_expansion
+	bld 1 pylon 98
+	var Ex|Jump skip_building_var 1 idle 13
+	placeholder_count Local AtL|Jump 2 Group_Buildings idle 13
+	
+	:expansion_normal
+	multi request_pylon
+	w_bld 1 pylon
+	multi request_static_defense
+	call main_wait_1200
+	multi production_cycle
+	call main_wait_1800
+	var Ex|Wait build_done_var 1 13
+	call main_wait_1200
+	multi request_strident_stratum
+	call main_wait_1200
+	multi request_embassy
+	call main_wait_600
+	multi request_crucible
+	call main_wait_600
+	multi build_order_expansion
+	goto idle
+	
+	:count_expansion
+	wait 12
+	local 255 Ex 0 nexus count_expansion
+	var add town_count_var 1 13
+	local 255 Ex_W 0 nexus blank
+	var sub town_count_var 1 13
+	goto count_expansion
+	
+	:save_money_for_expansion
+	wait 12
+	time AtM 5760 Frames save_money_for_expansion # 5 minutes
+	res 13 AtL Ore 450 save_money_for_expansion
+	var Ex|Wait try_expand_var 1 13
+	var Set can_build_static_defense_var 0 13
+	var Set can_queue_early_military_var 0 13
+	var Ex|Wait try_expand_var 0 13
+	call build_bool
+	goto save_money_for_expansion
+	
+	:expansion_worker_start
+	wait 24
+	local 255 Ex 0 nexus expansion_worker_start
+	bld 1 scribe 98
+	w_bldstart 1 nexus
+	bld 2 scribe 98
+	w_bld 1 nexus
+	bld 4 scribe 98
+	maynard 4
+	
+	:expansion_worker_standard_start
+	multi worker_track
+	
+	:expansion_worker_standard_loop
+	wait 150
+	local 255 AtL 28 scribe|artisan expansion_worker_standard_loop
+	res 13 AtL_W Ore 50 blank
+	call worker_conditions
+	c_queues train scribe|artisan 13
+	res 13 AtL_C Any 100 worker_request_advanced
+	queue 1 scribe nexus 255 Local Loc.63 200
+	local 255 Ex 0 embassy expansion_worker_standard_loop_2
+	queue 1 scribe embassy 255 Local Loc.63 200
+	
+	:expansion_worker_standard_loop_2
+	wait 150
+	goto expansion_worker_standard_loop
+	
+	:tech_handling
+#	I may need this block in the future;
+#	Currently, Protoss have no tech requirements, so we rely on production_cycle for everything
+	wait 1
+	stop
+	
+	:build_bool
+	# These are used no matter what!
+	var Add can_worker_var 1 13
+	var Add can_expand_var 1 13
+	var Set can_attack_var 1 13
+	var Set build_gas_var 1 13
+	var Set build_done_var 1 13
+	# These are not used if skip_building_var is true!
+	var Set can_build_static_defense_var 1 13
+	var Set can_queue_early_military_var 1 13
+	var Set can_build_production_var 1 13
+	return
+	
+	:build_order
+	var Ex|Jump skip_building_var 1 build_order_skip 13
+	var Ex|Call use_custom_timers_var 1 build_order_custom_timers 13
+	var Ex|Jump pref_scenario 1 build_order_scenario 13 # Above all others since scenarios have mixed personality preferences
+	var Ex|Jump pref_ranger 1 build_order_ranger 13
+	var Ex|Jump pref_templar 1 build_order_templar 13
+	var Ex|Jump pref_skylord 1 build_order_skylord 13
+	goto build_order_gen
+	
+	:build_order_skip
+	var Ex|Jump debug_ai_messages_var 0 build_order_skip_main 13
+	print Protoss<32>AI<32>skips<32>build<32>order!
+	
+	:build_order_custom_timers
+	wait 1
+	var Ex|Jump debug_ai_messages_var 0 build_order_skip_main_pre 13
+	print Protoss<32>AI<32>uses<32>custom<32>timers<32>without<32>skipping<32>build<32>order!
+	
+	:build_order_skip_main_pre
+	multi build_order_skip_main
+	return
+	
+	:build_order_skip_main
+	var Ex|Jump build_type_is_timing_var 1 build_order_skip_timing 13
+	var Ex|Jump build_type_is_rush_var 1 build_order_skip_rush 13
+	var Ex|Jump build_type_is_greed_var 1 build_order_skip_greed 13
+	
+	:build_order_skip_timing
+	multi build_order_skip_timing_gas
+	multi build_order_skip_timing_expand
+	multi build_order_skip_timing_attack
+	var Ex|Jump debug_ai_messages_var 0 build_order_skip_final 13
+	goto build_order_skip_final
+	
+	:build_order_skip_timing_gas
+	dth 13 AtL 1 mineral_field1 build_order_skip_custom_gas
+	call main_wait_450
+	bld 1 aquifer 105
+	call main_wait_450
+	var Add build_gas_var 1 13
+	stop
+	
+	:build_order_skip_timing_expand
+	dth 13 AtL 1 mineral_field2 build_order_skip_custom_expansions
+	call main_wait_1200
+	call main_wait_1200
+	call main_wait_600
+	var Add can_expand_var 1 13
+	stop
+	
+	:build_order_skip_timing_attack
+	dth 13 AtL 1 mineral_field3 build_order_skip_custom_attack
+	call main_wait_1200
+	call main_wait_900
+	var Add can_attack_var 1 13
+	stop
+	
+	:build_order_skip_rush
+	multi build_order_skip_rush_gas
+	multi build_order_skip_rush_expand
+	multi build_order_skip_rush_attack
+	var Ex|Jump debug_ai_messages_var 0 build_order_skip_final 13
+	goto build_order_skip_final
+	
+	:build_order_skip_rush_gas
+	call main_wait_450
+	var Add build_gas_var 1 13
+	stop
+	
+	:build_order_skip_rush_expand
+	call main_wait_450
+	call main_wait_1500
+	call main_wait_2400
+	var Add can_expand_var 1 13
+	stop
+	
+	:build_order_skip_rush_attack
+	call main_wait_450
+	call main_wait_1500
+	var Add can_attack_var 1 13
+	stop
+	
+	:build_order_skip_greed
+	multi build_order_skip_greed_gas
+	multi build_order_skip_greed_expand
+	multi build_order_skip_greed_attack
+	var Ex|Jump debug_ai_messages_var 0 build_order_skip_final 13
+	goto build_order_skip_final
+	
+	:build_order_skip_greed_gas
+	call main_wait_900
+	bld 1 aquifer 105
+	call main_wait_900
+	var Add build_gas_var 1 13
+	
+	:build_order_skip_greed_expand
+	call main_wait_450
+	var Add can_expand_var 1 13
+	stop
+	
+	:build_order_skip_greed_attack
+	call main_wait_1800
+	call main_wait_2400
+	var Add can_attack_var 1 13
+	stop
+	
+	:build_order_skip_custom_gas
+	var Ex|Jump debug_ai_messages_var 0 build_order_skip_custom_gas_Loop 13
+	print Protoss<32>AI<32>custom<32>gas<32>timer<32>started...
+	
+	:build_order_skip_custom_gas_Loop
+	wait 24
+	dth 13 Sub 1 mineral_field1 blank
+	dth 13 AtL 1 mineral_field1 build_order_skip_custom_gas_Loop
+	var Set build_gas_var 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank 13
+	print Protoss<32>AI<32>gets<32>gas<32>at<32>a<32>custom<32>time!
+	stop
+	
+	:build_order_skip_custom_expansions
+	var Ex|Jump debug_ai_messages_var 0 build_order_skip_custom_expansions_Loop 13
+	print Protoss<32>AI<32>custom<32>expansion<32>timer<32>started...
+	
+	:build_order_skip_custom_expansions_Loop
+	wait 24
+	dth 13 Sub 1 mineral_field2 blank
+	dth 13 AtL 1 mineral_field2 build_order_skip_custom_expansions_Loop
+	var Add can_expand_var 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank 13
+	print Protoss<32>AI<32>expands<32>at<32>a<32>custom<32>time!
+	stop
+	
+	:build_order_skip_custom_attack
+	var Ex|Jump debug_ai_messages_var 0 build_order_skip_custom_attack_Loop 13
+	print Protoss<32>AI<32>custom<32>attack<32>timer<32>started...
+	
+	:build_order_skip_custom_attack_Loop
+	wait 24
+	dth 13 Sub 1 mineral_field3 blank
+	dth 13 AtL 1 mineral_field3 build_order_skip_custom_attack_Loop
+	var Set can_attack_var 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank 13
+	print Protoss<32>AI<32>attacks<32>at<32>a<32>custom<32>time!
+	stop
+	
+	:build_order_skip_final
+	wait 7200
+	call build_bool
+	stop
+	
+	:build_order_gen
+	dth 13 AtL 1 dark_swarm_unit build_order_general_select
+	var Ex|Jump build_type_is_timing_var 1 build_order_genTypeTiming 13
+	var Ex|Jump build_type_is_rush_var 1 build_order_genTypeRush 13
+	var Ex|Jump build_type_is_greed_var 1 build_order_genTypeGreed 13
+	
+	:build_order_genTypeTiming
+	# 3 timings
+	rand_j 85 build_order_genTypeTiming_1
+	rand_j 128 build_order_genTypeTiming_2
+	goto build_order_genTypeTiming_3
+	
+	:build_order_genTypeTiming_1
+	dth 13 Set 4 dark_swarm_unit blank
+	goto build_order_general_select
+	
+	:build_order_genTypeTiming_2
+	dth 13 Set 5 dark_swarm_unit blank
+	goto build_order_general_select
+	
+	:build_order_genTypeTiming_3
+	dth 13 Set 6 dark_swarm_unit blank
+	goto build_order_general_select
+	
+	:build_order_genTypeRush
+	# 2 rushes
+	rand_j 128 build_order_genTypeRush_1
+	goto build_order_genTypeRush_2
+	
+	:build_order_genTypeRush_1
+	dth 13 Set 2 dark_swarm_unit blank
+	goto build_order_general_select
+	
+	:build_order_genTypeRush_2
+	dth 13 Set 3 dark_swarm_unit blank
+	goto build_order_general_select
+	
+	:build_order_genTypeGreed
+	# 1 greed
+	goto build_order_genTypeGreed_1
+	
+	:build_order_genTypeGreed_1
+	dth 13 Set 1 dark_swarm_unit blank
+	goto build_order_general_select
+	
+	:build_order_general_select
+	dth 13 Ex 1 dark_swarm_unit build_general_LunaticLegion
+	dth 13 Ex 2 dark_swarm_unit build_general_StridentStriders
+	dth 13 Ex 3 dark_swarm_unit build_general_Worship
+	dth 13 Ex 4 dark_swarm_unit build_general_RoboFE
+	dth 13 Ex 5 dark_swarm_unit build_general_TheSwordsmiths
+	dth 13 Ex 6 dark_swarm_unit build_general_Matriarchy
+	
+	:build_general_LunaticLegion
+	var Ex|Jump debug_ai_messages_var 0 build_general_LunaticLegion_Main 13
+	print Protoss<32>General<32>timing<32>1:<32>Lunatic<32>Legion
+	
+	:build_general_LunaticLegion_Main
+	var Ex|Call pref_gateway_units 0 buildpref_cenotaph_legionnaire 13
+	var Ex|Call pref_cenotaph_units 0 buildpref_gateway_ecclesiast 13
+	var Ex|Call pref_roguegallery_units 0 buildpref_roguegallery_cabalist 13
+	var Ex|Call pref_lattice_units 0 buildpref_lattice_simulacrum 13
+	var Ex|Call pref_stargate_units 0 buildpref_stargate_aurora 13
+	var Ex|Call pref_astralomen_units 0 buildpref_astralomen_exemplar 13
+	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
+	var Ex|Call pref_skylord_production 0 buildpref_skylord_production_stargate 13
+	call main_wait_300
+	bld 1 pylon 99
+	call main_wait_300
+	w_bld 1 pylon
+	bld 1 gateway 98
+	call main_wait_300
+	call main_wait_300
+	bld 2 gateway 98
+	call main_wait_150
+	bld 2 pylon 99
+	call main_wait_600
+	var Sub can_worker_var 1 13
+	var Add can_expand_var 1 13
+	call main_wait_600
+	var Add can_worker_var 1 13
+	call main_wait_150
+	bld 1 stargate 98
+	call main_wait_300
+	bld 2 stargate 98
+	call main_wait_150
+	call build_bool
+	call main_wait_150
+	bld 3 gateway 98
+	call main_wait_300
+	bld 3 stargate 95
+	call main_wait_300
+	multi production_cycle
+	call main_wait_150
+	bld 4 gateway 98
+	call main_wait_300
+	bld 4 stargate 95
+	call main_wait_300
+	bld 1 grand_library 99
+	call main_wait_300
+	bld 2 grand_library 99
+	call main_wait_300
+	bld 1 argosy 101
+	goto build_general_fin
+	
+	:build_general_StridentStriders
+	var Ex|Jump debug_ai_messages_var 0 build_general_StridentStriders_Main 13
+	print Protoss<32>General<32>rush<32>1:<32>Strident<32>Striders
+	
+	:build_general_StridentStriders_Main
+	var Ex|Call pref_cenotaph_units 0 buildpref_gateway_dracadin 13
+	var Ex|Call pref_grandlibrary_assault 0 buildpref_grandlibrary_assault_atreus 13
+	var Ex|Call pref_templar_production 0 buildpref_templar_production_grandlibrary 13
+	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_sequesteredicon 13
+	call main_wait_600
+	bld 1 pylon 99
+	call main_wait_600
+	w_bld 1 pylon
+	bld 1 gateway 98
+	call main_wait_600
+	bld 2 gateway 98
+	call main_wait_300
+	call main_wait_300
+	bld 2 pylon 99
+	call main_wait_1200
+	var Sub can_worker_var 1 13
+	call main_wait_600
+	bld 1 cenotaph 98
+	call main_wait_600
+	var Set can_attack_var 1 13
+	call main_wait_900
+	multi production_cycle
+	var Add can_worker_var 1 13
+	call main_wait_450
+	goto build_general_fin
+	
+	:build_general_Worship
+	var Ex|Jump debug_ai_messages_var 0 build_general_Worship_Main 13
+	print Protoss<32>General<32>rush<32>2:<32>2Gate<32>Robo
+	
+	:build_general_Worship_Main
+	var Ex|Call pref_cenotaph_units 0 buildpref_gateway_dracadin 13
+	var Ex|Call pref_grandlibrary_assault 0 buildpref_grandlibrary_assault_amaranth 13
+	var Ex|Call pref_lattice_units 0 buildpref_lattice_simulacrum 13
+	var Ex|Call pref_automatonregister_units 0 buildpref_automatonregister_golem 13
+	var Ex|Call pref_sequesteredicon_units 0 buildpref_sequesteredicon_architect 13
+	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
+	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_lattice 13
+	call main_wait_600
+	bld 1 pylon 99
+	call main_wait_600
+	w_bld 1 pylon
+	bld 1 gateway 98
+	call main_wait_600
+	call main_wait_300
+	bld 2 pylon 99
+	call main_wait_300
+	do_morph 1 zealot
+	call main_wait_600
+	bld 1 lattice 98
+	call main_wait_900
+	bld 2 gateway 98
+	call main_wait_600
+	var Sub can_worker_var 1 13
+	call main_wait_300
+	var Set can_attack_var 1 13
+	call main_wait_600
+	var Add can_expand_var 1 13
+	call main_wait_300
+	multi production_cycle
+	call main_wait_300
+	bld 1 cenotaph 98
+	call main_wait_600
+	bld 1 automaton_register 98
+	var Add can_worker_var 1 13
+	call main_wait_300
+	goto build_general_fin
+	
+	:build_general_RoboFE
+	var Ex|Jump debug_ai_messages_var 0 build_general_RoboFE_Main 13
+	print Protoss<32>General<32>greed<32>1:<32>Robo<32>FE
+	
+	:build_general_RoboFE_Main
+	var Ex|Call pref_gateway_units 0 buildpref_gateway_zealot 13
+	var Ex|Call pref_cenotaph_units 0 buildpref_cenotaph_hierophant 13
+	var Ex|Call pref_lattice_units 0 buildpref_lattice_vassal 13
+	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
+	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_automatonregister 13
+	call main_wait_750
+	var Add can_expand_var 1 13
+	call main_wait_300
+	bld 1 pylon 99
+	call main_wait_300
+	w_bld 1 pylon
+	bld 1 lattice 98
+	call main_wait_300
+	bld 2 pylon 98
+	call main_wait_300
+	bld 2 lattice 98
+	call main_wait_900
+	bld 1 sequestered_icon 101
+	call main_wait_300
+	var Set can_build_static_defense_var 1 13
+	call main_wait_600
+	bld 2 sequestered_icon 101
+	call main_wait_900
+	bld 1 synthetic_synod 99
+	call main_wait_300
+	multi production_cycle
+	call main_wait_300
+	bld 1 prostration_stage 100
+	call main_wait_300
+	goto build_general_fin
+	
+	:build_general_TheSwordsmiths
+	var Ex|Jump debug_ai_messages_var 0 build_general_TheSwordsmiths_Main 13
+	print Protoss<32>General<32>timing<32>2:<32>The<32>Swordsmiths
+	
+	:build_general_TheSwordsmiths_Main
+	var Ex|Call pref_gateway_units 0 buildpref_gateway_zealot 13
+	var Ex|Call pref_lattice_units 0 buildpref_lattice_manifold 13
+	var Ex|Call pref_sequesteredicon_units 0 buildpref_sequesteredicon_architect 13
+	var Ex|Call pref_astralomen_units 0 buildpref_astralomen_gladius 13
+	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
+	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_sequesteredicon 13
+	var Ex|Call pref_skylord_production 0 buildpref_skylord_production_astralomen 13
+	call main_wait_600
+	bld 1 pylon 99
+	w_bld 1 pylon
+	bld 1 gateway 99
+	call main_wait_300
+	bld 1 lattice 99
+	call main_wait_600
+	multi expansion_toggle
+	call main_wait_300
+	bld 2 pylon 99
+	call main_wait_600
+	var Set can_attack_var 1 13
+	call main_wait_600
+	var Set build_gas_var 1 13
+	call main_wait_150
+	bld 1 sequestered_icon 101
+	call main_wait_300
+	bld 1 astral_omen 100
+	call main_wait_600
+	var Set can_build_static_defense_var 1 13
+	call main_wait_300
+	bld 2 astral_omen 100
+	call main_wait_900
+	bld 2 sequestered_icon 101
+	call main_wait_300
+	multi production_cycle
+	call main_wait_300
+	goto build_general_fin
+	
+	:build_general_Matriarchy
+	var Ex|Jump debug_ai_messages_var 0 build_general_Matriarchy_Main 13
+	print Protoss<32>General<32>timing<32>3:<32>Matriarchy
+	
+	:build_general_Matriarchy_Main
+	var Ex|Call pref_gateway_units 0 buildpref_gateway_zealot 13
+	var Ex|Call pref_cenotaph_units 0 buildpref_cenotaph_hierophant 13
+	var Ex|Call pref_grandlibrary_assault 0 buildpref_grandlibrary_assault_amaranth 13
+	var Ex|Call pref_lattice_units 0 buildpref_lattice_vassal 13
+	var Ex|Call pref_sequesteredicon_units 0 buildpref_sequesteredicon_accantor 13
+	var Ex|Call pref_syntheticsynod_units 0 buildpref_syntheticsynod_empress 13
+	var Ex|Call pref_argosy_units 0 buildpref_argosy_epigraph 13
+	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
+	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_syntheticsynod 13
+	var Ex|Call pref_skylord_production 0 buildpref_skylord_production_argosy 13
+	call main_wait_600
+	bld 1 pylon 99
+	w_bld 1 pylon
+	bld 1 gateway 99
+	call main_wait_300
+	bld 1 lattice 99
+	call main_wait_300
+	bld 2 lattice 99
+	call main_wait_900
+	var Set can_attack_var 1 13
+	call main_wait_600
+	bld 2 pylon 99
+	call main_wait_150
+	multi expansion_toggle
+	call main_wait_600
+	var Set can_build_static_defense_var 1 13
+	call main_wait_300
+	var Set build_gas_var 1 13
+	bld 2 cenotaph 98
+	call main_wait_600
+	bld 1 grand_library 101
+	call main_wait_300
+	bld 3 lattice 98
+	call main_wait_600
+	bld 2 synthetic_synod 101
+	call main_wait_1200
+	multi production_cycle
+	call main_wait_300
+	goto build_general_fin
+	
+	:build_general_fin
+	call build_bool
+	var AtL skip_building_var 1 blank 13
+	
+	:build_general_fin2
+	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
+	call main_wait_600
+	call need_gateway
+	call main_wait_300
+	call need_embassy
+	call main_wait_450
+	call need_cenotaph
+	call main_wait_300
+	call wLattice2
+	call main_wait_300
+	call need_stargate
+	call main_wait_300
+	call need_automatonregister
+	call main_wait_300
+	call need_grandlibrary
+	call need_ancestralarchives
+	call main_wait_1200
+	call need_fleetbeacon
+	call main_wait_600
+	call main_wait_900
+	call need_sanctumofsorrow
+	stop
+	
+	:build_order_ranger
+	dth 13 AtL 1 dark_swarm_unit build_order_ranger_select
+	var Ex|Jump build_type_is_timing_var 1 build_order_ranger_type_timing 13
+	var Ex|Jump build_type_is_rush_var 1 build_order_ranger_type_rush 13
+	var Ex|Jump build_type_is_greed_var 1 build_order_ranger_type_greed 13
+	
+	:build_order_ranger_type_timing
+	# 3 timings
+	rand_j 85 build_order_ranger_type_timing_1
+	rand_j 128 build_order_ranger_type_timing_2
+	goto build_order_ranger_type_timing_3
+	
+	:build_order_ranger_type_timing_1
+	dth 13 Set 1 dark_swarm_unit blank
+	goto build_order_ranger_select
+	
+	:build_order_ranger_type_timing_2
+	dth 13 Set 3 dark_swarm_unit blank
+	goto build_order_ranger_select
+	
+	:build_order_ranger_type_timing_3
+	dth 13 Set 6 dark_swarm_unit blank
+	goto build_order_ranger_select
+	
+	:build_order_ranger_type_rush
+	# 2 rushes
+	rand_j 128 build_order_ranger_type_rush_1
+	goto build_order_ranger_type_rush_2
+	
+	:build_order_ranger_type_rush_1
+	dth 13 Set 2 dark_swarm_unit blank
+	goto build_order_ranger_select
+	
+	:build_order_ranger_type_rush_2
+	dth 13 Set 5 dark_swarm_unit blank
+	goto build_order_ranger_select
+	
+	:build_order_ranger_type_greed
+	# 1 greed
+	goto build_order_ranger_type_greed_1
+	
+	:build_order_ranger_type_greed_1
+	dth 13 Set 4 dark_swarm_unit blank
+	goto build_order_ranger_select
+	
+	:build_order_ranger_select
+	dth 13 Ex 1 dark_swarm_unit build_ranger_2GateStrider
+	dth 13 Ex 2 dark_swarm_unit build_ranger_EmissarySquared
+	dth 13 Ex 3 dark_swarm_unit build_ranger_1GateRobo
+	dth 13 Ex 4 dark_swarm_unit build_ranger_LatticeExpo
+	dth 13 Ex 5 dark_swarm_unit build_ranger_SimulantSwarm
+	dth 13 Ex 7 dark_swarm_unit build_ranger_TheRegistry
+	
+	:build_ranger_2GateStrider
+	var Ex|Jump debug_ai_messages_var 0 build_ranger_2GateStrider_Main 13
+	print Protoss<32>Ranger<32>timing<32>1:<32>2Gate<32>Strider
+	
+	:build_ranger_2GateStrider_Main
+	var Ex|Call pref_cenotaph_units 0 buildpref_gateway_dracadin 13
+	var Ex|Call pref_lattice_units 0 buildpref_lattice_vassal 13
+	var Ex|Call pref_automatonregister_units 0 buildpref_automatonregister_idol 13
+	var Ex|Call pref_sequesteredicon_units 0 buildpref_sequesteredicon_accantor 13
+	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
+	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_sequesteredicon 13
+	var Ex|Call pref_skylord_production 0 buildpref_skylord_production_argosy 13
+	call main_wait_300
+	bld 1 pylon 99
+	call main_wait_300
+	w_bld 1 pylon
+	bld 1 gateway 98
+	call main_wait_450
+	bld 2 gateway 98
+	call main_wait_600
+	queue 1 zealot gateway 255 Local Loc.63 100
+	call main_wait_150
+	bld 3 gateway 98
+	call main_wait_300
+	queue 1 zealot gateway 255 Local Loc.63 100
+	wait 24
+	queue 1 dracadin gateway 255 Local Loc.63 100
+	call main_wait_150
+	queue 1 dracadin gateway 255 Local Loc.63 100
+	call main_wait_150
+	var Sub can_worker_var 1 13
+	multi expansion_toggle
+	call main_wait_600
+	var Add can_worker_var 1 13
+	call main_wait_450
+	bld 1 cenotaph 98
+	call main_wait_150
+	bld 1 lattice 98
+	call main_wait_450
+	bld 1 grand_library 99
+	call main_wait_300
+	bld 4 gateway 98
+	multi production_cycle
+	goto build_ranger_fin
+	
+	:build_ranger_EmissarySquared
+	var Ex|Jump debug_ai_messages_var 0 build_ranger_EmissarySquared_Main 13
+	print Protoss<32>Ranger<32>timing<32>2:<32>Emissary<32>Squared
+	
+	:build_ranger_EmissarySquared_Main
+	var Ex|Call pref_cenotaph_units 0 buildpref_gateway_dracadin 13
+	var Ex|Call pref_lattice_units 0 buildpref_lattice_vassal 13
+	var Ex|Call pref_automatonregister_units 0 buildpref_automatonregister_golem 13
+	var Ex|Call pref_sequesteredicon_units 0 buildpref_sequesteredicon_accantor 13
+	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_sequesteredicon 13
+	call main_wait_900
+	multi expansion_toggle
+	call main_wait_600
+	bld 1 pylon 99
+	w_bld 1 pylon
+	bld 1 gateway 98
+	call main_wait_300
+	call main_wait_900
+	bld 1 lattice 98
+	call main_wait_300
+	bld 2 pylon 99
+	call main_wait_300
+	queue 1 zealot gateway 255 Local Loc.63 100
+	call main_wait_600
+	bld 1 sequestered_icon 99
+	call main_wait_900
+	wait 24
+	bld 1 automaton_register 98
+	wait 60
+	bld 2 gateway 98
+	call main_wait_300
+	bld 1 cenotaph 98
+	wait 24
+	var Set can_build_static_defense_var 1 13
+	call main_wait_300
+	bld 3 gateway 98
+	call main_wait_300
+	bld 2 lattice 98
+	call main_wait_600
+	bld 1 synthetic_synod 101
+	multi production_cycle
+	goto build_ranger_fin
+	
+	:build_ranger_1GateRobo
+	var Ex|Jump debug_ai_messages_var 0 build_ranger_1GateRobo_Main 13
+	print Protoss<32>Ranger<32>rush<32>1:<32>1Gate<32>Robo
+	
+	:build_ranger_1GateRobo_Main
+	var Ex|Call pref_cenotaph_units 0 buildpref_gateway_ecclesiast 13
+	var Ex|Call pref_lattice_units 0 buildpref_lattice_manifold 13
+	var Ex|Call pref_automatonregister_units 0 buildpref_automatonregister_idol 13
+	var Ex|Call pref_sequesteredicon_units 0 buildpref_sequesteredicon_accantor 13
+	var Ex|Call pref_roguegallery_units 0 buildpref_roguegallery_barghest 13
+	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_sequesteredicon 13
+	call main_wait_600
+	bld 1 pylon 99
+	call main_wait_600
+	w_bld 1 pylon
+	bld 1 gateway 98
+	call main_wait_600
+	bld 2 pylon 99
+	call main_wait_300
+	bld 1 lattice 98
+	wait 24
+	do_morph 1 zealot
+	call main_wait_300
+	var Sub can_worker_var 1 13
+	call main_wait_300
+	var Set can_attack_var 1 13
+	call main_wait_600
+	bld 2 gateway 98
+	call main_wait_600
+	var Add can_worker_var 1 13
+	call main_wait_450
+	bld 1 cenotaph 98
+	call main_wait_600
+	bld 1 sequestered_icon 99
+	call main_wait_300
+	bld 2 gateway 98
+	wait 24
+	var Sub can_worker_var 1 13
+	multi expansion_toggle
+	call main_wait_600
+	var Add can_worker_var 1 13
+	wait 24
+	bld 1 automaton_register 98
+	call main_wait_300
+	bld 2 lattice 98
+	call main_wait_150
+	bld 3 lattice 98
+	wait 24
+	var Set can_build_static_defense_var 1 13
+	call main_wait_300
+	bld 1 synthetic_synod 101
+	call main_wait_300
+	bld 2 sequestered_icon 99
+	wait 24
+	multi production_cycle
+	goto build_ranger_fin
+	
+	:build_ranger_SimulantSwarm
+	var Ex|Jump debug_ai_messages_var 0 build_ranger_SimulantSwarm_Main 13
+	print Protoss<32>Ranger<32>rush<32>2:<32>Simulant<32>Swarm
+	
+	:build_ranger_SimulantSwarm_Main
+	var Ex|Call pref_cenotaph_units 0 buildpref_gateway_ecclesiast 13
+	var Ex|Call pref_lattice_units 0 buildpref_lattice_simulacrum 13
+	var Ex|Call pref_automatonregister_units 0 buildpref_automatonregister_golem 13
+	var Ex|Call pref_sequesteredicon_units 0 buildpref_sequesteredicon_architect 13
+	var Ex|Call pref_roguegallery_units 0 buildpref_roguegallery_barghest 13
+	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_lattice 13
+	call main_wait_600
+	bld 1 pylon 99
+	call main_wait_600
+	call main_wait_600
+	bld 2 pylon 99
+	call main_wait_600
+	w_bld 1 pylon
+	bld 1 lattice 98
+	call main_wait_600
+	bld 2 lattice 98
+	call main_wait_300
+	bld 3 pylon 99
+	call main_wait_300
+	var Sub can_worker_var 1 13
+	call main_wait_300
+	bld 3 lattice 98
+	call main_wait_600
+	bld 4 lattice 98
+	call main_wait_450
+	var Set can_attack_var 1 13
+	call main_wait_900
+	var Add can_expand_var 1 13
+	call main_wait_300
+	var Add can_worker_var 1 13
+	call main_wait_150
+	bld 1 automaton_register 98
+	call main_wait_150
+	var Set can_build_static_defense_var 1 13
+	call main_wait_300
+	goto build_ranger_fin
+	
+	:build_ranger_LatticeExpo
+	var Ex|Jump debug_ai_messages_var 0 build_ranger_LatticeExpo_Main 13
+	print Protoss<32>Ranger<32>greed<32>1:<32>Lattice<32>Expo
+	
+	:build_ranger_LatticeExpo_Main
+	var Ex|Call pref_cenotaph_units 0 buildpref_gateway_dracadin 13
+	var Ex|Call pref_lattice_units 0 buildpref_lattice_simulacrum 13
+	var Ex|Call pref_automatonregister_units 0 buildpref_automatonregister_idol 13
+	var Ex|Call pref_sequesteredicon_units 0 buildpref_sequesteredicon_architect 13
+	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
+	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_sequesteredicon 13
+	call main_wait_600
+	bld 1 pylon 97
+	call main_wait_900
+	w_bld 1 pylon
+	bld 1 lattice 98
+	call main_wait_600
+	multi expansion_toggle
+	call main_wait_300
+	var Sub can_worker_var 1 13
+	call main_wait_600
+	bld 2 lattice 98
+	call main_wait_450
+	multi expansion_toggle
+	call main_wait_300
+	var Add can_worker_var 1 13
+	call main_wait_750
+	var Set can_build_static_defense_var 1 13
+	call main_wait_300
+	var Set build_gas_var 1 13
+	call main_wait_600
+	bld 1 automaton_register 98
+	call main_wait_600
+	bld 2 automaton_register 98
+	call main_wait_600
+	call expansion_loop_normal
+	call main_wait_450
+	var Set can_attack_var 1 13
+	call main_wait_300
+	bld 1 sequestered_icon 99
+	call main_wait_450
+	var Add can_expand_var 1 13
+	call main_wait_450
+	multi production_cycle
+	call main_wait_300
+	goto build_ranger_fin
+	
+	:build_ranger_TheRegistry
+	var Ex|Jump debug_ai_messages_var 0 build_ranger_TheRegistry_Main 13
+	print Protoss<32>Ranger<32>timing<32>3:<32>The<32>Registry
+	
+	:build_ranger_TheRegistry_Main
+	var Ex|Call pref_lattice_units 0 buildpref_lattice_manifold 13
+	var Ex|Call pref_automatonregister_units 0 buildpref_automatonregister_idol 13
+	var Ex|Call pref_sequesteredicon_units 0 buildpref_sequesteredicon_accantor 13
+	var Ex|Call pref_templar_production 0 buildpref_templar_production_roguegallery 13
+	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_sequesteredicon 13
+	call main_wait_300
+	bld 1 pylon 99
+	call main_wait_600
+	w_bld 1 pylon
+	bld 1 automaton_register 98
+	call main_wait_900
+	bld 1 lattice 98
+	call main_wait_900
+	var Sub can_worker_var 1 13
+	var Set can_attack_var 1 13
+	call main_wait_900
+	var Add can_worker_var 1 13
+	bld 2 pylon 99
+	call main_wait_450
+	var Set build_gas_var 1 13
+	w_bld 2 pylon
+	bld 3 automaton_register 98
+	call main_wait_450
+	multi production_cycle
+	call main_wait_300
+	goto build_ranger_fin
+	
+	:build_ranger_fin
+	call build_bool
+	var AtL skip_building_var 1 blank 13
+	
+	:build_ranger_fin2
+	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
+	call wLattice2
+	call need_automatonregister
+	call main_wait_600
+	call need_syntheticsynod
+	wait 24
+	call need_gateway
+	call main_wait_600
+	call need_sequesteredicon
+	call main_wait_600
+	call need_cenotaph
+	call main_wait_300
+	call need_embassy
+	call main_wait_600
+	call need_stargate
+	call main_wait_450
+	call need_argosy
+	call main_wait_300
+	call need_astralomen
+	call main_wait_600
+	call need_fleetbeacon
+	call main_wait_600
+	call need_grandlibrary
+	call main_wait_600
+	call need_ancestralarchives
+	call main_wait_600
+	call main_wait_600
+	call need_monumentofsin
+	stop
+	
+	:build_order_templar
+	dth 13 AtL 1 dark_swarm_unit build_order_templar_select
+	var Ex|Jump build_type_is_timing_var 1 build_order_templar_type_timing 13
+	var Ex|Jump build_type_is_rush_var 1 build_order_templar_type_rush 13
+	var Ex|Jump build_type_is_greed_var 1 build_order_templar_type_greed 13
+	
+	:build_order_templar_type_timing
+	# 4 timings
+	rand_j 64 build_order_templar_type_timing_1
+	rand_j 85 build_order_templar_type_timing_2
+	rand_j 128 build_order_templar_type_timing_3
+	goto build_order_templar_type_timing_4
+	
+	:build_order_templar_type_timing_1
+	dth 13 Set 2 dark_swarm_unit blank
+	goto build_order_templar_select
+	
+	:build_order_templar_type_timing_2
+	dth 13 Set 3 dark_swarm_unit blank
+	goto build_order_templar_select
+	
+	:build_order_templar_type_timing_3
+	dth 13 Set 4 dark_swarm_unit blank
+	goto build_order_templar_select
+	
+	:build_order_templar_type_timing_4
+	dth 13 Set 6 dark_swarm_unit blank
+	goto build_order_templar_select
+	
+	:build_order_templar_type_rush
+	# 1 rush
+	goto build_order_templar_type_rush_1
+	
+	:build_order_templar_type_rush_1
+	dth 13 Set 1 dark_swarm_unit blank
+	goto build_order_templar_select
+	
+	:build_order_templar_type_greed
+	# 1 greed
+	goto build_order_templar_type_greed_1
+	
+	:build_order_templar_type_greed_1
+	dth 13 Set 5 dark_swarm_unit blank
+	goto build_order_templar_select
+	
+	:build_order_templar_select
+	dth 13 Ex 1 dark_swarm_unit build_templar_3GateStrider
+	dth 13 Ex 2 dark_swarm_unit build_templar_SuffocatingShadow
+	dth 13 Ex 3 dark_swarm_unit build_templar_Legion
+	dth 13 Ex 4 dark_swarm_unit build_templar_Initiates
+	dth 13 Ex 5 dark_swarm_unit build_templar_Martyrdom
+	dth 13 Ex 6 dark_swarm_unit build_templar_LegionsHeralds
+	
+	:build_templar_3GateStrider
+	var Ex|Jump debug_ai_messages_var 0 build_templar_3GateStrider_Main 13
+	print Protoss<32>Templar<32>timing<32>1:<32>3Gate<32>Strider
+	
+	:build_templar_3GateStrider_Main
+	var Ex|Call pref_gateway_units 0 buildpref_cenotaph_legionnaire 13
+	var Ex|Call pref_cenotaph_units 0 buildpref_gateway_dracadin 13
+	var Ex|Call pref_grandlibrary_assault 0 build_pref_ancestralarchives_archon 13
+	var Ex|Call pref_sequesteredicon_units 0 buildpref_sequesteredicon_accantor 13
+	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
+	call main_wait_300
+	bld 1 pylon 99
+	call main_wait_300
+	w_bld 1 pylon
+	bld 1 gateway 98
+	wait 24
+	call main_wait_900
+	bld 2 gateway 98
+	call main_wait_900
+	queue 1 zealot gateway 255 Local Loc.63 100
+	call main_wait_900
+	bld 3 gateway 98
+	call main_wait_300
+	bld 4 gateway 98
+	wait 24
+	queue 1 zealot gateway 255 Local Loc.63 100
+	call main_wait_300
+	queue 1 dracadin gateway 255 Local Loc.63 100
+	call main_wait_300
+	queue 2 dracadin gateway 255 Local Loc.63 100
+	call main_wait_300
+	bld 1 cenotaph 98
+	call main_wait_300
+	bld 1 grand_library 99
+	call main_wait_450
+	var Sub can_worker_var 1 13
+	multi expansion_toggle
+	call main_wait_600
+	var Add can_worker_var 1 13
+	wait 24
+	call main_wait_300
+	bld 2 grand_library 99
+	multi production_cycle
+	goto build_templar_fin
+	
+	:build_templar_SuffocatingShadow
+	var Ex|Jump debug_ai_messages_var 0 build_templar_SuffocatingShadow_Main 13
+	print Protoss<32>Templar<32>timing<32>2:<32>Suffocating<32>Shadow
+	
+	:build_templar_SuffocatingShadow_Main
+	var Ex|Call pref_gateway_units 0 buildpref_gateway_zealot 13
+	var Ex|Call pref_cenotaph_units 0 buildpref_gateway_ecclesiast 13
+	var Ex|Call pref_roguegallery_units 0 buildpref_roguegallery_cabalist 13
+	var Ex|Call pref_grandlibrary_assault 0 buildpref_grandlibrary_assault_atreus 13
+	var Ex|Call pref_sequesteredicon_units 0 buildpref_sequesteredicon_architect 13
+	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
+	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_sequesteredicon 13
+	call main_wait_300
+	bld 1 pylon 99
+	call main_wait_300
+	w_bld 1 pylon
+	bld 1 gateway 98
+	call main_wait_150
+	call main_wait_450
+	bld 2 gateway 98
+	call main_wait_300
+	wait 24
+	queue 2 zealot gateway 255 Local Loc.63 100
+	call main_wait_300
+	queue 1 zealot gateway 255 Local Loc.63 100
+	call main_wait_150
+	bld 1 rogue_gallery 98
+	call main_wait_750
+	var Sub can_worker_var 1 13
+	multi expansion_toggle
+	call main_wait_600
+	var Add can_worker_var 1 13
+	call main_wait_150
+	bld 1 grand_library 99
+	call main_wait_300
+	queue 1 cabalist rogue_gallery 255 Local Loc.63 100
+	call main_wait_900
+	queue 1 cabalist rogue_gallery 255 Local Loc.63 100
+	multi production_cycle
+	goto build_templar_fin
+	
+	:build_templar_Legion
+	var Ex|Jump debug_ai_messages_var 0 build_templar_Legion_Main 13
+	print Protoss<32>Templar<32>timing<32>3:<32>Legion
+	
+	:build_templar_Legion_Main
+	var Ex|Call pref_gateway_units 0 buildpref_cenotaph_legionnaire 13
+	var Ex|Call pref_cenotaph_units 0 buildpref_gateway_ecclesiast 13
+	var Ex|Call pref_prostrationstage_units 0 buildpref_prostrationstage_mindtyrant 13
+	var Ex|Call pref_grandlibrary_assault 0 build_pref_ancestralarchives_archon 13
+	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
+	call main_wait_300
+	bld 1 pylon 99
+	call main_wait_300
+	w_bld 1 pylon
+	bld 1 gateway 98
+	call main_wait_300
+	bld 2 gateway 98
+	call main_wait_300
+	bld 2 pylon 99
+	call main_wait_300
+	call main_wait_300
+	queue 1 zealot gateway 255 Local Loc.63 100
+	call main_wait_300
+	bld 3 gateway 98
+	wait 24
+	bld 3 pylon 99
+	call main_wait_300
+	queue 1 zealot gateway 255 Local Loc.63 100
+	call main_wait_300
+	bld 4 gateway 98
+	call main_wait_300
+	bld 1 cenotaph 98
+	wait 24
+	bld 4 pylon 99
+	call main_wait_450
+	bld 5 gateway 98
+	wait 24
+	var Set can_attack_var 1 13
+	call main_wait_600
+	var Sub can_worker_var 1 13
+	multi expansion_toggle
+	call main_wait_600
+	var Add can_worker_var 1 13
+	call main_wait_300
+	bld 8 gateway 98
+	call main_wait_900
+	bld 1 grand_library 99
+	call main_wait_300
+	bld 2 grand_library 99
+	multi production_cycle
+	goto build_templar_fin
+	
+	:build_templar_Initiates
+	var Ex|Jump debug_ai_messages_var 0 build_templar_Initiates_Main 13
+	print Protoss<32>Templar<32>rush<32>1:<32>Initiates
+	
+	:build_templar_Initiates_Main
+	var Ex|Call pref_gateway_units 0 buildpref_gateway_zealot 13
+	var Ex|Call pref_cenotaph_units 0 buildpref_gateway_ecclesiast 13
+	var Ex|Call pref_ancestralarchives_units 0 buildpref_grandlibrary_infantry_cantavis 13
+	var Ex|Call pref_grandlibrary_assault 0 build_pref_ancestralarchives_archon 13
+	var Ex|Call pref_sequesteredicon_units 0 buildpref_sequesteredicon_accantor 13
+	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
+	call main_wait_600
+	bld 1 pylon 99
+	call main_wait_600
+	w_bld 1 pylon
+	bld 1 gateway 98
+	call main_wait_600
+	bld 2 pylon 99
+	call main_wait_300
+	bld 2 gateway 98
+	call main_wait_300
+	var Sub can_worker_var 1 13
+	do_morph 2 zealot
+	call main_wait_150
+	do_morph 2 zealot
+	call main_wait_150
+	bld 3 gateway 98
+	call main_wait_600
+	var Add can_worker_var 1 13
+	call main_wait_900
+	var set can_attack_var 1 13
+	call main_wait_300
+	bld 4 gateway 98
+	call main_wait_600
+	var Add can_expand_var 1 13
+	call main_wait_300
+	multi production_cycle
+	goto build_templar_fin
+	
+	:build_templar_Martyrdom
+	var Ex|Jump debug_ai_messages_var 0 build_templar_Martyrdom_Main 13
+	print Protoss<32>Templar<32>greed<32>1:<32>Martyrdom
+	
+	:build_templar_Martyrdom_Main
+	var Ex|Call pref_gateway_units 0 buildpref_gateway_dracadin 13
+	var Ex|Call pref_cenotaph_units 0 buildpref_cenotaph_legionnaire 13
+	var Ex|Call pref_grandlibrary_assault 0 buildpref_grandlibrary_assault_atreus 13
+	var Ex|Call pref_prostrationstage_units 0 buildpref_prostrationstage_mindtyrant 13
+	var Ex|Call pref_ancestralarchives_units 0 build_pref_ancestralarchives_archon 13
+	var Ex|Call pref_templar_production 0 buildpref_templar_production_ancestralarchives 13
+	call main_wait_600
+	multi expansion_toggle
+	call main_wait_300
+	bld 1 pylon 99
+	call main_wait_300
+	w_bld 1 pylon
+	bld 1 gateway 98
+	call main_wait_300
+	bld 3 pylon 99
+	var Set can_build_static_defense_var 1 13
+	call main_wait_300
+	bld 2 gateway 98
+	call main_wait_300
+	bld 1 cenotaph 98
+	call main_wait_300
+	var Set build_gas_var 1 13
+	call main_wait_600
+	var Sub can_worker_var 1 13
+	var Set can_attack_var 1 13
+	call main_wait_900
+	multi expansion_toggle
+	call main_wait_600
+	var Add can_worker_var 1 13
+	call main_wait_600
+	bld 2 ancestral_archives 101
+	call main_wait_600
+	w_bldstart 2 ancestral_archives
+	call main_wait_150
+	bld 4 ancestral_archives 101
+	call main_wait_750
+	multi production_cycle
+	call main_wait_300
+	goto build_templar_fin
+	
+	:build_templar_LegionsHeralds
+	var Ex|Jump debug_ai_messages_var 0 build_templar_LegionsHeralds_Main 13
+	print Protoss<32>Templar<32>timing<32>4:<32>Legion's<32>Heralds
+	
+	:build_templar_LegionsHeralds_Main
+	var Ex|Call pref_gateway_units 0 buildpref_gateway_ecclesiast 13
+	var Ex|Call pref_cenotaph_units 0 buildpref_cenotaph_legionnaire 13
+	var Ex|Call pref_grandlibrary_assault 0 buildpref_grandlibrary_assault_atreus 13
+	var Ex|Call pref_grandlibrary_infantry 0 buildpref_grandlibrary_infantry_herald 13
+	var Ex|Call pref_ancestralarchives_units 0 build_pref_ancestralarchives_patriarch 13
+	var Ex|Call pref_templar_production 0 buildpref_templar_production_grandlibrary 13
+	call main_wait_600
+	bld 1 pylon 99
+	w_bld 1 pylon
+	bld 1 gateway 98
+	call main_wait_600
+	multi expansion_toggle
+	call main_wait_300
+	bld 2 pylon 99
+	call main_wait_300
+	w_bld 1 pylon
+	bld 1 cenotaph 98
+	call main_wait_450
+	bld 1 grand_library 101
+	call main_wait_450
+	bld 3 pylon 99
+	call main_wait_300
+	bld 2 gateway 98
+	call main_wait_600
+	bld 4 cenotaph 98
+	call main_wait_900
+	var Sub can_worker_var 1 13
+	var Set can_attack_var 1 13
+	call main_wait_900
+	var Add can_worker_var 1 13
+	call main_wait_600
+	var Set build_gas_var 1 13
+	var Set can_build_static_defense_var 1 13
+	call main_wait_900
+	multi production_cycle
+	call main_wait_300
+	goto build_templar_fin
+	
+	:build_templar_fin
+	call build_bool
+	var AtL skip_building_var 1 blank 13
+	
+	:build_templar_fin2
+	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
+	call need_gateway
+	wait 24
+	call need_cenotaph
+	call main_wait_300
+	call need_grandlibrary
+	call need_ancestralarchives
+	call main_wait_600
+	call wLattice2
+	call main_wait_300
+	call need_embassy
+	call main_wait_600
+	call need_automatonregister
+	call main_wait_300
+	call need_sanctumofsorrow
+	call main_wait_300
+	call need_sequesteredicon
+	call need_syntheticsynod
+	call main_wait_300
+	call need_stargate
+	call need_astralomen
+	call main_wait_600
+	call need_argosy
+	call main_wait_1200
+	call need_monumentofsin
+	call main_wait_1200
+	call need_fleetbeacon
+	stop
+	
+	:build_order_skylord
+	dth 13 AtL 1 dark_swarm_unit build_order_skylord_select
+	var Ex|Jump build_type_is_timing_var 1 build_order_skylord_type_timing 13
+	var Ex|Jump build_type_is_rush_var 1 build_order_skylord_type_rush 13
+	var Ex|Jump build_type_is_greed_var 1 build_order_skylord_type_greed 13
+	
+	:build_order_skylord_type_timing
+	# 2 timings
+	rand_j 128 build_order_skylord_type_timing_1
+	goto build_order_skylord_type_timing_2
+	
+	:build_order_skylord_type_timing_1
+	dth 13 Set 2 dark_swarm_unit blank
+	goto build_order_skylord_select
+	
+	:build_order_skylord_type_timing_2
+	dth 13 Set 6 dark_swarm_unit blank
+	goto build_order_skylord_select
+	
+	:build_order_skylord_type_rush
+	# 2 rushes
+	rand_j 128 build_order_skylord_type_rush_1
+	goto build_order_skylord_type_rush_2
+	
+	:build_order_skylord_type_rush_1
+	dth 13 Set 1 dark_swarm_unit blank
+	goto build_order_skylord_select
+	
+	:build_order_skylord_type_rush_2
+	dth 13 Set 3 dark_swarm_unit blank
+	goto build_order_skylord_select
+	
+	:build_order_skylord_type_greed
+	# 2 greeds
+	rand_j 128 build_order_skylord_type_greed_1
+	goto build_order_skylord_type_greed_2
+	
+	:build_order_skylord_type_greed_1
+	dth 13 Set 4 dark_swarm_unit blank
+	goto build_order_skylord_select
+	
+	:build_order_skylord_type_greed_2
+	dth 13 Set 5 dark_swarm_unit blank
+	goto build_order_skylord_select
+	
+	:build_order_skylord_select
+	dth 13 Ex 1 dark_swarm_unit build_skylord_SolarEscort
+	dth 13 Ex 2 dark_swarm_unit build_skylord_DeadlyOmen
+	dth 13 Ex 3 dark_swarm_unit build_skylord_2GatePanoptus
+	dth 13 Ex 4 dark_swarm_unit build_skylord_Exalted
+	dth 13 Ex 5 dark_swarm_unit build_skylord_SorrowFleet
+	dth 13 Ex 6 dark_swarm_unit build_skylord_ShipsAndSwords
+	
+	:build_skylord_SolarEscort
+	var Ex|Jump debug_ai_messages_var 0 build_skylord_SolarEscort_Main 13
+	print Protoss<32>Skylord<32>timing<32>1:<32>Solar<32>Escort
+	
+	:build_skylord_SolarEscort_Main
+	var Ex|Call pref_gateway_units 0 buildpref_cenotaph_legionnaire 13
+	var Ex|Call pref_cenotaph_units 0 buildpref_gateway_ecclesiast 13
+	var Ex|Call pref_lattice_units 0 buildpref_lattice_vassal 13
+	var Ex|Call pref_stargate_units 0 buildpref_stargate_panoptus 13
+	var Ex|Call pref_astralomen_units 0 buildpref_astralomen_gladius 13
+	var Ex|Call pref_fleetbeacon_units 0 buildpref_fleetbeacon_solarion 13
+	var Ex|Call pref_argosy_units 0 buildpref_fleetbeacon_empyrean 13
+	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
+	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_lattice 13
+	var Ex|Call pref_skylord_production 0 buildpref_skylord_production_argosy 13
+	call main_wait_300
+	bld 1 pylon 99
+	call main_wait_300
+	var Sub can_worker_var 1 13
+	multi expansion_toggle
+	call main_wait_600
+	var Add can_worker_var 1 13
+	call main_wait_450
+	w_bld 1 pylon
+	bld 1 gateway 98
+	call main_wait_300
+	queue 1 zealot gateway 255 Local Loc.63 100
+	call main_wait_300
+	var Set build_gas_var 1 13
+	call main_wait_300
+	bld 1 stargate 98
+	call main_wait_150
+	bld 2 stargate 98
+	call main_wait_600
+	var Set can_build_static_defense_var 1 13
+	call main_wait_450
+	bld 3 stargate 98
+	wait 24
+	bld 1 argosy 99
+	call main_wait_900
+	bld 2 argosy 99
+	wait 24
+	multi production_cycle
+	call main_wait_900
+	bld 1 fleet_beacon 100
+	multi build_skylord_SolarEscort_Queue
+	call main_wait_600
+	goto build_skylord_fin
+	
+	:build_skylord_SolarEscort_Queue
+	wait 12
+	notowns fleet_beacon build_skylord_SolarEscort_Queue
+	queue 2 solarion fleet_beacon 255 Local Loc.63 100
+	stop
+	
+	:build_skylord_DeadlyOmen
+	var Ex|Jump debug_ai_messages_var 0 build_skylord_DeadlyOmen_Main 13
+	print Protoss<32>Skylord<32>rush<32>1:<32>Deadly<32>Omen
+	
+	:build_skylord_DeadlyOmen_Main
+	var Ex|Call pref_gateway_units 0 buildpref_gateway_zealot 13
+	var Ex|Call pref_lattice_units 0 buildpref_lattice_vassal 13
+	var Ex|Call pref_stargate_units 0 buildpref_stargate_panoptus 13
+	var Ex|Call pref_astralomen_units 0 buildpref_astralomen_exemplar 13
+	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
+	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_lattice 13
+	var Ex|Call pref_skylord_production 0 buildpref_skylord_production_argosy 13
+	call main_wait_150
+	var Set build_gas_var 1 13
+	call main_wait_450
+	bld 1 pylon 99
+	w_bld 1 pylon
+	bld 1 gateway 98
+	call main_wait_150
+	bld 1 astral_omen 100
+	call main_wait_600
+	bld 2 astral_omen 100
+	w_bld 1 astral_omen
+	var Set can_attack_var 1 13
+	call main_wait_300
+	bld 2 pylon 99
+	w_bld 2 pylon
+	bld 2 gateway 98
+	call main_wait_300
+	var Sub can_worker_var 1 13
+	call main_wait_300
+	multi expansion_toggle
+	var Add can_worker_var 1 13
+	call main_wait_900
+	bld 2 stargate 99
+	call main_wait_1200
+	bld 2 cenotaph 99
+	call main_wait_1200
+	bld 3 stargate 99
+	call main_wait_900
+	multi production_cycle
+	call main_wait_600
+	goto build_skylord_fin
+	
+	:build_skylord_2GatePanoptus
+	var Ex|Jump debug_ai_messages_var 0 build_skylord_2GatePanoptus_Main 13
+	print Protoss<32>Skylord<32>rush<32>2:<32>2Gate<32>Panoptus
+	
+	:build_skylord_2GatePanoptus_Main
+	var Ex|Call pref_cenotaph_units 0 buildpref_cenotaph_hierophant 13
+	var Ex|Call pref_lattice_units 0 buildpref_lattice_vassal 13
+	var Ex|Call pref_stargate_units 0 buildpref_stargate_panoptus 13
+	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_lattice 13
+	var Ex|Call pref_skylord_production 0 buildpref_skylord_production_stargate 13
+	call main_wait_600
+	bld 1 pylon 99
+	call main_wait_600
+	call main_wait_600
+	w_bld 1 pylon
+	bld 1 gateway 98
+	call main_wait_600
+	bld 2 pylon 99
+	call main_wait_300
+	bld 1 stargate 98
+	call main_wait_600
+	var Sub can_worker_var 1 13
+	call main_wait_600
+	bld 2 gateway 98
+	call main_wait_600
+	var Set can_attack_var 1 13
+	call main_wait_300
+	var Add can_worker_var 1 13
+	call main_wait_150
+	multi production_cycle
+	call main_wait_150
+	bld 1 cenotaph 98
+	goto build_skylord_fin
+	
+	:build_skylord_Exalted
+	var Ex|Jump debug_ai_messages_var 0 build_skylord_Exalted_Main 13
+	print Protoss<32>Skylord<32>greed<32>1:<32>Exalted
+	
+	:build_skylord_Exalted_Main
+	var Ex|Call pref_lattice_units 0 buildpref_lattice_vassal 13
+	var Ex|Call pref_stargate_units 0 buildpref_stargate_panoptus 13
+	var Ex|Call pref_astralomen_units 0 buildpref_astralomen_exemplar 13
+	var Ex|Call pref_argosy_units 0 buildpref_argosy_didact 13
+	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_lattice 13
+	var Ex|Call pref_skylord_production 0 buildpref_skylord_production_stargate 13
+	call main_wait_300
+	bld 1 pylon 99
+	call main_wait_300
+	w_bld 1 pylon
+	bld 1 gateway 98
+	wait 24
+	call main_wait_600
+	wait 24
+	bld 1 stargate 98
+	wait 24
+	queue 1 zealot gateway 255 Local Loc.63 100
+	wait 24
+    bld 1 warden 94
+	call main_wait_300
+	bld 2 gateway 98
+	call main_wait_600
+	bld 2 stargate 98
+	call main_wait_150
+	bld 2 warden 94
+	call main_wait_300
+	bld 1 astral_omen 98
+	call main_wait_300
+	queue 2 dracadin gateway 255 Local Loc.63 100
+	wait 24
+	bld 4 warden 94
+	call main_wait_300
+	bld 1 argosy 101
+	wait 24
+	queue 1 panoptus stargate 255 Local Loc.63 100
+	call main_wait_150
+	var Sub can_worker_var 1 13
+	multi expansion_toggle
+	call main_wait_600
+	var Add can_worker_var 1 13
+	wait 24
+	w_bldstart 1 argosy
+	call main_wait_450
+	var Set can_build_static_defense_var 1 13
+	call main_wait_150
+	bld 2 argosy 99
+	call main_wait_150
+	bld 1 cenotaph 98
+	call main_wait_150
+	bld 6 warden 94
+	call main_wait_300
+	multi production_cycle
+	call main_wait_150
+	queue 1 didact argosy 255 Local Loc.63 100
+	call main_wait_150
+	bld 7 warden 94
+	call main_wait_150
+	bld 3 stargate 98
+	call main_wait_150
+	bld 8 warden 94
+	call main_wait_300
+	bld 9 warden 94
+	call main_wait_300
+	bld 1 monument_of_sin 101
+	wait 24
+	bld 10 warden 94
+	call main_wait_300
+	bld 4 stargate 98
+	call main_wait_900
+	queue 1 star_sovereign monument_of_sin 255 Local Loc.63 100
+	wait 24
+	bld 3 argosy 99
+	call main_wait_600
+	bld 1 fleet_beacon 100
+	call main_wait_150
+	bld 11 warden 94
+	wait 24
+	goto build_skylord_fin
+	
+	:build_skylord_SorrowFleet
+	var Ex|Jump debug_ai_messages_var 0 build_skylord_SorrowFleet_Main 13
+	print Protoss<32>Skylord<32>greed<32>2:<32>Sorrow<32>Fleet
+	
+	:build_skylord_SorrowFleet_Main
+	var Ex|Call pref_lattice_units 0 buildpref_lattice_vassal 13
+	var Ex|Call pref_stargate_units 0 buildpref_stargate_panoptus 13
+	var Ex|Call pref_astralomen_units 0 buildpref_astralomen_gladius 13
+	var Ex|Call pref_fleetbeacon_units 0 buildpref_fleetbeacon_empyrean 13
+	var Ex|Call pref_monumentofsin_units 0 buildpref_monumentofsin_starsovereign 13
+	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_lattice 13
+	var Ex|Call pref_skylord_production 0 buildpref_skylord_production_stargate 13
+	call main_wait_600
+	bld 1 pylon 99
+	call main_wait_600
+	bld 2 pylon 99
+	call main_wait_300
+	var Add can_expand_var 1 13
+	call main_wait_900
+	var Set build_gas_var 1 13
+	call main_wait_600
+	var Set can_build_static_defense_var 1 13
+	call main_wait_600
+	w_bld 1 pylon
+	bld 1 argosy 99
+	call main_wait_1500
+	bld 2 argosy 99
+	call main_wait_900
+	bld 3 argosy 99
+	call main_wait_300
+	bld 1 monument_of_sin 101
+	call main_wait_1500
+	multi production_cycle
+	call main_wait_900
+	var Set can_attack_var 1 13
+	call main_wait_600
+	goto build_skylord_fin
+	
+	:build_skylord_ShipsAndSwords
+	var Ex|Jump debug_ai_messages_var 0 build_skylord_ShipsAndSwords_Main 13
+	print Protoss<32>Skylord<32>greed<32>2:<32>Ships<32>and<32>Swords
+	
+	:build_skylord_ShipsAndSwords_Main
+	var Ex|Call pref_lattice_units 0 buildpref_lattice_vassal 13
+	var Ex|Call pref_stargate_units 0 buildpref_stargate_aurora 13
+	var Ex|Call pref_astralomen_units 0 buildpref_astralomen_gladius 13
+	var Ex|Call pref_argosy_units 0 buildpref_argosy_magister 13
+	var Ex|Call pref_monumentofsin_units 0 buildpref_monumentofsin_starsovereign 13
+	var Ex|Call pref_templar_production 0 buildpref_templar_production_cenotaph 13
+	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_lattice 13
+	var Ex|Call pref_skylord_production 0 buildpref_skylord_production_stargate 13
+	call main_wait_750
+	multi expansion_toggle
+	call main_wait_300
+	bld 1 pylon 99
+	call main_wait_600
+	bld 1 cenotaph 98
+	call main_wait_300
+	var Set build_gas_var 1 13
+	call main_wait_300
+	bld 2 pylon 99
+	call main_wait_300
+	bld 2 cenotaph 98
+	call main_wait_150
+	w_bld 2 pylon
+	bld 1 astral_omen 100
+	call main_wait_900
+	var Set build_gas_var 1 13
+	call main_wait_300
+	bld 3 cenotaph 98
+	call main_wait_300
+	bld 2 astral_omen 100
+	call main_wait_450
+	var Set can_build_static_defense_var 1 13
+	call main_wait_600
+	var Set can_attack_var 1 13
+	call main_wait_600
+	bld 1 stargate 98
+	call main_wait_900
+	multi production_cycle
+	call main_wait_300
+	goto build_skylord_fin
+	
+	:build_skylord_fin
+	call build_bool
+	var AtL skip_building_var 1 blank 13
+	
+	:build_skylord_fin2
+	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
+	call need_gateway
+	bring 13 AtL_W 1 gateway Loc.63 blank
+	call need_cenotaph
+	call main_wait_450
+	call need_stargate
+	call main_wait_300
+	call need_embassy
+	call main_wait_300
+	call need_argosy
+	call main_wait_150
+	bring 13 AtL_W 1 stargate Loc.63 blank
+	call need_astralomen
+	call main_wait_1200
+	bring 13 AtL_W 1 argosy Loc.63 blank
+	call need_fleetbeacon
+	call main_wait_300
+	call main_wait_600
+	call build_lattice
+	call main_wait_900
+	bring 13 AtL_W 1 argosy Loc.63 blank
+	call need_monumentofsin
+	call main_wait_600
+	call build_grandlibrary
+	bring 13 AtL_W 1 grand_library Loc.63 blank
+	call need_ancestralarchives
+	call main_wait_600
+	bring 13 AtL_W 1 lattice Loc.63 blank
+	call need_automatonregister
+	call main_wait_600
+	call build_sequesteredicon
+	bring 13 AtL_W 1 sequestered_icon Loc.63 blank
+	call need_syntheticsynod
+	call main_wait_300
+	call main_wait_300
+	call need_grandlibrary
+	call need_prostrationstage
+	call main_wait_300
+	bring 13 AtL_W 1 prostration_stage Loc.63 blank
+	call need_sanctumofsorrow
+	stop
+	
+	:build_order_scenario
+	dth 13 Ex 2 dark_swarm_unit build_skylord_SorrowFleet
+	goto build_order_gen
+	
+	:build_order_expansion
+	bring 13 AtL_W 1 gateway|grand_library|lattice|sequestered_icon|stargate|argosy Loc.63 blank
+	var Ex|Jump pref_ranger 1 build_ranger_fin2 13
+	var Ex|Jump pref_templar 1 build_templar_fin2 13
+	var Ex|Jump pref_skylord 1 build_skylord_fin2 13
+	goto build_general_fin2
+	
+	:need_embassy
+	p_need 1 embassy
+	return
+	
+	:build_gateway
+	wait 12
+	notowns nexus build_gateway
+	add_bld 255 gateway 1 99 98
+	return
+	
+	:need_gateway
+	p_need 1 gateway
+	return
+	
+	:build_grandlibrary
+	wait 12
+	notowns nexus build_grandlibrary
+	add_bld 255 grand_library 1 99 99
+	return
+	
+	:need_grandlibrary
+	p_need 1 grand_library
+	return
+	
+	:build_lattice
+	wait 12
+	notowns nexus build_lattice
+	add_bld 255 lattice 1 99 98
+	return
+	
+	:wLattice2
+	p_need 1 lattice
+	return
+	
+	:build_sequesteredicon
+	wait 12
+	notowns nexus build_sequesteredicon
+	add_bld 255 sequestered_icon 1 99 99
+	return
+	
+	:need_sequesteredicon
+	p_need 1 sequestered_icon
+	return
+	
+	:build_stargate
+	wait 12
+	notowns nexus build_stargate
+	add_bld 255 stargate 1 99 98
+	return
+	
+	:need_stargate
+	p_need 1 stargate
+	return
+	
+	:build_argosy
+	wait 12
+	notowns nexus build_argosy
+	add_bld 255 argosy 1 99 99
+	return
+	
+	:need_argosy
+	p_need 1 argosy
+	return
+	
+	:build_prostrationstage
+	wait 12
+	notowns nexus build_prostrationstage
+	add_bld 255 prostration_stage 1 99 99
+	return
+	
+	:need_prostrationstage
+	p_need 1 prostration_stage
+	return
+	
+	:build_roguegallery
+	wait 12
+	notowns nexus build_roguegallery
+	add_bld 255 rogue_gallery 1 99 98
+	return
+	
+	:need_roguegallery
+	p_need 1 rogue_gallery
+	return
+	
+	:need_cenotaph
+	wait 12
+	bring 13 AtL 1 cenotaph Loc.63 blank_return
+	p_need 1 cenotaph
+	return
+	
+	:need_ancestralarchives
+	wait 12
+	bring 13 AtL 1 ancestral_archives Loc.63 blank_return
+	p_need 1 ancestral_archives
+	return
+	
+	:need_automatonregister
+	wait 12
+	bring 13 AtL 1 automaton_register Loc.63 blank_return
+	p_need 1 automaton_register
+	return
+	
+	:need_syntheticsynod
+	wait 12
+	bring 13 AtL 1 synthetic_synod Loc.63 blank_return
+	p_need 1 synthetic_synod
+	return
+	
+	:need_astralomen
+	wait 12
+	bring 13 AtL 1 astral_omen Loc.63 blank_return
+	p_need 1 astral_omen
+	return
+	
+	:need_fleetbeacon
+	wait 12
+	bring 13 AtL 1 fleet_beacon Loc.63 blank_return
+	p_need 1 fleet_beacon
+	return
+	
+	:need_sanctumofsorrow
+	wait 12
+	bring 13 AtL 1 sanctum_of_sorrow Loc.63 blank_return
+#	p_need 1 sanctum_of_sorrow
+	return
+	
+	:need_monumentofsin
+	wait 12
+	bring 13 AtL 1 monument_of_sin Loc.63 blank_return
+	p_need 1 monument_of_sin
+	return
+	
+	:request_pylon
+	local 255 AtL 3 pylon request_pylon_loop
+	add_bld 255 pylon 1 30 99
+	wait 600
+	goto request_pylon
+	
+	:request_pylon_loop
+	unit_check 13 13 63 Greater|Wait 0 3 embassy|crucible|strident_stratum|gateway|cenotaph|grand_library|rogue_gallery|prostration_stage|sanctum_of_sorrow|ancestral_archives|lattice|automaton_register|ardent_authority|sequestered_icon|auxiliary_oasis|unitary_union|synthetic_synod|stargate|astral_omen|argosy|fleet_beacon|monument_of_sin pylon
+	add_bld 255 pylon 1 30 99
+	wait 720
+	goto request_pylon
+	
+	:request_static_defense
+	var Ex|Wait can_build_static_defense_var 1 13
+	wait 24
+	notowns nexus request_static_defense
+	notowns pylon request_static_defense
+	res 13 AtL_C Ore 150 request_static_defense_check
+	goto request_static_defense
+	
+	:request_static_defense_check
+	var AtL|Jump mining_count_var 3 request_matrix_check_pre 13
+	
+	:request_matrix_check_pre
+	multi request_matrix_check
+	
+	:request_warden_check
+	local 255 AtL_M 10 warden request_matrix_check
+	local 255 AtL 10 warden blank_return
+	local 255 AtL 4 warden request_warden_check2
+	add_bld 255 warden 1 4 95
+	var Ex|Jump under_attack_by_ground_var 1 add_return_wait_480 13
+	var Ex|Jump under_attack_by_air_var 1 add_return_wait_480 13
+	goto add_return_wait_960
+	
+	:request_warden_check2
+	var Ex|Jump under_attack_by_ground_var 1 request_warden_check3 13
+	var Ex|Jump under_attack_by_air_var 1 request_warden_check3 13
+	var AtM|Jump mining_count_var 2 add_return_wait_960 13
+	add_bld 255 warden 1 7 95
+	goto add_return_wait_480
+	
+	:request_warden_check3
+	add_bld 255 warden 1 10 95
+	goto add_return_wait_480
+	
+	:request_matrix_check
+	local 255 AtL 10 matrix blank
+	local 255 AtL 4 matrix request_matrix_check2
+	add_bld 255 matrix 1 4 95
+	stop
+	
+	:request_matrix_check2
+	var Ex|Jump under_attack_by_ground_var 1 request_matrix_check3 13
+	var Ex|Jump under_attack_by_air_var 1 request_matrix_check3 13
+	var AtM|Jump mining_count_var 2 blank 13
+	add_bld 255 matrix 1 7 95
+	stop
+	
+	:request_matrix_check3
+	add_bld 255 matrix 1 10 95
+	stop
+	
+	:request_embassy
+	wait 24
+	local 255 AtM 3 Group_Factories request_embassy
+	local 255 AtL 1 embassy blank
+	bring 13 AtL 3 embassy Loc.63 blank
+	notowns nexus request_embassy
+	res 13 AtM Any 49 request_embassy
+	bld 1 embassy 98
+	stop
+	
+	:request_crucible
+	wait 24
+	local 255 AtM 3 Group_Factories request_crucible
+	local 255 AtL 1 crucible blank
+	notowns nexus request_crucible
+	res 13 AtM Any 99 request_crucible
+	add_bld 255 crucible 1 1 98
+	stop
+	
+	:request_strident_stratum
+	wait 24
+	local 255 AtM 4 Group_Factories request_strident_stratum
+	local 255 AtL 1 strident_stratum blank
+	bring 13 AtL 3 strident_stratum Loc.63 blank
+	notowns nexus request_strident_stratum
+	res 13 AtM Any 149 request_strident_stratum
+	add_bld 255 strident_stratum 1 2 98
+	stop
+	
+	:production_cycle
+	var Set can_build_production_var 1 13
+	
+	:production_cycle_conditions
+	wait 24
+	var Ex|Jump mining_count_var 0 production_cycle_conditions 13
+	local 255 Ex 0 nexus production_cycle_conditions
+	local 255 AtM 4 scribe|artisan production_cycle_conditions
+	bring 13 AtM 3 Group_Factories Loc.63 production_cycle_conditions
+	bring 13 AtL 21 Group_Factories Loc.63 production_cycle_conditions_5
+	bring 13 AtL 16 Group_Factories Loc.63 production_cycle_conditions_4
+	bring 13 AtL 11 Group_Factories Loc.63 production_cycle_conditions_3
+	bring 13 AtL 6 Group_Factories Loc.63 production_cycle_conditions_2
+	goto production_cycle_loop
+	
+	:production_cycle_conditions_2
+	var Ex|Jump mining_count_var 1 production_cycle_conditions 13
+	goto production_cycle_loop
+	
+	:production_cycle_conditions_3
+	var Ex|Jump mining_count_var 2 production_cycle_conditions 13
+	goto production_cycle_loop
+	
+	:production_cycle_conditions_4
+	var Ex|Jump mining_count_var 3 production_cycle_conditions 13
+	goto production_cycle_loop
+	
+	:production_cycle_conditions_5
+	var Ex|Jump mining_count_var 4 production_cycle_conditions 13
+	goto production_cycle_loop
+	
+	:production_cycle_loop
+	wait 12
+	var AtL|Call prod_cycle_var 1 production_cycle_wait 13
+	var Set prod_cycle_var 0 13
+	var Ex|Wait can_build_production_var 1 13
+	call production_cycle_check
+	wait 110
+	call main_wait_150
+	goto production_cycle_conditions
+	
+	:production_cycle_wait
+	bring 13 AtM 3 gateway|cenotaph|grand_library|rogue_gallery|prostration_stage|ancestral_archives|lattice|automaton_register|sequestered_icon|synthetic_synod|stargate|astral_omen|argosy|fleet_beacon|monument_of_sin Loc.63 blank_return
+	local 255 AtM 1 gateway|cenotaph|grand_library|rogue_gallery|prostration_stage|ancestral_archives|lattice|automaton_register|sequestered_icon|synthetic_synod|stargate|astral_omen|argosy|fleet_beacon|monument_of_sin blank_return
+	var AtL|Jump mining_count_var 3 blank_return 13
+	var Ex|Jump mining_count_var 2 production_cycle_wait2 13
+	call main_wait_750
+	return
+	
+	:production_cycle_wait2
+	call main_wait_450
+	return
+	
+	:production_cycle_check
+	var Ex|Call pref_ranger 1 production_cycle_ranger 13
+	var Ex|Call pref_templar 1 production_cycle_templar 13
+	var Ex|Call pref_skylord 1 production_cycle_skylord 13
+	var AtL|Jump mining_count_var 4 production_cycle_check_high 13
+	call production_cycle_templar
+	call production_cycle_ranger
+	call production_cycle_skylord
+	return
+	
+	:production_cycle_check_high
+	call production_cycle_skylord
+	call production_cycle_ranger
+	call production_cycle_templar
+	return
+	
+	:production_cycle_ranger
+	var AtL|Call pref_lattice 1 production_cycle_lattice 13
+	var AtL|Call pref_automatonregister 1 production_cycle_automatonregister 13
+	var AtL|Call pref_ardentauthority 1 production_cycle_ardentauthority 13
+	var AtL|Call pref_sequesteredicon 1 production_cycle_sequesteredicon 13
+	var AtL|Call pref_syntheticsynod 1 production_cycle_syntheticsynod 13
+	res 13 AtL Any 800 production_cycle_ranger_high
+	call production_cycle_lattice
+	call production_cycle_automatonregister
+	call production_cycle_sequesteredicon
+	return
+	
+	:production_cycle_ranger_high
+	call production_cycle_syntheticsynod
+	call production_cycle_sequesteredicon
+	call production_cycle_ardentauthority
+	call production_cycle_automatonregister
+	return
+	
+	:production_cycle_templar
+	var AtL|Call pref_gateway 1 production_cycle_gateway 13
+	var AtL|Call pref_cenotaph 1 production_cycle_cenotaph 13
+	var AtL|Call pref_grandlibrary 1 production_cycle_grandlibrary 13
+	var AtL|Call pref_roguegallery 1 production_cycle_roguegallery 13
+	var AtL|Call pref_prostrationstage 1 production_cycle_prostrationstage 13
+	var AtL|Call pref_ancestralarchives 1 production_cycle_ancestralarchives 13
+	res 13 AtL Any 800 production_cycle_templar_high
+	call production_cycle_gateway
+	call production_cycle_cenotaph
+	call production_cycle_grandlibrary
+	call production_cycle_roguegallery
+	return
+	
+	:production_cycle_templar_high
+	call production_cycle_ancestralarchives
+	call production_cycle_prostrationstage
+	call production_cycle_grandlibrary
+	return
+	
+	:production_cycle_skylord
+	var AtL|Call pref_stargate 1 production_cycle_stargate 13
+	var AtL|Call pref_astralomen 1 production_cycle_astralomen 13
+	var AtL|Call pref_argosy 1 production_cycle_argosy 13
+	var AtL|Call pref_fleetbeacon 1 production_cycle_fleetbeacon 13
+	var AtL|Call pref_monumentofsin 1 production_cycle_monumentofsin 13
+	res 13 AtL Any 800 production_cycle_skylord_high
+	call production_cycle_stargate
+	call production_cycle_astralomen
+	call production_cycle_argosy
+	return
+	
+	:production_cycle_skylord_high
+	call production_cycle_fleetbeacon
+	call production_cycle_monumentofsin
+	call production_cycle_argosy
+	return
+	
+	:production_cycle_gateway
+	wait 12
+	var AtL|Jump prod_cycle_var 1 blank_return 13
+	notowns nexus blank_return
+	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
+	add_bld 255 gateway 1 20 98
+	wait 180
+	call main_wait_900
+	goto production_cycle_success
+	
+	:production_cycle_cenotaph
+	wait 12
+	var AtL|Jump prod_cycle_var 1 blank_return 13
+	notowns nexus blank_return
+	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
+	add_bld 255 cenotaph 1 20 98
+	wait 180
+	call main_wait_900
+	goto production_cycle_success
+	
+	:production_cycle_grandlibrary
+	wait 12
+	var AtL|Jump prod_cycle_var 1 blank_return 13
+	notowns nexus blank_return
+	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
+	add_bld 255 grand_library 1 20 99
+	wait 180
+	call main_wait_900
+	goto production_cycle_success
+	
+	:production_cycle_roguegallery
+	wait 12
+	var AtL|Jump prod_cycle_var 1 blank_return 13
+	notowns nexus blank_return
+	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
+	add_bld 255 rogue_gallery 1 20 98
+	wait 180
+	call main_wait_900
+	goto production_cycle_success
+	
+	:production_cycle_prostrationstage
+	wait 12
+	var AtL|Jump prod_cycle_var 1 blank_return 13
+	notowns nexus blank_return
+	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
+	add_bld 255 prostration_stage 1 20 99
+	wait 180
+	call main_wait_900
+	goto production_cycle_success
+	
+	:production_cycle_ancestralarchives
+	wait 12
+	var AtL|Jump prod_cycle_var 1 blank_return 13
+	notowns nexus blank_return
+	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
+	add_bld 255 ancestral_archives 1 20 100
+	wait 180
+	call main_wait_900
+	goto production_cycle_success
+	
+	:production_cycle_lattice
+	wait 12
+	var AtL|Jump prod_cycle_var 1 blank_return 13
+	notowns nexus blank_return
+	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
+	add_bld 255 lattice 1 20 98
+	wait 180
+	call main_wait_900
+	goto production_cycle_success
+	
+	:production_cycle_automatonregister
+	wait 12
+	var AtL|Jump prod_cycle_var 1 blank_return 13
+	notowns nexus blank_return
+	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
+	add_bld 255 automaton_register 1 20 98
+	wait 180
+	call main_wait_900
+	goto production_cycle_success
+	
+	:production_cycle_ardentauthority
+	wait 12
+	var AtL|Jump prod_cycle_var 1 blank_return 13
+	notowns nexus blank_return
+	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
+	add_bld 255 ardent_authority 1 20 98
+	wait 180
+	call main_wait_900
+	goto production_cycle_success
+	
+	:production_cycle_sequesteredicon
+	wait 12
+	var AtL|Jump prod_cycle_var 1 blank_return 13
+	notowns nexus blank_return
+	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
+	add_bld 255 sequestered_icon 1 20 99
+	wait 180
+	call main_wait_900
+	goto production_cycle_success
+	
+	:production_cycle_syntheticsynod
+	wait 12
+	var AtL|Jump prod_cycle_var 1 blank_return 13
+	notowns nexus blank_return
+	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
+	add_bld 255 synthetic_synod 1 20 101
+	wait 180
+	call main_wait_900
+	goto production_cycle_success
+	
+	:production_cycle_stargate
+	wait 12
+	var AtL|Jump prod_cycle_var 1 blank_return 13
+	notowns nexus blank_return
+	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
+	add_bld 255 stargate 1 20 98
+	wait 180
+	call main_wait_900
+	goto production_cycle_success
+	
+	:production_cycle_astralomen
+	wait 12
+	var AtL|Jump prod_cycle_var 1 blank_return 13
+	notowns nexus blank_return
+	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
+	add_bld 255 astral_omen 1 20 98
+	wait 180
+	call main_wait_900
+	goto production_cycle_success
+	
+	:production_cycle_argosy
+	wait 12
+	var AtL|Jump prod_cycle_var 1 blank_return 13
+	notowns nexus blank_return
+	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
+	add_bld 255 argosy 1 20 99
+	wait 180
+	call main_wait_900
+	goto production_cycle_success
+	
+	:production_cycle_fleetbeacon
+	wait 12
+	var AtL|Jump prod_cycle_var 1 blank_return 13
+	notowns nexus blank_return
+	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
+	add_bld 255 fleet_beacon 1 20 100
+	wait 180
+	call main_wait_900
+	goto production_cycle_success
+	
+	:production_cycle_monumentofsin
+	wait 12
+	var AtL|Jump prod_cycle_var 1 blank_return 13
+	notowns nexus blank_return
+	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
+	add_bld 255 monument_of_sin 1 20 101
+	wait 180
+	call main_wait_900
+	goto production_cycle_success
+	
+	:production_cycle_success
+	var Set prod_cycle_var 1 13
+	
+	:addReturn
+	wait 24
+	return
+	
+	:add_return_wait_480
+	wait 30
+	call main_wait_450
+	return
+	
+	:add_return_wait_960
+	wait 60
+	call main_wait_900
+	return
+	
+	:attack_handling
+	var Ex|Jump pref_scenario_lite 1 customScale 13
+	
+	:customScale
+	dth 13 Ex 2 scanner_sweep customScale_OneForTheFuture
+	goto attack_handling_standard
+	
+	:customScale_OneForTheFuture
+	dth 13 Ex 8 right_pit_door customScale_TheShitflingSinners
+	goto attack_handling_standard
+	
+	:customScale_TheShitflingSinners
+	dth 13 Ex 7 t_tank_turret pLoopA
+	dth 13 Ex 8 t_tank_turret pLoopA
+	goto attack_handling_standard
+	
+	:attack_handling_standard
+	var Ex|wait can_attack_var 1 13
+	var Ex|Jump pref_ranger 1 attack_handling_expansion_first 13
+	var Ex|Jump pref_templar 1 attack_handling_attack_first 13
+	var Ex|Jump pref_skylord 1 attack_handling_expansion_first 13
+	rand_j 64 attack_handling_attack_first
+	
+	:attack_handling_expansion_first
+	wait 120
+	call attack_generic
+	wait 360
+	goto pLoopA
+	
+	:attack_handling_attack_first
+	wait 240
+	call attack_generic
+	wait 360
+	
+	:pLoopA
+	bring 13 AtL 10 Group_Factories Loc.63 pLoopC
+	bring 13 AtL 7 Group_Factories Loc.63 pLoopB
+	call attack_cycle_start
+	wait 240
+	goto pLoopA
+	
+	:pLoopB
+	call attack_cycle_start
+	wait 180
+	rand_j 85 pLoopB
+	wait 120
+	goto pLoopA
+	
+	:pLoopC
+	call attack_cycle_start
+	wait 120
+	goto pLoopA
+	
+	:attack_cycle_start
+	var Ex|wait can_attack_var 1 13
+	
+	:attack_restart
+	atk_do
+	atk_c
+	
+	:attack_generic
+	call add_attack_wave
+	atk_prep
+	atk_do
+	wait 200
+	
+	:attack_generic_check
+	var add attack_cycle_var 1 13
+	wait 300
+	var AtL|jump attack_cycle_var 2 attack_cycle_prep 13
+	bring 13 AtL 24 zealot|dracadin|ecclesiast|legionnaire|hierophant|amaranth|herald|atreus|vagrant|cabalist|barghest|pariah|potentate|sycophant|charlatan|archon|optecton|patriarch|manifold|simulacrum|vassal|golem|idol|servitor|positron|analogue|accantor|architect|mainstay|maven|cloudform|vibrance|oscilliant|demiurge|empress|aurora|panoptus|gladius|exemplar|magister|epigraph|didact|empyrean|solarion|star_sovereign|anthelion Loc.63 attack_cycle_prep
+	call add_attack_wave
+	goto attack_cycle_prep
+	
+	:attack_cycle_prep
+	bring 13 AtL 60 zealot|dracadin|ecclesiast|legionnaire|hierophant|amaranth|herald|atreus|vagrant|cabalist|barghest|pariah|potentate|sycophant|charlatan|archon|optecton|patriarch|manifold|simulacrum|vassal|golem|idol|servitor|positron|analogue|accantor|architect|mainstay|maven|cloudform|vibrance|oscilliant|demiurge|empress|aurora|panoptus|gladius|exemplar|magister|epigraph|didact|empyrean|solarion|star_sovereign|anthelion Loc.63 attack_with_everything
+	bring 13 AtL 45 zealot|dracadin|ecclesiast|legionnaire|hierophant|amaranth|herald|atreus|vagrant|cabalist|barghest|pariah|potentate|sycophant|charlatan|archon|optecton|patriarch|manifold|simulacrum|vassal|golem|idol|servitor|positron|analogue|accantor|architect|mainstay|maven|cloudform|vibrance|oscilliant|demiurge|empress|aurora|panoptus|gladius|exemplar|magister|epigraph|didact|empyrean|solarion|star_sovereign|anthelion Loc.63 attack_expansion_check
+#	atk_now
+	goto attack_cycle_fin
+	
+	:attack_expansion_check
+	set_attacks 1
+	target_expansion
+	goto attack_cycle_fin
+	
+	:attack_with_everything
+	send_suicide 0
+	
+	:attack_cycle_fin
+	atk_c
+	c_queues train zealot|dracadin|ecclesiast|legionnaire|hierophant|amaranth|herald|atreus|vagrant|cabalist|barghest|pariah|potentate|sycophant|charlatan|archon|optecton|patriarch|manifold|simulacrum|vassal|golem|idol|servitor|positron|analogue|accantor|architect|mainstay|maven|cloudform|vibrance|oscilliant|demiurge|empress|aurora|panoptus|gladius|exemplar|magister|epigraph|didact|empyrean|solarion|star_sovereign|anthelion 13
+	var Set attack_cycle_var 0 13
+	var Add can_expand_var 1 13
+	var Set can_build_production_var 1 13
+	return
+	
+	:attack_conditions
+	wait 24
+	bring 13 AtM 12 scribe Loc.63 attack_conditions
+	bring 13 AtM 1 gateway|cenotaph|grand_library|rogue_gallery|prostration_stage|sanctum_of_sorrow|ancestral_archives|lattice|automaton_register|ardent_authority|sequestered_icon|stargate|astral_omen|argosy|fleet_beacon|monument_of_sin Loc.63 attack_conditions
+	res 13 AtL Any 500 blank_return
+	var Ex|WF(360) under_attack_var 0 13
+	return
+	
+	:add_attack_wave
+	call attack_conditions
+	time_jump 20 add_attack_wave_general
+	var Ex|Jump 
+	var Ex|Jump pref_ranger 1 add_attack_wave_ranger 13
+	var Ex|Jump pref_templar 1 add_attack_wave_templar 13
+	var Ex|Jump pref_skylord 1 add_attack_wave_skylord 13
+	
+	:add_attack_wave_general
+	unit_check 13 13 63 Greater|Jump 0 0 lattice|sequestered_icon gateway|grand_library|stargate|argosy|prostration_stage|rogue_gallery add_attack_wave_ranger 13
+	unit_check 13 13 63 Greater|Jump 0 0 gateway|grand_library lattice|sequestered_icon|stargate|argosy|prostration_stage|rogue_gallery add_attack_wave_templar 13
+	unit_check 13 13 63 Greater|Jump 0 0 stargate|argosy gateway|grand_library|lattice|sequestered_icon|prostration_stage|rogue_gallery add_attack_wave_skylord 13
+	rand_j 85 add_attack_wave_templar
+	rand_j 128 add_attack_wave_ranger
+	goto add_attack_wave_skylord
+	
+	:add_attack_wave_templar
+	call attack_wave_templar
+	call attack_wave_support
+	call attack_wave_skylord
+	call attack_wave_ranger
+	return
+	
+	:add_attack_wave_ranger
+	call attack_wave_ranger
+	call attack_wave_templar
+	call attack_wave_support
+	call attack_wave_skylord
+	return
+	
+	:add_attack_wave_skylord
+	call attack_wave_skylord
+	call attack_wave_templar
+	call attack_wave_support
+	call attack_wave_ranger
+	return
+	
+	:attack_wave_support
+	call attack_wave_stridentstratum
+	return
+	
+	:attack_wave_ranger
+	call attack_wave_sequesteredicon
+	call attack_wave_syntheticsynod
+	call attack_wave_ardentauthority
+	call attack_wave_automatonregister
+	call attack_wave_lattice
+	return
+	
+	:attack_wave_templar
+	call attack_wave_ancestralarchives
+	call attack_wave_grandlibrary
+	call attack_wave_prostrationstage
+	call attack_wave_roguegallery
+	call attack_wave_gateway
+	call attack_wave_cenotaph
+	return
+	
+	:attack_wave_skylord
+	call attack_wave_fleetbeacon
+	call attack_wave_monumentofsin
+	call attack_wave_argosy
+	call attack_wave_astralomen
+	call attack_wave_stargate
+	return
+	
+	:attack_wave_stridentstratum
+	var AtL|Call pref_clarion 1 attack_wave_clarion2 13
+	call attack_wave_clarion
+	return
+	
+	:attack_wave_lattice
+	var AtL|Call pref_manifold 1 attack_wave_manifold2 13
+	var AtL|Call pref_simulacrum 1 attack_wave_simulacrum2 13
+	var AtL|Call pref_vassal 1 attack_wave_vassal2 13
+	call attack_wave_manifold
+	call attack_wave_simulacrum
+	call attack_wave_vassal
+	return
+	
+	:attack_wave_automatonregister
+	var AtL|Call pref_idol 1 attack_wave_idol2 13
+	var AtL|Call pref_golem 1 attack_wave_golem2 13
+	call attack_wave_idol
+	call attack_wave_golem
+	return
+	
+	:attack_wave_ardentauthority
+	var AtL|Call pref_servitor 1 attack_wave_servitor2 13
+	var AtL|Call pref_positron 1 attack_wave_positron2 13
+#	var AtL|Call pref_analogue 1 attack_wave_analogue2 13
+	call attack_wave_servitor
+	call attack_wave_positron
+#	call attack_wave_analogue
+	return
+	
+	:attack_wave_sequesteredicon
+	var AtL|Call pref_accantor 1 attack_wave_accantor2 13
+	var AtL|Call pref_architect 1 attack_wave_architect2 13
+	call attack_wave_accantor
+	call attack_wave_architect
+	return
+	
+	:attack_wave_syntheticsynod
+	var AtL|Call pref_demiurge 1 attack_wave_demiurge2 13
+	var AtL|Call pref_empress 1 attack_wave_empress2 13
+	call attack_wave_demiurge
+	call attack_wave_empress
+	return
+	
+	:attack_wave_gateway
+	var AtL|Call pref_zealot 1 attack_wave_zealot2 13
+	var AtL|Call pref_dracadin 1 attack_wave_dracadin2 13
+	var AtL|Call pref_ecclesiast 1 attack_wave_ecclesiast2 13
+	call attack_wave_zealot
+	call attack_wave_dracadin
+	call attack_wave_ecclesiast
+	return
+	
+	:attack_wave_cenotaph
+	var AtL|Call pref_legionnaire 1 attack_wave_legionnaire2 13
+	var AtL|Call pref_hierophant 1 attack_wave_hierophant2 13
+	call attack_wave_legionnaire
+	call attack_wave_hierophant
+	return
+	
+	:attack_wave_grandlibrary
+	var AtL|Call pref_amaranth 1 attack_wave_amaranth2 13
+	var AtL|Call pref_atreus 1 attack_wave_atreus2 13
+	var AtL|Call pref_herald 1 attack_wave_herald2 13
+	var AtL|Call pref_cantavis 1 attack_wave_cantavis2 13
+	call attack_wave_amaranth
+	call attack_wave_atreus
+	call attack_wave_herald
+	call attack_wave_cantavis
+	return
+	
+	:attack_wave_roguegallery
+	var AtL|Call pref_vagrant 1 attack_wave_vagrant2 13
+	var AtL|Call pref_cabalist 1 attack_wave_cabalist2 13
+	var AtL|Call pref_barghest 1 attack_wave_barghest2 13
+	call attack_wave_vagrant
+	call attack_wave_cabalist
+	call attack_wave_barghest
+	return
+	
+	:attack_wave_prostrationstage
+	var AtL|Call pref_pariah 1 attack_wave_pariah2 13
+	var AtL|Call pref_charlatan 1 attack_wave_charlatan2 13
+	var AtL|Call pref_mind_tyrant 1 attack_wave_mindtyrant2 13
+	call attack_wave_pariah
+	call attack_wave_charlatan
+	call attack_wave_mindtyrant
+	return
+	
+	:attack_wave_ancestralarchives
+	var AtL|Call pref_archon 1 attack_wave_archon2 13
+	var AtL|Call pref_optecton 1 attack_wave_optecton2 13
+	var AtL|Call pref_patriarch 1 attack_wave_patriarch2 13
+	call attack_wave_archon
+	call attack_wave_optecton
+	call attack_wave_patriarch
+	return
+	
+	:attack_wave_stargate
+	var AtL|Call pref_aurora 1 attack_wave_aurora2 13
+	var AtL|Call pref_panoptus 1 attack_wave_panoptus2 13
+	var AtL|Call pref_lanifect 1 attack_wave_lanifect2 13
+	call attack_wave_aurora
+	call attack_wave_panoptus
+	call attack_wave_lanifect
+	return
+	
+	:attack_wave_astralomen
+	var AtL|Call pref_exemplar 1 attack_wave_exemplar2 13
+	var AtL|Call pref_gladius 1 attack_wave_gladius2 13
+	call attack_wave_exemplar
+	call attack_wave_gladius
+	return
+	
+	:attack_wave_argosy
+	var AtL|Call pref_magister 1 attack_wave_magister2 13
+	var AtL|Call pref_epigraph 1 attack_wave_epigraph2 13
+	var AtL|Call pref_didact 1 attack_wave_didact2 13
+	call attack_wave_magister
+	call attack_wave_epigraph
+	call attack_wave_didact
+	return
+	
+	:attack_wave_fleetbeacon
+	var AtL|Call pref_empyrean 1 attack_wave_empyrean2 13
+	var AtL|Call pref_solarion 1 attack_wave_solarion2 13
+	call attack_wave_empyrean
+	call attack_wave_solarion
+	return
+	
+	:attack_wave_monumentofsin
+	var AtL|Call pref_starsovereign 1 attack_wave_starsovereign2 13
+	var AtL|Call pref_anthelion 1 attack_wave_anthelion2 13
+	call attack_wave_starsovereign
+	call attack_wave_anthelion
+	return
+	
+	:attack_wave_clarion
+	notowns strident_stratum blank_return
+	queue_rel clarion strident_stratum 0.5 strident_stratum 255 Global 63 101
+	
+	:attack_wave_clarion2
+	notowns strident_stratum blank_return
+	atk_rel clarion strident_stratum 1
+	return
+	
+	:attack_wave_simulacrum
+	notowns lattice blank_return
+	queue_rel simulacrum lattice 1 lattice 255 Global 63 100
+	atk_rel simulacrum simulacrum 0.8
+	return
+	
+	:attack_wave_simulacrum2
+	notowns lattice blank_return
+	atk_rel simulacrum lattice 3
+	return
+	
+	:attack_wave_manifold
+	notowns lattice blank_return
+	queue_rel manifold lattice 1 lattice 255 Global 63 100
+	atk_rel manifold manifold 0.8
+	
+	:attack_wave_manifold2
+	notowns lattice blank_return
+	atk_rel manifold lattice 2
+	return
+	
+	:attack_wave_vassal
+	notowns lattice blank_return
+	queue_rel vassal lattice 1 lattice 255 Global 63 100
+	atk_rel vassal lattice 3
+	
+	:attack_wave_vassal2
+	notowns lattice blank_return
+	queue_rel vassal lattice 1 lattice 255 Global 63 100
+	atk_rel vassal lattice 3
+	return
+	
+	:attack_wave_servitor
+	notowns ardent_authority blank_return
+	queue_rel servitor ardent_authority 1 ardent_authority 255 Global 63 100
+	atk_rel servitor servitor 0.8
+	return
+	
+	:attack_wave_servitor2
+	notowns ardent_authority blank_return
+	atk_rel servitor ardent_authority 3
+	return
+	
+	:attack_wave_positron
+	notowns ardent_authority blank_return
+	queue_rel positron ardent_authority 1 ardent_authority 255 Global 63 100
+	atk_rel positron positron 0.8
+	
+	:attack_wave_positron2
+	notowns ardent_authority blank_return
+	atk_rel positron ardent_authority 2
+	return
+	
+	:attack_wave_analogue
+	notowns ardent_authority blank_return
+	queue_rel analogue ardent_authority 1 ardent_authority 255 Global 63 104
+	atk_rel analogue analogue 0.8
+	
+	:attack_wave_analogue2
+	notowns ardent_authority blank_return
+	atk_rel analogue ardent_authority 1.2
+	return
+	
+	:attack_wave_idol
+	notowns automaton_register blank_return
+	queue_rel idol automaton_register 1 automaton_register 255 Global 63 101
+	atk_rel idol idol 0.8
+	
+	:attack_wave_idol2
+	notowns automaton_register blank_return
+	atk_rel idol automaton_register 1.5
+	return
+	
+	:attack_wave_golem
+	notowns automaton_register blank_return
+	queue_rel golem automaton_register 0.75 automaton_register 255 Global 63 101
+	atk_rel golem golem 0.8
+	
+	:attack_wave_golem2
+	notowns automaton_register blank_return
+	atk_rel golem automaton_register 1
+	return
+	
+	:attack_wave_accantor
+	notowns sequestered_icon blank_return
+	queue_rel accantor sequestered_icon 1 sequestered_icon 255 Global 63 102
+	atk_rel accantor accantor 0.8
+	
+	:attack_wave_accantor2
+	notowns sequestered_icon blank_return
+	atk_rel accantor sequestered_icon 1
+	return
+	
+	:attack_wave_architect
+	notowns sequestered_icon blank_return
+	queue_rel architect sequestered_icon 1 sequestered_icon 255 Global 63 102
+	atk_rel architect architect 0.8
+	
+	:attack_wave_architect2
+	notowns sequestered_icon blank_return
+	atk_rel architect sequestered_icon 1
+	return
+	
+	:attack_wave_demiurge
+	notowns synthetic_synod blank_return
+	queue_rel demiurge synthetic_synod 0.5 synthetic_synod 255 Global 63 104
+	atk_rel demiurge demiurge 0.8
+	
+	:attack_wave_demiurge2
+	notowns synthetic_synod blank_return
+	atk_add 1 demiurge
+	atk_rel demiurge synthetic_synod 0.5
+	return
+	
+	:attack_wave_empress
+	notowns synthetic_synod blank_return
+	queue_rel empress synthetic_synod 1 synthetic_synod 255 Global 63 104
+	atk_rel empress empress 0.8
+	
+	:attack_wave_empress2
+	notowns synthetic_synod blank_return
+	atk_rel empress synthetic_synod 1.2
+	return
+	
+	:attack_wave_zealot
+	notowns gateway blank_return
+	queue_rel zealot gateway 1 gateway 255 Global 63 100
+	atk_rel zealot zealot 0.8
+	
+	:attack_wave_zealot2
+	notowns gateway blank_return
+	atk_rel zealot gateway 2.5
+	return
+	
+	:attack_wave_dracadin
+	notowns gateway blank_return
+	queue_rel dracadin gateway 1 gateway 255 Global 63 100
+	atk_rel dracadin dracadin 0.8
+	
+	:attack_wave_dracadin2
+	notowns gateway blank_return
+	atk_rel dracadin gateway 2
+	return
+	
+	:attack_wave_ecclesiast
+	notowns gateway blank_return
+	queue_rel ecclesiast gateway 1 gateway 255 Global 63 100
+	atk_rel ecclesiast ecclesiast 0.8
+	
+	:attack_wave_ecclesiast2
+	notowns gateway blank_return
+	atk_rel ecclesiast gateway 1.5
+	return
+	
+	:attack_wave_legionnaire
+	notowns cenotaph blank_return
+	queue_rel legionnaire cenotaph 1 cenotaph 255 Global 63 100
+	atk_rel legionnaire legionnaire 0.8
+	
+	:attack_wave_legionnaire2
+	notowns cenotaph blank_return
+	atk_rel legionnaire cenotaph 3
+	return
+	
+	:attack_wave_hierophant
+	notowns cenotaph blank_return
+	queue_rel hierophant cenotaph 1 cenotaph 255 Global 63 101
+	atk_rel hierophant hierophant 0.8
+	
+	:attack_wave_hierophant2
+	notowns cenotaph blank_return
+	atk_rel hierophant cenotaph 1
+	return
+	
+	:attack_wave_amaranth
+	notowns grand_library blank_return
+	queue_rel amaranth grand_library 1 grand_library 255 Global 63 101
+	atk_rel amaranth amaranth 0.8
+	
+	:attack_wave_amaranth2
+	notowns grand_library blank_return
+	atk_rel amaranth grand_library 3
+	return
+	
+	:attack_wave_atreus
+	notowns grand_library blank_return
+	queue_rel atreus grand_library 2 grand_library 255 Global 63 101
+	atk_rel atreus atreus 0.8
+	
+	:attack_wave_atreus2
+	notowns grand_library blank_return
+	atk_rel atreus grand_library 2
+	return
+	
+	:attack_wave_herald
+	notowns grand_library blank_return
+	queue_rel herald grand_library 1 grand_library 255 Global 63 101
+	atk_rel herald herald 0.8
+	
+	:attack_wave_herald2
+	notowns grand_library blank_return
+	atk_rel herald grand_library 1.25
+	return
+	
+	:attack_wave_cantavis
+	notowns grand_library blank_return
+	queue_rel cantavis grand_library 1 grand_library 255 Global 63 101
+	atk_rel cantavis cantavis 0.8
+	
+	:attack_wave_cantavis2
+	notowns grand_library blank_return
+	atk_rel cantavis grand_library 1.25
+	return
+	
+	:attack_wave_vagrant
+	notowns rogue_gallery blank_return
+	queue_rel vagrant rogue_gallery 1 rogue_gallery 255 Global 63 101
+	atk_rel vagrant vagrant 0.8
+	
+	:attack_wave_vagrant2
+	notowns rogue_gallery blank_return
+	atk_rel vagrant rogue_gallery 1.2
+	return
+	
+	:attack_wave_cabalist
+	notowns rogue_gallery blank_return
+	queue_rel cabalist rogue_gallery 1 rogue_gallery 255 Global 63 101
+	atk_rel cabalist cabalist 0.8
+	
+	:attack_wave_cabalist2
+	notowns rogue_gallery blank_return
+	atk_rel cabalist rogue_gallery 1.2
+	return
+	
+	:attack_wave_barghest
+	notowns rogue_gallery blank_return
+	queue_rel barghest rogue_gallery 1 rogue_gallery 255 Global 63 101
+	atk_rel barghest barghest 0.8
+	
+	:attack_wave_barghest2
+	notowns rogue_gallery blank_return
+	atk_rel barghest rogue_gallery 2
+	return
+	
+	:attack_wave_pariah
+	notowns prostration_stage blank_return
+	queue_rel pariah prostration_stage 1 prostration_stage 255 Global 63 102
+	atk_rel pariah pariah 0.8
+	
+	:attack_wave_pariah2
+	notowns prostration_stage blank_return
+	atk_rel pariah prostration_stage 1.5
+	return
+	
+	:attack_wave_charlatan
+	notowns prostration_stage blank_return
+	queue_rel charlatan prostration_stage 1 prostration_stage 255 Global 63 102
+	atk_rel charlatan charlatan 0.8
+	
+	:attack_wave_charlatan2
+	notowns prostration_stage blank_return
+	atk_rel charlatan prostration_stage 1.15
+	return
+	
+	:attack_wave_mindtyrant
+	notowns prostration_stage blank_return
+	atk_rel mind_tyrant mind_tyrant 0.4
+	
+	:attack_wave_mindtyrant2
+	notowns prostration_stage blank_return
+	atk_add 1 mind_tyrant
+	atk_rel mind_tyrant prostration_stage 1
+	return
+	
+	:attack_wave_archon
+	notowns ancestral_archives blank_return
+	queue_rel archon ancestral_archives 1 ancestral_archives 255 Global 63 103
+	atk_rel archon archon 0.8
+	
+	:attack_wave_archon2
+	notowns ancestral_archives blank_return
+	atk_rel archon ancestral_archives 1.5
+	return
+	
+	:attack_wave_optecton
+	notowns ancestral_archives blank_return
+	queue_rel optecton ancestral_archives 1 ancestral_archives 255 Global 63 103
+	atk_rel optecton optecton 0.8
+	
+	:attack_wave_optecton2
+	notowns ancestral_archives blank_return
+	atk_rel optecton ancestral_archives 1.5
+	return
+	
+	:attack_wave_patriarch
+	notowns ancestral_archives blank_return
+	queue_rel patriarch ancestral_archives 1 ancestral_archives 255 Global 63 103
+	atk_rel patriarch patriarch 0.8
+	
+	:attack_wave_patriarch2
+	notowns ancestral_archives blank_return
+	atk_rel patriarch ancestral_archives 1.5
+	return
+	
+	:attack_wave_aurora
+	notowns stargate blank_return
+	queue_rel aurora stargate 1 stargate 255 Global 63 100
+	atk_rel aurora aurora 0.8
+	
+	:attack_wave_aurora2
+	notowns stargate blank_return
+	atk_rel aurora stargate 2.25
+	return
+	
+	:attack_wave_panoptus
+	notowns stargate blank_return
+	queue_rel panoptus stargate 1 stargate 255 Global 63 100
+	atk_rel panoptus panoptus 0.8
+	
+	:attack_wave_panoptus2
+	notowns stargate blank_return
+	atk_rel panoptus stargate 1.35
+	return
+	
+	:attack_wave_lanifect
+	notowns stargate blank_return
+	queue_rel lanifect stargate 0.35 stargate 255 Global 63 100
+	atk_rel lanifect lanifect 0.8
+	
+	:attack_wave_lanifect2
+	notowns stargate blank_return
+	atk_add 1 lanifect
+	atk_rel lanifect stargate 0.75
+	return
+	
+	:attack_wave_exemplar
+	notowns astral_omen blank_return
+	queue_rel exemplar astral_omen 1 astral_omen 255 Global 63 101
+	atk_rel exemplar exemplar 0.8
+	
+	:attack_wave_exemplar2
+	notowns astral_omen blank_return
+	atk_rel exemplar astral_omen 1.2
+	return
+	
+	:attack_wave_gladius
+	notowns astral_omen blank_return
+	queue_rel gladius astral_omen 1 astral_omen 255 Global 63 101
+	atk_rel gladius gladius 0.8
+	
+	:attack_wave_gladius2
+	notowns astral_omen blank_return
+	atk_rel gladius astral_omen 1.2
+	return
+	
+	:attack_wave_magister
+	notowns argosy blank_return
+	queue_rel magister argosy 1 argosy 255 Global 63 101
+	atk_rel magister magister 0.8
+	
+	:attack_wave_magister2
+	notowns argosy blank_return
+	atk_rel magister argosy 1.5
+	return
+	
+	:attack_wave_epigraph
+	notowns argosy blank_return
+	queue_rel epigraph argosy 1 argosy 255 Global 63 101
+	atk_rel epigraph epigraph 0.8
+	
+	:attack_wave_epigraph2
+	notowns argosy blank_return
+	atk_rel epigraph argosy 1.25
+	return
+	
+	:attack_wave_didact
+	notowns argosy blank_return
+	queue_rel didact argosy 0.5 argosy 255 Global 63 101
+	atk_rel didact didact 0.4
+	
+	:attack_wave_didact2
+	notowns argosy blank_return
+	atk_add 1 didact
+	atk_rel didact argosy 0.5
+	return
+	
+	:attack_wave_empyrean
+	notowns fleet_beacon blank_return
+	queue_rel empyrean fleet_beacon 1 fleet_beacon 255 Global 63 103
+	atk_rel empyrean empyrean 0.8
+	
+	:attack_wave_empyrean2
+	notowns fleet_beacon blank_return
+	atk_rel empyrean fleet_beacon 1.25
+	return
+	
+	:attack_wave_solarion
+	notowns fleet_beacon blank_return
+	queue_rel solarion fleet_beacon 1 fleet_beacon 255 Global 63 103
+	atk_rel solarion solarion 0.8
+	
+	:attack_wave_solarion2
+	notowns fleet_beacon blank_return
+	atk_rel solarion fleet_beacon 1
+	return
+	
+	:attack_wave_starsovereign
+	notowns monument_of_sin blank_return
+	queue_rel star_sovereign monument_of_sin 1 monument_of_sin 255 Global 63 104
+	atk_rel star_sovereign star_sovereign 0.8
+	
+	:attack_wave_starsovereign2
+	notowns monument_of_sin blank_return
+	atk_rel star_sovereign monument_of_sin 1
+	return
+	
+	:attack_wave_anthelion
+	notowns monument_of_sin blank_return
+	atk_rel anthelion anthelion 0.8
+	
+	:attack_wave_anthelion2
+	notowns monument_of_sin blank_return
+	atk_add 1 anthelion
+	atk_rel anthelion monument_of_sin 0.4
+	return
+	
+	:early_military
+	var Ex|Jump skip_building_var 1 blank 13
+	var Ex|Jump pref_ranger 1 early_military_ranger 13
+	var Ex|Jump pref_templar 1 early_military_templar 13
+	var Ex|Jump pref_skylord 1 early_military_skylord 13
+	
+	:early_military_gen
+	time AtL 7200 Frames blank
+	var Ex|wait can_queue_early_military_var 1 13
+	bring 13 AtL_M 1 gateway Loc.63 early_zealot
+	bring 13 AtL_M 1 gateway Loc.63 early_dracadin
+	bring 13 AtL_M 1 sequestered_icon Loc.63 early_accantor
+	bring 13 AtL_M 1 cenotaph Loc.63 early_legionnaire
+	bring 13 AtL_M 1 lattice Loc.63 early_simulacrum
+	bring 13 AtL_M 1 cenotaph Loc.63 early_hierophant
+	bring 13 AtL_M 1 stargate Loc.63 early_panoptus
+	wait 480
+	c_queues train zealot|dracadin|accantor|legionnaire|simulacrum|hierophant|panoptus 13
+	goto early_military_gen
+	
+	:early_military_ranger
+	time AtL 7200 Frames blank
+	var Ex|wait can_queue_early_military_var 1 13
+	bring 13 AtL_M 1 lattice Loc.63 early_simulacrum
+	bring 13 AtL_M 1 gateway Loc.63 early_dracadin
+	bring 13 AtL_M 1 sequestered_icon Loc.63 early_accantor
+	bring 13 AtL_M 1 gateway Loc.63 early_zealot
+	bring 13 AtL_M 1 cenotaph Loc.63 early_hierophant
+	bring 13 AtL_M 1 stargate Loc.63 early_panoptus
+	bring 13 AtL_M 1 cenotaph Loc.63 early_legionnaire
+	wait 480
+	c_queues train simulacrum|dracadin|accantor|zealot|hierophant|panoptus|legionnaire 13
+	goto early_military_ranger
+	
+	:early_military_templar
+	time AtL 7200 Frames blank
+	var Ex|wait can_queue_early_military_var 1 13
+	bring 13 AtL_M 1 cenotaph Loc.63 early_legionnaire
+	bring 13 AtL_M 1 gateway Loc.63 early_zealot
+	bring 13 AtL_M 1 gateway Loc.63 early_dracadin
+	bring 13 AtL_M 1 cenotaph Loc.63 early_hierophant
+	bring 13 AtL_M 1 stargate Loc.63 early_panoptus
+	bring 13 AtL_M 1 sequestered_icon Loc.63 early_accantor
+	bring 13 AtL_M 1 lattice Loc.63 early_simulacrum
+	wait 480
+	c_queues train legionnaire|zealot|dracadin|hierophant|panoptus|accantor|simulacrum 13
+	goto early_military_templar
+	
+	:early_military_skylord
+	time AtL 7200 Frames blank
+	var Ex|wait can_queue_early_military_var 1 13
+	bring 13 AtL_M 1 stargate Loc.63 early_panoptus
+	bring 13 AtL_M 1 gateway Loc.63 early_zealot
+	bring 13 AtL_M 1 cenotaph Loc.63 early_legionnaire
+	bring 13 AtL_M 1 sequestered_icon Loc.63 early_accantor
+	bring 13 AtL_M 1 gateway Loc.63 early_dracadin
+	bring 13 AtL_M 1 lattice Loc.63 early_simulacrum
+	bring 13 AtL_M 1 cenotaph Loc.63 early_hierophant
+	wait 480
+	c_queues train panoptus|zealot|legionnaire|accantor|dracadin|simulacrum|hierophant 13
+	goto early_military_skylord
+	
+	:early_zealot
+	bring 13 Ex 0 gateway Loc.63 blank
+	bring 13 AtL 12 zealot Loc.63 blank
+	res 13 AtM Ore 99 blank
+	queue_rel zealot gateway 1 gateway 255 Global 63 100
+	stop
+	
+	:early_dracadin
+	bring 13 Ex 0 gateway Loc.63 blank
+	bring 13 AtL 12 dracadin Loc.63 blank
+	res 13 AtM Ore 124 blank
+	res 13 AtM Gas 49 blank
+	queue_rel dracadin gateway 1 gateway 255 Global 63 100
+	stop
+	
+	:early_legionnaire
+	bring 13 Ex 0 cenotaph Loc.63 blank
+	bring 13 AtL 15 legionnaire Loc.63 blank
+	res 13 AtM Ore 74 blank
+	queue_rel legionnaire cenotaph 1 cenotaph 255 Global 63 100
+	stop
+	
+	:early_hierophant
+	bring 13 Ex 0 cenotaph Loc.63 blank
+	bring 13 AtL 8 hierophant Loc.63 blank
+	res 13 AtM Ore 124 blank
+	res 13 AtM Gas 74 blank
+	queue_rel hierophant cenotaph 1 cenotaph 255 Global 63 100
+	stop
+	
+	:early_simulacrum
+	bring 13 Ex 0 lattice Loc.63 blank
+	bring 13 AtL 64 simulacrum Loc.63 blank
+	res 13 AtM Ore 49 blank
+	res 13 AtM Gas 24 blank
+	queue_rel simulacrum lattice 1 lattice 255 Global 63 100
+	stop
+	
+	:early_accantor
+	bring 13 Ex 0 sequestered_icon Loc.63 blank
+	bring 13 AtL 8 accantor Loc.63 blank
+	res 13 AtM Ore 199 blank
+	res 13 AtM Gas 99 blank
+	queue_rel accantor sequestered_icon 1 sequestered_icon 255 Global 63 100
+	stop
+	
+	:early_panoptus
+	bring 13 Ex 0 stargate Loc.63 blank
+	bring 13 AtL 12 panoptus Loc.63 blank
+	res 13 AtM Ore 249 blank
+	res 13 AtM Gas 149 blank
+	queue_rel panoptus stargate 1 stargate 255 Global 63 100
+	stop
+	
+	:anti_grief
+	var Ex|Jump skip_building_var 1 blank 13
+	multi anti_grief_rush
+	multi anti_grief_air
+	multi anti_grief_cloak
+	stop
+	
+	:anti_grief_rush
+	time AtL 6480 Frames blank
+	wait 24
+	var Ex|Jump under_attack_by_ground_var 0 anti_grief_rush 13
+	wait 360
+	var Ex|Jump under_attack_by_ground_var 0 anti_grief_rush 13
+	var Set can_build_static_defense_var 1 13
+	var Set can_queue_early_military_var 1 13
+	stop
+	
+	:anti_grief_air
+	bring 13 AtL 4 dracadin|ecclesiast|simulacrum|manifold|aurora|panoptus|lanifect Loc.63 blank
+	wait 24
+	var Ex|Jump under_attack_by_air_var 0 anti_grief_air 13
+	bring 13 AtL 3 dracadin|hierophant|panoptus|lanifect Loc.63 blank
+	var Ex|Jump pref_ranger 1 anti_grief_air_ranger 13
+	var Ex|Jump pref_skylord 1 anti_grief_air_skylord 13
+	goto anti_grief_air_general
+	
+	:anti_grief_air_ranger
+	bld 1 lattice 98
+	bld 1 gateway 98
+	train 3 manifold
+	train 2 simulacrum
+	train 4 dracadin
+	stop
+	
+	:anti_grief_air_skylord
+	bld 1 stargate 98
+	train 3 aurora
+	train 2 lanifect
+	train 1 panoptus
+	stop
+	
+	:anti_grief_air_general
+	bld 1 gateway 98
+	train 4 dracadin
+	train 2 ecclesiast
+	stop
+	
+	:anti_grief_cloak
+	wait 24
+	bring 13 AtL 2 witness Loc.63 anti_grief_cloak
+	player_combat 17 13 63 False Jump eidolon|wraith|sundog|cabalist|barghest|lakizilisk Any anti_grief_cloak 13
+	var Ex|Jump pref_skylord 1 anti_grief_cloak_skylord 13
+	goto anti_grief_cloak_general
+	
+	:anti_grief_cloak_skylord
+	bring 13 AtL 1 embassy Loc.63 anti_grief_cloak_skylord2
+	bld 1 embassy 98
+	w_bldstart 1 embassy
+	bld 2 warden 97
+	
+	:anti_grief_cloak_skylord2
+	w_bld 1 embassy
+	queue 1 witness embassy 255 Global Loc.63 100
+	wait 600
+	goto anti_grief_cloak
+	
+	:anti_grief_cloak_general
+	bring 13 AtL 1 embassy Loc.63 anti_grief_cloak_general2
+	bld 1 embassy 98
+	w_bldstart 1 embassy
+	bld 3 warden 97
+	
+	:anti_grief_cloak_general2
+	w_bld 1 embassy
+	queue 1 witness embassy 255 Global Loc.63 100
+	wait 600
+	goto anti_grief_cloak
+	
+	### CUSTOM AREA TOWNS ###
+	# Called before the rest of the script, to make sure it initializes properly
+	
+	:custom_town_check
+	dth 13 Ex 3 scanner_sweep custom_town_scenario
+	return
+	
+	:custom_town_scenario
+	goto custom_town_endworld
+	
+	:custom_town_endworld
+	dth 13 Ex 7 t_tank_turret custom_town_endworld_7
+	dth 13 Ex 8 t_tank_turret custom_town_endworld_8
+	return
+	
+	:custom_town_endworld_7
+	create_script expansion_init_area_town 255 Loc.1 0 22
+	create_script expansion_init_area_town 255 Loc.3 0 21
+	return
+	
+	:custom_town_endworld_8
+	create_script expansion_init_area_town 255 Loc.5 0 31
+	create_script expansion_init_area_town 255 Loc.8 0 20
+	return
+	

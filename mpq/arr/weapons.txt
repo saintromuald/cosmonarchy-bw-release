@@ -1,0 +1,256 @@
+Gauss Rifle (Maverick)
+Javelin Cannons (Heracles)
+C-10 Concussion Rifle (Eidolon)
+Charon Rifle (Apostle)
+Fragmentation Grenade (Vulture)
+Haymaker Autogun (Cuirass)
+Spider Mines (Spider Mine)
+Twin Autocannons (Goliath G)
+Contender Missiles (Goliath A)
+Danaan Autogun (Madcap)
+Crusader Missile Salvo (Paladin)
+Arclite Cannon (Phalanx, Tank)
+Fusion Battery (Talos)
+Fusion Cutter (Mason)
+Fusion Cutter (Harvest)
+Monogun (Blackjack)
+Burst Lasers (Wraith)
+Perdition Barrage (Salamander)
+Artifice Battery (Gorgon)
+Asterion Laser Battery (Minotaur)
+Gauss Pistols (Cohort)
+Furia Missiles (Madrigal)
+Imperioso Missiles (Madrigal)
+Artax Cannon (Centaur)
+Sunchaser Missiles (Centaur)
+Flamethrower (Harakan)
+Twin Railguns (Cyprian)
+Arclite Shock Cannon (Phalanx, Siege)
+Monstrous Maw (Zoryusthaleth)
+Longbolt Missiles (Watchdog)
+Yamato Cannon (Phobos ability)
+Nuclear Missile
+Lobotomy Mine (unused)
+EMP Shockwave (unused)
+Irradiate (Seraph ability)
+Claws (Zethrokor)
+Claws (Vorvrokor)
+Plasmid Breath (Nathrokor)
+Needle Spines (Hydralisk)
+Erebol Shock Cannon (Penumbra)
+Kaiser Blades (Ultrokor)
+Screaming Venom (Keskathalor)
+Toxic Spores (Rilirokor)
+Spines (Droleth)
+Spines (Harvest)
+Plasmid Spores (Alkajelisk)
+Acid Spore (Geszithalor)
+Serrated Cleavers (Gorgrokor)
+Glave Wurm (Mutalisk)
+Parasitic Spores (Alkajelisk)
+Corrosive Acid (Bactalisk)
+Jupiter Driver (Pazuzu)
+Seeker Spores (Spraith Colony)
+Subterranean Tentacle (Surkith Colony)
+Skittering Spores (Skithrokor)
+Suicide (Skryrokor)
+Parasite (Matraleth ability)
+Salvage (Talos)
+Screaming Venom 2 (Keskathalor)
+Dark Swarm (Isthrathaleth ability)
+Plague (Isthrathaleth ability)
+Consume (Zoryusthaleth ability)
+Particle Beam (Scribe)
+Particle Beam (Harvest)
+Psi Blades (Zealot)
+Pulse Blaster (Vassal)
+Phase Disruptor (Dracadin)
+Plasma Flurry (Gladius)
+Phase Cannon (Simulacrum)
+Potentium Cannon (Aspirant)
+Psionic Shockwave (Archon)
+Plasma Barrage (Empyrean)
+Phase Signifier (Hierophant)
+Photon Blasters (Aurora)
+Plasma Missiles (Panoptus)
+Aeon's Madness (Augur)
+Plasma Torpedo (Exemplar)
+Phase Disruptor Cannon (Didact)
+Neutron Cannon (Magister)
+Pulse Cannon (Steward)
+Prismatic Cannon (Photon Cannon)
+Swarming Spores (Rililisk)
+Plasma Shell (Accantor) (deprecated)
+Stasis Field (Didact ability)
+Psi Storm (Cantavis ability)
+Hollowed Spores (Liiralisk)
+Psi Sabers (Legionnaire)
+Harrying Talons (Akistrokor)
+Discoid Railgun (Savant)
+Lobotomy Mine (unused)
+Celestial Cannon (Star Sovereign)
+Intervention Missiles (Star Sovereign behavior)
+Spores (Sovroleth)
+Flak Cannons (Cyclops)
+Argos Laser Batteries (Phobos)
+Sowing Spines (Konvilisk)
+Charybdal Rifle (Siren)
+Astral Blaster (Ecclesiast)
+Dauntless Disruption Cannon (Atreus)
+Psi Cleaver (Amaranth)
+Neutron Flare (Lanifect)
+Sequencing Spore (Charlatan)
+Acrid Barbs (Quazilisk)
+Halo Rockets (Valkyrie)
+Corrosive Spores (Vithrilisk)
+Mind Control (Mind Tyrant ability)
+Galactic Weaver (Demiurge)
+Hallucination (Cantavis ability)
+Maelstrom (Mind Tyrant ability)
+Subterranean Spines (Lakizilisk)
+Piercing Spines (Almaksalisk)
+Warp Blades (Cabalist)
+Prismatic Blasters (Idol)
+Psi Lances (Golem)
+Ray of Agony (Barghest)
+Iconoclast's Flurry (Pariah)
+Eminance Rifle (Autocrat)
+Viscous Acid (Kalkalisk)
+Phase Blaster (Manifold)
+Dispersive Salvo (Architect)
+Harpoon Railgun (Claymore)
+Aural Assault (Luminary ability)
+Observance (Seraph ability)
+Titan's Fist (Olympian)
+Mountain Gun (Olympian)
+Jackson Cannon (Wyvern)
+Skyfall (Paladin ability)
+Enthralling Assault (Akistrokor ability)
+Final Hour (Augur behavior)
+Ion Cannon
+None
+Icarus Missiles (Luminary)
+Litany Cannons (Epigraph)
+Phase Saber (Striga)
+Searing Venom (Axitrilisk)
+Hedon Cannon (Tarasque)
+Accelerated Plasmid (Tarasque)
+Encircling Mirror (Anticthon)
+Fading Bioplasma (Empress)
+Event Horizon (Anthelion)
+Emergency Detonation
+Newtonian Shock Cannon (Magnetar)
+Energized Bioplasma (Izirokor)
+Spines (Gosvileth)
+Neutron Saber (Artisan)
+Repeating Venom (Kagralisk)
+Brutish Tendrils (Evigrilisk)
+Cerberus Railgun (Sentinel)
+Vapid Blaster (Vagrant)
+Khaydarin Ray (Matrix)
+Blindside Rockets (Sundog)
+Twinstrike Cannons (Matador)
+Bisecting Blades (Zarcavrokor)
+Bones of Reflection (Zarcavrokor)
+Retractor Batteries (Pegasus)
+Lancet Missiles (Pegasus)
+Chimera Cannons (Hippogriff)
+Axis Drivers (Oberon)
+Acheron Missiles (Oberon)
+Lazarus Salvo (Aion)
+Stellar Torch (Herald)
+Acid Salvo (Cikralisk)
+Saber Array (Tethzorokor)
+Pungent Spores (Protathalor)
+Dissolving Sabers (Vilgorokor)
+Explosive Spores (Tosgrilisk)
+Gnashing Tendrils (Ghitorokor)
+Rapid Spines (Zobriolisk)
+Fusion Saw (Wendigo)
+Knockout Drivers (Southpaw)
+Pharoah Cannons (Ramesses)
+Fist of Abaddon (Durendal)
+Philistine Autogun (Durendal)
+Longinius Cannons (Cataphract)
+Upstart Rifle (Dilettante)
+Geometric Rifle (Sevenstep)
+Kaleidoscope Cannon (Hypnagogue)
+Cleaving Maw (Tetcaerokor)
+Diplomat Pulse Rifle (Ambassador)
+Signatory Salvo (Ambassador)
+Usurper Flamethrower (Heir)
+Excellency Laser Batteries (Heir)
+Hades Cannon (Horseman)
+Through the Looking Glass (Hypnagogue)
+Wordsmith Railgun (Silvertongue)
+Sunsplit Beam (Optecton)
+Skybond Ray (Optecton)
+Ironhand Weaver (Patriarch)
+Nominee Burst Rifle (Thespian)
+Embalming Spores (Selkerilisk)
+Congealing Spores (Elthrazalisk)
+Plasma Shell (Accantor)
+Wicked Incisors (Mortothrokor)
+Recycled Blaster (Servitor)
+Antimatter Missile (Positron)
+Sparring Saber (Sycophant)
+Kissing Emoji (Smoochie Boy)
+Extended Weapon #68
+Extended Weapon #69
+Extended Weapon #70
+Extended Weapon #71
+Extended Weapon #72
+Extended Weapon #73
+Extended Weapon #74
+Extended Weapon #75
+Extended Weapon #76
+Extended Weapon #77
+Extended Weapon #78
+Extended Weapon #79
+Extended Weapon #80
+Extended Weapon #81
+Extended Weapon #82
+Extended Weapon #83
+Extended Weapon #84
+Extended Weapon #85
+Extended Weapon #86
+Extended Weapon #87
+Extended Weapon #88
+Extended Weapon #89
+Extended Weapon #90
+Extended Weapon #91
+Extended Weapon #92
+Extended Weapon #93
+Extended Weapon #94
+Extended Weapon #95
+Extended Weapon #96
+Extended Weapon #97
+Extended Weapon #98
+Extended Weapon #99
+Extended Weapon #100
+Extended Weapon #101
+Extended Weapon #102
+Extended Weapon #103
+Extended Weapon #104
+Extended Weapon #105
+Extended Weapon #106
+Extended Weapon #107
+Extended Weapon #108
+Extended Weapon #109
+Extended Weapon #110
+Extended Weapon #111
+Extended Weapon #112
+Extended Weapon #113
+Extended Weapon #114
+Extended Weapon #115
+Extended Weapon #116
+Extended Weapon #117
+Extended Weapon #118
+Extended Weapon #119
+Extended Weapon #120
+Extended Weapon #121
+Extended Weapon #122
+Extended Weapon #123
+C-10 Canister Rifle (Kerrigan)
+Claws (Kerrigan)
+None (new)

@@ -1,0 +1,6063 @@
+script_name Terran Expansion Custom Level
+script_id TMCx
+# Cosmonarchy Terran melee AI
+
+	call custom_town_check
+	wait 1
+	unstart_campaign
+	start_town
+	wait 1
+	set_free_id
+	default_min 195
+	defaultbuild_off
+	wait 1
+	aictrl dont_build_gas
+	aictrl unit_mover_enabled
+	aictrl dont_focus_disabled
+	transports_off
+	guard_all
+	farms_timing
+	i_orders DisableBuiltin 0 0 0 0 0 0 0
+	var Set town_count_var 1 13
+	var Set mining_count_var 1 13
+	var Add can_worker_var 1 13
+#	dth 13 Set 1 start_location blank
+	queue 1 mason command_center 255 Local Loc.63 200
+	multi core_runtime
+	wait 1
+	multi core_town
+	wait 1
+	multi core_spending
+	wait 1
+	multi core_military
+	wait 1
+	goto select_personality
+	
+	:core_runtime
+	dth 13 AtL_C 1 start_location debug_display_messages
+	dth 13 Ex_C 0 scanner_sweep debug_script_active
+	dth 13 Ex_C 99 dark_swarm_unit custom_build_order_defined
+	dth 13 AtL_C 101 dark_swarm_unit custom_timers_defined
+	dth 13 AtL_C 101 plasma_shell custom_timers_defined_2
+	res 13 AtL_C Ore 1000 ignore_timings
+	stop
+	
+	:core_town
+	wait 24
+	multi town_handling
+	multi expansion_loop
+	multi tech_handling
+	multi anti_grief
+	stop
+	
+	:core_military
+	wait 24
+	multi define_maxes
+	multi defense_handling
+	multi attack_handling
+	multi early_military
+	stop
+	
+	:core_spending
+	wait 24
+	multi cheat_resource
+	multi under_attack_conditions
+	multi wait_resources
+	multi gas_conditions
+	multi save_money_for_expansion
+	stop
+	
+	:debug_display_messages
+	var Set debug_ai_messages_var 1 13
+	return
+	
+	:debug_script_active
+	dth 13 Set 1 scanner_sweep blank
+	return
+	
+	:custom_build_order_defined
+	var Set skip_building_var 1 13
+	return
+	
+	:custom_timers_defined
+	var Set use_custom_timers_var 1 13
+	dth 13 Sub 100 dark_swarm_unit blank
+	return
+	
+	:custom_timers_defined_2
+	var Set use_custom_timers_var 1 13
+	dth 13 Sub 100 plasma_shell blank
+	return
+	
+	:select_personality
+	dth 13 AtL 1 disruption_web_unit select_build_type
+	dth 13 Rand 4 disruption_web_unit blank
+	dth 13 Add 1 disruption_web_unit blank
+	groundmap_jump select_build_type
+	dth 13 Set 3 disruption_web_unit blank
+	
+	:select_build_type
+	dth 13 AtL 1 dark_swarm_unit select_preferences
+	dth 13 Ex 1 plasma_shell select_build_type_timing
+	dth 13 Ex 2 plasma_shell select_build_type_rush
+	dth 13 Ex 3 plasma_shell select_build_type_greed
+	dth 13 Ex 4 plasma_shell select_build_type_random_timing_rush
+	dth 13 Ex 5 plasma_shell select_build_type_random_rush_greed
+	dth 13 Ex 6 plasma_shell select_build_type_random_greed_timing
+	wait 1
+	kills 15 14 AtL 2 mineral_field2 select_build_type_timing
+	rand_j 85 select_build_type_rush
+	kills 15 14 AtL 1 mineral_field3 select_build_type_timing
+	rand_j 128 select_build_type_greed
+	
+	:select_build_type_timing
+	var Set build_type_is_timing_var 1 13
+	goto select_preferences
+	
+	:select_build_type_rush
+	kills 15 14 Add 1 mineral_field2 blank
+	var Set build_type_is_rush_var 1 13
+	goto select_preferences
+	
+	:select_build_type_greed
+	kills 15 14 Add 1 mineral_field3 blank
+	var Set build_type_is_greed_var 1 13
+	goto select_preferences
+	
+	:select_build_type_random_timing_rush
+	rand_j 128 select_build_type_timing
+	goto select_build_type_rush
+	
+	:select_build_type_random_rush_greed
+	rand_j 128 select_build_type_rush
+	goto select_build_type_greed
+	
+	:select_build_type_random_greed_timing
+	rand_j 128 select_build_type_greed
+	goto select_build_type_timing
+	
+	:select_preferences
+	# personalities
+	dth 13 Ex_C 1 disruption_web_unit prefPArmor
+	dth 13 Ex_C 2 disruption_web_unit prefPRaider
+	dth 13 Ex_C 3 disruption_web_unit prefPOrbital
+	dth 13 Ex_C 9 disruption_web_unit prefPScenario
+	# military
+	dth 13 AtL_C 1 maverick prefUMaverick
+	dth 13 AtL_C 1 harakan prefUHarakan
+	dth 13 AtL_C 1 cyprian prefUCyprian
+	dth 13 AtL_C 1 madcap prefUMadcap
+	dth 13 AtL_C 1 heracles prefUHeracles
+	dth 13 AtL_C 1 cleric prefUCleric
+	dth 13 AtL_C 1 shaman prefUShaman
+	dth 13 AtL_C 1 apostle prefUApostle
+	dth 13 AtL_C 1 eidolon prefUEidolon
+	dth 13 AtL_C 1 savant prefUSavant
+	dth 13 AtL_C 1 siren prefUSiren
+	dth 13 AtL_C 1 striga prefUStriga
+	dth 13 AtL_C 1 olympian prefUOlympian
+	dth 13 AtL_C 1 autocrat prefUAutocrat
+	dth 13 AtL_C 1 dilettante prefUDilettante
+	dth 13 AtL_C 1 sevenstep prefUSevenstep
+	dth 13 AtL_C 1 hypnagogue prefUHypnagogue
+	dth 13 AtL_C 1 vulture prefUVulture
+	dth 13 AtL_C 1 cyclops prefUCyclops
+	dth 13 AtL_C 1 goliath prefUGoliath
+	dth 13 AtL_C 1 blackjack prefUBlackjack
+	dth 13 AtL_C 1 matador prefUMatador
+	dth 13 AtL_C 1 phalanx prefUPhalanx
+	dth 13 AtL_C 1 madrigal prefUMadrigal
+	dth 13 AtL_C 1 ramesses prefURamesses
+	dth 13 AtL_C 1 durendal prefUDurendal
+	dth 13 AtL_C 1 cataphract prefUCataphract
+	dth 13 AtL_C 1 paladin prefUPaladin
+	dth 13 AtL_C 1 cuirass prefUCuirass
+	dth 13 AtL_C 1 pazuzu prefUPazuzu
+	dth 13 AtL_C 1 claymore prefUClaymore
+	dth 13 AtL_C 1 penumbra prefUPenumbra
+	dth 13 AtL_C 1 anticthon prefUAion
+	dth 13 AtL_C 1 anticthon prefUAntichthon
+	dth 13 AtL_C 1 wraith prefUWraith
+	dth 13 AtL_C 1 gorgon prefUGorgon
+	dth 13 AtL_C 1 valkyrie prefUValkyrie
+	dth 13 AtL_C 1 salamander prefUSalamander
+	dth 13 AtL_C 1 wyvern prefUWyvern
+	dth 13 AtL_C 1 seraph prefUSeraph
+	dth 13 AtL_C 1 azazel prefUAzazel
+	dth 13 AtL_C 1 centaur prefUCentaur
+	dth 13 AtL_C 1 minotaur prefUMinotaur
+	dth 13 AtL_C 1 magnetar prefUMagnetar
+	dth 13 AtL_C 1 hippogriff prefUHippogriff
+	dth 13 AtL_C 1 phobos prefUPhobos
+	# production
+	dth 13 AtL_C 1 barracks prefBBarracks
+	dth 13 AtL_C 1 captaincy prefBCaptaincy
+	dth 13 AtL_C 1 medbay prefBMedbay
+	dth 13 AtL_C 1 covert_ops prefBCovertOps
+	dth 13 AtL_C 1 fulcrum prefBFactory
+	dth 13 AtL_C 1 iron_foundry prefBIronFoundry
+	dth 13 AtL_C 1 machine_shop prefBMachineShop
+	dth 13 AtL_C 1 scrapyard prefBSalvoYard
+	dth 13 AtL_C 1 starport prefBStarport
+	dth 13 AtL_C 1 nanite_assembly prefBNaniteAssembly
+	dth 13 AtL_C 1 munitions_bay prefBMunitionsBay
+	dth 13 AtL_C 1 commandment prefBCommandment
+	dth 13 AtL_C 1 biotic_base prefBBioticBase
+	dth 13 AtL_C 1 tinkerers_tower prefBTinkerersTower
+	dth 13 AtL_C 1 missile_silo prefBNuclearSilo
+	dth 13 AtL_C 1 quarry prefBQuarry
+	call select_preferences_reset_deaths
+	multi preference_cycle_start
+	multi gas_timer_main # Reads build types, defaults to 4 minutes
+	goto idle
+	
+	:select_preferences_reset_deaths
+	dth 13 Set 0 maverick blank
+	dth 13 Set 0 harakan blank
+	dth 13 Set 0 cyprian blank
+	dth 13 Set 0 madcap blank
+	dth 13 Set 0 heracles blank
+	dth 13 Set 0 cleric blank
+	dth 13 Set 0 shaman blank
+	dth 13 Set 0 apostle blank
+	dth 13 Set 0 eidolon blank
+	dth 13 Set 0 olympian blank
+	dth 13 Set 0 autocrat blank
+	dth 13 Set 0 savant blank
+	dth 13 Set 0 vulture blank
+	dth 13 Set 0 cyclops blank
+	dth 13 Set 0 goliath blank
+	dth 13 Set 0 cuirass blank
+	dth 13 Set 0 phalanx blank
+	dth 13 Set 0 madrigal blank
+	dth 13 Set 0 paladin blank
+	dth 13 Set 0 pazuzu blank
+	dth 13 Set 0 penumbra blank
+	dth 13 Set 0 wraith blank
+	dth 13 Set 0 gorgon blank
+	dth 13 Set 0 valkyrie blank
+	dth 13 Set 0 salamander blank
+	dth 13 Set 0 wyvern blank
+	dth 13 Set 0 seraph blank
+	dth 13 Set 0 azazel blank
+	dth 13 Set 0 centaur blank
+	dth 13 Set 0 minotaur blank
+	dth 13 Set 0 phobos blank
+	dth 13 Set 0 blackjack blank
+	dth 13 Set 0 cohort blank
+	dth 13 Set 0 aspirant blank
+	dth 13 Set 0 claymore blank
+	dth 13 Set 0 siren blank
+	dth 13 Set 0 tarasque blank
+	dth 13 Set 0 anticthon blank
+	dth 13 Set 0 striga blank
+	dth 13 Set 0 luminary blank
+	dth 13 Set 0 barracks blank
+	dth 13 Set 0 captaincy blank
+	dth 13 Set 0 medbay blank
+	dth 13 Set 0 covert_ops blank
+	dth 13 Set 0 fulcrum blank
+	dth 13 Set 0 iron_foundry blank
+	dth 13 Set 0 machine_shop blank
+	dth 13 Set 0 scrapyard blank
+	dth 13 Set 0 starport blank
+	dth 13 Set 0 nanite_assembly blank
+	dth 13 Set 0 munitions_bay blank
+	dth 13 Set 0 commandment blank
+	dth 13 Set 0 biotic_base blank
+	dth 13 Set 0 tinkerers_tower blank
+	dth 13 Set 0 missile_silo blank
+	dth 13 Set 0 quarry blank
+	return
+	
+	:prefPArmor
+	var Set pref_armor 1 13
+	var Set pref_raider 0 13
+	var Set pref_orbital 0 13
+	var Set pref_scenario 0 13
+	return
+	
+	:prefPRaider
+	var Set pref_armor 0 13
+	var Set pref_raider 1 13
+	var Set pref_orbital 0 13
+	var Set pref_scenario 0 13
+	return
+	
+	:prefPOrbital
+	var Set pref_armor 0 13
+	var Set pref_raider 0 13
+	var Set pref_orbital 1 13
+	var Set pref_scenario 0 13
+	return
+	
+	:prefPScenario
+	var Set pref_armor 0 13
+	var Set pref_raider 0 13
+	var Set pref_orbital 0 13
+	var Set pref_scenario 1 13
+	call prefPScenarioCheck
+	return
+	
+	:prefPScenarioLite
+	var Set pref_scenario_lite 1 13
+	dth 13 Set 0 cyprian blank
+	return
+	
+	:prefPScenarioCheck
+	dth 13 Ex 2 scanner_sweep prefPScenario_OneForTheFuture
+#	dth 13 Ex 3 scanner_sweep prefPScenario_TheLostGods
+	return
+	
+	:prefPScenario_OneForTheFuture
+	dth 13 Ex_M 1 right_pit_door prefPScenario_OneForTheFuture_WallStreetWar
+	dth 13 Ex_M 4 right_pit_door prefPScenario_OneForTheFuture_PastaMasta
+	dth 13 Ex_M 7 right_pit_door prefPScenario_OneForTheFuture_FavoredFiction
+	return
+	
+	:prefPScenario_OneForTheFuture_WallStreetWar
+	wait 12
+	var Set pref_armor 1 13
+	var AtL|Wait mining_count_var 4 13
+	var Set pref_armor 0 13
+	var Set pref_orbital 1 13
+	var AtM|Wait mining_count_var 3 13
+	goto prefPScenario_OneForTheFuture_WallStreetWar
+	
+	:prefPScenario_OneForTheFuture_PastaMasta
+	dth 13 Ex 5 t_tank_turret prefPScenario_OneForTheFuture_PastaMasta_TonyTron
+	stop
+	
+	:prefPScenario_OneForTheFuture_PastaMasta_TonyTron
+	var Set pref_orbital 1 13
+	stop
+	
+	:prefPScenario_OneForTheFuture_FavoredFiction
+	dth 13 Ex 5 t_tank_turret prefPScenario_OneForTheFuture_FavoredFiction_Ullen
+	stop
+	
+	:prefPScenario_OneForTheFuture_FavoredFiction_Ullen
+	var Set pref_armor 1 13
+	stop
+	
+	:prefUMaverick
+	var Set prefMaverick 1 13
+	var Set prefHarakan 0 13
+	var Set prefCyprian 0 13
+	var Set pref_raider_barracks 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefMaverick
+	return
+	
+	:prefUHarakan
+	var Set prefMaverick 0 13
+	var Set prefHarakan 1 13
+	var Set prefCyprian 0 13
+	var Set pref_raider_barracks 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefHarakan
+	return
+	
+	:prefUCyprian
+	var Set prefMaverick 0 13
+	var Set prefHarakan 0 13
+	var Set prefCyprian 1 13
+	var Set pref_raider_barracks 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefCyprian
+	return
+	
+	:prefUCleric
+	var Set prefCleric 1 13
+	var Set prefShaman 0 13
+	var Set pref_raider_medbay 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefCleric
+	return
+	
+	:prefUShaman
+	var Set prefCleric 0 13
+	var Set prefShaman 1 13
+	var Set pref_raider_medbay 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefShaman
+	return
+	
+	:prefUEidolon
+	var Set prefEidolon 1 13
+	var Set prefSavant 0 13
+	var Set pref_raider_covert 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefEidolon
+	return
+	
+	:prefUSavant
+	var Set prefEidolon 0 13
+	var Set prefSavant 1 13
+	var Set pref_raider_covert 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefSavant
+	return
+	
+	:prefUMadcap
+	var Set prefMadcap 1 13
+	var Set prefHeracles 0 13
+	var Set prefApostle 0 13
+	var Set pref_raider_captaincy 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefMadcap
+	return
+	
+	:prefUHeracles
+	var Set prefMadcap 0 13
+	var Set prefHeracles 1 13
+	var Set prefApostle 0 13
+	var Set pref_raider_captaincy 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefHeracles
+	return
+	
+	:prefUApostle
+	var Set prefMadcap 0 13
+	var Set prefHeracles 0 13
+	var Set prefApostle 1 13
+	var Set pref_raider_medbay 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefApostle
+	return
+	
+	:prefUSiren
+	var Set prefSiren 1 13
+	var Set prefStriga 0 13
+	var Set pref_raider_tinkerer 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefSiren
+	return
+	
+	:prefUStriga
+	var Set prefSiren 0 13
+	var Set prefStriga 1 13
+	var Set pref_raider_tinkerer 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefStriga
+	return
+	
+	:prefUOlympian
+	var Set prefOlympian 1 13
+	var Set prefAutocrat 0 13
+	var Set pref_raider_guildhall 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefOlympian
+	return
+	
+	:prefUAutocrat
+	var Set prefOlympian 0 13
+	var Set prefAutocrat 1 13
+	var Set pref_raider_guildhall 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefAutocrat
+	return
+	
+	:prefUDilettante
+	var Set prefDilettante 1 13
+	var Set prefSevenstep 0 13
+	var Set prefHypnagogue 0 13
+	var Set pref_raider_apothecary 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefDilettante
+	return
+	
+	:prefUSevenstep
+	var Set prefDilettante 0 13
+	var Set prefSevenstep 1 13
+	var Set prefHypnagogue 0 13
+	var Set pref_raider_apothecary 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefSevenstep
+	return
+	
+	:prefUHypnagogue
+	var Set prefDilettante 0 13
+	var Set prefSevenstep 0 13
+	var Set prefHypnagogue 1 13
+	var Set pref_raider_apothecary 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefHypnagogue
+	return
+	
+	:prefUVulture
+	var Set prefVulture 1 13
+	var Set prefCyclops 0 13
+	var Set prefGoliath 0 13
+	var Set pref_armor_fulcrum 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefVulture
+	return
+	
+	:prefUCyclops
+	var Set prefVulture 0 13
+	var Set prefCyclops 1 13
+	var Set prefGoliath 0 13
+	var Set pref_armor_fulcrum 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefCyclops
+	return
+	
+	:prefUGoliath
+	var Set prefVulture 0 13
+	var Set prefCyclops 0 13
+	var Set prefGoliath 1 13
+	var Set pref_armor_fulcrum 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefGoliath
+	return
+	
+	:prefUBlackjack
+	var Set prefBlackjack 1 13
+	var Set prefMatador 0 13
+	var Set pref_armor_scrapyard 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefBlackjack
+	return
+	
+	:prefUMatador
+	var Set prefBlackjack 0 13
+	var Set prefMatador 1 13
+	var Set pref_armor_scrapyard 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefMatador
+	return
+	
+	:prefUPhalanx
+	var Set prefPhalanx 1 13
+	var Set prefMadrigal 0 13
+	var Set pref_armor_machine 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefPhalanx
+	return
+	
+	:prefUMadrigal
+	var Set prefPhalanx 0 13
+	var Set prefMadrigal 1 13
+	var Set pref_armor_machine 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefMadrigal
+	return
+	
+	:prefURamesses
+	var Set prefRamesses 1 13
+	var Set prefDurendal 0 13
+	var Set prefCataphract 0 13
+	var Set pref_armor_mantle 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefRamesses
+	return
+	
+	:prefUDurendal
+	var Set prefRamesses 0 13
+	var Set prefDurendal 1 13
+	var Set prefCataphract 0 13
+	var Set pref_armor_mantle 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefDurendal
+	return
+	
+	:prefUCataphract
+	var Set prefRamesses 0 13
+	var Set prefDurendal 0 13
+	var Set prefCataphract 1 13
+	var Set pref_armor_mantle 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefCataphract
+	return
+	
+	:prefUPaladin
+	var Set prefPaladin 1 13
+	var Set prefCuirass 0 13
+	var Set prefPazuzu 0 13
+	var Set pref_armor_iron 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefPaladin
+	return
+	
+	:prefUCuirass
+	var Set prefPaladin 0 13
+	var Set prefCuirass 1 13
+	var Set prefPazuzu 0 13
+	var Set pref_armor_iron 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefCuirass
+	return
+	
+	:prefUPazuzu
+	var Set prefPaladin 0 13
+	var Set prefCuirass 0 13
+	var Set prefPazuzu 1 13
+	var Set pref_armor_iron 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefPazuzu
+	return
+	
+	:prefUClaymore
+	var Set prefPazuzu 0 13
+	var Set prefClaymore 1 13
+	var Set prefPenumbra 0 13
+	var Set pref_armor_future 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefClaymore
+	return
+	
+	:prefUPenumbra
+	var Set prefPazuzu 0 13
+	var Set prefClaymore 0 13
+	var Set prefPenumbra 1 13
+	var Set pref_armor_future 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefPenumbra
+	return
+	
+	:prefUAion
+	var Set prefAion 1 13
+	var Set prefAnticthon 0 13
+	var Set pref_armor_biotic 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefAion
+	return
+	
+	:prefUAntichthon
+	var Set prefAion 0 13
+	var Set prefAnticthon 1 13
+	var Set pref_armor_biotic 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefAnticthon
+	return
+	
+	:prefUWraith
+	var Set prefWraith 1 13
+	var Set prefAncile 0 13
+	var Set pref_orbital_starpad 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefWraith
+	return
+	
+	:prefUAncile
+	var Set prefWraith 0 13
+	var Set prefAncile 1 13
+	var Set pref_orbital_starpad 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefAncile
+	return
+	
+	:prefUGorgon
+	var Set prefGorgon 1 13
+	var Set prefWyvern 0 13
+	var Set prefValkyrie 0 13
+	var Set pref_orbital_starport 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefGorgon
+	return
+	
+	:prefUWyvern
+	var Set prefGorgon 0 13
+	var Set prefWyvern 1 13
+	var Set prefValkyrie 0 13
+	var Set pref_orbital_starport 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefWyvern
+	return
+	
+	:prefUValkyrie
+	var Set prefGorgon 0 13
+	var Set prefWyvern 0 13
+	var Set prefValkyrie 1 13
+	var Set pref_orbital_starport 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefValkyrie
+	return
+	
+	:prefUSalamander
+	var Set prefSalamander 1 13
+	var Set prefSundog 0 13
+	var Set pref_orbital_munitions 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefSalamander
+	return
+	
+	:prefUSundog
+	var Set prefSalamander 0 13
+	var Set prefSundog 1 13
+	var Set pref_orbital_munitions 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefSundog
+	return
+	
+	:prefUAzazel
+	var Set prefAzazel 1 13
+	var Set prefSeraph 0 13
+	var Set pref_orbital_control 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefAzazel
+	return
+	
+	:prefUSeraph
+	var Set prefAzazel 0 13
+	var Set prefSeraph 1 13
+	var Set pref_orbital_control 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefSeraph
+	return
+	
+	:prefUCentaur
+	var Set prefCentaur 1 13
+	var Set prefMinotaur 0 13
+	var Set prefMagnetar 0 13
+	var Set pref_orbital_nanite 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefCentaur
+	return
+	
+	:prefUMinotaur
+	var Set prefCentaur 0 13
+	var Set prefMinotaur 1 13
+	var Set prefMagnetar 0 13
+	var Set pref_orbital_nanite 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefMinotaur
+	return
+	
+	:prefUMagnetar
+	var Set prefCentaur 0 13
+	var Set prefMinotaur 0 13
+	var Set prefMagnetar 1 13
+	var Set pref_orbital_nanite 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefMagnetar
+	return
+	
+	:prefUHippogriff
+	var Set prefHippogriff 1 13
+	var Set prefPhobos 0 13
+	var Set pref_orbital_particleaccelerator 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefHippogriff
+	return
+	
+	:prefUPhobos
+	var Set prefHippogriff 0 13
+	var Set prefPhobos 1 13
+	var Set pref_orbital_particleaccelerator 1 13
+	dth 13 Ex 0 start_location blank_return
+	print prefPhobos
+	return
+	
+	:prefBBarracks
+	var Set pref_barracks 1 13
+	var Set pref_captaincy 0 13
+	var Set pref_raider_production 1 13
+	dth 13 Ex 0 start_location blank_return
+	print pref_barracks
+	return
+	
+	:prefBCaptaincy
+	var Set pref_barracks 0 13
+	var Set pref_captaincy 1 13
+	var Set pref_raider_production 1 13
+	dth 13 Ex 0 start_location blank_return
+	print pref_captaincy
+	return
+	
+	:prefBMedbay
+	var Set pref_medbay 1 13
+	var Set pref_covert_ops 0 13
+	var Set pref_addon_barracks 1 13
+	dth 13 Ex 0 start_location blank_return
+	print pref_medbay
+	return
+	
+	:prefBCovertOps
+	var Set pref_medbay 0 13
+	var Set pref_covert_ops 1 13
+	var Set pref_addon_barracks 1 13
+	dth 13 Ex 0 start_location blank_return
+	print pref_covert_ops
+	return
+	
+	:prefBTinkerersTower
+	var Set pref_tinkerers_tower 1 13
+	var Set pref_guildhall 0 13
+	dth 13 Ex 0 start_location blank_return
+	print pref_tinkerers_tower
+	return
+	
+	:prefBGuildhall
+	var Set pref_tinkerers_tower 0 13
+	var Set pref_guildhall 1 13
+	dth 13 Ex 0 start_location blank_return
+	print pref_guildhall
+	return
+	
+	:prefBFactory
+	var Set pref_fulcrum 1 13
+	var Set pref_iron_foundry 0 13
+	var Set pref_armor_production 1 13
+	dth 13 Ex 0 start_location blank_return
+	print pref_fulcrum
+	return
+	
+	:prefBIronFoundry
+	var Set pref_fulcrum 0 13
+	var Set pref_iron_foundry 1 13
+	var Set pref_armor_production 1 13
+	dth 13 Ex 0 start_location blank_return
+	print pref_iron_foundry
+	return
+	
+	:prefBMachineShop
+	var Set pref_machine_shop 1 13
+	var Set pref_scrapyard 0 13
+	var Set pref_addon_fulcrum 1 13
+	dth 13 Ex 0 start_location blank_return
+	print pref_machine_shop
+	return
+	
+	:prefBSalvoYard
+	var Set pref_machine_shop 0 13
+	var Set pref_scrapyard 1 13
+	var Set pref_addon_fulcrum 1 13
+	dth 13 Ex 0 start_location blank_return
+	print pref_scrapyard
+	return
+	
+	:prefBFutureStation
+	var Set pref_future_station 1 13
+	var Set pref_biotic_base 0 13
+	dth 13 Ex 0 start_location blank_return
+	print pref_future_station
+	return
+	
+	:prefBBioticBase
+	var Set pref_future_station 0 13
+	var Set pref_biotic_base 1 13
+	dth 13 Ex 0 start_location blank_return
+	print pref_biotic_base
+	return
+	
+	:prefBStarport
+	var Set pref_starport 1 13
+	var Set pref_nanite_assembly 0 13
+	var Set pref_orbital_production 1 13
+	dth 13 Ex 0 start_location blank_return
+	print pref_starport
+	return
+	
+	:prefBNaniteAssembly
+	var Set pref_starport 0 13
+	var Set pref_nanite_assembly 1 13
+	var Set pref_orbital_production 1 13
+	dth 13 Ex 0 start_location blank_return
+	print pref_nanite_assembly
+	return
+	
+	:prefBMunitionsBay
+	var Set pref_munitions_bay 1 13
+	var Set pref_commandment 0 13
+	var Set pref_addon_starport 1 13
+	dth 13 Ex 0 start_location blank_return
+	print pref_munitions_bay
+	return
+	
+	:prefBCommandment
+	var Set pref_munitions_bay 0 13
+	var Set pref_commandment 1 13
+	var Set pref_addon_starport 1 13
+	dth 13 Ex 0 start_location blank_return
+	print pref_commandment
+	return
+	
+	:prefBNuclearSilo
+	var Set pref_missile_silo 1 13
+	var Set pref_infrastructure_addon 1 13
+	dth 13 Ex 0 start_location blank_return
+	print pref_missile_silo
+	return
+	
+	:prefBQuarry
+	var Set pref_quarry 1 13
+	var Set pref_infrastructure_addon 1 13
+	dth 13 Ex 0 start_location blank_return
+	print pref_quarry
+	return
+	
+	:buildpref_raider_barracks_maverick
+	var Set prefMaverick 1 13
+	return
+	
+	:buildpref_raider_barracks_harakan
+	var Set prefHarakan 1 13
+	return
+	
+	:buildpref_raider_barracks_cyprian
+	var Set prefCyprian 1 13
+	return
+	
+	:buildpref_raider_medbay_cleric
+	var Set prefCleric 1 13
+	return
+	
+	:buildpref_raider_medbay_shaman
+	var Set prefShaman 1 13
+	return
+	
+	:buildpref_raider_captaincy_apostle
+	var Set prefApostle 1 13
+	return
+	
+	:buildpref_raider_covertops_eidolon
+	var Set prefEidolon 1 13
+	return
+	
+	:buildpref_raider_covertops_savant
+	var Set prefSavant 1 13
+	return
+	
+	:buildpref_raider_captaincy_madcap
+	var Set prefMadcap 1 13
+	return
+	
+	:buildpref_raider_captaincy_heracles
+	var Set prefHeracles 1 13
+	return
+	
+	:buildpref_raider_tinkerer_siren
+	var Set prefSiren 1 13
+	return
+	
+	:buildpref_raider_tinkerer_striga
+	var Set prefStriga 1 13
+	return
+	
+	:buildpref_armor_fulcrum_vulture
+	var Set prefVulture 1 13
+	return
+	
+	:buildpref_armor_fulcrum_cyclops
+	var Set prefCyclops 1 13
+	return
+	
+	:buildpref_armor_fulcrum_goliath
+	var Set prefGoliath 1 13
+	return
+	
+	:buildpref_armor_scrapyard_blackjack
+	var Set prefBlackjack 1 13
+	return
+	
+	:buildpref_armor_scrapyard_matador
+	var Set prefMatador 1 13
+	return
+	
+	:buildpref_armor_machineshop_phalanx
+	var Set prefPhalanx 1 13
+	return
+	
+	:buildpref_armor_machineshop_madrigal
+	var Set prefMadrigal 1 13
+	return
+	
+	:buildpref_armor_ironfoundry_paladin
+	var Set prefPaladin 1 13
+	return
+	
+	:buildpref_armor_ironfoundry_cuirass
+	var Set prefCuirass 1 13
+	return
+	
+	:buildpref_armor_ironfoundry_pazuzu
+	var Set prefPazuzu 1 13
+	return
+	
+	:buildpref_armor_futurestation_claymore
+	var Set prefClaymore 1 13
+	return
+	
+	:buildpref_armor_futurestation_penumbra
+	var Set prefPenumbra 1 13
+	return
+	
+	:buildpref_armor_biotic_aion
+	var Set prefAion 1 13
+	return
+	
+	:buildpref_armor_biotic_anticthon
+	var Set prefAnticthon 1 13
+	return
+	
+	:buildpref_orbital_starpad_wraith
+	var Set prefWraith 1 13
+	return
+	
+	:buildpref_orbital_starport_gorgon
+	var Set prefGorgon 1 13
+	return
+	
+	:buildpref_orbital_starport_wyvern
+	var Set prefWyvern 1 13
+	return
+	
+	:buildpref_orbital_starport_valkyrie
+	var Set prefValkyrie 1 13
+	return
+	
+	:buildpref_orbital_munitionsbay_salamander
+	var Set prefSalamander 1 13
+	return
+	
+	:buildpref_orbital_munitionsbay_sundog
+	var Set prefSundog 1 13
+	return
+	
+	:buildpref_orbital_commandment_seraph
+	var Set prefSeraph 1 13
+	return
+	
+	:buildpref_orbital_commandment_azazel
+	var Set prefAzazel 1 13
+	return
+	
+	:buildpref_orbital_naniteassembly_centaur
+	var Set prefCentaur 1 13
+	return
+	
+	:buildpref_orbital_naniteassembly_minotaur
+	var Set prefMinotaur 1 13
+	return
+	
+	:buildpref_orbital_naniteassembly_magnetar
+	var Set prefMagnetar 1 13
+	return
+	
+	:buildpref_orbital_particleaccelerator_phobos
+	var Set prefPhobos 1 13
+	return
+	
+	:buildpref_orbital_particleaccelerator_oberon
+	var Set prefOberon 1 13
+	return
+	
+	:buildpref_raider_barracks
+	var Set pref_barracks 1 13
+	return
+	
+	:buildpref_raider_captaincy
+	var Set pref_captaincy 1 13
+	return
+	
+	:buildpref_raider_medbay
+	var Set pref_medbay 1 13
+	return
+	
+	:buildpref_raider_covertops
+	var Set pref_covert_ops 1 13
+	return
+	
+	:buildpref_raider_tinkererstower
+	var Set pref_tinkerers_tower 1 13
+	return
+	
+	:buildpref_raider_guildhall
+	var Set pref_guildhall 1 13
+	return
+	
+	:buildpref_armor_fulcrum
+	var Set pref_fulcrum 1 13
+	return
+	
+	:buildpref_armor_ironfoundry
+	var Set pref_iron_foundry 1 13
+	return
+	
+	:buildpref_armor_machineshop
+	var Set pref_machine_shop 1 13
+	return
+	
+	:buildpref_armor_scrapyard
+	var Set pref_scrapyard 1 13
+	return
+	
+	:buildpref_armor_futurestation
+	var Set pref_future_station 1 13
+	return
+	
+	:buildpref_armor_bioticbase
+	var Set pref_biotic_base 1 13
+	return
+	
+	:buildpref_orbital_starport
+	var Set pref_starport 1 13
+	return
+	
+	:buildpref_orbital_naniteassembly
+	var Set pref_nanite_assembly 1 13
+	return
+	
+	:buildpref_orbital_munitionsbay
+	var Set pref_munitions_bay 1 13
+	return
+	
+	:buildpref_orbital_commandment
+	var Set pref_commandment 1 13
+	return
+	
+	:buildpref_orbital_particleaccelerator
+	var Set pref_particle_accelerator 1 13
+	return
+	
+	:buildpref_commandcenter_missilesilo
+	var Set pref_missile_silo 1 13
+	return
+	
+	:buildpref_commandcenter_quarry
+	var Set pref_quarry 1 13
+	return
+	
+	:preference_cycle_start
+	var Ex|Wait build_done_var 1 13
+	
+	:pref_cycle
+	wait 360
+	
+	:pref_cycle_raider
+	var Ex|Jump pref_raider_production 1 pref_cycle_armor 13
+	var AtL|Call mining_count_var 2 resetpref_armor_production_captaincy 13
+	var AtM|Call mining_count_var 1 resetpref_armor_production_barracks 13
+	
+	:pref_cycle_armor
+	var Ex|Jump pref_armor_production 1 pref_cycle_orbital 13
+	var AtL|Call mining_count_var 3 resetpref_armor_production_ironfoundry 13
+	var AtM|Call mining_count_var 2 resetpref_armor_production_fulcrum 13
+	
+	:pref_cycle_orbital
+	var Ex|Jump pref_orbital_production 1 blank_return 13
+	var AtL|Call mining_count_var 4 resetpref_armor_production_naniteassembly 13
+	var AtM|Call mining_count_var 3 resetpref_armor_production_starport 13
+	goto pref_cycle
+	
+	:resetpref_armor_production_barracks
+	var Set pref_barracks 1 13
+	var Set pref_captaincy 0 13
+	return
+	
+	:resetpref_armor_production_captaincy
+	var Set pref_barracks 0 13
+	var Set pref_captaincy 1 13
+	return
+	
+	:resetpref_armor_production_fulcrum
+	var Set pref_fulcrum 1 13
+	var Set pref_iron_foundry 0 13
+	return
+	
+	:resetpref_armor_production_ironfoundry
+	var Set pref_fulcrum 0 13
+	var Set pref_iron_foundry 1 13
+	return
+	
+	:resetpref_armor_production_starport
+	var Set pref_starport 1 13
+	var Set pref_nanite_assembly 0 13
+	return
+	
+	:resetpref_armor_production_naniteassembly
+	var Set pref_starport 0 13
+	var Set pref_nanite_assembly 1 13
+	return
+	
+	:idle
+	wait 25500
+	goto idle
+	
+	:blank
+	stop
+	
+	:blank_return
+	return
+	
+	:ignore_timings
+	wait 24
+	var Add can_worker_var 1 13
+	wait 720
+	var Set build_gas_var 1 13
+	wait 720
+	multi ignore_timings_ExpansionSequence
+	wait 720
+	var Set can_build_static_defense_var 1 13
+	wait 720
+	atk_c
+	send_suicide 0
+	var Set can_attack_var 1 13
+	return
+	
+	:ignore_timings_ExpansionSequence
+	res 13 AtL Ore 10000 ignore_timings_ExpansionSequence_4
+	res 13 AtL Ore 4000 ignore_timings_ExpansionSequence_3
+	res 13 AtL Ore 2000 ignore_timings_ExpansionSequence_2
+	res 13 AtM Ore 999 ignore_timings_ExpansionSequence_Var
+	call expansion_loop_normal
+	wait 24
+	goto ignore_timings_ExpansionSequence_End
+	
+	:ignore_timings_ExpansionSequence_4
+	call expansion_loop_normal
+	wait 24
+	call expansion_loop_normal
+	wait 24
+	call expansion_loop_normal
+	wait 24
+	call expansion_loop_normal
+	wait 24
+	goto ignore_timings_ExpansionSequence_End
+	
+	:ignore_timings_ExpansionSequence_3
+	call expansion_loop_normal
+	wait 24
+	call expansion_loop_normal
+	wait 24
+	call expansion_loop_normal
+	wait 24
+	goto ignore_timings_ExpansionSequence_End
+	
+	:ignore_timings_ExpansionSequence_2
+	call expansion_loop_normal
+	wait 24
+	call expansion_loop_normal
+	wait 24
+	goto ignore_timings_ExpansionSequence_End
+	
+	:ignore_timings_ExpansionSequence_End
+	wait 600
+	stop
+	
+	:ignore_timings_ExpansionSequence_Var
+	var Add can_expand_var 1 13
+	stop
+	
+	:cheat_resource
+	upg_j 13 AtL 18 1 blank
+	upg_j 13 Set 18 1 blank
+	stop
+	
+	:under_attack_conditions
+	wait 12
+	player_combat 17 13 63 True Wait Any Group_Buildings|mason|talos
+	var Set under_attack_var 1 13
+	wait 360
+	player_combat 17 13 63 True Call Any Group_Buildings|mason|talos under_attack_conditions_max 13
+	wait 120
+	
+	:under_attack_conditions_fin
+	var Set under_attack_var 0 13
+	var Set under_attack_by_ground_var 0 13
+	var Set under_attack_by_air_var 0 13
+	var Set can_build_production_var 1 13
+	goto under_attack_conditions
+	
+	:under_attack_conditions_max
+	player_combat 17 13 63 False WF(240) Any Group_Buildings|mason|talos
+	player_combat 17 13 63 False Jump Any Group_Buildings|mason|talos blank_return 13
+	var Set can_build_production_var 0 13
+	var Set under_attack_var 2 13
+	player_combat 17 13 63 False WF(480) Any Group_Buildings|mason|talos
+	return
+	
+	:under_attack_by_ground_calc
+	var AtL|Wait under_attack_var 1 13
+	player_combat 17 13 63 False Jump maverick|harakan|cyprian|eidolon|savant|madcap|heracles|apostle|siren|striga|olympian|autocrat|dilettante|sevenstep|hypnagogue|ambassador|heir|horseman|thespian|silvertongue|emperor|jester|vulture|cyclops|goliath|blackjack|matador|phalanx|phalanx_siege_mode|madrigal|ramesses|durendal|cataphract|paladin|cuirass|pazuzu|claymore|penumbra|anticthon|aion|zealot|dracadin|ecclesiast|legionnaire|hierophant|amaranth|atreus|herald|cantavis|vagrant|cabalist|pariah|charlatan|archon|optecton|patriarch|apostate|augur|manifold|simulacrum|idol|golem|accantor|architect|demiurge|zethrokor|quazilisk|vorvrokor|liiralisk|cikralisk|protathalor|axitrilisk|mortothrokor|hydralisk|izirokor|bactalisk|tethzorokor|kagralisk|evigrilisk|keskathalor|zoryusthaleth|lakizilisk|konvilisk|vilgorokor|rilirokor|ultrokor|zobriolisk|aspirant|cohort|tarasque Any under_attack_by_ground_calc_fin 13
+	var Set under_attack_by_ground_var 1 13
+	
+	:under_attack_by_ground_calc_fin
+	wait 240
+	goto under_attack_by_ground_calc
+	
+	:under_attack_by_air_calc
+	var Ex|Wait under_attack_var 1 13
+	player_combat 17 13 63 False Jump talos|wraith|gorgon|wyvern|valkyrie|salamander|sundog|centaur|minotaur|magnetar|pegasus|hippogriff|oberon|phobos|artisan|barghest|vassal|empress|aurora|panoptus|lanifect|gladius|exemplar|magister|epigraph|didact|empyrean|solarion|star_sovereign|anthelion|gosvileth|nathrokor|kalkalisk|mutalisk|ghitorokor|sovroleth|tosgrilisk|skithrokor|vithrilisk|almaksalisk|geszithalor|algoztalisk|alkajelisk|gorgrokor|rililisk|zarcavrokor|tetcaerokor|akistrokor|luminary Any under_attack_by_air_calc_fin 13
+	var Set under_attack_by_air_var 1 13
+	
+	:under_attack_by_air_calc_fin
+	wait 240
+	goto under_attack_by_air_calc
+	
+	:wait_resources
+	aictrl wait_request_resources
+	res 13 AtL_W Ore 1000 blank
+	aictrl dont_wait_request_resources
+	wait 120
+	res 13 AtM_W Ore 999 blank
+	goto wait_resources
+	
+	:gas_timer_main
+	var Ex|Jump build_type_is_greed_var 1 gas_timer_greed 13
+	var Ex|Jump build_type_is_rush_var 1 gas_timer_rush 13
+	var Set gas_timer_loop_var 5760 13
+	goto gas_timer_loop
+	
+	:gas_timer_greed
+	var Set gas_timer_loop_var 2880 13
+	goto gas_timer_loop
+	
+	:gas_timer_rush
+	var Set gas_timer_loop_var 8640 13
+	goto gas_timer_loop
+	
+	:gas_timer_loop
+	wait 1
+	var Sub gas_timer_loop_var 1 13
+	var AtL|Jump gas_timer_loop_var 1 gas_timer_loop 13
+	var Set build_gas_var 1 13
+	stop
+	
+	:gas_conditions
+	var Ex|Wait build_gas_var 1 13
+	aictrl build_gas
+	var Ex|Wait build_gas_var 1 13
+	
+	:gas_requests
+	resarea 255 Ex 255 Gas 0 blank
+#	bld 1 reservoir 105
+	resarea 255 AtM 255 Gas 6000 blank
+	wait 600
+#	bld 2 reservoir 104
+	resarea 255 AtM 255 Gas 11000 blank
+	wait 600
+#	bld 3 reservoir 103
+	resarea 255 AtM 255 Gas 16000 blank
+	wait 600
+#	bld 4 reservoir 102
+	resarea 255 AtM 255 Gas 21000 blank
+	wait 600
+#	bld 5 reservoir 101
+	stop
+	
+	:define_maxes
+	def_max 80 maverick
+	def_max 64 harakan
+	def_max 56 cyprian
+	def_max 48 cleric
+	def_max 32 shaman
+	def_max 52 madcap
+	def_max 52 heracles
+	def_max 36 apostle
+	def_max 36 eidolon
+	def_max 32 savant
+	def_max 52 olympian
+	def_max 36 autocrat
+	def_max 64 vulture
+	def_max 48 cyclops
+	def_max 64 goliath
+	def_max 52 cuirass
+	def_max 52 phalanx
+	def_max 56 madrigal
+	def_max 32 paladin
+	def_max 48 pazuzu
+	def_max 24 penumbra
+	def_max 64 wraith
+	def_max 56 gorgon
+	def_max 36 valkyrie
+	def_max 24 trojan
+	def_max 52 wyvern
+	def_max 50 salamander
+	def_max 24 seraph
+	def_max 32 azazel
+	def_max 36 centaur
+	def_max 30 minotaur
+	def_max 28 magnetar
+	def_max 21 phobos
+	def_max 60 blackjack
+	def_max 60 cohort
+	def_max 36 claymore
+	def_max 44 siren
+	def_max 52 aspirant
+	def_max 42 striga
+	def_max 32 luminary
+	def_max 36 tarasque
+	def_max 28 anticthon
+	stop
+	
+	:defense_handling
+	call defense_handling_pick
+	var Ex|WF(480) under_attack_var 1 13
+	wait 120
+	var Ex|Wait under_attack_var 0 13
+	defc_gg
+	defc_ga
+	defc_aa
+	defc_ag
+	goto defense_handling
+	
+	:defense_handling_pick
+	var Ex pref_armor 1 defense_handling_armor 13
+	var Ex pref_raider 1 defense_handling_raider 13
+	var Ex pref_orbital 1 defense_handling_orbital 13
+	
+	:defense_handling_general
+	unit_check 13 13 63 Greater|Jump 0 0 barracks|captaincy|apothecary fulcrum|iron_foundry|mantle|starpad|starport|nanite_assembly defense_handling_raider 13
+	unit_check 13 13 63 Greater|Jump 0 0 fulcrum|mantle|iron_foundry barracks|captaincy|apothecary|starpad|starport|nanite_assembly defense_handling_armor 13
+	unit_check 13 13 63 Greater|Jump 0 0 starpad|starport|nanite_assembly barracks|captaincy|apothecary|fulcrum|mantle|iron_foundry defense_handling_orbital 13
+	return
+	
+	:defense_handling_armor
+	call defense_wave_armor
+	call defense_wave_orbital
+	call defense_wave_raider
+	return
+	
+	:defense_handling_raider
+	call defense_wave_raider
+	call defense_wave_armor
+	call defense_wave_orbital
+	return
+	
+	:defense_handling_orbital
+	call defense_wave_orbital
+	call defense_wave_raider
+	call defense_wave_armor
+	return
+	
+	:defense_wave_armor
+	call def_armor_future
+	call def_armor_biotic
+	call def_armor_iron
+	call def_armor_mantle
+	call def_armor_machineshop
+	call def_armor_scrapyard
+	call def_armor_fulcrum
+	return
+	
+	:defense_wave_raider
+	call def_raider_apothecary
+	call def_raider_guildhall
+	call def_raider_tinkerer
+	call def_raider_captaincy
+	call def_raider_barracks
+	call def_raider_covertops
+	return
+	
+	:defense_wave_orbital
+	call def_orbital_particle
+	call def_orbital_nanite
+	call def_orbital_munitionsbay
+	call def_orbital_starport
+	call def_orbital_starpad
+	return
+	
+	:def_raider_barracks
+	var AtL|Call prefMaverick 1 def_maverick 13
+	var AtL|Call prefHarakan 1 def_cyprian 13
+	var AtL|Call prefCyprian 1 def_harakan 13
+	call def_maverick
+	call def_cyprian
+	call def_harakan
+	return
+	
+	:def_raider_covertops
+	var AtL|Call prefEidolon 1 def_eidolon 13
+	var AtL|Call prefSavant 1 def_savant 13
+	call def_eidolon
+	call def_savant
+	return
+	
+	:def_raider_captaincy
+	var AtL|Call prefMadcap 1 def_madcap 13
+	var AtL|Call prefHeracles 1 def_heracles 13
+	call def_madcap
+	call def_heracles
+	call def_apostle
+	return
+	
+	:def_raider_tinkerer
+	var AtL|Call prefSiren 1 def_siren 13
+	var AtL|Call prefStriga 1 def_striga 13
+	call def_siren
+	call def_striga
+	return
+	
+	:def_raider_guildhall
+	var AtL|Call prefOlympian 1 def_olympian 13
+	var AtL|Call prefAutocrat 1 def_autocrat 13
+	call def_olympian
+	call def_autocrat
+	return
+	
+	:def_raider_apothecary
+	var AtL|Call prefDilettante 1 def_dilettante 13
+	var AtL|Call prefSevenstep 1 def_sevenstep 13
+#	var AtL|Call prefHypnagogue 1 def_hypnagogue 13
+	call def_dilettante
+	call def_sevenstep
+#	call def_hypnagogue
+	return
+	
+	:def_armor_fulcrum
+	var AtL|Call prefVulture 1 def_vulture 13
+	var AtL|Call prefCyclops 1 def_cyclops 13
+	var AtL|Call prefGoliath 1 def_goliath 13
+	call def_vulture
+	call def_cyclops
+	call def_goliath
+	return
+	
+	:def_armor_scrapyard
+	var AtL|Call prefBlackjack 1 def_blackjack 13
+	var AtL|Call prefMatador 1 def_matador 13
+	call def_blackjack
+	call def_matador
+	return
+	
+	:def_armor_machineshop
+	var AtL|Call prefPhalanx 1 def_phalanx 13
+	var AtL|Call prefMadrigal 1 def_madrigal 13
+	call def_phalanx
+	call def_madrigal
+	return
+	
+	:def_armor_mantle
+	var AtL|Call prefRamesses 1 def_ramesses 13
+	var AtL|Call prefDurendal 1 def_durendal 13
+	var AtL|Call prefCataphract 1 def_cataphract 13
+	call def_ramesses
+	call def_durendal
+	call def_cataphract
+	return
+	
+	:def_armor_iron
+	var AtL|Call prefPaladin 1 def_paladin 13
+	var AtL|Call prefCuirass 1 def_cuirass 13
+	var AtL|Call prefPazuzu 1 def_pazuzu 13
+	call def_paladin
+	call def_cuirass
+	call def_pazuzu
+	return
+	
+	:def_armor_future
+	var AtL|Call prefClaymore 1 def_claymore 13
+	var AtL|Call prefPenumbra 1 def_penumbra 13
+	call def_claymore
+	call def_penumbra
+	return
+	
+	:def_armor_biotic
+	var AtL|Call prefAion 1 def_aion 13
+	var AtL|Call prefAnticthon 1 def_anticthon 13
+	call def_pazuzu
+	call def_claymore
+	call def_penumbra
+	return
+	
+	:def_orbital_starpad
+	var AtL|Call prefWraith 1 def_wraith 13
+	call def_wraith
+	return
+	
+	:def_orbital_starport
+	var AtL|Call prefGorgon 1 def_gorgon 13
+	var AtL|Call prefWyvern 1 def_wyvern 13
+	var AtL|Call prefValkyrie 1 def_valkyrie 13
+	call def_gorgon
+	call def_wyvern
+	call def_valkyrie
+	return
+	
+	:def_orbital_munitionsbay
+	var AtL|Call prefSalamander 1 def_salamander 13
+	var AtL|Call prefSundog 1 def_sundog 13
+	call def_salamander
+	call def_sundog
+	return
+	
+	:def_orbital_nanite
+	var AtL|Call prefCentaur 1 def_centaur 13
+	var AtL|Call prefMinotaur 1 def_minotaur 13
+	var AtL|Call prefMagnetar 1 def_magnetar 13
+	call def_centaur
+	call def_minotaur
+	call def_magnetar
+	return
+	
+	:def_orbital_particle
+	var AtL|Call prefHippogriff 1 def_hippogriff 13
+	var AtL|Call prefPhobos 1 def_phobos 13
+	call def_hippogriff
+	call def_phobos
+	return
+	
+	:def_maverick
+	notowns barracks blank_return
+	defb_gg 1 maverick
+	defb_ag 1 maverick
+	defu_gg 1 maverick
+	defu_ag 1 maverick
+	return
+	
+	:def_harakan
+	notowns barracks blank_return
+	defb_gg 1 harakan
+	defu_gg 1 harakan
+	return
+	
+	:def_cyprian
+	notowns barracks blank_return
+	defb_gg 1 cyprian
+	defb_ag 1 cyprian
+	defu_gg 1 cyprian
+	defu_ag 1 cyprian
+	return
+	
+	:def_eidolon
+	notowns covert_ops blank_return
+	notowns barracks blank_return
+	defb_gg 1 eidolon
+	defb_ag 1 eidolon
+	defu_gg 1 eidolon
+	defu_ag 1 eidolon
+	return
+	
+	:def_savant
+	notowns covert_ops blank_return
+	notowns barracks blank_return
+	defb_gg 1 savant
+	defb_ag 1 savant
+	defu_gg 1 savant
+	defu_ag 1 savant
+	return
+	
+	:def_apostle
+	notowns captaincy blank_return
+	defb_gg 1 apostle
+	defb_ag 1 apostle
+	defu_gg 1 apostle
+	defu_ag 1 apostle
+	return
+	
+	:def_madcap
+	notowns captaincy blank_return
+	defb_gg 1 madcap
+	defb_ag 1 madcap
+	defu_gg 1 madcap
+	defu_ag 1 madcap
+	return
+	
+	:def_heracles
+	notowns captaincy blank_return
+	defb_gg 1 heracles
+	defb_ag 1 heracles
+	defu_gg 1 heracles
+	defu_ag 1 heracles
+	return
+	
+	:def_siren
+	notowns captaincy blank_return
+	notowns tinkerers_tower blank_return
+	defb_gg 1 siren
+	defb_ag 1 siren
+	defu_gg 1 siren
+	defu_ag 1 siren
+	return
+	
+	:def_striga
+	notowns captaincy blank_return
+	notowns tinkerers_tower blank_return
+	defb_gg 1 striga
+	defb_ag 1 striga
+	defu_gg 1 striga
+	defu_ag 1 striga
+	return
+	
+	:def_olympian
+	notowns guildhall blank_return
+	notowns captaincy blank_return
+	defb_gg 1 olympian
+	defb_ag 1 olympian
+	defu_gg 1 olympian
+	defu_ag 1 olympian
+	return
+	
+	:def_autocrat
+	notowns guildhall blank_return
+	notowns captaincy blank_return
+	defb_gg 1 autocrat
+	defb_ag 1 autocrat
+	defu_gg 1 autocrat
+	defu_ag 1 autocrat
+	return
+	
+	:def_dilettante
+	notowns apothecary blank_return
+	defb_gg 1 dilettante
+	defb_ag 1 dilettante
+	defu_gg 1 dilettante
+	defu_ag 1 dilettante
+	return
+	
+	:def_sevenstep
+	notowns apothecary blank_return
+	defb_gg 1 sevenstep
+	defb_ag 1 sevenstep
+	defu_gg 1 sevenstep
+	defu_ag 1 sevenstep
+	return
+	
+	:def_hypnagogue
+	notowns apothecary blank_return
+	defb_gg 1 hypnagogue
+	defb_ag 1 hypnagogue
+	defu_gg 1 hypnagogue
+	defu_ag 1 hypnagogue
+	return
+	
+	:def_vulture
+	notowns fulcrum blank_return
+	defb_gg 1 vulture
+	defu_gg 1 vulture
+	return
+	
+	:def_cyclops
+	notowns fulcrum blank_return
+	defb_gg 1 cyclops
+	defb_ag 1 cyclops
+	defu_gg 1 cyclops
+	defu_ag 1 cyclops
+	return
+	
+	:def_goliath
+	notowns fulcrum blank_return
+	defb_gg 1 goliath
+	defb_ag 1 goliath
+	defu_gg 1 goliath
+	defu_ag 1 goliath
+	return
+	
+	:def_blackjack
+	notowns fulcrum blank_return
+	notowns scrapyard blank_return
+	defb_gg 1 blackjack
+	defb_ag 1 blackjack
+	defu_gg 1 blackjack
+	defu_ag 1 blackjack
+	return
+	
+	:def_matador
+	notowns fulcrum blank_return
+	notowns scrapyard blank_return
+	defb_gg 1 matador
+	defb_ag 1 matador
+	defu_gg 1 matador
+	defu_ag 1 matador
+	return
+	
+	:def_phalanx
+	notowns machine_shop blank_return
+	notowns fulcrum blank_return
+	defb_gg 1 phalanx
+	defu_gg 1 phalanx
+	return
+	
+	:def_madrigal
+	notowns machine_shop blank_return
+	notowns fulcrum blank_return
+	defb_gg 1 madrigal
+	defb_ag 1 madrigal
+	defu_gg 1 madrigal
+	defu_ag 1 madrigal
+	return
+	
+	:def_ramesses
+	notowns mantle blank_return
+	defb_gg 1 ramesses
+	defb_ag 1 ramesses
+	defu_gg 1 ramesses
+	defu_ag 1 ramesses
+	return
+	
+	:def_durendal
+	notowns mantle blank_return
+	defb_gg 1 durendal
+	defb_ag 1 durendal
+	defu_gg 1 durendal
+	defu_ag 1 durendal
+	return
+	
+	:def_cataphract
+	notowns mantle blank_return
+	defb_gg 1 cataphract
+	defb_ag 1 cataphract
+	defu_gg 1 cataphract
+	defu_ag 1 cataphract
+	return
+	
+	:def_paladin
+	notowns iron_foundry blank_return
+	defb_gg 1 paladin
+	defb_ag 1 paladin
+	defu_gg 1 paladin
+	defu_ag 1 paladin
+	return
+	
+	:def_cuirass
+	notowns iron_foundry blank_return
+	defb_gg 1 cuirass
+	defb_ag 1 cuirass
+	defu_gg 1 cuirass
+	defu_ag 1 cuirass
+	return
+	
+	:def_pazuzu
+	notowns iron_foundry blank_return
+	defb_gg 1 pazuzu
+	defb_ag 1 pazuzu
+	defu_gg 1 pazuzu
+	defu_ag 1 pazuzu
+	return
+	
+	:def_claymore
+	notowns future_station blank_return
+	notowns iron_foundry blank_return
+	defb_gg 1 claymore
+	defb_ga 1 claymore
+	defb_ag 1 claymore
+	defb_aa 1 claymore
+	defu_gg 1 claymore
+	defu_ga 1 claymore
+	defu_ag 1 claymore
+	defu_aa 1 claymore
+	return
+	
+	:def_penumbra
+	notowns future_station blank_return
+	notowns iron_foundry blank_return
+	defb_gg 1 penumbra
+	defb_ag 1 penumbra
+	defu_gg 1 penumbra
+	defu_ag 1 penumbra
+	return
+	
+	:def_aion
+	notowns iron_foundry blank_return
+	notowns biotic_base blank_return
+	defb_gg 1 aion
+	defb_ag 1 aion
+	defu_gg 1 aion
+	defu_ag 1 aion
+	return
+	
+	:def_anticthon
+	notowns iron_foundry blank_return
+	notowns biotic_base blank_return
+	defb_gg 1 anticthon
+	defb_ag 1 anticthon
+	defu_gg 1 anticthon
+	defu_ag 1 anticthon
+	return
+	
+	:def_wraith
+	notowns starpad blank_return
+	defb_gg 1 wraith
+	defb_ga 1 wraith
+	defb_ag 1 wraith
+	defb_aa 1 wraith
+	defu_gg 1 wraith
+	defu_ga 1 wraith
+	defu_ag 1 wraith
+	defu_aa 1 wraith
+	return
+	
+	:def_gorgon
+	notowns starport blank_return
+	defb_gg 1 gorgon
+	defb_ga 1 gorgon
+	defb_ag 1 gorgon
+	defb_aa 1 gorgon
+	defu_gg 1 gorgon
+	defu_ga 1 gorgon
+	defu_ag 1 gorgon
+	defu_aa 1 gorgon
+	return
+	
+	:def_wyvern
+	notowns starport blank_return
+	defb_gg 1 wyvern
+	defb_ga 1 wyvern
+	defu_gg 1 wyvern
+	defu_ga 1 wyvern
+	return
+	
+	:def_valkyrie
+	notowns starport blank_return
+	defb_ag 1 valkyrie
+	defu_ag 1 valkyrie
+	defu_aa 1 valkyrie
+	return
+	
+	:def_salamander
+	notowns munitions_bay blank_return
+	notowns starport blank_return
+	defb_gg 1 salamander
+	defb_ga 1 salamander
+	defb_ag 1 salamander
+	defb_aa 1 salamander
+	defu_gg 1 salamander
+	defu_ga 1 salamander
+	defu_ag 1 salamander
+	defu_aa 1 salamander
+	return
+	
+	:def_sundog
+	notowns munitions_bay blank_return
+	notowns starport blank_return
+	defb_gg 1 sundog
+	defb_ga 1 sundog
+	defb_ag 1 sundog
+	defb_aa 1 sundog
+	defu_gg 1 sundog
+	defu_ga 1 sundog
+	defu_ag 1 sundog
+	defu_aa 1 sundog
+	return
+	
+	:def_centaur
+	notowns nanite_assembly blank_return
+	defb_gg 1 centaur
+	defb_ga 1 centaur
+	defb_ag 1 centaur
+	defb_aa 1 centaur
+	defu_gg 1 centaur
+	defu_ga 1 centaur
+	defu_ag 1 centaur
+	defu_aa 1 centaur
+	return
+	
+	:def_minotaur
+	notowns nanite_assembly blank_return
+	defb_gg 1 minotaur
+	defb_ga 1 minotaur
+	defb_ag 1 minotaur
+	defb_aa 1 minotaur
+	defu_gg 1 minotaur
+	defu_ga 1 minotaur
+	defu_ag 1 minotaur
+	defu_aa 1 minotaur
+	return
+	
+	:def_magnetar
+	notowns nanite_assembly blank_return
+	defb_gg 1 magnetar
+	defb_ga 1 magnetar
+	defb_ag 1 magnetar
+	defb_aa 1 magnetar
+	defu_gg 1 magnetar
+	defu_ga 1 magnetar
+	defu_ag 1 magnetar
+	defu_aa 1 magnetar
+	return
+	
+	:def_hippogriff
+	notowns particle_accelerator blank_return
+	notowns nanite_assembly blank_return
+	defb_gg 1 hippogriff
+	defb_ga 1 hippogriff
+	defb_ag 1 hippogriff
+	defb_aa 1 hippogriff
+	defu_gg 1 hippogriff
+	defu_ga 1 hippogriff
+	defu_ag 1 hippogriff
+	defu_aa 1 hippogriff
+	return
+	
+	:def_phobos
+	notowns particle_accelerator blank_return
+	notowns nanite_assembly blank_return
+	defb_gg 1 phobos
+	defb_ga 1 phobos
+	defb_ag 1 phobos
+	defb_aa 1 phobos
+	defu_gg 1 phobos
+	defu_ga 1 phobos
+	defu_ag 1 phobos
+	defu_aa 1 phobos
+	return
+	
+	:init_area_town
+	start_areatown
+	goto init_body
+	
+	:init_town
+	start_town
+	
+	:init_body
+	wait 1
+	set_free_id
+	return
+	
+	:town_handling
+	multi main_worker_start
+	multi main_transport
+	bld 1 command_center 110
+	w_bld 1 command_center
+	wait 24
+	multi build_order
+	var Ex|Jump skip_building_var 1 idle 13
+	bring 13 AtL_W 1 barracks|captaincy Loc.63 blank
+	call main_wait_150
+	multi request_bunker
+	call main_wait_150
+	multi request_watchdog
+	call main_wait_600
+	multi request_infrastructure
+	call main_wait_600
+	bring 13 AtL_W 1 atlas Loc.63 blank
+	multi request_sentinel
+	call main_wait_600
+	bld 1 starpad 121
+	call main_wait_600
+	bring 13 AtL_W 1 daedala Loc.63 blank
+	multi request_ion_cannon
+	goto idle
+	
+	:worker_conditions
+	wait 12
+	res 13 AtL Ore 500 blank_return
+	var Ex|WF(360) under_attack_var 0 13
+	return
+	
+	:worker_request_advanced
+	local 255 AtL 28 mason|talos blank_return
+	notowns atlas blank_return
+	local 255 AtL 10 talos blank_return
+	queue 1 talos parthenon 255 Local Loc.63 100
+	wait 150
+	return
+	
+	:main_worker_start
+	multi worker_track
+	
+	:main_worker_loop
+	wait 150
+	var AtL|Wait can_worker_var 1 13
+	local 255 AtL 24 mason main_worker_loop
+	var AtL|Wait can_worker_var 1 13
+	res 13 AtL_W Ore 50 blank
+	call worker_conditions
+	c_queues train mason|talos 13
+	res 13 AtL_C Any 100 worker_request_advanced
+	local 255 AtL 28 mason|talos main_worker_loop
+	queue 1 mason command_center 255 Local Loc.63 200
+	wait 150
+	local 255 Ex 0 quarry main_worker_loop
+	queue 1 mason quarry 255 Local Loc.63 200
+	goto main_worker_loop
+	
+	:worker_track
+	wait 120
+	local 255 AtL_W 10 mason|talos blank
+	var Add mining_count_var 1 13
+	local 255 AtM_W 9 mason|talos blank
+	var Sub mining_count_var 1 13
+	goto worker_track
+	
+	:main_transport
+	multi island_check
+	wait 150
+	call main_wait_150
+	multi main_transport_on
+	
+	:main_transport_loop
+	wait 12
+	bring 13 AtL_C 4 trojan|pythean Loc.63 main_wait_600
+	bring 13 Ex 0 starpad|parthenon Loc.63 main_transport_loop
+	var Ex|Wait under_attack_var 0 13
+	bring 13 AtL 8 trojan|pythean Loc.63 main_transport_loop
+	bring 13 AtL 4 trojan|pythean Loc.63 main_transport_pythean
+	
+	:main_transport_trojan
+	queue 1 trojan starpad 255 Global Loc.63 130
+	wait 360
+	var Ex|Jump is_island_var 1 main_transport_wait 13
+	wait 360
+	goto main_transport_wait
+	
+	:main_transport_pythean
+	notowns parthenon main_transport_trojan_2
+	queue 1 pythean parthenon 255 Global Loc.63 120
+	wait 720
+	var Ex|Jump is_island_var 1 main_transport_wait 13
+	wait 720
+	goto main_transport_wait
+	
+	:main_transport_trojan_2
+	queue 1 trojan starpad 255 Global Loc.63 130
+	wait 540
+	var Ex|Jump is_island_var 1 main_transport_wait 13
+	wait 540
+	goto main_transport_wait
+	
+	:main_transport_wait
+	var Ex|Jump pref_orbital 1 main_transport_loop 13
+	wait 720
+	var Ex|Jump pref_raider 1 main_transport_loop 13
+	wait 720
+	goto main_transport_loop
+	
+	:main_transport_on
+	bring 13 AtL_W 1 starpad|parthenon|trojan|pythean Loc.63 blank
+	check_transports
+	stop
+	
+	:island_check
+	var Ex|Jump skip_building_var 1 blank 13
+	groundmap_jump blank
+	var Set is_island_var 1 13
+	bring 13 AtL_W 12 mason Loc.63 blank
+	bld 1 starpad 125
+	stop
+	
+	:main_wait_150
+	wait 24
+	res 13 AtL Any 500 blank_return
+	wait 150
+	return
+	
+	:main_wait_300
+	wait 24
+	res 13 AtL Any 500 blank_return
+	wait 300
+	return
+	
+	:main_wait_450
+	wait 24
+	call main_wait_300
+	call main_wait_150
+	return
+	
+	:main_wait_600
+	wait 24
+	res 13 AtL Any 800 blank_return
+	res 13 AtL Any 500 main_wait_300
+	wait 600
+	return
+	
+	:main_wait_750
+	wait 24
+	call main_wait_600
+	call main_wait_150
+	return
+	
+	:main_wait_900
+	wait 24
+	res 13 AtL Any 1100 blank_return
+	res 13 AtL Any 800 main_wait_600
+	res 13 AtL Any 500 main_wait_300
+	wait 900
+	return
+	
+	:main_wait_1200
+	wait 24
+	call main_wait_900
+	call main_wait_300
+	return
+	
+	:main_wait_1500
+	wait 24
+	call main_wait_1200
+	call main_wait_300
+	return
+	
+	:main_wait_1800
+	wait 24
+	call main_wait_900
+	call main_wait_900
+	return
+	
+	:main_wait_2400
+	wait 24
+	call main_wait_1200
+	call main_wait_1200
+	return
+	
+	:main_wait_3600
+	wait 24
+	call main_wait_1200
+	call main_wait_1200
+	return
+	
+	:expansion_request_conditions
+	var AtM|Jump mining_count_var 1 blank_return 13
+	res 13 AtL Ore 600 blank_return
+	res 13 AtL Ore 350 expansion_request_cut_some
+	res 13 AtL Ore 250 expansion_request_cut_most
+	goto expansion_request_cut_all
+	
+	:expansion_request_cut_some
+	var Set can_queue_early_military_var 0 13
+	return
+	
+	:expansion_request_cut_most
+	call expansion_request_cut_some
+	var Set can_build_static_defense_var 0 13
+	var Set can_build_production_var 0 13
+	return
+	
+	:expansion_request_cut_all
+	call expansion_request_cut_most
+	var Set can_worker_var 0 13 # sub?
+	return
+	
+	:expansion_request_reset
+	var Set can_queue_early_military_var 1 13
+	var Set can_build_static_defense_var 1 13
+	var Set can_build_production_var 1 13
+	var Set can_worker_var 1 13 # add?
+	return
+	
+	:expansion_toggle
+	var Add can_expand_var 1 13
+	wait 720
+	var Sub can_expand_var 1 13
+	stop
+	
+	:expansion_loop
+	var AtL|Wait can_expand_var 1 13
+	call expansion_request_conditions
+	var Set try_expand_var 1 13
+	call expansion_loop_normal
+	wait 720
+	call expansion_request_reset
+	wait 1080
+	res 13 AtL Ore 800 expansion_loop
+	call expansion_loop_wait
+	goto expansion_loop
+	
+	:expansion_loop_normal
+	expand 9 expansion_init
+	return
+	
+	:expansion_loop_wait
+	var AtM|Jump mining_count_var 1 blank_return 13
+	wait 3600
+	var AtM|Jump mining_count_var 2 blank_return 13
+	wait 3600
+	var AtM|Jump mining_count_var 3 blank_return 13
+	wait 3600
+	var AtM|Jump mining_count_var 4 blank_return 13
+	wait 3600
+	var AtM|Jump mining_count_var 5 blank_return 13
+	wait 3600
+	return
+	
+	:expansion_init_area_town
+	call init_area_town
+	goto expansion_body
+	
+	:expansion_init
+	call init_town
+	
+	:expansion_body
+	local 255 AtL 1 treasury expansion_body_treasury
+	bld 1 command_center 180
+	goto expansion_main
+	
+	:expansion_body_treasury
+	bld 1 treasury 180
+	bld 1 quarry 120
+	
+	:expansion_main
+	multi expansion_worker_start
+	w_bldstart 1 command_center
+	var Set try_expand_var 0 13
+	w_bld 1 command_center
+	multi gas_requests
+	multi count_expansion
+	var Ex|Jump skip_building_var 1 idle 13
+	placeholder_count Local AtL|Jump 2 Group_Buildings idle 13
+	
+	:expansion_normal
+	multi request_watchdog
+	call main_wait_450
+	multi production_cycle
+	call main_wait_600
+	multi request_bunker
+	var Ex|Wait build_done_var 1 13
+	call main_wait_450
+	multi build_order_expansion
+	call main_wait_450
+	multi request_infrastructure
+	call main_wait_450
+	bring 13 AtL_W 1 atlas Loc.63 blank
+	call main_wait_450
+	multi request_sentinel
+	call main_wait_450
+	bring 13 AtL_W 1 daedala Loc.63 blank
+	call main_wait_900
+	multi request_ion_cannon
+	goto idle
+	
+	:count_expansion
+	wait 12
+	local 255 Ex 0 command_center count_expansion
+	var add town_count_var 1 13
+	local 255 Ex_W 0 command_center blank
+	var subtract town_count_var 1 13
+	goto count_expansion
+	
+	:save_money_for_expansion
+	wait 12
+	time AtM 5760 Frames save_money_for_expansion # 5 minutes
+	res 13 AtL Ore 450 save_money_for_expansion
+	var Ex|Wait try_expand_var 1 13
+	var Set can_build_static_defense_var 0 13
+	var Set can_queue_early_military_var 0 13
+	var Ex|Wait try_expand_var 0 13
+	call build_bool
+	goto save_money_for_expansion
+	
+	:expansion_worker_start
+	wait 24
+	local 255 Ex 0 command_center expansion_worker_start
+	bld 1 mason 98
+	w_bldstart 1 command_center	
+	bld 2 mason 98
+	w_bld 1 command_center
+	bld 4 mason 98
+	maynard 4
+	multi worker_track
+	
+	:expansion_worker_loop
+	wait 150
+	var AtL|Wait can_worker_var 1 13
+	local 255 AtL 24 mason expansion_worker_loop
+	var AtL|Wait can_worker_var 1 13
+	res 13 AtL_W Ore 50 blank
+	call worker_conditions
+	c_queues train mason|talos 13
+	res 13 AtL_C Any 100 worker_request_advanced
+	local 255 AtL 28 mason|talos expansion_worker_loop
+	queue 1 mason command_center 255 Local Loc.63 200
+	wait 150
+	local 255 Ex 0 quarry expansion_worker_loop
+	queue 1 mason quarry 255 Local Loc.63 200
+	goto expansion_worker_loop
+	
+	:tech_handling
+	multi rich_boy_atlas
+	multi rich_boy_fountainhead
+	multi rich_boy_daedala
+	multi rich_boy_atelier
+#	Currently, units are unlocked exclusively through addons, and thus handled through production_cycle.
+#	The "rich boy" blocks, combined with needs called after build_bool, *should* handle the segmented tech progression.
+	wait 1
+	stop
+	
+	:rich_boy_atlas
+	wait 12
+	bring 13 AtL 1 atlas Loc.63 blank
+	res 13 AtM Gas 399 rich_boy_atlas
+	p_need 1 atlas
+	stop
+	
+	:rich_boy_fountainhead
+	wait 12
+	bring 13 AtL 1 fountainhead Loc.63 blank
+	call wait_for_Atlas
+	res 13 AtM Gas 399 rich_boy_fountainhead
+	p_need 1 fountainhead
+	stop
+	
+	:rich_boy_daedala
+	wait 12
+	bring 13 AtL 1 daedala Loc.63 blank
+	call wait_for_Atlas
+	res 13 AtM Gas 999 rich_boy_daedala
+	p_need 1 daedala
+	stop
+	
+	:rich_boy_atelier
+	wait 12
+	bring 13 AtL 1 atelier Loc.63 blank
+	call wait_for_Daedala
+	res 13 AtM Gas 999 rich_boy_atelier
+	p_need 1 atelier
+	stop
+	
+	:build_bool
+	# These are used no matter what!
+	var Add can_worker_var 1 13
+	var Add can_expand_var 1 13
+	var Set can_attack_var 1 13
+	var Set build_gas_var 1 13
+	var Set build_done_var 1 13
+	# These are not used if skip_building_var is true!
+	var Set can_build_static_defense_var 1 13
+	var Set can_queue_early_military_var 1 13
+	var Set can_build_production_var 1 13
+	return
+	
+	:build_order
+	var Ex|Jump skip_building_var 1 build_order_skip 13
+	var Ex|Call use_custom_timers_var 1 build_order_custom_timers 13
+	var Ex|Jump pref_armor 1 build_order_armor 13
+	var Ex|Jump pref_raider 1 build_order_raider 13
+	var Ex|Jump pref_orbital 1 build_order_orbital 13
+	goto build_order_gen
+	
+	:build_order_skip
+	var Ex|Jump debug_ai_messages_var 0 build_order_skip_main 13
+	print Terran<32>AI<32>skips<32>build<32>order!
+	goto build_order_skip_main
+	
+	:build_order_custom_timers
+	var Ex|Jump debug_ai_messages_var 0 build_order_skip_main_pre 13
+	print Terran<32>AI<32>uses<32>custom<32>timers<32>without<32>skipping<32>build<32>order!
+	
+	:build_order_skip_main_pre
+	multi build_order_skip_main
+	return
+	
+	:build_order_skip_main
+	wait 3
+	var Ex|Jump build_type_is_timing_var 1 build_order_skip_timing 13
+	var Ex|Jump build_type_is_rush_var 1 build_order_skip_rush 13
+	var Ex|Jump build_type_is_greed_var 1 build_order_skip_greed 13
+	
+	:build_order_skip_timing
+	multi build_order_skip_timing_gas
+	multi build_order_skip_timing_expand
+	multi build_order_skip_timing_attack
+	goto build_order_skip_final
+	
+	:build_order_skip_timing_gas
+	dth 13 AtL 1 mineral_field1 build_order_skip_custom_gas
+	call main_wait_450
+	bld 1 reservoir 105
+	call main_wait_450
+	var Add build_gas_var 1 13
+	stop
+	
+	:build_order_skip_timing_expand
+	dth 13 AtL 1 mineral_field2 build_order_skip_custom_expansions
+	call main_wait_1200
+	call main_wait_1200
+	call main_wait_600
+	var Add can_expand_var 1 13
+	stop
+	
+	:build_order_skip_timing_attack
+	dth 13 AtL 1 mineral_field3 build_order_skip_custom_attack
+	call main_wait_1200
+	call main_wait_900
+	var Add can_attack_var 1 13
+	stop
+	
+	:build_order_skip_rush
+	multi build_order_skip_rush_gas
+	multi build_order_skip_rush_expand
+	multi build_order_skip_rush_attack
+	goto build_order_skip_final
+	
+	:build_order_skip_rush_gas
+	call main_wait_450
+	var Add build_gas_var 1 13
+	stop
+	
+	:build_order_skip_rush_expand
+	call main_wait_450
+	call main_wait_1500
+	call main_wait_2400
+	var Add can_expand_var 1 13
+	stop
+	
+	:build_order_skip_rush_attack
+	call main_wait_450
+	call main_wait_1500
+	var Add can_attack_var 1 13
+	stop
+	
+	:build_order_skip_greed
+	multi build_order_skip_greed_gas
+	multi build_order_skip_greed_expand
+	multi build_order_skip_greed_attack
+	goto build_order_skip_final
+	
+	:build_order_skip_greed_gas
+	call main_wait_900
+	bld 1 reservoir 105
+	call main_wait_900
+	var Add build_gas_var 1 13
+	
+	:build_order_skip_greed_expand
+	call main_wait_450
+	var Add can_expand_var 1 13
+	stop
+	
+	:build_order_skip_greed_attack
+	call main_wait_1800
+	call main_wait_2400
+	var Add can_attack_var 1 13
+	stop
+	
+	:build_order_skip_custom_gas
+	var Ex|Jump debug_ai_messages_var 0 build_order_skip_custom_gas_loop 13
+	print Terran<32>AI<32>custom<32>gas<32>timer<32>started...
+	
+	:build_order_skip_custom_gas_loop
+	wait 24
+	dth 13 Sub 1 mineral_field1 blank
+	dth 13 AtL 1 mineral_field1 build_order_skip_custom_gas_loop
+	var Set build_gas_var 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank 13
+	print Terran<32>AI<32>gets<32>gas<32>at<32>a<32>custom<32>time!
+	stop
+	
+	:build_order_skip_custom_expansions
+	var Ex|Jump debug_ai_messages_var 0 build_order_skip_custom_expansions_loop 13
+	print Terran<32>AI<32>custom<32>expansion<32>timer<32>started...
+	
+	:build_order_skip_custom_expansions_loop
+	wait 24
+	dth 13 Sub 1 mineral_field2 blank
+	dth 13 AtL 1 mineral_field2 build_order_skip_custom_expansions_loop
+	var Add can_expand_var 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank 13
+	print Terran<32>AI<32>expands<32>at<32>a<32>custom<32>time!
+	stop
+	
+	:build_order_skip_custom_attack
+	var Ex|Jump debug_ai_messages_var 0 build_order_skip_custom_attack_loop 13
+	print Terran<32>AI<32>custom<32>attack<32>timer<32>started...
+	
+	:build_order_skip_custom_attack_loop
+	wait 24
+	dth 13 Sub 1 mineral_field3 blank
+	dth 13 AtL 1 mineral_field3 build_order_skip_custom_attack_loop
+	var Set can_attack_var 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank 13
+	print Terran<32>AI<32>attacks<32>at<32>a<32>custom<32>time!
+	stop
+	
+	:build_order_skip_final
+	wait 7200
+	call build_bool
+	stop
+	
+	:build_order_gen
+	dth 13 AtL 1 dark_swarm_unit build_order_gen_select
+	var Ex|Jump build_type_is_timing_var 1 build_order_gen_type_timing 13
+	var Ex|Jump build_type_is_rush_var 1 build_order_gen_type_rush 13
+	var Ex|Jump build_type_is_greed_var 1 build_order_gen_type_greed 13
+	
+	:build_order_gen_type_timing
+	# 3 timings
+	rand_j 85 build_order_gen_type_timing_1
+	rand_j 128 build_order_gen_type_timing_2
+	goto build_order_gen_type_timing_3
+	
+	:build_order_gen_type_timing_1
+	dth 13 Set 1 dark_swarm_unit blank
+	goto build_order_gen_select
+	
+	:build_order_gen_type_timing_2
+	dth 13 Set 5 dark_swarm_unit blank
+	goto build_order_gen_select
+	
+	:build_order_gen_type_timing_3
+	dth 13 Set 6 dark_swarm_unit blank
+	goto build_order_gen_select
+	
+	:build_order_gen_type_rush
+	# 2 rushes
+	rand_j 128 build_order_gen_type_rush_1
+	goto build_order_gen_type_rush_2
+	
+	:build_order_gen_type_rush_1
+	dth 13 Set 3 dark_swarm_unit blank
+	goto build_order_gen_select
+	
+	:build_order_gen_type_rush_2
+	dth 13 Set 4 dark_swarm_unit blank
+	goto build_order_gen_select
+	
+	:build_order_gen_type_greed
+	# 1 greed
+	goto build_order_gen_type_greed_1
+	
+	:build_order_gen_type_greed_1
+	dth 13 Set 2 dark_swarm_unit blank
+	goto build_order_gen_select
+	
+	:build_order_gen_select
+	dth 13 Ex 1 dark_swarm_unit build_general_2FulcMech
+	dth 13 Ex 2 dark_swarm_unit build_general_EarlyRiser
+	dth 13 Ex 3 dark_swarm_unit build_general_TheCube
+	dth 13 Ex 4 dark_swarm_unit build_general_DoublingUp
+	dth 13 Ex 5 dark_swarm_unit build_general_MechIntoAir
+	dth 13 Ex 6 dark_swarm_unit build_general_Observant
+	
+	:build_general_2FulcMech
+	dth 13 Ex 0 start_location build_general_2FulcMech_Main
+	print Terran<32>General<32>timing<32>1:<32>2Fulc<32>Mech
+	
+	:build_general_2FulcMech_Main
+	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_heracles 13
+	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_shaman 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_armor_iron 0 buildpref_armor_ironfoundry_pazuzu 13
+	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_salamander 13
+	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_azazel 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
+	var Ex|Call pref_addon_barracks 0 buildpref_raider_medbay 13
+	var Ex|Call pref_armor_production 0 buildpref_armor_fulcrum 13
+	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_machineshop 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_naniteassembly 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_commandment 13
+	call main_wait_300
+	wait 24
+	call main_wait_600
+	bld 1 fulcrum 121
+	call main_wait_600
+	bld 2 fulcrum 121
+	call main_wait_600
+	var Sub can_worker_var 1 13
+	multi expansion_toggle
+	call main_wait_600
+	var Add can_worker_var 1 13
+	call main_wait_900
+	bld 3 fulcrum 121
+	call main_wait_300
+	var Set build_gas_var 1 13
+	call main_wait_600
+	multi need_atlas
+	call main_wait_600
+	multi build_general_2FulcMech_Addon
+	call main_wait_900
+	var Set can_attack_var 1 13
+	call main_wait_900
+	multi need_fountainhead
+	call main_wait_300
+	bld 2 mantle 121
+	multi production_cycle
+	goto build_general_fin
+	
+	:build_general_2FulcMech_Addon
+	call wait_for_Atlas
+	w_bld 1 fulcrum
+	bld 1 scrapyard 120
+	w_bld 2 fulcrum
+	bld 2 scrapyard 120
+	w_bld 3 fulcrum
+	bld 1 machine_shop 120
+	w_bld 4 fulcrum
+	bld 2 machine_shop 120
+	stop
+	
+	:build_general_EarlyRiser
+	dth 13 Ex 0 start_location build_general_EarlyRiser_Main
+	print Terran<32>General<32>greed<32>1:<32>Early<32>Riser
+	
+	:build_general_EarlyRiser_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
+	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_cleric 13
+	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_madcap 13
+	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_cyclops 13
+	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starport_gorgon 13
+	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_sundog 13
+	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_seraph 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
+	var Ex|Call pref_addon_barracks 0 buildpref_raider_medbay 13
+	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_scrapyard 13
+	call main_wait_900
+	call main_wait_300
+	var Add can_expand_var 1 13
+	call main_wait_600
+	bld 1 barracks 121
+	call main_wait_300
+	call main_wait_600
+	bld 1 fulcrum 121
+	call main_wait_300
+	multi build_general_EarlyRiser_Addon
+	call main_wait_300
+	bld 1 starpad 121
+	call main_wait_300
+	bld 2 barracks 121
+	call main_wait_600
+	var Set build_gas_var 1 13
+	call main_wait_150
+	var Set build_gas_var 1 13
+	call main_wait_600
+	multi need_atlas
+	call main_wait_150
+	multi production_cycle
+	goto build_general_fin
+	
+	:build_general_EarlyRiser_Addon
+	w_bld 1 barracks
+	bld 1 medbay 120
+	call wait_for_Atlas
+	w_bld 1 fulcrum
+	bld 1 machine_shop 120
+	stop
+	
+	:build_general_TheCube
+	dth 13 Ex 0 start_location build_general_TheCube_Main
+	print Terran<32>General<32>rush<32>1:<32>The<32>Cube
+	
+	:build_general_TheCube_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
+	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_apostle 13
+	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_vulture 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_salamander 13
+	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_azazel 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
+	var Ex|Call pref_armor_production 0 buildpref_armor_ironfoundry 13
+	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_machineshop 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_naniteassembly 13
+	call main_wait_600
+	bld 1 fulcrum 121
+	call main_wait_600
+	bld 1 barracks 121
+	call main_wait_300
+	bld 1 starpad 121
+	call main_wait_600
+	multi build_general_TheCube_Addon
+	call main_wait_900
+	var Set can_attack_var 1 13
+	call main_wait_450
+	var Add can_expand_var 1 13
+	call main_wait_300
+	bld 1 scrapyard 120
+	call main_wait_300
+	var Set build_gas_var 1 13
+	call main_wait_600
+	multi need_atlas
+	call main_wait_300
+	bld 2 fulcrum 121
+	call main_wait_450
+	multi need_fountainhead
+	call main_wait_600
+	multi production_cycle
+	goto build_general_fin
+	
+	:build_general_TheCube_Addon
+	w_bld 1 barracks
+	bld 1 medbay 120
+	call wait_for_Atlas
+	w_bld 1 fulcrum
+	bld 1 machine_shop 120
+	call wait_for_Fountainhead
+	bld 1 starport 121
+	w_bld 1 starport
+	bld 1 munitions_bay 120
+	w_bldstart 1 munitions_bay
+	stop
+	
+	:build_general_DoublingUp
+	dth 13 Ex 0 start_location build_general_DoublingUp_Main
+	print Terran<32>General<32>rush<32>2:<32>Doubling<32>Up
+	
+	:build_general_DoublingUp_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
+	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_shaman 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_cyclops 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_fulcrum_goliath 13
+	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_blackjack 13
+	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_scrapyard 13
+	var Ex|Call pref_armor_production 0 buildpref_armor_ironfoundry 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_naniteassembly 13
+	call main_wait_900
+	bld 1 barracks 121
+	call main_wait_150
+	var Sub can_worker_var 1 13
+	bld 2 barracks 121
+	wait 24
+	var Set can_attack_var 1 13
+	call main_wait_1200
+	var Add can_worker_var 1 13
+	call main_wait_1200
+	bld 1 fulcrum 121
+	call main_wait_600
+	bld 2 fulcrum 121
+	call main_wait_300
+	multi build_general_DoublingUp_Addon
+	call main_wait_300
+	var Add can_expand_var 1 13
+	call main_wait_600
+	var Set build_gas_var 1 13
+	call main_wait_450
+	bld 1 starpad 121
+	call main_wait_600
+	multi need_atlas
+	call main_wait_450
+	bld 3 fulcrum 121
+	call main_wait_900
+	multi production_cycle
+	call main_wait_150
+	goto build_general_fin
+	
+	:build_general_DoublingUp_Addon
+	w_bld 1 barracks
+	bld 1 medbay 120
+	w_bld 1 fulcrum
+	bld 1 scrapyard 120
+	w_bld 2 fulcrum
+	bld 2 scrapyard 120
+	call wait_for_Atlas
+	w_bld 2 barracks
+	bld 1 covert_ops 120
+	call main_wait_150
+	w_bld 3 fulcrum
+	bld 1 machine_shop 120
+	stop
+	
+	:build_general_MechIntoAir
+	dth 13 Ex 0 start_location build_general_MechIntoAir_Main
+	print Terran<32>General<32>timing<32>2:<32>Mech<32>into<32>Air
+	
+	:build_general_MechIntoAir_Main
+	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
+	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_matador 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_machineshop 13
+	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_salamander 13
+	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_seraph 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_munitionsbay 13
+	var Ex|Call pref_orbital_nanite 0 buildpref_orbital_naniteassembly_minotaur 13
+	call main_wait_600
+	call main_wait_300
+	bld 1 barracks 121
+	call main_wait_300
+	bld 1 fulcrum 121
+	call main_wait_750
+	bld 2 fulcrum 121
+	call main_wait_600
+	var Set can_attack_var 1 13
+	var Set can_build_static_defense_var 1 13
+	call main_wait_300
+	var Set build_gas_var 1 13
+	call main_wait_600
+	multi need_atlas
+	multi build_general_MechIntoAir_Addon
+	call main_wait_1200
+	call main_wait_600
+	bld 1 starpad 121
+	call main_wait_300
+	var Sub can_worker_var 1 13
+	multi expansion_toggle
+	call main_wait_600
+	var Add can_worker_var 1 13
+	var Set build_gas_var 1 13
+	call main_wait_1200
+	bld 6 fulcrum 121
+	call main_wait_1800
+	multi need_fountainhead
+	call main_wait_3600
+	multi need_daedala
+	call main_wait_1200
+	call main_wait_600
+	bld 4 starport 121
+	call main_wait_3600
+	bld 8 starport 121
+	call main_wait_1200
+	multi need_atelier
+	call main_wait_600
+	multi production_cycle
+	goto build_general_fin
+	
+	:build_general_MechIntoAir_Addon
+	w_bld 1 fulcrum
+	bld 1 scrapyard 120
+	w_bld 2 fulcrum
+	bld 2 scrapyard 120
+	call wait_for_Atlas
+	bld 1 quarry 120
+	w_bld 3 fulcrum
+	bld 1 machine_shop 120
+	w_bld 4 fulcrum
+	bld 2 machine_shop 120
+	call wait_for_Fountainhead
+	bld 2 starport 121
+	w_bld 1 starport
+	bld 1 munitions_bay 120
+	w_bld 2 starport
+	bld 2 munitions_bay 120
+	w_bld 5 fulcrum
+	bld 3 machine_shop 120
+	w_bld 6 fulcrum
+	bld 4 machine_shop 120
+	w_bld 3 starport
+	bld 3 munitions_bay 120
+	w_bld 4 starport
+	bld 4 munitions_bay 120
+	w_bld 5 starport
+	bld 5 munitions_bay 120
+	call wait_for_Daedala
+	w_bld 6 starport
+	bld 1 commandment 120
+	w_bld 7 starport
+	bld 2 commandment 120
+	w_bld 8 starport
+	bld 3 commandment 120
+	call wait_for_Atelier
+	bld 2 nanite_assembly 121
+	stop
+	
+	:build_general_Observant
+	dth 13 Ex 0 start_location build_general_Observant_Main
+	print Terran<32>General<32>timing<32>3:<32>Observant
+	
+	:build_general_Observant_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_cyprian 13
+	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_seraph 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_commandment 13
+	call main_wait_600
+	bld 1 barracks 121
+	call main_wait_300
+	call main_wait_150
+	wait 24
+	multi build_general_Observant_Addon
+	call main_wait_300
+	bld 1 fulcrum 121
+	call main_wait_150
+	var Sub can_worker_var 1 13
+	multi expansion_toggle
+	call main_wait_600
+	var Add can_worker_var 1 13
+	call main_wait_150
+	var Set can_build_static_defense_var 1 13
+	call main_wait_150
+	bld 1 starpad 121
+	call main_wait_150
+	var Set build_gas_var 1 13
+	call main_wait_600
+	multi need_atlas
+	call main_wait_300
+	bld 2 fulcrum 121
+	call main_wait_600
+	var Set can_attack_var 1 13
+	call main_wait_300
+	bld 3 fulcrum 121
+	call main_wait_600
+	multi need_fountainhead
+	call main_wait_150
+	call build_bool
+	call main_wait_600
+	multi production_cycle
+	
+	:build_general_Observant_Addon
+	w_bld 1 barracks
+	bld 1 medbay 120
+	w_bld 1 fulcrum
+	bld 1 scrapyard 120
+	call wait_for_Atlas
+	w_bld 2 fulcrum
+	bld 1 machine_shop 120
+	w_bld 3 fulcrum
+	bld 2 machine_shop 120
+	call wait_for_Fountainhead
+	bld 2 starport 121
+	call wait_for_Daedala
+	w_bld 2 starport
+	bld 2 commandment 120
+	w_bld 1 commandment
+	do_morph 2 seraph
+	call main_wait_300
+	do_morph 2 seraph
+	stop
+	
+	:build_general_fin
+	call build_bool
+	var AtL skip_building_var 1 blank 13
+	
+	:build_general_fin2
+	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
+	call main_wait_450
+	call wStarpad2
+	call main_wait_300
+	multi need_atlas
+	call main_wait_300
+	call wBarracks
+	call main_wait_150
+	bld 1 covert_ops 120
+	call main_wait_600
+	multi need_fountainhead
+	call main_wait_900
+	call wStarport
+	call main_wait_1200
+	call main_wait_600
+	multi need_daedala
+	call main_wait_3600
+	multi need_atelier
+	stop
+	
+	:build_order_armor
+	dth 13 AtL 1 dark_swarm_unit build_order_armor_select
+	var Ex|Jump build_type_is_timing_var 1 build_order_armor_type_timing 13
+	var Ex|Jump build_type_is_rush_var 1 build_order_armor_type_rush 13
+	var Ex|Jump build_type_is_greed_var 1 build_order_armor_type_greed 13
+	
+	:build_order_armor_type_timing
+	# 3 timings
+	rand_j 85 build_order_armor_type_timing_1
+	rand_j 128 build_order_armor_type_timing_2
+	goto build_order_armor_type_timing_3
+	
+	:build_order_armor_type_timing_1
+	dth 13 Set 1 dark_swarm_unit blank
+	goto build_order_armor_select
+	
+	:build_order_armor_type_timing_2
+	dth 13 Set 2 dark_swarm_unit blank
+	goto build_order_armor_select
+	
+	:build_order_armor_type_timing_3
+	dth 13 Set 6 dark_swarm_unit blank
+	goto build_order_armor_select
+	
+	:build_order_armor_type_rush
+	# 2 rushes
+	rand_j 128 build_order_armor_type_rush_1
+	goto build_order_armor_type_rush_2
+	
+	:build_order_armor_type_rush_1
+	dth 13 Set 3 dark_swarm_unit blank
+	goto build_order_armor_select
+	
+	:build_order_armor_type_rush_2
+	dth 13 Set 4 dark_swarm_unit blank
+	goto build_order_armor_select
+	
+	:build_order_armor_type_greed
+	# 1 greed
+	goto build_order_armor_type_greed_1
+	
+	:build_order_armor_type_greed_1
+	dth 13 Set 5 dark_swarm_unit blank
+	goto build_order_armor_select
+	
+	:build_order_armor_select
+	dth 13 Ex 1 dark_swarm_unit build_armor_PhalanxTiming
+	dth 13 Ex 2 dark_swarm_unit build_armor_FE5Fulc
+	dth 13 Ex 3 dark_swarm_unit build_armor_2FulcVulture
+	dth 13 Ex 4 dark_swarm_unit build_armor_WalkerPower
+	dth 13 Ex 5 dark_swarm_unit build_armor_IronCrusade
+	dth 13 Ex 6 dark_swarm_unit build_armor_DavidAndGoliath
+	
+	:build_armor_PhalanxTiming
+	dth 13 Ex 0 start_location build_armor_PhalanxTiming_Main
+	print Terran<32>Armor<32>timing<32>1:<32>Phalanx<32>Timing
+	
+	:build_armor_PhalanxTiming_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_cyprian 13
+	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_madcap 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
+	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_cyclops 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_machineshop 13
+	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starport_gorgon 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_naniteassembly 13
+	call main_wait_600
+	call main_wait_600
+	bld 1 fulcrum 121
+	call main_wait_150
+	bld 2 fulcrum 121
+	w_bld 1 fulcrum
+	queue 1 vulture fulcrum 255 Local Loc.63 100
+	wait 24
+	queue 1 vulture fulcrum 255 Local Loc.63 100
+	call main_wait_150
+	w_bldstart 2 fulcrum
+	var Add can_expand_var 1 13
+	call main_wait_900
+	bld 3 fulcrum 121
+	call main_wait_150
+	queue 1 cyclops fulcrum 255 Local Loc.63 100
+	wait 24
+	queue 1 cyclops fulcrum 255 Local Loc.63 100
+	call main_wait_450
+	bld 4 fulcrum 121
+	call main_wait_600
+	var Set build_gas_var 1 13
+	call main_wait_600
+	multi need_atlas
+	multi build_armor_PhalanxTiming_Addon
+	call main_wait_600
+	var Set can_build_static_defense_var 1 13
+	call main_wait_900
+	var Set can_attack_var 1 13
+	wait 24
+	bld 1 barracks 121
+	call main_wait_600
+	multi production_cycle
+	goto build_armor_fin
+	
+	:build_armor_PhalanxTiming_Addon
+	call wait_for_Atlas
+	w_bld 1 fulcrum
+	bld 1 machine_shop 120
+	w_bld 2 fulcrum
+	bld 2 machine_shop 120
+	w_bld 1 machine_shop
+	queue 1 phalanx fulcrum 255 Local Loc.63 100
+	w_bld 2 machine_shop
+	queue 1 madrigal fulcrum 255 Local Loc.63 100
+	w_bld 3 fulcrum
+	bld 3 machine_shop 120
+	w_bld 1 barracks
+	call main_wait_450
+	bld 1 medbay 120
+	w_bld 2 machine_shop
+	queue 2 phalanx fulcrum 255 Local Loc.63 100
+	call main_wait_150
+	queue 2 madrigal fulcrum 255 Local Loc.63 100
+	stop
+	
+	:build_armor_FE5Fulc
+	dth 13 Ex 0 start_location build_armor_FE5Fulc_Main
+	print Terran<32>Armor<32>timing<32>2:<32>FE<32>5Fulc
+	
+	:build_armor_FE5Fulc_Main
+	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
+	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_vulture 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_blackjack 13
+	var Ex|Call pref_armor_iron 0 buildpref_armor_futurestation_penumbra 13
+	var Ex|Call pref_armor_production 0 buildpref_armor_fulcrum 13
+	call main_wait_600
+	bld 1 barracks 121
+	call main_wait_300
+	call main_wait_600
+	wait 24
+	queue 1 maverick barracks 255 Global Loc.63 100
+	call main_wait_300
+	queue 1 maverick barracks 255 Global Loc.63 100
+	wait 24
+	bld 1 fulcrum 121
+	call main_wait_300
+	queue 1 maverick barracks 255 Global Loc.63 100
+	call main_wait_300
+	wait 24
+	queue 1 vulture fulcrum 255 Global Loc.63 100
+	wait 24
+	queue 1 vulture fulcrum 255 Global Loc.63 100
+	call main_wait_300
+	var Sub can_worker_var 1 13
+	multi expansion_toggle
+	call main_wait_600
+	var Add can_worker_var 1 13
+	call main_wait_600
+	queue 1 maverick barracks 255 Global Loc.63 100
+	wait 24
+	bld 3 fulcrum 121
+	call main_wait_150
+	multi build_armor_FE5Fulc_Addon
+	wait 24
+	queue 1 goliath fulcrum 255 Global Loc.63 100
+	call main_wait_600
+	w_bldstart 2 fulcrum
+	var Set build_gas_var 1 13
+	call main_wait_600
+	multi need_atlas
+	call main_wait_600
+	queue 1 goliath fulcrum 255 Global Loc.63 100
+	call main_wait_750
+	var Set build_gas_var 1 13
+	wait 24
+	queue 1 goliath fulcrum 255 Global Loc.63 100
+	call main_wait_300
+	var Set can_attack_var 1 13
+	call main_wait_600
+	queue 1 goliath fulcrum 255 Global Loc.63 100
+	wait 24
+	bld 3 fulcrum 121
+	wait 24
+	queue 1 phalanx fulcrum 255 Global Loc.63 100
+	wait 24
+	queue 1 phalanx fulcrum 255 Global Loc.63 100
+	call main_wait_450
+	queue 1 phalanx fulcrum 255 Global Loc.63 100
+	wait 24
+	queue 1 phalanx fulcrum 255 Global Loc.63 100
+	call main_wait_450
+	call expansion_loop_normal
+	var Sub can_worker_var 1 13
+	call main_wait_600
+	var Add can_worker_var 1 13
+	wait 750
+	queue 1 goliath fulcrum 255 Global Loc.63 100
+	wait 24
+	queue 1 goliath fulcrum 255 Global Loc.63 100
+	wait 24
+	queue 1 goliath fulcrum 255 Global Loc.63 100
+	call main_wait_600
+	bld 5 fulcrum 121
+	wait 24
+	queue 1 goliath fulcrum 255 Global Loc.63 100
+	wait 24
+	queue 1 goliath fulcrum 255 Global Loc.63 100
+	wait 24
+	queue 1 goliath fulcrum 255 Global Loc.63 100
+	call main_wait_300
+	multi need_fountainhead
+	call main_wait_900
+	multi production_cycle
+	call main_wait_300
+	goto build_armor_fin
+	
+	:build_armor_FE5Fulc_Addon
+	w_bld 1 fulcrum
+	bld 1 scrapyard 120
+	call wait_for_Atlas
+	w_bld 2 fulcrum
+	bld 1 machine_shop 120
+	w_bld 3 fulcrum
+	bld 2 machine_shop 120
+	call wait_for_Fountainhead
+	bld 1 starport 121
+	call wait_for_Daedala
+	w_bld 1 starport
+	bld 1 commandment 120
+	stop
+	
+	:build_armor_2FulcVulture
+	dth 13 Ex 0 start_location build_armor_2FulcVulture_Main
+	print Terran<32>Armor<32>rush<32>1:<32>2Fulc<32>Vulture
+	
+	:build_armor_2FulcVulture_Main
+	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_vulture 13
+	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_matador 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_madrigal 13
+	var Ex|Call pref_armor_iron 0 buildpref_armor_ironfoundry_pazuzu 13
+	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_machineshop 13
+	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_azazel 13
+	call main_wait_750
+	call main_wait_1200
+	bld 1 fulcrum 121
+	call main_wait_300
+	bld 2 fulcrum 121
+	call main_wait_300
+	var Sub can_worker_var 1 13
+	call main_wait_150
+	do_morph 2 vulture
+	call main_wait_150
+	do_morph 2 vulture
+	call main_wait_300
+	var Set can_attack_var 1 13
+	call main_wait_300
+	var Add can_worker_var 1 13
+	call main_wait_600
+	var Add can_expand_var 1 13
+	bld 3 fulcrum 121
+	call main_wait_150
+	bld 1 barracks 121
+	multi production_cycle
+	goto build_armor_fin
+	
+	:build_armor_WalkerPower
+	dth 13 Ex 0 start_location build_armor_WalkerPower_Main
+	print Terran<32>Armor<32>rush<32>2:<32>Walker<32>Power
+	
+	:build_armor_WalkerPower_Main
+	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_goliath 13
+	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_blackjack 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_armor_iron 0 buildpref_armor_ironfoundry_paladin 13
+	var Ex|Call pref_armor_future 0 buildpref_armor_futurestation_penumbra 13
+	call main_wait_300
+	bld 1 fulcrum 121
+	call main_wait_600
+	bld 2 fulcrum 121
+	call main_wait_600
+	do_morph 1 goliath
+	call main_wait_300
+	multi build_armor_WalkerPower_Addon
+	call main_wait_600
+	var Set can_attack_var 1 13
+	var Sub can_worker_var 1 13
+	call main_wait_150
+	w_bld 1 fulcrum
+	w_bldstart 2 fulcrum
+	call main_wait_300
+	bld 1 barracks 121
+	call main_wait_450
+	var Add can_worker_var 1 13
+	call main_wait_1200
+	var Add can_expand_var 1 13
+	call main_wait_600
+	var Set build_gas_var 1 13
+	call main_wait_300
+	multi need_atlas
+	multi production_cycle
+	goto build_armor_fin
+	
+	:build_armor_WalkerPower_Addon
+	w_bld 1 fulcrum
+	bld 1 scrapyard 120
+	call main_wait_300
+	call wait_for_Atlas
+	w_bld 2 fulcrum
+	bld 1 machine_shop 120
+	stop
+	
+	:build_armor_IronCrusade
+	dth 13 Ex 0 start_location build_armor_IronCrusade_Main
+	print Terran<32>Armor<32>greed<32>1:<32>Iron<32>Crusade
+	
+	:build_armor_IronCrusade_Main
+	var Ex|Call pref_raider_covert 0 buildpref_raider_covertops_eidolon 13
+	var Ex|Call pref_addon_barracks 0 buildpref_raider_covertops 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_armor_production 0 buildpref_armor_ironfoundry 13
+	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_seraph 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_commandment 13
+	call main_wait_900
+	multi expansion_toggle
+	call main_wait_300
+	wait 600
+	call main_wait_300
+	bld 1 fulcrum 121
+	call main_wait_600
+	var Set build_gas_var 1 13
+	call main_wait_900
+	w_bld 1 fulcrum
+	var Set can_build_static_defense_var 1 13
+	call main_wait_300
+	bld 1 starpad 121
+	call main_wait_300
+	bld 2 fulcrum 121
+	call main_wait_900
+	multi expansion_toggle
+	call main_wait_900
+	multi need_atlas
+	call main_wait_600
+	bld 3 fulcrum 121
+	call main_wait_150
+	w_bld 2 fulcrum
+	w_bldstart 3 fulcrum
+	var set can_attack_var 1 13
+	call wait_for_Atlas
+	call main_wait_450
+	bld 4 fulcrum 121
+	call main_wait_450
+	multi need_daedala
+	call wait_for_Daedala
+	multi need_atelier
+	call wait_for_Atelier
+	call main_wait_150
+	bld 1 iron_foundry 122
+	call main_wait_150
+	bld 2 iron_foundry 122
+	call main_wait_150
+	bld 3 iron_foundry 122
+	call main_wait_150
+	bld 4 iron_foundry 122
+	multi production_cycle
+	goto build_armor_fin
+	
+	:build_armor_DavidAndGoliath
+	dth 13 Ex 0 start_location build_armor_DavidAndGoliath_Main
+	print Terran<32>Armor<32>timing<32>3:<32>David<32>and<32>Goliath
+	
+	:build_armor_DavidAndGoliath_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_goliath 13
+	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_matador 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_armor_production 0 buildpref_armor_fulcrum 13
+	call main_wait_600
+	bld 1 fulcrum 121
+	call main_wait_600
+	bld 1 barracks 121
+	call main_wait_600
+	multi expansion_toggle
+	call main_wait_900
+	bld 2 barracks 121
+	call main_wait_300
+	bld 2 fulcrum 121
+	w_bldstart 2 fulcrum
+	multi build_armor_DavidAndGoliath_Addon
+	call main_wait_450
+	bld 3 barracks 121
+	call main_wait_600
+	bld 4 barracks 121
+	call main_wait_600
+	bld 3 fulcrum 121
+	call main_wait_150
+	var Set can_attack_var 1 13
+	call main_wait_1200
+	var Set build_gas_var 1 13
+	call main_wait_900
+	w_bld 1 fulcrum
+	var Set can_build_static_defense_var 1 13
+	call main_wait_300
+	bld 1 starpad 121
+	call main_wait_300
+	var Set build_gas_var 1 13
+	call main_wait_600
+	multi need_atlas
+	call main_wait_450
+	bld 4 fulcrum 121
+	call main_wait_600
+	bld 5 fulcrum 121
+	call main_wait_150
+	multi production_cycle
+	goto build_armor_fin
+	
+	:build_armor_DavidAndGoliath_Addon
+	w_bld 2 fulcrum
+	bld 1 scrapyard 120
+	call wait_for_Atlas
+	w_bld 2 fulcrum
+	bld 1 machine_shop 120
+	call main_wait_150
+	w_bld 3 fulcrum
+	bld 2 machine_shop 120
+	call main_wait_300
+	w_bld 5 fulcrum
+	bld 3 machine_shop 120
+	call main_wait_300
+	stop
+	
+	:build_armor_fin
+	call build_bool
+	var AtL skip_building_var 1 blank 13
+	
+	:build_armor_fin2
+	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
+	call main_wait_900
+	multi need_atlas
+	call main_wait_1800
+	multi need_fountainhead
+	call main_wait_2400
+	multi need_daedala
+	call main_wait_900
+	call wStarport
+	call main_wait_3600
+	multi need_atelier
+	stop
+	
+	:build_order_raider
+	dth 13 AtL 1 dark_swarm_unit build_order_raider_select
+	var Ex|Jump build_type_is_timing_var 1 build_order_raider_type_timing 13
+	var Ex|Jump build_type_is_rush_var 1 build_order_raider_type_rush 13
+	var Ex|Jump build_type_is_greed_var 1 build_order_raider_type_greed 13
+	
+	:build_order_raider_type_timing
+	# 3 timings
+	rand_j 85 build_order_raider_type_timing_1
+	rand_j 128 build_order_raider_type_timing_2
+	goto build_order_raider_type_timing_3
+	
+	:build_order_raider_type_timing_1
+	dth 13 Set 1 dark_swarm_unit blank
+	goto build_order_raider_select
+	
+	:build_order_raider_type_timing_2
+	dth 13 Set 2 dark_swarm_unit blank
+	goto build_order_raider_select
+	
+	:build_order_raider_type_timing_3
+	dth 13 Set 5 dark_swarm_unit blank
+	goto build_order_raider_select
+	
+	:build_order_raider_type_rush
+	# 2 rushes
+	rand_j 128 build_order_raider_type_rush_1
+	goto build_order_raider_type_rush_2
+	
+	:build_order_raider_type_rush_1
+	dth 13 Set 4 dark_swarm_unit blank
+	goto build_order_raider_select
+	
+	:build_order_raider_type_rush_2
+	dth 13 Set 6 dark_swarm_unit blank
+	goto build_order_raider_select
+	
+	:build_order_raider_type_greed
+	# 1 greed
+	goto build_order_raider_type_greed_1
+	
+	:build_order_raider_type_greed_1
+	dth 13 Set 3 dark_swarm_unit blank
+	goto build_order_raider_select
+	
+	:build_order_raider_select
+	dth 13 Ex 1 dark_swarm_unit build_raider_8Rax
+	dth 13 Ex 2 dark_swarm_unit build_raider_3RaxBiotic
+	dth 13 Ex 3 dark_swarm_unit build_raider_FastNuke
+	dth 13 Ex 4 dark_swarm_unit build_raider_4RaxPressure
+	dth 13 Ex 5 dark_swarm_unit build_raider_Uprising
+	dth 13 Ex 6 dark_swarm_unit build_raider_HolyAckmeds
+	
+	:build_raider_8Rax
+	dth 13 Ex 0 start_location build_raider_8Rax_Main
+	print Terran<32>Raider<32>timing<32>1:<32>8Rax
+	
+	:build_raider_8Rax_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
+	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_cleric 13
+	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_madcap 13
+	var Ex|Call pref_addon_barracks 0 buildpref_raider_medbay 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
+	call main_wait_300
+	bld 1 barracks 121
+	call main_wait_300
+	bld 2 barracks 121
+	call main_wait_300
+	bld 3 barracks 121
+	call main_wait_300
+	bld 4 barracks 121
+	call main_wait_300
+	bld 5 barracks 121
+	call main_wait_300
+	bld 6 barracks 121
+	call main_wait_300
+	var Set can_attack_var 1 13
+	call main_wait_300
+	w_bldstart 6 barracks
+	var Set build_gas_var 1 13
+	call main_wait_600
+	multi expansion_toggle
+	call main_wait_900
+	bld 8 barracks 121
+	call main_wait_600
+	var Set can_build_static_defense_var 1 13
+	call main_wait_600
+	multi need_atlas
+	call main_wait_300
+	multi build_raider_8Rax_Addon
+	call main_wait_600
+	multi production_cycle
+	goto build_raider_fin
+	
+	:build_raider_8Rax_Addon
+	w_bld 1 barracks
+	bld 1 medbay 120
+	w_bld 2 barracks
+	bld 2 medbay 120
+	call wait_for_Atlas
+	w_bld 3 barracks
+	bld 1 covert_ops 120
+	w_bld 4 barracks
+	bld 2 covert_ops 120
+	stop
+	
+	:build_raider_3RaxBiotic
+	dth 13 Ex 0 start_location build_raider_3RaxBiotic_Main
+	print Terran<32>Raider<32>timing<32>2:<32>3Rax<32>Biotic
+	
+	:build_raider_3RaxBiotic_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
+	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_cleric 13
+	var Ex|Call pref_raider_covert 0 buildpref_raider_covertops_eidolon 13
+	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_heracles 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	call main_wait_600
+	bld 1 barracks 121
+	call main_wait_300
+	bld 2 barracks 121
+	call main_wait_600
+	call main_wait_300
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	call main_wait_300
+	queue 1 maverick barracks 255 Local Loc.63 100
+	call main_wait_300
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	call main_wait_300
+	multi build_raider_3RaxBiotic_Addon
+	call main_wait_450
+	var Sub can_worker_var 1 13
+	bld 3 barracks 121
+	call main_wait_150
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 2 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 1 mason command_center 255 Local Loc.63 200
+	wait 24
+	w_bldstart 3 barracks
+	var Add can_expand_var 1 13
+	wait 300
+	var Add can_worker_var 1 13
+	wait 300
+	call main_wait_600
+	var Set build_gas_var 1 13
+	call main_wait_600
+	multi need_atlas
+	call main_wait_900
+	multi production_cycle
+	call main_wait_300
+	goto build_raider_fin
+	
+	:build_raider_3RaxBiotic_Addon
+	w_bld 1 barracks
+	bld 1 medbay 120
+	w_bld 2 barracks
+	bld 2 medbay 120
+	call wait_for_Atlas
+	multi need_fountainhead
+	stop
+	
+	:build_raider_FastNuke
+	dth 13 Ex 0 start_location build_raider_FastNuke_Main
+	print Terran<32>Raider<32>greed<32>1:<32>Fast<32>Nuke
+	
+	:build_raider_FastNuke_Main
+	var Ex|Call pref_infrastructure_addon 0 buildpref_commandcenter_missilesilo 13
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_cyprian 13
+	var Ex|Call pref_raider_covert 0 buildpref_raider_covertops_eidolon 13
+	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_madcap 13
+	var Ex|Call pref_addon_barracks 0 buildpref_raider_covertops 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
+	call main_wait_600
+	bld 1 barracks 121
+	call main_wait_900
+	bld 1 reservoir 97
+	call main_wait_600
+	var Add can_expand_var 1 13
+	call main_wait_600
+	bld 2 barracks 121
+	call main_wait_600
+	bld 3 barracks 121
+	call main_wait_600
+	w_bldstart 3 barracks
+	var Set build_gas_var 1 13
+	call main_wait_600
+	multi need_atlas
+	call main_wait_600
+	multi build_raider_FastNuke_Addon
+	call main_wait_300
+	bld 4 barracks 121
+	call main_wait_900
+	var Set can_attack_var 1 13
+	wait 24
+	multi production_cycle
+	goto build_raider_fin
+	
+	:build_raider_FastNuke_Addon
+	w_bld 1 barracks
+	bld 1 medbay 120
+	call wait_for_Atlas
+	w_bld 2 barracks
+	bld 1 covert_ops 120
+	w_bldstart 1 covert_ops
+	bld 1 missile_silo 120
+	w_bld 3 barracks
+	w_bldstart 1 missile_silo
+	bld 2 covert_ops 120
+	w_bld 4 barracks
+	bld 3 covert_ops 120
+	stop
+	
+	:build_raider_4RaxPressure
+	dth 13 Ex 0 start_location build_raider_4RaxPressure_Main
+	print Terran<32>Raider<32>rush<32>1:<32>4Rax<32>Pressure
+	
+	:build_raider_4RaxPressure_Main
+	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_shaman 13
+	var Ex|Call pref_raider_covert 0 buildpref_raider_covertops_savant 13
+	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_heracles 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_sundog 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_munitionsbay 13
+	call main_wait_900
+	bld 1 barracks 121
+	call main_wait_900
+	bld 2 barracks 121
+	call main_wait_600
+	bld 3 barracks 121
+	call main_wait_450
+	bld 4 barracks 121
+	call main_wait_300
+	call main_wait_300
+	call main_wait_300
+	var Sub can_worker_var 1 13
+	var Set can_attack_var 1 13
+	call main_wait_600
+	call main_wait_150
+	var Add can_expand_var 1 13
+	call main_wait_600
+	var Add can_worker_var 1 13
+	call main_wait_150
+	multi build_raider_4RaxPressure_Addon
+	call main_wait_150
+	w_bld 4 barracks
+	var Set build_gas_var 1 13
+	call main_wait_600
+	multi need_atlas
+	call main_wait_1500
+	multi production_cycle
+	call main_wait_600
+	multi need_daedala
+	goto build_raider_fin
+	
+	:build_raider_4RaxPressure_Addon
+	w_bld 1 barracks
+	bld 1 medbay 120
+	w_bld 2 barracks
+	bld 2 medbay 120
+	call wait_for_Atlas
+	w_bld 3 barracks
+	bld 1 covert_ops 120
+	w_bld 4 barracks
+	bld 2 covert_ops 120
+	stop
+	
+	:build_raider_Uprising
+	dth 13 Ex 0 start_location build_raider_Uprising_Main
+	print Terran<32>Raider<32>timing<32>3:<32>Uprising
+	
+	:build_raider_Uprising_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_cyprian 13
+	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_cleric 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	call main_wait_600
+	bld 1 barracks 121
+	call main_wait_450
+	bld 2 barracks 121
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	call main_wait_450
+	bld 3 barracks 121
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	call main_wait_300
+	call main_wait_150
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	call main_wait_300
+	multi build_raider_Uprising_Addon
+	call main_wait_300
+	bld 4 barracks 121
+	wait 24
+	queue 2 shaman barracks 255 Local Loc.63 100
+	wait 24
+	queue 2 cyprian barracks 255 Local Loc.63 100
+	call main_wait_450
+	queue 2 shaman barracks 255 Local Loc.63 100
+	wait 24
+	queue 2 cyprian barracks 255 Local Loc.63 100
+	call main_wait_300
+	w_bld 4 barracks
+	w_bld 2 medbay
+	var Set build_gas_var 1 13
+	call main_wait_600
+	multi need_atlas
+	call main_wait_300
+	var Sub can_worker_var 1 13
+	multi expansion_toggle
+	call main_wait_600
+	var Add can_worker_var 1 13
+	call main_wait_600
+	queue 2 cyprian barracks 255 Local Loc.63 100
+	call main_wait_450
+	queue 2 cyprian barracks 255 Local Loc.63 100
+	wait 24
+	queue 2 cyprian barracks 255 Local Loc.63 100
+	call main_wait_300
+	multi production_cycle
+	goto build_raider_fin
+	
+	:build_raider_Uprising_Addon
+	w_bld 1 barracks
+	bld 1 medbay 120
+	w_bld 4 barracks
+	bld 2 medbay 120
+	stop
+	
+	:build_raider_HolyAckmeds
+	dth 13 Ex 0 start_location build_raider_HolyAckmeds_Main
+	print Terran<32>Raider<32>rush<32>2:<32>Holy<32>Ackmeds!
+	
+	:build_raider_HolyAckmeds_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_harakan 13
+	var Ex|Call pref_addon_barracks 0 buildpref_raider_covertops 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
+	call main_wait_900
+	bld 1 barracks 121
+	call main_wait_300
+	call main_wait_600
+	do_morph 1 maverick
+	call main_wait_600
+	bld 2 barracks 121
+	wait 24
+	do_morph 1 harakan
+	call main_wait_600
+	bld 3 barracks 121
+	call main_wait_300
+	call main_wait_300
+	var Sub can_worker_var 1 13
+	call main_wait_300
+	var Set can_attack_var 1 13
+	call main_wait_600
+	bld 4 barracks 121
+	call main_wait_300
+	var Add can_worker_var 1 13
+	var Add can_expand_var 1 13
+	call main_wait_900
+	w_bldstart 4 barracks
+	var Set build_gas_var 1 13
+	call main_wait_600
+	multi need_atlas
+	call main_wait_150
+	multi build_raider_HolyAckmeds_Addon
+	call main_wait_300
+    multi production_cycle
+	goto build_raider_fin
+	
+	:build_raider_HolyAckmeds_Addon
+	w_bld 1 barracks
+	bld 1 medbay 120
+	call wait_for_Atlas
+	multi need_fountainhead
+	call wait_for_Fountainhead
+	bld 1 starport 121
+	w_bld 1 starport
+	bld 1 munitions_bay 120
+	stop
+	
+	:build_raider_fin
+	call build_bool
+	var AtL skip_building_var 1 blank 13
+	
+	:build_raider_fin2
+	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
+	call main_wait_300
+	bld 1 medbay 120
+	call main_wait_300
+	multi need_atlas
+	call wait_for_Atlas
+	bld 1 covert_ops 120
+	call main_wait_1800
+	multi need_fountainhead
+	call main_wait_3600
+	multi need_daedala
+	call main_wait_3600
+	multi need_atelier
+	stop
+	
+	:build_order_orbital
+	dth 13 AtL 1 dark_swarm_unit build_order_orbital_select
+	var Ex|Jump build_type_is_timing_var 1 build_order_orbital_type_timing 13
+	var Ex|Jump build_type_is_rush_var 1 build_order_orbital_type_rush 13
+	var Ex|Jump build_type_is_greed_var 1 build_order_orbital_type_greed 13
+	
+	:build_order_orbital_type_timing
+	# 3 timings
+	rand_j 85 build_order_orbital_type_timing_1
+	rand_j 128 build_order_orbital_type_timing_2
+	goto build_order_orbital_type_timing_3
+	
+	:build_order_orbital_type_timing_1
+	dth 13 Set 3 dark_swarm_unit blank
+	goto build_order_orbital_select
+	
+	:build_order_orbital_type_timing_2
+	dth 13 Set 4 dark_swarm_unit blank
+	goto build_order_orbital_select
+	
+	:build_order_orbital_type_timing_3
+	dth 13 Set 5 dark_swarm_unit blank
+	goto build_order_orbital_select
+	
+	:build_order_orbital_type_rush
+	# 2 rushes
+	rand_j 128 build_order_orbital_type_rush_1
+	goto build_order_orbital_type_rush_2
+	
+	:build_order_orbital_type_rush_1
+	dth 13 Set 1 dark_swarm_unit blank
+	goto build_order_orbital_select
+	
+	:build_order_orbital_type_rush_2
+	dth 13 Set 6 dark_swarm_unit blank
+	goto build_order_orbital_select
+	
+	:build_order_orbital_type_greed
+	# 1 greed
+	goto build_order_orbital_type_greed_1
+	
+	:build_order_orbital_type_greed_1
+	dth 13 Set 2 dark_swarm_unit blank
+	goto build_order_orbital_select
+	
+	:build_order_orbital_select
+	dth 13 Ex 1 dark_swarm_unit build_orbital_2PortWraith
+	dth 13 Ex 2 dark_swarm_unit build_orbital_TheDon
+	dth 13 Ex 3 dark_swarm_unit build_orbital_WraithBio
+	dth 13 Ex 4 dark_swarm_unit build_orbital_Hotdrop
+	dth 13 Ex 5 dark_swarm_unit build_orbital_SuddenStarport
+	dth 13 Ex 6 dark_swarm_unit build_orbital_AcesHigh
+	
+	:build_orbital_2PortWraith
+	dth 13 Ex 0 start_location build_orbital_2PortWraith_Main
+	print Terran<32>Orbital<32>rush<32>1:<32>2Port<32>Wraith
+	
+	:build_orbital_2PortWraith_Main
+	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starpad_wraith 13
+	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_salamander 13
+	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_azazel 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_munitionsbay 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
+	call main_wait_600
+	call main_wait_1200
+	bld 1 starpad 121
+	call main_wait_600
+	bld 2 starpad 121
+	call main_wait_300
+	do_morph 1 wraith
+	call main_wait_300
+	var Set build_gas_var 1 13
+	call main_wait_300
+	bld 1 barracks 121
+	call main_wait_300
+	var Set can_attack_var 1 13
+	call main_wait_1200
+	multi expansion_toggle
+	var Sub can_worker_var 1 13
+	call main_wait_600
+	var Add can_worker_var 1 13
+	w_bld 2 starpad
+	call main_wait_300
+	bld 3 starpad 121
+	call main_wait_1200
+	var Add can_expand_var 1 13
+	call main_wait_1200
+	multi need_atlas
+	multi build_orbital_2PortWraith_Addon
+	call main_wait_900
+	multi production_cycle
+	goto build_orbital_fin
+	
+	:build_orbital_2PortWraith_Addon
+	call wait_for_Atlas
+	multi need_fountainhead
+	call wait_for_Fountainhead
+	bld 1 starport 121
+	w_bld 1 starport
+	bld 1 munitions_bay 120
+	bld 2 starport 121
+	w_bld 2 starport
+	bld 2 munitions_bay 120
+	bld 3 starport 121
+	call wait_for_Daedala
+	w_bld 3 starport
+	bld 1 commandment 120
+	stop
+	
+	:build_orbital_TheDon
+	dth 13 Ex 0 start_location build_orbital_TheDon_Main
+	print Terran<32>Orbital<32>greed<32>1:<32>The<32>Don
+	
+	:build_orbital_TheDon_Main
+	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starport_gorgon 13
+	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_salamander 13
+	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_azazel 13
+	var Ex|Call pref_orbital_nanite 0 buildpref_orbital_naniteassembly_minotaur 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_naniteassembly 13
+	call main_wait_1500
+	multi expansion_toggle
+	call main_wait_300
+	call main_wait_600
+	bld 1 barracks 121
+	call main_wait_600
+	var Set build_gas_var 1 13
+	call main_wait_900
+	w_bld 1 barracks
+	var Set build_gas_var 1 13
+	call main_wait_600
+	p_need 1 atlas
+	call main_wait_600
+	var Set can_build_static_defense_var 1 13
+	call main_wait_1200
+	call expansion_loop_normal
+	call main_wait_1200
+	multi need_daedala
+	call wait_for_Daedala
+	multi need_atelier
+	call wait_for_Atelier
+	bld 2 nanite_assembly 122
+	call main_wait_450
+	bld 3 nanite_assembly 122
+	call main_wait_300
+    multi production_cycle
+    call main_wait_150
+    goto build_orbital_fin
+	
+	:build_orbital_TheDon_Addon
+	stop
+	
+	:build_orbital_WraithBio
+	dth 13 Ex 0 start_location build_orbital_WraithBio_Main
+	print Terran<32>Orbital<32>timing<32>1:<32>Wraith<32>Bio
+	
+	:build_orbital_WraithBio_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
+	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_madcap 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
+	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starpad_wraith 13
+	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_sundog 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
+	call main_wait_300
+	call main_wait_150
+	bld 1 barracks 121
+	call main_wait_750
+	bld 1 starpad 121
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	call main_wait_300
+	queue 1 maverick barracks 255 Local Loc.63 100
+	call main_wait_300
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 1 wraith starpad 255 Local Loc.63 100
+	call main_wait_300
+	queue 1 wraith starpad 255 Local Loc.63 100
+	call main_wait_150
+	var Sub can_worker_var 1 13
+	multi expansion_toggle
+	call main_wait_600
+	var Add can_worker_var 1 13
+	call main_wait_300
+	var Set can_build_static_defense_var 1 13
+	wait 24
+	bld 2 starpad 121
+	call main_wait_150
+	bld 2 barracks 121
+	call main_wait_300
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	call main_wait_150
+	queue 1 wraith starpad 255 Local Loc.63 100
+	wait 24
+	queue 1 wraith starpad 255 Local Loc.63 100
+	call main_wait_300
+	bld 3 barracks 121
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	call main_wait_150
+	w_bld 2 starpad
+	var Add can_expand_var 1 13
+	call main_wait_900
+	w_bldstart 3 barracks
+	bld 1 medbay 120
+	call main_wait_300
+	var Set build_gas_var 1 13
+	call main_wait_600
+	multi need_atlas
+	wait 24
+	multi production_cycle
+	goto build_orbital_fin
+	
+	:build_orbital_Hotdrop
+	dth 13 Ex 0 start_location build_orbital_Hotdrop_Main
+	print Terran<32>Orbital<32>timing<32>2:<32>Hotdrop
+	
+	:build_orbital_Hotdrop_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_harakan 13
+	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_cleric 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_commandment 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
+    call main_wait_300
+    call main_wait_300
+    bld 1 barracks 121
+    call main_wait_300
+	call main_wait_600
+	bld 1 starpad 121
+	call main_wait_150
+    queue 1 maverick barracks 255 Local Loc.63 100
+	call main_wait_600
+	bld 2 starpad 121
+	call main_wait_600
+	queue 1 wraith starpad 255 Local Loc.63 100
+	call main_wait_150
+	queue 1 wraith starpad 255 Local Loc.63 100
+	call main_wait_300
+	queue 1 trojan starpad 255 Local Loc.63 100
+	call main_wait_150
+    bld 2 barracks 121
+	call main_wait_450
+    bld 3 starpad 121
+    call main_wait_300
+    queue 1 trojan starpad 255 Local Loc.63 100
+	call main_wait_150
+	queue 2 maverick barracks 255 Local Loc.63 100
+	call main_wait_300
+	queue 2 maverick barracks 255 Local Loc.63 100
+    wait 24
+	var Set can_attack_var 1 13
+	call main_wait_300
+	var Sub can_worker_var 1 13
+	multi expansion_toggle
+	call main_wait_600
+	var Add can_worker_var 1 13
+	wait 24
+    var Set can_build_static_defense_var 1 13
+    call main_wait_300
+	w_bld 3 starpad
+	w_bldstart 2 barracks
+	var Set build_gas_var 1 13
+	call main_wait_600
+	multi need_atlas
+	call main_wait_300
+	queue 1 wraith starpad 255 Local Loc.63 100
+	call main_wait_150
+	multi build_orbital_Hotdrop_Addon
+    call main_wait_750
+	multi need_fountainhead
+    call main_wait_750
+	multi production_cycle
+	goto build_orbital_fin
+	
+	:build_orbital_Hotdrop_Addon
+	call wait_for_Atlas
+	bld 1 covert_ops 120
+	w_bld 1 covert_ops
+	bld 1 missile_silo 120
+	call wait_for_Fountainhead
+	bld 1 starport 121
+	w_bld 1 starport
+	bld 1 munitions_bay 120
+	bld 2 starport 121
+	w_bld 2 starport
+	bld 2 munitions_bay 120
+	call main_wait_300
+    queue 2 wyvern starport 255 Local Loc.63 100
+	call main_wait_300
+	queue 2 wyvern starport 255 Local Loc.63 100
+	call main_wait_300
+	queue 2 wyvern starport 255 Local Loc.63 100
+	call main_wait_300
+	queue 2 wyvern starport 255 Local Loc.63 100
+	stop
+	
+	:build_orbital_SuddenStarport
+	dth 13 Ex 0 start_location build_orbital_SuddenStarport_Main
+	print Terran<32>Orbital<32>timing<32>3:<32>Sudden<32>Starport
+	
+	:build_orbital_SuddenStarport_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
+	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_cleric 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starport_gorgon 13
+	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_sundog 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_munitionsbay 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
+    call main_wait_300
+    call main_wait_300
+    bld 1 barracks 121
+    call main_wait_300
+	call main_wait_600
+	var Sub can_worker_var 1 13
+	multi expansion_toggle
+	call main_wait_600
+	var Add can_worker_var 1 13
+	call main_wait_300
+	bld 2 barracks 121
+	call main_wait_450
+	bld 3 barracks 121
+	call main_wait_300
+	var Set can_attack_var 1 13
+	call main_wait_300
+	var Set build_gas_var 1 13
+    call main_wait_450
+    var Set can_build_static_defense_var 1 13
+	call main_wait_450
+	w_bldstart 3 barracks
+	multi build_orbital_SuddenStarport_Addon
+	call main_wait_300
+	multi need_atlas
+	call main_wait_900
+	multi expansion_toggle
+	call wait_for_Atlas
+    call main_wait_750
+	multi need_fountainhead
+    call main_wait_750
+	multi production_cycle
+	goto build_orbital_fin
+	
+	:build_orbital_SuddenStarport_Addon
+	w_bld 2 barracks
+	bld 1 medbay 120
+	call wait_for_Atlas
+	call wait_for_Fountainhead
+	bld 1 starport 121
+	w_bldstart 1 starport
+	bld 4 starport 121
+	w_bld 1 starport
+	bld 1 munitions_bay 120
+	w_bld 2 starport
+	bld 2 munitions_bay 120
+	w_bld 3 starport
+	bld 3 munitions_bay 120
+	w_bld 4 starport
+	bld 4 munitions_bay 120
+	call main_wait_300
+	stop
+	
+	:build_orbital_AcesHigh
+	dth 13 Ex 0 start_location build_orbital_AcesHigh_Main
+	print Terran<32>Orbital<32>rush<32>2:<32>Aces<32>High
+	
+	:build_orbital_AcesHigh_Main
+	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_vulture 13
+	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_blackjack 13
+	var Ex|Call pref_armor_production 0 buildpref_armor_fulcrum 13
+	var Ex|Call pref_orbital_starpad 0 buildpref_orbital_starpad_wraith 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_munitionsbay 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
+    call main_wait_300
+    call main_wait_300
+    bld 1 fulcrum 121
+    call main_wait_450
+    bld 2 fulcrum 121
+	call main_wait_600
+	w_bldstart 2 fulcrum
+	multi build_orbital_AcesHigh_Addon
+	call main_wait_600
+	var Set can_attack_var 1 13
+	call main_wait_900
+	var Sub can_worker_var 1 13
+	multi expansion_toggle
+	call main_wait_600
+	var Add can_worker_var 1 13
+	call main_wait_600
+	bld 3 fulcrum 121
+	call main_wait_150
+	var Set build_gas_var 1 13
+    call main_wait_450
+	bld 3 starpad 121
+	call main_wait_150
+    var Set can_build_static_defense_var 1 13
+	call main_wait_900
+	multi need_atlas
+	call main_wait_450
+	multi production_cycle
+	goto build_orbital_fin
+	
+	:build_orbital_AcesHigh_Addon
+	w_bld 1 fulcrum
+	bld 1 scrapyard 120
+	w_bld 2 fulcrum
+	bld 2 scrapyard 120
+	w_bld 3 fulcrum
+	bld 3 scrapyard 120
+	call main_wait_300
+	stop
+	
+	:build_orbital_fin
+	call build_bool
+	var AtL skip_building_var 1 blank 13
+	
+	:build_orbital_fin2
+	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
+	call main_wait_600
+	multi need_atlas
+	call main_wait_3600
+	multi need_daedala
+	call main_wait_3600
+	multi need_fountainhead
+	call main_wait_3600
+	multi need_atelier
+	stop
+	
+	:build_order_expansion
+	bring 13 AtL_W 1 barracks|captaincy|fulcrum|iron_foundry|starport|nanite_assembly|scrapyard Loc.63 blank
+	var Ex|Jump pref_armor 1 build_armor_fin2 13
+	var Ex|Jump pref_raider 1 build_raider_fin2 13
+	var Ex|Jump pref_orbital 1 build_orbital_fin2 13
+	goto build_general_fin2
+	
+	:wBarracks
+	wait 12
+	notowns command_center wBarracks
+	add_bld 255 barracks 1 99 95
+	return
+	
+	:wBarracks2
+	p_need 1 barracks
+	return
+	
+	:wCaptaincy
+	wait 12
+	notowns atlas wCaptaincy
+	add_bld 255 captaincy 1 99 97
+	return
+	
+	:wCaptaincy2
+	p_need 1 captaincy
+	return
+	
+	:wFulcrum
+	wait 12
+	notowns command_center wFulcrum
+	add_bld 255 fulcrum 1 99 95
+	return
+	
+	:wFulcrum2
+	p_need 1 fulcrum
+	return
+	
+	:wIronFoundry
+	wait 12
+	notowns daedala wIronFoundry
+	add_bld 255 iron_foundry 1 99 98
+	return
+	
+	:wIronFoundry2
+	p_need 1 iron_foundry
+	return
+	
+	:wStarpad
+	wait 12
+	notowns command_center wStarpad
+	add_bld 255 starpad 1 99 95
+	return
+	
+	:wStarpad2
+	p_need 1 starpad
+	return
+	
+	:wStarport
+	wait 12
+	notowns command_center wStarport
+	notowns atlas wStarport
+	add_bld 255 starport 1 99 95
+	return
+	
+	:wStarport2
+	p_need 1 starport
+	return
+	
+	:wNaniteAssembly
+	wait 12
+	notowns daedala wNaniteAssembly
+	add_bld 255 nanite_assembly 1 99 98
+	return
+	
+	:wNaniteAssembly2
+	p_need 1 nanite_assembly
+	return
+	
+	:wAtlas
+	wait 12
+	notowns command_center wAtlas
+	multi need_atlas
+	return
+	
+	:need_atlas
+	wait 24
+	bring 13 AtM 4 Group_Factories Loc.63 need_atlas
+	bring 13 AtM 1 reservoir Loc.63 need_atlas
+	
+	:need_atlas2
+	var Ex|Jump skip_building_var 1 blank_return 13
+	p_need 1 atlas
+	stop
+	
+	:wait_for_Atlas
+	wait 12
+	notowns atlas wait_for_Atlas
+	return
+	
+	:need_fountainhead
+	wait 24
+	notowns atlas need_fountainhead
+	bring 13 AtM 4 Group_Factories Loc.63 need_fountainhead
+	bring 13 AtM 2 reservoir Loc.63 need_fountainhead
+	
+	:need_fountainhead2
+	var Ex|Jump skip_building_var 1 blank_return 13
+	p_need 1 fountainhead
+	stop
+	
+	:wait_for_Fountainhead
+	wait 12
+	notowns fountainhead wait_for_Fountainhead
+	return
+	
+	:wDaedala
+	wait 12
+	notowns daedala wDaedala
+	multi need_daedala
+	return
+	
+	:need_daedala
+	wait 24
+	notowns atlas need_daedala
+	bring 13 AtM 8 Group_Factories Loc.63 need_daedala
+	bring 13 AtM 3 reservoir Loc.63 need_daedala
+	
+	:need_daedala2
+	var Ex|Jump skip_building_var 1 blank_return 13
+	p_need 1 daedala
+	stop
+	
+	:wait_for_Daedala
+	wait 12
+	notowns daedala wait_for_Daedala
+	return
+	
+	:wAtelier
+	wait 12
+	notowns atelier wAtelier
+	multi need_atelier
+	return
+	
+	:need_atelier
+	wait 24
+	notowns daedala need_atelier
+	bring 13 AtM 10 Group_Factories Loc.63 need_atelier
+	bring 13 AtM 4 reservoir Loc.63 need_atelier
+	
+	:need_atelier2
+	var Ex|Jump skip_building_var 1 blank_return 13
+	p_need 1 atelier
+	stop
+	
+	:wait_for_Atelier
+	wait 12
+	notowns atelier wait_for_Atelier
+	return
+	
+	:request_bunker
+	var Ex|Wait can_build_static_defense_var 1 13
+	wait 12
+	bring 13 Ex 0 barracks|captaincy|apothecary|fulcrum|mantle|iron_foundry Loc.63 request_bunker
+	call request_bunker_check
+	wait 60
+	call main_wait_900
+	goto request_bunker
+	
+	:request_bunker_check
+	local 255 AtL 4 bunker blank_return
+	var Ex|Jump under_attack_by_ground_var 1 request_bunker_check2 13
+	var Ex|Jump under_attack_by_air_var 1 request_bunker_check2 13
+	add_bld 255 bunker 1 2 95
+	goto request_bunker_guards_tier3
+	
+	:request_bunker_check2
+	add_bld 255 bunker 1 3 95
+	var AtL|Jump mining_count_var 3 request_bunker_guards_tier3 13
+	var AtL|Jump mining_count_var 2 request_bunker_guards_tier2 13
+	goto request_bunker_guards_tier1
+	
+	:request_bunker_guards_tier1
+	p_guard maverick 0
+	p_guard maverick 0
+	p_guard maverick 1
+	p_guard cyprian 0
+	p_guard cyprian 1
+	goto add_return_wait_960
+	
+	:request_bunker_guards_tier2
+	notowns captaincy request_bunker_guards_tier1
+	p_guard madcap 0
+	p_guard madcap 0
+	p_guard heracles 1
+	goto add_return_wait_960
+	
+	:request_bunker_guards_tier3
+	notowns guildhall request_bunker_guards_tier2
+	p_guard olympian 0
+	p_guard olympian 0
+	p_guard autocrat 1
+	goto add_return_wait_960
+	
+	:request_watchdog
+	var Ex|Wait can_build_static_defense_var 1 13
+	wait 12
+	notowns command_center request_watchdog
+	call request_watchdog_check
+	call main_wait_600
+	goto request_watchdog
+	
+	:request_watchdog_check
+	local 255 AtL 4 watchdog request_watchdog_check2
+	add_bld 255 watchdog 1 4 97
+	var Ex|Jump under_attack_by_air_var 1 add_return_wait_480 13
+	goto add_return_wait_960
+	
+	:request_watchdog_check2
+	var Ex|Jump under_attack_by_air_var 1 request_watchdog_check3 13
+	var AtM|Jump mining_count_var 2 add_return_wait_480 13
+	add_bld 255 watchdog 1 7 97
+	goto add_return_wait_480
+	
+	:request_watchdog_check3
+	add_bld 255 watchdog 1 10 97
+	goto add_return_wait_480
+	
+	:request_sentinel
+	var Ex|Wait can_build_static_defense_var 1 13
+	wait 12
+	notowns command_center request_sentinel
+	notowns atlas request_sentinel
+	call request_sentinel_check
+	call main_wait_600
+	goto request_sentinel
+	
+	:request_sentinel_check
+	local 255 AtL 4 sentinel request_sentinel_check2
+	add_bld 255 sentinel 1 4 98
+	var Ex|Jump under_attack_by_ground_var 1 add_return_wait_480 13
+	var Ex|Jump under_attack_by_air_var 1 add_return_wait_480 13
+	goto add_return_wait_960
+	
+	:request_sentinel_check2
+	var Ex|Jump under_attack_by_ground_var 1 request_sentinel_check3 13
+	var Ex|Jump under_attack_by_air_var 1 request_sentinel_check3 13
+	var AtM|Jump mining_count_var 2 add_return_wait_480 13
+	add_bld 255 sentinel 1 7 98
+	goto add_return_wait_480
+	
+	:request_sentinel_check3
+	add_bld 255 sentinel 1 10 98
+	goto add_return_wait_480
+	
+	:request_ion_cannon
+	var Ex|Wait can_build_static_defense_var 1 13
+	wait 12
+	notowns command_center request_ion_cannon
+	notowns daedala request_ion_cannon
+	call request_ion_cannon_check
+	wait 60
+	call main_wait_900
+	goto request_ion_cannon
+	
+	:request_ion_cannon_check
+	local 255 AtL 1 ion_cannon request_ion_cannon_check2
+	add_bld 255 ion_cannon 1 1 98
+	goto add_return_wait_960
+	
+	:request_ion_cannon_check2
+	var Ex|Jump under_attack_var 0 add_return_wait_960 13
+	add_bld 255 ion_cannon 1 2 98
+	goto add_return_wait_960
+	
+	:request_infrastructure
+	wait 12
+	var Ex|Wait build_done_var 1 13
+	var Ex|Wait can_build_production_var 1 13
+	
+	:request_infrastructure_parthenon
+	notowns daedala request_infrastructure_silo
+	call add_parthenon_check
+	
+	:request_infrastructure_silo
+	notowns daedala request_infrastructure_quarry
+	var Ex|Jump infrastructure_cycle_var 1 request_infrastructure_loop 13
+	var Ex|Call pref_missile_silo 1 add_nuclear_silo 13
+	var Ex|Jump infrastructure_cycle_var 1 request_infrastructure_loop 13
+	call add_nuclear_silo_check
+	
+	:request_infrastructure_quarry
+	var Ex|Jump infrastructure_cycle_var 1 request_infrastructure_loop 13
+	var Ex|Call pref_quarry 1 add_quarry 13
+	var Ex|Jump infrastructure_cycle_var 1 request_infrastructure_loop 13
+	call add_quarry_check
+	
+	:request_infrastructure_loop
+	var Set infrastructure_cycle_var 0 13
+	wait 220
+	call main_wait_1200
+	goto request_infrastructure
+	
+	:add_parthenon_check
+	local 255 AtL 1 parthenon blank_return
+	add_bld 255 parthenon 1 1 99
+	w_bldstart 1 parthenon
+	wait 60
+	call main_wait_900
+	goto add_return
+	
+	:add_nuclear_silo_check
+	local 255 AtL 1 missile_silo blank_return
+	
+	:add_nuclear_silo
+	local 255 AtL 2 missile_silo|quarry blank_return
+	add_bld 255 missile_silo 1 1 98
+	var Set infrastructure_cycle_var 1 13
+	w_bldstart 1 missile_silo
+	wait 240
+	call main_wait_900
+	goto add_return
+	
+	:add_quarry_check
+	local 255 AtL 1 quarry blank_return
+	
+	:add_quarry
+	local 255 AtL 2 missile_silo|quarry blank_return
+	add_bld 255 quarry 1 1 98
+	var Set infrastructure_cycle_var 1 13
+	w_bldstart 1 quarry
+	wait 60
+	call main_wait_600
+	goto add_return
+	
+	:production_cycle
+	var Set can_build_production_var 1 13
+	
+	:production_cycle_conditions
+	wait 24
+	var Ex|Jump mining_count_var 0 production_cycle_conditions 13
+	local 255 Ex 0 command_center|quarry production_cycle_conditions
+	local 255 AtM 4 mason|talos production_cycle_conditions
+	bring 13 Ex 0 atlas|daedala Loc.63 production_cycle_conditions
+	bring 13 AtL 31 Group_Factories Loc.63 production_cycle_conditions_6
+	bring 13 AtL 21 Group_Factories Loc.63 production_cycle_conditions_5
+	bring 13 AtL 16 Group_Factories Loc.63 production_cycle_conditions_4
+	bring 13 AtL 11 Group_Factories Loc.63 production_cycle_conditions_3
+	bring 13 AtL 6 Group_Factories Loc.63 production_cycle_conditions_2
+	goto production_cycle_loop
+	
+	:production_cycle_conditions_2
+	var Ex|Jump mining_count_var 1 production_cycle_conditions 13
+	goto production_cycle_loop
+	
+	:production_cycle_conditions_3
+	var Ex|Jump mining_count_var 2 production_cycle_conditions 13
+	goto production_cycle_loop
+	
+	:production_cycle_conditions_4
+	bring 13 Ex 0 daedala Loc.63 production_cycle_conditions
+	var Ex|Jump mining_count_var 3 production_cycle_conditions 13
+	goto production_cycle_loop
+	
+	:production_cycle_conditions_5
+	var Ex|Jump mining_count_var 4 production_cycle_conditions 13
+	goto production_cycle_loop
+	
+	:production_cycle_conditions_6
+	var Ex|Jump mining_count_var 5 production_cycle_conditions 13
+	goto production_cycle_loop
+	
+	:production_cycle_loop
+	var Ex|Wait can_build_production_var 1 13
+	call production_cycle_wait
+	call production_cycle_check
+	var Set production_cycle_var 0 13
+	var Set production_cycle_addon_var 0 13
+	wait 360
+	call main_wait_1200
+	goto production_cycle_conditions
+	
+	:production_cycle_wait
+	bring 13 AtM 3 barracks|captaincy|apothecary|fulcrum|mantle|iron_foundry|starpad|starport|nanite_assembly Loc.63 blank_return
+	var AtL|Jump mining_count_var 4 blank_return 13
+	var Ex|Jump mining_count_var 3 production_cycle_wait2 13
+	call main_wait_750
+	return
+	
+	:production_cycle_wait2
+	call main_wait_450
+	return
+	
+	:production_cycle_check
+	var Ex|Call pref_armor 1 production_cycle_armor 13
+	var Ex|Call pref_raider 1 production_cycle_raider 13
+	var Ex|Call pref_orbital 1 production_cycle_orbital 13
+	var AtL|Jump mining_count_var 4 production_cycle_general_high_money 13
+	
+	:production_cycle_general_low_money
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Call pref_barracks 1 production_cycle_barracks_check 13
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Call pref_fulcrum 1 production_cycle_fulcrum_check 13
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Call pref_captaincy 1 production_cycle_captaincy_check 13
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Call pref_starport 1 production_cycle_starport_check 13
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	call production_cycle_barracks_check
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	call production_cycle_fulcrum_check
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	call production_cycle_starpad_check
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	call production_cycle_captaincy_check
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	call production_cycle_mantle_check
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	call production_cycle_starport_check
+	return
+	
+	:production_cycle_general_high_money
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Call pref_nanite_assembly 1 production_cycle_nanite_assembly_check 13
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Call pref_iron_foundry 1 production_cycle_iron_foundry_check 13
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Call pref_captaincy 1 production_cycle_captaincy_check 13
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	call production_cycle_nanite_assembly_check
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	call production_cycle_iron_foundry_check
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	call production_cycle_apothecary_check
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	call production_cycle_captaincy_check
+	return
+	
+	:production_cycle_armor
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Call pref_fulcrum 1 production_cycle_fulcrum_check 13
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Call pref_iron_foundry 1 production_cycle_iron_foundry_check 13
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	call production_cycle_fulcrum_check
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	call production_cycle_mantle_check
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	call production_cycle_iron_foundry_check
+	return
+	
+	:production_cycle_raider
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Call pref_barracks 1 production_cycle_barracks_check 13
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Call pref_captaincy 1 production_cycle_captaincy_check 13
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	call production_cycle_barracks_check
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	call production_cycle_captaincy_check
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	call production_cycle_apothecary_check
+	return
+	
+	:production_cycle_orbital
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Call pref_starpad 1 production_cycle_starpad_check 13
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Call pref_starport 1 production_cycle_starport_check 13
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Call pref_nanite_assembly 1 production_cycle_nanite_assembly_check 13
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	call production_cycle_starpad_check
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	call production_cycle_starport_check
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	call production_cycle_nanite_assembly_check
+	return
+	
+	:production_cycle_barracks_check
+	bring 13 AtM 1 barracks Loc.63 production_cycle_barracks
+	var AtM|Jump mining_count_var 2 production_cycle_barracks 13
+	notowns atlas production_cycle_barracks
+	return
+	
+	:production_cycle_barracks
+	notowns command_center blank_return
+	local 255 AtL 8 barracks blank_return
+	add_bld 255 barracks 1 8 97
+	
+	:production_cycle_barracks_addon
+	var AtL|Jump pref_medbay 1 production_cycle_medbay 13
+	var AtL|Jump pref_covert_ops 1 production_cycle_covert_ops 13
+	local 255 Ex 0 medbay production_cycle_medbay
+	call production_cycle_covert_ops
+	var AtL|Jump production_cycle_addon_var 1 production_cycle_addon_success 13
+	call production_cycle_medbay
+	goto production_cycle_addon_success
+	
+	:production_cycle_medbay
+	notowns barracks blank_return
+	local 255 AtL 8 medbay blank_return
+	add_bld 255 medbay 1 8 96
+	call main_wait_300
+	return
+	
+	:production_cycle_covert_ops
+	notowns barracks blank_return
+	notowns atlas blank_return
+	local 255 AtL 8 covert_ops blank_return
+	add_bld 255 covert_ops 1 8 96
+	call main_wait_300
+	return
+	
+	:production_cycle_captaincy_check
+	bring 13 AtM 14 captaincy Loc.63 production_cycle_captaincy
+	notowns daedala production_cycle_captaincy
+	bring 13 AtL 5 apothecary Loc.63 production_cycle_captaincy
+	return
+	
+	:production_cycle_captaincy
+	notowns fountainhead blank_return
+	local 255 AtL 8 captaincy blank_return
+	add_bld 255 captaincy 1 8 98
+	
+	:production_cycle_captaincy_addon
+	call production_cycle_guildhall
+	var AtL|Jump production_cycle_addon_var 1 production_cycle_addon_success 13
+	call production_cycle_tinkerers_tower
+	goto production_cycle_addon_success
+	
+	:production_cycle_tinkerers_tower
+	notowns captaincy blank_return
+	local 255 AtL 8 tinkerers_tower blank_return
+	add_bld 255 tinkerers_tower 1 8 97
+	call main_wait_300
+	return
+	
+	:production_cycle_guildhall
+	notowns captaincy blank_return
+	notowns daedala blank_return
+	local 255 AtL 8 guildhall blank_return
+	add_bld 255 guildhall 1 8 97
+	call main_wait_300
+	return
+	
+	:production_cycle_apothecary_check
+	bring 13 AtM 2 apothecary Loc.63 production_cycle_apothecary
+	bring 13 AtL 1 daedala Loc.63 production_cycle_apothecary
+	return
+	
+	:production_cycle_apothecary
+	notowns daedala blank_return
+	local 255 AtL 8 apothecary blank_return
+	add_bld 255 apothecary 1 8 98
+	goto production_cycle_addon_success
+	
+	:production_cycle_fulcrum_check
+	bring 13 AtM 1 fulcrum Loc.63 production_cycle_fulcrum
+	var AtM|Jump mining_count_var 2 production_cycle_fulcrum 13
+	notowns atlas production_cycle_fulcrum
+	bring 13 AtM 4 machine_shop Loc.63 production_cycle_fulcrum
+	return
+	
+	:production_cycle_fulcrum
+	notowns command_center blank_return
+	local 255 AtL 8 fulcrum blank_return
+	add_bld 255 fulcrum 1 8 97
+	
+	:production_cycle_fulcrum_addon
+	var AtL|Jump pref_machine_shop 1 production_cycle_machine_shop 13
+	var AtL|Jump pref_scrapyard 1 production_cycle_scrapyard 13
+	call production_cycle_machine_shop
+	var AtL|Jump production_cycle_addon_var 1 production_cycle_addon_success 13
+	call production_cycle_scrapyard
+	goto production_cycle_addon_success
+	
+	:production_cycle_scrapyard
+	notowns fulcrum blank_return
+	local 255 AtL 8 scrapyard blank_return
+	add_bld 255 scrapyard 1 8 96
+	call main_wait_300
+	return
+	
+	:production_cycle_machine_shop
+	notowns fulcrum blank_return
+	notowns atlas blank_return
+	local 255 AtL 8 machine_shop blank_return
+	add_bld 255 machine_shop 1 8 96
+	call main_wait_300
+	return
+	
+	:production_cycle_mantle_check
+	bring 13 AtM 2 mantle Loc.63 production_cycle_mantle
+	notowns fountainhead production_cycle_mantle
+	return
+	
+	:production_cycle_mantle
+	notowns atlas blank_return
+	local 255 AtL 8 mantle blank_return
+	add_bld 255 mantle 1 8 97
+	wait 180
+	call main_wait_900
+	goto production_cycle_success
+	
+	:production_cycle_iron_foundry_check
+	notowns iron_foundry production_cycle_iron_foundry
+	var AtL|Jump mining_count_var 3 production_cycle_iron_foundry 13
+	return
+	
+	:production_cycle_iron_foundry
+	notowns atelier blank_return
+	local 255 AtL 8 iron_foundry blank_return
+	add_bld 255 iron_foundry 1 8 98
+	call main_wait_1200
+	
+	:production_cycle_iron_foundry_addon
+	call production_cycle_future_station
+	var AtL|Jump production_cycle_addon_var 1 production_cycle_addon_success 13
+	call production_cycle_biotic_base
+	goto production_cycle_addon_success
+	
+	:production_cycle_future_station
+	notowns iron_foundry blank_return
+	local 255 AtL 8 future_station blank_return
+	add_bld 255 future_station 1 8 97
+	call main_wait_300
+	return
+	
+	:production_cycle_biotic_base
+	notowns iron_foundry blank_return
+	local 255 AtL 8 biotic_base blank_return
+	add_bld 255 biotic_base 1 8 97
+	call main_wait_300
+	return
+	
+	:production_cycle_starpad_check
+	notowns starpad production_cycle_starpad
+	notowns atlas production_cycle_starpad
+	return
+	
+	:production_cycle_starpad
+	notowns command_center blank_return
+	local 255 AtL 3 starpad blank_return
+	add_bld 255 starpad 1 3 97
+	wait 180
+	call main_wait_900
+	goto production_cycle_success
+	
+	:production_cycle_starport_check
+	bring 13 AtM 1 starport Loc.63 production_cycle_starport
+	notowns fountainhead production_cycle_starport
+	return
+	
+	:production_cycle_starport
+	notowns atlas blank_return
+	local 255 AtL 8 starport blank_return
+	add_bld 255 starport 1 8 98
+	wait 180
+	call main_wait_900
+	
+	:production_cycle_starport_addon
+	var AtL|Jump pref_munitions_bay 1 production_cycle_munitions_bay 13
+	var AtL|Jump pref_commandment 1 production_cycle_commandment 13
+	call production_cycle_munitions_bay
+	var AtL|Jump production_cycle_addon_var 1 production_cycle_addon_success 13
+	call production_cycle_commandment
+	goto production_cycle_addon_success
+	
+	:production_cycle_munitions_bay
+	notowns starport blank_return
+	local 255 AtL 8 munitions_bay blank_return
+	add_bld 255 munitions_bay 1 8 97
+	call main_wait_300
+	return
+	
+	:production_cycle_commandment
+	notowns starport blank_return
+	notowns daedala blank_return
+	local 255 AtL 8 commandment blank_return
+	add_bld 255 commandment 1 8 97
+	call main_wait_300
+	return
+	
+	:production_cycle_nanite_assembly_check
+	notowns nanite_assembly production_cycle_nanite_assembly
+	var AtL|Jump mining_count_var 3 production_cycle_nanite_assembly 13
+	return
+	
+	:production_cycle_nanite_assembly
+	notowns atelier blank_return
+	local 255 AtL 8 nanite_assembly blank_return
+	add_bld 255 nanite_assembly 1 8 99
+	call main_wait_1200
+	
+	:production_cycle_nanite_assembly_addon
+	call production_cycle_particle_accelerator
+	goto production_cycle_addon_success
+	
+	:production_cycle_particle_accelerator
+	notowns nanite_assembly blank_return
+	local 255 AtL 8 particle_accelerator blank_return
+	add_bld 255 particle_accelerator 1 8 98
+	var AtL|Jump production_cycle_addon_var 1 production_cycle_addon_success 13
+	call main_wait_300
+	return
+	
+	:production_cycle_addon_success
+	var Set production_cycle_addon_var 1 13
+	
+	:production_cycle_success
+	var Set production_cycle_var 1 13
+	
+	:add_return
+	wait 24
+	return
+	
+	:add_return_wait_480
+	wait 30
+	call main_wait_450
+	return
+	
+	:add_return_wait_960
+	wait 60
+	call main_wait_900
+	return
+	
+	:attack_handling
+	var Ex|Jump pref_scenario_lite 1 custom_scale 13
+	
+	:custom_scale
+	dth 13 Ex 2 scanner_sweep custom_scale_OneForTheFuture
+	goto attack_handling_standard
+	
+	:custom_scale_OneForTheFuture
+	dth 13 Ex 8 right_pit_door custom_scale_TheShitflingSinners
+	goto attack_handling_standard
+	
+	:custom_scale_TheShitflingSinners
+	dth 13 Ex 3 t_tank_turret custom_scale_TheShitflingSinners_CustomerSupporter
+	dth 13 Ex 7 t_tank_turret tLoopA
+	dth 13 Ex 8 t_tank_turret tLoopA
+	goto attack_handling_standard
+	
+	:custom_scale_TheShitflingSinners_CustomerSupporter
+	multi custom_scale_TheShitflingSinners_CustomerSupporter_Cond1
+	multi custom_scale_TheShitflingSinners_CustomerSupporter_Cond2
+	multi custom_scale_TheShitflingSinners_CustomerSupporter_Cond3
+	var Ex|Wait custom_scale_TheShitflingSinners_CustomerSupporter_Signal 1 13
+	goto tLoopA
+	
+	:custom_scale_TheShitflingSinners_CustomerSupporter_Cond1
+	player_combat 18 13 63 True Wait Any Any
+	var AtL|Jump custom_scale_TheShitflingSinners_CustomerSupporter_Signal 1 blank 13
+	var Add custom_scale_TheShitflingSinners_CustomerSupporter_Signal 1 13
+	stop
+	
+	:custom_scale_TheShitflingSinners_CustomerSupporter_Cond2
+	time AtL_W 10080 Frames blank
+	var AtL|Jump custom_scale_TheShitflingSinners_CustomerSupporter_Signal 1 blank 13
+	var Add custom_scale_TheShitflingSinners_CustomerSupporter_Signal 1 13
+	stop
+	
+	:custom_scale_TheShitflingSinners_CustomerSupporter_Cond3
+	dth 19 AtL_W 3 Group_Factories blank
+	var AtL|Jump custom_scale_TheShitflingSinners_CustomerSupporter_Signal 1 blank 13
+	var Add custom_scale_TheShitflingSinners_CustomerSupporter_Signal 1 13
+	stop
+	
+	:attack_handling_standard
+	var Ex|Wait can_attack_var 1 13
+	var Ex|Jump pref_armor 1 attack_handlingExp 13
+	var Ex|Jump pref_raider 1 attack_handlingAtk 13
+	rand_j 128 attack_handlingAtk
+	
+	:attack_handlingExp
+	wait 180
+	call attack_generic
+	wait 360
+	goto tLoopA
+	
+	:attack_handlingAtk
+	wait 240
+	call attack_generic
+	wait 360
+	
+	:tLoopA
+	var AtL|Jump mining_count_var 6 tLoopC 13
+	var AtL|Jump mining_count_var 3 tLoopB 13
+	call attack_cycle_start
+	wait 360
+	goto tLoopA
+	
+	:tLoopB
+	call attack_cycle_start
+	wait 240
+	goto tLoopA
+	
+	:tLoopC
+	call attack_cycle_start
+	wait 120
+	goto tLoopA
+	
+	:attack_cycle_start
+	var Ex|Wait can_attack_var 1 13
+	
+	:attack_restart
+	atk_do
+	atk_c
+	
+	:attack_generic
+	call add_attack_wave
+	atk_prep
+	atk_do
+	wait 200
+	
+	:attack_generic_check
+	var add attack_cycle_var 1 13
+	wait 300
+	var AtL|jump attack_cycle_var 2 attack_cycle_prep 13
+	bring 13 AtL 28 maverick|harakan|cyprian|eidolon|savant|madcap|heracles|apostle|siren|striga|olympian|autocrat|dilettante|sevenstep|hypnagogue|ambassador|heir|horseman|thespian|silvertongue|emperor|jester|vulture|cyclops|goliath|blackjack|matador|phalanx|madrigal|ramesses|durendal|cataphract|paladin|cuirass|pazuzu|claymore|penumbra|anticthon|aion|wraith|gorgon|wyvern|salamander|sundog|centaur|minotaur|magnetar|pegasus|hippogriff|oberon|phobos Loc.63 attack_cycle_prep
+	call add_attack_wave
+	goto attack_cycle_prep
+	
+	:attack_cycle_prep
+	bring 13 AtL 60 maverick|harakan|cyprian|eidolon|savant|madcap|heracles|apostle|siren|striga|olympian|autocrat|dilettante|sevenstep|hypnagogue|ambassador|heir|horseman|thespian|silvertongue|emperor|jester|vulture|cyclops|goliath|blackjack|matador|phalanx|madrigal|ramesses|durendal|cataphract|paladin|cuirass|pazuzu|claymore|penumbra|anticthon|aion|wraith|gorgon|wyvern|salamander|sundog|centaur|minotaur|magnetar|pegasus|hippogriff|oberon|phobos Loc.63 attack_with_everything
+	bring 13 AtL 45 maverick|harakan|cyprian|eidolon|savant|madcap|heracles|apostle|siren|striga|olympian|autocrat|dilettante|sevenstep|hypnagogue|ambassador|heir|horseman|thespian|silvertongue|emperor|jester|vulture|cyclops|goliath|blackjack|matador|phalanx|madrigal|ramesses|durendal|cataphract|paladin|cuirass|pazuzu|claymore|penumbra|anticthon|aion|wraith|gorgon|wyvern|salamander|sundog|centaur|minotaur|magnetar|pegasus|hippogriff|oberon|phobos Loc.63 attack_expansion
+#	atk_now
+	goto attack_cycle_fin
+	
+	:attack_expansion
+	set_attacks 1
+	target_expansion
+	goto attack_cycle_fin
+	
+	:attack_with_everything
+	send_suicide 0
+	
+	:attack_cycle_fin
+	wait 120
+	atk_c
+	c_queues train maverick|harakan|cyprian|eidolon|savant|madcap|heracles|apostle|siren|striga|olympian|autocrat|dilettante|sevenstep|hypnagogue|ambassador|heir|horseman|thespian|silvertongue|emperor|jester|vulture|cyclops|goliath|blackjack|matador|phalanx|madrigal|ramesses|durendal|cataphract|paladin|cuirass|pazuzu|claymore|penumbra|anticthon|aion|wraith|gorgon|wyvern|salamander|sundog|centaur|minotaur|magnetar|pegasus|hippogriff|oberon|phobos 13 # not clearing noncombatants yet...
+	var Set attack_cycle_var 0 13
+	var Set can_build_production_var 1 13
+	return
+	
+	:attack_conditions
+	wait 24
+	bring 13 AtM 12 mason Loc.63 attack_conditions
+	bring 13 AtM 1 barracks|captaincy|apothecary|fulcrum|mantle|iron_foundry|starpad|starport|nanite_assembly Loc.63 attack_conditions
+	res 13 AtL Any 500 blank_return
+	var Ex|WF(360) under_attack_var 0 13
+	return
+	
+	:add_attack_wave
+	call attack_conditions
+	time_jump 20 add_attack_wave_general
+	var Ex|Jump pref_armor 1 add_attack_wave_armor 13
+	var Ex|Jump pref_raider 1 add_attack_wave_raider 13
+	var Ex|Jump pref_orbital 1 add_attack_wave_orbital 13
+	
+	:add_attack_wave_general
+	unit_check 13 13 63 Greater|Jump 0 0 barracks|captaincy|apothecary fulcrum|mantle|iron_foundry|starpad|starport|nanite_assembly add_attack_wave_raider 13
+	unit_check 13 13 63 Greater|Jump 0 0 fulcrum|mantle|iron_foundry barracks|captaincy|apothecary|starpad|starport|nanite_assembly add_attack_wave_armor 13
+	unit_check 13 13 63 Greater|Jump 0 0 starpad|starport|nanite_assembly barracks|captaincy|apothecary|fulcrum|mantle|iron_foundry add_attack_wave_orbital 13
+	rand_j 85 add_attack_wave_armor
+	rand_j 128 add_attack_wave_raider
+	goto add_attack_wave_orbital
+	
+	:add_attack_wave_armor
+	call atk_wave_armor
+	call atk_wave_orbital
+	call atk_wave_raider
+	return
+	
+	:add_attack_wave_raider
+	call atk_wave_raider
+	call atk_wave_armor
+	call atk_wave_orbital
+	return
+	
+	:add_attack_wave_orbital
+	call atk_wave_orbital
+	call atk_wave_raider
+	call atk_wave_armor
+	return
+	
+	:atk_wave_armor
+	call atk_armor_futurestation
+	call atk_armor_ironfoundry
+	call atk_armor_bioticbase
+	call atk_armor_mantle
+	call atk_armor_machineshop
+	call atk_armor_fulcrum
+	call atk_armor_scrapyard
+	return
+	
+	:atk_wave_raider
+	call atk_raider_guildhall
+	call atk_raider_apothecary
+	call atk_raider_captaincy
+	call atk_raider_tinkererstower
+	call atk_raider_medbay
+	call atk_raider_barracks
+	call atk_raider_covertops
+	return
+	
+	:atk_wave_orbital
+	call atk_orbital_particleaccelerator
+	call atk_orbital_naniteassembly
+	call atk_orbital_munitionsbay
+	call atk_orbital_commandment
+	call atk_orbital_starport
+	call atk_orbital_starpad
+	return
+	
+	:atk_raider_barracks
+	var AtL|Call prefMaverick 1 atk_maverick2 13
+	var AtL|Call prefHarakan 1 atk_harakan2 13
+	var AtL|Call prefCyprian 1 atk_cyprian2 13
+	call atk_maverick
+	call atk_cyprian
+	call atk_harakan
+	return
+	
+	:atk_raider_medbay
+	var AtL|Call prefCleric 1 atk_cleric2 13
+	var AtL|Call prefShaman 1 atk_shaman2 13
+	call atk_cleric
+	call atk_shaman
+	return
+	
+	:atk_raider_covertops
+	var AtL|Call prefEidolon 1 atk_eidolon2 13
+	var AtL|Call prefSavant 1 atk_savant2 13
+	call atk_eidolon
+	call atk_savant
+	return
+	
+	:atk_raider_captaincy
+	var AtL|Call prefMadcap 1 atk_madcap2 13
+	var AtL|Call prefHeracles 1 atk_heracles2 13
+	var AtL|Call prefApostle 1 atk_apostle2 13
+	call atk_madcap
+	call atk_heracles
+	call atk_apostle
+	return
+	
+	:atk_raider_tinkererstower
+	var AtL|Call prefSiren 1 atk_siren2 13
+	var AtL|Call prefStriga 1 atk_striga2 13
+	call atk_siren
+	call atk_striga
+	return
+	
+	:atk_raider_guildhall
+	var AtL|Call prefOlympian 1 atk_olympian2 13
+	var AtL|Call prefAutocrat 1 atk_autocrat2 13
+	call atk_olympian 
+	call atk_autocrat
+	return
+	
+	:atk_raider_apothecary
+	var AtL|Call prefDilettante 1 atk_dilettante2 13
+	var AtL|Call prefSevenstep 1 atk_sevenstep2 13
+#	var AtL|Call prefHypnagogue 1 atk_hypnagogue2 13
+	call atk_dilettante
+	call atk_sevenstep
+#	call atk_hypnagogue
+	return
+	
+	:atk_armor_fulcrum
+	var AtL|Call prefVulture 1 atk_vulture2 13
+	var AtL|Call prefCyclops 1 atk_cyclops2 13
+	var AtL|Call prefGoliath 1 atk_goliath2 13
+	call atk_vulture
+	call atk_cyclops
+	call atk_goliath
+	return
+	
+	:atk_armor_scrapyard
+	var AtL|Call prefBlackjack 1 atk_blackjack2 13
+	var AtL|Call prefMatador 1 atk_matador2 13
+	call atk_blackjack
+	call atk_matador
+	return
+	
+	:atk_armor_machineshop
+	var AtL|Call prefPhalanx 1 atk_phalanx2 13
+	var AtL|Call prefMadrigal 1 atk_madrigal2 13
+	call atk_phalanx
+	call atk_madrigal
+	return
+	
+	:atk_armor_mantle
+	var AtL|Call prefRamesses 1 atk_ramesses2 13
+	var AtL|Call prefDurendal 1 atk_durendal2 13
+	var AtL|Call prefCataphract 1 atk_cataphract2 13
+	call atk_ramesses
+	call atk_durendal
+	call atk_cataphract
+	return
+	
+	:atk_armor_ironfoundry
+	var AtL|Call prefPaladin 1 atk_paladin2 13
+	var AtL|Call prefCuirass 1 atk_cuirass2 13
+	var AtL|Call prefPazuzu 1 atk_pazuzu2 13
+	call atk_paladin
+	call atk_cuirass
+	call atk_pazuzu
+	return
+	
+	:atk_armor_futurestation
+	var AtL|Call prefClaymore 1 atk_claymore2 13
+	var AtL|Call prefPenumbra 1 atk_penumbra2 13
+	call atk_claymore
+	call atk_penumbra
+	return
+	
+	:atk_armor_bioticbase
+	var AtL|Call prefAion 1 atk_aion2 13
+	var AtL|Call prefAnticthon 1 atk_anticthon2 13
+	call atk_aion
+	call atk_anticthon
+	return
+	
+	:atk_orbital_starpad
+	var AtL|Call prefWraith 1 atk_wraith2 13
+	call atk_wraith
+	return
+	
+	:atk_orbital_starport
+	var AtL|Call prefGorgon 1 atk_gorgon2 13
+	var AtL|Call prefWyvern 1 atk_wyvern2 13
+	var AtL|Call prefValkyrie 1 atk_valkyrie2 13
+	call atk_gorgon
+	call atk_wyvern
+	call atk_valkyrie
+	return
+	
+	:atk_orbital_munitionsbay
+	var AtL|Call prefSalamander 1 atk_salamander2 13
+	var AtL|Call prefSundog 1 atk_sundog2 13
+	call atk_salamander
+	call atk_sundog
+	return
+	
+	:atk_orbital_commandment
+	var AtL|Call prefAzazel 1 atk_azazel2 13
+	var AtL|Call prefSeraph 1 atk_seraph2 13
+	call atk_seraph
+	call atk_azazel
+	return
+	
+	:atk_orbital_naniteassembly
+	var AtL|Call prefCentaur 1 atk_centaur2 13
+	var AtL|Call prefMinotaur 1 atk_minotaur2 13
+	var AtL|Call prefMagnetar 1 atk_magnetar2 13
+	call atk_centaur
+	call atk_minotaur
+	call atk_magnetar
+	return
+	
+	:atk_orbital_particleaccelerator
+	var AtL|Call prefHippogriff 1 atk_hippogriff2 13
+	var AtL|Call prefPhobos 1 atk_phobos2 13
+	call atk_hippogriff
+	call atk_phobos
+	return
+	
+	:atk_maverick
+	notowns barracks blank_return
+	queue_rel maverick barracks 1 barracks 255 Global 63 100
+	atk_rel maverick maverick 0.8
+	
+	:atk_maverick2
+	notowns barracks blank_return
+	atk_rel maverick barracks 3
+	return
+	
+	:atk_harakan
+	notowns barracks blank_return
+	queue_rel harakan barracks 1 barracks 255 Global 63 100
+	atk_rel harakan harakan 0.8
+	
+	:atk_harakan2
+	notowns barracks blank_return
+	atk_rel harakan barracks 1.5
+	return
+	
+	:atk_cyprian
+	notowns barracks blank_return
+	queue_rel cyprian barracks 1 barracks 255 Global 63 100
+	atk_rel cyprian cyprian 0.8
+	
+	:atk_cyprian2
+	notowns barracks blank_return
+	atk_rel cyprian barracks 1.75
+	return
+	
+	:atk_cleric
+	notowns medbay blank_return
+	notowns barracks blank_return
+	queue_rel cleric medbay 1 barracks 255 Global 63 100
+	atk_rel cleric cleric 0.5
+	
+	:atk_cleric2
+	notowns medbay blank_return
+	notowns barracks blank_return
+	atk_rel cleric medbay 2
+	return
+	
+	:atk_shaman
+	notowns medbay blank_return
+	notowns barracks blank_return
+	queue_rel shaman medbay 1 barracks 255 Global 63 100
+	atk_rel shaman shaman 0.6
+	
+	:atk_shaman2
+	notowns medbay blank_return
+	notowns barracks blank_return
+	atk_rel shaman medbay 1
+	return
+	
+	:atk_eidolon
+	notowns covert_ops blank_return
+	notowns barracks blank_return
+	queue_rel eidolon covert_ops 1 barracks 255 Global 63 101
+	atk_rel eidolon eidolon 0.8
+	
+	:atk_eidolon2
+	notowns covert_ops blank_return
+	notowns barracks blank_return
+	atk_rel eidolon covert_ops 1.5
+	return
+	
+	:atk_savant
+	notowns covert_ops blank_return
+	notowns barracks blank_return
+	queue_rel savant barracks 1 barracks 255 Global 63 101
+	atk_rel savant savant 0.8
+	
+	:atk_savant2
+	notowns covert_ops blank_return
+	notowns barracks blank_return
+	atk_rel savant covert_ops 1.25
+	return
+	
+	:atk_madcap
+	notowns captaincy blank_return
+	queue_rel madcap captaincy 1 captaincy 255 Global 63 101
+	atk_rel madcap madcap 0.8
+	
+	:atk_madcap2
+	notowns captaincy blank_return
+	atk_rel madcap captaincy 3.5
+	return
+	
+	:atk_heracles
+	notowns captaincy blank_return
+	queue_rel heracles captaincy 1 captaincy 255 Global 63 101
+	atk_rel heracles heracles 0.8
+	
+	:atk_heracles2
+	notowns captaincy blank_return
+	atk_rel heracles captaincy 2.25
+	return
+	
+	:atk_apostle
+	notowns captaincy blank_return
+	queue_rel apostle captaincy 1 captaincy 255 Global 63 101
+	atk_rel apostle apostle 0.8
+	
+	:atk_apostle2
+	notowns captaincy blank_return
+	atk_rel apostle captaincy 1.25
+	return
+	
+	:atk_siren
+	notowns tinkerers_tower blank_return
+	notowns captaincy blank_return
+	queue_rel siren tinkerers_tower 1 captaincy 255 Global 63 101
+	atk_rel siren siren 0.8
+	
+	:atk_siren2
+	notowns tinkerers_tower blank_return
+	notowns captaincy blank_return
+	atk_rel siren tinkerers_tower 2
+	return
+	
+	:atk_striga
+	notowns tinkerers_tower blank_return
+	notowns captaincy blank_return
+	queue_rel striga tinkerers_tower 1 captaincy 255 Global 63 101
+	atk_rel striga striga 0.8
+	
+	:atk_striga2
+	notowns tinkerers_tower blank_return
+	notowns captaincy blank_return
+	atk_rel striga tinkerers_tower 2
+	return
+	
+	:atk_olympian 
+	notowns guildhall blank_return
+	notowns captaincy blank_return
+	queue_rel olympian captaincy 1 captaincy 255 Global 63 102
+	atk_rel olympian olympian 0.8
+	
+	:atk_olympian2
+	notowns guildhall blank_return
+	notowns captaincy blank_return
+	atk_rel olympian guildhall 2.25
+	return
+	
+	:atk_autocrat
+	notowns guildhall blank_return
+	notowns captaincy blank_return
+	queue_rel autocrat captaincy 1 captaincy 255 Global 63 102
+	atk_rel autocrat autocrat 0.8
+	
+	:atk_autocrat2
+	notowns guildhall blank_return
+	notowns captaincy blank_return
+	atk_rel autocrat guildhall 1
+	return
+	
+	:atk_dilettante
+	notowns apothecary blank_return
+	queue_rel dilettante apothecary 1 apothecary 255 Global 63 102
+	atk_rel dilettante dilettante 0.8
+	
+	:atk_dilettante2
+	notowns apothecary blank_return
+	atk_rel dilettante apothecary 2.25
+	return
+	
+	:atk_sevenstep
+	notowns apothecary blank_return
+	queue_rel sevenstep apothecary 1 apothecary 255 Global 63 102
+	atk_rel sevenstep sevenstep 0.8
+	
+	:atk_sevenstep2
+	notowns apothecary blank_return
+	atk_rel sevenstep apothecary 2.25
+	return
+	
+	:atk_hypnagogue
+	notowns apothecary blank_return
+	queue_rel hypnagogue apothecary 1 apothecary 255 Global 63 102
+	atk_rel hypnagogue hypnagogue 0.8
+	
+	:atk_hypnagogue2
+	notowns apothecary blank_return
+	atk_rel hypnagogue apothecary 2.25
+	return
+	
+	:atk_vulture
+	notowns fulcrum blank_return
+	queue_rel vulture fulcrum 1 fulcrum 255 Global 63 100
+	atk_rel vulture vulture 0.8
+	
+	:atk_vulture2
+	notowns fulcrum blank_return
+	atk_rel vulture fulcrum 2
+	return
+	
+	:atk_cyclops
+	notowns fulcrum blank_return
+	queue_rel cyclops fulcrum 1 fulcrum 255 Global 63 100
+	atk_rel cyclops cyclops 0.8
+	
+	:atk_cyclops2
+	notowns fulcrum blank_return
+	atk_rel cyclops fulcrum 2
+	return
+	
+	:atk_goliath
+	notowns fulcrum blank_return
+	queue_rel goliath fulcrum 1 fulcrum 255 Global 63 100
+	atk_rel goliath goliath 0.8
+	
+	:atk_goliath2
+	notowns fulcrum blank_return
+	atk_rel goliath fulcrum 3
+	return
+	
+	:atk_blackjack
+	notowns scrapyard blank_return
+	notowns fulcrum blank_return
+	queue_rel blackjack scrapyard 1 fulcrum 255 Global 63 100
+	atk_rel blackjack blackjack 0.8
+	
+	:atk_blackjack2
+	notowns scrapyard blank_return
+	notowns fulcrum blank_return
+	atk_rel blackjack scrapyard 2
+	return
+	
+	:atk_matador
+	notowns scrapyard blank_return
+	notowns fulcrum blank_return
+	queue_rel matador scrapyard 1 fulcrum 255 Global 63 100
+	atk_rel matador matador 0.8
+	
+	:atk_matador2
+	notowns scrapyard blank_return
+	notowns fulcrum blank_return
+	atk_rel matador scrapyard 2
+	return
+	
+	:atk_phalanx
+	notowns machine_shop blank_return
+	notowns fulcrum blank_return
+	queue_rel phalanx machine_shop 1 fulcrum 255 Global 63 101
+	atk_rel phalanx phalanx 0.8
+	
+	:atk_phalanx2
+	notowns machine_shop blank_return
+	notowns fulcrum blank_return
+	atk_rel phalanx machine_shop 2
+	return
+	
+	:atk_madrigal
+	notowns machine_shop blank_return
+	notowns fulcrum blank_return
+	queue_rel madrigal machine_shop 1 fulcrum 255 Global 63 101
+	atk_rel madrigal madrigal 0.8
+	
+	:atk_madrigal2
+	notowns machine_shop blank_return
+	notowns fulcrum blank_return
+	atk_rel madrigal machine_shop 2
+	return
+	
+	:atk_ramesses
+	notowns mantle blank_return
+	queue_rel ramesses mantle 1 mantle 255 Global 63 101
+	atk_rel ramesses ramesses 0.8
+	
+	:atk_ramesses2
+	notowns mantle blank_return
+	atk_rel ramesses mantle 2
+	return
+	
+	:atk_durendal
+	notowns mantle blank_return
+	queue_rel durendal mantle 1 mantle 255 Global 63 101
+	atk_rel durendal durendal 0.8
+	
+	:atk_durendal2
+	notowns mantle blank_return
+	atk_rel durendal mantle 2
+	return
+	
+	:atk_cataphract
+	notowns mantle blank_return
+	queue_rel cataphract mantle 1 mantle 255 Global 63 101
+	atk_rel cataphract cataphract 0.8
+	
+	:atk_cataphract2
+	notowns mantle blank_return
+	atk_rel cataphract mantle 2
+	return
+	
+	:atk_paladin
+	notowns iron_foundry blank_return
+	queue_rel paladin iron_foundry 1 iron_foundry 255 Global 63 102
+	atk_rel paladin paladin 0.8
+	
+	:atk_paladin2
+	notowns iron_foundry blank_return
+	atk_rel paladin iron_foundry 1.25
+	return
+	
+	:atk_cuirass
+	notowns iron_foundry blank_return
+	queue_rel cuirass iron_foundry 1 iron_foundry 255 Global 63 102
+	atk_rel cuirass cuirass 0.8
+	
+	:atk_cuirass2
+	notowns iron_foundry blank_return
+	atk_rel cuirass iron_foundry 2
+	return
+	
+	:atk_pazuzu
+	notowns iron_foundry blank_return
+	queue_rel pazuzu iron_foundry 1 iron_foundry 255 Global 63 102
+	atk_rel pazuzu pazuzu 0.8
+	
+	:atk_pazuzu2
+	notowns iron_foundry blank_return
+	atk_rel pazuzu iron_foundry 2
+	return
+	
+	:atk_claymore
+	notowns future_station blank_return
+	notowns iron_foundry blank_return
+	queue_rel claymore future_station 1 iron_foundry 255 Global 63 102
+	atk_rel claymore claymore 0.8
+	
+	:atk_claymore2
+	notowns future_station blank_return
+	notowns iron_foundry blank_return
+	atk_rel claymore future_station 2
+	return
+	
+	:atk_penumbra
+	notowns future_station blank_return
+	notowns iron_foundry blank_return
+	queue_rel penumbra future_station 1 iron_foundry 255 Global 63 102
+	atk_rel penumbra penumbra 0.8
+	
+	:atk_penumbra2
+	notowns future_station blank_return
+	notowns iron_foundry blank_return
+	atk_rel penumbra future_station 1
+	return
+	
+	:atk_aion
+	notowns biotic_base blank_return
+	notowns iron_foundry blank_return
+	queue_rel aion biotic_base 1 iron_foundry 255 Global 63 103
+	atk_rel aion aion 0.8
+	
+	:atk_aion2
+	notowns biotic_base blank_return
+	notowns iron_foundry blank_return
+	atk_rel aion biotic_base 2
+	return
+	
+	:atk_anticthon
+	notowns biotic_base blank_return
+	notowns iron_foundry blank_return
+	queue_rel anticthon biotic_base 1 iron_foundry 255 Global 63 103
+	atk_rel anticthon anticthon 0.8
+	
+	:atk_anticthon2
+	notowns biotic_base blank_return
+	notowns iron_foundry blank_return
+	atk_rel anticthon biotic_base 2
+	return
+	
+	:atk_wraith
+	notowns starpad blank_return
+	queue_rel wraith starpad 1 starpad 255 Global 63 100
+	atk_rel wraith wraith 0.8
+	
+	:atk_wraith2
+	notowns starpad blank_return
+	atk_rel wraith starpad 2
+	return
+	
+	:atk_gorgon
+	notowns starport blank_return
+	queue_rel gorgon starport 1 starport 255 Global 63 101
+	atk_rel gorgon gorgon 0.8
+	
+	:atk_gorgon2
+	notowns starport blank_return
+	atk_rel gorgon starport 1.5
+	return
+	
+	:atk_wyvern
+	notowns starport blank_return
+	queue_rel wyvern starport 1 starport 255 Global 63 101
+	atk_rel wyvern wyvern 0.8
+	
+	:atk_wyvern2
+	notowns starport blank_return
+	atk_rel wyvern starport 1.5
+	return
+	
+	:atk_valkyrie
+	notowns starport blank_return
+	atk_rel valkyrie valkyrie 0.8
+	
+	:atk_valkyrie2
+	notowns starport blank_return
+	atk_rel valkyrie starport 1
+	return
+	
+	:atk_salamander
+	notowns munitions_bay blank_return
+	notowns starport blank_return
+	queue_rel salamander munitions_bay 1 starport 255 Global 63 101
+	atk_rel salamander salamander 0.8
+	
+	:atk_salamander2
+	notowns munitions_bay blank_return
+	notowns starport blank_return
+	atk_rel salamander munitions_bay 1.5
+	return
+	
+	:atk_sundog
+	notowns munitions_bay blank_return
+	notowns starport blank_return
+	queue_rel sundog munitions_bay 1 starport 255 Global 63 101
+	atk_rel sundog sundog 0.8
+	
+	:atk_sundog2
+	notowns munitions_bay blank_return
+	notowns starport blank_return
+	atk_rel sundog munitions_bay 1.5
+	return
+	
+	:atk_seraph
+	notowns commandment blank_return
+	notowns starport blank_return
+	atk_rel seraph seraph 0.8
+	
+	:atk_seraph2
+	notowns commandment blank_return
+	notowns starport blank_return
+	atk_rel seraph commandment 0.75
+	return
+	
+	:atk_azazel
+	notowns commandment blank_return
+	notowns starport blank_return
+	atk_rel azazel azazel 0.8
+	
+	:atk_azazel2
+	notowns commandment blank_return
+	notowns starport blank_return
+	atk_rel azazel commandment 1
+	return
+	
+	:atk_centaur
+	notowns nanite_assembly blank_return
+	queue_rel centaur nanite_assembly 1 nanite_assembly 255 Global 63 102
+	atk_rel centaur centaur 0.8
+	
+	:atk_centaur2
+	notowns nanite_assembly blank_return
+	atk_rel centaur nanite_assembly 1.5
+	return
+	
+	:atk_minotaur
+	notowns nanite_assembly blank_return
+	queue_rel minotaur nanite_assembly 1 nanite_assembly 255 Global 63 102
+	atk_rel minotaur minotaur 0.8
+	
+	:atk_minotaur2
+	notowns nanite_assembly blank_return
+	atk_rel minotaur nanite_assembly 1.25
+	return
+	
+	:atk_magnetar
+	notowns nanite_assembly blank_return
+	queue_rel magnetar nanite_assembly 1 nanite_assembly 255 Global 63 102
+	atk_rel magnetar magnetar 0.8
+	
+	:atk_magnetar2
+	notowns nanite_assembly blank_return
+	atk_rel magnetar nanite_assembly 1.25
+	return
+	
+	:atk_hippogriff
+	notowns particle_accelerator blank_return
+	notowns nanite_assembly blank_return
+	queue_rel hippogriff particle_accelerator 1 nanite_assembly 255 Global 63 102
+	atk_rel hippogriff hippogriff 0.8
+	
+	:atk_hippogriff2
+	notowns particle_accelerator blank_return
+	notowns nanite_assembly blank_return
+	atk_rel hippogriff particle_accelerator 1
+	return
+	
+	:atk_phobos
+	notowns particle_accelerator blank_return
+	notowns nanite_assembly blank_return
+	queue_rel phobos particle_accelerator 1 nanite_assembly 255 Global 63 103
+	atk_rel phobos phobos 0.8
+	
+	:atk_phobos2
+	notowns particle_accelerator blank_return
+	notowns nanite_assembly blank_return
+	atk_rel phobos particle_accelerator 1
+	return
+	
+	:early_military
+	var Ex|Jump skip_building_var 1 blank 13
+	var Ex|Jump pref_armor 1 early_military_armor 13
+	var Ex|Jump pref_raider 1 early_military_raider 13
+	var Ex|Jump pref_orbital 1 early_military_orbital 13
+	
+	:early_military_general
+	time AtL 7200 Frames blank
+	var Ex|Wait can_queue_early_military_var 1 13
+	bring 13 AtL_M 1 barracks Loc.63 early_maverick
+	bring 13 AtL_M 1 machine_shop Loc.63 early_phalanx
+	bring 13 AtL_M 1 starpad Loc.63 early_wraith
+	bring 13 AtL_M 1 barracks Loc.63 early_cyprian
+	bring 13 AtL_M 1 machine_shop Loc.63 early_goliath
+	wait 480
+	c_queues train maverick|phalanx|wraith|cyprian|goliath 13
+	goto early_military_general
+	
+	:early_military_armor
+	time AtL 7200 Frames blank
+	var Ex|Wait can_queue_early_military_var 1 13
+	bring 13 AtL_M 1 machine_shop Loc.63 early_phalanx
+	bring 13 AtL_M 1 machine_shop Loc.63 early_goliath
+	bring 13 AtL_M 1 starpad Loc.63 early_wraith
+	bring 13 AtL_M 1 barracks Loc.63 early_harakan
+	bring 13 AtL_M 1 barracks Loc.63 early_maverick
+	wait 480
+	c_queues train phalanx|goliath|wraith|harakan|maverick 13
+	goto early_military_armor
+	
+	:early_military_raider
+	time AtL 7200 Frames blank
+	var Ex|Wait can_queue_early_military_var 1 13
+	bring 13 AtL_M 1 barracks Loc.63 early_maverick
+	bring 13 AtL_M 1 barracks Loc.63 early_harakan
+	bring 13 AtL_M 1 starpad Loc.63 early_wraith
+	bring 13 AtL_M 1 machine_shop Loc.63 early_phalanx
+	bring 13 AtL_M 1 machine_shop Loc.63 early_goliath
+	wait 480
+	c_queues train maverick|harakan|wraith|phalanx|goliath 13
+	goto early_military_raider
+	
+	:early_military_orbital
+	time AtL 7200 Frames blank
+	var Ex|Wait can_queue_early_military_var 1 13
+	bring 13 AtL_M 1 starpad Loc.63 early_wraith
+	bring 13 AtL_M 1 barracks Loc.63 early_maverick
+	bring 13 AtL_M 1 machine_shop Loc.63 early_goliath
+	bring 13 AtL_M 1 barracks Loc.63 early_harakan
+	bring 13 AtL_M 1 machine_shop Loc.63 early_phalanx
+	wait 480
+	c_queues train wraith|maverick|goliath|harakan|phalanx 13
+	goto early_military_orbital
+	
+	:early_maverick
+	notowns barracks blank
+	bring 13 AtL 5 maverick Loc.63 blank
+	res 13 AtM Ore 49 blank
+	queue_rel maverick barracks 1 barracks 255 Global 63 100
+	stop
+	
+	:early_harakan
+	notowns barracks blank
+	bring 13 AtL 4 harakan Loc.63 blank
+	res 13 AtM Ore 49 blank
+	res 13 AtM Gas 24 blank
+	queue_rel harakan barracks 1 barracks 255 Global 63 100
+	stop
+	
+	:early_cyprian
+	notowns barracks blank
+	bring 13 AtL 4 cyprian Loc.63 blank
+	res 13 AtM Ore 74 blank
+	res 13 AtM Gas 24 blank
+	queue_rel cyprian barracks 1 barracks 255 Global 63 100
+	stop
+	
+	:early_phalanx
+	notowns fulcrum blank
+	notowns machine_shop blank
+	bring 13 AtL 4 phalanx Loc.63 blank
+	res 13 AtM Ore 149 blank
+	res 13 AtM Gas 99 blank
+	queue_rel phalanx machine_shop 1 fulcrum 255 Global 63 100
+	
+	:early_goliath
+	notowns fulcrum blank
+	notowns machine_shop blank
+	bring 13 AtL 4 goliath Loc.63 blank
+	res 13 AtM Ore 99 blank
+	res 13 AtM Gas 49 blank
+	queue_rel goliath machine_shop 1 fulcrum 255 Global 63 100
+	stop
+	
+	:early_wraith
+	notowns starpad blank
+	bring 13 AtL 6 wraith Loc.63 blank
+	res 13 AtM Ore 99 blank
+	res 13 AtM Gas 74 blank
+	queue_rel wraith starpad 1 starpad 255 Global 63 100
+	stop
+	
+	:anti_grief
+	wait 360
+	multi anti_grief_air
+	multi anti_grief_cloak
+	stop
+	
+	:anti_grief_rush
+	time AtL 6480 Frames blank
+	wait 24
+	var Ex|Jump under_attack_by_ground_var 0 anti_grief_rush 13
+	wait 360
+	var Ex|Jump under_attack_by_ground_var 0 anti_grief_rush 13
+	var Set can_build_static_defense_var 1 13
+	var Set can_queue_early_military_var 1 13
+	stop
+	
+	:anti_grief_air
+	bring 13 AtL 5 cyprian|cyclops|goliath|wraith|watchdog Loc.63 blank
+	wait 24
+	var Ex|Jump under_attack_by_air_var 0 anti_grief_air 13
+	bring 13 AtL 3 goliath|wraith Loc.63 blank
+	bring 13 AtL 20 maverick|cyprian|madcap Loc.63 blank
+	var Ex|Jump pref_armor 1 anti_grief_air_armor 13
+	var Ex|Jump pref_orbital 1 anti_grief_air_orbital 13
+	goto anti_grief_air_general
+	
+	:anti_grief_air_armor
+	bld 1 fulcrum 121
+	train 5 cyclops
+	add_bld 255 watchdog 1 3 98
+	stop
+	
+	:anti_grief_air_orbital
+	bld 1 starpad 121
+	train 2 wraith
+	add_bld 255 watchdog 1 2 98
+	stop
+	
+	:anti_grief_air_general
+	bld 1 barracks 121
+	train 8 maverick
+	add_bld 255 watchdog 1 3 98
+	stop
+	
+	:anti_grief_cloak
+	wait 24
+	bring 13 AtM_W 1 ancile|seraph Loc.63 blank
+	player_combat 17 13 63 False Jump eidolon|wraith|sundog|cabalist|barghest|lakizilisk Any anti_grief_cloak 13
+	var Ex|Jump pref_orbital 1 anti_grief_cloak_orbital 13
+	goto anti_grief_cloak_general
+	
+	:anti_grief_cloak_orbital
+	add_bld 255 watchdog 1 1 98
+	bld 1 starpad 121
+	train 1 ancile
+	wait 300
+	goto anti_grief_cloak
+	
+	:anti_grief_cloak_general
+	add_bld 255 watchdog 1 1 98
+	bld 1 starpad 121
+	train 1 ancile
+	wait 300
+	goto anti_grief_cloak
+	
+	### CUSTOM AREA TOWNS ###
+	# Called before the rest of the script, to make sure it initializes properly
+	
+	:custom_town_check
+	dth 13 Ex 3 scanner_sweep custom_town_scenario
+	return
+	
+	:custom_town_scenario
+	goto custom_town_endworld
+	
+	:custom_town_endworld
+	dth 13 Ex 7 t_tank_turret custom_town_endworld_7
+	dth 13 Ex 8 t_tank_turret custom_town_endworld_8
+	return
+	
+	:custom_town_endworld_7
+	create_script expansion_init_area_town 255 Loc.1 0 22
+	create_script expansion_init_area_town 255 Loc.3 0 21
+	return
+	
+	:custom_town_endworld_8
+	create_script expansion_init_area_town 255 Loc.5 0 31
+	create_script expansion_init_area_town 255 Loc.8 0 20
+	return
+	

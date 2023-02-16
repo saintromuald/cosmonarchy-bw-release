@@ -1,0 +1,877 @@
+script_name Expansion Terran Campaign Area Town
+script_id TARx
+# Cosmonarchy Terran AI for preplaced expansions
+
+	start_areatown
+	wait 1
+	set_free_id
+	local 255 AtL 1 treasury expansion_body_treasury
+	bld 1 command_center 180
+	goto expansion_main
+	
+	:expansion_body_treasury
+	bld 1 treasury 180
+	bld 1 quarry 120
+	
+	:expansion_main
+	multi expansion_worker_start
+	w_bldstart 1 command_center
+	var Set try_expand_var 0 13
+	w_bld 1 command_center
+	multi count_expansion
+	placeholder_count Local AtL|Jump 1 Group_Buildings expansion_normal 13
+	var Ex|Jump skip_building_var 1 idle 13
+	
+	:expansion_normal
+	multi request_watchdog
+	call main_wait_450
+	multi production_cycle
+	call main_wait_600
+	multi request_bunker
+	var Ex|Wait build_done_var 1 13
+	call main_wait_450
+	multi build_order_expansion
+	call main_wait_450
+	multi request_infrastructure
+	call main_wait_450
+	bring 13 AtL_W 1 engineering_bay Loc.63 blank
+	call main_wait_450
+	multi request_sentinel
+	call main_wait_450
+	bring 13 AtL_W 1 science_facility Loc.63 blank
+	call main_wait_900
+	multi request_ion_cannon
+	goto idle
+	
+	:build_order_expansion
+	bring 13 AtL_W 1 barracks|captaincy|fulcrum|iron_foundry|starport|nanite_assembly|scrapyard Loc.63 blank
+	var Ex|Jump pref_armor 1 build_armor_fin2 13
+	var Ex|Jump pref_raider 1 build_raider_fin2 13
+	var Ex|Jump pref_orbital 1 build_orbital_fin2 13
+	goto build_general_fin2
+	
+	:build_general_fin2
+	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
+	call main_wait_450
+	call wStarpad2
+	call main_wait_300
+	multi need_engineering_bay
+	call main_wait_300
+	call wBarracks
+	call main_wait_150
+	bld 1 covert_ops 120
+	call main_wait_600
+	call wStarport
+	call main_wait_1200
+	call main_wait_600
+	multi need_science_facility
+	stop
+	
+	:build_armor_fin2
+	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
+	call main_wait_900
+	multi need_engineering_bay
+	call main_wait_1800
+	multi need_science_facility
+	call main_wait_900
+	call wStarport
+	stop
+	
+	:build_raider_fin2
+	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
+	call main_wait_300
+	bld 1 medbay 120
+	call main_wait_300
+	bld 1 covert_ops 120
+	call main_wait_1200
+	call main_wait_600
+	multi need_engineering_bay
+	call main_wait_1200
+	call main_wait_600
+	multi need_science_facility
+	stop
+	
+	:build_orbital_fin2
+	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
+	call main_wait_600
+	multi need_engineering_bay
+	call main_wait_3600
+	multi need_science_facility
+	call main_wait_900
+	call wFactory
+	stop
+	
+	:idle
+	wait 25500
+	goto idle
+	
+	:blank
+	stop
+	
+	:blank_return
+	return
+	
+	:main_wait_150
+	wait 24
+	res 13 AtL Any 500 blank_return
+	wait 150
+	return
+	
+	:main_wait_300
+	wait 24
+	res 13 AtL Any 500 blank_return
+	wait 300
+	return
+	
+	:main_wait_450
+	wait 24
+	call main_wait_300
+	call main_wait_150
+	return
+	
+	:main_wait_600
+	wait 24
+	res 13 AtL Any 800 blank_return
+	res 13 AtL Any 500 main_wait_300
+	wait 600
+	return
+	
+	:main_wait_750
+	wait 24
+	call main_wait_600
+	call main_wait_150
+	return
+	
+	:main_wait_900
+	wait 24
+	res 13 AtL Any 1100 blank_return
+	res 13 AtL Any 800 main_wait_600
+	res 13 AtL Any 500 main_wait_300
+	wait 900
+	return
+	
+	:main_wait_1200
+	wait 24
+	call main_wait_900
+	call main_wait_300
+	return
+	
+	:main_wait_1500
+	wait 24
+	call main_wait_1200
+	call main_wait_300
+	return
+	
+	:main_wait_1800
+	wait 24
+	call main_wait_900
+	call main_wait_900
+	return
+	
+	:main_wait_2400
+	wait 24
+	call main_wait_1200
+	call main_wait_1200
+	return
+	
+	:main_wait_3600
+	wait 24
+	call main_wait_1200
+	call main_wait_1200
+	return
+	
+	:worker_conditions
+	wait 12
+	res 13 AtL Ore 500 blank_return
+	var Ex|WF(360) under_attack_var 0 13
+	return
+	
+	:worker_request_advanced
+	local 255 AtL 28 mason|talos blank_return
+	notowns engineering_bay blank_return
+	local 255 AtL 10 talos blank_return
+	queue 1 talos parthenon 255 Local Loc.63 100
+	wait 150
+	return
+	
+	:count_expansion
+	wait 12
+	local 255 Ex 0 command_center count_expansion
+	var add town_count_var 1 13
+	local 255 Ex_W 0 command_center blank
+	var subtract town_count_var 1 13
+	goto count_expansion
+	
+	:save_money_for_expansion
+	wait 12
+	time AtM 5760 Frames save_money_for_expansion # 5 minutes
+	res 13 AtL Ore 450 save_money_for_expansion
+	var Ex|Wait try_expand_var 1 13
+	var Set can_build_static_defense_var 0 13
+	var Set can_queue_early_military_var 0 13
+	var Ex|Wait try_expand_var 0 13
+	call build_bool
+	goto save_money_for_expansion
+	
+	:build_bool
+	# These are used no matter what!
+	var Add can_worker_var 1 13
+	var Add can_expand_var 1 13
+	var Set can_attack_var 1 13
+	var Set build_gas_var 1 13
+	var Set build_done_var 1 13
+	# These are not used if skip_building_var is true!
+	var Set can_build_static_defense_var 1 13
+	var Set can_queue_early_military_var 1 13
+	var Set can_build_production_var 1 13
+	return
+	
+	:expansion_worker_start
+	wait 24
+	local 255 Ex 0 command_center expansion_worker_start
+	bld 1 mason 98
+	w_bldstart 1 command_center	
+	bld 2 mason 98
+	w_bld 1 command_center
+	bld 4 mason 98
+	maynard 4
+	multi worker_track
+	
+	:expansion_worker_loop
+	wait 150
+	var AtL|Wait can_worker_var 1 13
+	local 255 AtL 24 mason expansion_worker_loop
+	var AtL|Wait can_worker_var 1 13
+	res 13 AtL_W Ore 50 blank
+	call worker_conditions
+	c_queues train mason|talos 13
+	res 13 AtL_C Any 100 worker_request_advanced
+	local 255 AtL 28 mason|talos expansion_worker_loop
+	queue 1 mason command_center 255 Local Loc.63 200
+	wait 150
+	local 255 Ex 0 quarry expansion_worker_loop
+	queue 1 mason quarry 255 Local Loc.63 200
+	goto expansion_worker_loop
+	
+	:worker_track
+	wait 120
+	local 255 AtL_W 10 mason|talos blank
+	var Add mining_count_var 1 13
+	local 255 AtM_W 9 mason|talos blank
+	var Sub mining_count_var 1 13
+	goto worker_track
+	
+	:wBarracks
+	wait 12
+	notowns command_center wBarracks
+	add_bld 255 barracks 1 99 95
+	return
+	
+	:wBarracks2
+	p_need 1 barracks
+	return
+	
+	:wCaptaincy
+	wait 12
+	notowns engineering_bay wCaptaincy
+	add_bld 255 captaincy 1 99 97
+	return
+	
+	:wCaptaincy2
+	p_need 1 captaincy
+	return
+	
+	:wFactory
+	wait 12
+	notowns command_center wFactory
+	add_bld 255 fulcrum 1 99 95
+	return
+	
+	:wFactory2
+	p_need 1 fulcrum
+	return
+	
+	:wIronFoundry
+	wait 12
+	notowns science_facility wIronFoundry
+	add_bld 255 iron_foundry 1 99 98
+	return
+	
+	:wIronFoundry2
+	p_need 1 iron_foundry
+	return
+	
+	:wStarpad
+	wait 12
+	notowns command_center wStarpad
+	add_bld 255 starpad 1 99 95
+	return
+	
+	:wStarpad2
+	p_need 1 starpad
+	return
+	
+	:wStarport
+	wait 12
+	notowns command_center wStarport
+	notowns engineering_bay wStarport
+	add_bld 255 starport 1 99 95
+	return
+	
+	:wStarport2
+	p_need 1 starport
+	return
+	
+	:wNaniteAssembly
+	wait 12
+	notowns science_facility wNaniteAssembly
+	add_bld 255 nanite_assembly 1 99 98
+	return
+	
+	:wNaniteAssembly2
+	p_need 1 nanite_assembly
+	return
+	
+	:wEngineeringBay
+	wait 12
+	notowns command_center wEngineeringBay
+	multi need_engineering_bay
+	return
+	
+	:need_engineering_bay
+	wait 24
+	bring 13 AtM 4 Group_Factories Loc.63 need_engineering_bay
+	bring 13 AtL 4 reservoir Loc.63 need_engineering_bay2
+	
+	:need_engineering_bay2
+	p_need 1 engineering_bay
+	stop
+	
+	:wait_for_EngineeringBay
+	wait 12
+	notowns engineering_bay wait_for_EngineeringBay
+	return
+	
+	:wScienceFacility
+	wait 12
+	notowns engineering_bay wScienceFacility
+	multi need_science_facility
+	return
+	
+	:need_science_facility
+	wait 24
+	bring 13 AtM 9 Group_Factories Loc.63 need_engineering_bay
+	bring 13 AtL 6 reservoir Loc.63 need_science_facility2
+	
+	:need_science_facility2
+	p_need 1 science_facility
+	stop
+	
+	:wait_for_ScienceFacility
+	wait 12
+	notowns science_facility wait_for_ScienceFacility
+	return
+	
+	:request_bunker
+	var Ex|Wait can_build_static_defense_var 1 13
+	wait 12
+	bring 13 Ex 0 barracks|captaincy|apothecary|fulcrum|mantle|iron_foundry Loc.63 request_bunker
+	call request_bunker_check
+	wait 60
+	call main_wait_900
+	goto request_bunker
+	
+	:request_bunker_check
+	local 255 AtL 4 bunker blank_return
+	var Ex|Jump under_attack_var 1 request_bunker_check2 13
+	add_bld 255 bunker 1 2 95
+	goto request_bunker_guards_tier3
+	
+	:request_bunker_check2
+	add_bld 255 bunker 1 3 95
+	var AtL|Jump mining_count_var 3 request_bunker_guards_tier3 13
+	var AtL|Jump mining_count_var 2 request_bunker_guards_tier2 13
+	goto request_bunker_guards_tier1
+	
+	:request_bunker_guards_tier1
+	p_guard maverick 0
+	p_guard maverick 0
+	p_guard maverick 1
+	p_guard cyprian 0
+	p_guard cyprian 1
+	goto add_return_wait_960
+	
+	:request_bunker_guards_tier2
+	notowns captaincy request_bunker_guards_tier1
+	p_guard madcap 0
+	p_guard madcap 0
+	p_guard heracles 1
+	goto add_return_wait_960
+	
+	:request_bunker_guards_tier3
+	notowns guildhall request_bunker_guards_tier2
+	p_guard olympian 0
+	p_guard olympian 0
+	p_guard autocrat 1
+	goto add_return_wait_960
+	
+	:request_watchdog
+	var Ex|Wait can_build_static_defense_var 1 13
+	wait 12
+	notowns command_center request_watchdog
+	call request_watchdog_check
+	call main_wait_600
+	goto request_watchdog
+	
+	:request_watchdog_check
+	local 255 AtL 4 watchdog request_watchdog_check2
+	add_bld 255 watchdog 1 4 97
+	var Ex|Jump under_attack_by_air_var 1 add_return_wait_480 13
+	goto add_return_wait_960
+	
+	:request_watchdog_check2
+	var Ex|Jump under_attack_by_air_var 1 request_watchdog_check3 13
+	var AtM|Jump mining_count_var 2 add_return_wait_480 13
+	add_bld 255 watchdog 1 7 97
+	goto add_return_wait_480
+	
+	:request_watchdog_check3
+	add_bld 255 watchdog 1 10 97
+	goto add_return_wait_480
+	
+	:request_sentinel
+	var Ex|Wait can_build_static_defense_var 1 13
+	wait 12
+	notowns command_center request_sentinel
+	notowns engineering_bay request_sentinel
+	call request_sentinel_check
+	call main_wait_600
+	goto request_sentinel
+	
+	:request_sentinel_check
+	local 255 AtL 4 sentinel request_sentinel_check2
+	add_bld 255 sentinel 1 4 98
+	var Ex|Jump under_attack_var 1 add_return_wait_480 13
+	goto add_return_wait_960
+	
+	:request_sentinel_check2
+	var Ex|Jump under_attack_var 1 request_sentinel_check3 13
+	var AtM|Jump mining_count_var 2 add_return_wait_480 13
+	add_bld 255 sentinel 1 7 98
+	goto add_return_wait_480
+	
+	:request_sentinel_check3
+	add_bld 255 sentinel 1 10 98
+	goto add_return_wait_480
+	
+	:request_ion_cannon
+	var Ex|Wait can_build_static_defense_var 1 13
+	wait 12
+	notowns command_center request_ion_cannon
+	notowns science_facility request_ion_cannon
+	call request_ion_cannon_check
+	wait 60
+	call main_wait_900
+	goto request_ion_cannon
+	
+	:request_ion_cannon_check
+	local 255 AtL 1 ion_cannon request_ion_cannon_check2
+	add_bld 255 ion_cannon 1 1 98
+	goto add_return_wait_960
+	
+	:request_ion_cannon_check2
+	var Ex|Jump under_attack_var 0 add_return_wait_960 13
+	add_bld 255 ion_cannon 1 2 98
+	goto add_return_wait_960
+	
+	:request_infrastructure
+	wait 12
+	var Ex|Wait build_done_var 1 13
+	var Ex|Wait can_build_production_var 1 13
+	
+	:request_infrastructure_parthenon
+	notowns science_facility request_infrastructure_silo
+	call add_parthenon_check
+	
+	:request_infrastructure_silo
+	notowns science_facility request_infrastructure_quarry
+	var Ex|Jump infrastructure_cycle_var 1 request_infrastructure_loop 13
+	var Ex|Call pref_missile_silo 1 add_nuclear_silo 13
+	var Ex|Jump infrastructure_cycle_var 1 request_infrastructure_loop 13
+	call add_nuclear_silo_check
+	
+	:request_infrastructure_quarry
+	var Ex|Jump infrastructure_cycle_var 1 request_infrastructure_loop 13
+	var Ex|Call pref_quarry 1 add_quarry 13
+	var Ex|Jump infrastructure_cycle_var 1 request_infrastructure_loop 13
+	call add_quarry_check
+	
+	:add_parthenon_check
+	local 255 AtL 1 parthenon blank_return
+	add_bld 255 parthenon 1 1 99
+	w_bldstart 1 parthenon
+	wait 60
+	call main_wait_900
+	goto add_return
+	
+	:add_nuclear_silo_check
+	local 255 AtL 1 missile_silo blank_return
+	
+	:add_nuclear_silo
+	local 255 AtL 2 missile_silo|quarry blank_return
+	add_bld 255 missile_silo 1 1 98
+	var Set infrastructure_cycle_var 1 13
+	w_bldstart 1 missile_silo
+	wait 240
+	call main_wait_900
+	goto add_return
+	
+	:add_quarry_check
+	local 255 AtL 1 quarry blank_return
+	
+	:add_quarry
+	local 255 AtL 2 missile_silo|quarry blank_return
+	add_bld 255 quarry 1 1 98
+	var Set infrastructure_cycle_var 1 13
+	w_bldstart 1 quarry
+	wait 60
+	call main_wait_600
+	goto add_return
+	
+	:production_cycle
+	var Set can_build_production_var 1 13
+	
+	:production_cycle_conditions
+	wait 24
+	var Ex|Jump mining_count_var 0 production_cycle_conditions 13
+	local 255 Ex 0 command_center|quarry production_cycle_conditions
+	local 255 AtM 4 mason|talos production_cycle_conditions
+	bring 13 Ex 0 engineering_bay|science_facility Loc.63 production_cycle_conditions
+	bring 13 AtL 31 Group_Factories Loc.63 production_cycle_conditions_6
+	bring 13 AtL 21 Group_Factories Loc.63 production_cycle_conditions_5
+	bring 13 AtL 16 Group_Factories Loc.63 production_cycle_conditions_4
+	bring 13 AtL 11 Group_Factories Loc.63 production_cycle_conditions_3
+	bring 13 AtL 6 Group_Factories Loc.63 production_cycle_conditions_2
+	goto production_cycle_loop
+	
+	:production_cycle_conditions_2
+	var Ex|Jump mining_count_var 1 production_cycle_conditions 13
+	goto production_cycle_loop
+	
+	:production_cycle_conditions_3
+	var Ex|Jump mining_count_var 2 production_cycle_conditions 13
+	goto production_cycle_loop
+	
+	:production_cycle_conditions_4
+	bring 13 Ex 0 science_facility Loc.63 production_cycle_conditions
+	var Ex|Jump mining_count_var 3 production_cycle_conditions 13
+	goto production_cycle_loop
+	
+	:production_cycle_conditions_5
+	var Ex|Jump mining_count_var 4 production_cycle_conditions 13
+	goto production_cycle_loop
+	
+	:production_cycle_conditions_6
+	var Ex|Jump mining_count_var 5 production_cycle_conditions 13
+	goto production_cycle_loop
+	
+	:production_cycle_loop
+	wait 12
+	var AtL|Call production_cycle_var 1 production_cycle_wait 13
+	var Set production_cycle_var 0 13
+	var Ex|Wait can_build_production_var 1 13
+	call production_cycle_check
+	wait 110
+	call main_wait_150
+	goto production_cycle_conditions
+	
+	:production_cycle_wait
+	bring 13 AtM 3 barracks|captaincy|apothecary|fulcrum|mantle|iron_foundry|starpad|starport|nanite_assembly Loc.63 blank_return
+	local 255 AtM 1 barracks|captaincy|apothecary|fulcrum|mantle|iron_foundry|starpad|starport|nanite_assembly blank_return
+	var AtL|Jump mining_count_var 3 blank_return 13
+	var Ex|Jump mining_count_var 2 production_cycle_wait2 13
+	call main_wait_750
+	return
+	
+	:production_cycle_wait2
+	call main_wait_450
+	return
+	
+	:production_cycle_check
+	var Ex|Call pref_armor 1 production_cycle_check_armor 13
+	var Ex|Call pref_raider 1 production_cycle_check_raider 13
+	var Ex|Call pref_orbital 1 production_cycle_check_orbital 13
+	var AtL|Jump mining_count_var 4 production_cycle_check_high 13
+	call production_cycle_check_raider
+	call production_cycle_check_armor
+	call production_cycle_check_orbital
+	return
+	
+	:production_cycle_check_high
+	call production_cycle_check_orbital
+	call production_cycle_check_armor
+	call production_cycle_check_raider
+	return
+	
+	:production_cycle_check_armor
+	var AtL|Call pref_fulcrum 1 production_cycle_fulcrum 13
+	var AtL|Call pref_iron_foundry 1 production_cycle_iron_foundry 13
+	call production_cycle_fulcrum
+	call production_cycle_mantle
+	call production_cycle_iron_foundry
+	return
+	
+	:production_cycle_check_raider
+	var AtL|Call pref_barracks 1 production_cycle_barracks 13
+	var AtL|Call pref_captaincy 1 production_cycle_captaincy 13
+	call production_cycle_barracks
+	call production_cycle_captaincy
+	call production_cycle_apothecary
+	return
+	
+	:production_cycle_check_orbital
+	var AtL|Call pref_starport 1 production_cycle_starport 13
+	var AtL|Call pref_nanite_assembly 1 production_cycle_nanite_assembly 13
+	call production_cycle_starpad
+	call production_cycle_starport
+	call production_cycle_nanite_assembly
+	return
+	
+	:production_cycle_barracks
+	wait 12
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	notowns command_center blank_return
+	bring 13 Ex 0 mason|talos Loc.63 blank_return
+	add_bld 255 barracks 1 20 97
+	wait 150
+	call main_wait_750
+	
+	:production_cycle_barracks_addon
+	var AtL|Jump pref_medbay 1 production_cycle_medbay 13
+	var AtL|Jump pref_covert_ops 1 production_cycle_covert_ops 13
+	local 255 Ex 0 medbay production_cycle_medbay
+	call production_cycle_covert_ops
+	call production_cycle_medbay
+	goto production_cycle_success
+	
+	:production_cycle_medbay
+	wait 12
+	var AtL|Jump production_cycle_addon_var 1 blank_return 13
+	notowns barracks blank_return
+	add_bld 255 medbay 1 20 96
+	var Add production_cycle_addon_var 1 13
+	call main_wait_300
+	return
+	
+	:production_cycle_covert_ops
+	wait 12
+	var AtL|Jump production_cycle_addon_var 1 blank_return 13
+	notowns barracks blank_return
+	notowns engineering_bay blank_return
+	add_bld 255 covert_ops 1 20 96
+	var Add production_cycle_addon_var 1 13
+	call main_wait_300
+	return
+	
+	:production_cycle_captaincy
+	wait 12
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	notowns engineering_bay blank_return
+	bring 13 Ex 0 mason|talos Loc.63 blank_return
+	add_bld 255 captaincy 1 20 98
+	wait 180
+	call main_wait_900
+	
+	:production_cycle_captaincy_addon
+	call production_cycle_guildhall
+	call production_cycle_tinkerers_tower
+	goto production_cycle_success
+	
+	:production_cycle_tinkerers_tower
+	wait 12
+	var AtL|Jump production_cycle_addon_var 1 blank_return 13
+	notowns captaincy blank_return
+	add_bld 255 tinkerers_tower 1 20 97
+	var Add production_cycle_addon_var 1 13
+	call main_wait_300
+	return
+	
+	:production_cycle_guildhall
+	wait 12
+	var AtL|Jump production_cycle_addon_var 1 blank_return 13
+	notowns captaincy blank_return
+	notowns science_facility blank_return
+	add_bld 255 guildhall 1 20 97
+	var Add production_cycle_addon_var 1 13
+	call main_wait_300
+	return
+	
+	:production_cycle_apothecary
+	wait 12
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	notowns science_facility blank_return
+	bring 13 Ex 0 mason|talos Loc.63 blank_return
+	add_bld 255 apothecary 1 10 98
+	wait 180
+	call main_wait_900
+	return
+	
+	:production_cycle_fulcrum
+	wait 12
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	notowns command_center blank_return
+	bring 13 Ex 0 mason|talos Loc.63 blank_return
+	add_bld 255 fulcrum 1 20 97
+	wait 180
+	call main_wait_900
+	
+	:production_cycle_fulcrum_addon
+	var AtL|Jump pref_machine_shop 1 production_cycle_machine_shop 13
+	var AtL|Jump pref_scrapyard 1 production_cycle_scrapyard 13
+	call production_cycle_machine_shop
+	call production_cycle_scrapyard
+	goto production_cycle_success
+	
+	:production_cycle_scrapyard
+	wait 12
+	var AtL|Jump production_cycle_addon_var 1 blank_return 13
+	notowns fulcrum blank_return
+	add_bld 255 scrapyard 1 20 96
+	var Add production_cycle_addon_var 1 13
+	call main_wait_300
+	return
+	
+	:production_cycle_machine_shop
+	wait 12
+	var AtL|Jump production_cycle_addon_var 1 blank_return 13
+	notowns fulcrum blank_return
+	notowns engineering_bay blank_return
+	add_bld 255 machine_shop 1 20 96
+	var Add production_cycle_addon_var 1 13
+	call main_wait_300
+	return
+	
+	:production_cycle_mantle
+	wait 12
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	notowns command_center blank_return
+	bring 13 Ex 0 mason|talos Loc.63 blank_return
+	add_bld 255 mantle 1 10 97
+	wait 180
+	call main_wait_900
+	return
+	
+	:production_cycle_iron_foundry
+	wait 12
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	notowns science_facility blank_return
+	bring 13 Ex 0 mason|talos Loc.63 blank_return
+	add_bld 255 iron_foundry 1 20 98
+	call main_wait_1200
+	
+	:production_cycle_iron_foundry_addon
+	call production_cycle_future_station
+	call production_cycle_biotic_base
+	goto production_cycle_success
+	
+	:production_cycle_future_station
+	wait 12
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	notowns iron_foundry blank_return
+	add_bld 255 future_station 1 20 97
+	var Add production_cycle_var 1 13
+	call main_wait_300
+	return
+	
+	:production_cycle_biotic_base
+	wait 12
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	notowns iron_foundry blank_return
+	add_bld 255 biotic_base 1 20 97
+	var Add production_cycle_var 1 13
+	call main_wait_300
+	return
+	
+	:production_cycle_starpad
+	wait 12
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	notowns command_center blank_return
+	bring 13 Ex 0 mason|talos Loc.63 blank_return
+	add_bld 255 starpad 1 10 97
+	wait 180
+	call main_wait_900
+	return
+	
+	:production_cycle_starport
+	wait 12
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	notowns engineering_bay blank_return
+	bring 13 Ex 0 mason|talos Loc.63 blank_return
+	add_bld 255 starport 1 20 98
+	wait 180
+	call main_wait_900
+	
+	:production_cycle_starport_addon
+	var AtL|Jump pref_munitions_bay 1 production_cycle_munitions_bay 13
+	var AtL|Jump pref_control_tower 1 production_cycle_control_tower 13
+	call production_cycle_munitions_bay
+	call production_cycle_control_tower
+	goto production_cycle_success
+	
+	:production_cycle_munitions_bay
+	wait 12
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	notowns starport blank_return
+	notowns engineering_bay blank_return
+	add_bld 255 munitions_bay 1 20 97
+	var Add production_cycle_var 1 13
+	call main_wait_300
+	return
+	
+	:production_cycle_control_tower
+	wait 12
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	notowns starport blank_return
+	notowns science_facility blank_return
+	add_bld 255 control_tower 1 20 97
+	var Add production_cycle_var 1 13
+	call main_wait_300
+	return
+	
+	:production_cycle_nanite_assembly
+	wait 12
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	notowns science_facility blank_return
+	bring 13 Ex 0 mason|talos Loc.63 blank_return
+	add_bld 255 nanite_assembly 1 20 99
+	call main_wait_1200
+	
+	:production_cycle_nanite_assembly_addon
+	call production_cycle_particle_accelerator
+	goto production_cycle_success
+	
+	:production_cycle_particle_accelerator
+	wait 12
+	var AtL|Jump production_cycle_var 1 blank_return 13
+	notowns nanite_assembly blank_return
+	add_bld 255 particle_accelerator 1 20 98
+	var Add production_cycle_var 1 13
+	call main_wait_300
+	return
+	
+	:production_cycle_success
+	var Set production_cycle_var 1 13
+	
+	:add_return
+	wait 24
+	return
+	
+	:add_return_wait_480
+	wait 30
+	call main_wait_450
+	return
+	
+	:add_return_wait_960
+	wait 60
+	call main_wait_900
+	return

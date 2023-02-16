@@ -1,0 +1,782 @@
+script_name Expansion Zerg Campaign Area Town
+script_id ZARx
+
+	start_areatown
+	wait 1
+	bld 1 hachirosk 180
+	multi expansion_worker_start
+	w_bldstart 1 hachirosk
+	var Set try_expand_var 0 13
+	w_bld 1 hachirosk
+	multi count_expansion
+	placeholder_count Local AtL|Jump 1 Group_Buildings expansion_normal 13
+	var Ex|Jump skip_building_var 1 idle 13
+	
+	:expansion_normal
+	call main_wait_900
+	call request_larvosk
+	call main_wait_300
+	multi request_surkith
+	call main_wait_300
+	call main_wait_300
+	multi request_spraith
+	call main_wait_300
+	call main_wait_300
+	call request_larvosk
+	call main_wait_300
+	multi production_cycle
+	var Ex|Wait build_done_var 1 13
+	call main_wait_300
+	multi build_order_expansion
+	call main_wait_300
+	call main_wait_300
+	bring 13 AtL_W 1 othstol_oviform Loc.63 blank
+	bld 1 nydus_cesiant 98
+	wait 7200
+	bld 2 nydus_cesiant 98
+	goto idle
+	
+	:build_order_expansion
+	bring 13 AtL_W 1 hachirosk|caphrolosk|gathtelosk|larvosk_colony Loc.63 blank
+	var Ex|Jump pref_assault 1 build_assault_fin2 13
+	var Ex|Jump pref_swarm 1 build_swarm_fin2 13
+	var Ex|Jump pref_sunblot 1 build_sunblot_fin2 13
+	goto build_general_fin2
+	
+	:build_general_fin2
+	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
+	call wHydrok
+	call main_wait_450
+	call wQuazrok
+	call wLiivral
+	call wIrol
+	call main_wait_150
+	call wMuthrok
+	call main_wait_300
+	call wZorkiz
+	call main_wait_300
+	call wGorgral
+	call main_wait_300
+	call main_wait_600
+	call wOthstol
+	call main_wait_300
+	call wGathtelosk
+	call main_wait_300
+	call wUltrok
+	call main_wait_300
+	call wElthisth
+	call main_wait_600
+	call wVithrath
+	call main_wait_600
+	call wMatravil
+	call wAlmakis
+	call main_wait_1200
+	call wGeszkath
+	call main_wait_2400
+	call wAlkaj
+	stop
+	
+	:build_assault_fin2
+	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
+	call wIrol
+	call main_wait_300
+	call wCaphrolosk
+	call wQuazrok
+	call wLiivral
+	call main_wait_300
+	call wHachirosk
+	call main_wait_150
+	call wHydrok
+	call wGorgral
+	call main_wait_150
+	call main_wait_300
+	call wMuthrok
+	call main_wait_600
+	call wMatravil
+	call wOthstol
+	call main_wait_600
+	call wZorkiz
+	call main_wait_300
+	call wGathtelosk
+	call main_wait_300
+	call wAlmakis
+	call main_wait_300
+	call wElthisth
+	call main_wait_300
+	call wUltrok
+	call main_wait_900
+	call wVithrath
+	call main_wait_1200
+	call wGeszkath
+	call main_wait_2400
+	call wAlkaj
+	stop
+	
+	:build_swarm_fin2
+	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
+	call main_wait_150
+	call wIrol
+	call wMuthrok
+	call main_wait_1200
+	call wMatravil
+	call main_wait_300
+	call wHydrok
+	call wGorgral
+	call main_wait_600
+	call wZorkiz
+	call main_wait_150
+	call wVithrath
+	call main_wait_300
+	call wOthstol
+	call wGathtelosk
+	call wAlmakis
+	call main_wait_600
+	call wElthisth
+	wait 24
+	call wUltrok
+	call main_wait_600
+	call wGeszkath
+	call main_wait_2400
+	call wAlkaj
+	stop
+	
+	:build_sunblot_fin2
+	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
+	call wIrol
+	call wQuazrok
+	call wMuthrok
+	call main_wait_300
+	call wHydrok
+	call wGorgral
+	call main_wait_300
+	call wVithrath
+	call wLiivral
+	call main_wait_900
+	call wMatravil
+	call main_wait_600
+	call wOthstol
+	call main_wait_300
+	call wAlmakis
+	call main_wait_150
+	call wGathtelosk
+	call main_wait_600
+	call wGeszkath
+	call main_wait_450
+	call wZorkiz
+	call main_wait_900
+	call wUltrok
+	call main_wait_600
+	call wElthisth
+	call main_wait_2400
+	call wAlkaj
+	stop
+	
+	:idle
+	wait 25500
+	goto idle
+	
+	:blank
+	stop
+	
+	:blank_return
+	return
+	
+	:count_expansion
+	wait 12
+	local 255 Ex 0 hachirosk|caphrolosk|gathtelosk count_expansion
+	var Add town_count_var 1 13
+	local 255 Ex_W 0 hachirosk|caphrolosk|gathtelosk blank
+	var subtract town_count_var 1 13
+	goto count_expansion
+	
+	:save_money_for_expansion
+	wait 12
+	time AtM 5760 Frames save_money_for_expansion # 5 minutes
+	res 13 AtL Ore 350 save_money_for_expansion
+	var Ex|Wait try_expand_var 1 13
+	var Set can_build_static_defense_var 0 13
+	var Set can_queue_early_military_var 0 13
+	var Ex|Wait try_expand_var 0 13
+	call build_bool
+	goto save_money_for_expansion
+	
+	:expansion_worker_start
+	wait 24
+	local 255 Ex 0 hachirosk|caphrolosk|gathtelosk expansion_worker_start
+	w_bld 1 hachirosk
+	bld 3 droleth 98
+	maynard 3
+	multi worker_track
+	
+	:expansion_worker_standard_loop
+	wait 12
+	local 255 Ex 0 larva expansion_worker_standard_loop
+	var AtL|WF(240) can_worker_all_var 1 13
+	bring 13 AtL 4 hachirosk|caphrolosk|gathtelosk|larvosk_colony Loc.63 expansion_worker_standard_loop_maximum
+	bring 13 AtL 3 hachirosk|caphrolosk|gathtelosk|larvosk_colony Loc.63 expansion_worker_standard_loop_medium
+	wait 120
+	local 255 AtL 12 droleth|gosvileth expansion_worker_standard_loop
+	call worker_conditions
+	local 255 AtL_W 1 larva blank
+	c_queues train droleth|gosvileth 13
+	queue 1 droleth larva 255 Local Loc.63 200
+#	call main_worker_loop_gosvileth
+	goto expansion_worker_standard_loop
+	
+	:expansion_worker_standard_loop_medium
+	wait 120
+	local 255 AtL 16 droleth|gosvileth expansion_worker_standard_loop
+	res 13 AtL_W Ore 50 blank
+	call worker_conditions
+	local 255 AtL_W 1 larva blank
+	c_queues train droleth|gosvileth 13
+	queue 1 droleth larva 255 Local Loc.63 200
+#	call main_worker_loop_gosvileth
+	goto expansion_worker_standard_loop
+	
+	:expansion_worker_standard_loop_maximum
+	wait 120
+	local 255 AtL 24 droleth|gosvileth expansion_worker_standard_loop
+	call worker_conditions
+	local 255 AtL_W 1 larva blank
+	c_queues train droleth|gosvileth 13
+	queue 1 droleth larva 255 Local Loc.63 200
+#	call main_worker_loop_gosvileth
+	goto expansion_worker_standard_loop
+	
+	:worker_conditions
+	wait 12
+	bring 13 AtL 10 larva Loc.63 blank_return
+	var Ex|WF(240) under_attack_var 0 13
+	return
+	
+	:worker_track
+	wait 120
+	local 255 AtL_W 10 droleth|gosvileth blank
+	var Add mining_count_var 1 13
+	local 255 AtM_W 9 droleth|gosvileth blank
+	var Sub mining_count_var 1 13
+	goto worker_track
+	
+	:build_bool
+	# These are used no matter what!
+	var Add can_worker_var 1 13
+	var Add can_expand_var 1 13
+	var Set can_attack_var 1 13
+	var Set build_gas_var 1 13
+	var Set build_done_var 1 13
+	# These are not used if skip_building_var is true!
+	var Set can_build_static_defense_var 1 13
+	var Set can_queue_early_military_var 1 13
+	var Set can_build_production_var 1 13
+	return
+	
+	:wIrol
+	wait 12
+	bring 13 AtL 1 irol_iris|irulent_ivoa|othstol_oviform|orboth_omlia Loc.63 wIrol
+	multi need_irol
+	return
+	
+	:need_irol
+	wait 24
+	bring 13 AtL 1 irol_iris|irulent_ivoa|othstol_oviform|orboth_omlia Loc.63 blank
+	bring 13 AtM 3 larvosk_colony|hachirosk|caphrolosk|gathtelosk Loc.63 need_irol
+	bring 13 Ex 0 quazrok_pool|liivral_pond|hydrok_den|gorgral_swamp|muthrok_spire|vithrath_haunt|zorkiz_shroud|ultrok_cavern|matravil_nest|almakis_antre|elthisth_mound|geszkath_grotto|alkaj_chasm Loc.63 need_irol
+	bring 13 AtM 1 excisant Loc.63 need_irol
+	call main_wait_450
+	
+	:need_irol2
+	var Ex|Jump skip_building_var 1 blank_return 13
+	p_need 1 irol_iris
+	stop
+	
+	:wait_for_IrolIris
+	wait 12
+	bring 13 AtL 1 othstol_oviform|orboth_omlia Loc.63 blank_return
+	notowns irol_iris wait_for_IrolIris
+	return
+	
+	:need_irulent
+	wait 24
+	bring 13 AtL 1 irulent_ivoa|othstol_oviform|orboth_omlia Loc.63 blank
+	notowns irol_iris need_irulent
+	bring 13 AtM 4 larvosk_colony|hachirosk|caphrolosk|gathtelosk Loc.63 need_irulent
+	bring 13 Ex 1 quazrok_pool|liivral_pond|hydrok_den|gorgral_swamp|muthrok_spire|vithrath_haunt|zorkiz_shroud|ultrok_cavern|matravil_nest|almakis_antre|elthisth_mound|geszkath_grotto|alkaj_chasm Loc.63 need_irulent
+	bring 13 AtM 2 excisant Loc.63 need_irulent
+	call main_wait_450
+	
+	:need_irulent2
+	var Ex|Jump skip_building_var 1 blank_return 13
+	p_need 1 irulent_ivoa
+	stop
+	
+	:wait_for_IrulentIvoa
+	wait 12
+	notowns irulent_ivoa wait_for_IrulentIvoa
+	return
+	
+	:wOthstol
+	wait 12
+	bring 13 AtL 1 othstol_oviform|orboth_omlia Loc.63 wOthstol
+	multi need_othstol
+	return
+	
+	:need_othstol
+	wait 24
+	bring 13 AtL 1 othstol_oviform|orboth_omlia Loc.63 blank
+	bring 13 Ex 0 irol_iris|irulent_ivoa Loc.63 need_othstol
+	bring 13 AtM 5 larvosk_colony|hachirosk|caphrolosk|gathtelosk Loc.63 need_othstol
+	bring 13 Ex 2 quazrok_pool|liivral_pond|hydrok_den|gorgral_swamp|muthrok_spire|vithrath_haunt|zorkiz_shroud|ultrok_cavern|matravil_nest|almakis_antre|elthisth_mound|geszkath_grotto|alkaj_chasm Loc.63 need_othstol
+	bring 13 AtM 4 excisant Loc.63 need_othstol
+	call main_wait_450
+	
+	:need_othstol2
+	var Ex|Jump skip_building_var 1 blank_return 13
+	p_need 1 othstol_oviform
+	stop
+	
+	:wait_for_OthstolOviform
+	wait 12
+	notowns othstol_oviform wait_for_OthstolOviform
+	return
+	
+	:need_orboth
+	wait 24
+	bring 13 AtL 1 orboth_omlia Loc.63 blank
+	notowns othstol_oviform need_orboth
+	bring 13 AtM 7 larvosk_colony|hachirosk|caphrolosk|gathtelosk Loc.63 need_orboth
+	bring 13 Ex 4 quazrok_pool|liivral_pond|hydrok_den|gorgral_swamp|muthrok_spire|vithrath_haunt|zorkiz_shroud|ultrok_cavern|matravil_nest|almakis_antre|elthisth_mound|geszkath_grotto|alkaj_chasm Loc.63 need_orboth
+	bring 13 AtM 4 excisant Loc.63 need_orboth
+	call main_wait_450
+	
+	:need_orboth2
+	var Ex|Jump skip_building_var 1 blank_return 13
+	p_need 1 othstol_oviform
+	stop
+	
+	:wait_for_OrbothOmlia
+	wait 12
+	notowns orboth_omlia wait_for_OrbothOmlia
+	return
+	
+	:wait_for_QuazrokPool
+	wait 12
+	bring 13 AtL 1 liivral_pond Loc.63 blank_return
+	notowns quazrok_pool wait_for_QuazrokPool
+	return
+	
+	:wait_for_HydrokDen
+	wait 12
+	bring 13 AtL 1 gorgral_swamp Loc.63 blank_return
+	notowns hydrok_den wait_for_HydrokDen
+	return
+	
+	:wait_for_ZorkizShroud
+	wait 12
+	bring 13 AtL 1 ultrok_cavern Loc.63 blank_return
+	notowns zorkiz_shroud wait_for_ZorkizShroud
+	return
+	
+	:wait_for_MuthrokSpire
+	wait 12
+	bring 13 AtL 1 vithrath_haunt Loc.63 blank_return
+	notowns muthrok_spire wait_for_MuthrokSpire
+	return
+	
+	:request_larvosk
+	var AtL|wait town_count_var 1 13
+	wait 12
+	bring 13 Ex 0 droleth|gosvileth Loc.63 request_larvosk
+	add_bld 255 larvosk_colony 1 10 109
+	return
+	
+	:wHachirosk
+	var AtL|wait town_count_var 1 13
+	wait 12
+	bring 13 Ex 0 droleth|gosvileth Loc.63 wHachirosk
+	res 13 AtM Ore 199 wHachirosk
+	add_bld 255 hachirosk 1 99 96
+	return
+	
+	:wCaphrolosk
+	wait 12
+	bring 13 Ex 0 irol_iris|irulent_ivoa|othstol_oviform|orboth_omlia Loc.63 wCaphrolosk
+	notowns hachirosk wCaphrolosk
+	add_bld 255 caphrolosk 1 99 97
+	return
+	
+	:wGathtelosk
+	wait 12
+	bring 13 Ex 0 othstol_oviform|orboth_omlia Loc.63 wGathtelosk
+	notowns caphrolosk wGathtelosk
+	add_bld 255 gathtelosk 1 99 98
+	return
+	
+	:wQuazrok
+	wait 12
+	bring 13 AtL 1 quazrok_pool|liivral_pond Loc.63 blank_return
+	p_need 1 quazrok_pool
+	return
+	
+	:wLiivral
+	wait 12
+	notowns quazrok_pool wLiivral
+	bring 13 Ex 0 irol_iris|irulent_ivoa|othstol_oviform|orboth_omlia Loc.63 wLiivral
+	bring 13 AtL 1 liivral_pond Loc.63 blank_return
+	p_need 1 liivral_pond
+	return
+	
+	:wHydrok
+	wait 12
+	bring 13 AtL 1 hydrok_den|gorgral_swamp Loc.63 blank_return
+	p_need 1 hydrok_den
+	return
+	
+	:wGorgral
+	wait 12
+	notowns hydrok_den wGorgral
+	bring 13 Ex 0 irol_iris|irulent_ivoa|othstol_oviform|orboth_omlia Loc.63 wGorgral
+	bring 13 AtL 1 gorgral_swamp Loc.63 blank_return
+	p_need 1 gorgral_swamp
+	return
+	
+	:wMuthrok
+	wait 12
+	bring 13 Ex 0 irulent_ivoa|othstol_oviform|orboth_omlia Loc.63 wMuthrok
+	bring 13 AtL 1 muthrok_spire|vithrath_haunt Loc.63 blank_return
+	p_need 1 muthrok_spire
+	return
+	
+	:wVithrath
+	wait 12
+	bring 13 Ex 0 othstol_oviform|orboth_omlia Loc.63 wVithrath
+	notowns muthrok_spire wVithrath
+	bring 13 AtL 1 vithrath_haunt Loc.63 blank_return
+	p_need 1 vithrath_haunt
+	return
+	
+	:wMatravil
+	wait 12
+	bring 13 Ex 0 irulent_ivoa|othstol_oviform|orboth_omlia Loc.63 wMatravil
+	bring 13 AtL 1 matravil_nest|almakis_antre Loc.63 blank_return
+	p_need 1 matravil_nest
+	return
+	
+	:wAlmakis
+	wait 12
+	bring 13 Ex 0 othstol_oviform|orboth_omlia Loc.63 wAlmakis
+	notowns matravil_nest wAlmakis
+	bring 13 AtL 1 almakis_antre Loc.63 blank_return
+	p_need 1 almakis_antre
+	return
+	
+	:wGeszkath
+	wait 12
+	bring 13 Ex 0 orboth_omlia Loc.63 wGeszkath
+	bring 13 AtL 1 geszkath_grotto Loc.63 blank_return
+	p_need 1 geszkath_grotto
+	return
+	
+	:wAlkaj
+	wait 12
+	notowns geszkath_grotto wAlkaj
+	bring 13 AtL 1 alkaj_chasm Loc.63 blank_return
+	p_need 1 alkaj_chasm
+	return
+	
+	:wZorkiz
+	wait 12
+	bring 13 AtL 1 zorkiz_shroud|ultrok_cavern Loc.63 blank_return
+	p_need 1 zorkiz_shroud
+	return
+	
+	:wUltrok
+	wait 12
+	notowns zorkiz_shroud wUltrok
+	bring 13 Ex 0 othstol_oviform|orboth_omlia Loc.63 wUltrok
+	bring 13 AtL 1 ultrok_cavern Loc.63 blank_return
+	p_need 1 ultrok_cavern
+	return
+	
+	:wElthisth
+	wait 12
+	bring 13 Ex 0 orboth_omlia Loc.63 wElthisth
+	bring 13 AtL 1 elthisth_mound Loc.63 blank_return
+	p_need 1 elthisth_mound
+	return
+	
+	:request_surkith
+	var Ex|Wait can_build_static_defense_var 1 13
+	wait 90
+	call main_wait_150
+	var Ex|Wait can_build_static_defense_var 1 13
+	add_bld 255 surkith_colony 1 5 106
+	wait 450
+	
+	:request_surkith_loop
+	var Ex|Wait can_build_static_defense_var 1 13
+	wait 12
+	local 255 Ex 0 hachirosk|caphrolosk|gathtelosk request_surkith_loop
+	bring 13 Ex 0 droleth|gosvileth Loc.63 request_surkith_loop
+	bring 13 AtL 1 cagrant_colony Loc.63 request_surkith_loop
+	res 13 AtL_C Ore 125 request_surkith_check
+	wait 90
+	call main_wait_150
+	goto request_surkith_loop
+	
+	:request_surkith_check
+	local 255 AtL 5 surkith_colony request_surkith_check_2
+	add_bld 255 surkith_colony 1 5 106
+	var Ex|Jump under_attack_by_ground_var 1 add_return_wait_960 13
+	goto add_return_wait_1440
+	
+	:request_surkith_check_2
+	var Ex|Jump under_attack_by_ground_var 1 request_surkith_check_3 13
+	var AtM|Jump mining_count_var 2 add_return_wait_960 13
+	add_bld 255 surkith_colony 1 7 106
+	goto add_return_wait_960
+	
+	:request_surkith_check_3
+	add_bld 255 surkith_colony 1 10 106
+	goto add_return_wait_960
+	
+	:request_spraith
+	var Ex|Wait can_build_static_defense_var 1 13
+	wait 90
+	call main_wait_150
+	var Ex|Wait can_build_static_defense_var 1 13
+	add_bld 255 spraith_colony 1 5 106
+	wait 450
+	
+	:request_spraith_loop
+	var Ex|Wait can_build_static_defense_var 1 13
+	wait 12
+	local 255 Ex 0 hachirosk|caphrolosk|gathtelosk request_spraith_loop
+	bring 13 Ex 0 droleth|gosvileth Loc.63 request_spraith_loop
+	bring 13 AtL 1 cagrant_colony Loc.63 request_spraith_loop
+	res 13 AtL_C Ore 125 request_spraith_check
+	wait 60
+	call main_wait_300
+	goto request_spraith_loop
+	
+	:request_spraith_check
+	local 255 AtL 3 spraith_colony request_spraith_check_2
+	add_bld 255 spraith_colony 1 10 106
+	var Ex|Jump under_attack_by_air_var 1 add_return_wait_960 13
+	goto add_return_wait_1440
+	
+	:request_spraith_check_2
+	var Ex|Jump under_attack_by_air_var 1 request_spraith_check_3 13
+	var AtM|Jump mining_count_var 2 add_return_wait_960 13
+	add_bld 255 spraith_colony 1 7 106
+	goto add_return_wait_960
+	
+	:request_spraith_check_3
+	add_bld 255 spraith_colony 1 10 106
+	goto add_return_wait_960
+	
+	:production_cycle
+	var Set can_build_production_var 1 13
+	
+	:production_cycle_conditions
+	wait 24
+	var Ex|Jump mining_count_var 0 production_cycle_conditions 13
+	local 255 Ex 0 hachirosk|caphrolosk|gathtelosk production_cycle_conditions
+	local 255 AtM 4 droleth|gosvileth production_cycle_conditions
+	bring 13 AtL 10 larva Loc.63 production_cycle_conditions
+	bring 13 Ex 0 irol_iris|othstol_oviform Loc.63 production_cycle_conditions
+	bring 13 AtL 26 Group_Factories Loc.63 production_cycle_conditions_6
+	bring 13 AtL 21 Group_Factories Loc.63 production_cycle_conditions_5
+	bring 13 AtL 16 Group_Factories Loc.63 production_cycle_conditions_4
+	bring 13 AtL 11 Group_Factories Loc.63 production_cycle_conditions_3
+	bring 13 AtL 7 Group_Factories Loc.63 production_cycle_conditions_2
+	goto production_cycle_loop
+	
+	:production_cycle_conditions_2
+	bring 13 Ex 0 irol_iris|othstol_oviform Loc.63 production_cycle_conditions
+	var Ex|Jump mining_count_var 1 production_cycle_conditions 13
+	goto production_cycle_loop
+	
+	:production_cycle_conditions_3
+	var Ex|Jump mining_count_var 2 production_cycle_conditions 13
+	goto production_cycle_loop
+	
+	:production_cycle_conditions_4
+	bring 13 Ex 0 othstol_oviform Loc.63 production_cycle_conditions
+	var Ex|Jump mining_count_var 3 production_cycle_conditions 13
+	goto production_cycle_loop
+	
+	:production_cycle_conditions_5
+	var Ex|Jump mining_count_var 4 production_cycle_conditions 13
+	goto production_cycle_loop
+	
+	:production_cycle_conditions_6
+	var Ex|Jump mining_count_var 5 production_cycle_conditions 13
+	goto production_cycle_loop
+	
+	:production_cycle_loop
+	wait 12
+	var AtL|Call prod_cycle_var 1 production_cycle_wait 13
+	var Set prod_cycle_var 0 13
+	var Ex|Wait can_build_production_var 1 13
+	call production_cycle_check
+	wait 60
+	goto production_cycle_conditions
+	
+	:production_cycle_wait
+	call main_wait_150
+	var AtL|Jump mining_count_var 5 blank_return 13
+	call main_wait_150
+	var AtL|Jump mining_count_var 4 blank_return 13
+	call main_wait_150
+	var AtL|Jump mining_count_var 3 blank_return 13
+	call main_wait_150
+	var AtL|Jump mining_count_var 2 blank_return 13
+	call main_wait_150
+	var AtL|Jump mining_count_var 1 blank_return 13
+	return
+	
+	:production_cycle_check
+	var Ex|Call prefLarvoskColony 1 production_larvosk_colony 13
+	var Ex|Call prefHachirosk 1 production_hachirosk 13
+	var Ex|Call prefCaphrolosk 1 production_caphrolosk 13
+	var Ex|Call prefGathtelosk 1 production_gathtelosk 13
+	var AtL|Call mining_count_var 5 production_gathtelosk 13
+	var AtL|Call mining_count_var 3 production_caphrolosk 13
+	res 13 AtL_C Any 500 production_hachirosk
+	call production_larvosk_colony
+	call production_hachirosk
+	call production_caphrolosk
+	call production_gathtelosk
+	return
+	
+	:production_larvosk_colony
+	wait 12
+	var AtL|Jump prod_cycle_var 1 blank_return 13
+	bring 13 Ex 0 droleth|gosvileth Loc.63 blank_return
+	bring 13 AtL 1 cagrant_colony Loc.63 blank_return
+	local 255 AtL 30 larvosk_colony blank_return
+	add_bld 255 larvosk_colony 1 30 100
+	call add_return_wait_960
+	goto production_cycle_success
+	
+	:production_hachirosk
+	wait 12
+	var AtL|Jump prod_cycle_var 1 blank_return 13
+	bring 13 Ex 0 droleth|gosvileth Loc.63 blank_return
+	local 255 AtL 20 hachirosk|caphrolosk|gathtelosk blank_return
+	add_bld 255 hachirosk 1 20 97
+	call add_return_wait_1440
+	goto production_cycle_success
+	
+	:production_caphrolosk
+	wait 12
+	var AtL|Jump prod_cycle_var 1 blank_return 13
+	bring 13 Ex 0 droleth|gosvileth Loc.63 blank_return
+	bring 13 Ex 0 irol_iris|irulent_ivoa|othstol_oviform|orboth_omlia Loc.63 blank_return
+	local 255 AtL 20 hachirosk|caphrolosk|gathtelosk blank_return
+	add_bld 255 hachirosk 1 20 98
+	add_bld 255 caphrolosk 1 20 98
+	call add_return_wait_1440
+	goto production_cycle_success
+	
+	:production_gathtelosk
+	wait 12
+	var AtL|Jump prod_cycle_var 1 blank_return 13
+	bring 13 Ex 0 droleth|gosvileth Loc.63 blank_return
+	bring 13 Ex 0 othstol_oviform|orboth_omlia Loc.63 blank_return
+	local 255 AtL 20 hachirosk|caphrolosk|gathtelosk blank_return
+	add_bld 255 hachirosk 1 20 99
+	add_bld 255 gathtelosk 1 20 99
+	call add_return_wait_1440
+	goto production_cycle_success
+	
+	:production_cycle_success
+	var Set prod_cycle_var 1 13
+	
+	:addReturn
+	wait 24
+	return
+	
+	:add_return_wait_960
+	wait 60
+	call main_wait_900
+	return
+	
+	:add_return_wait_1440
+	wait 220
+	call main_wait_1200
+	return
+	
+	:main_wait_150
+	wait 24
+	res 13 AtL Any 500 blank_return
+	wait 150
+	return
+	
+	:main_wait_300
+	wait 24
+	res 13 AtL Any 500 blank_return
+	wait 300
+	return
+	
+	:main_wait_450
+	wait 24
+	call main_wait_300
+	call main_wait_150
+	return
+	
+	:main_wait_600
+	wait 24
+	res 13 AtL Any 800 blank_return
+	res 13 AtL Any 500 main_wait_300
+	wait 600
+	return
+	
+	:main_wait_750
+	wait 24
+	call main_wait_600
+	call main_wait_150
+	return
+	
+	:main_wait_900
+	wait 24
+	res 13 AtL Any 1100 blank_return
+	res 13 AtL Any 800 main_wait_600
+	res 13 AtL Any 500 main_wait_300
+	wait 900
+	return
+	
+	:main_wait_1200
+	wait 24
+	call main_wait_900
+	call main_wait_300
+	return
+	
+	:main_wait_1500
+	wait 24
+	call main_wait_1200
+	call main_wait_300
+	return
+	
+	:main_wait_1800
+	wait 24
+	call main_wait_900
+	call main_wait_900
+	return
+	
+	:main_wait_2400
+	wait 24
+	call main_wait_1200
+	call main_wait_1200
+	return
+	
+	:main_wait_3600
+	wait 24
+	call main_wait_1200
+	call main_wait_1200
+	return
+	
+	:wLarva
+	wait 60
+	return
