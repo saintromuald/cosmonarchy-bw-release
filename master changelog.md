@@ -2002,7 +2002,7 @@ Premonition is live!
 	- Vorvrokor - formerly Vorvaling
 	- Rilirokor - formerly Broodling
 	- Rililisk - formerly Broodlisk
-	- Extractor - formerly Excisant
+	- Excisant - formerly Extractor
 	- Quazrok Pool - formerly Spawning Pool
 	- Hydrok Den - formerly Hydral Den
 	- Muthrok Spire - formerly Mutal Spire
