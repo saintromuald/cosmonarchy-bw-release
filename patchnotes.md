@@ -7,8 +7,6 @@ To use the updater, delete your previous CMBW installations and place the update
 
 Once the launcher has finished downloading the initial installation, using it to grab individual updates will be much faster, and much more automatic!
 
-Launch times will be a bit slower. This will be rectified later.
-
 Aside from that: a nice mix of polish and continued balancing is in this week's update, with Veeq7 making some lovely improvements to a few mechanics. A few bugs have been fixed and a good number of audiovisual updates have occurred, while the early game continues to be refined.
 
 As we continue hitting mid-level tech more frequently, it's become apparent that the Terran tech pattern in prior patches was very discordant, and many of the options wound up being underwhelming for the level of cost associated with them. The tech shuffle and unit rebalancings should improve parity between the races, ideally without making the mid-game spike too powerful for our most familiar race.

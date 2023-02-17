@@ -2,7 +2,7 @@
 
 Since December 2022, this changelog shows only past changes.
 
-See changelog.md for the most recent patch!
+See patchnotes.md for info on the most recent patch!
 
 # Table of Contents
 - [4 February 2023](#4-february-2023)
