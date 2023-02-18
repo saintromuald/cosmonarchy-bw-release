@@ -89,6 +89,8 @@ Aside from that: We will continue smoothing out early-game unit roles and adding
 	- Now moves 12.5% faster (matches speed of Ovileth)
 - [Dracadin](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/dracadin):
 	- Armor penetration now 2, from 3
+- [Hierophant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/hierophant):
+	- Shields now 80, from 100
 - [Simulacrum](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/simulacrum):
 	- Mineral and time costs now 125/22, from 75/20
 	- Armor penetration now 1, from 2
