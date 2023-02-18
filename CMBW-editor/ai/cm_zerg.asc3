@@ -999,7 +999,7 @@ script_id ZMCx
 	
 	:under_attack_by_ground_calc
 	var AtL|Wait under_attack_var 1 13
-	player_combat 17 13 63 False Jump maverick|harakan|cyprian|eidolon|savant|madcap|heracles|apostle|siren|striga|olympian|autocrat|dilettante|sevenstep|hypnagogue|ambassador|heir|horseman|thespian|silvertongue|emperor|jester|vulture|cyclops|goliath|blackjack|matador|phalanx|phalanx_siege_mode|madrigal|ramesses|durendal|cataphract|paladin|cuirass|pazuzu|claymore|penumbra|anticthon|aion|zealot|dracadin|ecclesiast|legionnaire|hierophant|amaranth|atreus|herald|cantavis|vagrant|cabalist|pariah|charlatan|archon|optecton|patriarch|apostate|augur|manifold|simulacrum|idol|golem|accantor|architect|demiurge|zethrokor|quazilisk|vorvrokor|liiralisk|cikralisk|protathalor|axitrilisk|mortothrokor|hydralisk|izirokor|bactalisk|tethzorokor|kagralisk|evigrilisk|keskathalor|zoryusthaleth|lakizilisk|konvilisk|vilgorokor|rilirokor|ultrokor|zobriolisk|aspirant|cohort|tarasque Any under_attack_by_ground_calc_fin 13
+	player_combat 17 13 63 False Jump maverick|harakan|cyprian|eidolon|savant|madcap|heracles|apostle|siren|striga|olympian|autocrat|dilettante|sevenstep|hypnagogue|sevenstep|silvertongue|vulture|cyclops|goliath|blackjack|matador|phalanx|phalanx_siege_mode|madrigal|ramesses|durendal|cataphract|paladin|cuirass|pazuzu|claymore|penumbra|anticthon|aion|zealot|dracadin|ecclesiast|legionnaire|hierophant|amaranth|atreus|herald|cantavis|vagrant|cabalist|pariah|charlatan|archon|optecton|patriarch|apostate|augur|manifold|simulacrum|idol|golem|accantor|architect|demiurge|zethrokor|quazilisk|vorvrokor|liiralisk|cikralisk|protathalor|axitrilisk|mortothrokor|hydralisk|izirokor|bactalisk|tethzorokor|kagralisk|evigrilisk|keskathalor|zoryusthaleth|lakizilisk|konvilisk|vilgorokor|rilirokor|ultrokor|zobriolisk|aspirant|cohort|tarasque Any under_attack_by_ground_calc_fin 13
 	var Set under_attack_by_ground_var 1 13
 	
 	:under_attack_by_ground_calc_fin
@@ -4881,15 +4881,15 @@ script_id ZMCx
 	
 	:attack_handling_standard
 	var Ex|Wait can_attack_var 1 13
-	var Ex pref_assault 1 attack_handling_attack_first 13
-	goto attack_handling_expand_first
+	var Ex pref_assault 1 attack_handling_fast 13
+	goto attack_handling_slow
 	
-	:attack_handling_attack_first
+	:attack_handling_fast
 	call attack_generic
 	wait 240
 	goto zLoopA
 	
-	:attack_handling_expand_first
+	:attack_handling_slow
 	call attack_generic
 	wait 440
 	
@@ -4929,9 +4929,9 @@ script_id ZMCx
 	:attack_generic_check
 	var Add attack_cycle_var 1 13
 	wait 300
-	var AtL|Jump attack_cycle_var 2 attack_cycle_prep 13
-	bring 13 AtL 30 zethrokor|vorvrokor|quazilisk|liiralisk|hydralisk|bactalisk|skithrokor|gorgrokor|kagralisk|izirokor|evigrilisk|mutalisk|vithrilisk|nathrokor|kalkalisk|zoryusthaleth|ultrokor|lakizilisk|matraleth|akistrokor|konvilisk|almaksalisk|keskathalor|alkajelisk|geszithalor|isthrathaleth|sovroleth|cohort|charlatan|axitrilisk|tarasque|empress|anticthon Loc.63 attack_cycle_prep
 	call add_attack_wave
+	var AtL|Jump attack_cycle_var 2 attack_cycle_prep 13
+	bring 13 AtM 9 zethrokor|vorvrokor|quazilisk|liiralisk|hydralisk|bactalisk|skithrokor|gorgrokor|kagralisk|izirokor|evigrilisk|mutalisk|vithrilisk|nathrokor|kalkalisk|zoryusthaleth|ultrokor|lakizilisk|matraleth|akistrokor|konvilisk|almaksalisk|keskathalor|alkajelisk|geszithalor|isthrathaleth|sovroleth|cohort|charlatan|axitrilisk|tarasque|empress|anticthon Loc.63 attack_cycle_prep
 	goto attack_cycle_prep
 	
 	:attack_cycle_prep

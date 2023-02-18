@@ -4869,7 +4869,7 @@ WarpIn        	[NONE]
 # ----------------------------------------------------------------------------- #
 
 SpraithColonyInit:
-	imgul             	100 0 0 # Sprath Colony Shadow (zerg\zscShad.grp)
+	imgul             	100 0 0 # Spraith Colony Shadow (zerg\zscShad.grp)
 	playfram          	0x00
 	goto              	InfestedTerranLocal00
 
@@ -52041,590 +52041,116 @@ ArdentAuthorityEnable:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1683 Police Station (tb\pol\station.grp)
+# 1698 Madrigal Dirge Proc (cm\terran\madrigal-dirge-proc.grp)
 .headerstart
 IsId          	726
-Type          	20
-Init          	PoliceStationInit
-Death         	PoliceStationDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
-Unused1       	[NONE]
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
-Walking       	[NONE]
-WalkingToIdle 	[NONE]
-SpecialState1 	[NONE]
-SpecialState2 	[NONE]
-AlmostBuilt   	PoliceStationAlmostBuilt
-Built         	PoliceStationBuilt
-Landing       	[NONE]
-LiftOff       	[NONE]
-IsWorking     	PoliceStationIsWorking
-WorkingToIdle 	PoliceStationWorkingToIdle
-WarpIn        	[NONE]
+Type          	1
+Init          	MadrigalDirgeProcInit
+Death         	MadrigalDirgeProcDeath
 .headerend
 # ----------------------------------------------------------------------------- #
 
-PoliceStationInit:
-	imgul             	1684 0 0 # Police Station Shadow (tb\pol\station-shadow.grp)
+MadrigalDirgeProcInit:
+	playsndbtwn			2306 2308 # Madrigal Dirge proc 01, 02, 03
 	playfram          	0x00
-	goto              	PoliceStationWorkingToIdle
-	
-PoliceStationWorkingToIdle:
-	playfram			2
-	wait              	2
-	playfram			3
-	wait              	2
-	playfram			4
-	wait              	2
-	playfram			5
-	wait              	2
-	playfram			6
-	wait              	2
-	playfram			7
-	wait              	2
-	playfram			8
-	wait              	2
-	goto				PoliceStationWorkingToIdle
-
-PoliceStationIsWorking:
-	imgol             	1687 0 0 # Police Station Overlay (tb\pol\station-overlay.grp)
-	goto              	PoliceStationWorkingToIdle
-
-PoliceStationDeath:
-	playsnd           	7 # Misc\ExploLrg.wav
-	imgol             	215 0 0 # Explosion (Large) (thingy\tBangX.grp)
-	wait              	3
-	lowsprul          	224 0 0 # Protoss Building Rubble (Large) (thingy\PRubbleL.grp)
+	wait              	1
+	playfram          	1
+	wait              	1
+	playfram          	2
+	wait              	1
+	playfram          	3
+	wait              	1
+	playfram          	4
+	wait              	1
+	playfram          	5
+	wait              	1
+	playfram          	6
+	wait              	1
+	playfram          	7
+	wait              	1
+	playfram          	8
+	wait              	1
+	playfram          	9
+	wait              	1
+	playfram          	10
+	wait              	1
+	playfram          	11
+	wait              	1
+	playfram          	12
 	wait              	1
 	end
 
-PoliceStationSpecialState1:
-	playsnd           	528 # Protoss\SHUTTLE\pshBld00.wav
+MadrigalDirgeProcDeath:
 	wait              	1
-	goto              	PoliceStationLocal00
-
-PoliceStationLocal00:
-	wait              	255
-	goto              	PoliceStationLocal00
-
-PoliceStationSpecialState2:
-	wait              	1
-	goto              	PoliceStationLocal01
-
-PoliceStationLocal01:
-	playfram          	0x00
-	goto              	PoliceStationBuilt
-	
-PoliceStationAlmostBuilt:
-	playfram          	1
-	goto              	InfestedTerranLocal00
-
-PoliceStationBuilt:
-	playfram			0
-	goto              	PoliceStationWorkingToIdle
+	end
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1687 Police Station Overlay (tb\pol\station-overlay.grp)
+# 1699 Spirtith Colony (cm\zerg\spirtith-colony.grp)
 .headerstart
 IsId          	727
-Type          	24
-Init          	PoliceStationOverlayInit
-Death         	PoliceStationOverlayDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
-Unused1       	[NONE]
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
-Walking       	PoliceStationOverlayDeath
-WalkingToIdle 	PoliceStationOverlayDeath
-SpecialState1 	PoliceStationOverlayDeath
-SpecialState2 	[NONE]
-AlmostBuilt   	[NONE]
-Built         	[NONE]
-Landing       	PoliceStationOverlayDeath
-LiftOff       	PoliceStationOverlayDeath
-IsWorking     	PoliceStationOverlayInit
-WorkingToIdle 	PoliceStationOverlayDeath
-WarpIn        	[NONE]
-Unused3       	[NONE]
-StarEditInit  	[NONE]
-Disable       	PoliceStationOverlayDeath
-Burrow        	[NONE]
-.headerend
-# ----------------------------------------------------------------------------- #
-
-PoliceStationOverlayInit:
-	playfram          	0x00
-	wait              	2
-	playfram          	1
-	wait              	2
-	playfram          	2
-	wait              	2
-	playfram          	3
-	wait              	2
-	playfram          	4
-	wait              	2
-	playfram          	5
-	wait              	2
-	playfram          	6
-	wait              	2
-	playfram          	7
-	wait              	2
-	playfram          	8
-	wait              	2
-	goto              	PoliceStationOverlayInit
-
-PoliceStationOverlayDeath:
-	wait              	1
-	end
-
-	
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 1685 Intern (tb\pol\intern.grp)
-.headerstart
-IsId          	728
-Type          	15
-Init          	InternInit
-Death         	InternDeath
-GndAttkInit   	InternGndAttkInit
-AirAttkInit   	[NONE]
-Unused1       	InternUnused1
-GndAttkRpt    	InternGndAttkInit
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	InternGndAttkToIdle
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
-Walking       	InternWalking
-WalkingToIdle 	InternWalkingToIdle
-SpecialState1 	[NONE]
-SpecialState2 	[NONE]
-AlmostBuilt   	InternAlmostBuilt
-.headerend
-# ----------------------------------------------------------------------------- #
-
-InternInit:
-	imgul             	1686 0 0 # Intern Shadow (cm\terran\intern-shadow.grp)
-	playfram          	0x00
-	goto              	InternWalkingToIdle
-
-InternWalkingToIdle:
-	playfram          	0x00
-	goto              	InternLocal00
-
-InternLocal00:
-	wait              	125
-	goto              	InternLocal00
-
-InternDeath:
-	playsnd           	369 # Terran\SCV\TSCDth00.WAV
-	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
-	wait              	3
-	end
-	
-InternUnused1:
-	wait				1
-	nobrkcodestart
-	tmprmgraphicstart
-	playsnd				1168
-	wait				8
-	sprol				742 0 0 # Small Explosion Reversed
-	wait				10
-	setfldirect			12
-	tmprmgraphicend
-	nobrkcodeend
-	goto				InternWalkingToIdle
-
-InternGndAttkInit:
-	playfram          	0x22
-	wait              	1
-	playfram          	0x33
-	attackwith        	1
-	wait              	1
-	playfram          	0x44
-	wait              	1
-	playfram          	0x33
-	wait              	1
-	gotorepeatattk
-	goto              	InternWalkingToIdle
-
-InternGndAttkToIdle:
-	playfram          	0x00
-	goto              	InternWalkingToIdle
-
-InternWalking:
-	move              	5
-	wait              	1
-	playfram          	0x00
-	move              	4
-	wait              	1
-	playfram          	0x11
-	move              	4
-	wait              	1
-	playfram          	0x22
-	goto              	InternWalking
-
-InternAlmostBuilt:
-	setvertpos        	0
-	wait              	1
-	playfram          	0x22
-	wait              	1
-InternLocal01:
-	playfram          	0x33
-	useweapon         	14 # Fusion Cutter (Harvest) (Fusion Cutter)
-	wait              	1
-	playfram          	0x44
-	waitrand          	1 2
-	playfram          	0x55
-	waitrand          	1 2
-	playfram          	0x44
-	waitrand          	1 2
-	goto              	InternLocal01
-	
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 1688 Police Academy (tb\pol\academy.grp)
-.headerstart
-IsId          	729
-Type          	24
-Init          	PoliceAcademyInit
-Death         	PoliceAcademyDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
-Unused1       	[NONE]
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
-Walking       	PoliceAcademyWalking
-WalkingToIdle 	PoliceAcademyWalking
-SpecialState1 	[NONE]
-SpecialState2 	[NONE]
-AlmostBuilt   	PoliceAcademyAlmostBuilt
-Built         	PoliceAcademyBuilt
-Landing       	[NONE]
-LiftOff       	[NONE]
-IsWorking     	PoliceAcademyIsWorking
-WorkingToIdle 	PoliceAcademyBuilt
-WarpIn        	[NONE]
-Unused3       	[NONE]
-StarEditInit  	[NONE]
-Disable       	PoliceAcademyDisable
-Burrow        	[NONE]
-.headerend
-# ----------------------------------------------------------------------------- #
-
-PoliceAcademyInit:
-	playfram          	0x00
-	imgul             	1689 -2 -2 # Police Academy Shadow (tb\pol\academy-shadow.grp)
-	goto              	PoliceAcademyWalking
-
-PoliceAcademyWalking:
-	wait              	125
-	goto              	PoliceAcademyWalking
-
-PoliceAcademyDeath:
-	playsnd           	7 # Misc\ExploLrg.wav
-	imgol             	334 0 0 # Building Explosion (Large) (thingy\tBangX.grp)
-	wait              	3
-	lowsprul          	274 0 0 # Terran Building Rubble (Large) (thingy\RubbleL.grp)
-	wait              	1
-	end
-
-PoliceAcademyAlmostBuilt:
-	playfram          	1
-	goto              	PoliceAcademyWalking
-
-PoliceAcademyBuilt:
-	playfram          	0x00
-	goto              	PoliceAcademyWalking
-
-PoliceAcademyIsWorking:
-	playfram          	2
-	wait              	2
-	playfram          	3
-	wait              	2
-	playfram          	4
-	wait              	2
-	playfram          	5
-	wait              	2
-	playfram          	6
-	wait              	2
-	goto              	PoliceAcademyIsWorking
-
-PoliceAcademyDisable:
-	goto              	PoliceAcademyWalking
-	
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 1691 Police Dispensary (tb\pol\dispensary.grp)
-.headerstart
-IsId          	730
 Type          	20
-Init          	PoliceDispensaryInit
-Death         	PoliceDispensaryDeath
+Init          	SpirtithColonyInit
+Death         	CerebrateDeath
 GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
+AirAttkInit   	SpirtithColonyAirAttkInit
 Unused1       	[NONE]
 GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
+AirAttkRpt    	SpirtithColonyAirAttkInit
 CastSpell     	[NONE]
 GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
+AirAttkToIdle 	SpirtithColonyAirAttkToIdle
 Unused2       	[NONE]
 Walking       	[NONE]
 WalkingToIdle 	[NONE]
-SpecialState1 	PoliceDispensarySpecialState1
-SpecialState2 	PoliceDispensarySpecialState2
-AlmostBuilt   	PoliceDispensaryAlmostBuilt
-Built         	PoliceDispensaryBuilt
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	SpirtithColonyAlmostBuilt
+Built         	SpirtithColonyBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	PoliceDispensaryIsWorking
-WorkingToIdle 	PoliceDispensaryBuilt
+IsWorking     	SpirtithColonyBuilt
+WorkingToIdle 	SpirtithColonyBuilt
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-PoliceDispensaryInit:
-	imgul             	1692 0 0 # Police Dispensary Shadow (tb\pol\dispensary.grp)
-	playfram          	1
-PoliceDispensaryLocal00:
-	wait              	5
-	waitrand          	5 50
-	creategasoverlays 	0
-	waitrand          	5 50
-	creategasoverlays 	2
-	waitrand          	5 50
-	creategasoverlays 	1
-	waitrand          	5 50
-	creategasoverlays 	2
-	waitrand          	5 50
-	creategasoverlays 	0
-	waitrand          	5 50
-	creategasoverlays 	1
-	waitrand          	5 50
-	creategasoverlays 	2
-	goto              	PoliceDispensaryLocal00
-
-PoliceDispensaryDeath:
-	playsnd           	7 # Misc\ExploLrg.wav
-	sprol             	272 0 0	# Building Explosion (Large) (thingy\tBangX.grp)
-	wait              	3 
-	end
-
-PoliceDispensarySpecialState1:
-	playfram          	2
-	goto              	PoliceDispensaryLocal00
-
-PoliceDispensarySpecialState2:
-	playfram          	3
-	goto              	PoliceDispensaryLocal00
-
-PoliceDispensaryAlmostBuilt:
-	playfram          	4
-	goto              	PoliceDispensaryLocal00
-
-PoliceDispensaryBuilt:
+SpirtithColonyInit:
+	imgul             	1700 0 0 # Spirtith Colony Shadow (cm\zerg\spirtith-colony-shadow.grp)
 	playfram          	0x00
-	imgol             	1693 0 0 # Police Dispensary Overlay (tb\pol\dispensary-overlay)
-	wait              	5
-PoliceDispensaryLocal01:
-	creategasoverlays 	0
-	wait              	20
-	waitrand          	5 100
-	goto              	PoliceDispensaryLocal01
+	goto              	InfestedTerranLocal00
 
-PoliceDispensaryIsWorking:
-	wait              	125
-	goto              	PoliceDispensaryIsWorking
-	
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 1693 Police Dispensary Overlay (tb\pol\dispensary-overlay.grp)
-.headerstart
-IsId          	731
-Type          	24
-Init          	PoliceDispensaryOverlayInit
-Death         	PoliceDispensaryOverlayDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
-Unused1       	[NONE]
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
-Walking       	PoliceDispensaryOverlayDeath
-WalkingToIdle 	PoliceDispensaryOverlayDeath
-SpecialState1 	PoliceDispensaryOverlayDeath
-SpecialState2 	[NONE]
-AlmostBuilt   	[NONE]
-Built         	[NONE]
-Landing       	PoliceDispensaryOverlayDeath
-LiftOff       	PoliceDispensaryOverlayDeath
-IsWorking     	PoliceDispensaryOverlayInit
-WorkingToIdle 	PoliceDispensaryOverlayDeath
-WarpIn        	[NONE]
-Unused3       	[NONE]
-StarEditInit  	[NONE]
-Disable       	PoliceDispensaryOverlayDeath
-Burrow        	[NONE]
-.headerend
-# ----------------------------------------------------------------------------- #
-
-PoliceDispensaryOverlayInit:
-	playfram          	0x00
-	wait              	2
-	playfram          	1
-	wait              	2
-	playfram          	2
-	wait              	2
-	playfram          	3
-	wait              	2
-	playfram          	4
-	wait              	2
-	playfram          	5
-	wait              	2
-	goto              	PoliceDispensaryOverlayInit
-
-PoliceDispensaryOverlayDeath:
-	wait              	1 
-	end
-	
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 1591 Police WAT Trooper (tb\pol\wat-trooper.grp)
-.headerstart
-IsId          	733
-Type          	12
-Init          	PoliceWATTrooperInit
-Death         	PoliceWATTrooperDeath
-GndAttkInit   	PoliceWATTrooperGndAttkInit
-AirAttkInit   	PoliceWATTrooperGndAttkInit
-Unused1       	[NONE]
-GndAttkRpt    	PoliceWATTrooperGndAttkRpt
-AirAttkRpt    	PoliceWATTrooperGndAttkRpt
-CastSpell     	PoliceWATTrooperCastSpell
-GndAttkToIdle 	PoliceWATTrooperGndAttkToIdle
-AirAttkToIdle 	PoliceWATTrooperGndAttkToIdle
-Unused2       	[NONE]
-Walking       	PoliceWATTrooperWalking
-WalkingToIdle 	PoliceWATTrooperWalkingToIdle
-SpecialState1 	[NONE]
-.headerend
-# ----------------------------------------------------------------------------- #
-
-PoliceWATTrooperInit:
-	imgul             	1697 0 0 # Police WAT Trooper Shadow (tb\pol\wat-trooper-shadow.grp)
-PoliceWATTrooperWalkingToIdle:
-	playfram			0x00
-	goto				PoliceWATTrooperLocal00
-
-PoliceWATTrooperLocal00:
-	wait				1
-	waitrand			62 74
-	randcondjmp       	25 PoliceWATTrooperLocal01
-	goto              	PoliceWATTrooperLocal00
-	
-PoliceWATTrooperLocal01:
-	playfram			0x20
-	wait				1
-	playfram			0x40
-	wait				1
-	playfram			0x60
-	wait				1
-	playfram			0x80
-	wait				1
-	playfram			0xA0
-	wait				1
-	playfram			0xC0
-	wait				1
-	playfram			0xE0
-	wait				1
-	playfram			0x00
-	wait				1
-	goto 				PoliceWATTrooperLocal00
-
-PoliceWATTrooperDeath:
-	playsndbtwn       	276 277 # Maverick death 01, 02
-	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
-	wait              	3
-	end
-
-PoliceWATTrooperGndAttkInit:
-	playfram          	0x220
-PoliceWATTrooperGndAttkRpt:
+SpirtithColonyAirAttkInit:
+	playfram			4
 	wait              	1
-	nobrkcodestart
-	playfram          	0x240
-	playsndbtwn        	2088 2091 # Dilettante weapon fire 01, 02
-	attackwith        	1
-	wait              	1
-	playfram          	0x220
-	wait              	1
-	playfram          	0x240
-	wait              	1
-	playfram          	0x220
-	wait              	1
-	nobrkcodeend
+	playfram			5
+	attackwith			2
+	playsndbtwn			2155 2157 # Spirtith Colony weaponfire 01, 02, 03
+	wait				2
+	playfram			6
+	wait				1
+	playfram			7
+	wait				2
 	gotorepeatattk
 	ignorerest
-	goto 				PoliceWATTrooperGndAttkToIdle
-	
-	
-PoliceWATTrooperGndAttkToIdle:
-	playfram			0x00
-	wait				1
-	goto              	PoliceWATTrooperWalkingToIdle
+	goto              	SpirtithColonyAirAttkToIdle
 
-PoliceWATTrooperCastSpell:
-	wait              	1
-	goto              	PoliceWATTrooperGndAttkToIdle
+SpirtithColonyAirAttkToIdle:
+	playfram			4
+	wait				2
+	goto              	SpirtithColonyBuilt
 
-PoliceWATTrooperWalking:
-	move              	4
-	wait              	1
-	playfram          	0x100
-	move              	4
-	wait              	1
-	playfram          	0x120
-	move              	4
-	wait              	1
-	playfram          	0x140
-	move              	4
-	wait              	1
-	playfram          	0x160
-	move              	4
-	wait              	1
-	playfram          	0x180
-	move              	4
-	wait              	1
-	playfram          	0x1A0
-	move              	4
-	wait              	1
-	playfram          	0x1C0
-	move              	4
-	wait              	1
-	playfram          	0x1E0
-	move              	4
-	wait              	1
-	playfram          	0x200
-	move              	4
-	wait              	1
-	goto              	PoliceWATTrooperWalking
+SpirtithColonyAlmostBuilt:
+	imgol             	108 0 0 # Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
+	playfram          	0x00
+SpirtithColonyBuilt:
+	wait				2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	0x00
+	wait              	2
+	goto              	SpirtithColonyBuilt

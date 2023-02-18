@@ -19,7 +19,7 @@ Infested Command Center
 Quazrok Pool
 Mature Chrysalis
 Almakis Antre
-Creep Colony
+Cagrant Colony
 Hachirosk
 Gathtelosk
 Caphrolosk
@@ -464,7 +464,7 @@ Police Academy
 Police Dispensary
 Police Deputy
 Police WAT Trooper
-Extended Flingy #258
+Spirtith Colony
 Extended Flingy #259
 Extended Flingy #260
 Extended Flingy #261

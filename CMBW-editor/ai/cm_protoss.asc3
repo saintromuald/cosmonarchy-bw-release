@@ -1236,7 +1236,7 @@ script_id PMCx
 	
 	:under_attack_by_ground_calc
 	var AtL|Wait under_attack_var 1 13
-	player_combat 17 13 63 False Jump maverick|harakan|cyprian|eidolon|savant|madcap|heracles|apostle|siren|striga|olympian|autocrat|dilettante|sevenstep|hypnagogue|ambassador|heir|horseman|thespian|silvertongue|emperor|jester|vulture|cyclops|goliath|blackjack|matador|phalanx|phalanx_siege_mode|madrigal|ramesses|durendal|cataphract|paladin|cuirass|pazuzu|claymore|penumbra|anticthon|aion|zealot|dracadin|ecclesiast|legionnaire|hierophant|amaranth|atreus|herald|cantavis|vagrant|cabalist|pariah|charlatan|archon|optecton|patriarch|manifold|simulacrum|idol|golem|accantor|architect|demiurge|zethrokor|quazilisk|vorvrokor|liiralisk|cikralisk|protathalor|axitrilisk|mortothrokor|hydralisk|izirokor|bactalisk|tethzorokor|kagralisk|evigrilisk|keskathalor|zoryusthaleth|lakizilisk|konvilisk|vilgorokor|rilirokor|ultrokor|zobriolisk|aspirant|cohort|tarasque Any under_attack_by_ground_calc_fin 13
+	player_combat 17 13 63 False Jump maverick|harakan|cyprian|eidolon|savant|madcap|heracles|apostle|siren|striga|olympian|autocrat|dilettante|sevenstep|hypnagogue|sevenstep|silvertongue|vulture|cyclops|goliath|blackjack|matador|phalanx|phalanx_siege_mode|madrigal|ramesses|durendal|cataphract|paladin|cuirass|pazuzu|claymore|penumbra|anticthon|aion|zealot|dracadin|ecclesiast|legionnaire|hierophant|amaranth|atreus|herald|cantavis|vagrant|cabalist|pariah|charlatan|archon|optecton|patriarch|manifold|simulacrum|idol|golem|accantor|architect|demiurge|zethrokor|quazilisk|vorvrokor|liiralisk|cikralisk|protathalor|axitrilisk|mortothrokor|hydralisk|izirokor|bactalisk|tethzorokor|kagralisk|evigrilisk|keskathalor|zoryusthaleth|lakizilisk|konvilisk|vilgorokor|rilirokor|ultrokor|zobriolisk|aspirant|cohort|tarasque Any under_attack_by_ground_calc_fin 13
 	var Set under_attack_by_ground_var 1 13
 	
 	:under_attack_by_ground_calc_fin
@@ -4346,18 +4346,18 @@ script_id PMCx
 	
 	:attack_handling_standard
 	var Ex|wait can_attack_var 1 13
-	var Ex|Jump pref_ranger 1 attack_handling_expansion_first 13
-	var Ex|Jump pref_templar 1 attack_handling_attack_first 13
-	var Ex|Jump pref_skylord 1 attack_handling_expansion_first 13
-	rand_j 64 attack_handling_attack_first
+	var Ex|Jump pref_ranger 1 attack_handling_slow 13
+	var Ex|Jump pref_templar 1 attack_handling_fast 13
+	var Ex|Jump pref_skylord 1 attack_handling_slow 13
+	rand_j 64 attack_handling_fast
 	
-	:attack_handling_expansion_first
+	:attack_handling_slow
 	wait 120
 	call attack_generic
 	wait 360
 	goto pLoopA
 	
-	:attack_handling_attack_first
+	:attack_handling_fast
 	wait 240
 	call attack_generic
 	wait 360
@@ -4397,9 +4397,9 @@ script_id PMCx
 	:attack_generic_check
 	var add attack_cycle_var 1 13
 	wait 300
-	var AtL|jump attack_cycle_var 2 attack_cycle_prep 13
-	bring 13 AtL 24 zealot|dracadin|ecclesiast|legionnaire|hierophant|amaranth|herald|atreus|vagrant|cabalist|barghest|pariah|potentate|sycophant|charlatan|archon|optecton|patriarch|manifold|simulacrum|vassal|golem|idol|servitor|positron|analogue|accantor|architect|mainstay|maven|cloudform|vibrance|oscilliant|demiurge|empress|aurora|panoptus|gladius|exemplar|magister|epigraph|didact|empyrean|solarion|star_sovereign|anthelion Loc.63 attack_cycle_prep
 	call add_attack_wave
+	var AtL|jump attack_cycle_var 2 attack_cycle_prep 13
+	bring 13 AtM 9 zealot|dracadin|ecclesiast|legionnaire|hierophant|amaranth|herald|atreus|vagrant|cabalist|barghest|pariah|potentate|sycophant|charlatan|archon|optecton|patriarch|manifold|simulacrum|vassal|golem|idol|servitor|positron|analogue|accantor|architect|mainstay|maven|cloudform|vibrance|oscilliant|demiurge|empress|aurora|panoptus|gladius|exemplar|magister|epigraph|didact|empyrean|solarion|star_sovereign|anthelion Loc.63 attack_generic_check
 	goto attack_cycle_prep
 	
 	:attack_cycle_prep
