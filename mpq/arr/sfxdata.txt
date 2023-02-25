@@ -2134,9 +2134,9 @@ Vagrant Shade Weaponfire 02
 Vagrant Shade Weaponfire 03
 Vagrant Shade Weaponfire 04
 Vagrant Shade Weaponfire 05
-Optecton Weaponfire 01
-Optecton Weaponfire 02
-Optecton Weaponfire 03
+Optecton Weaponfire 2 01
+Optecton Weaponfire 2 02
+Optecton Weaponfire 2 03
 Hippogriff Weaponfire 01
 Hippogriff Weaponfire 02
 Hippogriff Weaponfire 03
@@ -2307,11 +2307,11 @@ Phobos Help 04
 Madrigal Dirge Proc 01
 Madrigal Dirge Proc 02
 Madrigal Dirge Proc 03
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Didact Stasis Field Channel 01
+Optecton Weaponfire 1 01
+Optecton Weaponfire 1 02
+Optecton Weaponfire 1 03
+Optecton Weaponfire 1 04
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

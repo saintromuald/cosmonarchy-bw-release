@@ -1,4 +1,4 @@
-# 18 February 2023
+# 25 February 2023
 
 ## Designer's Notes
 Reminder: we now use mpq autogeneration, and have an updater, all courtesy of Veeq7! Get the updater [here](https://mega.nz/folder/r5QXXL6I#eXy7ptVhsa_wJd-AHuPyEg)!
@@ -7,128 +7,87 @@ To use the updater, delete your previous CMBW installations and place the update
 
 Once the launcher has finished downloading the initial installation, using it to grab individual updates will be much faster, and much more automatic!
 
-Launch times will be a bit slower. This will be rectified later.
+Aside from that: We are continuing to polish existing content and remove low-counterplay interactions to improve the player vs player experience. At the same time, this update contains lots of UI and usability improvements!
 
-Aside from that: We will continue smoothing out early-game unit roles and adding vital audiovisuals.
+Please note that the editor mpq has had its name changed. Adjust your SCMDraft profiles accordingly.
 
 ## Gameplay
-- Melee air units now have slightly improved chasing capabilities (c. DarkenedFantasies)
-- A randomized lard timer on going from "stop" order to "guard" order has been removed (c. Veeq7)
+- **IMPORTANT:** Worker wandering has been adjusted, and now occurs only after one worker is mining and another is in queue (c. Veeq7)
+- When a rally point targets hostiles, trained units are now issued attack orders instead of move orders (c. Veeq7)
 
 ## Bugfixes
-- Crashes with improper tooltips have been resolved
-- Gosvileth no longer crashes when carrying resources
-- Clarions have been reinstated following a bugfix to their behavior (c. Veeq7)
-- Incomplete Wyverns no longer attack from inside the Starport
-- Seraph Irradiate no longer procs EMP (legacy feature finally removed)
-- Victims of Seraph Observance no longer take increased damage based on attacker armor penetration (c. Veeq7)
-- Strange buttonset-related bugs with Terran production have been resolved
+- In order to investigate and resolve a freeze, the Ion Cannon's damage overlay has been temporarily disabled
+- Hold Position no longer occasionally grants infinite range (c. DarkenedFantasies)
+- Irradiate no longer stacks (c. Veeq7)
+- Lifted bunkers now correctly unload all units on death (c. Veeq7)
+- Detection status now updates every frame instead of every 30 frames, resolving issues with revealing burrowed units (c. Veeq7)
+- Decloaking units are now immediately targetable (c. DarkenedFantasies)
+- ANOTHER insane random lard timer has been removed - this one causing 0-8 frames delay every 150 frames on primary orders, and 0-30 frames on secondary orders (c. Veeq7)
+- Ancile projectile redirection has been fixed and reinstated, and Ancile shields no longer make exceptions for ability damage (c. Veeq7)
+- Mind Tyrant Tyranny now correctly spends energy on cast
+- The mouse/keyboard conflict, where mouse input prohibits keyboard input, has been removed (c. Veeq7)
+- Building placement preview precision no longer varies up to 31 pixels based on screen position (c. Veeq7)
+- Resource reveal is no longer bugged in replay mode (c. Veeq7)
+- Badlands: Fixed incorrect height flags on a structure ramp tile
 
 ## Audiovisuals
-- Superior beta graphics for the Harakan flamethrower attack and the Seraph turret have been added
-- Sealed holes:
-	- Dracadin
-	- Spraith Colony
-- New audiovisuals:
-	- Madrigal (Dirge proc)
-- New unit responses:
-	- Phobos
+- Superior engine graphics for the Mason and the Trojan have been added (c. DarkenedFantasies)
+- Patriarch now uses its own shadow instead of the Vagrant's
+- Weapon fire SFX for Madcap, Sundog, and Salamander have been adjusted to reduce clipping
+- New weaponfire SFX:
+	- Optecton (both attacks)
+- Madcap walk cycle has been improved
 
 ## UI
-- Negative armor values now display on the tooltip and on the armor icon (c. Veeq7)
-- Map previews are now shown in UMS lobbies (c. DarkenedFantasies)
-- Dashed selection circles now show in replays to indicate player selection
-- Witness selections are no longer shown in live games
-- Config: order lines can now be shown for selected units when in witness mode or in replays (c. Veeq7)
+- Config: It is now possible to specify your default map directory, using file paths with single backslashes (e.g. "BroodWar\CMBW-Prerelease\CMBW-maps") (c. Veeq7)
+- Mode selection is no longer required after selecting "singleplayer" or "multiplayer" in the main menu (c. DarkenedFantasies)
 
 ## Maps
-- [Megalith Empire](), by Pr0nogo
-	- Improve pathability and buildability in mains and naturals
-	- Widen several passageways throughout the map
-- [Brimstone Disco](), by knightoftherealm
-	- Removed mirrored tiles
-	- Opened up the middle pathways
-	- Adjusted the area around naturals
-	- Adjusted resources
-- [Mother Entropy](), by knightoftherealm
-	- Removed mirrored tiles
-	- Opened up the vertical middle
-	- Adjusted resources in several bases
-- **NEW:** [Wellington](https://files.catbox.moe/oyxr73.png), a 1v1 map, by DarkenedFantasies
+- Megalith Empire, by Pr0nogo
+	- Partially-fix ramp-bridge blend for the north spawn (c. TheBeaver99)
+- Brimstone Disco, by knightoftherealm
+	- Rearranged resources and moved a few bases
+	- Closed the alternate path into the main
+	- Expanded a few pathways and chokepoints
+- Nitro Valley, by knightoftherealm
+	- Now considered a 1v1 map with randomized spawns
+	- Slightly expanded player mains
+- Vestal Shrine, by Baelethal
+	- Replace some tiles that had incorrect height levels
+	- Adjust a town center placement guide in the bottom-most expansion
+- **NEW:** [Rest in Paradise](https://files.catbox.moe/j1rhps.png), a 1v1 map, by Pr0nogo
+- **NEW:** [Perpetua](https://files.catbox.moe/2pfm0e.png), a 1v1 map with four spawns, by knightoftherealm
+- **NEW:** [Everessence](https://cdn.discordapp.com/attachments/453287280296067072/1076219870947049563/Everessence.png), a 1v1 map by TheBeaver99
 
 ## Terran
-- [Cyprian](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cyprian):
-	- Time cost now 20, from 18
-	- HP now 60, from 50
-	- Weapon damage now 10, from 8
-- [Cleric](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cleric):
-	- HP now 80, from 60
-- [Shaman](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cleric):
-	- Armor now 3, from 2
-- [Madcap](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/madcap):
-	- Armor now 2, from 1
-- [Spider Mine](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/spider-mine):
-	- No longer triggers against hidden units (unless they are detected/revealed)
-- [Blackjack](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/blackjack):
-	- Weapon cooldown now 0.458, from 0.541
-- [Matador](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/matador):
-	- Armor now 2, from 0
-- [Seraph](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/seraph):
-	- Max energy now 175, from 200
-	- Irradiate energy cost now 100, from 75
-- [Medbay](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/medbay):
-	- Time cost now 20, from 15
-- [Scrapyard](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/scrapyard):
-	- Time cost now 25, from 15
+- [Madrigal](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/madrigal):
+	- HP now 140, from 125
+	- Now moves ~9% slower (matches worker movement speed)
+	- Furia weapon cooldown now 0.916, from 0.833
 
 ## Protoss
-- [Scribe](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/scribe):
-	- HP now 30, from 25
-	- Shields now 15, from 20
-- [Witness](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/witness):
-	- Now moves 12.5% faster (matches speed of Ovileth)
-- [Dracadin](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/dracadin):
-	- Armor penetration now 2, from 3
-- [Hierophant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/hierophant):
-	- Shields now 80, from 100
-- [Simulacrum](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/simulacrum):
-	- Mineral and time costs now 125/22, from 75/20
-	- Armor penetration now 1, from 2
-	- Now provides two per requisition
-- [Manifold](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/manifold):
-	- Mineral cost now 100, from 75
-	- Armor now 1, from 2
-- [Gateway](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/gateway):
-	- Time cost now 40, from 35
-- [Cenotaph](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/cenotaph):
-	- Time cost now 35, from 30
-- [Lattice](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/lattice):
-	- Time cost now 40, from 35
-- [Automaton Register](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/automaton-register):
-	- Mineral and time costs now 125/40, from 150/35
+- [Mind Tyrant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/mind-tyrant):
+	- Now moves ~15% slower
+	- Maelstrom projectile now significantly slower
+- [Optecton](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/optecton):
+	- Skybond Ray damage now 10, from 5
+- [Didact](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/didact):
+	- Stasis Field is now a ~1 second channel
 
 ## Zerg
-- [Mutalisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/mutalisk):
-	- Armor now 2, from 1
-	- Weapon damage now 8, from 9
-	- Weapon cooldown now 1, from 1.5
-- [Izirokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/izirokor):
-	- Mineral cost now 150, from 200
-- [Lakizilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/lakizilisk):
-	- No longer revealed upon attacking
-	- No longer gains armor while burrowed
-	- *Now that burrowed units have less sight range and are revealed when ground units move near to them, the Lakizilisk no longer feels disproportionately powerful by being a hidden attacker.*
+- [Hachirosk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/hachirosk):
+	- HP now 1200, from 1000
+- [Cagrant Colony](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/cagrant-colony):
+	- Time cost now 15, from 12
+	- HP now 200, from 150
+- [Surkith Colony](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/surkith-colony):
+	- Time cost now 12, from 15
+	- Attack cooldown now 0.666, from 0.833
+- [Spraith Colony](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/spraith-colony):
+	- Time cost now 12, from 15
 - [Larvosk Colony](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/larvosk-colony):
-	- Time cost now 25, from 20
-- [Quazrok Pool](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/quazrok-pool):
-	- Time cost now 40, from 35
-- [Muthrok Spire](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/muthrok-spire):
-	- Gas and time costs now 200/50, from 150/45
-	- Now requires Irol Iris, from Irulent Ivoa
-- [Hydrok Den](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/hydrok-den):
-	- Time cost now 40, from 35
-- [Zorkiz Shroud](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/zorkiz-shroud):
-	- Mineral and time costs now 125/45, from 150/35
-- **NEW:** [Spirtith Colony](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/spirtith-colony):
-	- Advanced anti-air defensive cell with a bouncing attack
-	- Mutated from Spraith Colony; requires Irol Iris or greater
+	- Time cost now 22, from 25
+- [Rilirokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/rilirokor):
+	- Collision now ~11% smaller
+- [Rililisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/rililisk):
+	- Weapon range now 2, from 3

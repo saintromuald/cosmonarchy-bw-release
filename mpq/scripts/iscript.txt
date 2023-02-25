@@ -5461,7 +5461,7 @@ TrojanDeath:
 
 TrojanWalking:
 	setvertpos        	0
-	imgol             	225 0 0 # Trojan Engines (thingy\tdrGlow.grp)
+	imgol             	225 0 5 # Trojan Engines (thingy\tdrGlow.grp)
 	goto              	InfestedTerranLocal00
 
 # ----------------------------------------------------------------------------- #
@@ -10536,7 +10536,7 @@ AirAttkRpt    	DidactGndAttkRpt
 CastSpell     	DidactCastSpell
 GndAttkToIdle 	DidactGndAttkToIdle
 AirAttkToIdle 	DidactGndAttkToIdle
-Unused2       	[NONE]
+Unused2       	DidactUnused2
 Walking       	DidactWalking
 WalkingToIdle 	DidactGndAttkToIdle
 SpecialState1 	[NONE]
@@ -10600,13 +10600,28 @@ DidactLocal00:
 
 DidactCastSpell:
 	nobrkcodestart
-	wait              	1 
+	wait              	1
 	playsnd           	548	# Protoss\ARBITER\PAbCag00.WAV
 	castspell
 	nobrkcodeend
 	gotorepeatattk
 	sigorder          	2
 	goto              	DidactLocal00
+
+DidactUnused2:
+	nobrkcodestart
+	wait				1
+	playsnd				2309 # Didact Stasis Field channel 01
+	wait				3
+	imgul				364 0 0 # Stasis Field Hit
+	wait				7
+	imgul				364 0 0 # Stasis Field Hit
+	wait				8
+	imgul				364 0 0 # Stasis Field Hit
+	castspell
+	nobrkcodeend
+	sigorder			2
+	goto				DidactGndAttkToIdle
 
 DidactWalking:
 	playfram          	0x00
@@ -21790,10 +21805,9 @@ MindTyrantEnergyUnused1:
 	goto				MindTyrantEnergyInit
 
 MindTyrantEnergyCastSpell:
-	nobrkcodestart
+	wait				24
 	castspell
 	sigorder          	2
-	nobrkcodeend
 	gotorepeatattk
 	goto              	MindTyrantEnergyGndAttkInit
 
@@ -29639,36 +29653,45 @@ MadcapDeath:
 	end
 
 MadcapGndAttkInit:
-	playfram          	0x220
+	playfram          	0x100
 	wait				1
-	playfram			0x240
+	playfram			0x120
 	wait				1
-	playfram			0x260
+	playfram			0x140
 MadcapGndAttkRpt:
 	wait				1
 	nobrkcodestart
 	playsndbtwn			1212 1216 # Madcap weaponfire 01, 02, 03, 04, 05
 	attack
-	playfram          	0x2A0
+	playfram          	0x1A0
 	wait              	1
-	playfram          	0x280
+	playfram          	0x180
 	wait				1
-	playfram          	0x2A0
+	playfram          	0x1A0
 	wait              	1
-	playfram          	0x280
+	playfram          	0x180
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
 MadcapGndAttkToIdle:
-	playfram          	0x260
+	playfram          	0x140
 	wait				1
-	playfram			0x240
+	playfram			0x120
 	wait				1
-	playfram			0x220
+	playfram			0x100
 	wait				1
 	goto              	MadcapWalkingToIdle
 
 MadcapWalking:
+	playfram          	0x40
+	move              	4
+	wait              	1
+	playfram          	0x60
+	move              	4
+	wait              	1
+	playfram          	0x80
+	move              	4
+	wait              	1
 	playfram          	0xA0
 	move              	4
 	wait              	1
@@ -29678,40 +29701,7 @@ MadcapWalking:
 	playfram          	0xE0
 	move              	4
 	wait              	1
-	playfram          	0x100
-	move              	4
-	wait              	1
-	playfram          	0x120
-	move              	4
-	wait              	1
-	playfram          	0x140
-	move              	4
-	wait              	1
-	playfram          	0x160
-	move              	4
-	wait              	1
-	playfram          	0x180
-	move              	4
-	wait              	1
-	playfram          	0x1A0
-	move              	4
-	wait              	1
-	playfram          	0x1C0
-	move              	4
-	wait              	1
-	playfram          	0x1E0
-	move              	4
-	wait              	1
 	playfram          	0x20
-	move              	4
-	wait              	1
-	playfram          	0x40
-	move              	4
-	wait              	1
-	playfram          	0x60
-	move              	4
-	wait              	1
-	playfram          	0x80
 	move              	4
 	wait              	1
 	goto              	MadcapWalking
@@ -30781,7 +30771,7 @@ AirAttkInit   	AtreusGndAttkInit
 Unused1       	[NONE]
 GndAttkRpt    	AtreusGndAttkInit
 AirAttkRpt    	AtreusGndAttkInit
-CastSpell     	AtreusCastSpell
+CastSpell     	[NONE]
 GndAttkToIdle 	AtreusGndAttkToIdle
 AirAttkToIdle 	AtreusGndAttkToIdle
 Unused2       	[NONE]
@@ -30883,26 +30873,7 @@ AtreusGndAttkRpt:
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
-	goto				AtreusGndAttkToIdle	
-
-AtreusCastSpell:
-	playfram			0x00
-	wait				1
-	nobrkcodestart
-	playfram			0x1A9
-	playsnd           	101 # Bullet\LaserB.wav
-	castspell
-	sigorder			2
-	wait				1
-	playfram			0x1BA
-	wait				1
-	playfram			0x1CB
-	wait				1
-	playfram			0x00
-	wait				1
-	nobrkcodeend
-	gotorepeatattk
-	goto              	AtreusGndAttkToIdle
+	goto				AtreusGndAttkToIdle
 
 AtreusWalking:
 	move				4
@@ -30962,6 +30933,7 @@ AtreusWalkingToIdle:
 AtreusWarpIn:
 	imgol             	125 0 0	# High Templar Warp Flash (protoss\templar.grp)
 	goto              	AtreusLocal00
+
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 1174 Amaranth (cm\protoss\amaranth.grp)
@@ -47942,7 +47914,7 @@ AirAttkInit   	VagrantGndAttkInit
 Unused1       	VagrantUnused1
 GndAttkRpt    	VagrantGndAttkInit
 AirAttkRpt    	VagrantGndAttkInit
-CastSpell     	VagrantCastSpell
+CastSpell     	[NONE]
 GndAttkToIdle 	VagrantGndAttkToIdle
 AirAttkToIdle 	VagrantGndAttkToIdle
 Unused2       	[NONE]
@@ -47961,14 +47933,7 @@ WarpIn        	VagrantWarpIn
 # ----------------------------------------------------------------------------- #
 
 VagrantInit:
-	if unit_id == 317 goto PatriarchInit
 	imgul             	1277 0 0 # Vagrant Shadow (cm\protoss\vagrant-shadow.grp)
-	playfram          	0x00
-	wait				2
-	goto              	VagrantLocal00
-	
-PatriarchInit:
-	imgul             	1627 0 0 # Patriarch Shadow (cm\protoss\patriarch-shadow.grp)
 	playfram          	0x00
 	wait				2
 	goto              	VagrantLocal00
@@ -48055,31 +48020,6 @@ VagrantGndAttkToIdle:
 	playfram 			0x00
 	wait 				1
 	goto              	VagrantLocal00
-
-VagrantCastSpell:
-	playfram          	0x154
-	wait              	1
-	nobrkcodestart
-	playfram          	0x165
-	playsndbtwn			2126 2130 # Vagrant attack 01, 02, 03, 04, 05
-	castspell
-	sigorder          	2
-	wait              	1
-	playfram          	0x176
-	wait              	1
-	playfram          	0x187
-	wait				1
-	playfram          	0x198
-	wait				1
-	playfram          	0x1A9
-	wait				1
-	playfram          	0x1BA
-	wait				1
-	playfram          	0x1CB
-	wait				1
-	nobrkcodeend
-	gotorepeatattk
-	goto              	VagrantGndAttkToIdle
 
 VagrantWalking:
 	move              	5
@@ -52154,3 +52094,349 @@ SpirtithColonyBuilt:
 	playfram          	0x00
 	wait              	2
 	goto              	SpirtithColonyBuilt
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1700 Optecton (cm\protoss\optecton.grp)
+.headerstart
+IsId          	728
+Type          	21
+Init          	OptectonInit
+Death         	OptectonDeath
+GndAttkInit   	OptectonGndAttkInit
+AirAttkInit   	OptectonGndAttkInit
+Unused1       	[NONE]
+GndAttkRpt    	OptectonGndAttkInit
+AirAttkRpt    	OptectonGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	OptectonGndAttkToIdle
+AirAttkToIdle 	OptectonGndAttkToIdle
+Unused2       	[NONE]
+Walking       	OptectonWalking
+WalkingToIdle 	OptectonWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	OptectonWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+OptectonInit:
+	imgul             	1625 0 0 # Optecton Shadow (cm\protoss\optecton-shad.grp)
+	playfram          	0x00
+	wait				2
+OptectonLocal00:
+	wait				1
+	waitrand			62 74
+	randcondjmp       	25 OptectonLocal01
+	randcondjmp       	13 OptectonLocal02
+	goto              	OptectonLocal00
+
+OptectonLocal01:
+	playfram			0x11
+	wait				1
+	playfram			0x22
+	wait				1
+	playfram			0x33
+	wait				1
+	playfram			0x44
+	waitrand			8 15
+	playfram			0x33
+	wait				1
+	playfram			0x22
+	wait				1
+	randcondjmp			43 OptectonLocal01
+	playfram			0x11
+	wait				1
+	playfram			0x00
+	wait				1
+	randcondjmp			13 OptectonLocal02
+	goto				OptectonLocal00
+
+OptectonLocal02:
+	playfram			0x55
+	wait				1
+	playfram			0x66
+	wait				1
+	playfram			0x77
+	wait				1
+	playfram			0x88
+	waitrand			8 15
+	playfram			0x77
+	wait				1
+	playfram			0x66
+	wait				1
+	randcondjmp			43 OptectonLocal02
+	playfram			0x55
+	wait				1
+	playfram			0x00
+	wait				1
+	randcondjmp			13 OptectonLocal01
+	goto				OptectonLocal00
+	
+OptectonGndAttkToIdle:
+	playfram          	0x00
+	wait				2
+	goto              	OptectonLocal00
+
+OptectonDeath:
+	playsnd           	533	# Protoss\Scout\PScDth00.WAV
+	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
+	wait 2
+	lowsprul          	192 0 0	# Dracadin Remnants (protoss\pdrDeath.grp)
+	wait              	1 
+	end
+
+OptectonGndAttkInit:
+	playfram          	0x00
+OptectonGndAttkRpt:
+	wait				1
+	nobrkcodestart
+	playfram			0x1A9
+	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
+	attackwith        	1
+	wait				1
+	playfram			0x1BA
+	wait				1
+	playfram			0x1CB
+	wait				1
+	playfram			0x00
+	wait				1
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto				OptectonGndAttkToIdle
+
+OptectonWalking:
+	move				4
+	wait				1
+	playfram          	0xcc
+	move				4
+	wait				1
+	playfram          	0xdd
+	move				4
+	wait				1
+	playfram          	0xee
+	move				4
+	wait				1
+	playfram          	0xff
+	move				4
+	wait				1
+	playfram          	0x110
+	move				4
+	wait				1
+	playfram          	0x121
+	move				4
+	wait				1
+	playfram          	0x132
+	move				4
+	wait				1
+	playfram          	0x143
+	move				4
+	wait				1
+	playfram          	0x154
+	move				4
+	wait				1
+	playfram          	0x165
+	move				4
+	wait				1
+	playfram          	0x176
+	move				4
+	wait				1
+	playfram          	0x187
+	move				4
+	wait				1
+	playfram          	0x198
+	move				4
+	wait				1
+	playfram          	0x99
+	move				4
+	wait				1
+	playfram          	0xaa
+	move				4
+	wait				1
+	playfram          	0xbb
+	goto				OptectonWalking
+
+OptectonWalkingToIdle:
+	playfram          	0x00
+	goto              	OptectonLocal00
+
+OptectonWarpIn:
+	imgol             	125 0 0	# High Templar Warp Flash (protoss\templar.grp)
+	goto              	OptectonLocal00
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1276 Patriarch (cm\protoss\patriarch.grp)
+.headerstart
+IsId          	729
+Type          	21
+Init          	PatriarchInit
+Death         	PatriarchDeath
+GndAttkInit   	PatriarchGndAttkInit
+AirAttkInit   	PatriarchGndAttkInit
+Unused1       	PatriarchUnused1
+GndAttkRpt    	PatriarchGndAttkInit
+AirAttkRpt    	PatriarchGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	PatriarchGndAttkToIdle
+AirAttkToIdle 	PatriarchGndAttkToIdle
+Unused2       	[NONE]
+Walking       	PatriarchWalking
+WalkingToIdle 	PatriarchWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	PatriarchWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+PatriarchInit:
+	imgul             	1627 0 0 # Patriarch Shadow (cm\protoss\patriarch-shadow.grp)
+	playfram          	0x00
+	wait				2
+	goto              	PatriarchLocal00
+
+PatriarchLocal00:
+	wait				1
+	waitrand			62 74
+	randcondjmp       	25 PatriarchLocal01
+	goto              	PatriarchLocal00
+
+PatriarchLocal01:
+	playfram			0x11
+	wait				1
+	playfram			0x22
+	wait				1
+	playfram			0x33
+	wait				1
+	playfram			0x44
+	wait				1
+	playfram			0x55
+	wait				1
+	playfram			0x66
+	wait				1
+	playfram			0x00
+	goto				PatriarchLocal00
+
+PatriarchLocal42:
+	playfram			0x00
+	goto				PatriarchLocal00
+
+PatriarchDeath:
+	playsnd           	635	# Protoss\TEMPLAR\PTeDth00.WAV
+	imgol             	153 0 0 # Zealot Death (protoss\zealot.grp)
+	wait              	1
+	end
+	
+PatriarchUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect       	0 
+	playsnd				1186 # Cantavis revive 01
+	imgol             	1445 0 0 # Zealot death reversed
+#	playfram			244
+	wait				2
+#	playfram			243
+	wait				2
+#	playfram			242
+	wait				2
+#	playfram			241
+	wait				2
+#	playfram			240
+	wait				2
+	wait				2
+	setfldirect       	12
+	nobrkcodeend
+	goto				PatriarchLocal42
+
+PatriarchGndAttkInit:
+	playfram          	0x154
+	wait              	1
+	nobrkcodestart
+	playfram          	0x165
+	playsndbtwn			2126 2130 # Patriarch attack 01, 02, 03, 04, 05
+	attackwith        	1
+	wait              	1
+	playfram          	0x176
+	wait              	1
+	playfram          	0x187
+	wait				1
+	playfram          	0x198
+	wait				1
+	playfram          	0x1A9
+	wait				1
+	playfram          	0x1BA
+	wait				1
+	playfram          	0x1CB
+	wait				1
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto				PatriarchGndAttkToIdle
+	
+PatriarchGndAttkToIdle:
+	playfram 			0x00
+	wait 				1
+	goto              	PatriarchLocal00
+
+PatriarchWalking:
+	move              	5
+	wait              	1
+	playfram          	0x77
+	move              	5
+	wait              	1
+	playfram          	0x88
+	move              	5
+	wait              	1
+	playfram          	0x99
+	move              	5
+	wait              	1
+	playfram          	0xaa
+	move              	5
+	wait              	1
+	playfram          	0xbb
+	move              	5
+	wait              	1
+	playfram          	0xcc
+	move              	5
+	wait              	1
+	playfram          	0xdd
+	move              	5
+	wait              	1
+	playfram          	0xee
+	move              	5
+	wait              	1
+	playfram          	0xff
+	move              	5
+	wait              	1
+	playfram          	0x110
+	move              	5
+	wait              	1
+	playfram          	0x121
+	move              	5
+	wait              	1
+	playfram          	0x132
+	move              	5
+	wait              	1
+	playfram          	0x143
+	goto				PatriarchWalking
+	
+PatriarchWalkingToIdle:
+	playfram			0x00
+	goto				PatriarchLocal00
+
+PatriarchWarpIn:
+	imgol             	128 0 0	# High Templar Warp Flash (protoss\templar.grp)
+	goto              	InfestedTerranLocal00
