@@ -9343,7 +9343,7 @@ PhysicsLabConnectorLiftOff:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 304 Bunker (terran\PillBox.grp)
+# 304 Bunker (terran\pillbox.grp)
 .headerstart
 IsId          	123
 Type          	24
@@ -9384,37 +9384,98 @@ BunkerBuilt:
 
 BunkerLiftOff:
 	nobrkcodestart
-	playsnd           	471	# Misc\LiftOff.WAV
-	playfram			2
-	wait				1
-#	playfram          	5
-	wait              	8
-#	playfram          	2
-	wait              	8
-#	playfram          	3
-	wait              	8
-#	playfram          	4
+	playfram          	0x02
+	wait              	1
+	playfram          	0x03
+	wait              	1
+	playfram          	0x04
+	wait              	1
+	playfram          	0x05
+	wait              	1
+	playfram          	0x06
+	wait              	1
+	playsnd           	471
+	playfram          	0x07
+	wait              	2
+	playfram          	0x08
+	wait              	2
+	playfram          	0x09
+	wait              	2
+	playfram          	0x0A
+	wait              	2
+	playfram          	0x0B
+	wait              	2
+	playfram          	0x0C
+	wait              	2
+	playfram          	0x0D
+	wait              	2
+	playfram          	0x0E
+	wait              	2
+	playfram          	0x0F
+	wait              	2
+	playfram          	0x10
+	wait              	2
+	playfram          	0x11
+	wait              	2
+	playfram          	0x12
+	wait              	2
+	playfram          	0x13
+	wait              	2
+	playfram          	0x14
+	wait              	2
+	playfram          	0x15
 	sigorder          	16
 	nobrkcodeend
 	goto              	InfestedTerranLocal00
 
 BunkerLanding:
 	nobrkcodestart
-	wait              	15
-	playsnd           	472 # Misc\Land.WAV
-#	playfram          	4
-	wait              	8
-#	playfram          	3
-	wait              	8
-#	playfram          	2
-	wait              	8
-#	playfram          	5
-	wait              	8
-	playfram          	0x00
+	wait              	12
+	playfram          	0x15
+	wait              	2
+	playfram          	0x14
+	wait              	2
+	playfram          	0x13
+	wait              	2
+	playfram          	0x12
+	wait              	2
+	playfram          	0x11
+	wait              	2
+	playsnd           	472
+	playfram          	0x10
+	wait              	2
+	playfram          	0x0F
+	wait              	2
+	playfram          	0x0E
+	wait              	2
+	playfram          	0x0D
+	wait              	2
+	playfram          	0x0C
+	wait              	2
+	playfram          	0x0B
+	wait              	2
+	playfram          	0x0A
+	wait              	2
+	playfram          	0x09
+	wait              	2
+	playfram          	0x08
+	wait              	2
+	playfram          	0x07
+	wait              	1
+	playfram          	0x06
+	wait              	1
+	playfram          	0x05
+	wait              	1
+	playfram          	0x04
+	wait              	1
+	playfram          	0x03
+	wait              	1
+	playfram          	0x02
+	wait              	1
 	sigorder          	16
 	nobrkcodeend
-	goto              	InfestedTerranLocal00
-
+	goto              	BunkerBuilt
+	
 BunkerAlmostBuilt:
 	playfram          	1
 	goto              	InfestedTerranLocal00
