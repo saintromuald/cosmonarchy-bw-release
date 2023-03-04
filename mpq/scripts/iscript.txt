@@ -6686,7 +6686,7 @@ ScannerSweepDeath:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 243 Wraith (terran\phoenix.grp)
+# 243 Wraith (terran\wraith.grp)
 .headerstart
 IsId          	82
 Type          	12
@@ -6708,7 +6708,7 @@ SpecialState1 	[NONE]
 # ----------------------------------------------------------------------------- #
 
 WraithInit:
-	imgul             	244 0 42 # Wraith Shadow (terran\phoenix.grp)
+	imgul             	244 0 42 # Wraith Shadow (terran\wraith.grp)
 	playfram          	0x00
 	goto              	WraithGndAttkToIdle
 
@@ -6731,12 +6731,16 @@ WraithDeath:
 	end
 
 WraithGndAttkInit:
+	nobrkcodestart
 	wait              	1
+	playfram			0x20
 	attackwith        	1
 	attackwith        	1
-	attackwith        	1
-	playsnd           	74	# Bullet\TPhFi100.wav
+	playsnd           	74 # Bullet\TPhFi100.wav
+	wait				1
+	playfram			0x00
 	gotorepeatattk
+	nobrkcodeend
 	goto              	WraithLocal00
 
 WraithLocal00:
@@ -6745,7 +6749,7 @@ WraithLocal00:
 
 WraithWalking:
 	setvertpos        	0
-	imgol             	245 0 0	# Wraith Engines (thingy\tphGlow.grp)
+	imgol             	245 0 0	# Wraith Engines (terran\wraith-engine.grp)
 	goto              	WraithLocal00
 
 # ----------------------------------------------------------------------------- #
@@ -11852,7 +11856,7 @@ ScoutWalking:
 ScoutWarpIn:
 	imgol             	143 0 0 # Scout Warp Flash (protoss\scout.grp)
 	goto              	ScoutLocal00
-
+	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 142 Scout Engines (thingy\pscGlow.grp)
@@ -24568,11 +24572,13 @@ PanoptusDeath:
 
 PanoptusGndAttkInit:
 	nobrkcodestart
-	playfram          	0x11
+	playfram          	0x00
 	wait              	1
 	playsndbtwn			2020 2023 # Panoptus weaponfire 01, 02, 03, 04
 	attackwith        	2
-	playfram          	0x00
+	playfram          	0x20
+	wait				1
+	playfram			0x00
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
@@ -29526,10 +29532,10 @@ Type          	21
 Init          	VassalInit
 Death         	VassalDeath
 GndAttkInit   	VassalGndAttkInit
-AirAttkInit   	VassalAirAttkInit
+AirAttkInit   	VassalGndAttkInit
 Unused1       	[NONE]
 GndAttkRpt    	VassalGndAttkInit
-AirAttkRpt    	VassalAirAttkInit
+AirAttkRpt    	VassalGndAttkInit
 CastSpell     	[NONE]
 GndAttkToIdle 	VassalGndAttkToIdle
 AirAttkToIdle 	VassalGndAttkToIdle
@@ -29551,22 +29557,22 @@ WarpIn        	VassalWarpIn
 VassalInit:
 	imgul             	1140 0 42 # Vassal Shadow (cm\protoss\vassal.grp)
 VassalGndAttkToIdle:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	goto              	VassalWalkingToIdle
 
 VassalWalkingToIdle:
 	setvertpos        	0
 	wait 				8
-	setvertpos        	0 
+	setvertpos        	0
 	wait 				8
-	setvertpos        	-1 
+	setvertpos        	-1
 	wait 				8
-	setvertpos        	0 
+	setvertpos        	0
 	wait 				8
 	goto              	VassalWalkingToIdle
 
 VassalDeath:
-	playsnd           	8	# Misc\ExploMed.wav
+	playsnd           	8 # Misc\ExploMed.wav
 	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	3 
 	end
@@ -29574,7 +29580,7 @@ VassalDeath:
 VassalGndAttkInit:
 	wait				1
 	nobrkcodestart
-	playfram			0x11
+	playfram			0x20
 	playsndbtwn			1217 1221
 	attackwith        	1
 	wait				1
@@ -29585,20 +29591,7 @@ VassalGndAttkInit:
 	goto              	VassalLocal00
 
 VassalLocal00:
-	wait              	125 
-	goto              	VassalLocal00
-
-VassalAirAttkInit:
-	wait				1
-	nobrkcodestart
-	playfram			0x11
-	playsndbtwn			1217 1221
-	attackwith        	1
-	wait				1
-	playfram			0x00
-	wait				1
-	nobrkcodeend
-	gotorepeatattk
+	wait              	125
 	goto              	VassalLocal00
 
 VassalWalking:
@@ -34522,7 +34515,7 @@ PlanetCrackerBlastInit:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1256 Ion Cannon (Base) (cm\terran\ioncannon-base.grp)
+# 1255 Ion Cannon (Base) (cm\terran\ioncannon-base.grp)
 .headerstart
 IsId          	531
 Type          	24
@@ -34557,8 +34550,8 @@ Burrow        	[NONE]
 
 IonCannonBaseInit:
 	playfram          	0x00
-	imgul             	1258 0 0 # Ion Cannon shadow
-	imgul             	1452 0 0 # Ion Cannon underlay
+	imgul             	1258 -32 -1 # Ion Cannon shadow
+	imgul             	1452 0 0 # Ion Cannon mouse response
 IonCannonBaseIsWorking:
 	wait              	125
 	goto              	IonCannonBaseIsWorking
@@ -34572,28 +34565,29 @@ IonCannonBaseDeath:
 	end
 
 IonCannonBaseGndAttkInit:
-	playfram          	0x11
+	playfram          	0x20
 	wait              	3
-	playfram          	0x22
+	playfram          	0x40
 IonCannonBaseGndAttkRpt:
 	nobrkcodestart
 	playsnd           	1319 # ioncannon-charge-01
 	wait              	71
 	attackwith			1
 	wait              	8
-	sproluselo        	755 0 # ioncannon-attack
+	sproluselo        	755 0 # ioncannon-attack-B
 	nobrkcodeend
 	gotorepeatattk
 	goto              	IonCannonBaseIsWorking
 
 IonCannonBaseGndAttkToIdle:
-	playfram          	0x11
+	playfram          	0x20
 	wait              	3
 	playfram          	0x00
 	goto              	IonCannonBaseIsWorking
 
 IonCannonBaseAlmostBuilt:
-	playfram          	0x01
+	playfram          	0x4C
+	setfldirect       	20
 	goto              	IonCannonBaseIsWorking
 	
 IonCannonBaseLiftOff:
@@ -34633,32 +34627,41 @@ IonCannonBaseBuilt:
 	playfram          	0x00
 	wait              	1
 	tmprmgraphicstart
-	imgolorig         	1453 # ioncannon-attack-A
-	imgol             	1256 0 -40 # ioncannon-turret
-	imgolorig         	1278 # ioncannon-overlay
+	imgol             	1453 -128 -128 # ioncannon-attack-A1
+	imgol             	1278 127 -128 # ioncannon-attack-A2
+	imgol             	1701 -128 127 # ioncannon-attack-A3
+	imgol             	1702 127 127 # ioncannon-attack-A4
+	imgol             	1256 -1 -54 # ioncannon-turret
 	setfldirect       	20
 	goto              	IonCannonBaseIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1255 Ion Cannon (Turret) (cm\terran\ioncannon-turret.grp)
+# 1256 Ion Cannon (Turret) (cm\terran\ioncannon-turret.grp)
+# 1258 Ion Cannon Shadow (cm\effect\ioncannon-shadow.grp)
 .headerstart
 IsId          	532
 Type          	1
-Init          	IonCannonTurretInit
+Init          	ShadowHeaderInit
 Death         	IonCannonTurretDeath
 .headerend
 # ----------------------------------------------------------------------------- #
-
-IonCannonTurretInit:
-	wait              	1
-	followmaingraphic
-	goto              	IonCannonTurretInit
 
 IonCannonTurretDeath:
 	wait              	4
 	end
 	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1452 Ion Cannon Mouse Response (cm\effect\ioncannon-clicky.grp)
+.headerstart
+IsId          	628
+Type          	1
+Init          	IonCannonAttackAInit
+Death         	IonCannonTurretDeath
+.headerend
+# ----------------------------------------------------------------------------- #
+
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 1260 Ion Cannon Ion Field (cm\effect\ioncannon-ionfield.grp)
@@ -35608,13 +35611,11 @@ IonCannonProjectileLocal00:
 	playsndbtwn       	1320 1322 #ioncannon-att-01, 02, 03
 	wait              	1
 	sigorder          	1
-	wait              	1
-	goto              	IonCannonProjectileGndAttkInit
-
-IonCannonProjectileGndAttkInit:
-	playfram          	0x11
 	wait              	2
+	playfram          	0x11
+	wait              	3
 	playfram          	0x22
+IonCannonProjectileGndAttkInit:
 	wait              	2
 	playfram          	0x33
 	wait              	2
@@ -35626,11 +35627,16 @@ IonCannonProjectileGndAttkInit:
 	wait              	2
 	playfram          	0x77
 	wait              	2
+	playfram          	0x88
+	wait              	2
+	playfram          	0x99
+	wait              	2
+	playfram          	0xAA
 	goto              	IonCannonProjectileGndAttkInit
 
 IonCannonProjectileDeath:
-	playfram          	0x88
-	imgol             	1105 0 0 #ioncannon-ionfield
+	playfram          	0xBB
+	imgol             	1105 0 0 # Ion Cannon Ion Field
 	domissiledmg
 	wait              	2
 	end
@@ -43391,9 +43397,9 @@ ZealotDeathReversedInit:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
+# 1199 Aurora Engines (cm\protoss\aurora-engine.grp)
 # 1202 Exemplar Engines (cm\protoss\exemplar-engine.grp)
 # 1204 Gladius Engines (cm\protoss\gladius-engine.grp)
-# 1206 Vassal Engines (cm\protoss\vassal-engine.grp)
 # 1301 Epigraph Engines (cm\protoss\epigraph-engine.grp)
 .headerstart
 IsId          	623
@@ -43586,29 +43592,10 @@ ZergAirDeathExplosionReversedInit:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1258 Ion Cannon Shadow (cm\effect\ioncannon-shadow.grp)
-# 1452 Ion Cannon Underlay (cm\effect\ioncannon-underlay.grp)
-.headerstart
-IsId          	628
-Type          	1
-Init          	IonCannonUnderlayInit
-Death         	IonCannonUnderlayDeath
-.headerend
-# ----------------------------------------------------------------------------- #
-
-IonCannonUnderlayInit:
-	playfram          	0x00
-IonCannonUnderlayLocal00:
-	wait              	125
-	goto              	IonCannonUnderlayLocal00
-
-IonCannonUnderlayDeath:
-	wait              	4
-	end
-
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 1453 Ion Cannon Attack A (cm\effect\ioncannon-attack.grp)
+# 1452 Ion Cannon Attack A1 (cm\effect\ioncannon-attack-A1.grp)
+# 1453 Ion Cannon Attack A2 (cm\effect\ioncannon-attack-A2.grp)
+# 1701 Ion Cannon Attack A3 (cm\effect\ioncannon-attack-A3.grp)
+# 1702 Ion Cannon Attack A4 (cm\effect\ioncannon-attack-A4.grp)
 .headerstart
 IsId          	629
 Type          	24
@@ -43658,57 +43645,57 @@ IonCannonAttackAGndAttkRpt:
 	wait              	31
 	tmprmgraphicend
 	wait              	2
-	playfram          	0x11
+	playfram          	0x20
 	wait              	2
-	playfram          	0x22
+	playfram          	0x40
 	wait              	2
-	playfram          	0x33
+	playfram          	0x60
 	wait              	2
-	playfram          	0x44
+	playfram          	0x80
 	wait              	2
-	playfram          	0x55
+	playfram          	0xA0
 	wait              	2
-	playfram          	0x66
+	playfram          	0xC0
 	wait              	2
-	playfram          	0x77
+	playfram          	0xE0
 	wait              	2
-	playfram          	0x88
+	playfram          	0x100
 	wait              	2
-	playfram          	0x99
+	playfram          	0x120
 	wait              	2
-	playfram          	0xAA
+	playfram          	0x140
 	wait              	2
-	playfram          	0xBB
+	playfram          	0x160
 	wait              	2
-	playfram          	0xCC
+	playfram          	0x180
 	wait              	2
-	playfram          	0xDD
+	playfram          	0x1A0
 	wait              	2
-	playfram          	0xEE
+	playfram          	0x1C0
 	wait              	2
-	playfram          	0xFF
+	playfram          	0x1E0
 	wait              	2
-	playfram          	0x110
+	playfram          	0x200
 	wait              	2
-	playfram          	0x121
+	playfram          	0x220
 	wait              	2
-	playfram          	0x132
+	playfram          	0x240
 	wait              	2
-	playfram          	0x143
+	playfram          	0x260
 	wait              	2
-	playfram          	0x154
+	playfram          	0x280
 	wait              	2
-	playfram          	0x165
+	playfram          	0x2A0
 	wait              	2
-	playfram          	0x176
+	playfram          	0x2C0
 	wait              	2
-	playfram          	0x187
+	playfram          	0x2E0
 	wait              	2
 	goto              	IonCannonAttackAInit
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1454 Ion Cannon Attack B (cm\effect\ioncannon-attack.grp)
+# 1454 Ion Cannon Attack B (cm\effect\ioncannon-attack-B.grp)
 .headerstart
 IsId          	630
 Type          	0
@@ -43718,23 +43705,21 @@ Death         	[NONE]
 # ----------------------------------------------------------------------------- #
 
 IonCannonAttackBInit:
-	playfram          	0x198
+	playfram          	0x00
 	wait              	2
-	playfram          	0x1A9
+	playfram          	0x20
 	wait              	2
-	playfram          	0x1BA
+	playfram          	0x40
 	wait              	2
-	playfram          	0x1CB
+	playfram          	0x60
 	wait              	2
-	playfram          	0x1DC
+	playfram          	0x80
 	wait              	2
-	playfram          	0x1ED
+	playfram          	0xA0
 	wait              	2
-	playfram          	0x1FE
+	playfram          	0xC0
 	wait              	2
-	playfram          	0x20F
-	wait              	2
-	playfram          	0x220
+	playfram          	0xE0
 	wait              	2
 	end
 
@@ -52440,3 +52425,36 @@ PatriarchWalkingToIdle:
 PatriarchWarpIn:
 	imgol             	128 0 0	# High Templar Warp Flash (protoss\templar.grp)
 	goto              	InfestedTerranLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 245 Wraith Engine (terran\wraith-engine.grp)
+# 1206 Vassal Engines (cm\protoss\vassal-engine.grp)
+.headerstart
+IsId          	730
+Type          	15
+Init          	Engines_MultiGlowHeader_OmniInit
+Death         	SkrylingExplosionDeath
+GndAttkInit   	SkrylingExplosionDeath
+AirAttkInit   	SkrylingExplosionDeath
+Unused1       	[NONE]
+GndAttkRpt    	SkrylingExplosionDeath
+AirAttkRpt    	SkrylingExplosionDeath
+CastSpell     	SkrylingExplosionDeath
+GndAttkToIdle 	SkrylingExplosionDeath
+AirAttkToIdle 	SkrylingExplosionDeath
+Unused2       	[NONE]
+Walking       	Engines_MultiGlowHeader_OmniInit
+WalkingToIdle 	SkrylingExplosionDeath
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	SkrylingExplosionDeath
+.headerend
+# ----------------------------------------------------------------------------- #
+
+Engines_MultiGlowHeader_OmniInit:
+	engframe			0
+	wait              	1
+	engframe			0x20
+	wait              	1
+	goto              	Engines_MultiGlowHeader_OmniInit

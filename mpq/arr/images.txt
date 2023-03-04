@@ -138,10 +138,10 @@ Archon Swirl
 Probe
 Probe Shadow
 Probe Warp Flash
-Scout
-Scout Shadow
-Scout Engines
-Scout Warp Flash
+Scout (deprecated)
+Scout Shadow (deprecated)
+Panoptus Engines
+Panoptus Warp Flash
 Accantor
 Accantor Shadow
 Accantor Warp Flash
@@ -1276,7 +1276,7 @@ Protoss Accelerant Medium
 Protoss Accelerant Small
 Vagrant
 Vagrant Shadow
-Ion Cannon Overlay
+Ion Cannon Attack A2
 Seeker Spores Silent
 Ion Field
 Ensnaring Brood Overlay
@@ -1450,8 +1450,8 @@ Orboth Omlia Shadow
 Ovileth Death Reversed
 Zerg Air Explosion Large Reversed
 Zerg Air Explosion Small Reversed
-Ion Cannon Underlay
-Ion Cannon Attack A
+Ion Cannon Mouse Response
+Ion Cannon Attack A1
 Ion Cannon Attack B
 Anthelion Teleport Depart
 Anthelion Teleport Arrive
@@ -1699,8 +1699,8 @@ Police WAT Trooper Shadow
 Madrigal Dirge Proc
 Spirtith Colony
 Spirtith Colony Shadow
-Extended Image #699
-Extended Image #700
+Ion Cannon Attack A3
+Ion Cannon Attack A4
 Extended Image #701
 Extended Image #702
 Extended Image #703
