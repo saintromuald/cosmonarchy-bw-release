@@ -10,6 +10,7 @@ Aside from that: More audiovisuals and balance updates are incoming!
 ## Bugfixes
 - AI unit reactions can no longer cause a silent crash involving Didact cloaking
 - Ocsal Larvae now spawn two Vorvrokors, Kalkalisks, and Ghitorokors per egg
+- It is no longer possible to load lifted structures
 - Hotkey conflicts between Pazuzu - Anticthon and Valkyrie - Seraph have been resolved
 - Aurora selected and order passive unit responses are no longer swapped
 - Some incorrect armor icons and unit training strings have been corrected
