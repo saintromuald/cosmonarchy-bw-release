@@ -291,7 +291,7 @@ Terran Armistice
 Terran Pythean
 Zerg Ogroszaleth
 Zerg Spirtith Colony
-Terran Heir
+Zerg Skortrith Colony
 Terran Horseman
 Terran Iron Council
 Terran Amphitheater

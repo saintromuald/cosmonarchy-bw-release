@@ -304,7 +304,7 @@ Physics Lab Connector
 Physics Lab Shadow
 Bunker
 Bunker Shadow
-Bunker Overlay
+Bunker Attack Overlay (Orange)
 Reservoir
 Reservoir Shadow
 Daedala
@@ -1701,17 +1701,17 @@ Spirtith Colony
 Spirtith Colony Shadow
 Ion Cannon Attack A3
 Ion Cannon Attack A4
-Extended Image #701
-Extended Image #702
-Extended Image #703
-Extended Image #704
-Extended Image #705
-Extended Image #706
-Extended Image #707
-Extended Image #708
-Extended Image #709
-Extended Image #710
-Extended Image #711
+Skortrith Colony
+Skortrith Colony Shadow
+Bunker Attack Overlay (Green)
+Bunker Attack Overlay (Blue)
+Terran Unit Rubble (Medium)
+Terran Unit Rubble (Small)
+Protoss Unit Rubble (Medium)
+Protoss Unit Rubble (Small)
+Zerg Unit Rubble (Medium)
+Zerg Unit Rubble (Small)
+Zerg Unit Rubble (Tiny)
 Extended Image #712
 Extended Image #713
 Extended Image #714

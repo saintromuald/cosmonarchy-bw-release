@@ -2312,27 +2312,27 @@ Optecton Weaponfire 1 01
 Optecton Weaponfire 1 02
 Optecton Weaponfire 1 03
 Optecton Weaponfire 1 04
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Spider Mine Deploy 01
+Terran Landing 01
+Matador Ready 01
+Matador Ready 02
+Matador Ready 03
+Matador Selected 01
+Matador Selected 02
+Matador Selected 03
+Matador Selected 04
+Matador Passive 01
+Matador Passive 02
+Matador Passive 03
+Matador Passive 04
+Matador Aggressive 01
+Matador Aggressive 02
+Matador Aggressive 03
+Matador Aggressive 04
+Matador Help 01
+Matador Help 02
+Matador Help 03
+Matador Help 04
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

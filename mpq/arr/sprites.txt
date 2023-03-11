@@ -375,8 +375,8 @@ Scarab/Anti-Matter Missile Overlay
 Hallucination Death1
 Hallucination Death2
 Hallucination Death3
-Bunker Overlay
-FlameThrower
+Bunker Attack Overlay (Orange)
+Flamethrower
 Recall Field
 Scanner Sweep Hit
 Left Upper Level Door
@@ -839,16 +839,16 @@ Police Deputy
 Police WAT Trooper
 Cuirass Stonewall Protocol Overlay
 Spirtith Colony
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
+Skortrith Colony
+Bunker Attack Overlay (Green)
+Bunker Attack Overlay (Blue)
+Terran Unit Rubble (Medium)
+Terran Unit Rubble (Small)
+Protoss Unit Rubble (Medium)
+Protoss Unit Rubble (Small)
+Zerg Unit Rubble (Medium)
+Zerg Unit Rubble (Small)
+Zerg Unit Rubble (Tiny)
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1
