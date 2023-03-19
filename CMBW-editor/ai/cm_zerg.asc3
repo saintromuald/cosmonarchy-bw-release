@@ -4759,7 +4759,7 @@ script_id ZMCx
 	bring 13 Ex 0 droleth|gosvileth Loc.63 blank_return
 	bring 13 AtL 1 cagrant_colony Loc.63 blank_return
 	local 255 AtL 30 larvosk_colony blank_return
-	add_bld 255 larvosk_colony 1 30 100
+	add_bld 255 larvosk_colony 1 5 100
 	call add_return_wait_960
 	goto production_cycle_success
 	
@@ -4768,7 +4768,7 @@ script_id ZMCx
 	var AtL|Jump prod_cycle_var 1 blank_return 13
 	bring 13 Ex 0 droleth|gosvileth Loc.63 blank_return
 	local 255 AtL 20 hachirosk|caphrolosk|gathtelosk blank_return
-	add_bld 255 hachirosk 1 20 97
+	add_bld 255 hachirosk 1 6 97
 	call add_return_wait_1440
 	goto production_cycle_success
 	
@@ -4778,8 +4778,8 @@ script_id ZMCx
 	bring 13 Ex 0 droleth|gosvileth Loc.63 blank_return
 	bring 13 Ex 0 irol_iris|irulent_ivoa|othstol_oviform|orboth_omlia Loc.63 blank_return
 	local 255 AtL 20 hachirosk|caphrolosk|gathtelosk blank_return
-	add_bld 255 hachirosk 1 20 98
-	add_bld 255 caphrolosk 1 20 98
+	add_bld 255 hachirosk 1 6 98
+	add_bld 255 caphrolosk 1 6 98
 	call add_return_wait_1440
 	goto production_cycle_success
 	
@@ -4789,8 +4789,8 @@ script_id ZMCx
 	bring 13 Ex 0 droleth|gosvileth Loc.63 blank_return
 	bring 13 Ex 0 othstol_oviform|orboth_omlia Loc.63 blank_return
 	local 255 AtL 20 hachirosk|caphrolosk|gathtelosk blank_return
-	add_bld 255 hachirosk 1 20 99
-	add_bld 255 gathtelosk 1 20 99
+	add_bld 255 hachirosk 1 6 99
+	add_bld 255 gathtelosk 1 6 99
 	call add_return_wait_1440
 	goto production_cycle_success
 	

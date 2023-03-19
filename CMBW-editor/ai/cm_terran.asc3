@@ -4776,7 +4776,7 @@ script_id TMCx
 	:production_cycle_barracks
 	notowns command_center blank_return
 	local 255 AtL 8 barracks blank_return
-	add_bld 255 barracks 1 8 97
+	add_bld 255 barracks 1 6 97
 	
 	:production_cycle_barracks_addon
 	var AtL|Jump pref_medbay 1 production_cycle_medbay 13
@@ -4811,7 +4811,7 @@ script_id TMCx
 	:production_cycle_captaincy
 	notowns fountainhead blank_return
 	local 255 AtL 8 captaincy blank_return
-	add_bld 255 captaincy 1 8 98
+	add_bld 255 captaincy 1 5 98
 	
 	:production_cycle_captaincy_addon
 	call production_cycle_guildhall
@@ -4842,7 +4842,7 @@ script_id TMCx
 	:production_cycle_apothecary
 	notowns daedala blank_return
 	local 255 AtL 8 apothecary blank_return
-	add_bld 255 apothecary 1 8 98
+	add_bld 255 apothecary 1 5 98
 	goto production_cycle_addon_success
 	
 	:production_cycle_fulcrum_check
@@ -4855,7 +4855,7 @@ script_id TMCx
 	:production_cycle_fulcrum
 	notowns command_center blank_return
 	local 255 AtL 8 fulcrum blank_return
-	add_bld 255 fulcrum 1 8 97
+	add_bld 255 fulcrum 1 6 97
 	
 	:production_cycle_fulcrum_addon
 	var AtL|Jump pref_machine_shop 1 production_cycle_machine_shop 13
@@ -4888,7 +4888,7 @@ script_id TMCx
 	:production_cycle_mantle
 	notowns atlas blank_return
 	local 255 AtL 8 mantle blank_return
-	add_bld 255 mantle 1 8 97
+	add_bld 255 mantle 1 5 97
 	wait 180
 	call main_wait_900
 	goto production_cycle_success
@@ -4901,7 +4901,7 @@ script_id TMCx
 	:production_cycle_iron_foundry
 	notowns atelier blank_return
 	local 255 AtL 8 iron_foundry blank_return
-	add_bld 255 iron_foundry 1 8 98
+	add_bld 255 iron_foundry 1 5 98
 	call main_wait_1200
 	
 	:production_cycle_iron_foundry_addon
@@ -4945,7 +4945,7 @@ script_id TMCx
 	:production_cycle_starport
 	notowns atlas blank_return
 	local 255 AtL 8 starport blank_return
-	add_bld 255 starport 1 8 98
+	add_bld 255 starport 1 6 98
 	wait 180
 	call main_wait_900
 	
@@ -4980,7 +4980,7 @@ script_id TMCx
 	:production_cycle_nanite_assembly
 	notowns atelier blank_return
 	local 255 AtL 8 nanite_assembly blank_return
-	add_bld 255 nanite_assembly 1 8 99
+	add_bld 255 nanite_assembly 1 5 99
 	call main_wait_1200
 	
 	:production_cycle_nanite_assembly_addon

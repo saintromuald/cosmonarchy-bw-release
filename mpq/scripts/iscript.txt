@@ -1115,6 +1115,7 @@ GeszithalorDeath:
 	imgol             	28 0 0	# Geszithalor Death (zerg\zguDeath.grp)
 	wait              	1
 	lowsprul			186 0 42 # Zerg Building Rubble Small
+	wait              	1
 	end
 
 GeszithalorUnused1:	
@@ -1851,6 +1852,7 @@ MutaliskDeath:
 	imgol             	41 0 0 # Mutalisk Death (zerg\zmuDeath.grp)
 	wait              	1
 	lowsprul			848 0 42 # Zerg Unit Rubble Medium
+	wait              	1
 	end
 
 MutaliskUnused1:
@@ -1948,6 +1950,7 @@ OvilethDeath:
 	imgol             	45 0 0 # Ovileth Death (zerg\zovDeath.grp)
 	wait              	1
 	lowsprul			848 0 42 # Zerg Unit Rubble Medium
+	wait              	1
 	end
 
 OvilethUnused1:
@@ -2051,6 +2054,7 @@ MatralethDeath:
 	sprol             	156 0 0	# Matraleth Death (zerg\zquDeath.grp)
 	wait              	1
 	lowsprul			848 0 42 # Zerg Unit Rubble Medium
+	wait              	1
 	end
 
 MatralethUnused1:
@@ -2421,20 +2425,20 @@ Death         	UltrokorRemnantsDeath
 # ----------------------------------------------------------------------------- #
 
 UltrokorRemnantsInit:
-	playfram          	0x00	# Frame set 0
-	wait              	255 
+	playfram          	0x00
+	wait              	255
 	wait				24
-	playfram          	1	# Frame set 0, direction 1
-	wait              	255 
+	playfram          	1
+	wait              	255
 	wait				24
-	playfram          	2	# Frame set 0, direction 2
-	wait              	255 
+	playfram          	2
+	wait              	255
 	wait				24
-	playfram          	3	# Frame set 0, direction 3
-	wait              	255 
+	playfram          	3
+	wait              	255
 	wait				24
-	playfram          	4	# Frame set 0, direction 4
-	wait              	255 
+	playfram          	4
+	wait              	255
 	wait				24
 	end
 	
@@ -2612,25 +2616,25 @@ ZethrokorGndAttkInit:
 	goto              	ZethrokorGndAttkToIdle
 
 ZethrokorWalking:
-	move              	2
+	move              	6
 	wait              	1
 	playfram          	0x66
-	move              	8
+	move              	6
 	wait              	1
 	playfram          	0x77
-	move              	9
+	move              	6
 	wait              	1
 	playfram          	0x88
-	move              	5
+	move              	6
 	wait              	1
 	playfram          	0x99
 	move              	6
 	wait              	1
 	playfram          	0xaa
-	move              	7
+	move              	6
 	wait              	1
 	playfram          	0xbb
-	move              	2
+	move              	6
 	wait              	1
 	playfram          	0x55
 	goto              	ZethrokorWalking
@@ -2661,7 +2665,7 @@ ZethrokorBurrow:
 ZethrokorUnBurrow:
 	wait 				1
 	waitrand          	1 4
-	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	imgul             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
 	playfram          	0xff
 	wait              	1
 	playfram          	0xee
@@ -2930,34 +2934,34 @@ WarpIn        	[NONE]
 # ----------------------------------------------------------------------------- #
 
 CerebrateInit:
-	imgul             	62 0 0	# Cerebrate Shadow (zerg\zucShad.grp)
-	playfram          	0x00	# Frame set 0
+	imgul             	62 0 0 # Cerebrate Shadow (zerg\zucShad.grp)
+	playfram          	0x00
 	goto              	InfestedTerranLocal00
 
 CerebrateDeath:
 	playsnd           	774	# Zerg\Bldg\ZBldgDth.WAV
-	imgol             	60 0 0	# Zerg Building Explosion (thingy\zBldDthS.grp)
+	imgol             	60 0 0 # Zerg Building Explosion (thingy\zBldDthS.grp)
 	wait              	3 
-	lowsprul          	186 0 0	# Zerg Building Rubble (Small) (thingy\ZRubbleS.grp)
+	lowsprul          	186 0 0 # Zerg Building Rubble (Small) (thingy\ZRubbleS.grp)
 	wait              	1 
 	end
 
 CerebrateAlmostBuilt:
-	imgol             	108 0 0	# Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
+	imgol             	108 0 0 # Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
 CerebrateBuilt:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	wait				2
 CerebrateIsWorking:
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	0x00	# Frame set 0
-	wait              	2 
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	0x00
+	wait              	2
 	goto              	CerebrateIsWorking
 
 # ----------------------------------------------------------------------------- #
@@ -3303,34 +3307,34 @@ WarpIn        	[NONE]
 # ----------------------------------------------------------------------------- #
 
 CreepColonyInit:
-	imgul             	69 0 0	# Creep Colony Shadow (zerg\zfcShad.grp)
-	playfram          	0x00	# Frame set 0
+	imgul             	69 0 0 # Creep Colony Shadow (zerg\zfcShad.grp)
+	playfram          	0x00
 	goto              	InfestedTerranLocal00
 
 CreepColonyAlmostBuilt:
-	imgol             	108 0 0	# Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
+	imgol             	108 0 0 # Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
 CreepColonyBuilt:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	wait				2
 CreepColonyLocal00:
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	0x00	# Frame set 0
-	wait              	2 
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	0x00
+	wait              	2
 	goto              	CreepColonyLocal00
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 070 Hatchery (zerg\hatchery.grp)
+# 070 Hachirosk (zerg\hatchery.grp)
 .headerstart
 IsId          	43
 Type          	20
-Init          	HatcheryInit
-Death         	HatcheryDeath
+Init          	HachiroskInit
+Death         	HachiroskDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -3344,22 +3348,22 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	HatcheryAlmostBuilt
-Built         	HatcheryBuilt
+AlmostBuilt   	HachiroskAlmostBuilt
+Built         	HachiroskBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	HatcheryIsWorking
-WorkingToIdle 	HatcheryWorkingToIdle
+IsWorking     	HachiroskIsWorking
+WorkingToIdle 	HachiroskWorkingToIdle
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-HatcheryInit:
-	imgul             	71 0 0 # Hatchery Shadow (zerg\zhaShad.grp)
+HachiroskInit:
+	imgul             	71 0 0 # Hachirosk Shadow (zerg\zhaShad.grp)
 	playfram          	0x00
-	goto              	HatcheryWorkingToIdle
+	goto              	HachiroskWorkingToIdle
 
-HatcheryWorkingToIdle:
+HachiroskWorkingToIdle:
 	playfram          	1
 	wait              	2
 	playfram          	2
@@ -3372,9 +3376,9 @@ HatcheryWorkingToIdle:
 	wait              	2
 	playfram          	0x00
 	wait              	4
-	goto              	HatcheryWorkingToIdle
+	goto              	HachiroskWorkingToIdle
 
-HatcheryDeath:
+HachiroskDeath:
 	playsnd           	774 # Zerg\Bldg\ZBldgDth.WAV
 	imgol             	60 0 0 # Zerg Building Explosion (thingy\zBldDthS.grp)
 	wait              	3
@@ -3382,14 +3386,14 @@ HatcheryDeath:
 	wait              	1
 	end
 
-HatcheryAlmostBuilt:
+HachiroskAlmostBuilt:
 	imgol             	108 0 0	# Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
-HatcheryBuilt:
-	playfram          	0x00	# Frame set 0
+HachiroskBuilt:
+	playfram          	0x00
 	wait				2
-	goto              	HatcheryWorkingToIdle
+	goto              	HachiroskWorkingToIdle
 
-HatcheryIsWorking:
+HachiroskIsWorking:
 	playfram          	6
 	wait              	2
 	playfram          	7
@@ -3430,16 +3434,16 @@ HatcheryIsWorking:
 	wait              	2
 	playfram          	7
 	waitrand          	2 4
-	goto              	HatcheryIsWorking
+	goto              	HachiroskIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 072 Hive (Zerg\Hive.grp)
+# 072 Gathtelosk (zerg\Hive.grp)
 .headerstart
 IsId          	44
 Type          	20
-Init          	HiveInit
-Death         	HiveDeath
+Init          	GathteloskInit
+Death         	GathteloskDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -3453,90 +3457,90 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	HiveAlmostBuilt
-Built         	HiveBuilt
+AlmostBuilt   	GathteloskAlmostBuilt
+Built         	GathteloskBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	HiveIsWorking
-WorkingToIdle 	HiveWorkingToIdle
+IsWorking     	GathteloskIsWorking
+WorkingToIdle 	GathteloskWorkingToIdle
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-HiveInit:
-	imgul             	73 0 0	# Hive Shadow (zerg\zhiShad.grp)
-	playfram          	0x00	# Frame set 0
-	goto              	HiveWorkingToIdle
+GathteloskInit:
+	imgul             	73 0 0 # Gathtelosk Shadow (zerg\zhiShad.grp)
+	playfram          	0x00
+	goto              	GathteloskWorkingToIdle
 
-HiveWorkingToIdle:
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	4 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	0x00	# Frame set 0
-	wait              	4 
-	goto              	HiveWorkingToIdle
+GathteloskWorkingToIdle:
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	4
+	playfram          	2
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	0x00
+	wait              	4
+	goto              	GathteloskWorkingToIdle
 
-HiveDeath:
-	playsnd           	774	# Zerg\Bldg\ZBldgDth.WAV
-	imgol             	60 0 0	# Zerg Building Explosion (thingy\zBldDthS.grp)
-	wait              	3 
-	lowsprul          	187 0 0	# Zerg Building Rubble (Large) (thingy\ZRubbleL.grp)
-	wait              	1 
+GathteloskDeath:
+	playsnd           	774 # Zerg\Bldg\ZBldgDth.WAV
+	imgol             	60 0 0 # Zerg Building Explosion (thingy\zBldDthS.grp)
+	wait              	3
+	lowsprul          	187 0 0 # Zerg Building Rubble (Large) (thingy\ZRubbleL.grp)
+	wait              	1
 	end
 
-HiveAlmostBuilt:
-	imgol             	109 0 0	# Zerg Building Spawn (Large) (zerg\zSpawn03.grp)
-HiveBuilt:
-	playfram          	0x00	# Frame set 0
+GathteloskAlmostBuilt:
+	imgol             	109 0 0 # Zerg Building Spawn (Large) (zerg\zSpawn03.grp)
+GathteloskBuilt:
+	playfram          	0x00
 	wait				2
-	goto              	HiveWorkingToIdle
+	goto              	GathteloskWorkingToIdle
 
-HiveIsWorking:
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	3 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	3 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	waitrand          	2 3 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	waitrand          	2 3 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	waitrand          	2 4 
-	goto              	HiveIsWorking
+GathteloskIsWorking:
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	3
+	playfram          	8
+	wait              	3
+	playfram          	9
+	wait              	2
+	playfram          	8
+	waitrand          	2 3
+	playfram          	7
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	waitrand          	2 3
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	6
+	waitrand          	2 4
+	goto              	GathteloskIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 074 Lair (zerg\Lair.grp)
+# 074 Caphrolosk (zerg\lair.grp)
 .headerstart
 IsId          	45
 Type          	20
-Init          	LairInit
-Death         	LairDeath
+Init          	CaphroloskInit
+Death         	CaphroloskDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -3550,81 +3554,81 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	LairAlmostBuilt
-Built         	LairBuilt
+AlmostBuilt   	CaphroloskAlmostBuilt
+Built         	CaphroloskBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	LairIsWorking
-WorkingToIdle 	LairWorkingToIdle
+IsWorking     	CaphroloskIsWorking
+WorkingToIdle 	CaphroloskWorkingToIdle
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-LairInit:
-	imgul             	75 0 0	# Lair Shadow (zerg\zlrShad.grp)
-	playfram          	0x00	# Frame set 0
-	goto              	LairWorkingToIdle
+CaphroloskInit:
+	imgul             	75 0 0 # Caphrolosk Shadow (zerg\zlrShad.grp)
+	playfram          	0x00
+	goto              	CaphroloskWorkingToIdle
 
-LairWorkingToIdle:
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	4 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	0x00	# Frame set 0
-	wait              	4 
-	goto              	LairWorkingToIdle
+CaphroloskWorkingToIdle:
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	4
+	playfram          	2
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	0x00
+	wait              	4
+	goto              	CaphroloskWorkingToIdle
 
-LairDeath:
+CaphroloskDeath:
 	playsnd           	774	# Zerg\Bldg\ZBldgDth.WAV
-	imgol             	60 0 0	# Zerg Building Explosion (thingy\zBldDthS.grp)
-	wait              	3 
-	lowsprul          	187 0 0	# Zerg Building Rubble (Large) (thingy\ZRubbleL.grp)
-	wait              	1 
+	imgol             	60 0 0 # Zerg Building Explosion (thingy\zBldDthS.grp)
+	wait              	3
+	lowsprul          	187 0 0 # Zerg Building Rubble (Large) (thingy\ZRubbleL.grp)
+	wait              	1
 	end
 
-LairAlmostBuilt:
+CaphroloskAlmostBuilt:
 	imgol             	109 0 0	# Zerg Building Spawn (Large) (zerg\zSpawn03.grp)
-LairBuilt:
-	playfram          	0x00	# Frame set 0
+CaphroloskBuilt:
+	playfram          	0x00
 	wait				2
-	goto              	LairWorkingToIdle
+	goto              	CaphroloskWorkingToIdle
 
-LairIsWorking:
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	3 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	3 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	waitrand          	2 3 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	waitrand          	2 3 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	waitrand          	2 4 
-	goto              	LairIsWorking
+CaphroloskIsWorking:
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	3
+	playfram          	8
+	wait              	3
+	playfram          	9
+	wait              	2
+	playfram          	8
+	waitrand          	2 3
+	playfram          	7
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	waitrand          	2 3
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	6
+	waitrand          	2 4
+	goto              	CaphroloskIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -3776,7 +3780,7 @@ SurkithColonyLocal00:
 
 SurkithColonyLocal01:
 	nobrkcodestart
-	playsnd           	78	# Bullet\ZLuFir00.wav
+	playsnd           	78 # Bullet\ZLuFir00.wav
 	playfram          	14
 	wait              	1
 	playfram          	15
@@ -5172,7 +5176,7 @@ SpecialState1 	[NONE]
 
 MinotaurInit:
 	imgul             	219 0 42 # Minotaur Shadow (terran\BattleCr.grp)
-	playfram          	0x00 # Frame set 0
+	playfram          	0x00
 	goto              	MinotaurGndAttkToIdle
 
 MinotaurGndAttkToIdle:
@@ -5184,6 +5188,7 @@ MinotaurDeath:
 	imgol             	333 0 0 # Explosion2 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			273 0 42 # Terran Building Rubble Small
+	wait              	1
 	end
 
 MinotaurGndAttkInit:
@@ -5329,6 +5334,7 @@ TrojanDeath:
 	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			844 0 42 # Terran Unit Rubble Medium
+	wait              	1
 	end
 
 TrojanWalking:
@@ -6998,6 +7004,7 @@ SeraphBaseDeath:
 	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			844 0 42 # Terran Unit Rubble Medium
+	wait              	1
 	end
 
 SeraphBaseCastSpell:
@@ -7088,6 +7095,7 @@ PhalanxTankBaseDeath:
 	imgol             	333 0 0 # Explosion2 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			844 0 0 # Terran Unit Rubble Medium
+	wait              	1
 	end
 	
 PhalanxTankBaseUnused1:
@@ -7218,6 +7226,7 @@ PhalanxSiegeBaseDeath:
 	imgol             	333 0 0 # Explosion2 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			844 0 0 # Terran Unit Rubble Medium
+	wait              	1
 	end
 	
 PhalanxSiegeBaseUnused1:
@@ -10467,6 +10476,7 @@ DidactDeath:
 	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			846 0 42 # Protoss Unit Rubble Medium
+	wait              	1
 	end
 
 DidactGndAttkInit:
@@ -10623,6 +10633,7 @@ ArchonEnergyDeath:
 	imgol             	214 0 0 # Explosion1 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			846 0 0 # Protoss Unit Rubble Medium
+	wait              	1
 	end
 	
 ArchonEnergyUnused1:
@@ -10844,13 +10855,14 @@ WarpIn        	SolarionWarpIn
 SolarionInit:
 	imgulnextid       	0 42
 	playfram          	0x00
-	goto              	OvilethLocal00
+	goto              	MinotaurGndAttkToIdle
 
 SolarionDeath:
 	playsndbtwn       	595 596	# Protoss\Carrier\PCaDth00.WAV | Protoss\Carrier\PCaDth01.WAV
 	imgol             	214 0 0	# Explosion1 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			223 0 42 # Protoss Building Rubble Small
+	wait              	1
 	end
 	
 SolarionUnused1:
@@ -10865,7 +10877,7 @@ SolarionUnused1:
 	setfldirect			14
 	tmprmgraphicend
 	nobrkcodeend
-	goto				OvilethLocal00
+	goto				MinotaurGndAttkToIdle
 
 SolarionWalking:
 	imgol             	114 0 0	# Solarion Engines (thingy\pcaGlow.grp)
@@ -11351,6 +11363,7 @@ EnvoyDeath:
 	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			846 0 42 # Protoss Unit Rubble Medium
+	wait              	1
 	end
 
 EnvoyWalking:
@@ -11433,6 +11446,7 @@ CantavisDeath:
 	playfram          	295
 	wait              	2
 	lowsprul			847 0 0 # Protoss Unit Rubble Small
+	wait              	1
 	end
 	
 CantavisUnused1:
@@ -11582,6 +11596,7 @@ AccantorDeath:
 	imgol             	214 0 0	# Explosion1 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			846 0 0 # Protoss Unit Rubble Medium
+	wait              	1
 	end
 	
 AccantorUnused1:
@@ -12062,6 +12077,7 @@ WitnessDeath:
 	imgol             	214 0 0 # Explosion1 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			847 0 42 # Protoss Unit Rubble Small
+	wait              	1
 	end
 
 WitnessWalking:
@@ -12111,47 +12127,47 @@ Enable        	TemplarArchivesBuilt
 # ----------------------------------------------------------------------------- #
 
 TemplarArchivesInit:
-	imgul             	157 0 0	# Templar Archives Shadow (protoss\pacShad.grp)
-	playfram          	1	# Frame set 0, direction 1
+	imgul             	157 0 0 # Templar Archives Shadow (protoss\pacShad.grp)
+	playfram          	1
 	goto              	TemplarArchivesBuilt
 
 TemplarArchivesBuilt:
-	wait              	125 
+	wait              	125
 	goto              	TemplarArchivesBuilt
 
 TemplarArchivesDeath:
-	playsnd           	7	# Misc\ExploLrg.wav
-	imgol             	215 0 0	# Explosion (Large) (thingy\tBangX.grp)
+	playsnd           	7 # Misc\ExploLrg.wav
+	imgol             	215 0 0 # Explosion (Large) (thingy\tBangX.grp)
 	wait              	3 
-	lowsprul          	223 0 0	# Protoss Building Rubble (Small) (thingy\PRubbleS.grp)
+	lowsprul          	223 0 0 # Protoss Building Rubble (Small) (thingy\PRubbleS.grp)
 	wait              	1 
 	end
 
 TemplarArchivesIsWorking:
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	1 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	1 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	1 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	1 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	1 
+	playfram          	2
+	wait              	2
+	playfram          	1
+	wait              	1
+	playfram          	2
+	wait              	1
+	playfram          	1
+	wait              	1
+	playfram          	2
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	1
+	playfram          	1
+	wait              	1
 	goto              	TemplarArchivesIsWorking
 
 TemplarArchivesWorkingToIdle:
-	playfram          	1	# Frame set 0, direction 1
+	playfram          	1
 	goto              	TemplarArchivesBuilt
 
 TemplarArchivesWarpIn:
-	imgol             	156 0 0	# Templar Archives Warp Flash (protoss\archives.grp)
+	imgol             	156 0 0 # Templar Archives Warp Flash (protoss\archives.grp)
 	goto              	TemplarArchivesBuilt
 
 # ----------------------------------------------------------------------------- #
@@ -12277,47 +12293,47 @@ Enable        	ObservatoryBuilt
 # ----------------------------------------------------------------------------- #
 
 ObservatoryInit:
-	imgul             	163 0 0	# Observatory Shadow (protoss\pbeShad.grp)
-	playfram          	1	# Frame set 0, direction 1
+	imgul             	163 0 0 # Observatory Shadow (protoss\pbeShad.grp)
+	playfram          	1
 	goto              	ObservatoryBuilt
 
 ObservatoryBuilt:
-	wait              	125 
+	wait              	125
 	goto              	ObservatoryBuilt
 
 ObservatoryDeath:
-	playsnd           	7	# Misc\ExploLrg.wav
-	imgol             	215 0 0	# Explosion (Large) (thingy\tBangX.grp)
+	playsnd           	7 # Misc\ExploLrg.wav
+	imgol             	215 0 0 # Explosion (Large) (thingy\tBangX.grp)
 	wait              	3 
-	lowsprul          	223 0 0	# Protoss Building Rubble (Small) (thingy\PRubbleS.grp)
+	lowsprul          	223 0 0 # Protoss Building Rubble (Small) (thingy\PRubbleS.grp)
 	wait              	1 
 	end
 
 ObservatoryIsWorking:
-	playfram          	2	# Frame set 0, direction 2
-	wait              	3 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	1 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	1 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	1 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	3 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	1 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	1 
+	playfram          	2
+	wait              	3
+	playfram          	1
+	wait              	1
+	playfram          	2
+	wait              	1
+	playfram          	1
+	wait              	1
+	playfram          	2
+	wait              	3
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	1
+	playfram          	1
+	wait              	1
 	goto              	ObservatoryIsWorking
 
 ObservatoryWorkingToIdle:
-	playfram          	1	# Frame set 0, direction 1
+	playfram          	1
 	goto              	ObservatoryBuilt
 
 ObservatoryWarpIn:
-	imgol             	162 0 0	# Observatory Warp Flash (protoss\beacon.grp)
+	imgol             	162 0 0 # Observatory Warp Flash (protoss\beacon.grp)
 	goto              	ObservatoryBuilt
 
 # ----------------------------------------------------------------------------- #
@@ -13104,61 +13120,61 @@ Enable        	RoboticsFacilityEnable
 # ----------------------------------------------------------------------------- #
 
 RoboticsFacilityInit:
-	imgul             	194 0 0	# Robotics Facility Shadow (protoss\proShad.grp)
-	playfram          	0x00	# Frame set 0
+	imgul             	194 0 0 # Robotics Facility Shadow (protoss\proShad.grp)
+	playfram          	0x00
 RoboticsFacilityBuilt:
-	wait              	125 
+	wait              	125
 	goto              	RoboticsFacilityBuilt
 
 RoboticsFacilityDeath:
-	playsnd           	7	# Misc\ExploLrg.wav
+	playsnd           	7 # Misc\ExploLrg.wav
 	imgol             	215 0 0	# Explosion (Large) (thingy\tBangX.grp)
-	wait              	3 
+	wait              	3
 	lowsprul          	223 0 0	# Protoss Building Rubble (Small) (thingy\PRubbleS.grp)
-	wait              	1 
+	wait              	1
 	end
 
 RoboticsFacilityIsWorking:
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	2 
-	playfram          	10	# Frame set 0, direction 10
-	wait              	2 
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	10
+	wait              	2
 	goto              	RoboticsFacilityIsWorking
 
 RoboticsFacilityWorkingToIdle:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	goto              	RoboticsFacilityBuilt
 
 RoboticsFacilityWarpIn:
-	imgol             	193 0 0	# Robotics Facility Warp Flash (protoss\robotic.grp)
+	imgol             	193 0 0 # Robotics Facility Warp Flash (protoss\robotic.grp)
 	goto              	RoboticsFacilityBuilt
 
 RoboticsFacilityDisable:
-	playfram          	11	# Frame set 0, direction 11
-	wait              	2 
-	playfram          	12	# Frame set 0, direction 12
+	playfram          	11
+	wait              	2
+	playfram          	12
 	goto              	RoboticsFacilityBuilt
 
 RoboticsFacilityEnable:
-	playfram          	11	# Frame set 0, direction 11
-	wait              	2 
-	playfram          	0x00	# Frame set 0
+	playfram          	11
+	wait              	2
+	playfram          	0x00
 	goto              	RoboticsFacilityBuilt
 
 # ----------------------------------------------------------------------------- #
@@ -13633,47 +13649,47 @@ Enable        	FleetBeaconBuilt
 # ----------------------------------------------------------------------------- #
 
 FleetBeaconInit:
-	imgul             	212 0 0	# Fleet Beacon Shadow (protoss\pwaShad.grp)
-	playfram          	1	# Frame set 0, direction 1
+	imgul             	212 0 0 # Fleet Beacon Shadow (protoss\pwaShad.grp)
+	playfram          	1
 	goto              	FleetBeaconBuilt
 
 FleetBeaconBuilt:
-	wait              	125 
+	wait              	125
 	goto              	FleetBeaconBuilt
 
 FleetBeaconDeath:
-	playsnd           	7	# Misc\ExploLrg.wav
-	imgol             	215 0 0	# Explosion (Large) (thingy\tBangX.grp)
-	wait              	3 
-	lowsprul          	223 0 0	# Protoss Building Rubble (Small) (thingy\PRubbleS.grp)
-	wait              	1 
+	playsnd           	7 # Misc\ExploLrg.wav
+	imgol             	215 0 0 # Explosion (Large) (thingy\tBangX.grp)
+	wait              	3
+	lowsprul          	223 0 0 # Protoss Building Rubble (Small) (thingy\PRubbleS.grp)
+	wait              	1
 	end
 
 FleetBeaconIsWorking:
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	1 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	1 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	1 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	1 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	1 
+	playfram          	2
+	wait              	2
+	playfram          	1
+	wait              	1
+	playfram          	2
+	wait              	1
+	playfram          	1
+	wait              	1
+	playfram          	2
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	1
+	playfram          	1
+	wait              	1
 	goto              	FleetBeaconIsWorking
 
 FleetBeaconWorkingToIdle:
-	playfram          	1	# Frame set 0, direction 1
+	playfram          	1
 	goto              	FleetBeaconBuilt
 
 FleetBeaconWarpIn:
-	imgol             	209 0 0	# Fleet Beacon Warp Flash (protoss\warp.grp)
+	imgol             	209 0 0 # Fleet Beacon Warp Flash (protoss\warp.grp)
 	goto              	FleetBeaconBuilt
 
 # ----------------------------------------------------------------------------- #
@@ -14970,25 +14986,24 @@ VorvrokorGndAttkInit:
 	goto              	VorvrokorGndAttkToIdle
 
 VorvrokorWalking:
-	move              	2
+	move              	7
 	wait              	1
 	playfram          	0x66
-	move              	8
+	move              	7
 	wait              	1
 	playfram          	0x77
-	move              	9
+	move              	7
 	wait              	1
 	playfram          	0x88
-	move              	5
+	move              	7
 	wait              	1
 	playfram          	0x99
-	move              	6
+	move              	7
 	wait              	1
 	playfram          	0xaa
 	move              	7
 	wait              	1
 	playfram          	0xbb
-	move              	2
 	goto              	VorvrokorWalking
 
 VorvrokorSpecialState2:
@@ -21219,6 +21234,7 @@ VithriliskDeath:
 	sprol             	483 0 0 # Vithrilisk Death (zerg\zdvDeath.grp)
 	wait              	1
 	lowsprul			848 0 42 # Zerg Unit Rubble Medium
+	wait              	1
 	end
 
 VithriliskGndAttkInit:
@@ -21574,6 +21590,7 @@ ValkyrieDeath:
 	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			844 0 42 # Terran Unit Rubble Medium
+	wait              	1
 	end
 
 ValkyrieAirAttkInit:
@@ -21698,6 +21715,7 @@ MindTyrantEnergyDeath:
 	imgol             	928 0 0	# Mind Tyrant Death (protoss\PdaDeath.grp)
 	wait              	3
 	lowsprul			846 0 0 # Protoss Unit Rubble Medium
+	wait              	1
 	end
 	
 MindTyrantEnergyUnused1:
@@ -21983,6 +22001,7 @@ LanifectDeath:
 	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			847 0 42 # Protoss Unit Rubble Small
+	wait              	1
 	end
 
 LanifectAirAttkInit:
@@ -22210,6 +22229,7 @@ CabalistDeath:
 	imgol             	153 0 0	# Zealot Death (protoss\zealot.grp)
 	wait              	1
 	lowsprul			847 0 0 # Protoss Unit Rubble Small
+	wait              	1
 	end
 
 CabalistUnused1:
@@ -22498,6 +22518,7 @@ ExemplarDeath:
 	imgol             	1563 -4 6 # Exemplar Death
 	wait              	3
 	lowsprul			846 0 42 # Protoss Unit Rubble Medium
+	wait              	1
 	end
 
 ExemplarGndAttkInit:
@@ -24035,6 +24056,7 @@ GorgrokorDeath:
 	imgol             	28 0 0 # Geszithalor Death (zerg\zguDeath.grp)
 	wait              	1
 	lowsprul			186 0 42 # Zerg Building Rubble Small
+	wait              	1
 	end
 
 GorgrokorGndAttkInit:
@@ -24157,6 +24179,7 @@ IrolethDeath:
 	imgol             	45 0 0 # Ovileth Death (zerg\zovDeath.grp)
 	wait              	1
 	lowsprul			848 0 42 # Zerg Unit Rubble Medium
+	wait              	1
 	end
 
 IrolethGndAttkInit:
@@ -24381,6 +24404,7 @@ AuroraDeath:
 	imgol             	1164 0 0 # Beta Protoss Explosion (small) (thingy\pexplode.grp)
 	wait              	3
 	lowsprul			847 0 42 # Protoss Unit Rubble Small
+	wait              	1
 	end
 
 AuroraGndAttkInit:
@@ -24463,6 +24487,7 @@ PanoptusDeath:
 	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			846 0 42 # Protoss Unit Rubble Medium
+	wait              	1
 	end
 
 PanoptusGndAttkInit:
@@ -24548,6 +24573,7 @@ CentaurDeath:
 	imgol             	332 -5 -5 # Explosion2 (Small) (thingy\tBangS.grp)
 	wait				5
 	lowsprul			273 0 42 # Terran Building Rubble Small
+	wait              	1
 	end
 	
 CentaurUnused1:
@@ -24641,6 +24667,7 @@ CuirassDeath:
 	imgol             	332 0 0	# Explosion2 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			844 0 0 # Terran Unit Rubble Medium
+	wait              	1
 	end
 	
 CuirassUnused1:
@@ -24843,6 +24870,7 @@ MadrigalDeath:
 	imgol             	1497 0 0 # Madrigal Death
 	wait              	3
 	lowsprul			844 0 0 # Terran Unit Rubble Medium
+	wait              	1
 	end
 
 MadrigalUnused1:
@@ -24969,6 +24997,7 @@ PaladinDeath:
 	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			273 0 0 # Terran Building Rubble Small
+	wait              	1
 	end
 	
 PaladinUnused1:
@@ -25582,6 +25611,7 @@ OthstolethDeath:
 	imgol             	45 0 0	# Ovileth Death (zerg\zovDeath.grp)
 	wait              	1
 	lowsprul			186 0 42 # Zerg Building Rubble Small
+	wait              	1
 	end
 
 OthstolethWalking:
@@ -26518,6 +26548,7 @@ SimulacrumDeath:
 	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			847 0 0 # Protoss Unit Rubble Small
+	wait              	1
 	end
 
 SimulacrumGndAttkInit:
@@ -26752,6 +26783,7 @@ PytheanDeath:
 	imgol             	333 0 0 # Explosion2 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			273 0 42 # Terran Building Rubble Small
+	wait              	1
 	end
 
 PytheanWalking:
@@ -27150,6 +27182,7 @@ NathrokorDeath:
 	imgol             	3 0 0 # Skryling Death (zerg\zavDeath.grp)
 	wait              	1
 	lowsprul			850 0 42 # Zerg Unit Rubble Tiny
+	wait              	1
 	end
 
 NathrokorGndAttkInit:
@@ -27226,7 +27259,7 @@ GndAttkToIdle 	EmpyreanGndAttkToIdle
 AirAttkToIdle 	EmpyreanGndAttkToIdle
 Unused2       	[NONE]
 Walking       	EmpyreanWalking
-WalkingToIdle 	EmpyreanWalkingToIdle
+WalkingToIdle 	MinotaurGndAttkToIdle
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
@@ -27243,24 +27276,14 @@ EmpyreanInit:
 	imgul             	1099 0 42 # Empyrean Shadow (protoss\empyrean.grp)
 EmpyreanGndAttkToIdle:
 	playfram          	0x00
-	goto              	EmpyreanWalkingToIdle
-
-EmpyreanWalkingToIdle:
-	setvertpos        	0
-	wait 				8
-	setvertpos        	0
-	wait 				8
-	setvertpos        	-1
-	wait 				8
-	setvertpos        	0
-	wait 				8
-	goto              	EmpyreanWalkingToIdle
+	goto              	MinotaurGndAttkToIdle
 
 EmpyreanDeath:
 	playsnd           	533
 	imgol             	214 0 0	# Explosion1 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			223 0 42 # Protoss Building Rubble Small
+	wait              	1
 	end
 
 EmpyreanGndAttkInit:
@@ -27290,99 +27313,7 @@ EmpyreanWalking:
 EmpyreanWarpIn:
 	imgol             	143 0 0 # Empyrean Warp Flash (protoss\empyrean.grp)
 	goto              	EmpyreanLocal00
-	
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 1100 Nathrok Lake (cm\zerg\nathroklake.grp)
-.headerstart
-IsId          	454
-Type          	20
-Init          	NathrokLakeInit
-Death         	NathrokLakeDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
-Unused1       	[NONE]
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
-Walking       	[NONE]
-WalkingToIdle 	[NONE]
-SpecialState1 	[NONE]
-SpecialState2 	[NONE]
-AlmostBuilt   	NathrokLakeAlmostBuilt
-Built         	NathrokLakeBuilt
-Landing       	[NONE]
-LiftOff       	[NONE]
-IsWorking     	NathrokLakeIsWorking
-WorkingToIdle 	NathrokLakeWorkingToIdle
-WarpIn        	[NONE]
-.headerend
-# ----------------------------------------------------------------------------- #
 
-NathrokLakeInit:
-	playfram          	0x00	# Frame set 0
-	imgul             	1101 0 0 # Nathrok Lake Shadow (cm\zerg\nathroklake-shad.grp)
-	goto              	NathrokLakeWorkingToIdle
-
-NathrokLakeWorkingToIdle:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	goto              	NathrokLakeWorkingToIdle
-
-NathrokLakeDeath:
-	playsnd           	774	# Zerg\Bldg\ZBldgDth.WAV
-	imgol             	60 0 0	# Zerg Building Explosion (thingy\zBldDthS.grp)
-	wait              	3 
-	lowsprul          	186 0 0	# Zerg Building Rubble (Small) (thingy\ZRubbleS.grp)
-	wait              	1 
-	end
-
-NathrokLakeAlmostBuilt:
-	imgol             	108 0 0	# Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
-	playfram          	0x00	# Frame set 0
-	goto              	NathrokLakeBuilt
-
-NathrokLakeBuilt:
-	playfram          	0x00	# Frame set 0
-	wait				2
-	goto              	NathrokLakeWorkingToIdle
-
-NathrokLakeIsWorking:
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	3 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	3 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	waitrand          	2 3 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	waitrand          	2 4 
-	goto              	NathrokLakeIsWorking
-	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 1102 Phase Link (cm\effect\phaselink-small.grp)
@@ -27397,8 +27328,8 @@ Death         	PhaseLinkDeath
 # ----------------------------------------------------------------------------- #
 
 PhaseLinkInit:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
+	playfram          	0x00
+	wait              	2
 PhaseLinkLocal00:
 	playfram			1
 	wait 				2
@@ -27419,7 +27350,7 @@ PhaseLinkLocal00:
 	goto				PhaseLinkDeath
 
 PhaseLinkDeath:
-	wait              	1 
+	wait              	1
 	end
 	
 # ----------------------------------------------------------------------------- #
@@ -27434,8 +27365,8 @@ Death         	ExemplarLaserImpactDeath
 # ----------------------------------------------------------------------------- #
 
 ExemplarLaserImpactInit:
-	playfram          	0x00	# Frame set 0
-	wait              	1 
+	playfram          	0x00
+	wait              	1
 ExemplarLaserImpactLocal00:
 	playfram			1
 	wait 				1
@@ -27462,10 +27393,10 @@ ExemplarLaserImpactLocal00:
 	playfram			13
 	wait				1
 	playfram			14
-	goto ExemplarLaserImpactDeath
+	goto 				ExemplarLaserImpactDeath
 
 ExemplarLaserImpactDeath:
-	wait              	1 
+	wait              	1
 	end
 	
 # ----------------------------------------------------------------------------- #
@@ -27814,6 +27745,7 @@ AlkajeliskDeath:
 	imgol             	28 0 0 # Geszithalor Death (zerg\zguDeath.grp)
 	wait              	1
 	lowsprul			186 0 42 # Zerg Building Rubble Small
+	wait              	1
 	end
 
 AlkajeliskGndAttkInit:
@@ -28070,6 +28002,7 @@ StarSovereignDeath:
 	imgol				1566 0 0 # Protoss Explosion (Large)
 	wait              	3
 	lowsprul			224 0 42 # Protoss Building Rubble Large
+	wait              	1
 	end
 
 StarSovereignUnused1:
@@ -29218,7 +29151,7 @@ WarpIn        	[NONE]
 # ----------------------------------------------------------------------------- #
 
 PrincipalityInit:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	imgul             	1133 0 0 # Principality Shadow (cm\protoss\principality.grp)
 	goto              	PrincipalityLanding
 
@@ -29227,15 +29160,15 @@ PrincipalityLanding:
 	goto              	PrincipalityLanding
 
 PrincipalityDeath:
-	playsnd           	7	# Misc\ExploLrg.wav
-	imgol             	215 0 0	# Explosion (Large) (thingy\tBangX.grp)
-	wait              	3 
-	lowsprul          	223 0 0	# Protoss Building Rubble (Small) (thingy\PRubbleS.grp)
-	wait              	1 
+	playsnd           	7 # Misc\ExploLrg.wav
+	imgol             	215 0 0 # Explosion (Large) (thingy\tBangX.grp)
+	wait              	3
+	lowsprul          	223 0 0 # Protoss Building Rubble (Small) (thingy\PRubbleS.grp)
+	wait              	1
 	end
 	
 PrincipalityBuilt:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	goto              	PrincipalityLanding
 	
 PrincipalityWarpIn:
@@ -29295,6 +29228,7 @@ GladiusDeath:
 	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			846 0 42 # Protoss Unit Rubble Medium
+	wait              	1
 	end
 
 GladiusGndAttkInit:
@@ -29375,6 +29309,7 @@ MagisterDeath:
 	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			846 0 42 # Protoss Unit Rubble Medium
+	wait              	1
 	end
 
 MagisterGndAttkInit:
@@ -29463,6 +29398,7 @@ VassalDeath:
 	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			847 0 42 # Protoss Unit Rubble Small
+	wait              	1
 	end
 
 VassalGndAttkInit:
@@ -29641,6 +29577,7 @@ SalamanderDeath:
 	imgol             	333 0 0 # Explosion2 (Medium) (thingy\tBangL.grp)
 	wait              	8
 	lowsprul			844 0 42 # Terran Unit Rubble Medium
+	wait              	1
 	end
 
 SalamanderGndAttkInit:
@@ -29765,6 +29702,7 @@ GorgonDeath:
 	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			844 0 42 # Terran Unit Rubble Medium
+	wait              	1
 	end
 
 GorgonGndAttkInit:
@@ -29840,6 +29778,7 @@ PhobosDeath:
 	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			274 0 42 # Terran Building Rubble Large
+	wait              	1
 	end
 
 PhobosGndAttkInit:
@@ -30867,6 +30806,7 @@ AmaranthDeath:
 	imgol             	153 0 0	# Zealot Death (protoss\zealot.grp)
 	wait              	1
 	lowsprul			847 0 0 # Protoss Unit Rubble Small
+	wait              	1
 	end
 
 AmaranthGndAttkInit:
@@ -31417,6 +31357,7 @@ IdolDeath:
 	imgol             	214 0 0	# Explosion1 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			847 0 0 # Protoss Unit Rubble Small
+	wait              	1
 	end
 
 IdolGndAttkInit:
@@ -31511,6 +31452,7 @@ GolemDeath:
 	imgol             	214 0 0	# Explosion1 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			847 0 0 # Protoss Unit Rubble Small
+	wait              	1
 	end
 
 GolemGndAttkInit:
@@ -31620,6 +31562,7 @@ BarghestDeath:
 	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			847 0 42 # Protoss Unit Rubble Small
+	wait              	1
 	end
 
 BarghestGndAttkInit:
@@ -31827,6 +31770,7 @@ PariahDeath:
 	imgol             	153 0 0	# Zealot Death (protoss\zealot.grp)
 	wait              	3
 	lowsprul			846 0 0 # Protoss Unit Rubble Medium
+	wait              	1
 	end
 
 PariahGndAttkInit:
@@ -32002,6 +31946,7 @@ TalosDeath:
 	imgol             	332 0 0	# Explosion2 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			845 0 42 # Terran Unit Rubble Small
+	wait              	1
 	end
 
 TalosGndAttkInit:
@@ -32633,6 +32578,7 @@ KalkaliskDeath:
 	imgol             	41 0 0 # Mutalisk Death (zerg\zmuDeath.grp)
 	wait              	1
 	lowsprul			848 0 42 # Zerg Unit Rubble Medium
+	wait              	1
 	end
 
 KalkaliskGndAttkInit:
@@ -32869,6 +32815,7 @@ ManifoldDeath:
 	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
 	wait 				3
 	lowsprul			847 0 0 # Protoss Unit Rubble Small
+	wait              	1
 	end
 
 ManifoldGndAttkInit:
@@ -32984,6 +32931,7 @@ ArchitectDeath:
 	imgol             	214 0 0	# Explosion1 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			223 0 0 # Protoss Building Rubble Small
+	wait              	1
 	end
 
 ArchitectGndAttkInit:
@@ -35836,6 +35784,7 @@ AlmaksaliskDeath:
 	imgol             	28 0 0 # Geszithalor Death (zerg\zguDeath.grp)
 	wait              	1
 	lowsprul			848 0 42 # Zerg Unit Rubble Medium
+	wait              	1
 	end
 
 AlmaksaliskUnused1:
@@ -37247,6 +37196,7 @@ HeraclesDeath:
 	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			844 0 0 # Terran Unit Rubble Medium
+	wait              	1
 	end
 
 HeraclesUnused1:
@@ -37364,6 +37314,7 @@ PazuzuDeath:
 	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			273 0 0 # Terran Building Rubble Small
+	wait              	1
 	end
 	
 PazuzuUnused1:
@@ -37641,6 +37592,7 @@ HierophantDeath:
 HierophantUnused1:
 	wait				1
 	nobrkcodestart
+	setfldirect       	0
 	playsnd           	1704 # Hierophant Revive 01
 	sprol				746 0 0 # Zealot Death Reversed (protoss\zealot.grp)
 	wait				2
@@ -37808,6 +37760,7 @@ ClarionDeath:
 	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			847 0 42 # Protoss Unit Rubble Small
+	wait              	1
 	end
 
 ClarionGndAttkInit:
@@ -37913,9 +37866,10 @@ LegionnaireDeath:
 	end
 
 LegionnaireGndAttkInit:
-	wait              	1
+	playfram          	0x100
 LegionnaireGndAttkRpt:
 	playfram          	0x100
+	wait              	1
 	nobrkcodestart
 	playsnd				1896 # Legionnaire weapon fire 01
 	playfram          	0x120
@@ -37967,7 +37921,7 @@ LegionnaireWalking:
 LegionnaireWarpIn:
 	imgol             	154 0 0 # Zealot Warp Flash (protoss\zealot.grp)
 	goto              	LegionnaireLocal00
-		
+
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 1342 Blackjack (cm\terran\blackjack.grp)
@@ -38837,6 +38791,7 @@ AkistrokorDeath:
 	sprol             	156 0 0	# Matraleth Death (zerg\zquDeath.grp)
 	wait              	1
 	lowsprul			848 0 42 # Zerg Unit Rubble Medium
+	wait              	1
 	end
 
 AkistrokorGndAttkInit:
@@ -39294,6 +39249,7 @@ ClaymoreDeath:
 	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			273 0 0 # Terran Building Rubble Small
+	wait              	1
 	end
 
 ClaymoreGndAttkInit:
@@ -39704,6 +39660,7 @@ DemiurgeDeath:
 	imgol             	153 0 0	# Zealot Death (protoss\zealot.grp)
 	wait              	3
 	lowsprul			223 0 0 # Protoss Building Rubble Small
+	wait              	1
 	end
 
 DemiurgeGndAttkInit:
@@ -40028,6 +39985,7 @@ CharlatanDeath:
 	playfram			244
 	wait              	2
 	lowsprul			847 0 0 # Protoss Unit Rubble Small
+	wait              	1
 	end
 	
 CharlatanUnused1:
@@ -40555,6 +40513,7 @@ SkithrokorDeath:
 	imgol             	28 0 0 # Geszithalor Death (zerg\zguDeath.grp)
 	wait              	1
 	lowsprul			849 0 42 # Zerg Unit Rubble Small
+	wait              	1
 	end
 
 SkithrokorUnused1:
@@ -40629,107 +40588,6 @@ SkithrokorWalking:
 	playfram          	0x00
 	wait              	1
 	goto              	SkithrokorWalking
-	
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 1349 Skithrok Scab (cm\zerg\skithrokscab.grp)
-.headerstart
-IsId          	597
-Type          	20
-Init          	SkithrokScabInit
-Death         	SkithrokScabDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
-Unused1       	[NONE]
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
-Walking       	[NONE]
-WalkingToIdle 	[NONE]
-SpecialState1 	[NONE]
-SpecialState2 	[NONE]
-AlmostBuilt   	SkithrokScabAlmostBuilt
-Built         	SkithrokScabBuilt
-Landing       	[NONE]
-LiftOff       	[NONE]
-IsWorking     	SkithrokScabIsWorking
-WorkingToIdle 	SkithrokScabWorkingToIdle
-WarpIn        	[NONE]
-.headerend
-# ----------------------------------------------------------------------------- #
-
-SkithrokScabInit:
-	imgul             	1395 0 0 # Skithrok Scab Shadow (zerg\skithrokscab-shad.grp)
-	playfram          	0x00
-	goto              	SkithrokScabWorkingToIdle
-
-SkithrokScabWorkingToIdle:
-	playfram          	0x00
-	wait              	2 
-	playfram          	1
-	wait              	2 
-	playfram          	2
-	wait              	2 
-	playfram 			3
-	wait 				2
-	playfram 			4
-	wait 				2
-	playfram 			5
-	wait 				2
-	playfram 			6
-	wait 				2
-	playfram 			7
-	wait 				2
-	playfram 			8
-	wait 				2
-	playfram 			9
-	wait 				2
-	playfram 			10
-	wait 				2
-	goto              	SkithrokScabWorkingToIdle
-
-SkithrokScabDeath:
-	playsnd           	774	# Zerg\Bldg\ZBldgDth.WAV
-	imgol             	60 0 0	# Zerg Building Explosion (thingy\zBldDthS.grp)
-	wait              	3 
-	lowsprul          	186 0 0	# Zerg Building Rubble (Small) (thingy\ZRubbleS.grp)
-	wait              	1 
-	end
-
-SkithrokScabAlmostBuilt:
-	imgol             	107 0 0	# Zerg Building Spawn (Small) (zerg\zSpawn01.grp)
-SkithrokScabBuilt:
-	playfram          	0x00
-	wait				2
-	goto              	SkithrokScabWorkingToIdle
-
-SkithrokScabIsWorking:
-	playfram          	0x00
-	wait              	1 
-	playfram          	1
-	wait              	1 
-	playfram          	2
-	wait              	1 
-	playfram 			3
-	wait 				1
-	playfram 			4
-	wait 				1
-	playfram 			5
-	wait				1
-	playfram			6
-	wait 				1
-	playfram 			7
-	wait 				1
-	playfram 			8
-	wait				1
-	playfram 			9
-	wait 				1
-	playfram 			10
-	wait 				1
-	goto              	SkithrokScabIsWorking
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -40967,6 +40825,7 @@ SovrolethDeath:
 	imgol             	3 0 0 # Skryling Death (zerg\zavDeath.grp)
 	wait              	1
 	lowsprul			850 0 42 # Zerg Unit Rubble Tiny
+	wait              	1
 	end
 	
 SovrolethCastSpell:
@@ -41893,6 +41752,7 @@ AxitriliskDeath:
 	imgol             	3 0 0 # Skryling Death (zerg\zavDeath.grp)
 	wait              	1
 	lowsprul			849 0 0 # Zerg Unit Rubble Small
+	wait              	1
 	end
 	
 AxitriliskUnused1:
@@ -42123,6 +41983,7 @@ AnthelionDeath:
 	imgol				214 0 0
 	wait              	3
 	lowsprul			224 0 42 # Protoss Building Rubble Large
+	wait              	1
 	end
 
 AnthelionGndAttkInit:
@@ -42254,6 +42115,7 @@ AnticthonDeath:
 	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			273 0 0 # Terran Building Rubble Small
+	wait              	1
 	end
 	
 AnticthonUnused1:
@@ -42874,6 +42736,7 @@ EmpressDeath:
 	imgol             	214 0 0	# Explosion1 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			846 0 42 # Protoss Unit Rubble Medium
+	wait              	1
 	end
 
 EmpressGndAttkInit:
@@ -43589,7 +43452,7 @@ GndAttkToIdle 	MagnetarGndAttkToIdle
 AirAttkToIdle 	MagnetarGndAttkToIdle
 Unused2       	[NONE]
 Walking       	MagnetarWalking
-WalkingToIdle 	MagnetarWalkingToIdle
+WalkingToIdle 	MinotaurGndAttkToIdle
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
@@ -43605,25 +43468,15 @@ WarpIn        	[NONE]
 MagnetarInit:
 	imgul             	1470 0 42 # Magnetar Shadow (cm\terran\magnetar.grp)
 MagnetarGndAttkToIdle:
-	playfram          	0x00 # Frame set 0
-	goto              	MagnetarWalkingToIdle
-
-MagnetarWalkingToIdle:
-	setvertpos        	0
-	wait 				8
-	setvertpos        	0 
-	wait 				8
-	setvertpos        	-1
-	wait 				8
-	setvertpos        	0 
-	wait 				8
-	goto              	MagnetarWalkingToIdle
+	playfram          	0x00
+	goto              	MinotaurGndAttkToIdle
 
 MagnetarDeath:
 	playsnd           	177	# Terran\BATTLE\tbaDth00.wav
 	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			273 0 42 # Terran Building Rubble Small
+	wait              	1
 	end
 	
 MagnetarUnused1:
@@ -43633,7 +43486,7 @@ MagnetarUnused1:
 	sprol				744 0 0
 	wait				12
 	nobrkcodeend
-	goto				MagnetarWalkingToIdle
+	goto				MinotaurGndAttkToIdle
 
 MagnetarGndAttkInit:
 	wait              	1
@@ -43643,7 +43496,7 @@ MagnetarGndAttkInit:
 	wait				1
 	playfram			0x00
 	gotorepeatattk
-	goto              	MagnetarWalkingToIdle
+	goto              	MinotaurGndAttkToIdle
 
 MagnetarLocal00:
 	wait              	125
@@ -44875,6 +44728,7 @@ GosvilethDeath:
 	imgol             	59 0 0 # Zerg Air Death Explosion (Small) (thingy\zAirDthS.grp)
 	wait              	1
 	lowsprul			850 0 42 # Zerg Unit Rubble Tiny
+	wait              	1
 	end
 	
 GosvilethUnused1:
@@ -46973,6 +46827,7 @@ SundogDeath:
 	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			844 0 42 # Terran Unit Rubble Medium
+	wait              	1
 	end
 
 SundogGndAttkInit:
@@ -47039,6 +46894,7 @@ MatadorDeath:
 	imgol             	332 0 -5 # Explosion2 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			845 0 0 # Terran Unit Rubble Small
+	wait              	1
 	end
 
 MatadorUnused1:
@@ -47219,6 +47075,7 @@ AncileDeath:
 	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			845 0 42 # Terran Unit Rubble Small
+	wait              	1
 	end
 
 AncileGndAttkInit:
@@ -47262,7 +47119,7 @@ GndAttkToIdle 	HippogriffGndAttkToIdle
 AirAttkToIdle 	HippogriffGndAttkToIdle
 Unused2       	[NONE]
 Walking       	HippogriffWalking
-WalkingToIdle 	HippogriffWalkingToIdle
+WalkingToIdle 	MinotaurGndAttkToIdle
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
@@ -47279,24 +47136,14 @@ HippogriffInit:
 	imgul             	1101 0 42 # Hippogriff Shadow (cm\terran\hippogriff.grp)
 HippogriffGndAttkToIdle:
 	playfram          	0x00
-	goto              	HippogriffWalkingToIdle
-
-HippogriffWalkingToIdle:
-	setvertpos        	0
-	wait 				8
-	setvertpos        	0
-	wait 				8
-	setvertpos        	-1
-	wait 				8
-	setvertpos        	0
-	wait 				8
-	goto              	HippogriffWalkingToIdle
+	goto              	MinotaurGndAttkToIdle
 
 HippogriffDeath:
 	playsnd           	177 # Terran\BATTLE\tbaDth00.wav
 	imgol             	333 0 0 # Explosion2 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			274 0 42 # Terran Building Rubble Large
+	wait              	1
 	end
 
 HippogriffGndAttkInit:
@@ -47312,7 +47159,7 @@ HippogriffGndAttkInit:
 	wait				1
 	nobrkcodeend
 	gotorepeatattk
-	goto              	HippogriffWalkingToIdle
+	goto              	MinotaurGndAttkToIdle
 
 HippogriffLocal00:
 	wait              	125 
@@ -47368,6 +47215,7 @@ WyvernDeath:
 	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			844 0 42 # Terran Unit Rubble Medium
+	wait              	1
 	end
 
 WyvernGndAttkInit:
@@ -47454,6 +47302,7 @@ ZarcavrokorDeath:
 	imgol             	28 0 0 # Geszithalor Death (zerg\zguDeath.grp)
 	wait              	1
 	lowsprul			186 0 42 # Zerg Building Rubble Small
+	wait              	1
 	end
 
 ZarcavrokorGndAttkInit:
@@ -47635,8 +47484,8 @@ Death         	VagrantDeath
 GndAttkInit   	VagrantGndAttkInit
 AirAttkInit   	VagrantGndAttkInit
 Unused1       	VagrantUnused1
-GndAttkRpt    	VagrantGndAttkInit
-AirAttkRpt    	VagrantGndAttkInit
+GndAttkRpt    	VagrantGndAttkRpt
+AirAttkRpt    	VagrantGndAttkRpt
 CastSpell     	[NONE]
 GndAttkToIdle 	VagrantGndAttkToIdle
 AirAttkToIdle 	VagrantGndAttkToIdle
@@ -47656,140 +47505,102 @@ WarpIn        	VagrantWarpIn
 # ----------------------------------------------------------------------------- #
 
 VagrantInit:
-	imgul             	1277 0 0 # Vagrant Shadow (cm\protoss\vagrant-shadow.grp)
+	imgul             	1277 0 0 # Vagrant Shadow (cm\protoss\vagrant-shad.grp)
 	playfram          	0x00
 	wait				2
-	goto              	VagrantLocal00
-
-VagrantLocal00:
-	wait				1
-	waitrand			62 74
-	randcondjmp       	25 VagrantLocal01
-	goto              	VagrantLocal00
-
-VagrantLocal01:
-	playfram			0x11
-	wait				1
-	playfram			0x22
-	wait				1
-	playfram			0x33
-	wait				1
-	playfram			0x44
-	wait				1
-	playfram			0x55
-	wait				1
-	playfram			0x66
-	wait				1
-	playfram			0x00
-	goto				VagrantLocal00
+	goto				VagrantLocal69
 
 VagrantLocal42:
 	playfram			0x00
-	goto				VagrantLocal00
+	goto				VagrantLocal69
+
+VagrantLocal69:
+	wait				125
+	goto				VagrantLocal69
+	
+VagrantGndAttkToIdle:
+	playfram          	0x180
+	wait              	1
+	playfram          	0x160
+	wait              	1
+	playfram          	0x140
+	wait              	1
+	playfram          	0x120
+	wait              	1
+	playfram 			0x00
+	wait 				1
+	goto              	VagrantLocal69
 
 VagrantDeath:
 	playsnd           	635	# Protoss\TEMPLAR\PTeDth00.WAV
 	imgol             	153 0 0 # Zealot Death (protoss\zealot.grp)
 	wait              	1
 	lowsprul			847 0 0 # Protoss Unit Rubble Small
+	wait              	1
 	end
 	
 VagrantUnused1:
 	wait				1
 	nobrkcodestart
-	setfldirect       	0 
+	setfldirect       	0
 	playsnd				1186 # Cantavis revive 01
 	imgol             	1445 0 0 # Zealot death reversed
-#	playfram			244
-	wait				2
-#	playfram			243
-	wait				2
-#	playfram			242
-	wait				2
-#	playfram			241
-	wait				2
-#	playfram			240
-	wait				2
-	wait				2
+	wait				12
 	setfldirect       	12
 	nobrkcodeend
 	goto				VagrantLocal42
 
 VagrantGndAttkInit:
-	playfram          	0x154
+	playfram          	0x120
 	wait              	1
+	playfram          	0x140
+	wait              	1
+	playfram          	0x160
+	goto              	VagrantGndAttkRpt
+VagrantGndAttkRpt:
+	wait				1
 	nobrkcodestart
-	playfram          	0x165
 	playsndbtwn			2126 2130 # Vagrant attack 01, 02, 03, 04, 05
 	attackwith        	1
-	wait              	1
-	playfram          	0x176
-	wait              	1
-	playfram          	0x187
+	playfram          	0x180
 	wait				1
-	playfram          	0x198
-	wait				1
-	playfram          	0x1A9
-	wait				1
-	playfram          	0x1BA
-	wait				1
-	playfram          	0x1CB
+	playfram          	0x160
 	wait				1
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
 	goto				VagrantGndAttkToIdle
-	
-VagrantGndAttkToIdle:
-	playfram 			0x00
-	wait 				1
-	goto              	VagrantLocal00
 
 VagrantWalking:
 	move              	5
 	wait              	1
-	playfram          	0x77
+	playfram          	0x100
 	move              	5
 	wait              	1
-	playfram          	0x88
+	playfram          	0x20
 	move              	5
 	wait              	1
-	playfram          	0x99
+	playfram          	0x40
 	move              	5
 	wait              	1
-	playfram          	0xaa
+	playfram          	0x60
 	move              	5
 	wait              	1
-	playfram          	0xbb
+	playfram          	0x80
 	move              	5
 	wait              	1
-	playfram          	0xcc
+	playfram          	0xA0
 	move              	5
 	wait              	1
-	playfram          	0xdd
+	playfram          	0xC0
 	move              	5
 	wait              	1
-	playfram          	0xee
-	move              	5
-	wait              	1
-	playfram          	0xff
-	move              	5
-	wait              	1
-	playfram          	0x110
-	move              	5
-	wait              	1
-	playfram          	0x121
-	move              	5
-	wait              	1
-	playfram          	0x132
-	move              	5
-	wait              	1
-	playfram          	0x143
+	playfram          	0xE0
 	goto				VagrantWalking
 	
 VagrantWalkingToIdle:
 	playfram			0x00
-	goto				VagrantLocal00
+	goto				VagrantLocal69
 
 VagrantWarpIn:
 	imgol             	128 0 0	# High Templar Warp Flash (protoss\templar.grp)
@@ -47893,6 +47704,7 @@ HeraldDeath:
 	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	1
 	lowsprul			846 0 0 # Protoss Unit Rubble Medium
+	wait              	1
 	end
 	
 HeraldUnused1:
@@ -48046,6 +47858,7 @@ EpigraphDeath:
 	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			223 0 42 # Protoss Building Rubble Small
+	wait              	1
 	end
 
 EpigraphGndAttkInit:
@@ -48337,6 +48150,7 @@ AionDeath:
 	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul          	274 0 0 # Terran Building Rubble (Large) (thingy\RubbleL.grp)
+	wait              	1
 	end
 	
 AionUnused1:
@@ -49037,6 +48851,7 @@ TosgriliskDeath:
 	imgol             	41 0 0 # Tosgrilisk Death (zerg\zmuDeath.grp)
 	wait              	1
 	lowsprul			848 0 42 # Zerg Unit Rubble Medium
+	wait              	1
 	end
 
 TosgriliskUnused1:
@@ -49147,6 +48962,7 @@ GhitorokorDeath:
 #	playfram			142
 #	wait              	1
 	lowsprul			848 0 42 # Zerg Unit Rubble Medium
+	wait              	1
 	end
 
 GhitorokorUnused1:
@@ -49413,6 +49229,7 @@ AzazelDeath:
 	imgol             	332 0 0	# Explosion2 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			844 0 42 # Terran Unit Rubble Medium
+	wait              	1
 	end
 
 AzazelGndAttkInit:
@@ -49718,6 +49535,7 @@ CataphractDeath:
 	wait              	3
 	lowsprul			273 0 0 # Terran Building Rubble Small
 #	lowsprul			816 0 0 # Cataphract Remains
+	wait              	1
 	end
 
 CataphractUnused1:
@@ -49832,6 +49650,7 @@ DurendalDeath:
 	imgol             	332 0 0	# Explosion2 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			844 0 0 # Terran Unit Rubble Medium
+	wait              	1
 	end
 
 DurendalUnused1:
@@ -50120,6 +49939,7 @@ TetcaerokorDeath:
 	imgol             	28 0 0 # Geszithalor Death (zerg\zguDeath.grp)
 	wait              	1
 	lowsprul			848 0 42 # Zerg Unit Rubble Medium
+	wait              	1
 	end
 
 TetcaerokorGndAttkInit:
@@ -50914,6 +50734,7 @@ RamessesDeath:
 	wait              	3
 	lowsprul			845 0 0 # Terran Unit Rubble Small
 #	lowsprul			816 0 0 # Ramesses Remains
+	wait              	1
 	end
 
 RamessesUnused1:
@@ -51162,6 +50983,7 @@ ServitorDeath:
 	wait              	3
 #	lowsprul			816 0 0 # Servitor Remains
 	lowsprul			847 0 0 # Protoss Unit Rubble Small
+	wait              	1
 	end
 
 ServitorUnused1:
@@ -51239,6 +51061,7 @@ PositronDeath:
 	wait              	3
 	lowsprul			846 0 0 # Protoss Unit Rubble Medium
 #	lowsprul			816 0 0 # Positron Remains
+	wait              	1
 	end
 
 PositronUnused1:
@@ -51375,6 +51198,7 @@ SycophantDeath:
 	imgol             	153 0 0 # Zealot Death (protoss\zealot.grp)
 	wait              	1
 	lowsprul			847 0 0 # Protoss Unit Rubble Small
+	wait              	1
 	end
 	
 SycophantUnused1:
@@ -52078,6 +51902,7 @@ PatriarchDeath:
 	imgol             	153 0 0 # Zealot Death (protoss\zealot.grp)
 	wait              	1
 	lowsprul			846 0 0 # Protoss Unit Rubble Medium
+	wait              	1
 	end
 	
 PatriarchUnused1:

@@ -349,7 +349,7 @@ Stasis Cell
 Protoss Monogram
 Protoss Hall of Heretics
 Zerg Nephrilosk
-Protoss Vagrant (Shade)
+Protoss Vagrant Shade
 Protoss Accantor
 Zerg Ocsal Larva
 Zerg Ocsal Colony

@@ -4156,7 +4156,7 @@ script_id PMCx
 	var AtL|Jump prod_cycle_var 1 blank_return 13
 	notowns nexus blank_return
 	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
-	add_bld 255 gateway 1 20 98
+	add_bld 255 gateway 1 6 98
 	wait 180
 	call main_wait_900
 	goto production_cycle_success
@@ -4166,7 +4166,7 @@ script_id PMCx
 	var AtL|Jump prod_cycle_var 1 blank_return 13
 	notowns nexus blank_return
 	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
-	add_bld 255 cenotaph 1 20 98
+	add_bld 255 cenotaph 1 8 98
 	wait 180
 	call main_wait_900
 	goto production_cycle_success
@@ -4176,7 +4176,7 @@ script_id PMCx
 	var AtL|Jump prod_cycle_var 1 blank_return 13
 	notowns nexus blank_return
 	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
-	add_bld 255 grand_library 1 20 99
+	add_bld 255 grand_library 1 4 99
 	wait 180
 	call main_wait_900
 	goto production_cycle_success
@@ -4186,7 +4186,7 @@ script_id PMCx
 	var AtL|Jump prod_cycle_var 1 blank_return 13
 	notowns nexus blank_return
 	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
-	add_bld 255 rogue_gallery 1 20 98
+	add_bld 255 rogue_gallery 1 6 98
 	wait 180
 	call main_wait_900
 	goto production_cycle_success
@@ -4196,7 +4196,7 @@ script_id PMCx
 	var AtL|Jump prod_cycle_var 1 blank_return 13
 	notowns nexus blank_return
 	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
-	add_bld 255 prostration_stage 1 20 99
+	add_bld 255 prostration_stage 1 5 99
 	wait 180
 	call main_wait_900
 	goto production_cycle_success
@@ -4206,7 +4206,7 @@ script_id PMCx
 	var AtL|Jump prod_cycle_var 1 blank_return 13
 	notowns nexus blank_return
 	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
-	add_bld 255 ancestral_archives 1 20 100
+	add_bld 255 ancestral_archives 1 4 100
 	wait 180
 	call main_wait_900
 	goto production_cycle_success
@@ -4226,7 +4226,7 @@ script_id PMCx
 	var AtL|Jump prod_cycle_var 1 blank_return 13
 	notowns nexus blank_return
 	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
-	add_bld 255 automaton_register 1 20 98
+	add_bld 255 automaton_register 1 6 98
 	wait 180
 	call main_wait_900
 	goto production_cycle_success
@@ -4236,7 +4236,7 @@ script_id PMCx
 	var AtL|Jump prod_cycle_var 1 blank_return 13
 	notowns nexus blank_return
 	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
-	add_bld 255 ardent_authority 1 20 98
+	add_bld 255 ardent_authority 1 4 98
 	wait 180
 	call main_wait_900
 	goto production_cycle_success
@@ -4246,7 +4246,7 @@ script_id PMCx
 	var AtL|Jump prod_cycle_var 1 blank_return 13
 	notowns nexus blank_return
 	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
-	add_bld 255 sequestered_icon 1 20 99
+	add_bld 255 sequestered_icon 1 5 99
 	wait 180
 	call main_wait_900
 	goto production_cycle_success
@@ -4256,7 +4256,7 @@ script_id PMCx
 	var AtL|Jump prod_cycle_var 1 blank_return 13
 	notowns nexus blank_return
 	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
-	add_bld 255 synthetic_synod 1 20 101
+	add_bld 255 synthetic_synod 1 4 101
 	wait 180
 	call main_wait_900
 	goto production_cycle_success
@@ -4266,7 +4266,7 @@ script_id PMCx
 	var AtL|Jump prod_cycle_var 1 blank_return 13
 	notowns nexus blank_return
 	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
-	add_bld 255 stargate 1 20 98
+	add_bld 255 stargate 1 6 98
 	wait 180
 	call main_wait_900
 	goto production_cycle_success
@@ -4276,7 +4276,7 @@ script_id PMCx
 	var AtL|Jump prod_cycle_var 1 blank_return 13
 	notowns nexus blank_return
 	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
-	add_bld 255 astral_omen 1 20 98
+	add_bld 255 astral_omen 1 5 98
 	wait 180
 	call main_wait_900
 	goto production_cycle_success
@@ -4286,7 +4286,7 @@ script_id PMCx
 	var AtL|Jump prod_cycle_var 1 blank_return 13
 	notowns nexus blank_return
 	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
-	add_bld 255 argosy 1 20 99
+	add_bld 255 argosy 1 4 99
 	wait 180
 	call main_wait_900
 	goto production_cycle_success
@@ -4296,7 +4296,7 @@ script_id PMCx
 	var AtL|Jump prod_cycle_var 1 blank_return 13
 	notowns nexus blank_return
 	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
-	add_bld 255 fleet_beacon 1 20 100
+	add_bld 255 fleet_beacon 1 4 100
 	wait 180
 	call main_wait_900
 	goto production_cycle_success
@@ -4306,7 +4306,7 @@ script_id PMCx
 	var AtL|Jump prod_cycle_var 1 blank_return 13
 	notowns nexus blank_return
 	bring 13 Ex 0 scribe|artisan Loc.63 blank_return
-	add_bld 255 monument_of_sin 1 20 101
+	add_bld 255 monument_of_sin 1 4 101
 	wait 180
 	call main_wait_900
 	goto production_cycle_success
