@@ -2127,7 +2127,7 @@ script_id PMCx
 	w_bld 1 pylon
 	multi request_static_defense
 	call main_wait_1200
-	multi production_cycle
+	resarea 255 AtL 255 Ore 1 production_cycle
 	call main_wait_1800
 	var Ex|Wait build_done_var 1 13
 	call main_wait_1200

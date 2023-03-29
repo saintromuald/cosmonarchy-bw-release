@@ -820,8 +820,8 @@ DrolethUnused1:
 
 DrolethGndAttkInit:
 	setvertpos        	0 
-	playsnd           	64	# Bullet\SpoogHit.wav
-	sproluselo        	332 0	# Needle Spines (thingy\spooge.grp)
+	playsnd           	64 # Bullet\SpoogHit.wav
+	sproluselo        	332 0 # Needle Spines (thingy\spooge.grp)
 	wait              	1 
 	attackwith        	1 
 	gotorepeatattk
@@ -830,16 +830,31 @@ DrolethGndAttkInit:
 DrolethWalking:
 	setvertpos        	0 
 DrolethLocal00:
-	playfram          	0x00
-	wait				2
 	playfram          	0x11
-	wait				2
+	move				4
+	wait				1
+	move				4
+	wait				1
 	playfram          	0x22
-	wait				2
+	move				4
+	wait				1
+	move				4
+	wait				1
 	playfram          	0x33
-	wait				2
+	move				4
+	wait				1
+	move				4
+	wait				1
 	playfram          	0x44
-	wait				2
+	move				4
+	wait				1
+	move				4
+	wait				1
+	playfram          	0x00
+	move				4
+	wait				1
+	move				4
+	wait				1
 	goto              	DrolethLocal00
 
 DrolethSpecialState2:
@@ -6734,7 +6749,12 @@ MasonWalking:
 	playfram          	0x00
 	imgol             	249 0 0	# Mason Glow (thingy\tscGlow.grp)
 	setvertpos        	0
-	goto              	InfestedTerranLocal00 
+	goto              	MasonWalkingLoop
+
+MasonWalkingLoop:
+	move				4
+	wait				1
+	goto				MasonWalkingLoop
 
 MasonAlmostBuilt:
 	setvertpos        	0
@@ -11309,7 +11329,7 @@ ScribeGndAttkInit:
 
 ScribeWalking:
 	setvertpos        	0
-	goto              	InfestedTerranLocal00
+	goto              	MasonWalkingLoop
 
 ScribeAlmostBuilt:
 	useweapon         	63 # Particle Beam (Harvest) (Particle Beam)

@@ -292,7 +292,7 @@ Terran Pythean
 Zerg Ogroszaleth
 Zerg Spirtith Colony
 Zerg Skortrith Colony
-Terran Horseman
+Protoss Engram
 Terran Iron Council
 Terran Amphitheater
 Terran Thespian

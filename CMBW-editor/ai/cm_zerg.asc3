@@ -1944,7 +1944,7 @@ script_id ZMCx
 	call main_wait_750
 	call request_larvosk
 	call main_wait_600
-	multi production_cycle
+	resarea 255 AtL 255 Ore 1 production_cycle
 	var Ex|Wait build_done_var 1 13
 	call main_wait_300
 	multi build_order_expansion

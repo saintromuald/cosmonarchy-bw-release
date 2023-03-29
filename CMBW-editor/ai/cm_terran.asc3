@@ -138,10 +138,10 @@ script_id TMCx
 	
 	:select_preferences
 	# personalities
-	dth 13 Ex_C 1 disruption_web_unit prefPArmor
-	dth 13 Ex_C 2 disruption_web_unit prefPRaider
-	dth 13 Ex_C 3 disruption_web_unit prefPOrbital
-	dth 13 Ex_C 9 disruption_web_unit prefPScenario
+	dth 13 Ex_C 1 disruption_web_unit select_personality_armor
+	dth 13 Ex_C 2 disruption_web_unit select_personality_raider
+	dth 13 Ex_C 3 disruption_web_unit select_personality_orbital
+	dth 13 Ex_C 9 disruption_web_unit select_personality_scenario
 	# military
 	dth 13 AtL_C 1 maverick prefUMaverick
 	dth 13 AtL_C 1 harakan prefUHarakan
@@ -270,73 +270,73 @@ script_id TMCx
 	dth 13 Set 0 quarry blank
 	return
 	
-	:prefPArmor
+	:select_personality_armor
 	var Set pref_armor 1 13
 	var Set pref_raider 0 13
 	var Set pref_orbital 0 13
 	var Set pref_scenario 0 13
 	return
 	
-	:prefPRaider
+	:select_personality_raider
 	var Set pref_armor 0 13
 	var Set pref_raider 1 13
 	var Set pref_orbital 0 13
 	var Set pref_scenario 0 13
 	return
 	
-	:prefPOrbital
+	:select_personality_orbital
 	var Set pref_armor 0 13
 	var Set pref_raider 0 13
 	var Set pref_orbital 1 13
 	var Set pref_scenario 0 13
 	return
 	
-	:prefPScenario
+	:select_personality_scenario
 	var Set pref_armor 0 13
 	var Set pref_raider 0 13
 	var Set pref_orbital 0 13
 	var Set pref_scenario 1 13
-	call prefPScenarioCheck
+	call select_personality_scenario_check
 	return
 	
-	:prefPScenarioLite
+	:select_personality_scenario_lite
 	var Set pref_scenario_lite 1 13
 	dth 13 Set 0 cyprian blank
 	return
 	
-	:prefPScenarioCheck
-	dth 13 Ex 2 scanner_sweep prefPScenario_OneForTheFuture
-#	dth 13 Ex 3 scanner_sweep prefPScenario_TheLostGods
+	:select_personality_scenario_check
+	dth 13 Ex 2 scanner_sweep select_personality_scenario_OneForTheFuture
+#	dth 13 Ex 3 scanner_sweep select_personality_scenario_TheLostGods
 	return
 	
-	:prefPScenario_OneForTheFuture
-	dth 13 Ex_M 1 right_pit_door prefPScenario_OneForTheFuture_WallStreetWar
-	dth 13 Ex_M 4 right_pit_door prefPScenario_OneForTheFuture_PastaMasta
-	dth 13 Ex_M 7 right_pit_door prefPScenario_OneForTheFuture_FavoredFiction
+	:select_personality_scenario_OneForTheFuture
+	dth 13 Ex_M 1 right_pit_door select_personality_scenario_OneForTheFuture_WallStreetWar
+	dth 13 Ex_M 4 right_pit_door select_personality_scenario_OneForTheFuture_PastaMasta
+	dth 13 Ex_M 7 right_pit_door select_personality_scenario_OneForTheFuture_FavoredFiction
 	return
 	
-	:prefPScenario_OneForTheFuture_WallStreetWar
+	:select_personality_scenario_OneForTheFuture_WallStreetWar
 	wait 12
 	var Set pref_armor 1 13
 	var AtL|Wait mining_count_var 4 13
 	var Set pref_armor 0 13
 	var Set pref_orbital 1 13
 	var AtM|Wait mining_count_var 3 13
-	goto prefPScenario_OneForTheFuture_WallStreetWar
+	goto select_personality_scenario_OneForTheFuture_WallStreetWar
 	
-	:prefPScenario_OneForTheFuture_PastaMasta
-	dth 13 Ex 5 t_tank_turret prefPScenario_OneForTheFuture_PastaMasta_TonyTron
+	:select_personality_scenario_OneForTheFuture_PastaMasta
+	dth 13 Ex 5 t_tank_turret select_personality_scenario_OneForTheFuture_PastaMasta_TonyTron
 	stop
 	
-	:prefPScenario_OneForTheFuture_PastaMasta_TonyTron
+	:select_personality_scenario_OneForTheFuture_PastaMasta_TonyTron
 	var Set pref_orbital 1 13
 	stop
 	
-	:prefPScenario_OneForTheFuture_FavoredFiction
-	dth 13 Ex 5 t_tank_turret prefPScenario_OneForTheFuture_FavoredFiction_Ullen
+	:select_personality_scenario_OneForTheFuture_FavoredFiction
+	dth 13 Ex 5 t_tank_turret select_personality_scenario_OneForTheFuture_FavoredFiction_Ullen
 	stop
 	
-	:prefPScenario_OneForTheFuture_FavoredFiction_Ullen
+	:select_personality_scenario_OneForTheFuture_FavoredFiction_Ullen
 	var Set pref_armor 1 13
 	stop
 	
@@ -1320,22 +1320,6 @@ script_id TMCx
 	var Ex|Wait build_gas_var 1 13
 	aictrl build_gas
 	var Ex|Wait build_gas_var 1 13
-	
-	:gas_requests
-	resarea 255 Ex 255 Gas 0 blank
-#	bld 1 reservoir 105
-	resarea 255 AtM 255 Gas 6000 blank
-	wait 600
-#	bld 2 reservoir 104
-	resarea 255 AtM 255 Gas 11000 blank
-	wait 600
-#	bld 3 reservoir 103
-	resarea 255 AtM 255 Gas 16000 blank
-	wait 600
-#	bld 4 reservoir 102
-	resarea 255 AtM 255 Gas 21000 blank
-	wait 600
-#	bld 5 reservoir 101
 	stop
 	
 	:define_maxes
@@ -2030,7 +2014,7 @@ script_id TMCx
 	
 	:worker_request_advanced
 	local 255 AtL 28 mason|talos blank_return
-	notowns atlas blank_return
+	notowns parthenon blank_return
 	local 255 AtL 10 talos blank_return
 	queue 1 talos parthenon 255 Local Loc.63 100
 	wait 150
@@ -2207,14 +2191,14 @@ script_id TMCx
 	
 	:expansion_request_cut_all
 	call expansion_request_cut_most
-	var Set can_worker_var 0 13 # sub?
+	var Sub can_worker_var 0 13
 	return
 	
 	:expansion_request_reset
 	var Set can_queue_early_military_var 1 13
 	var Set can_build_static_defense_var 1 13
 	var Set can_build_production_var 1 13
-	var Set can_worker_var 1 13 # add?
+	var Add can_worker_var 1 13
 	return
 	
 	:expansion_toggle
@@ -2273,7 +2257,6 @@ script_id TMCx
 	w_bldstart 1 command_center
 	var Set try_expand_var 0 13
 	w_bld 1 command_center
-	multi gas_requests
 	multi count_expansion
 	var Ex|Jump skip_building_var 1 idle 13
 	placeholder_count Local AtL|Jump 2 Group_Buildings idle 13
@@ -2281,6 +2264,7 @@ script_id TMCx
 	:expansion_normal
 	multi request_watchdog
 	call main_wait_450
+	resarea 255 AtL 255 Ore 1 production_cycle
 	multi production_cycle
 	call main_wait_600
 	multi request_bunker
@@ -2358,14 +2342,14 @@ script_id TMCx
 	:rich_boy_atlas
 	wait 12
 	bring 13 AtL 1 atlas Loc.63 blank
-	res 13 AtM Gas 399 rich_boy_atlas
+	res 13 AtM Gas 499 rich_boy_atlas
 	p_need 1 atlas
 	stop
 	
 	:rich_boy_fountainhead
 	wait 12
 	bring 13 AtL 1 fountainhead Loc.63 blank
-	call wait_for_Atlas
+	call wait_for_atlas
 	res 13 AtM Gas 399 rich_boy_fountainhead
 	p_need 1 fountainhead
 	stop
@@ -2373,15 +2357,15 @@ script_id TMCx
 	:rich_boy_daedala
 	wait 12
 	bring 13 AtL 1 daedala Loc.63 blank
-	call wait_for_Atlas
-	res 13 AtM Gas 999 rich_boy_daedala
+	call wait_for_atlas
+	res 13 AtM Gas 1199 rich_boy_daedala
 	p_need 1 daedala
 	stop
 	
 	:rich_boy_atelier
 	wait 12
 	bring 13 AtL 1 atelier Loc.63 blank
-	call wait_for_Daedala
+	call wait_for_daedala
 	res 13 AtM Gas 999 rich_boy_atelier
 	p_need 1 atelier
 	stop
@@ -2645,7 +2629,7 @@ script_id TMCx
 	goto build_general_fin
 	
 	:build_general_2FulcMech_Addon
-	call wait_for_Atlas
+	call wait_for_atlas
 	w_bld 1 fulcrum
 	bld 1 scrapyard 120
 	w_bld 2 fulcrum
@@ -2698,7 +2682,7 @@ script_id TMCx
 	:build_general_EarlyRiser_Addon
 	w_bld 1 barracks
 	bld 1 medbay 120
-	call wait_for_Atlas
+	call wait_for_atlas
 	w_bld 1 fulcrum
 	bld 1 machine_shop 120
 	stop
@@ -2747,10 +2731,10 @@ script_id TMCx
 	:build_general_TheCube_Addon
 	w_bld 1 barracks
 	bld 1 medbay 120
-	call wait_for_Atlas
+	call wait_for_atlas
 	w_bld 1 fulcrum
 	bld 1 machine_shop 120
-	call wait_for_Fountainhead
+	call wait_for_fountainhead
 	bld 1 starport 121
 	w_bld 1 starport
 	bld 1 munitions_bay 120
@@ -2808,7 +2792,7 @@ script_id TMCx
 	bld 1 scrapyard 120
 	w_bld 2 fulcrum
 	bld 2 scrapyard 120
-	call wait_for_Atlas
+	call wait_for_atlas
 	w_bld 2 barracks
 	bld 1 covert_ops 120
 	call main_wait_150
@@ -2875,13 +2859,13 @@ script_id TMCx
 	bld 1 scrapyard 120
 	w_bld 2 fulcrum
 	bld 2 scrapyard 120
-	call wait_for_Atlas
+	call wait_for_atlas
 	bld 1 quarry 120
 	w_bld 3 fulcrum
 	bld 1 machine_shop 120
 	w_bld 4 fulcrum
 	bld 2 machine_shop 120
-	call wait_for_Fountainhead
+	call wait_for_fountainhead
 	bld 2 starport 121
 	w_bld 1 starport
 	bld 1 munitions_bay 120
@@ -2897,14 +2881,14 @@ script_id TMCx
 	bld 4 munitions_bay 120
 	w_bld 5 starport
 	bld 5 munitions_bay 120
-	call wait_for_Daedala
+	call wait_for_daedala
 	w_bld 6 starport
 	bld 1 commandment 120
 	w_bld 7 starport
 	bld 2 commandment 120
 	w_bld 8 starport
 	bld 3 commandment 120
-	call wait_for_Atelier
+	call wait_for_atelier
 	bld 2 nanite_assembly 121
 	stop
 	
@@ -2956,14 +2940,14 @@ script_id TMCx
 	bld 1 medbay 120
 	w_bld 1 fulcrum
 	bld 1 scrapyard 120
-	call wait_for_Atlas
+	call wait_for_atlas
 	w_bld 2 fulcrum
 	bld 1 machine_shop 120
 	w_bld 3 fulcrum
 	bld 2 machine_shop 120
-	call wait_for_Fountainhead
+	call wait_for_fountainhead
 	bld 2 starport 121
-	call wait_for_Daedala
+	call wait_for_daedala
 	w_bld 2 starport
 	bld 2 commandment 120
 	w_bld 1 commandment
@@ -2979,17 +2963,17 @@ script_id TMCx
 	:build_general_fin2
 	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
 	call main_wait_450
-	call wStarpad2
+	call add_starpad_simple2
 	call main_wait_300
 	multi need_atlas
 	call main_wait_300
-	call wBarracks
+	call add_barracks_simple
 	call main_wait_150
 	bld 1 covert_ops 120
 	call main_wait_600
 	multi need_fountainhead
 	call main_wait_900
-	call wStarport
+	call add_starport_simple
 	call main_wait_1200
 	call main_wait_600
 	multi need_daedala
@@ -3074,7 +3058,7 @@ script_id TMCx
 	queue 1 vulture fulcrum 255 Local Loc.63 100
 	call main_wait_150
 	w_bldstart 2 fulcrum
-	var Add can_expand_var 1 13
+	multi expansion_toggle
 	call main_wait_900
 	bld 3 fulcrum 121
 	call main_wait_150
@@ -3099,7 +3083,7 @@ script_id TMCx
 	goto build_armor_fin
 	
 	:build_armor_PhalanxTiming_Addon
-	call wait_for_Atlas
+	call wait_for_atlas
 	w_bld 1 fulcrum
 	bld 1 machine_shop 120
 	w_bld 2 fulcrum
@@ -3168,7 +3152,6 @@ script_id TMCx
 	call main_wait_600
 	queue 1 goliath fulcrum 255 Global Loc.63 100
 	call main_wait_750
-	var Set build_gas_var 1 13
 	wait 24
 	queue 1 goliath fulcrum 255 Global Loc.63 100
 	call main_wait_300
@@ -3214,14 +3197,14 @@ script_id TMCx
 	:build_armor_FE5Fulc_Addon
 	w_bld 1 fulcrum
 	bld 1 scrapyard 120
-	call wait_for_Atlas
+	call wait_for_atlas
 	w_bld 2 fulcrum
 	bld 1 machine_shop 120
 	w_bld 3 fulcrum
 	bld 2 machine_shop 120
-	call wait_for_Fountainhead
+	call wait_for_fountainhead
 	bld 1 starport 121
-	call wait_for_Daedala
+	call wait_for_daedala
 	w_bld 1 starport
 	bld 1 commandment 120
 	stop
@@ -3253,7 +3236,7 @@ script_id TMCx
 	call main_wait_300
 	var Add can_worker_var 1 13
 	call main_wait_600
-	var Add can_expand_var 1 13
+	multi expansion_toggle
 	bld 3 fulcrum 121
 	call main_wait_150
 	bld 1 barracks 121
@@ -3289,7 +3272,7 @@ script_id TMCx
 	call main_wait_450
 	var Add can_worker_var 1 13
 	call main_wait_1200
-	var Add can_expand_var 1 13
+	multi expansion_toggle
 	call main_wait_600
 	var Set build_gas_var 1 13
 	call main_wait_300
@@ -3301,7 +3284,7 @@ script_id TMCx
 	w_bld 1 fulcrum
 	bld 1 scrapyard 120
 	call main_wait_300
-	call wait_for_Atlas
+	call wait_for_atlas
 	w_bld 2 fulcrum
 	bld 1 machine_shop 120
 	stop
@@ -3319,6 +3302,7 @@ script_id TMCx
 	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_seraph 13
 	var Ex|Call pref_addon_starport 0 buildpref_orbital_commandment 13
 	call main_wait_900
+	print expansion_toggle
 	multi expansion_toggle
 	call main_wait_300
 	wait 600
@@ -3343,14 +3327,14 @@ script_id TMCx
 	w_bld 2 fulcrum
 	w_bldstart 3 fulcrum
 	var set can_attack_var 1 13
-	call wait_for_Atlas
+	call wait_for_atlas
 	call main_wait_450
 	bld 4 fulcrum 121
 	call main_wait_450
 	multi need_daedala
-	call wait_for_Daedala
+	call wait_for_daedala
 	multi need_atelier
-	call wait_for_Atelier
+	call wait_for_atelier
 	call main_wait_150
 	bld 1 iron_foundry 122
 	call main_wait_150
@@ -3401,7 +3385,6 @@ script_id TMCx
 	call main_wait_300
 	bld 1 starpad 121
 	call main_wait_300
-	var Set build_gas_var 1 13
 	call main_wait_600
 	multi need_atlas
 	call main_wait_450
@@ -3415,7 +3398,7 @@ script_id TMCx
 	:build_armor_DavidAndGoliath_Addon
 	w_bld 2 fulcrum
 	bld 1 scrapyard 120
-	call wait_for_Atlas
+	call wait_for_atlas
 	w_bld 2 fulcrum
 	bld 1 machine_shop 120
 	call main_wait_150
@@ -3440,7 +3423,7 @@ script_id TMCx
 	call main_wait_2400
 	multi need_daedala
 	call main_wait_900
-	call wStarport
+	call add_starport_simple
 	call main_wait_3600
 	multi need_atelier
 	stop
@@ -3544,7 +3527,7 @@ script_id TMCx
 	bld 1 medbay 120
 	w_bld 2 barracks
 	bld 2 medbay 120
-	call wait_for_Atlas
+	call wait_for_atlas
 	w_bld 3 barracks
 	bld 1 covert_ops 120
 	w_bld 4 barracks
@@ -3612,7 +3595,7 @@ script_id TMCx
 	bld 1 medbay 120
 	w_bld 2 barracks
 	bld 2 medbay 120
-	call wait_for_Atlas
+	call wait_for_atlas
 	multi need_fountainhead
 	stop
 	
@@ -3655,7 +3638,7 @@ script_id TMCx
 	:build_raider_FastNuke_Addon
 	w_bld 1 barracks
 	bld 1 medbay 120
-	call wait_for_Atlas
+	call wait_for_atlas
 	w_bld 2 barracks
 	bld 1 covert_ops 120
 	w_bldstart 1 covert_ops
@@ -3714,7 +3697,7 @@ script_id TMCx
 	bld 1 medbay 120
 	w_bld 2 barracks
 	bld 2 medbay 120
-	call wait_for_Atlas
+	call wait_for_atlas
 	w_bld 3 barracks
 	bld 1 covert_ops 120
 	w_bld 4 barracks
@@ -3833,9 +3816,9 @@ script_id TMCx
 	:build_raider_HolyAckmeds_Addon
 	w_bld 1 barracks
 	bld 1 medbay 120
-	call wait_for_Atlas
+	call wait_for_atlas
 	multi need_fountainhead
-	call wait_for_Fountainhead
+	call wait_for_fountainhead
 	bld 1 starport 121
 	w_bld 1 starport
 	bld 1 munitions_bay 120
@@ -3851,7 +3834,7 @@ script_id TMCx
 	bld 1 medbay 120
 	call main_wait_300
 	multi need_atlas
-	call wait_for_Atlas
+	call wait_for_atlas
 	bld 1 covert_ops 120
 	call main_wait_1800
 	multi need_fountainhead
@@ -3955,9 +3938,9 @@ script_id TMCx
 	goto build_orbital_fin
 	
 	:build_orbital_2PortWraith_Addon
-	call wait_for_Atlas
+	call wait_for_atlas
 	multi need_fountainhead
-	call wait_for_Fountainhead
+	call wait_for_fountainhead
 	bld 1 starport 121
 	w_bld 1 starport
 	bld 1 munitions_bay 120
@@ -3965,7 +3948,7 @@ script_id TMCx
 	w_bld 2 starport
 	bld 2 munitions_bay 120
 	bld 3 starport 121
-	call wait_for_Daedala
+	call wait_for_daedala
 	w_bld 3 starport
 	bld 1 commandment 120
 	stop
@@ -3998,9 +3981,9 @@ script_id TMCx
 	call expansion_loop_normal
 	call main_wait_1200
 	multi need_daedala
-	call wait_for_Daedala
+	call wait_for_daedala
 	multi need_atelier
-	call wait_for_Atelier
+	call wait_for_atelier
 	bld 2 nanite_assembly 122
 	call main_wait_450
 	bld 3 nanite_assembly 122
@@ -4137,11 +4120,11 @@ script_id TMCx
 	goto build_orbital_fin
 	
 	:build_orbital_Hotdrop_Addon
-	call wait_for_Atlas
+	call wait_for_atlas
 	bld 1 covert_ops 120
 	w_bld 1 covert_ops
 	bld 1 missile_silo 120
-	call wait_for_Fountainhead
+	call wait_for_fountainhead
 	bld 1 starport 121
 	w_bld 1 starport
 	bld 1 munitions_bay 120
@@ -4196,7 +4179,7 @@ script_id TMCx
 	multi need_atlas
 	call main_wait_900
 	multi expansion_toggle
-	call wait_for_Atlas
+	call wait_for_atlas
     call main_wait_750
 	multi need_fountainhead
     call main_wait_750
@@ -4206,8 +4189,8 @@ script_id TMCx
 	:build_orbital_SuddenStarport_Addon
 	w_bld 2 barracks
 	bld 1 medbay 120
-	call wait_for_Atlas
-	call wait_for_Fountainhead
+	call wait_for_atlas
+	call wait_for_fountainhead
 	bld 1 starport 121
 	w_bldstart 1 starport
 	bld 4 starport 121
@@ -4289,86 +4272,86 @@ script_id TMCx
 	stop
 	
 	:build_order_expansion
-	bring 13 AtL_W 1 barracks|captaincy|fulcrum|iron_foundry|starport|nanite_assembly|scrapyard Loc.63 blank
+	bring 13 AtL_W 1 barracks|captaincy|apothecary|fulcrum|mantle|iron_foundry|starpad|starport|nanite_assembly Loc.63 blank
 	var Ex|Jump pref_armor 1 build_armor_fin2 13
 	var Ex|Jump pref_raider 1 build_raider_fin2 13
 	var Ex|Jump pref_orbital 1 build_orbital_fin2 13
 	goto build_general_fin2
 	
-	:wBarracks
+	:add_barracks_simple
 	wait 12
-	notowns command_center wBarracks
-	add_bld 255 barracks 1 99 95
+	notowns command_center add_barracks_simple
+	add_bld 255 barracks 1 99 97
 	return
 	
-	:wBarracks2
+	:add_barracks_simple2
 	p_need 1 barracks
 	return
 	
-	:wCaptaincy
+	:add_captaincy_simple
 	wait 12
-	notowns atlas wCaptaincy
-	add_bld 255 captaincy 1 99 97
+	notowns atlas add_captaincy_simple
+	add_bld 255 captaincy 1 99 98
 	return
 	
-	:wCaptaincy2
+	:add_captaincy_simple2
 	p_need 1 captaincy
 	return
 	
-	:wFulcrum
+	:add_fulcrum_simple
 	wait 12
-	notowns command_center wFulcrum
-	add_bld 255 fulcrum 1 99 95
+	notowns command_center add_fulcrum_simple
+	add_bld 255 fulcrum 1 99 97
 	return
 	
-	:wFulcrum2
+	:add_fulcrum_simple2
 	p_need 1 fulcrum
 	return
 	
-	:wIronFoundry
+	:add_iron_foundry_simple
 	wait 12
-	notowns daedala wIronFoundry
+	notowns daedala add_iron_foundry_simple
 	add_bld 255 iron_foundry 1 99 98
 	return
 	
-	:wIronFoundry2
+	:add_iron_foundry_simple2
 	p_need 1 iron_foundry
 	return
 	
-	:wStarpad
+	:add_starpad_simple
 	wait 12
-	notowns command_center wStarpad
-	add_bld 255 starpad 1 99 95
+	notowns command_center add_starpad_simple
+	add_bld 255 starpad 1 99 97
 	return
 	
-	:wStarpad2
+	:add_starpad_simple2
 	p_need 1 starpad
 	return
 	
-	:wStarport
+	:add_starport_simple
 	wait 12
-	notowns command_center wStarport
-	notowns atlas wStarport
-	add_bld 255 starport 1 99 95
+	notowns command_center add_starport_simple
+	notowns atlas add_starport_simple
+	add_bld 255 starport 1 99 97
 	return
 	
-	:wStarport2
+	:add_starport_simple2
 	p_need 1 starport
 	return
 	
-	:wNaniteAssembly
+	:add_nanite_assembly_simple
 	wait 12
-	notowns daedala wNaniteAssembly
+	notowns daedala add_nanite_assembly_simple
 	add_bld 255 nanite_assembly 1 99 98
 	return
 	
-	:wNaniteAssembly2
+	:add_nanite_assembly_simple2
 	p_need 1 nanite_assembly
 	return
 	
-	:wAtlas
+	:add_atlas_simple
 	wait 12
-	notowns command_center wAtlas
+	notowns command_center add_atlas_simple
 	multi need_atlas
 	return
 	
@@ -4382,9 +4365,9 @@ script_id TMCx
 	p_need 1 atlas
 	stop
 	
-	:wait_for_Atlas
+	:wait_for_atlas
 	wait 12
-	notowns atlas wait_for_Atlas
+	notowns atlas wait_for_atlas
 	return
 	
 	:need_fountainhead
@@ -4398,14 +4381,14 @@ script_id TMCx
 	p_need 1 fountainhead
 	stop
 	
-	:wait_for_Fountainhead
+	:wait_for_fountainhead
 	wait 12
-	notowns fountainhead wait_for_Fountainhead
+	notowns fountainhead wait_for_fountainhead
 	return
 	
-	:wDaedala
+	:add_daedala_simple
 	wait 12
-	notowns daedala wDaedala
+	notowns daedala add_daedala_simple
 	multi need_daedala
 	return
 	
@@ -4420,14 +4403,14 @@ script_id TMCx
 	p_need 1 daedala
 	stop
 	
-	:wait_for_Daedala
+	:wait_for_daedala
 	wait 12
-	notowns daedala wait_for_Daedala
+	notowns daedala wait_for_daedala
 	return
 	
-	:wAtelier
+	:add_atelier_simple
 	wait 12
-	notowns atelier wAtelier
+	notowns atelier add_atelier_simple
 	multi need_atelier
 	return
 	
@@ -4442,9 +4425,9 @@ script_id TMCx
 	p_need 1 atelier
 	stop
 	
-	:wait_for_Atelier
+	:wait_for_atelier
 	wait 12
-	notowns atelier wait_for_Atelier
+	notowns atelier wait_for_atelier
 	return
 	
 	:request_bunker
@@ -5061,18 +5044,18 @@ script_id TMCx
 	var Ex|Wait can_attack_var 1 13
 	var Ex|Jump pref_armor 1 attack_handling_slow 13
 	var Ex|Jump pref_raider 1 attack_handling_fast 13
-	rand_j 128 attack_handling_fast
+	rand_j 160 attack_handling_fast
 	
 	:attack_handling_slow
-	wait 180
+	wait 240
 	call attack_generic
 	wait 360
 	goto tLoopA
 	
 	:attack_handling_fast
-	wait 240
+	wait 180
 	call attack_generic
-	wait 360
+	wait 240
 	
 	:tLoopA
 	var AtL|Jump mining_count_var 6 tLoopC 13
@@ -5107,10 +5090,13 @@ script_id TMCx
 	:attack_generic_check
 	var add attack_cycle_var 1 13
 	wait 300
-	call add_attack_wave
 	var AtL|jump attack_cycle_var 2 attack_cycle_prep 13
-	bring 13 AtM 9 maverick|harakan|cyprian|eidolon|savant|madcap|heracles|apostle|siren|striga|olympian|autocrat|dilettante|sevenstep|silvertongue|sevenstep|silvertongue|emperor|jester|vulture|cyclops|goliath|blackjack|matador|phalanx|madrigal|ramesses|durendal|cataphract|paladin|cuirass|pazuzu|claymore|penumbra|anticthon|aion|wraith|gorgon|wyvern|salamander|sundog|centaur|minotaur|magnetar|pegasus|hippogriff|oberon|phobos Loc.63 attack_generic_check
+	bring 13 AtM 9 maverick|harakan|cyprian|eidolon|savant|madcap|heracles|apostle|siren|striga|olympian|autocrat|dilettante|sevenstep|silvertongue|sevenstep|silvertongue|emperor|jester|vulture|cyclops|goliath|blackjack|matador|phalanx|madrigal|ramesses|durendal|cataphract|paladin|cuirass|pazuzu|claymore|penumbra|anticthon|aion|wraith|gorgon|wyvern|salamander|sundog|centaur|minotaur|magnetar|pegasus|hippogriff|oberon|phobos Loc.63 attack_generic_add
 	goto attack_cycle_prep
+	
+	:attack_generic_add
+	call add_attack_wave
+	goto attack_generic_check
 	
 	:attack_cycle_prep
 	bring 13 AtL 60 maverick|harakan|cyprian|eidolon|savant|madcap|heracles|apostle|siren|striga|olympian|autocrat|dilettante|sevenstep|silvertongue|sevenstep|silvertongue|emperor|jester|vulture|cyclops|goliath|blackjack|matador|phalanx|madrigal|ramesses|durendal|cataphract|paladin|cuirass|pazuzu|claymore|penumbra|anticthon|aion|wraith|gorgon|wyvern|salamander|sundog|centaur|minotaur|magnetar|pegasus|hippogriff|oberon|phobos Loc.63 attack_with_everything

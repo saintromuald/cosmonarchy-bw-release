@@ -5,100 +5,189 @@ script_id TARx
 	start_areatown
 	wait 1
 	set_free_id
-	local 255 AtL 1 treasury expansion_body_treasury
+	local 255 AtL 1 treasury expansion_body_treasury_atown
 	bld 1 command_center 180
-	goto expansion_main
+	goto select_build_type_atown
 	
-	:expansion_body_treasury
+	:expansion_body_treasury_atown
 	bld 1 treasury 180
 	bld 1 quarry 120
+	goto select_build_type_atown
 	
-	:expansion_main
-	multi expansion_worker_start
-	w_bldstart 1 command_center
-	var Set try_expand_var 0 13
-	w_bld 1 command_center
-	multi count_expansion
-	placeholder_count Local AtL|Jump 1 Group_Buildings expansion_normal 13
+	:select_build_type_atown
+	wait 5
+#	dth 13 AtL 1 dark_swarm_unit expansion_main_atown # Maybe we shouldn't have this here at all, but I don't know what everyone's use case will be.
+	dth 13 Ex 1 plasma_shell select_build_type_atown_timing
+	dth 13 Ex 2 plasma_shell select_build_type_atown_rush
+	dth 13 Ex 3 plasma_shell select_build_type_atown_greed
+	dth 13 Ex 4 plasma_shell select_build_type_atown_random_timing_rush
+	dth 13 Ex 5 plasma_shell select_build_type_atown_random_rush_greed
+	dth 13 Ex 6 plasma_shell select_build_type_atown_random_greed_timing
+	wait 1
+	rand_j 85 select_build_type_atown_rush
+	rand_j 128 select_build_type_atown_greed
+	
+	:select_build_type_atown_timing
+	var Set build_type_is_timing_var 1 13
+	goto select_personality_atown
+	
+	:select_build_type_atown_rush
+	var Set build_type_is_rush_var 1 13
+	goto select_personality_atown
+	
+	:select_build_type_atown_greed
+	var Set build_type_is_greed_var 1 13
+	goto select_personality_atown
+	
+	:select_build_type_atown_random_timing_rush
+	rand_j 128 select_build_type_atown_timing
+	goto select_build_type_atown_rush
+	
+	:select_build_type_atown_random_rush_greed
+	rand_j 128 select_build_type_atown_rush
+	goto select_build_type_atown_greed
+	
+	:select_build_type_atown_random_greed_timing
+	rand_j 128 select_build_type_atown_greed
+	goto select_build_type_atown_timing
+	
+	:select_personality_atown
+	# personalities
+	dth 13 Ex_C 1 disruption_web_unit select_personality_atown_armor
+	dth 13 Ex_C 2 disruption_web_unit select_personality_atown_raider
+	dth 13 Ex_C 3 disruption_web_unit select_personality_atown_orbital
+	var Add can_worker_var_atown 1 13
+	dth 13 Ex 3 t_tank_turret outpost_handling
+	goto expansion_main_atown
+	
+	:select_personality_atown_armor
+	var Set pref_armor 1 13
+	var Set pref_raider 0 13
+	var Set pref_orbital 0 13
+	var Set pref_scenario 0 13
+	return
+	
+	:select_personality_atown_raider
+	var Set pref_armor 0 13
+	var Set pref_raider 1 13
+	var Set pref_orbital 0 13
+	var Set pref_scenario 0 13
+	return
+	
+	:select_personality_atown_orbital
+	var Set pref_armor 0 13
+	var Set pref_raider 0 13
+	var Set pref_orbital 1 13
+	var Set pref_scenario 0 13
+	return
+	
+	:outpost_handling
+	multi atown_worker_start
+	local 255 AtL_W 1 command_center|treasury blank
+	multi atown_build_order
 	var Ex|Jump skip_building_var 1 idle 13
-	
-	:expansion_normal
-	multi request_watchdog
-	call main_wait_450
-	multi production_cycle
-	call main_wait_600
-	multi request_bunker
-	var Ex|Wait build_done_var 1 13
-	call main_wait_450
-	multi build_order_expansion
-	call main_wait_450
-	multi request_infrastructure
-	call main_wait_450
-	bring 13 AtL_W 1 engineering_bay Loc.63 blank
-	call main_wait_450
-	multi request_sentinel
-	call main_wait_450
-	bring 13 AtL_W 1 science_facility Loc.63 blank
-	call main_wait_900
-	multi request_ion_cannon
+	bring 13 AtL_W 1 barracks|captaincy Loc.63 blank
+	call main_wait_atown_150
+	multi request_bunker_atown
+	call main_wait_atown_150
+	multi request_watchdog_atown
+	call main_wait_atown_600
+	multi request_infrastructure_atown
+	call main_wait_atown_600
+	bring 13 AtL_W 1 atlas Loc.63 blank
+	multi request_sentinel_atown
+	call main_wait_atown_600
+	bld 1 starpad 121
+	call main_wait_atown_600
+	bring 13 AtL_W 1 daedala Loc.63 blank
+	multi request_ion_cannon_atown
 	goto idle
 	
-	:build_order_expansion
-	bring 13 AtL_W 1 barracks|captaincy|fulcrum|iron_foundry|starport|nanite_assembly|scrapyard Loc.63 blank
-	var Ex|Jump pref_armor 1 build_armor_fin2 13
-	var Ex|Jump pref_raider 1 build_raider_fin2 13
-	var Ex|Jump pref_orbital 1 build_orbital_fin2 13
-	goto build_general_fin2
+	:expansion_main_atown
+	multi atown_worker_start
+	w_bldstart 1 command_center
+	w_bld 1 command_center
+#	multi count_expansion_atown
+	placeholder_count Local AtL|Jump 1 Group_Buildings expansion_normal_atown 13
+	var Ex|Jump skip_building_var 1 idle 13
 	
-	:build_general_fin2
+	:expansion_normal_atown
+	multi request_watchdog_atown
+	call main_wait_atown_450
+	multi production_cycle_atown
+	call main_wait_atown_600
+	multi request_bunker_atown
+	var Ex|Wait build_done_var_atown 1 13
+	call main_wait_atown_450
+	multi atown_build_order_atown
+	call main_wait_atown_450
+	multi request_infrastructure_atown
+	call main_wait_atown_450
+	bring 13 AtL_W 1 atlas Loc.63 blank
+	call main_wait_atown_450
+	multi request_sentinel_atown
+	call main_wait_atown_450
+	bring 13 AtL_W 1 daedala Loc.63 blank
+	call main_wait_atown_900
+	multi request_ion_cannon_atown
+	goto idle
+	
+	:atown_build_order_atown
+	bring 13 AtL_W 1 barracks|captaincy|apothecary|fulcrum|mantle|iron_foundry|starpad|starport|nanite_assembly Loc.63 blank
+	var Ex|Jump pref_armor 1 build_armor_atown_fin_atown 13
+	var Ex|Jump pref_raider 1 build_raider_atown_fin_atown 13
+	var Ex|Jump pref_orbital 1 build_orbital_atown_fin_atown 13
+	goto build_general_atown_fin_atown
+	
+	:build_general_atown_fin_atown
 	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
-	call main_wait_450
-	call wStarpad2
-	call main_wait_300
-	multi need_engineering_bay
-	call main_wait_300
-	call wBarracks
-	call main_wait_150
+	call main_wait_atown_450
+	call add_starpad_atown_simple2
+	call main_wait_atown_300
+	multi atown_need_atlas
+	call main_wait_atown_300
+	call add_barracks_atown_simple
+	call main_wait_atown_150
 	bld 1 covert_ops 120
-	call main_wait_600
-	call wStarport
-	call main_wait_1200
-	call main_wait_600
-	multi need_science_facility
+	call main_wait_atown_600
+	call add_starport_atown_simple
+	call main_wait_atown_1200
+	call main_wait_atown_600
+	multi atown_need_daedala
 	stop
 	
-	:build_armor_fin2
+	:build_armor_atown_fin_atown
 	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
-	call main_wait_900
-	multi need_engineering_bay
-	call main_wait_1800
-	multi need_science_facility
-	call main_wait_900
-	call wStarport
+	call main_wait_atown_900
+	multi atown_need_atlas
+	call main_wait_atown_1800
+	multi atown_need_daedala
+	call main_wait_atown_900
+	call add_starport_atown_simple
 	stop
 	
-	:build_raider_fin2
+	:build_raider_atown_fin_atown
 	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
-	call main_wait_300
+	call main_wait_atown_300
 	bld 1 medbay 120
-	call main_wait_300
+	call main_wait_atown_300
 	bld 1 covert_ops 120
-	call main_wait_1200
-	call main_wait_600
-	multi need_engineering_bay
-	call main_wait_1200
-	call main_wait_600
-	multi need_science_facility
+	call main_wait_atown_1200
+	call main_wait_atown_600
+	multi atown_need_atlas
+	call main_wait_atown_1200
+	call main_wait_atown_600
+	multi atown_need_daedala
 	stop
 	
-	:build_orbital_fin2
+	:build_orbital_atown_fin_atown
 	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
-	call main_wait_600
-	multi need_engineering_bay
-	call main_wait_3600
-	multi need_science_facility
-	call main_wait_900
-	call wFactory
+	call main_wait_atown_600
+	multi atown_need_atlas
+	call main_wait_atown_3600
+	multi atown_need_daedala
+	call main_wait_atown_900
+	call add_fulcrum_atown_simple
 	stop
 	
 	:idle
@@ -111,767 +200,2681 @@ script_id TARx
 	:blank_return
 	return
 	
-	:main_wait_150
+	:main_wait_atown_150
 	wait 24
 	res 13 AtL Any 500 blank_return
 	wait 150
 	return
 	
-	:main_wait_300
+	:main_wait_atown_300
 	wait 24
 	res 13 AtL Any 500 blank_return
 	wait 300
 	return
 	
-	:main_wait_450
+	:main_wait_atown_450
 	wait 24
-	call main_wait_300
-	call main_wait_150
+	call main_wait_atown_300
+	call main_wait_atown_150
 	return
 	
-	:main_wait_600
+	:main_wait_atown_600
 	wait 24
 	res 13 AtL Any 800 blank_return
-	res 13 AtL Any 500 main_wait_300
+	res 13 AtL Any 500 main_wait_atown_300
 	wait 600
 	return
 	
-	:main_wait_750
+	:main_wait_atown_750
 	wait 24
-	call main_wait_600
-	call main_wait_150
+	call main_wait_atown_600
+	call main_wait_atown_150
 	return
 	
-	:main_wait_900
+	:main_wait_atown_900
 	wait 24
 	res 13 AtL Any 1100 blank_return
-	res 13 AtL Any 800 main_wait_600
-	res 13 AtL Any 500 main_wait_300
+	res 13 AtL Any 800 main_wait_atown_600
+	res 13 AtL Any 500 main_wait_atown_300
 	wait 900
 	return
 	
-	:main_wait_1200
+	:main_wait_atown_1200
 	wait 24
-	call main_wait_900
-	call main_wait_300
+	call main_wait_atown_900
+	call main_wait_atown_300
 	return
 	
-	:main_wait_1500
+	:main_wait_atown_1500
 	wait 24
-	call main_wait_1200
-	call main_wait_300
+	call main_wait_atown_1200
+	call main_wait_atown_300
 	return
 	
-	:main_wait_1800
+	:main_wait_atown_1800
 	wait 24
-	call main_wait_900
-	call main_wait_900
+	call main_wait_atown_900
+	call main_wait_atown_900
 	return
 	
-	:main_wait_2400
+	:main_wait_atown_2400
 	wait 24
-	call main_wait_1200
-	call main_wait_1200
+	call main_wait_atown_1200
+	call main_wait_atown_1200
 	return
 	
-	:main_wait_3600
+	:main_wait_atown_3600
 	wait 24
-	call main_wait_1200
-	call main_wait_1200
+	call main_wait_atown_1200
+	call main_wait_atown_1200
 	return
 	
-	:worker_conditions
+	:worker_conditions_atown
 	wait 12
 	res 13 AtL Ore 500 blank_return
 	var Ex|WF(360) under_attack_var 0 13
 	return
 	
-	:worker_request_advanced
+	:worker_request_advanced_atown
 	local 255 AtL 28 mason|talos blank_return
-	notowns engineering_bay blank_return
+	notowns parthenon blank_return
 	local 255 AtL 10 talos blank_return
 	queue 1 talos parthenon 255 Local Loc.63 100
 	wait 150
 	return
 	
-	:count_expansion
+	:count_expansion_atown
 	wait 12
-	local 255 Ex 0 command_center count_expansion
+	local 255 Ex 0 command_center count_expansion_atown
 	var add town_count_var 1 13
 	local 255 Ex_W 0 command_center blank
 	var subtract town_count_var 1 13
-	goto count_expansion
+	goto count_expansion_atown
 	
-	:save_money_for_expansion
-	wait 12
-	time AtM 5760 Frames save_money_for_expansion # 5 minutes
-	res 13 AtL Ore 450 save_money_for_expansion
-	var Ex|Wait try_expand_var 1 13
-	var Set can_build_static_defense_var 0 13
-	var Set can_queue_early_military_var 0 13
-	var Ex|Wait try_expand_var 0 13
-	call build_bool
-	goto save_money_for_expansion
-	
-	:build_bool
+	:build_bool_atown
 	# These are used no matter what!
-	var Add can_worker_var 1 13
-	var Add can_expand_var 1 13
-	var Set can_attack_var 1 13
-	var Set build_gas_var 1 13
-	var Set build_done_var 1 13
+	var Add can_worker_var_atown 1 13
+	var Add can_expand_var_atown 1 13
+	var Set can_attack_var_atown 1 13
+	var Set build_gas_var_atown 1 13
+	var Set build_done_var_atown 1 13
 	# These are not used if skip_building_var is true!
-	var Set can_build_static_defense_var 1 13
-	var Set can_queue_early_military_var 1 13
-	var Set can_build_production_var 1 13
+	var Set can_build_static_defense_var_atown 1 13
+	var Set can_queue_early_military_var_atown 1 13
+	var Set can_build_production_var_atown 1 13
 	return
 	
-	:expansion_worker_start
+	:atown_worker_start
 	wait 24
-	local 255 Ex 0 command_center expansion_worker_start
+	local 255 Ex 0 command_center|quarry atown_worker_start
 	bld 1 mason 98
-	w_bldstart 1 command_center	
-	bld 2 mason 98
-	w_bld 1 command_center
+	local 255 AtL_W 1 command_center|treasury blank
 	bld 4 mason 98
-	maynard 4
-	multi worker_track
+	multi worker_track_atown
 	
-	:expansion_worker_loop
+	:atown_worker_loop
 	wait 150
-	var AtL|Wait can_worker_var 1 13
-	local 255 AtL 24 mason expansion_worker_loop
-	var AtL|Wait can_worker_var 1 13
+	var AtL|Wait can_worker_var_atown 1 13
+	local 255 AtL 24 mason atown_worker_loop
 	res 13 AtL_W Ore 50 blank
-	call worker_conditions
-	c_queues train mason|talos 13
-	res 13 AtL_C Any 100 worker_request_advanced
-	local 255 AtL 28 mason|talos expansion_worker_loop
+	call worker_conditions_atown
+#	c_queues train mason|talos 13
+	res 13 AtL_C Any 100 worker_request_advanced_atown
+	local 255 AtL 28 mason|talos atown_worker_loop
 	queue 1 mason command_center 255 Local Loc.63 200
 	wait 150
-	local 255 Ex 0 quarry expansion_worker_loop
+	local 255 Ex 0 quarry atown_worker_loop
 	queue 1 mason quarry 255 Local Loc.63 200
-	goto expansion_worker_loop
+	goto atown_worker_loop
 	
-	:worker_track
+	:worker_track_atown
 	wait 120
 	local 255 AtL_W 10 mason|talos blank
 	var Add mining_count_var 1 13
 	local 255 AtM_W 9 mason|talos blank
 	var Sub mining_count_var 1 13
-	goto worker_track
+	goto worker_track_atown
 	
-	:wBarracks
+	:add_barracks_atown_simple
 	wait 12
-	notowns command_center wBarracks
-	add_bld 255 barracks 1 99 95
+	notowns command_center add_barracks_atown_simple
+	add_bld 255 barracks 1 99 97
 	return
 	
-	:wBarracks2
+	:add_barracks_atown_simple2
 	p_need 1 barracks
 	return
 	
-	:wCaptaincy
+	:add_captaincy_atown_simple
 	wait 12
-	notowns engineering_bay wCaptaincy
-	add_bld 255 captaincy 1 99 97
+	notowns atlas add_captaincy_atown_simple
+	add_bld 255 captaincy 1 99 98
 	return
 	
-	:wCaptaincy2
+	:add_captaincy_atown_simple2
 	p_need 1 captaincy
 	return
 	
-	:wFactory
+	:add_fulcrum_atown_simple
 	wait 12
-	notowns command_center wFactory
-	add_bld 255 fulcrum 1 99 95
+	notowns command_center add_fulcrum_atown_simple
+	add_bld 255 fulcrum 1 99 97
 	return
 	
-	:wFactory2
+	:add_fulcrum_atown_simple2
 	p_need 1 fulcrum
 	return
 	
-	:wIronFoundry
+	:add_iron_foundry_atown_simple
 	wait 12
-	notowns science_facility wIronFoundry
+	notowns daedala add_iron_foundry_atown_simple
 	add_bld 255 iron_foundry 1 99 98
 	return
 	
-	:wIronFoundry2
+	:add_iron_foundry_atown_simple2
 	p_need 1 iron_foundry
 	return
 	
-	:wStarpad
+	:add_starpad_atown_simple
 	wait 12
-	notowns command_center wStarpad
-	add_bld 255 starpad 1 99 95
+	notowns command_center add_starpad_atown_simple
+	add_bld 255 starpad 1 99 97
 	return
 	
-	:wStarpad2
+	:add_starpad_atown_simple2
 	p_need 1 starpad
 	return
 	
-	:wStarport
+	:add_starport_atown_simple
 	wait 12
-	notowns command_center wStarport
-	notowns engineering_bay wStarport
-	add_bld 255 starport 1 99 95
+	notowns command_center add_starport_atown_simple
+	notowns atlas add_starport_atown_simple
+	add_bld 255 starport 1 99 97
 	return
 	
-	:wStarport2
+	:add_starport_atown_simple2
 	p_need 1 starport
 	return
 	
-	:wNaniteAssembly
+	:add_nanite_assembly_atown_simple
 	wait 12
-	notowns science_facility wNaniteAssembly
+	notowns daedala add_nanite_assembly_atown_simple
 	add_bld 255 nanite_assembly 1 99 98
 	return
 	
-	:wNaniteAssembly2
+	:add_nanite_assembly_atown_simple2
 	p_need 1 nanite_assembly
 	return
 	
-	:wEngineeringBay
+	:add_atlas_atown_simple
 	wait 12
-	notowns command_center wEngineeringBay
-	multi need_engineering_bay
+	notowns command_center add_atlas_atown_simple
+	multi atown_need_atlas
 	return
 	
-	:need_engineering_bay
+	:atown_need_atlas
 	wait 24
-	bring 13 AtM 4 Group_Factories Loc.63 need_engineering_bay
-	bring 13 AtL 4 reservoir Loc.63 need_engineering_bay2
+	bring 13 AtM 4 Group_Factories Loc.63 atown_need_atlas
+	bring 13 AtM 1 reservoir Loc.63 atown_need_atlas
 	
-	:need_engineering_bay2
-	p_need 1 engineering_bay
+	:atown_need_atlas2
+	var Ex|Jump skip_building_var 1 blank_return 13
+	p_need 1 atlas
 	stop
 	
-	:wait_for_EngineeringBay
+	:atown_wait_for_atlas
 	wait 12
-	notowns engineering_bay wait_for_EngineeringBay
+	notowns atlas atown_wait_for_atlas
 	return
 	
-	:wScienceFacility
-	wait 12
-	notowns engineering_bay wScienceFacility
-	multi need_science_facility
-	return
-	
-	:need_science_facility
+	:atown_need_fountainhead
 	wait 24
-	bring 13 AtM 9 Group_Factories Loc.63 need_engineering_bay
-	bring 13 AtL 6 reservoir Loc.63 need_science_facility2
+	notowns atlas atown_need_fountainhead
+	bring 13 AtM 4 Group_Factories Loc.63 atown_need_fountainhead
+	bring 13 AtM 2 reservoir Loc.63 atown_need_fountainhead
 	
-	:need_science_facility2
-	p_need 1 science_facility
+	:atown_need_fountainhead2
+	var Ex|Jump skip_building_var 1 blank_return 13
+	p_need 1 fountainhead
 	stop
 	
-	:wait_for_ScienceFacility
+	:atown_wait_for_fountainhead
 	wait 12
-	notowns science_facility wait_for_ScienceFacility
+	notowns fountainhead atown_wait_for_fountainhead
 	return
 	
-	:request_bunker
-	var Ex|Wait can_build_static_defense_var 1 13
+	:add_daedala_atown_simple
 	wait 12
-	bring 13 Ex 0 barracks|captaincy|apothecary|fulcrum|mantle|iron_foundry Loc.63 request_bunker
-	call request_bunker_check
+	notowns daedala add_daedala_atown_simple
+	multi atown_need_daedala
+	return
+	
+	:atown_need_daedala
+	wait 24
+	notowns atlas atown_need_daedala
+	bring 13 AtM 8 Group_Factories Loc.63 atown_need_daedala
+	bring 13 AtM 3 reservoir Loc.63 atown_need_daedala
+	
+	:atown_need_daedala2
+	var Ex|Jump skip_building_var 1 blank_return 13
+	p_need 1 daedala
+	stop
+	
+	:atown_wait_for_daedala
+	wait 12
+	notowns daedala atown_wait_for_daedala
+	return
+	
+	:add_atelier_atown_simple
+	wait 12
+	notowns atelier add_atelier_atown_simple
+	multi atown_need_atelier
+	return
+	
+	:atown_need_atelier
+	wait 24
+	notowns daedala atown_need_atelier
+	bring 13 AtM 10 Group_Factories Loc.63 atown_need_atelier
+	bring 13 AtM 4 reservoir Loc.63 atown_need_atelier
+	
+	:atown_need_atelier2
+	var Ex|Jump skip_building_var 1 blank_return 13
+	p_need 1 atelier
+	stop
+	
+	:atown_wait_for_atelier
+	wait 12
+	notowns atelier atown_wait_for_atelier
+	return
+	
+	:request_bunker_atown
+	var Ex|Wait can_build_static_defense_var_atown 1 13
+	wait 12
+	bring 13 Ex 0 barracks|captaincy|apothecary|fulcrum|mantle|iron_foundry Loc.63 request_bunker_atown
+	call request_bunker_atown_check
 	wait 60
-	call main_wait_900
-	goto request_bunker
+	call main_wait_atown_900
+	goto request_bunker_atown
 	
-	:request_bunker_check
+	:request_bunker_atown_check
 	local 255 AtL 4 bunker blank_return
-	var Ex|Jump under_attack_var 1 request_bunker_check2 13
+	var Ex|Jump under_attack_var 1 request_bunker_atown_check2 13
 	add_bld 255 bunker 1 2 95
-	goto request_bunker_guards_tier3
+	goto request_bunker_atown_guards_tier3
 	
-	:request_bunker_check2
+	:request_bunker_atown_check2
 	add_bld 255 bunker 1 3 95
-	var AtL|Jump mining_count_var 3 request_bunker_guards_tier3 13
-	var AtL|Jump mining_count_var 2 request_bunker_guards_tier2 13
-	goto request_bunker_guards_tier1
+	var AtL|Jump mining_count_var 3 request_bunker_atown_guards_tier3 13
+	var AtL|Jump mining_count_var 2 request_bunker_atown_guards_tier2 13
+	goto request_bunker_atown_guards_tier1
 	
-	:request_bunker_guards_tier1
+	:request_bunker_atown_guards_tier1
 	p_guard maverick 0
 	p_guard maverick 0
 	p_guard maverick 1
 	p_guard cyprian 0
 	p_guard cyprian 1
-	goto add_return_wait_960
+	goto add_return_atown__wait_960
 	
-	:request_bunker_guards_tier2
-	notowns captaincy request_bunker_guards_tier1
+	:request_bunker_atown_guards_tier2
+	notowns captaincy request_bunker_atown_guards_tier1
 	p_guard madcap 0
 	p_guard madcap 0
 	p_guard heracles 1
-	goto add_return_wait_960
+	goto add_return_atown__wait_960
 	
-	:request_bunker_guards_tier3
-	notowns guildhall request_bunker_guards_tier2
+	:request_bunker_atown_guards_tier3
+	notowns guildhall request_bunker_atown_guards_tier2
 	p_guard olympian 0
 	p_guard olympian 0
 	p_guard autocrat 1
-	goto add_return_wait_960
+	goto add_return_atown__wait_960
 	
-	:request_watchdog
-	var Ex|Wait can_build_static_defense_var 1 13
+	:request_watchdog_atown
+	var Ex|Wait can_build_static_defense_var_atown 1 13
 	wait 12
-	notowns command_center request_watchdog
-	call request_watchdog_check
-	call main_wait_600
-	goto request_watchdog
+	notowns command_center request_watchdog_atown
+	call request_watchdog_atown_check
+	call main_wait_atown_600
+	goto request_watchdog_atown
 	
-	:request_watchdog_check
-	local 255 AtL 4 watchdog request_watchdog_check2
+	:request_watchdog_atown_check
+	local 255 AtL 4 watchdog request_watchdog_atown_check2
 	add_bld 255 watchdog 1 4 97
-	var Ex|Jump under_attack_by_air_var 1 add_return_wait_480 13
-	goto add_return_wait_960
+	var Ex|Jump under_attack_by_air_var 1 add_return_atown__wait_480 13
+	goto add_return_atown__wait_960
 	
-	:request_watchdog_check2
-	var Ex|Jump under_attack_by_air_var 1 request_watchdog_check3 13
-	var AtM|Jump mining_count_var 2 add_return_wait_480 13
+	:request_watchdog_atown_check2
+	var Ex|Jump under_attack_by_air_var 1 request_watchdog_atown_check3 13
+	var AtM|Jump mining_count_var 2 add_return_atown__wait_480 13
 	add_bld 255 watchdog 1 7 97
-	goto add_return_wait_480
+	goto add_return_atown__wait_480
 	
-	:request_watchdog_check3
+	:request_watchdog_atown_check3
 	add_bld 255 watchdog 1 10 97
-	goto add_return_wait_480
+	goto add_return_atown__wait_480
 	
-	:request_sentinel
-	var Ex|Wait can_build_static_defense_var 1 13
+	:request_sentinel_atown
+	var Ex|Wait can_build_static_defense_var_atown 1 13
 	wait 12
-	notowns command_center request_sentinel
-	notowns engineering_bay request_sentinel
-	call request_sentinel_check
-	call main_wait_600
-	goto request_sentinel
+	notowns command_center request_sentinel_atown
+	notowns atlas request_sentinel_atown
+	call request_sentinel_atown_check
+	call main_wait_atown_600
+	goto request_sentinel_atown
 	
-	:request_sentinel_check
-	local 255 AtL 4 sentinel request_sentinel_check2
+	:request_sentinel_atown_check
+	local 255 AtL 4 sentinel request_sentinel_atown_check2
 	add_bld 255 sentinel 1 4 98
-	var Ex|Jump under_attack_var 1 add_return_wait_480 13
-	goto add_return_wait_960
+	var Ex|Jump under_attack_var 1 add_return_atown__wait_480 13
+	goto add_return_atown__wait_960
 	
-	:request_sentinel_check2
-	var Ex|Jump under_attack_var 1 request_sentinel_check3 13
-	var AtM|Jump mining_count_var 2 add_return_wait_480 13
+	:request_sentinel_atown_check2
+	var Ex|Jump under_attack_var 1 request_sentinel_atown_check3 13
+	var AtM|Jump mining_count_var 2 add_return_atown__wait_480 13
 	add_bld 255 sentinel 1 7 98
-	goto add_return_wait_480
+	goto add_return_atown__wait_480
 	
-	:request_sentinel_check3
+	:request_sentinel_atown_check3
 	add_bld 255 sentinel 1 10 98
-	goto add_return_wait_480
+	goto add_return_atown__wait_480
 	
-	:request_ion_cannon
-	var Ex|Wait can_build_static_defense_var 1 13
+	:request_ion_cannon_atown
+	var Ex|Wait can_build_static_defense_var_atown 1 13
 	wait 12
-	notowns command_center request_ion_cannon
-	notowns science_facility request_ion_cannon
-	call request_ion_cannon_check
+	notowns command_center request_ion_cannon_atown
+	notowns daedala request_ion_cannon_atown
+	call request_ion_cannon_atown_check
 	wait 60
-	call main_wait_900
-	goto request_ion_cannon
+	call main_wait_atown_900
+	goto request_ion_cannon_atown
 	
-	:request_ion_cannon_check
-	local 255 AtL 1 ion_cannon request_ion_cannon_check2
+	:request_ion_cannon_atown_check
+	local 255 AtL 1 ion_cannon request_ion_cannon_atown_check2
 	add_bld 255 ion_cannon 1 1 98
-	goto add_return_wait_960
+	goto add_return_atown__wait_960
 	
-	:request_ion_cannon_check2
-	var Ex|Jump under_attack_var 0 add_return_wait_960 13
+	:request_ion_cannon_atown_check2
+	var Ex|Jump under_attack_var 0 add_return_atown__wait_960 13
 	add_bld 255 ion_cannon 1 2 98
-	goto add_return_wait_960
+	goto add_return_atown__wait_960
 	
-	:request_infrastructure
+	:request_infrastructure_atown
 	wait 12
-	var Ex|Wait build_done_var 1 13
-	var Ex|Wait can_build_production_var 1 13
+	var Ex|Wait build_done_var_atown 1 13
+	var Ex|Wait can_build_production_var_atown 1 13
 	
-	:request_infrastructure_parthenon
-	notowns science_facility request_infrastructure_silo
-	call add_parthenon_check
+	:request_infrastructure_atown_parthenon
+	notowns daedala request_infrastructure_atown_silo
+	call add_parthenon_check_atown
 	
-	:request_infrastructure_silo
-	notowns science_facility request_infrastructure_quarry
-	var Ex|Jump infrastructure_cycle_var 1 request_infrastructure_loop 13
+	:request_infrastructure_atown_silo
+	notowns daedala request_infrastructure_atown_quarry
+	var Ex|Jump infrastructure_cycle_var_atown 1 request_infrastructure_atown_loop 13
 	var Ex|Call pref_missile_silo 1 add_nuclear_silo 13
-	var Ex|Jump infrastructure_cycle_var 1 request_infrastructure_loop 13
-	call add_nuclear_silo_check
+	var Ex|Jump infrastructure_cycle_var_atown 1 request_infrastructure_atown_loop 13
+	call add_nuclear_silo_check_atown
 	
-	:request_infrastructure_quarry
-	var Ex|Jump infrastructure_cycle_var 1 request_infrastructure_loop 13
-	var Ex|Call pref_quarry 1 add_quarry 13
-	var Ex|Jump infrastructure_cycle_var 1 request_infrastructure_loop 13
-	call add_quarry_check
+	:request_infrastructure_atown_quarry
+	var Ex|Jump infrastructure_cycle_var_atown 1 request_infrastructure_atown_loop 13
+	var Ex|Call pref_quarry 1 add_quarry_atown 13
+	var Ex|Jump infrastructure_cycle_var_atown 1 request_infrastructure_atown_loop 13
+	call add_quarry_atown_check_atown
 	
-	:add_parthenon_check
+	:request_infrastructure_atown_loop
+	var Set infrastructure_cycle_var_atown 0 13
+	wait 220
+	call main_wait_atown_1200
+	goto request_infrastructure_atown
+	
+	:add_parthenon_check_atown
 	local 255 AtL 1 parthenon blank_return
 	add_bld 255 parthenon 1 1 99
 	w_bldstart 1 parthenon
 	wait 60
-	call main_wait_900
-	goto add_return
+	call main_wait_atown_900
+	goto add_return_atown
 	
-	:add_nuclear_silo_check
+	:add_nuclear_silo_check_atown
 	local 255 AtL 1 missile_silo blank_return
 	
 	:add_nuclear_silo
 	local 255 AtL 2 missile_silo|quarry blank_return
 	add_bld 255 missile_silo 1 1 98
-	var Set infrastructure_cycle_var 1 13
+	var Set infrastructure_cycle_var_atown 1 13
 	w_bldstart 1 missile_silo
 	wait 240
-	call main_wait_900
-	goto add_return
+	call main_wait_atown_900
+	goto add_return_atown
 	
-	:add_quarry_check
+	:add_quarry_atown_check_atown
 	local 255 AtL 1 quarry blank_return
 	
-	:add_quarry
+	:add_quarry_atown
 	local 255 AtL 2 missile_silo|quarry blank_return
 	add_bld 255 quarry 1 1 98
-	var Set infrastructure_cycle_var 1 13
+	var Set infrastructure_cycle_var_atown 1 13
 	w_bldstart 1 quarry
 	wait 60
-	call main_wait_600
-	goto add_return
+	call main_wait_atown_600
+	goto add_return_atown
 	
-	:production_cycle
-	var Set can_build_production_var 1 13
+	:production_cycle_atown
+	var Set can_build_production_var_atown 1 13
 	
-	:production_cycle_conditions
+	:production_cycle_atown_conditions
 	wait 24
-	var Ex|Jump mining_count_var 0 production_cycle_conditions 13
-	local 255 Ex 0 command_center|quarry production_cycle_conditions
-	local 255 AtM 4 mason|talos production_cycle_conditions
-	bring 13 Ex 0 engineering_bay|science_facility Loc.63 production_cycle_conditions
-	bring 13 AtL 31 Group_Factories Loc.63 production_cycle_conditions_6
-	bring 13 AtL 21 Group_Factories Loc.63 production_cycle_conditions_5
-	bring 13 AtL 16 Group_Factories Loc.63 production_cycle_conditions_4
-	bring 13 AtL 11 Group_Factories Loc.63 production_cycle_conditions_3
-	bring 13 AtL 6 Group_Factories Loc.63 production_cycle_conditions_2
-	goto production_cycle_loop
+	var Ex|Jump mining_count_var 0 production_cycle_atown_conditions 13
+	local 255 Ex 0 command_center|quarry production_cycle_atown_conditions
+	local 255 AtM 4 mason|talos production_cycle_atown_conditions
+	bring 13 Ex 0 atlas|daedala Loc.63 production_cycle_atown_conditions
+	bring 13 AtL 31 Group_Factories Loc.63 production_cycle_atown_conditions_6
+	bring 13 AtL 21 Group_Factories Loc.63 production_cycle_atown_conditions_5
+	bring 13 AtL 16 Group_Factories Loc.63 production_cycle_atown_conditions_4
+	bring 13 AtL 11 Group_Factories Loc.63 production_cycle_atown_conditions_3
+	bring 13 AtL 6 Group_Factories Loc.63 production_cycle_atown_conditions_2
+	goto production_cycle_atown_loop
 	
-	:production_cycle_conditions_2
-	var Ex|Jump mining_count_var 1 production_cycle_conditions 13
-	goto production_cycle_loop
+	:production_cycle_atown_conditions_2
+	var Ex|Jump mining_count_var 1 production_cycle_atown_conditions 13
+	goto production_cycle_atown_loop
 	
-	:production_cycle_conditions_3
-	var Ex|Jump mining_count_var 2 production_cycle_conditions 13
-	goto production_cycle_loop
+	:production_cycle_atown_conditions_3
+	var Ex|Jump mining_count_var 2 production_cycle_atown_conditions 13
+	goto production_cycle_atown_loop
 	
-	:production_cycle_conditions_4
-	bring 13 Ex 0 science_facility Loc.63 production_cycle_conditions
-	var Ex|Jump mining_count_var 3 production_cycle_conditions 13
-	goto production_cycle_loop
+	:production_cycle_atown_conditions_4
+	bring 13 Ex 0 daedala Loc.63 production_cycle_atown_conditions
+	var Ex|Jump mining_count_var 3 production_cycle_atown_conditions 13
+	goto production_cycle_atown_loop
 	
-	:production_cycle_conditions_5
-	var Ex|Jump mining_count_var 4 production_cycle_conditions 13
-	goto production_cycle_loop
+	:production_cycle_atown_conditions_5
+	var Ex|Jump mining_count_var 4 production_cycle_atown_conditions 13
+	goto production_cycle_atown_loop
 	
-	:production_cycle_conditions_6
-	var Ex|Jump mining_count_var 5 production_cycle_conditions 13
-	goto production_cycle_loop
+	:production_cycle_atown_conditions_6
+	var Ex|Jump mining_count_var 5 production_cycle_atown_conditions 13
+	goto production_cycle_atown_loop
 	
-	:production_cycle_loop
+	:production_cycle_atown_loop
 	wait 12
-	var AtL|Call production_cycle_var 1 production_cycle_wait 13
-	var Set production_cycle_var 0 13
-	var Ex|Wait can_build_production_var 1 13
-	call production_cycle_check
+	var AtL|Call production_cycle_atown_var 1 production_cycle_atown_wait 13
+	var Set production_cycle_atown_var 0 13
+	var Ex|Wait can_build_production_var_atown 1 13
+	call production_cycle_atown_check
 	wait 110
-	call main_wait_150
-	goto production_cycle_conditions
+	call main_wait_atown_150
+	goto production_cycle_atown_conditions
 	
-	:production_cycle_wait
+	:production_cycle_atown_wait
 	bring 13 AtM 3 barracks|captaincy|apothecary|fulcrum|mantle|iron_foundry|starpad|starport|nanite_assembly Loc.63 blank_return
 	local 255 AtM 1 barracks|captaincy|apothecary|fulcrum|mantle|iron_foundry|starpad|starport|nanite_assembly blank_return
 	var AtL|Jump mining_count_var 3 blank_return 13
-	var Ex|Jump mining_count_var 2 production_cycle_wait2 13
-	call main_wait_750
+	var Ex|Jump mining_count_var 2 production_cycle_atown_wait2 13
+	call main_wait_atown_750
 	return
 	
-	:production_cycle_wait2
-	call main_wait_450
+	:production_cycle_atown_wait2
+	call main_wait_atown_450
 	return
 	
-	:production_cycle_check
-	var Ex|Call pref_armor 1 production_cycle_check_armor 13
-	var Ex|Call pref_raider 1 production_cycle_check_raider 13
-	var Ex|Call pref_orbital 1 production_cycle_check_orbital 13
-	var AtL|Jump mining_count_var 4 production_cycle_check_high 13
-	call production_cycle_check_raider
-	call production_cycle_check_armor
-	call production_cycle_check_orbital
+	:production_cycle_atown_check
+	var Ex|Call pref_armor 1 production_cycle_atown_check_armor 13
+	var Ex|Call pref_raider 1 production_cycle_atown_check_raider 13
+	var Ex|Call pref_orbital 1 production_cycle_atown_check_orbital 13
+	var AtL|Jump mining_count_var 4 production_cycle_atown_check_high 13
+	call production_cycle_atown_check_raider
+	call production_cycle_atown_check_armor
+	call production_cycle_atown_check_orbital
 	return
 	
-	:production_cycle_check_high
-	call production_cycle_check_orbital
-	call production_cycle_check_armor
-	call production_cycle_check_raider
+	:production_cycle_atown_check_high
+	call production_cycle_atown_check_orbital
+	call production_cycle_atown_check_armor
+	call production_cycle_atown_check_raider
 	return
 	
-	:production_cycle_check_armor
-	var AtL|Call pref_fulcrum 1 production_cycle_fulcrum 13
-	var AtL|Call pref_iron_foundry 1 production_cycle_iron_foundry 13
-	call production_cycle_fulcrum
-	call production_cycle_mantle
-	call production_cycle_iron_foundry
+	:production_cycle_atown_check_armor
+	var AtL|Call pref_fulcrum 1 production_cycle_atown_fulcrum 13
+	var AtL|Call pref_iron_foundry 1 production_cycle_atown_iron_foundry 13
+	call production_cycle_atown_fulcrum
+	call production_cycle_atown_mantle
+	call production_cycle_atown_iron_foundry
 	return
 	
-	:production_cycle_check_raider
-	var AtL|Call pref_barracks 1 production_cycle_barracks 13
-	var AtL|Call pref_captaincy 1 production_cycle_captaincy 13
-	call production_cycle_barracks
-	call production_cycle_captaincy
-	call production_cycle_apothecary
+	:production_cycle_atown_check_raider
+	var AtL|Call pref_barracks 1 production_cycle_atown_barracks 13
+	var AtL|Call pref_captaincy 1 production_cycle_atown_captaincy 13
+	call production_cycle_atown_barracks
+	call production_cycle_atown_captaincy
+	call production_cycle_atown_apothecary
 	return
 	
-	:production_cycle_check_orbital
-	var AtL|Call pref_starport 1 production_cycle_starport 13
-	var AtL|Call pref_nanite_assembly 1 production_cycle_nanite_assembly 13
-	call production_cycle_starpad
-	call production_cycle_starport
-	call production_cycle_nanite_assembly
+	:production_cycle_atown_check_orbital
+	var AtL|Call pref_starport 1 production_cycle_atown_starport 13
+	var AtL|Call pref_nanite_assembly 1 production_cycle_atown_nanite_assembly 13
+	call production_cycle_atown_starpad
+	call production_cycle_atown_starport
+	call production_cycle_atown_nanite_assembly
 	return
 	
-	:production_cycle_barracks
+	:production_cycle_atown_barracks
 	wait 12
-	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Jump production_cycle_atown_var 1 blank_return 13
 	notowns command_center blank_return
 	bring 13 Ex 0 mason|talos Loc.63 blank_return
 	add_bld 255 barracks 1 20 97
 	wait 150
-	call main_wait_750
+	call main_wait_atown_750
 	
-	:production_cycle_barracks_addon
-	var AtL|Jump pref_medbay 1 production_cycle_medbay 13
-	var AtL|Jump pref_covert_ops 1 production_cycle_covert_ops 13
-	local 255 Ex 0 medbay production_cycle_medbay
-	call production_cycle_covert_ops
-	call production_cycle_medbay
-	goto production_cycle_success
+	:production_cycle_atown_barracks_addon
+	var AtL|Jump pref_medbay 1 production_cycle_atown_medbay 13
+	var AtL|Jump pref_covert_ops 1 production_cycle_atown_covert_ops 13
+	local 255 Ex 0 medbay production_cycle_atown_medbay
+	call production_cycle_atown_covert_ops
+	call production_cycle_atown_medbay
+	goto production_cycle_atown_success
 	
-	:production_cycle_medbay
+	:production_cycle_atown_medbay
 	wait 12
-	var AtL|Jump production_cycle_addon_var 1 blank_return 13
+	var AtL|Jump production_cycle_atown_addon_var 1 blank_return 13
 	notowns barracks blank_return
 	add_bld 255 medbay 1 20 96
-	var Add production_cycle_addon_var 1 13
-	call main_wait_300
+	var Add production_cycle_atown_addon_var 1 13
+	call main_wait_atown_300
 	return
 	
-	:production_cycle_covert_ops
+	:production_cycle_atown_covert_ops
 	wait 12
-	var AtL|Jump production_cycle_addon_var 1 blank_return 13
+	var AtL|Jump production_cycle_atown_addon_var 1 blank_return 13
 	notowns barracks blank_return
-	notowns engineering_bay blank_return
+	notowns atlas blank_return
 	add_bld 255 covert_ops 1 20 96
-	var Add production_cycle_addon_var 1 13
-	call main_wait_300
+	var Add production_cycle_atown_addon_var 1 13
+	call main_wait_atown_300
 	return
 	
-	:production_cycle_captaincy
+	:production_cycle_atown_captaincy
 	wait 12
-	var AtL|Jump production_cycle_var 1 blank_return 13
-	notowns engineering_bay blank_return
+	var AtL|Jump production_cycle_atown_var 1 blank_return 13
+	notowns atlas blank_return
 	bring 13 Ex 0 mason|talos Loc.63 blank_return
 	add_bld 255 captaincy 1 20 98
 	wait 180
-	call main_wait_900
+	call main_wait_atown_900
 	
-	:production_cycle_captaincy_addon
-	call production_cycle_guildhall
-	call production_cycle_tinkerers_tower
-	goto production_cycle_success
+	:production_cycle_atown_captaincy_addon
+	call production_cycle_atown_guildhall
+	call production_cycle_atown_tinkerers_tower
+	goto production_cycle_atown_success
 	
-	:production_cycle_tinkerers_tower
+	:production_cycle_atown_tinkerers_tower
 	wait 12
-	var AtL|Jump production_cycle_addon_var 1 blank_return 13
+	var AtL|Jump production_cycle_atown_addon_var 1 blank_return 13
 	notowns captaincy blank_return
 	add_bld 255 tinkerers_tower 1 20 97
-	var Add production_cycle_addon_var 1 13
-	call main_wait_300
+	var Add production_cycle_atown_addon_var 1 13
+	call main_wait_atown_300
 	return
 	
-	:production_cycle_guildhall
+	:production_cycle_atown_guildhall
 	wait 12
-	var AtL|Jump production_cycle_addon_var 1 blank_return 13
+	var AtL|Jump production_cycle_atown_addon_var 1 blank_return 13
 	notowns captaincy blank_return
-	notowns science_facility blank_return
+	notowns daedala blank_return
 	add_bld 255 guildhall 1 20 97
-	var Add production_cycle_addon_var 1 13
-	call main_wait_300
+	var Add production_cycle_atown_addon_var 1 13
+	call main_wait_atown_300
 	return
 	
-	:production_cycle_apothecary
+	:production_cycle_atown_apothecary
 	wait 12
-	var AtL|Jump production_cycle_var 1 blank_return 13
-	notowns science_facility blank_return
+	var AtL|Jump production_cycle_atown_var 1 blank_return 13
+	notowns daedala blank_return
 	bring 13 Ex 0 mason|talos Loc.63 blank_return
 	add_bld 255 apothecary 1 10 98
 	wait 180
-	call main_wait_900
+	call main_wait_atown_900
 	return
 	
-	:production_cycle_fulcrum
+	:production_cycle_atown_fulcrum
 	wait 12
-	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Jump production_cycle_atown_var 1 blank_return 13
 	notowns command_center blank_return
 	bring 13 Ex 0 mason|talos Loc.63 blank_return
 	add_bld 255 fulcrum 1 20 97
 	wait 180
-	call main_wait_900
+	call main_wait_atown_900
 	
-	:production_cycle_fulcrum_addon
-	var AtL|Jump pref_machine_shop 1 production_cycle_machine_shop 13
-	var AtL|Jump pref_scrapyard 1 production_cycle_scrapyard 13
-	call production_cycle_machine_shop
-	call production_cycle_scrapyard
-	goto production_cycle_success
+	:production_cycle_atown_fulcrum_addon
+	var AtL|Jump pref_machine_shop 1 production_cycle_atown_machine_shop 13
+	var AtL|Jump pref_scrapyard 1 production_cycle_atown_scrapyard 13
+	call production_cycle_atown_machine_shop
+	call production_cycle_atown_scrapyard
+	goto production_cycle_atown_success
 	
-	:production_cycle_scrapyard
+	:production_cycle_atown_scrapyard
 	wait 12
-	var AtL|Jump production_cycle_addon_var 1 blank_return 13
+	var AtL|Jump production_cycle_atown_addon_var 1 blank_return 13
 	notowns fulcrum blank_return
 	add_bld 255 scrapyard 1 20 96
-	var Add production_cycle_addon_var 1 13
-	call main_wait_300
+	var Add production_cycle_atown_addon_var 1 13
+	call main_wait_atown_300
 	return
 	
-	:production_cycle_machine_shop
+	:production_cycle_atown_machine_shop
 	wait 12
-	var AtL|Jump production_cycle_addon_var 1 blank_return 13
+	var AtL|Jump production_cycle_atown_addon_var 1 blank_return 13
 	notowns fulcrum blank_return
-	notowns engineering_bay blank_return
+	notowns atlas blank_return
 	add_bld 255 machine_shop 1 20 96
-	var Add production_cycle_addon_var 1 13
-	call main_wait_300
+	var Add production_cycle_atown_addon_var 1 13
+	call main_wait_atown_300
 	return
 	
-	:production_cycle_mantle
+	:production_cycle_atown_mantle
 	wait 12
-	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Jump production_cycle_atown_var 1 blank_return 13
 	notowns command_center blank_return
 	bring 13 Ex 0 mason|talos Loc.63 blank_return
 	add_bld 255 mantle 1 10 97
 	wait 180
-	call main_wait_900
+	call main_wait_atown_900
 	return
 	
-	:production_cycle_iron_foundry
+	:production_cycle_atown_iron_foundry
 	wait 12
-	var AtL|Jump production_cycle_var 1 blank_return 13
-	notowns science_facility blank_return
+	var AtL|Jump production_cycle_atown_var 1 blank_return 13
+	notowns daedala blank_return
 	bring 13 Ex 0 mason|talos Loc.63 blank_return
 	add_bld 255 iron_foundry 1 20 98
-	call main_wait_1200
+	call main_wait_atown_1200
 	
-	:production_cycle_iron_foundry_addon
-	call production_cycle_future_station
-	call production_cycle_biotic_base
-	goto production_cycle_success
+	:production_cycle_atown_iron_foundry_addon
+	call production_cycle_atown_future_station
+	call production_cycle_atown_biotic_base
+	goto production_cycle_atown_success
 	
-	:production_cycle_future_station
+	:production_cycle_atown_future_station
 	wait 12
-	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Jump production_cycle_atown_var 1 blank_return 13
 	notowns iron_foundry blank_return
 	add_bld 255 future_station 1 20 97
-	var Add production_cycle_var 1 13
-	call main_wait_300
+	var Add production_cycle_atown_var 1 13
+	call main_wait_atown_300
 	return
 	
-	:production_cycle_biotic_base
+	:production_cycle_atown_biotic_base
 	wait 12
-	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Jump production_cycle_atown_var 1 blank_return 13
 	notowns iron_foundry blank_return
 	add_bld 255 biotic_base 1 20 97
-	var Add production_cycle_var 1 13
-	call main_wait_300
+	var Add production_cycle_atown_var 1 13
+	call main_wait_atown_300
 	return
 	
-	:production_cycle_starpad
+	:production_cycle_atown_starpad
 	wait 12
-	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Jump production_cycle_atown_var 1 blank_return 13
 	notowns command_center blank_return
 	bring 13 Ex 0 mason|talos Loc.63 blank_return
 	add_bld 255 starpad 1 10 97
 	wait 180
-	call main_wait_900
+	call main_wait_atown_900
 	return
 	
-	:production_cycle_starport
+	:production_cycle_atown_starport
 	wait 12
-	var AtL|Jump production_cycle_var 1 blank_return 13
-	notowns engineering_bay blank_return
+	var AtL|Jump production_cycle_atown_var 1 blank_return 13
+	notowns atlas blank_return
 	bring 13 Ex 0 mason|talos Loc.63 blank_return
 	add_bld 255 starport 1 20 98
 	wait 180
-	call main_wait_900
+	call main_wait_atown_900
 	
-	:production_cycle_starport_addon
-	var AtL|Jump pref_munitions_bay 1 production_cycle_munitions_bay 13
-	var AtL|Jump pref_control_tower 1 production_cycle_control_tower 13
-	call production_cycle_munitions_bay
-	call production_cycle_control_tower
-	goto production_cycle_success
+	:production_cycle_atown_starport_addon
+	var AtL|Jump pref_munitions_bay 1 production_cycle_atown_munitions_bay 13
+	var AtL|Jump pref_control_tower 1 production_cycle_atown_control_tower 13
+	call production_cycle_atown_munitions_bay
+	call production_cycle_atown_control_tower
+	goto production_cycle_atown_success
 	
-	:production_cycle_munitions_bay
+	:production_cycle_atown_munitions_bay
 	wait 12
-	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Jump production_cycle_atown_var 1 blank_return 13
 	notowns starport blank_return
-	notowns engineering_bay blank_return
+	notowns atlas blank_return
 	add_bld 255 munitions_bay 1 20 97
-	var Add production_cycle_var 1 13
-	call main_wait_300
+	var Add production_cycle_atown_var 1 13
+	call main_wait_atown_300
 	return
 	
-	:production_cycle_control_tower
+	:production_cycle_atown_control_tower
 	wait 12
-	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Jump production_cycle_atown_var 1 blank_return 13
 	notowns starport blank_return
-	notowns science_facility blank_return
+	notowns daedala blank_return
 	add_bld 255 control_tower 1 20 97
-	var Add production_cycle_var 1 13
-	call main_wait_300
+	var Add production_cycle_atown_var 1 13
+	call main_wait_atown_300
 	return
 	
-	:production_cycle_nanite_assembly
+	:production_cycle_atown_nanite_assembly
 	wait 12
-	var AtL|Jump production_cycle_var 1 blank_return 13
-	notowns science_facility blank_return
+	var AtL|Jump production_cycle_atown_var 1 blank_return 13
+	notowns daedala blank_return
 	bring 13 Ex 0 mason|talos Loc.63 blank_return
 	add_bld 255 nanite_assembly 1 20 99
-	call main_wait_1200
+	call main_wait_atown_1200
 	
-	:production_cycle_nanite_assembly_addon
-	call production_cycle_particle_accelerator
-	goto production_cycle_success
+	:production_cycle_atown_nanite_assembly_addon
+	call production_cycle_atown_particle_accelerator
+	goto production_cycle_atown_success
 	
-	:production_cycle_particle_accelerator
+	:production_cycle_atown_particle_accelerator
 	wait 12
-	var AtL|Jump production_cycle_var 1 blank_return 13
+	var AtL|Jump production_cycle_atown_var 1 blank_return 13
 	notowns nanite_assembly blank_return
 	add_bld 255 particle_accelerator 1 20 98
-	var Add production_cycle_var 1 13
-	call main_wait_300
+	var Add production_cycle_atown_var 1 13
+	call main_wait_atown_300
 	return
 	
-	:production_cycle_success
-	var Set production_cycle_var 1 13
+	:production_cycle_atown_success
+	var Set production_cycle_atown_var 1 13
 	
-	:add_return
+	:add_return_atown
 	wait 24
 	return
 	
-	:add_return_wait_480
+	:add_return_atown__wait_480
 	wait 30
-	call main_wait_450
+	call main_wait_atown_450
 	return
 	
-	:add_return_wait_960
+	:add_return_atown__wait_960
 	wait 60
-	call main_wait_900
+	call main_wait_atown_900
 	return
+	
+	:atown_build_order
+	var Ex|Jump skip_building_var 1 atown_build_order_skip 13
+	var Ex|Call use_custom_timers_var 1 atown_build_order_custom_timers 13
+	var Ex|Jump pref_armor 1 atown_build_order_armor 13
+	var Ex|Jump pref_raider 1 atown_build_order_raider 13
+	var Ex|Jump pref_orbital 1 atown_build_order_orbital 13
+	goto atown_build_order_gen
+	
+	:atown_build_order_skip
+	var Ex|Jump debug_ai_messages_var 0 atown_build_order_skip_main 13
+	print Terran<32>AI<32>skips<32>build<32>order!
+	goto atown_build_order_skip_main
+	
+	:atown_build_order_custom_timers
+	var Ex|Jump debug_ai_messages_var 0 atown_build_order_skip_main_pre 13
+	print Terran<32>AI<32>uses<32>custom<32>timers<32>without<32>skipping<32>build<32>order!
+	
+	:atown_build_order_skip_main_pre
+	multi atown_build_order_skip_main
+	return
+	
+	:atown_build_order_skip_main
+	wait 3
+	var Ex|Jump build_type_is_timing_var 1 atown_build_order_skip_timing 13
+	var Ex|Jump build_type_is_rush_var 1 atown_build_order_skip_rush 13
+	var Ex|Jump build_type_is_greed_var 1 atown_build_order_skip_greed 13
+	
+	:atown_build_order_skip_timing
+	multi atown_build_order_skip_timing_gas
+	multi atown_build_order_skip_timing_expand
+	multi atown_build_order_skip_timing_attack
+	goto atown_build_order_skip_final
+	
+	:atown_build_order_skip_timing_gas
+	dth 13 AtL 1 mineral_field1 atown_build_order_skip_custom_gas
+	call main_wait_atown_450
+	bld 1 reservoir 105
+	call main_wait_atown_450
+	var Add build_gas_var_atown 1 13
+	stop
+	
+	:atown_build_order_skip_timing_expand
+	dth 13 AtL 1 mineral_field2 atown_build_order_skip_custom_expansions
+	call main_wait_atown_1200
+	call main_wait_atown_1200
+	call main_wait_atown_600
+	var Add can_expand_var_atown 1 13
+	stop
+	
+	:atown_build_order_skip_timing_attack
+	dth 13 AtL 1 mineral_field3 atown_build_order_skip_custom_attack
+	call main_wait_atown_1200
+	call main_wait_atown_900
+	var Add can_attack_var_atown 1 13
+	stop
+	
+	:atown_build_order_skip_rush
+	multi atown_build_order_skip_rush_gas
+	multi atown_build_order_skip_rush_expand
+	multi atown_build_order_skip_rush_attack
+	goto atown_build_order_skip_final
+	
+	:atown_build_order_skip_rush_gas
+	call main_wait_atown_450
+	var Add build_gas_var_atown 1 13
+	stop
+	
+	:atown_build_order_skip_rush_expand
+	call main_wait_atown_450
+	call main_wait_atown_1500
+	call main_wait_atown_2400
+	var Add can_expand_var_atown 1 13
+	stop
+	
+	:atown_build_order_skip_rush_attack
+	call main_wait_atown_450
+	call main_wait_atown_1500
+	var Add can_attack_var_atown 1 13
+	stop
+	
+	:atown_build_order_skip_greed
+	multi atown_build_order_skip_greed_gas
+	multi atown_build_order_skip_greed_expand
+	multi atown_build_order_skip_greed_attack
+	goto atown_build_order_skip_final
+	
+	:atown_build_order_skip_greed_gas
+	call main_wait_atown_900
+	bld 1 reservoir 105
+	call main_wait_atown_900
+	var Add build_gas_var_atown 1 13
+	
+	:atown_build_order_skip_greed_expand
+	call main_wait_atown_450
+	var Add can_expand_var_atown 1 13
+	stop
+	
+	:atown_build_order_skip_greed_attack
+	call main_wait_atown_1800
+	call main_wait_atown_2400
+	var Add can_attack_var_atown 1 13
+	stop
+	
+	:atown_build_order_skip_custom_gas
+	var Ex|Jump debug_ai_messages_var 0 atown_build_order_skip_custom_gas_loop 13
+	print Terran<32>AI<32>custom<32>gas<32>timer<32>started...
+	
+	:atown_build_order_skip_custom_gas_loop
+	wait 24
+	dth 13 Sub 1 mineral_field1 blank
+	dth 13 AtL 1 mineral_field1 atown_build_order_skip_custom_gas_loop
+	var Set build_gas_var_atown 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank 13
+	print Terran<32>AI<32>gets<32>gas<32>at<32>a<32>custom<32>time!
+	stop
+	
+	:atown_build_order_skip_custom_expansions
+	var Ex|Jump debug_ai_messages_var 0 atown_build_order_skip_custom_expansions_loop 13
+	print Terran<32>AI<32>custom<32>expansion<32>timer<32>started...
+	
+	:atown_build_order_skip_custom_expansions_loop
+	wait 24
+	dth 13 Sub 1 mineral_field2 blank
+	dth 13 AtL 1 mineral_field2 atown_build_order_skip_custom_expansions_loop
+	var Add can_expand_var_atown 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank 13
+	print Terran<32>AI<32>expands<32>at<32>a<32>custom<32>time!
+	stop
+	
+	:atown_build_order_skip_custom_attack
+	var Ex|Jump debug_ai_messages_var 0 atown_build_order_skip_custom_attack_loop 13
+	print Terran<32>AI<32>custom<32>attack<32>timer<32>started...
+	
+	:atown_build_order_skip_custom_attack_loop
+	wait 24
+	dth 13 Sub 1 mineral_field3 blank
+	dth 13 AtL 1 mineral_field3 atown_build_order_skip_custom_attack_loop
+	var Set can_attack_var_atown 1 13
+	var Ex|Jump debug_ai_messages_var 0 blank 13
+	print Terran<32>AI<32>attacks<32>at<32>a<32>custom<32>time!
+	stop
+	
+	:atown_build_order_skip_final
+	wait 7200
+	call build_bool_atown
+	stop
+	
+	:atown_build_order_gen
+	var Ex|Jump build_type_is_timing_var 1 atown_build_order_gen_type_timing 13
+	var Ex|Jump build_type_is_rush_var 1 atown_build_order_gen_type_rush 13
+	var Ex|Jump build_type_is_greed_var 1 atown_build_order_gen_type_greed 13
+	
+	:atown_build_order_gen_type_timing
+	# 3 timings
+	rand_j 85 atown_build_order_gen_type_timing_1
+	rand_j 128 atown_build_order_gen_type_timing_2
+	goto atown_build_order_gen_type_timing_3
+	
+	:atown_build_order_gen_type_timing_1
+	var Set atown_build_order_index 1 13
+	goto atown_build_order_gen_select
+	
+	:atown_build_order_gen_type_timing_2
+	var Set atown_build_order_index 5 13
+	goto atown_build_order_gen_select
+	
+	:atown_build_order_gen_type_timing_3
+	var Set atown_build_order_index 6 13
+	goto atown_build_order_gen_select
+	
+	:atown_build_order_gen_type_rush
+	# 2 rushes
+	rand_j 128 atown_build_order_gen_type_rush_1
+	goto atown_build_order_gen_type_rush_2
+	
+	:atown_build_order_gen_type_rush_1
+	var Set atown_build_order_index 3 13
+	goto atown_build_order_gen_select
+	
+	:atown_build_order_gen_type_rush_2
+	var Set atown_build_order_index 4 13
+	goto atown_build_order_gen_select
+	
+	:atown_build_order_gen_type_greed
+	# 1 greed
+	goto atown_build_order_gen_type_greed_1
+	
+	:atown_build_order_gen_type_greed_1
+	var Set atown_build_order_index 2 13
+	goto atown_build_order_gen_select
+	
+	:atown_build_order_gen_select
+	var Ex|Jump atown_build_order_index 1 build_general_atown_2FulcMech 13
+	var Ex|Jump atown_build_order_index 2 build_general_atown_EarlyRiser 13
+	var Ex|Jump atown_build_order_index 3 build_general_atown_TheCube 13
+	var Ex|Jump atown_build_order_index 4 build_general_atown_DoublingUp 13
+	var Ex|Jump atown_build_order_index 5 build_general_atown_MechIntoAir 13
+	var Ex|Jump atown_build_order_index 6 build_general_atown_Observant 13
+	
+	:build_general_atown_2FulcMech
+	dth 13 Ex 0 start_location build_general_atown_2FulcMech_Main
+	print Terran<32>General<32>timing<32>1:<32>2Fulc<32>Mech
+	
+	:build_general_atown_2FulcMech_Main
+	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_heracles 13
+	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_shaman 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_armor_iron 0 buildpref_armor_ironfoundry_pazuzu 13
+	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_salamander 13
+	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_azazel 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
+	var Ex|Call pref_addon_barracks 0 buildpref_raider_medbay 13
+	var Ex|Call pref_armor_production 0 buildpref_armor_fulcrum 13
+	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_machineshop 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_naniteassembly 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_commandment 13
+	call main_wait_atown_300
+	wait 24
+	call main_wait_atown_600
+	bld 1 fulcrum 121
+	call main_wait_atown_600
+	bld 2 fulcrum 121
+	call main_wait_atown_600
+	var Sub can_worker_var_atown 1 13
+	#mutli expansion_toggle
+	call main_wait_atown_600
+	var Add can_worker_var_atown 1 13
+	call main_wait_atown_900
+	bld 3 fulcrum 121
+	call main_wait_atown_300
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_600
+	multi atown_need_atlas
+	call main_wait_atown_600
+	multi build_general_atown_2FulcMech_Addon
+	call main_wait_atown_900
+	var Set can_attack_var_atown 1 13
+	call main_wait_atown_900
+	multi atown_need_fountainhead
+	call main_wait_atown_300
+	bld 2 mantle 121
+	multi production_cycle_atown
+	goto build_general_atown_fin
+	
+	:build_general_atown_2FulcMech_Addon
+	call atown_wait_for_atlas
+	w_bld 1 fulcrum
+	bld 1 scrapyard 120
+	w_bld 2 fulcrum
+	bld 2 scrapyard 120
+	w_bld 3 fulcrum
+	bld 1 machine_shop 120
+	w_bld 4 fulcrum
+	bld 2 machine_shop 120
+	stop
+	
+	:build_general_atown_EarlyRiser
+	dth 13 Ex 0 start_location build_general_atown_EarlyRiser_Main
+	print Terran<32>General<32>greed<32>1:<32>Early<32>Riser
+	
+	:build_general_atown_EarlyRiser_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
+	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_cleric 13
+	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_madcap 13
+	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_cyclops 13
+	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starport_gorgon 13
+	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_sundog 13
+	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_seraph 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
+	var Ex|Call pref_addon_barracks 0 buildpref_raider_medbay 13
+	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_scrapyard 13
+	call main_wait_atown_900
+	call main_wait_atown_300
+	var Add can_expand_var_atown 1 13
+	call main_wait_atown_600
+	bld 1 barracks 121
+	call main_wait_atown_300
+	call main_wait_atown_600
+	bld 1 fulcrum 121
+	call main_wait_atown_300
+	multi build_general_atown_EarlyRiser_Addon
+	call main_wait_atown_300
+	bld 1 starpad 121
+	call main_wait_atown_300
+	bld 2 barracks 121
+	call main_wait_atown_600
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_150
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_600
+	multi atown_need_atlas
+	call main_wait_atown_150
+	multi production_cycle_atown
+	goto build_general_atown_fin
+	
+	:build_general_atown_EarlyRiser_Addon
+	w_bld 1 barracks
+	bld 1 medbay 120
+	call atown_wait_for_atlas
+	w_bld 1 fulcrum
+	bld 1 machine_shop 120
+	stop
+	
+	:build_general_atown_TheCube
+	dth 13 Ex 0 start_location build_general_atown_TheCube_Main
+	print Terran<32>General<32>rush<32>1:<32>The<32>Cube
+	
+	:build_general_atown_TheCube_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
+	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_apostle 13
+	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_vulture 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_salamander 13
+	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_azazel 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
+	var Ex|Call pref_armor_production 0 buildpref_armor_ironfoundry 13
+	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_machineshop 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_naniteassembly 13
+	call main_wait_atown_600
+	bld 1 fulcrum 121
+	call main_wait_atown_600
+	bld 1 barracks 121
+	call main_wait_atown_300
+	bld 1 starpad 121
+	call main_wait_atown_600
+	multi build_general_atown_TheCube_Addon
+	call main_wait_atown_900
+	var Set can_attack_var_atown 1 13
+	call main_wait_atown_450
+	var Add can_expand_var_atown 1 13
+	call main_wait_atown_300
+	bld 1 scrapyard 120
+	call main_wait_atown_300
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_600
+	multi atown_need_atlas
+	call main_wait_atown_300
+	bld 2 fulcrum 121
+	call main_wait_atown_450
+	multi atown_need_fountainhead
+	call main_wait_atown_600
+	multi production_cycle_atown
+	goto build_general_atown_fin
+	
+	:build_general_atown_TheCube_Addon
+	w_bld 1 barracks
+	bld 1 medbay 120
+	call atown_wait_for_atlas
+	w_bld 1 fulcrum
+	bld 1 machine_shop 120
+	call atown_wait_for_fountainhead
+	bld 1 starport 121
+	w_bld 1 starport
+	bld 1 munitions_bay 120
+	w_bldstart 1 munitions_bay
+	stop
+	
+	:build_general_atown_DoublingUp
+	dth 13 Ex 0 start_location build_general_atown_DoublingUp_Main
+	print Terran<32>General<32>rush<32>2:<32>Doubling<32>Up
+	
+	:build_general_atown_DoublingUp_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
+	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_shaman 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_cyclops 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_fulcrum_goliath 13
+	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_blackjack 13
+	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_scrapyard 13
+	var Ex|Call pref_armor_production 0 buildpref_armor_ironfoundry 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_naniteassembly 13
+	call main_wait_atown_900
+	bld 1 barracks 121
+	call main_wait_atown_150
+	var Sub can_worker_var_atown 1 13
+	bld 2 barracks 121
+	wait 24
+	var Set can_attack_var_atown 1 13
+	call main_wait_atown_1200
+	var Add can_worker_var_atown 1 13
+	call main_wait_atown_1200
+	bld 1 fulcrum 121
+	call main_wait_atown_600
+	bld 2 fulcrum 121
+	call main_wait_atown_300
+	multi build_general_atown_DoublingUp_Addon
+	call main_wait_atown_300
+	var Add can_expand_var_atown 1 13
+	call main_wait_atown_600
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_450
+	bld 1 starpad 121
+	call main_wait_atown_600
+	multi atown_need_atlas
+	call main_wait_atown_450
+	bld 3 fulcrum 121
+	call main_wait_atown_900
+	multi production_cycle_atown
+	call main_wait_atown_150
+	goto build_general_atown_fin
+	
+	:build_general_atown_DoublingUp_Addon
+	w_bld 1 barracks
+	bld 1 medbay 120
+	w_bld 1 fulcrum
+	bld 1 scrapyard 120
+	w_bld 2 fulcrum
+	bld 2 scrapyard 120
+	call atown_wait_for_atlas
+	w_bld 2 barracks
+	bld 1 covert_ops 120
+	call main_wait_atown_150
+	w_bld 3 fulcrum
+	bld 1 machine_shop 120
+	stop
+	
+	:build_general_atown_MechIntoAir
+	dth 13 Ex 0 start_location build_general_atown_MechIntoAir_Main
+	print Terran<32>General<32>timing<32>2:<32>Mech<32>into<32>Air
+	
+	:build_general_atown_MechIntoAir_Main
+	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
+	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_matador 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_machineshop 13
+	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_salamander 13
+	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_seraph 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_munitionsbay 13
+	var Ex|Call pref_orbital_nanite 0 buildpref_orbital_naniteassembly_minotaur 13
+	call main_wait_atown_600
+	call main_wait_atown_300
+	bld 1 barracks 121
+	call main_wait_atown_300
+	bld 1 fulcrum 121
+	call main_wait_atown_750
+	bld 2 fulcrum 121
+	call main_wait_atown_600
+	var Set can_attack_var_atown 1 13
+	var Set can_build_static_defense_var_atown 1 13
+	call main_wait_atown_300
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_600
+	multi atown_need_atlas
+	multi build_general_atown_MechIntoAir_Addon
+	call main_wait_atown_1200
+	call main_wait_atown_600
+	bld 1 starpad 121
+	call main_wait_atown_300
+	var Sub can_worker_var_atown 1 13
+	#mutli expansion_toggle
+	call main_wait_atown_600
+	var Add can_worker_var_atown 1 13
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_1200
+	bld 6 fulcrum 121
+	call main_wait_atown_1800
+	multi atown_need_fountainhead
+	call main_wait_atown_3600
+	multi atown_need_daedala
+	call main_wait_atown_1200
+	call main_wait_atown_600
+	bld 4 starport 121
+	call main_wait_atown_3600
+	bld 8 starport 121
+	call main_wait_atown_1200
+	multi atown_need_atelier
+	call main_wait_atown_600
+	multi production_cycle_atown
+	goto build_general_atown_fin
+	
+	:build_general_atown_MechIntoAir_Addon
+	w_bld 1 fulcrum
+	bld 1 scrapyard 120
+	w_bld 2 fulcrum
+	bld 2 scrapyard 120
+	call atown_wait_for_atlas
+	bld 1 quarry 120
+	w_bld 3 fulcrum
+	bld 1 machine_shop 120
+	w_bld 4 fulcrum
+	bld 2 machine_shop 120
+	call atown_wait_for_fountainhead
+	bld 2 starport 121
+	w_bld 1 starport
+	bld 1 munitions_bay 120
+	w_bld 2 starport
+	bld 2 munitions_bay 120
+	w_bld 5 fulcrum
+	bld 3 machine_shop 120
+	w_bld 6 fulcrum
+	bld 4 machine_shop 120
+	w_bld 3 starport
+	bld 3 munitions_bay 120
+	w_bld 4 starport
+	bld 4 munitions_bay 120
+	w_bld 5 starport
+	bld 5 munitions_bay 120
+	call atown_wait_for_daedala
+	w_bld 6 starport
+	bld 1 commandment 120
+	w_bld 7 starport
+	bld 2 commandment 120
+	w_bld 8 starport
+	bld 3 commandment 120
+	call atown_wait_for_atelier
+	bld 2 nanite_assembly 121
+	stop
+	
+	:build_general_atown_Observant
+	dth 13 Ex 0 start_location build_general_atown_Observant_Main
+	print Terran<32>General<32>timing<32>3:<32>Observant
+	
+	:build_general_atown_Observant_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_cyprian 13
+	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_seraph 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_commandment 13
+	call main_wait_atown_600
+	bld 1 barracks 121
+	call main_wait_atown_300
+	call main_wait_atown_150
+	wait 24
+	multi build_general_atown_Observant_Addon
+	call main_wait_atown_300
+	bld 1 fulcrum 121
+	call main_wait_atown_150
+	var Sub can_worker_var_atown 1 13
+	#mutli expansion_toggle
+	call main_wait_atown_600
+	var Add can_worker_var_atown 1 13
+	call main_wait_atown_150
+	var Set can_build_static_defense_var_atown 1 13
+	call main_wait_atown_150
+	bld 1 starpad 121
+	call main_wait_atown_150
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_600
+	multi atown_need_atlas
+	call main_wait_atown_300
+	bld 2 fulcrum 121
+	call main_wait_atown_600
+	var Set can_attack_var_atown 1 13
+	call main_wait_atown_300
+	bld 3 fulcrum 121
+	call main_wait_atown_600
+	multi atown_need_fountainhead
+	call main_wait_atown_150
+	call build_bool_atown
+	call main_wait_atown_600
+	multi production_cycle_atown
+	
+	:build_general_atown_Observant_Addon
+	w_bld 1 barracks
+	bld 1 medbay 120
+	w_bld 1 fulcrum
+	bld 1 scrapyard 120
+	call atown_wait_for_atlas
+	w_bld 2 fulcrum
+	bld 1 machine_shop 120
+	w_bld 3 fulcrum
+	bld 2 machine_shop 120
+	call atown_wait_for_fountainhead
+	bld 2 starport 121
+	call atown_wait_for_daedala
+	w_bld 2 starport
+	bld 2 commandment 120
+	w_bld 1 commandment
+	do_morph 2 seraph
+	call main_wait_atown_300
+	do_morph 2 seraph
+	stop
+	
+	:build_general_atown_fin
+	call build_bool_atown
+	var AtL skip_building_var 1 blank 13
+	
+	:build_general_atown_fin2
+	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
+	call main_wait_atown_450
+	call add_starpad_atown_simple2
+	call main_wait_atown_300
+	multi atown_need_atlas
+	call main_wait_atown_300
+	call add_barracks_atown_simple
+	call main_wait_atown_150
+	bld 1 covert_ops 120
+	call main_wait_atown_600
+	multi atown_need_fountainhead
+	call main_wait_atown_900
+	call add_starport_atown_simple
+	call main_wait_atown_1200
+	call main_wait_atown_600
+	multi atown_need_daedala
+	call main_wait_atown_3600
+	multi atown_need_atelier
+	stop
+	
+	:atown_build_order_armor
+	var Ex|Jump build_type_is_timing_var 1 atown_build_order_armor_type_timing 13
+	var Ex|Jump build_type_is_rush_var 1 atown_build_order_armor_type_rush 13
+	var Ex|Jump build_type_is_greed_var 1 atown_build_order_armor_type_greed 13
+	
+	:atown_build_order_armor_type_timing
+	# 3 timings
+	rand_j 85 atown_build_order_armor_type_timing_1
+	rand_j 128 atown_build_order_armor_type_timing_2
+	goto atown_build_order_armor_type_timing_3
+	
+	:atown_build_order_armor_type_timing_1
+	var Set atown_build_order_index 1 13
+	goto atown_build_order_armor_select
+	
+	:atown_build_order_armor_type_timing_2
+	var Set atown_build_order_index 2 13
+	goto atown_build_order_armor_select
+	
+	:atown_build_order_armor_type_timing_3
+	var Set atown_build_order_index 6 13
+	goto atown_build_order_armor_select
+	
+	:atown_build_order_armor_type_rush
+	# 2 rushes
+	rand_j 128 atown_build_order_armor_type_rush_1
+	goto atown_build_order_armor_type_rush_2
+	
+	:atown_build_order_armor_type_rush_1
+	var Set atown_build_order_index 3 13
+	goto atown_build_order_armor_select
+	
+	:atown_build_order_armor_type_rush_2
+	var Set atown_build_order_index 4 13
+	goto atown_build_order_armor_select
+	
+	:atown_build_order_armor_type_greed
+	# 1 greed
+	goto atown_build_order_armor_type_greed_1
+	
+	:atown_build_order_armor_type_greed_1
+	var Set atown_build_order_index 5 13
+	goto atown_build_order_armor_select
+	
+	:atown_build_order_armor_select
+	var Ex|Jump atown_build_order_index 1 build_armor_atown_PhalanxTiming 13
+	var Ex|Jump atown_build_order_index 2 build_armor_atown_FE5Fulc 13
+	var Ex|Jump atown_build_order_index 3 build_armor_atown_2FulcVulture 13
+	var Ex|Jump atown_build_order_index 4 build_armor_atown_WalkerPower 13
+	var Ex|Jump atown_build_order_index 5 build_armor_atown_IronCrusade 13
+	var Ex|Jump atown_build_order_index 6 build_armor_atown_DavidAndGoliath 13
+	
+	:build_armor_atown_PhalanxTiming
+	dth 13 Ex 0 start_location build_armor_atown_PhalanxTiming_Main
+	print Terran<32>Armor<32>timing<32>1:<32>Phalanx<32>Timing
+	
+	:build_armor_atown_PhalanxTiming_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_cyprian 13
+	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_madcap 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
+	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_cyclops 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_machineshop 13
+	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starport_gorgon 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_naniteassembly 13
+	call main_wait_atown_600
+	call main_wait_atown_600
+	bld 1 fulcrum 121
+	call main_wait_atown_150
+	bld 2 fulcrum 121
+	w_bld 1 fulcrum
+	queue 1 vulture fulcrum 255 Local Loc.63 100
+	wait 24
+	queue 1 vulture fulcrum 255 Local Loc.63 100
+	call main_wait_atown_150
+	w_bldstart 2 fulcrum
+	var Add can_expand_var_atown 1 13
+	call main_wait_atown_900
+	bld 3 fulcrum 121
+	call main_wait_atown_150
+	queue 1 cyclops fulcrum 255 Local Loc.63 100
+	wait 24
+	queue 1 cyclops fulcrum 255 Local Loc.63 100
+	call main_wait_atown_450
+	bld 4 fulcrum 121
+	call main_wait_atown_600
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_600
+	multi atown_need_atlas
+	multi build_armor_atown_PhalanxTiming_Addon
+	call main_wait_atown_600
+	var Set can_build_static_defense_var_atown 1 13
+	call main_wait_atown_900
+	var Set can_attack_var_atown 1 13
+	wait 24
+	bld 1 barracks 121
+	call main_wait_atown_600
+	multi production_cycle_atown
+	goto build_armor_atown_fin
+	
+	:build_armor_atown_PhalanxTiming_Addon
+	call atown_wait_for_atlas
+	w_bld 1 fulcrum
+	bld 1 machine_shop 120
+	w_bld 2 fulcrum
+	bld 2 machine_shop 120
+	w_bld 1 machine_shop
+	queue 1 phalanx fulcrum 255 Local Loc.63 100
+	w_bld 2 machine_shop
+	queue 1 madrigal fulcrum 255 Local Loc.63 100
+	w_bld 3 fulcrum
+	bld 3 machine_shop 120
+	w_bld 1 barracks
+	call main_wait_atown_450
+	bld 1 medbay 120
+	w_bld 2 machine_shop
+	queue 2 phalanx fulcrum 255 Local Loc.63 100
+	call main_wait_atown_150
+	queue 2 madrigal fulcrum 255 Local Loc.63 100
+	stop
+	
+	:build_armor_atown_FE5Fulc
+	dth 13 Ex 0 start_location build_armor_atown_FE5Fulc_Main
+	print Terran<32>Armor<32>timing<32>2:<32>FE<32>5Fulc
+	
+	:build_armor_atown_FE5Fulc_Main
+	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
+	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_vulture 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_blackjack 13
+	var Ex|Call pref_armor_iron 0 buildpref_armor_futurestation_penumbra 13
+	var Ex|Call pref_armor_production 0 buildpref_armor_fulcrum 13
+	call main_wait_atown_600
+	bld 1 barracks 121
+	call main_wait_atown_300
+	call main_wait_atown_600
+	wait 24
+	queue 1 maverick barracks 255 Global Loc.63 100
+	call main_wait_atown_300
+	queue 1 maverick barracks 255 Global Loc.63 100
+	wait 24
+	bld 1 fulcrum 121
+	call main_wait_atown_300
+	queue 1 maverick barracks 255 Global Loc.63 100
+	call main_wait_atown_300
+	wait 24
+	queue 1 vulture fulcrum 255 Global Loc.63 100
+	wait 24
+	queue 1 vulture fulcrum 255 Global Loc.63 100
+	call main_wait_atown_300
+	var Sub can_worker_var_atown 1 13
+	#mutli expansion_toggle
+	call main_wait_atown_600
+	var Add can_worker_var_atown 1 13
+	call main_wait_atown_600
+	queue 1 maverick barracks 255 Global Loc.63 100
+	wait 24
+	bld 3 fulcrum 121
+	call main_wait_atown_150
+	multi build_armor_atown_FE5Fulc_Addon
+	wait 24
+	queue 1 goliath fulcrum 255 Global Loc.63 100
+	call main_wait_atown_600
+	w_bldstart 2 fulcrum
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_600
+	multi atown_need_atlas
+	call main_wait_atown_600
+	queue 1 goliath fulcrum 255 Global Loc.63 100
+	call main_wait_atown_750
+	var Set build_gas_var_atown 1 13
+	wait 24
+	queue 1 goliath fulcrum 255 Global Loc.63 100
+	call main_wait_atown_300
+	var Set can_attack_var_atown 1 13
+	call main_wait_atown_600
+	queue 1 goliath fulcrum 255 Global Loc.63 100
+	wait 24
+	bld 3 fulcrum 121
+	wait 24
+	queue 1 phalanx fulcrum 255 Global Loc.63 100
+	wait 24
+	queue 1 phalanx fulcrum 255 Global Loc.63 100
+	call main_wait_atown_450
+	queue 1 phalanx fulcrum 255 Global Loc.63 100
+	wait 24
+	queue 1 phalanx fulcrum 255 Global Loc.63 100
+	call main_wait_atown_450
+	#call expansion_loop_normal
+	var Sub can_worker_var_atown 1 13
+	call main_wait_atown_600
+	var Add can_worker_var_atown 1 13
+	wait 750
+	queue 1 goliath fulcrum 255 Global Loc.63 100
+	wait 24
+	queue 1 goliath fulcrum 255 Global Loc.63 100
+	wait 24
+	queue 1 goliath fulcrum 255 Global Loc.63 100
+	call main_wait_atown_600
+	bld 5 fulcrum 121
+	wait 24
+	queue 1 goliath fulcrum 255 Global Loc.63 100
+	wait 24
+	queue 1 goliath fulcrum 255 Global Loc.63 100
+	wait 24
+	queue 1 goliath fulcrum 255 Global Loc.63 100
+	call main_wait_atown_300
+	multi atown_need_fountainhead
+	call main_wait_atown_900
+	multi production_cycle_atown
+	call main_wait_atown_300
+	goto build_armor_atown_fin
+	
+	:build_armor_atown_FE5Fulc_Addon
+	w_bld 1 fulcrum
+	bld 1 scrapyard 120
+	call atown_wait_for_atlas
+	w_bld 2 fulcrum
+	bld 1 machine_shop 120
+	w_bld 3 fulcrum
+	bld 2 machine_shop 120
+	call atown_wait_for_fountainhead
+	bld 1 starport 121
+	call atown_wait_for_daedala
+	w_bld 1 starport
+	bld 1 commandment 120
+	stop
+	
+	:build_armor_atown_2FulcVulture
+	dth 13 Ex 0 start_location build_armor_atown_2FulcVulture_Main
+	print Terran<32>Armor<32>rush<32>1:<32>2Fulc<32>Vulture
+	
+	:build_armor_atown_2FulcVulture_Main
+	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_vulture 13
+	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_matador 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_madrigal 13
+	var Ex|Call pref_armor_iron 0 buildpref_armor_ironfoundry_pazuzu 13
+	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_machineshop 13
+	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_azazel 13
+	call main_wait_atown_750
+	call main_wait_atown_1200
+	bld 1 fulcrum 121
+	call main_wait_atown_300
+	bld 2 fulcrum 121
+	call main_wait_atown_300
+	var Sub can_worker_var_atown 1 13
+	call main_wait_atown_150
+	do_morph 2 vulture
+	call main_wait_atown_150
+	do_morph 2 vulture
+	call main_wait_atown_300
+	var Set can_attack_var_atown 1 13
+	call main_wait_atown_300
+	var Add can_worker_var_atown 1 13
+	call main_wait_atown_600
+	var Add can_expand_var_atown 1 13
+	bld 3 fulcrum 121
+	call main_wait_atown_150
+	bld 1 barracks 121
+	multi production_cycle_atown
+	goto build_armor_atown_fin
+	
+	:build_armor_atown_WalkerPower
+	dth 13 Ex 0 start_location build_armor_atown_WalkerPower_Main
+	print Terran<32>Armor<32>rush<32>2:<32>Walker<32>Power
+	
+	:build_armor_atown_WalkerPower_Main
+	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_goliath 13
+	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_blackjack 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_armor_iron 0 buildpref_armor_ironfoundry_paladin 13
+	var Ex|Call pref_armor_future 0 buildpref_armor_futurestation_penumbra 13
+	call main_wait_atown_300
+	bld 1 fulcrum 121
+	call main_wait_atown_600
+	bld 2 fulcrum 121
+	call main_wait_atown_600
+	do_morph 1 goliath
+	call main_wait_atown_300
+	multi build_armor_atown_WalkerPower_Addon
+	call main_wait_atown_600
+	var Sub can_worker_var_atown 1 13
+	call main_wait_atown_150
+	w_bld 1 fulcrum
+	w_bldstart 2 fulcrum
+	call main_wait_atown_300
+	bld 1 barracks 121
+	call main_wait_atown_450
+	var Add can_worker_var_atown 1 13
+	call main_wait_atown_1200
+	call main_wait_atown_600
+	call main_wait_atown_300
+	multi atown_need_atlas
+	multi production_cycle_atown
+	goto build_armor_atown_fin
+	
+	:build_armor_atown_WalkerPower_Addon
+	w_bld 1 fulcrum
+	bld 1 scrapyard 120
+	call main_wait_atown_300
+	call atown_wait_for_atlas
+	w_bld 2 fulcrum
+	bld 1 machine_shop 120
+	stop
+	
+	:build_armor_atown_IronCrusade
+	dth 13 Ex 0 start_location build_armor_atown_IronCrusade_Main
+	print Terran<32>Armor<32>greed<32>1:<32>Iron<32>Crusade
+	
+	:build_armor_atown_IronCrusade_Main
+	var Ex|Call pref_raider_covert 0 buildpref_raider_covertops_eidolon 13
+	var Ex|Call pref_addon_barracks 0 buildpref_raider_covertops 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_armor_production 0 buildpref_armor_ironfoundry 13
+	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_seraph 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_commandment 13
+	call main_wait_atown_900
+	#mutli expansion_toggle
+	call main_wait_atown_300
+	wait 600
+	call main_wait_atown_300
+	bld 1 fulcrum 121
+	call main_wait_atown_600
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_900
+	w_bld 1 fulcrum
+	var Set can_build_static_defense_var_atown 1 13
+	call main_wait_atown_300
+	bld 1 starpad 121
+	call main_wait_atown_300
+	bld 2 fulcrum 121
+	call main_wait_atown_900
+	#mutli expansion_toggle
+	call main_wait_atown_900
+	multi atown_need_atlas
+	call main_wait_atown_600
+	bld 3 fulcrum 121
+	call main_wait_atown_150
+	w_bld 2 fulcrum
+	w_bldstart 3 fulcrum
+	var set can_attack_var_atown 1 13
+	call atown_wait_for_atlas
+	call main_wait_atown_450
+	bld 4 fulcrum 121
+	call main_wait_atown_450
+	multi atown_need_daedala
+	call atown_wait_for_daedala
+	multi atown_need_atelier
+	call atown_wait_for_atelier
+	call main_wait_atown_150
+	bld 1 iron_foundry 122
+	call main_wait_atown_150
+	bld 2 iron_foundry 122
+	call main_wait_atown_150
+	bld 3 iron_foundry 122
+	call main_wait_atown_150
+	bld 4 iron_foundry 122
+	multi production_cycle_atown
+	goto build_armor_atown_fin
+	
+	:build_armor_atown_DavidAndGoliath
+	dth 13 Ex 0 start_location build_armor_atown_DavidAndGoliath_Main
+	print Terran<32>Armor<32>timing<32>3:<32>David<32>and<32>Goliath
+	
+	:build_armor_atown_DavidAndGoliath_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_goliath 13
+	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_matador 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_armor_production 0 buildpref_armor_fulcrum 13
+	call main_wait_atown_600
+	bld 1 fulcrum 121
+	call main_wait_atown_600
+	bld 1 barracks 121
+	call main_wait_atown_600
+	#mutli expansion_toggle
+	call main_wait_atown_900
+	bld 2 barracks 121
+	call main_wait_atown_300
+	bld 2 fulcrum 121
+	w_bldstart 2 fulcrum
+	multi build_armor_atown_DavidAndGoliath_Addon
+	call main_wait_atown_450
+	bld 3 barracks 121
+	call main_wait_atown_600
+	bld 4 barracks 121
+	call main_wait_atown_600
+	bld 3 fulcrum 121
+	call main_wait_atown_150
+	var Set can_attack_var_atown 1 13
+	call main_wait_atown_1200
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_900
+	w_bld 1 fulcrum
+	var Set can_build_static_defense_var_atown 1 13
+	call main_wait_atown_300
+	bld 1 starpad 121
+	call main_wait_atown_300
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_600
+	multi atown_need_atlas
+	call main_wait_atown_450
+	bld 4 fulcrum 121
+	call main_wait_atown_600
+	bld 5 fulcrum 121
+	call main_wait_atown_150
+	multi production_cycle_atown
+	goto build_armor_atown_fin
+	
+	:build_armor_atown_DavidAndGoliath_Addon
+	w_bld 2 fulcrum
+	bld 1 scrapyard 120
+	call atown_wait_for_atlas
+	w_bld 2 fulcrum
+	bld 1 machine_shop 120
+	call main_wait_atown_150
+	w_bld 3 fulcrum
+	bld 2 machine_shop 120
+	call main_wait_atown_300
+	w_bld 5 fulcrum
+	bld 3 machine_shop 120
+	call main_wait_atown_300
+	stop
+	
+	:build_armor_atown_fin
+	call build_bool_atown
+	var AtL skip_building_var 1 blank 13
+	
+	:build_armor_atown_fin2
+	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
+	call main_wait_atown_900
+	multi atown_need_atlas
+	call main_wait_atown_1800
+	multi atown_need_fountainhead
+	call main_wait_atown_2400
+	multi atown_need_daedala
+	call main_wait_atown_900
+	call add_starport_atown_simple
+	call main_wait_atown_3600
+	multi atown_need_atelier
+	stop
+	
+	:atown_build_order_raider
+	var Ex|Jump build_type_is_timing_var 1 atown_build_order_raider_type_timing 13
+	var Ex|Jump build_type_is_rush_var 1 atown_build_order_raider_type_rush 13
+	var Ex|Jump build_type_is_greed_var 1 atown_build_order_raider_type_greed 13
+	
+	:atown_build_order_raider_type_timing
+	# 3 timings
+	rand_j 85 atown_build_order_raider_type_timing_1
+	rand_j 128 atown_build_order_raider_type_timing_2
+	goto atown_build_order_raider_type_timing_3
+	
+	:atown_build_order_raider_type_timing_1
+	var Set atown_build_order_index 1 13
+	goto atown_build_order_raider_select
+	
+	:atown_build_order_raider_type_timing_2
+	var Set atown_build_order_index 2 13
+	goto atown_build_order_raider_select
+	
+	:atown_build_order_raider_type_timing_3
+	var Set atown_build_order_index 5 13
+	goto atown_build_order_raider_select
+	
+	:atown_build_order_raider_type_rush
+	# 2 rushes
+	rand_j 128 atown_build_order_raider_type_rush_1
+	goto atown_build_order_raider_type_rush_2
+	
+	:atown_build_order_raider_type_rush_1
+	var Set atown_build_order_index 4 13
+	goto atown_build_order_raider_select
+	
+	:atown_build_order_raider_type_rush_2
+	var Set atown_build_order_index 6 13
+	goto atown_build_order_raider_select
+	
+	:atown_build_order_raider_type_greed
+	# 1 greed
+	goto atown_build_order_raider_type_greed_1
+	
+	:atown_build_order_raider_type_greed_1
+	var Set atown_build_order_index 3 13
+	goto atown_build_order_raider_select
+	
+	:atown_build_order_raider_select	
+	var Ex|Jump atown_build_order_index 1 build_raider_atown_8Rax 13
+	var Ex|Jump atown_build_order_index 2 build_raider_atown_3RaxBiotic 13
+	var Ex|Jump atown_build_order_index 3 build_raider_atown_FastNuke 13
+	var Ex|Jump atown_build_order_index 4 build_raider_atown_4RaxPressure 13	
+	var Ex|Jump atown_build_order_index 5 build_raider_atown_Uprising 13
+	var Ex|Jump atown_build_order_index 6 build_raider_atown_HolyAckmeds 13
+	
+	:build_raider_atown_8Rax
+	dth 13 Ex 0 start_location build_raider_atown_8Rax_Main
+	print Terran<32>Raider<32>timing<32>1:<32>8Rax
+	
+	:build_raider_atown_8Rax_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
+	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_cleric 13
+	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_madcap 13
+	var Ex|Call pref_addon_barracks 0 buildpref_raider_medbay 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
+	call main_wait_atown_300
+	bld 1 barracks 121
+	call main_wait_atown_300
+	bld 2 barracks 121
+	call main_wait_atown_300
+	bld 3 barracks 121
+	call main_wait_atown_300
+	bld 4 barracks 121
+	call main_wait_atown_300
+	bld 5 barracks 121
+	call main_wait_atown_300
+	bld 6 barracks 121
+	call main_wait_atown_300
+	var Set can_attack_var_atown 1 13
+	call main_wait_atown_300
+	w_bldstart 6 barracks
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_600
+	#mutli expansion_toggle
+	call main_wait_atown_900
+	bld 8 barracks 121
+	call main_wait_atown_600
+	var Set can_build_static_defense_var_atown 1 13
+	call main_wait_atown_600
+	multi atown_need_atlas
+	call main_wait_atown_300
+	multi build_raider_atown_8Rax_Addon
+	call main_wait_atown_600
+	multi production_cycle_atown
+	goto build_raider_atown_fin
+	
+	:build_raider_atown_8Rax_Addon
+	w_bld 1 barracks
+	bld 1 medbay 120
+	w_bld 2 barracks
+	bld 2 medbay 120
+	call atown_wait_for_atlas
+	w_bld 3 barracks
+	bld 1 covert_ops 120
+	w_bld 4 barracks
+	bld 2 covert_ops 120
+	stop
+	
+	:build_raider_atown_3RaxBiotic
+	dth 13 Ex 0 start_location build_raider_atown_3RaxBiotic_Main
+	print Terran<32>Raider<32>timing<32>2:<32>3Rax<32>Biotic
+	
+	:build_raider_atown_3RaxBiotic_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
+	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_cleric 13
+	var Ex|Call pref_raider_covert 0 buildpref_raider_covertops_eidolon 13
+	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_heracles 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	call main_wait_atown_600
+	bld 1 barracks 121
+	call main_wait_atown_300
+	bld 2 barracks 121
+	call main_wait_atown_600
+	call main_wait_atown_300
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	call main_wait_atown_300
+	queue 1 maverick barracks 255 Local Loc.63 100
+	call main_wait_atown_300
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	call main_wait_atown_300
+	multi build_raider_atown_3RaxBiotic_Addon
+	call main_wait_atown_450
+	var Sub can_worker_var_atown 1 13
+	bld 3 barracks 121
+	call main_wait_atown_150
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 2 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 1 mason command_center 255 Local Loc.63 200
+	wait 24
+	w_bldstart 3 barracks
+	var Add can_expand_var_atown 1 13
+	wait 300
+	var Add can_worker_var_atown 1 13
+	wait 300
+	call main_wait_atown_600
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_600
+	multi atown_need_atlas
+	call main_wait_atown_900
+	multi production_cycle_atown
+	call main_wait_atown_300
+	goto build_raider_atown_fin
+	
+	:build_raider_atown_3RaxBiotic_Addon
+	w_bld 1 barracks
+	bld 1 medbay 120
+	w_bld 2 barracks
+	bld 2 medbay 120
+	call atown_wait_for_atlas
+	multi atown_need_fountainhead
+	stop
+	
+	:build_raider_atown_FastNuke
+	dth 13 Ex 0 start_location build_raider_atown_FastNuke_Main
+	print Terran<32>Raider<32>greed<32>1:<32>Fast<32>Nuke
+	
+	:build_raider_atown_FastNuke_Main
+	var Ex|Call pref_infrastructure_addon 0 buildpref_commandcenter_missilesilo 13
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_cyprian 13
+	var Ex|Call pref_raider_covert 0 buildpref_raider_covertops_eidolon 13
+	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_madcap 13
+	var Ex|Call pref_addon_barracks 0 buildpref_raider_covertops 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
+	call main_wait_atown_600
+	bld 1 barracks 121
+	call main_wait_atown_900
+	bld 1 reservoir 97
+	call main_wait_atown_600
+	var Add can_expand_var_atown 1 13
+	call main_wait_atown_600
+	bld 2 barracks 121
+	call main_wait_atown_600
+	bld 3 barracks 121
+	call main_wait_atown_600
+	w_bldstart 3 barracks
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_600
+	multi atown_need_atlas
+	call main_wait_atown_600
+	multi build_raider_atown_FastNuke_Addon
+	call main_wait_atown_300
+	bld 4 barracks 121
+	call main_wait_atown_900
+	var Set can_attack_var_atown 1 13
+	wait 24
+	multi production_cycle_atown
+	goto build_raider_atown_fin
+	
+	:build_raider_atown_FastNuke_Addon
+	w_bld 1 barracks
+	bld 1 medbay 120
+	call atown_wait_for_atlas
+	w_bld 2 barracks
+	bld 1 covert_ops 120
+	w_bldstart 1 covert_ops
+	bld 1 missile_silo 120
+	w_bld 3 barracks
+	w_bldstart 1 missile_silo
+	bld 2 covert_ops 120
+	w_bld 4 barracks
+	bld 3 covert_ops 120
+	stop
+	
+	:build_raider_atown_4RaxPressure
+	dth 13 Ex 0 start_location build_raider_atown_4RaxPressure_Main
+	print Terran<32>Raider<32>rush<32>1:<32>4Rax<32>Pressure
+	
+	:build_raider_atown_4RaxPressure_Main
+	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_shaman 13
+	var Ex|Call pref_raider_covert 0 buildpref_raider_covertops_savant 13
+	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_heracles 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_sundog 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_munitionsbay 13
+	call main_wait_atown_900
+	bld 1 barracks 121
+	call main_wait_atown_900
+	bld 2 barracks 121
+	call main_wait_atown_600
+	bld 3 barracks 121
+	call main_wait_atown_450
+	bld 4 barracks 121
+	call main_wait_atown_300
+	call main_wait_atown_300
+	call main_wait_atown_300
+	var Sub can_worker_var_atown 1 13
+	var Set can_attack_var_atown 1 13
+	call main_wait_atown_600
+	call main_wait_atown_150
+	var Add can_expand_var_atown 1 13
+	call main_wait_atown_600
+	var Add can_worker_var_atown 1 13
+	call main_wait_atown_150
+	multi build_raider_atown_4RaxPressure_Addon
+	call main_wait_atown_150
+	w_bld 4 barracks
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_600
+	multi atown_need_atlas
+	call main_wait_atown_1500
+	multi production_cycle_atown
+	call main_wait_atown_600
+	multi atown_need_daedala
+	goto build_raider_atown_fin
+	
+	:build_raider_atown_4RaxPressure_Addon
+	w_bld 1 barracks
+	bld 1 medbay 120
+	w_bld 2 barracks
+	bld 2 medbay 120
+	call atown_wait_for_atlas
+	w_bld 3 barracks
+	bld 1 covert_ops 120
+	w_bld 4 barracks
+	bld 2 covert_ops 120
+	stop
+	
+	:build_raider_atown_Uprising
+	dth 13 Ex 0 start_location build_raider_atown_Uprising_Main
+	print Terran<32>Raider<32>timing<32>3:<32>Uprising
+	
+	:build_raider_atown_Uprising_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_cyprian 13
+	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_cleric 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	call main_wait_atown_600
+	bld 1 barracks 121
+	call main_wait_atown_450
+	bld 2 barracks 121
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	call main_wait_atown_450
+	bld 3 barracks 121
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	call main_wait_atown_300
+	call main_wait_atown_150
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	call main_wait_atown_300
+	multi build_raider_atown_Uprising_Addon
+	call main_wait_atown_300
+	bld 4 barracks 121
+	wait 24
+	queue 2 shaman barracks 255 Local Loc.63 100
+	wait 24
+	queue 2 cyprian barracks 255 Local Loc.63 100
+	call main_wait_atown_450
+	queue 2 shaman barracks 255 Local Loc.63 100
+	wait 24
+	queue 2 cyprian barracks 255 Local Loc.63 100
+	call main_wait_atown_300
+	w_bld 4 barracks
+	w_bld 2 medbay
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_600
+	multi atown_need_atlas
+	call main_wait_atown_300
+	var Sub can_worker_var_atown 1 13
+	#mutli expansion_toggle
+	call main_wait_atown_600
+	var Add can_worker_var_atown 1 13
+	call main_wait_atown_600
+	queue 2 cyprian barracks 255 Local Loc.63 100
+	call main_wait_atown_450
+	queue 2 cyprian barracks 255 Local Loc.63 100
+	wait 24
+	queue 2 cyprian barracks 255 Local Loc.63 100
+	call main_wait_atown_300
+	multi production_cycle_atown
+	goto build_raider_atown_fin
+	
+	:build_raider_atown_Uprising_Addon
+	w_bld 1 barracks
+	bld 1 medbay 120
+	w_bld 4 barracks
+	bld 2 medbay 120
+	stop
+	
+	:build_raider_atown_HolyAckmeds
+	dth 13 Ex 0 start_location build_raider_atown_HolyAckmeds_Main
+	print Terran<32>Raider<32>rush<32>2:<32>Holy<32>Ackmeds!
+	
+	:build_raider_atown_HolyAckmeds_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_harakan 13
+	var Ex|Call pref_addon_barracks 0 buildpref_raider_covertops 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
+	call main_wait_atown_900
+	bld 1 barracks 121
+	call main_wait_atown_300
+	call main_wait_atown_600
+	do_morph 1 maverick
+	call main_wait_atown_600
+	bld 2 barracks 121
+	wait 24
+	do_morph 1 harakan
+	call main_wait_atown_600
+	bld 3 barracks 121
+	call main_wait_atown_300
+	call main_wait_atown_300
+	var Sub can_worker_var_atown 1 13
+	call main_wait_atown_300
+	var Set can_attack_var_atown 1 13
+	call main_wait_atown_600
+	bld 4 barracks 121
+	call main_wait_atown_300
+	var Add can_worker_var_atown 1 13
+	var Add can_expand_var_atown 1 13
+	call main_wait_atown_900
+	w_bldstart 4 barracks
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_600
+	multi atown_need_atlas
+	call main_wait_atown_150
+	multi build_raider_atown_HolyAckmeds_Addon
+	call main_wait_atown_300
+    multi production_cycle_atown
+	goto build_raider_atown_fin
+	
+	:build_raider_atown_HolyAckmeds_Addon
+	w_bld 1 barracks
+	bld 1 medbay 120
+	call atown_wait_for_atlas
+	multi atown_need_fountainhead
+	call atown_wait_for_fountainhead
+	bld 1 starport 121
+	w_bld 1 starport
+	bld 1 munitions_bay 120
+	stop
+	
+	:build_raider_atown_fin
+	call build_bool_atown
+	var AtL skip_building_var 1 blank 13
+	
+	:build_raider_atown_fin2
+	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
+	call main_wait_atown_300
+	bld 1 medbay 120
+	call main_wait_atown_300
+	multi atown_need_atlas
+	call atown_wait_for_atlas
+	bld 1 covert_ops 120
+	call main_wait_atown_1800
+	multi atown_need_fountainhead
+	call main_wait_atown_3600
+	multi atown_need_daedala
+	call main_wait_atown_3600
+	multi atown_need_atelier
+	stop
+	
+	:atown_build_order_orbital
+	var Ex|Jump build_type_is_timing_var 1 atown_build_order_orbital_type_timing 13
+	var Ex|Jump build_type_is_rush_var 1 atown_build_order_orbital_type_rush 13
+	var Ex|Jump build_type_is_greed_var 1 atown_build_order_orbital_type_greed 13
+	
+	:atown_build_order_orbital_type_timing
+	# 3 timings
+	rand_j 85 atown_build_order_orbital_type_timing_1
+	rand_j 128 atown_build_order_orbital_type_timing_2
+	goto atown_build_order_orbital_type_timing_3
+	
+	:atown_build_order_orbital_type_timing_1
+	var Set atown_build_order_index 3 13
+	goto atown_build_order_orbital_select
+	
+	:atown_build_order_orbital_type_timing_2
+	var Set atown_build_order_index 4 13
+	goto atown_build_order_orbital_select
+	
+	:atown_build_order_orbital_type_timing_3
+	var Set atown_build_order_index 5 13
+	goto atown_build_order_orbital_select
+	
+	:atown_build_order_orbital_type_rush
+	# 2 rushes
+	rand_j 128 atown_build_order_orbital_type_rush_1
+	goto atown_build_order_orbital_type_rush_2
+	
+	:atown_build_order_orbital_type_rush_1
+	var Set atown_build_order_index 1 13
+	goto atown_build_order_orbital_select
+	
+	:atown_build_order_orbital_type_rush_2
+	var Set atown_build_order_index 6 13
+	goto atown_build_order_orbital_select
+	
+	:atown_build_order_orbital_type_greed
+	# 1 greed
+	goto atown_build_order_orbital_type_greed_1
+	
+	:atown_build_order_orbital_type_greed_1
+	var Set atown_build_order_index 2 13
+	goto atown_build_order_orbital_select
+	
+	:atown_build_order_orbital_select	
+	var Ex|Jump atown_build_order_index 1 build_orbital_atown_2PortWraith 13
+	var Ex|Jump atown_build_order_index 2 build_orbital_atown_TheDon 13
+	var Ex|Jump atown_build_order_index 3 build_orbital_atown_WraithBio 13
+	var Ex|Jump atown_build_order_index 4 build_orbital_atown_Hotdrop 13
+	var Ex|Jump atown_build_order_index 5 build_orbital_atown_SuddenStarport 13
+	var Ex|Jump atown_build_order_index 6 build_orbital_atown_AcesHigh 13
+	
+	:build_orbital_atown_2PortWraith
+	dth 13 Ex 0 start_location build_orbital_atown_2PortWraith_Main
+	print Terran<32>Orbital<32>rush<32>1:<32>2Port<32>Wraith
+	
+	:build_orbital_atown_2PortWraith_Main
+	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starpad_wraith 13
+	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_salamander 13
+	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_azazel 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_munitionsbay 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
+	call main_wait_atown_600
+	call main_wait_atown_1200
+	bld 1 starpad 121
+	call main_wait_atown_600
+	bld 2 starpad 121
+	call main_wait_atown_300
+	do_morph 1 wraith
+	call main_wait_atown_300
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_300
+	bld 1 barracks 121
+	call main_wait_atown_300
+	var Set can_attack_var_atown 1 13
+	call main_wait_atown_1200
+	#mutli expansion_toggle
+	var Sub can_worker_var_atown 1 13
+	call main_wait_atown_600
+	var Add can_worker_var_atown 1 13
+	w_bld 2 starpad
+	call main_wait_atown_300
+	bld 3 starpad 121
+	call main_wait_atown_1200
+	var Add can_expand_var_atown 1 13
+	call main_wait_atown_1200
+	multi atown_need_atlas
+	multi build_orbital_atown_2PortWraith_Addon
+	call main_wait_atown_900
+	multi production_cycle_atown
+	goto build_orbital_atown_fin
+	
+	:build_orbital_atown_2PortWraith_Addon
+	call atown_wait_for_atlas
+	multi atown_need_fountainhead
+	call atown_wait_for_fountainhead
+	bld 1 starport 121
+	w_bld 1 starport
+	bld 1 munitions_bay 120
+	bld 2 starport 121
+	w_bld 2 starport
+	bld 2 munitions_bay 120
+	bld 3 starport 121
+	call atown_wait_for_daedala
+	w_bld 3 starport
+	bld 1 commandment 120
+	stop
+	
+	:build_orbital_atown_TheDon
+	dth 13 Ex 0 start_location build_orbital_atown_TheDon_Main
+	print Terran<32>Orbital<32>greed<32>1:<32>The<32>Don
+	
+	:build_orbital_atown_TheDon_Main
+	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starport_gorgon 13
+	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_salamander 13
+	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_azazel 13
+	var Ex|Call pref_orbital_nanite 0 buildpref_orbital_naniteassembly_minotaur 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_naniteassembly 13
+	call main_wait_atown_1500
+	#mutli expansion_toggle
+	call main_wait_atown_300
+	call main_wait_atown_600
+	bld 1 barracks 121
+	call main_wait_atown_600
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_900
+	w_bld 1 barracks
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_600
+	p_need 1 atlas
+	call main_wait_atown_600
+	var Set can_build_static_defense_var_atown 1 13
+	call main_wait_atown_1200
+	#call expansion_loop_normal
+	call main_wait_atown_1200
+	multi atown_need_daedala
+	call atown_wait_for_daedala
+	multi atown_need_atelier
+	call atown_wait_for_atelier
+	bld 2 nanite_assembly 122
+	call main_wait_atown_450
+	bld 3 nanite_assembly 122
+	call main_wait_atown_300
+    multi production_cycle_atown
+    call main_wait_atown_150
+    goto build_orbital_atown_fin
+	
+	:build_orbital_atown_TheDon_Addon
+	stop
+	
+	:build_orbital_atown_WraithBio
+	dth 13 Ex 0 start_location build_orbital_atown_WraithBio_Main
+	print Terran<32>Orbital<32>timing<32>1:<32>Wraith<32>Bio
+	
+	:build_orbital_atown_WraithBio_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
+	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_madcap 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
+	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starpad_wraith 13
+	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_sundog 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
+	call main_wait_atown_300
+	call main_wait_atown_150
+	bld 1 barracks 121
+	call main_wait_atown_750
+	bld 1 starpad 121
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	call main_wait_atown_300
+	queue 1 maverick barracks 255 Local Loc.63 100
+	call main_wait_atown_300
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 1 wraith starpad 255 Local Loc.63 100
+	call main_wait_atown_300
+	queue 1 wraith starpad 255 Local Loc.63 100
+	call main_wait_atown_150
+	var Sub can_worker_var_atown 1 13
+	#mutli expansion_toggle
+	call main_wait_atown_600
+	var Add can_worker_var_atown 1 13
+	call main_wait_atown_300
+	var Set can_build_static_defense_var_atown 1 13
+	wait 24
+	bld 2 starpad 121
+	call main_wait_atown_150
+	bld 2 barracks 121
+	call main_wait_atown_300
+	queue 1 maverick barracks 255 Local Loc.63 100
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	call main_wait_atown_150
+	queue 1 wraith starpad 255 Local Loc.63 100
+	wait 24
+	queue 1 wraith starpad 255 Local Loc.63 100
+	call main_wait_atown_300
+	bld 3 barracks 121
+	wait 24
+	queue 1 maverick barracks 255 Local Loc.63 100
+	call main_wait_atown_150
+	w_bld 2 starpad
+	var Add can_expand_var_atown 1 13
+	call main_wait_atown_900
+	w_bldstart 3 barracks
+	bld 1 medbay 120
+	call main_wait_atown_300
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_600
+	multi atown_need_atlas
+	wait 24
+	multi production_cycle_atown
+	goto build_orbital_atown_fin
+	
+	:build_orbital_atown_Hotdrop
+	dth 13 Ex 0 start_location build_orbital_atown_Hotdrop_Main
+	print Terran<32>Orbital<32>timing<32>2:<32>Hotdrop
+	
+	:build_orbital_atown_Hotdrop_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_harakan 13
+	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_cleric 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_commandment 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
+    call main_wait_atown_300
+    call main_wait_atown_300
+    bld 1 barracks 121
+    call main_wait_atown_300
+	call main_wait_atown_600
+	bld 1 starpad 121
+	call main_wait_atown_150
+    queue 1 maverick barracks 255 Local Loc.63 100
+	call main_wait_atown_600
+	bld 2 starpad 121
+	call main_wait_atown_600
+	queue 1 wraith starpad 255 Local Loc.63 100
+	call main_wait_atown_150
+	queue 1 wraith starpad 255 Local Loc.63 100
+	call main_wait_atown_300
+	queue 1 trojan starpad 255 Local Loc.63 100
+	call main_wait_atown_150
+    bld 2 barracks 121
+	call main_wait_atown_450
+    bld 3 starpad 121
+    call main_wait_atown_300
+    queue 1 trojan starpad 255 Local Loc.63 100
+	call main_wait_atown_150
+	queue 2 maverick barracks 255 Local Loc.63 100
+	call main_wait_atown_300
+	queue 2 maverick barracks 255 Local Loc.63 100
+    wait 24
+	var Set can_attack_var_atown 1 13
+	call main_wait_atown_300
+	var Sub can_worker_var_atown 1 13
+	#mutli expansion_toggle
+	call main_wait_atown_600
+	var Add can_worker_var_atown 1 13
+	wait 24
+    var Set can_build_static_defense_var_atown 1 13
+    call main_wait_atown_300
+	w_bld 3 starpad
+	w_bldstart 2 barracks
+	var Set build_gas_var_atown 1 13
+	call main_wait_atown_600
+	multi atown_need_atlas
+	call main_wait_atown_300
+	queue 1 wraith starpad 255 Local Loc.63 100
+	call main_wait_atown_150
+	multi build_orbital_atown_Hotdrop_Addon
+    call main_wait_atown_750
+	multi atown_need_fountainhead
+    call main_wait_atown_750
+	multi production_cycle_atown
+	goto build_orbital_atown_fin
+	
+	:build_orbital_atown_Hotdrop_Addon
+	call atown_wait_for_atlas
+	bld 1 covert_ops 120
+	w_bld 1 covert_ops
+	bld 1 missile_silo 120
+	call atown_wait_for_fountainhead
+	bld 1 starport 121
+	w_bld 1 starport
+	bld 1 munitions_bay 120
+	bld 2 starport 121
+	w_bld 2 starport
+	bld 2 munitions_bay 120
+	call main_wait_atown_300
+    queue 2 wyvern starport 255 Local Loc.63 100
+	call main_wait_atown_300
+	queue 2 wyvern starport 255 Local Loc.63 100
+	call main_wait_atown_300
+	queue 2 wyvern starport 255 Local Loc.63 100
+	call main_wait_atown_300
+	queue 2 wyvern starport 255 Local Loc.63 100
+	stop
+	
+	:build_orbital_atown_SuddenStarport
+	dth 13 Ex 0 start_location build_orbital_atown_SuddenStarport_Main
+	print Terran<32>Orbital<32>timing<32>3:<32>Sudden<32>Starport
+	
+	:build_orbital_atown_SuddenStarport_Main
+	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
+	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_cleric 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starport_gorgon 13
+	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_sundog 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_munitionsbay 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
+    call main_wait_atown_300
+    call main_wait_atown_300
+    bld 1 barracks 121
+    call main_wait_atown_300
+	call main_wait_atown_600
+	var Sub can_worker_var_atown 1 13
+	#mutli expansion_toggle
+	call main_wait_atown_600
+	var Add can_worker_var_atown 1 13
+	call main_wait_atown_300
+	bld 2 barracks 121
+	call main_wait_atown_450
+	bld 3 barracks 121
+	call main_wait_atown_300
+	var Set can_attack_var_atown 1 13
+	call main_wait_atown_300
+	var Set build_gas_var_atown 1 13
+    call main_wait_atown_450
+    var Set can_build_static_defense_var_atown 1 13
+	call main_wait_atown_450
+	w_bldstart 3 barracks
+	multi build_orbital_atown_SuddenStarport_Addon
+	call main_wait_atown_300
+	multi atown_need_atlas
+	call main_wait_atown_900
+	#mutli expansion_toggle
+	call atown_wait_for_atlas
+    call main_wait_atown_750
+	multi atown_need_fountainhead
+    call main_wait_atown_750
+	multi production_cycle_atown
+	goto build_orbital_atown_fin
+	
+	:build_orbital_atown_SuddenStarport_Addon
+	w_bld 2 barracks
+	bld 1 medbay 120
+	call atown_wait_for_atlas
+	call atown_wait_for_fountainhead
+	bld 1 starport 121
+	w_bldstart 1 starport
+	bld 4 starport 121
+	w_bld 1 starport
+	bld 1 munitions_bay 120
+	w_bld 2 starport
+	bld 2 munitions_bay 120
+	w_bld 3 starport
+	bld 3 munitions_bay 120
+	w_bld 4 starport
+	bld 4 munitions_bay 120
+	call main_wait_atown_300
+	stop
+	
+	:build_orbital_atown_AcesHigh
+	dth 13 Ex 0 start_location build_orbital_atown_AcesHigh_Main
+	print Terran<32>Orbital<32>rush<32>2:<32>Aces<32>High
+	
+	:build_orbital_atown_AcesHigh_Main
+	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_vulture 13
+	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_blackjack 13
+	var Ex|Call pref_armor_production 0 buildpref_armor_fulcrum 13
+	var Ex|Call pref_orbital_starpad 0 buildpref_orbital_starpad_wraith 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_munitionsbay 13
+	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
+    call main_wait_atown_300
+    call main_wait_atown_300
+    bld 1 fulcrum 121
+    call main_wait_atown_450
+    bld 2 fulcrum 121
+	call main_wait_atown_600
+	w_bldstart 2 fulcrum
+	multi build_orbital_atown_AcesHigh_Addon
+	call main_wait_atown_600
+	var Set can_attack_var_atown 1 13
+	call main_wait_atown_900
+	var Sub can_worker_var_atown 1 13
+	#mutli expansion_toggle
+	call main_wait_atown_600
+	var Add can_worker_var_atown 1 13
+	call main_wait_atown_600
+	bld 3 fulcrum 121
+	call main_wait_atown_150
+	var Set build_gas_var_atown 1 13
+    call main_wait_atown_450
+	bld 3 starpad 121
+	call main_wait_atown_150
+    var Set can_build_static_defense_var_atown 1 13
+	call main_wait_atown_900
+	multi atown_need_atlas
+	call main_wait_atown_450
+	multi production_cycle_atown
+	goto build_orbital_atown_fin
+	
+	:build_orbital_atown_AcesHigh_Addon
+	w_bld 1 fulcrum
+	bld 1 scrapyard 120
+	w_bld 2 fulcrum
+	bld 2 scrapyard 120
+	w_bld 3 fulcrum
+	bld 3 scrapyard 120
+	call main_wait_atown_300
+	stop
+	
+	:build_orbital_atown_fin
+	call build_bool_atown
+	var AtL skip_building_var 1 blank 13
+	
+	:build_orbital_atown_fin2
+	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
+	call main_wait_atown_600
+	multi atown_need_atlas
+	call main_wait_atown_3600
+	multi atown_need_daedala
+	call main_wait_atown_3600
+	multi atown_need_fountainhead
+	call main_wait_atown_3600
+	multi atown_need_atelier
+	stop

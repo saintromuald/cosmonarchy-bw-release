@@ -78,7 +78,7 @@ Plasma Torpedo (Exemplar)
 Phase Disruptor Cannon (Didact)
 Neutron Cannon (Magister)
 Pulse Cannon (Steward)
-Prismatic Cannon (Photon Cannon)
+Prismatic Cannon (Warden)
 Swarming Spores (Rililisk)
 Plasma Shell (Accantor) (deprecated)
 Stasis Field (Didact ability)
@@ -195,7 +195,7 @@ Recycled Blaster (Servitor)
 Antimatter Missile (Positron)
 Sparring Saber (Sycophant)
 Kissing Emoji (Smoochie Boy)
-Extended Weapon #68
+Khaydarin Plasma Laser (Engram)
 Extended Weapon #69
 Extended Weapon #70
 Extended Weapon #71

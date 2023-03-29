@@ -849,7 +849,7 @@ Protoss Unit Rubble (Small)
 Zerg Unit Rubble (Medium)
 Zerg Unit Rubble (Small)
 Zerg Unit Rubble (Tiny)
-Extended Sprite #1
+Engram
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1

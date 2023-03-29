@@ -135,9 +135,9 @@ Arbiter Warp Flash
 Archon Energy
 Archon Being
 Archon Swirl
-Probe
-Probe Shadow
-Probe Warp Flash
+Scribe
+Scribe Shadow
+Scribe Warp Flash
 Scout (deprecated)
 Scout Shadow (deprecated)
 Panoptus Engines
@@ -1712,8 +1712,8 @@ Protoss Unit Rubble (Small)
 Zerg Unit Rubble (Medium)
 Zerg Unit Rubble (Small)
 Zerg Unit Rubble (Tiny)
-Extended Image #712
-Extended Image #713
+Engram
+Engram Shadow
 Extended Image #714
 Extended Image #715
 Extended Image #716
