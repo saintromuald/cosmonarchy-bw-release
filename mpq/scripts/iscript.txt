@@ -971,68 +971,68 @@ SpecialState1 	EggSpecialState1
 # ----------------------------------------------------------------------------- #
 
 EggInit:
-	imgul             	22 0 0	# Egg Shadow (zerg\zegShad.grp)
-	playfram          	20	# Frame set 1, direction 3
-	wait              	2 
-	playfram          	21	# Frame set 1, direction 4
-	wait              	2 
-	playfram          	22	# Frame set 1, direction 5
-	wait              	2 
-	playfram          	23	# Frame set 1, direction 6
-	wait              	2 
+	imgul             	22 0 0 # Egg Shadow (zerg\zegShad.grp)
+	playfram          	20
+	wait              	2
+	playfram          	21
+	wait              	2
+	playfram          	22
+	wait              	2
+	playfram          	23
+	wait              	2
 EggLocal00:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	2 
-	playfram          	10	# Frame set 0, direction 10
-	wait              	2 
-	playfram          	11	# Frame set 0, direction 11
-	wait              	2 
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	10
+	wait              	2
+	playfram          	11
+	wait              	2
 	goto              	EggLocal00
 
 EggDeath:
-	playsnd           	830	# Zerg\Egg\ZEgDth00.WAV
-	lowsprul          	143 0 0	# Egg Remnants (zerg\zegDeath.grp)
-	wait              	1 
+	playsnd           	830 # Zerg\Egg\ZEgDth00.WAV
+	lowsprul          	143 0 0 # Egg Remnants (zerg\zegDeath.grp)
+	wait              	1
 	end
 
 EggSpecialState1:
-	wait              	1 
+	wait              	1
 	nobrkcodestart
-	playfram          	12	# Frame set 0, direction 12
-	wait              	2 
-	playfram          	13	# Frame set 0, direction 13
-	wait              	2 
-	playfram          	14	# Frame set 0, direction 14
-	wait              	2 
-	playfram          	15	# Frame set 0, direction 15
-	wait              	2 
-	playfram          	16	# Frame set 0, direction 16
-	wait              	2 
+	playfram          	12
+	wait              	2
+	playfram          	13
+	wait              	2
+	playfram          	14
+	wait              	2
+	playfram          	15
+	wait              	2
+	playfram          	16
+	wait              	2
 	playfram          	0x11
-	wait              	2 
-	playfram          	18	# Frame set 1, direction 1
-	wait              	2 
-	playfram          	19	# Frame set 1, direction 2
-	wait              	2 
-	sigorder          	4 
+	wait              	2
+	playfram          	18
+	wait              	2
+	playfram          	19
+	wait              	2
+	sigorder          	4
 	nobrkcodeend
 	goto              	InfestedTerranLocal00
 
@@ -16046,12 +16046,12 @@ Death         	[NONE]
 # ----------------------------------------------------------------------------- #
 
 YamatoGunTrailInit:
-	playfram          	0x11	# Frame set 1
-	wait              	2 
-	playfram          	0x22	# Frame set 2
-	wait              	2 
-	playfram          	0x33	# Frame set 3
-	wait              	2 
+	playfram          	0x11
+	wait              	2
+	playfram          	0x22
+	wait              	2
+	playfram          	0x33
+	wait              	2
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -16068,19 +16068,19 @@ AirAttkInit   	[NONE]
 # ----------------------------------------------------------------------------- #
 
 Lockdown_EMPShockwaveMissileInit:
-	playfram          	0x00	# Frame set 0
-	wait              	1 
-	sigorder          	1 
-	wait              	1 
+	playfram          	0x00
+	wait              	1
+	sigorder          	1
+	wait              	1
 Lockdown_EMPShockwaveMissileGndAttkInit:
-	sprol             	309 0 0	# Longbolt/Gemini Missiles Trail (thingy\smoke.grp)
+	sprol             	309 0 0 # Longbolt/Gemini Missiles Trail (thingy\smoke.grp)
 	wait              	3 
 	goto              	Lockdown_EMPShockwaveMissileGndAttkInit
 
 Lockdown_EMPShockwaveMissileDeath:
-	imgol             	556 0 0	# EMP Shockwave Hit (Part2) (thingy\empl.grp)
+	imgol             	556 0 0 # EMP Shockwave Hit (Part2) (thingy\empl.grp)
 	domissiledmg
-	wait              	1 
+	wait              	1
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -16111,20 +16111,20 @@ Death         	SkrylingExplosionDeath
 # ----------------------------------------------------------------------------- #
 
 PhalanxSiegeTurretOverlayInit:
-	playfram          	0x00	# Frame set 0
-	wait              	1 
-	playfram          	0x11	# Frame set 1
-	wait              	1 
-	playfram          	0x22	# Frame set 2
-	wait              	1 
-	playfram          	0x33	# Frame set 3
-	wait              	1 
-	playfram          	0x44	# Frame set 4
-	wait              	1 
-	playfram          	0x55	# Frame set 5
-	wait              	1 
-	playfram          	0x66	# Frame set 6
-	wait              	1 
+	playfram          	0x00
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	playfram          	0x55
+	wait              	1
+	playfram          	0x66
+	wait              	1
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -16141,40 +16141,40 @@ Death         	ScienceVesselOverlayDeath
 # ----------------------------------------------------------------------------- #
 
 ScienceVesselOverlayInit:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	1 
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	1
+	wait              	1
 ScienceVesselOverlayDeath:
-	wait              	1 
+	wait              	1
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -16190,24 +16190,24 @@ Death         	HallucinationHitDeath
 # ----------------------------------------------------------------------------- #
 
 HallucinationHitInit:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
 HallucinationHitDeath:
-	wait              	1 
+	wait              	1
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -16220,42 +16220,42 @@ Death         	[NONE]
 # ----------------------------------------------------------------------------- #
 
 Unknown254Init:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	2 
-	playfram          	10	# Frame set 0, direction 10
-	wait              	2 
-	playfram          	11	# Frame set 0, direction 11
-	wait              	2 
-	playfram          	12	# Frame set 0, direction 12
-	wait              	2 
-	playfram          	13	# Frame set 0, direction 13
-	wait              	2 
-	playfram          	14	# Frame set 0, direction 14
-	wait              	2 
-	playfram          	15	# Frame set 0, direction 15
-	wait              	2 
-	playfram          	16	# Frame set 0, direction 16
-	wait              	2 
-	playfram          	0x11	# Frame set 1
-	wait              	2 
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	10
+	wait              	2
+	playfram          	11
+	wait              	2
+	playfram          	12
+	wait              	2
+	playfram          	13
+	wait              	2
+	playfram          	14
+	wait              	2
+	playfram          	15
+	wait              	2
+	playfram          	16
+	wait              	2
+	playfram          	0x11
+	wait              	2
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -16270,24 +16270,24 @@ Death         	[NONE]
 # ----------------------------------------------------------------------------- #
 
 Unknown255Init:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -18319,12 +18319,12 @@ Death         	SkrylingExplosionDeath
 # ----------------------------------------------------------------------------- #
 
 CantavisGlowInit:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	0x11	# Frame set 1
-	wait              	2 
-	playfram          	0x22	# Frame set 2
-	wait              	2 
+	playfram          	0x00
+	wait              	2
+	playfram          	0x11
+	wait              	2
+	playfram          	0x22
+	wait              	2
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -18339,20 +18339,20 @@ Death         	SkrylingExplosionDeath
 # ----------------------------------------------------------------------------- #
 
 NeedleSpinesOverlayInit:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	0x11	# Frame set 1
-	wait              	2 
-	playfram          	0x22	# Frame set 2
-	wait              	2 
-	playfram          	0x33	# Frame set 3
-	wait              	2 
-	playfram          	0x44	# Frame set 4
-	wait              	2 
-	playfram          	0x55	# Frame set 5
-	wait              	2 
-	playfram          	0x66	# Frame set 6
-	wait              	2 
+	playfram          	0x00
+	wait              	2
+	playfram          	0x11
+	wait              	2
+	playfram          	0x22
+	wait              	2
+	playfram          	0x33
+	wait              	2
+	playfram          	0x44
+	wait              	2
+	playfram          	0x55
+	wait              	2
+	playfram          	0x66
+	wait              	2
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -18367,37 +18367,37 @@ Death         	FlamethrowerDeath
 # ----------------------------------------------------------------------------- #
 
 FlamethrowerInit:
-	playsndbtwn       	314 315	# Terran\Firebat\TFBFir00.WAV | Terran\Firebat\TFBFir01.WAV
+	playsndbtwn       	314 315 # Terran\Firebat\TFBFir00.WAV | Terran\Firebat\TFBFir01.WAV
 	goto              	FlamethrowerLocal00
 
 FlamethrowerLocal00:
-	playfram          	0x11	# Frame set 1
-	wait              	1 
-	playfram          	0x22	# Frame set 2
-	wait              	1 
-	playfram          	0x33	# Frame set 3
-	wait              	1 
-	playfram          	0x44	# Frame set 4
-	wait              	1 
-	playfram          	0x55	# Frame set 5
-	wait              	1 
-	playfram          	0x66	# Frame set 6
-	wait              	1 
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	playfram          	0x55
+	wait              	1
+	playfram          	0x66
+	wait              	1
 	goto              	FlamethrowerLocal01
 
 FlamethrowerLocal01:
-	playfram          	0x99	# Frame set 9
-	wait              	1 
-	playfram          	0xaa	# Frame set 10
-	wait              	1 
-	playfram          	0xbb	# Frame set 11
-	wait              	1 
+	playfram          	0x99
+	wait              	1
+	playfram          	0xaa
+	wait              	1
+	playfram          	0xbb
+	wait              	1
 	goto              	FlamethrowerDeath
 
 FlamethrowerDeath:
 	nobrkcodeend
 	gotorepeatattk
-	wait              	1 
+	wait              	1
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -18412,26 +18412,26 @@ Death         	SkrylingExplosionDeath
 # ----------------------------------------------------------------------------- #
 
 GeminiMissilesExplosionInit:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	2 
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -18447,87 +18447,87 @@ Death         	YamatoGunOverlayDeath
 
 YamatoGunOverlayInit:
 	playsnd           	178	# Terran\BATTLE\tBaYam01.wav
-	playfram          	4	# Frame set 0, direction 4
+	playfram          	4
 	nobrkcodestart
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	2 
-	playfram          	10	# Frame set 0, direction 10
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	2 
-	playfram          	10	# Frame set 0, direction 10
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	2 
-	playfram          	10	# Frame set 0, direction 10
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	2 
-	playfram          	10	# Frame set 0, direction 10
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	2 
-	playfram          	10	# Frame set 0, direction 10
-	wait              	2 
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	10
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	10
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	10
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	10
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	10
+	wait              	2
+	playfram          	0x00
+	wait              	2
+	playfram          	1
 	castspell
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	1 
-	sigorder          	2 
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	1
+	sigorder          	2
 	nobrkcodeend
 	gotorepeatattk
 YamatoGunOverlayDeath:
@@ -18546,34 +18546,34 @@ Death         	SkrylingExplosionDeath
 # ----------------------------------------------------------------------------- #
 
 YamatoGunHitInit:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	2 
-	playfram          	10	# Frame set 0, direction 10
-	wait              	2 
-	playfram          	11	# Frame set 0, direction 11
-	wait              	2 
-	playfram          	12	# Frame set 0, direction 12
-	wait              	2 
-	playfram          	13	# Frame set 0, direction 13
-	wait              	2 
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	10
+	wait              	2
+	playfram          	11
+	wait              	2
+	playfram          	12
+	wait              	2
+	playfram          	13
+	wait              	2
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -18644,42 +18644,42 @@ Death         	SkrylingExplosionDeath
 # ----------------------------------------------------------------------------- #
 
 PsionicStormPartVariant1Init:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
+	playfram          	0
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	0
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	0
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -18695,43 +18695,43 @@ Death         	SkrylingExplosionDeath
 # ----------------------------------------------------------------------------- #
 
 PsionicStormPartVariant2Init:
-	playfram          	0x00	# Frame set 0
-	setflipstate      	1 
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
+	playfram          	0x00
+	setflipstate      	1
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -18746,20 +18746,20 @@ Death         	[NONE]
 # ----------------------------------------------------------------------------- #
 
 EMPShockwaveHit_Part1_Init:
-	playfram          	0x00	# Frame set 0
-	wait              	1 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	1 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	1 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	1 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	1 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	1 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	1 
+	playfram          	0x00
+	wait              	1
+	playfram          	1
+	wait              	1
+	playfram          	2
+	wait              	1
+	playfram          	3
+	wait              	1
+	playfram          	4
+	wait              	1
+	playfram          	5
+	wait              	1
+	playfram          	6
+	wait              	1
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -18774,22 +18774,22 @@ Death         	[NONE]
 # ----------------------------------------------------------------------------- #
 
 EMPShockwaveHit_Part2_Init:
-	playsnd           	7	# Misc\ExploLrg.wav
-	playfram          	0x00	# Frame set 0
-	wait              	1 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	1 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	1 
-	playfram          	3	# Frame set 0, direction 3
-	imgul             	555 0 0	# EMP Shockwave Hit (Part1) (thingy\emp.grp)
-	wait              	1 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	1 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	1 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	1 
+	playsnd           	7 # Misc\ExploLrg.wav
+	playfram          	0x00
+	wait              	1
+	playfram          	1
+	wait              	1
+	playfram          	2
+	wait              	1
+	playfram          	3
+	imgul             	555 0 0 # EMP Shockwave Hit (Part1) (thingy\emp.grp)
+	wait              	1
+	playfram          	4
+	wait              	1
+	playfram          	5
+	wait              	1
+	playfram          	6
+	wait              	1
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -18806,32 +18806,32 @@ Death         	HallucinationDeathDeath
 # ----------------------------------------------------------------------------- #
 
 HallucinationDeathInit:
-	playfram          	0x00	# Frame set 0
-	wait              	3 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	3 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	3 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	3 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	3 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	3 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	3 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	3 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	3 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	3 
-	playfram          	10	# Frame set 0, direction 10
-	wait              	3 
-	playfram          	11	# Frame set 0, direction 11
-	wait              	3 
-	playfram          	12	# Frame set 0, direction 12
-	wait              	3 
+	playfram          	0x00
+	wait              	3
+	playfram          	1
+	wait              	3
+	playfram          	2
+	wait              	3
+	playfram          	3
+	wait              	3
+	playfram          	4
+	wait              	3
+	playfram          	5
+	wait              	3
+	playfram          	6
+	wait              	3
+	playfram          	7
+	wait              	3
+	playfram          	8
+	wait              	3
+	playfram          	9
+	wait              	3
+	playfram          	10
+	wait              	3
+	playfram          	11
+	wait              	3
+	playfram          	12
+	wait              	3
 	end
 
 HallucinationDeathDeath:
@@ -18863,30 +18863,30 @@ Death         	Flames_Small_Death
 # ----------------------------------------------------------------------------- #
 
 Flames_Small_Init:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	2 
-	playfram          	10	# Frame set 0, direction 10
-	wait              	2 
-	playfram          	11	# Frame set 0, direction 11
-	wait              	2 
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	10
+	wait              	2
+	playfram          	11
+	wait              	2
 	goto              	Flames_Small_Init
 
 Flames_Small_Death:
@@ -18904,30 +18904,30 @@ Death         	Flames_Small_Death
 
 Unknown323Init:
 	setflipstate      	1 
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	2 
-	playfram          	10	# Frame set 0, direction 10
-	wait              	2 
-	playfram          	11	# Frame set 0, direction 11
-	wait              	2 
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	10
+	wait              	2
+	playfram          	11
+	wait              	2
 	goto              	Flames_Small_Init
 
 # ----------------------------------------------------------------------------- #
@@ -18945,22 +18945,22 @@ Death         	Bleeding_Small_Variant1Death
 # ----------------------------------------------------------------------------- #
 
 Bleeding_Small_Variant1Init:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
 	goto              	Bleeding_Small_Variant1Init
 
 Bleeding_Small_Variant1Death:
-	wait              	1 
+	wait              	1
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -18978,19 +18978,19 @@ Death         	Bleeding_Small_Variant1Death
 # ----------------------------------------------------------------------------- #
 
 Bleeding_Small_Variant2Init:
-	setflipstate      	1 
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
+	setflipstate      	1
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
 	goto              	Bleeding_Small_Variant1Init
 
 # ----------------------------------------------------------------------------- #
@@ -19018,30 +19018,30 @@ Death         	Flames_Large_Death
 # ----------------------------------------------------------------------------- #
 
 Flames_Large_Init:
-	playfram          	12	# Frame set 0, direction 12
-	wait              	2 
-	playfram          	13	# Frame set 0, direction 13
-	wait              	2 
-	playfram          	14	# Frame set 0, direction 14
-	wait              	2 
-	playfram          	15	# Frame set 0, direction 15
-	wait              	2 
-	playfram          	16	# Frame set 0, direction 16
-	wait              	2 
-	playfram          	0x11	# Frame set 1
-	wait              	2 
-	playfram          	18	# Frame set 1, direction 1
-	wait              	2 
-	playfram          	19	# Frame set 1, direction 2
-	wait              	2 
-	playfram          	20	# Frame set 1, direction 3
-	wait              	2 
-	playfram          	21	# Frame set 1, direction 4
-	wait              	2 
-	playfram          	22	# Frame set 1, direction 5
-	wait              	2 
-	playfram          	23	# Frame set 1, direction 6
-	wait              	2 
+	playfram          	12
+	wait              	2
+	playfram          	13
+	wait              	2
+	playfram          	14
+	wait              	2
+	playfram          	15
+	wait              	2
+	playfram          	16
+	wait              	2
+	playfram          	0x11
+	wait              	2
+	playfram          	18
+	wait              	2
+	playfram          	19
+	wait              	2
+	playfram          	20
+	wait              	2
+	playfram          	21
+	wait              	2
+	playfram          	22
+	wait              	2
+	playfram          	23
+	wait              	2
 	goto              	Flames_Large_Init
 
 Flames_Large_Death:
@@ -19058,31 +19058,31 @@ Death         	Flames_Large_Death
 # ----------------------------------------------------------------------------- #
 
 Unknown327Init:
-	setflipstate      	1 
-	playfram          	12	# Frame set 0, direction 12
-	wait              	2 
-	playfram          	13	# Frame set 0, direction 13
-	wait              	2 
-	playfram          	14	# Frame set 0, direction 14
-	wait              	2 
-	playfram          	15	# Frame set 0, direction 15
-	wait              	2 
-	playfram          	16	# Frame set 0, direction 16
-	wait              	2 
-	playfram          	0x11	# Frame set 1
-	wait              	2 
-	playfram          	18	# Frame set 1, direction 1
-	wait              	2 
-	playfram          	19	# Frame set 1, direction 2
-	wait              	2 
-	playfram          	20	# Frame set 1, direction 3
-	wait              	2 
-	playfram          	21	# Frame set 1, direction 4
-	wait              	2 
-	playfram          	22	# Frame set 1, direction 5
-	wait              	2 
-	playfram          	23	# Frame set 1, direction 6
-	wait              	2 
+	setflipstate      	1
+	playfram          	12
+	wait              	2
+	playfram          	13
+	wait              	2
+	playfram          	14
+	wait              	2
+	playfram          	15
+	wait              	2
+	playfram          	16
+	wait              	2
+	playfram          	0x11
+	wait              	2
+	playfram          	18
+	wait              	2
+	playfram          	19
+	wait              	2
+	playfram          	20
+	wait              	2
+	playfram          	21
+	wait              	2
+	playfram          	22
+	wait              	2
+	playfram          	23
+	wait              	2
 	goto              	Flames_Large_Init
 
 # ----------------------------------------------------------------------------- #
@@ -19100,18 +19100,18 @@ Death         	Bleeding_Large_Variant1Death
 # ----------------------------------------------------------------------------- #
 
 Bleeding_Large_Variant1Init:
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	2 
-	playfram          	10	# Frame set 0, direction 10
-	wait              	2 
-	playfram          	11	# Frame set 0, direction 11
-	wait              	2 
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	10
+	wait              	2
+	playfram          	11
+	wait              	2
 	goto              	Bleeding_Large_Variant1Init
 
 Bleeding_Large_Variant1Death:
@@ -19133,19 +19133,19 @@ Death         	Bleeding_Large_Variant1Death
 # ----------------------------------------------------------------------------- #
 
 Bleeding_Large_Variant2Init:
-	setflipstate      	1 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	2 
-	playfram          	10	# Frame set 0, direction 10
-	wait              	2 
-	playfram          	11	# Frame set 0, direction 11
-	wait              	2 
+	setflipstate      	1
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	10
+	wait              	2
+	playfram          	11
+	wait              	2
 	goto              	Bleeding_Large_Variant1Init
 
 # ----------------------------------------------------------------------------- #
@@ -19233,11 +19233,11 @@ Death         	ConfirmCircleDeath
 # ----------------------------------------------------------------------------- #
 
 ConfirmCircleInit:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	goto              	InfestedTerranLocal00
 
 ConfirmCircleDeath:
-	wait              	1 
+	wait              	1
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -22170,12 +22170,13 @@ GndAttkToIdle 	CabalistGndAttkToIdle
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
 Walking       	CabalistWalking
-WalkingToIdle 	CabalistInit
+WalkingToIdle 	CabalistGndAttkToIdle
 SpecialState1 	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
 CabalistInit:
+	imgul				1617 0 0 # Cabalist Shadow (cm\protoss\cabalist-shadow.grp)
 	playfram          	0xdd
 CabalistGndAttkToIdle:
 	playfram          	0xdd
@@ -22288,13 +22289,13 @@ CabalistGndAttkInit:
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
-	goto              	CabalistInit
+	goto              	CabalistGndAttkToIdle
 
 CabalistCastSpell:
 	castspell
 	sigorder          	2
 	gotorepeatattk
-	goto              	CabalistInit
+	goto              	CabalistGndAttkToIdle
 
 CabalistWalking:
 	move              	5
@@ -22666,21 +22667,21 @@ AirAttkInit   	[NONE]
 # ----------------------------------------------------------------------------- #
 
 HaloRocketInit:
-	playfram          	0x00	# Frame set 0
-	playsnd           	1023	# Bullet\Tfrshoot.wav
-	wait              	1 
-	sigorder          	1 
-	wait              	1 
+	playfram          	0x00
+	playsnd           	1023 # Bullet\Tfrshoot.wav
+	wait              	1
+	sigorder          	1
+	wait              	1
 HaloRocketGndAttkInit:
 	sprol             	505 0 0	# Halo Rockets Trail (thingy\bsmoke.grp)
 	wait              	2 
 	goto              	HaloRocketGndAttkInit
 
 HaloRocketDeath:
-	playsnd           	1022	# Bullet\Tfrhit.wav
-	imgol             	530 0 0	# Gemini Missiles Explosion (thingy\ecaHit.grp)
+	playsnd           	1022 # Bullet\Tfrhit.wav
+	imgol             	530 0 0 # Gemini Missiles Explosion (thingy\ecaHit.grp)
 	domissiledmg
-	wait              	1 
+	wait              	1
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -22697,29 +22698,29 @@ AirAttkInit   	[NONE]
 # ----------------------------------------------------------------------------- #
 
 OpticalFlareInit:
-	playfram          	0x00	# Frame set 0
-	playsnd           	1016	# Terran\Medic\TMedflsh.wav
-	wait              	1 
-	sigorder          	1 
-	wait              	1 
+	playfram          	0x00
+	playsnd           	1016 # Terran\Medic\TMedflsh.wav
+	wait              	1
+	sigorder          	1
+	wait              	1
 OpticalFlareGndAttkInit:
-	sprol             	310 0 0	# Grenade Shot Smoke (thingy\GreSmoke.grp)
-	wait              	1 
+	sprol             	310 0 0 # Grenade Shot Smoke (thingy\GreSmoke.grp)
+	wait              	1
 OpticalFlareLocal00:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
 	goto              	OpticalFlareLocal00
 
 OpticalFlareDeath:
-	imgol             	977 0 0	# Optical Flare Hit (Medium) (thingy\TmeFlshM.grp)
+	imgol             	977 0 0 # Optical Flare Hit (Medium) (thingy\TmeFlshM.grp)
 	domissiledmg
-	wait              	1 
+	wait              	1
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -24511,10 +24512,10 @@ PanoptusDeath:
 	end
 
 PanoptusGndAttkInit:
-	playsndbtwn			2020 2023 # Panoptus weaponfire 01, 02, 03, 04
-	attackwith        	2
 	playfram          	0x20
-	wait				1
+	playsndbtwn			2020 2023 # Panoptus weaponfire 01, 02, 03, 04
+	attack
+	wait				2
 	playfram			0x00
 	gotorepeatattk
 	ignorerest
@@ -27622,98 +27623,98 @@ Death         	MagicSylonDeath
 # ----------------------------------------------------------------------------- #
 
 MagicSylonInit:
-	playfram          	0x00	# Frame set 0
-	wait              	1 
+	playfram          	0x00
+	wait              	1
 MagicSylonLocal00:
-	playfram          	1	# Frame set 0, direction 1
-	wait              	1 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	1 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	1 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	1 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	1 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	1 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	1 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	1 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	1 
-	playfram          	10	# Frame set 0, direction 10
-	wait              	1 
-	playfram          	11	# Frame set 0, direction 11
-	wait              	1 
-	playfram          	12	# Frame set 0, direction 12
-	wait              	1 
-	playfram          	13	# Frame set 0, direction 13
-	wait              	1 
-	playfram          	14	# Frame set 0, direction 14
-	wait              	1 
-	playfram          	15	# Frame set 0, direction 15
-	wait              	1 
-	playfram          	16	# Frame set 0, direction 16
-	wait              	1 
-	playfram          	0x11	# Frame set 1
-	wait              	1 
-	playfram          	18	# Frame set 1, direction 1
-	wait              	1 
-	playfram          	19	# Frame set 1, direction 2
-	wait              	1 
-	playfram          	20	# Frame set 1, direction 3
-	wait              	1 
-	playfram          	21	# Frame set 1, direction 4
-	wait              	1 
-	playfram          	22	# Frame set 1, direction 5
-	wait              	1 
-	playfram          	23	# Frame set 1, direction 6
-	wait              	1 
-	playfram          	24	# Frame set 1, direction 7
-	wait              	1 
-	playfram          	25	# Frame set 1, direction 8
-	wait              	1 
-	playfram          	26	# Frame set 1, direction 9
-	wait              	1 
-	playfram          	27	# Frame set 1, direction 10
-	wait              	1 
-	playfram          	28	# Frame set 1, direction 11
-	wait              	1 
-	playfram          	29	# Frame set 1, direction 12
-	wait              	1 
-	playfram          	30	# Frame set 1, direction 13
-	wait              	1 
-	playfram          	31	# Frame set 1, direction 14
-	wait              	1 
-	playfram          	32	# Frame set 1, direction 15
-	wait              	1 
-	playfram          	33	# Frame set 1, direction 16
-	wait              	1 
-	playfram          	0x22	# Frame set 2
-	wait              	1 
-	playfram          	35	# Frame set 2, direction 1
-	wait              	1 
-	playfram          	36	# Frame set 2, direction 2
-	wait              	1 
-	playfram          	37	# Frame set 2, direction 3
-	wait              	1 
-	playfram          	38	# Frame set 2, direction 4
-	wait              	1 
-	playfram          	39	# Frame set 2, direction 5
-	wait              	1 
-	playfram          	40	# Frame set 2, direction 6
-	wait              	1 
-	playfram          	41	# Frame set 2, direction 7
-	wait              	1 
-	playfram          	42	# Frame set 2, direction 8
-	wait              	1 
-	playfram          	43	# Frame set 2, direction 9
+	playfram          	1
+	wait              	1
+	playfram          	2
+	wait              	1
+	playfram          	3
+	wait              	1
+	playfram          	4
+	wait              	1
+	playfram          	5
+	wait              	1
+	playfram          	6
+	wait              	1
+	playfram          	7
+	wait              	1
+	playfram          	8
+	wait              	1
+	playfram          	9
+	wait              	1
+	playfram          	10
+	wait              	1
+	playfram          	11
+	wait              	1
+	playfram          	12
+	wait              	1
+	playfram          	13
+	wait              	1
+	playfram          	14
+	wait              	1
+	playfram          	15
+	wait              	1
+	playfram          	16
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	18
+	wait              	1
+	playfram          	19
+	wait              	1
+	playfram          	20
+	wait              	1
+	playfram          	21
+	wait              	1
+	playfram          	22
+	wait              	1
+	playfram          	23
+	wait              	1
+	playfram          	24
+	wait              	1
+	playfram          	25
+	wait              	1
+	playfram          	26
+	wait              	1
+	playfram          	27
+	wait              	1
+	playfram          	28
+	wait              	1
+	playfram          	29
+	wait              	1
+	playfram          	30
+	wait              	1
+	playfram          	31
+	wait              	1
+	playfram          	32
+	wait              	1
+	playfram          	33
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram          	35
+	wait              	1
+	playfram          	36
+	wait              	1
+	playfram          	37
+	wait              	1
+	playfram          	38
+	wait              	1
+	playfram          	39
+	wait              	1
+	playfram          	40
+	wait              	1
+	playfram          	41
+	wait              	1
+	playfram          	42
+	wait              	1
+	playfram          	43
 	goto				MagicSylonDeath
 
 MagicSylonDeath:
-	wait              	1 
+	wait              	1
 	end
 	
 # ----------------------------------------------------------------------------- #
@@ -29639,9 +29640,9 @@ AirAttkInit   	[NONE]
 # ----------------------------------------------------------------------------- #
 
 SalamanderMissileInit:
-	playfram          	0x00	# Frame set 0
-	wait              	1 
-	sigorder          	1 
+	playfram          	0x00
+	wait              	1
+	sigorder          	1
 	goto				SalamanderMissileGndAttkInit
 
 SalamanderMissileGndAttkInit:
@@ -33080,91 +33081,6 @@ IrolethBirthSpecialState1:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1004 Mutation Pit (cm\zerg\mutationpit.grp)
-.headerstart
-IsId          	516
-Type          	20
-Init          	MutationPitInit
-Death         	MutationPitDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
-Unused1       	[NONE]
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
-Walking       	[NONE]
-WalkingToIdle 	[NONE]
-SpecialState1 	[NONE]
-SpecialState2 	[NONE]
-AlmostBuilt   	MutationPitAlmostBuilt
-Built         	MutationPitBuilt
-Landing       	[NONE]
-LiftOff       	[NONE]
-IsWorking     	MutationPitIsWorking
-WorkingToIdle 	MutationPitWorkingToIdle
-WarpIn        	[NONE]
-.headerend
-# ----------------------------------------------------------------------------- #
-
-MutationPitInit:
-	imgul             	1226 0 0 # Mutation Pit Shadow (cm\zerg\mutationpit-shad.grp)
-	playfram          	0x00	# Frame set 0
-	goto              	MutationPitWorkingToIdle
-
-MutationPitWorkingToIdle:
-	playfram          	1
-	wait              	2 
-	playfram          	2
-	waitrand          	2 3
-	playfram          	3
-	wait              	2
-	playfram          	4
-	waitrand          	2 3
-	playfram          	5
-	wait              	2
-	playfram          	0x00
-	waitrand          	2 3
-	goto				MutationPitWorkingToIdle
-
-MutationPitLocal69:
-	wait				125
-	goto              	MutationPitLocal69
-
-MutationPitDeath:
-	playsnd           	774	# Zerg\Bldg\ZBldgDth.WAV
-	imgol             	60 0 0	# Zerg Building Explosion (thingy\zBldDthS.grp)
-	wait              	3 
-	lowsprul          	186 0 0	# Zerg Building Rubble (Small) (thingy\ZRubbleS.grp)
-	wait              	1 
-	end
-
-MutationPitAlmostBuilt:
-	imgol             	108 0 0	# Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
-MutationPitBuilt:
-	playfram          	0x00	# Frame set 0
-	wait				2
-	goto              	MutationPitWorkingToIdle
-
-MutationPitIsWorking:
-	playfram          	1
-	wait              	2 
-	playfram          	2
-	waitrand          	2 3
-	playfram          	3
-	wait              	2
-	playfram          	4
-	waitrand          	2 3
-	playfram          	5
-	wait              	2
-	playfram          	0x00
-	waitrand          	2 3
-	goto              	MutationPitIsWorking
-	
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
 # 1227 Gorgral Swamp (cm\zerg\lakizden.grp)
 .headerstart
 IsId          	517
@@ -33196,7 +33112,7 @@ WarpIn        	[NONE]
 
 BactaliskDenInit:
 	imgul             	1228 0 0 # Bactalisk Den Shadow (cm\zerg\lakizden-shad.grp)
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	goto              	BactaliskDenWorkingToIdle
 
 BactaliskDenWorkingToIdle:
@@ -33225,7 +33141,7 @@ BactaliskDenDeath:
 BactaliskDenAlmostBuilt:
 	imgol             	108 0 0	# Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
 BactaliskDenBuilt:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	wait				2
 	goto              	BactaliskDenWorkingToIdle
 
@@ -33326,7 +33242,7 @@ Death         	ObservanceDeath
 # ----------------------------------------------------------------------------- #
 
 ObservanceInit:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	wait              	2
 	goto				ObservanceLocal00
 
@@ -33409,7 +33325,7 @@ ObservanceLocal00:
 	goto				ObservanceLocal00
 
 ObservanceDeath:
-	wait              	1 
+	wait              	1
 	end
 	
 # ----------------------------------------------------------------------------- #
@@ -34440,6 +34356,7 @@ IonCannonBaseGndAttkInit:
 IonCannonBaseGndAttkRpt:
 	nobrkcodestart
 	playsnd           	1319 # ioncannon-charge-01
+	sigorder			32
 	wait              	71
 	attackwith			1
 	wait              	8
@@ -34852,7 +34769,7 @@ Death         	SublimeShepherdOverlayDeath
 # ----------------------------------------------------------------------------- #
 
 SublimeShepherdOverlayInit:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	wait              	1
 SublimeShepherdOverlayLocal00:
 	playfram			1
@@ -34918,7 +34835,7 @@ Death         	KhaydarinEclipseProtossAccelerantDeath
 # ----------------------------------------------------------------------------- #
 
 KhaydarinEclipseProtossAccelerantInit:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	wait              	1
 KhaydarinEclipseProtossAccelerantLocal00:
 	playfram			1
@@ -34973,20 +34890,20 @@ KhaydarinEclipseProtossAccelerantDeath:
 .headerstart
 IsId          	539
 Type          	26
-Init          	LobotomyMineInit
-Death         	LobotomyMineDeath
+Init          	[NONE]
+Death         	[NONE]
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
-Unused1       	LobotomyMineUnused1
+Unused1       	[NONE]
 GndAttkRpt    	[NONE]
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
 GndAttkToIdle 	[NONE]
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
-Walking       	LobotomyMineWalking
-WalkingToIdle 	LobotomyMineWalkingToIdle
-SpecialState1 	LobotomyMineSpecialState1
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
 Built         	[NONE]
@@ -34998,116 +34915,11 @@ WarpIn        	[NONE]
 Unused3       	[NONE]
 StarEditInit  	[NONE]
 Disable       	[NONE]
-Burrow        	LobotomyMineBurrow
-UnBurrow      	LobotomyMineUnBurrow
+Burrow        	[NONE]
+UnBurrow      	[NONE]
 Enable        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
-
-LobotomyMineInit:
-	imgul             	1372 0 0 # Lobotomy Mine Shadow (cm\terran\lobotomymine-shad.grp)
-LobotomyMineWalkingToIdle:
-	playfram          	0x00 # Frame set 0
-	goto              	LobotomyMineLocal00
-
-LobotomyMineLocal00:
-	wait              	125 
-	goto              	LobotomyMineLocal00
-
-LobotomyMineDeath:
-	playsnd           	10 # Misc\Explo1.wav
-	playfram          	12
-	wait              	1  
-	playfram          	13
-	wait              	1  
-	playfram          	14
-	wait              	1  
-	playfram          	15
-	wait              	1  
-	playfram          	16
-	wait              	1 
-	playfram          	0x11
-	wait              	1 
-	playfram          	18
-	wait              	1 
-	playfram          	19
-	wait              	1 
-	playfram          	20
-	wait              	1 
-	playfram          	21
-	wait              	1 
-	end
-
-LobotomyMineWalking:
-	playsnd           	1308 # Lobotomy Mine movement
-	move              	16 
-	wait              	1 
-	playfram          	0x00
-	move              	16 
-	wait              	1 
-	playfram          	1
-	move              	16 
-	wait              	1 
-	playfram          	2
-	move              	16 
-	wait              	1 
-	playfram          	3
-	move              	16 
-	wait              	1 
-	playfram          	4
-	move              	16 
-	wait              	1 
-	playfram          	5
-	move              	16 
-	wait              	1 
-	playfram          	6
-	move              	16 
-	wait              	1 
-	playfram          	7
-	goto              	LobotomyMineWalking
-
-LobotomyMineSpecialState1:
-	castspell
-	sigorder          	1 
-	imgol             	429 0 0	# Spider Mine Death (thingy\tmnExplo.grp)
-	goto              	LobotomyMineLocal00
-	
-LobotomyMineUnused1:
-	fireweapon			89
-	sigorder          	1 
-	imgol             	1277 0 0 # Lobotomy Mine Death (thingy\tmnExplo.grp)
-	goto              	LobotomyMineLocal00
-
-LobotomyMineBurrow:
-	nobrkcodestart
-	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
-	playsnd           	354	# Terran\VULTURE\TVuMin01.WAV
-	playfram          	8
-	wait              	1 
-	playfram          	9
-	wait              	1 
-	playfram          	10
-	wait              	1 
-	playfram          	11
-	wait              	1 
-	sigorder          	4 
-	nobrkcodeend
-	goto              	LobotomyMineLocal00
-
-LobotomyMineUnBurrow:
-	nobrkcodestart
-	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
-	playsnd           	354	# Terran\VULTURE\TVuMin01.WAV
-	playfram          	10
-	wait              	1 
-	playfram          	9
-	wait              	1 
-	playfram          	8
-	wait              	1 
-	playfram          	0x00
-	sigorder          	4 
-	nobrkcodeend
-	goto              	LobotomyMineWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -35121,31 +34933,31 @@ Death         	LobotomyMineExplosionDeath
 # ----------------------------------------------------------------------------- #
 
 LobotomyMineExplosionInit:
-	wait              	125 
+	wait              	125
 	goto              	LobotomyMineExplosionInit
 
 LobotomyMineExplosionDeath:
 	playsnd           	1309
-	playfram          	0x00	# Frame set 0
-	wait              	1 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	1 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	1 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	1 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	1 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	1 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	1 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	1 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	1 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	1 
+	playfram          	0x00
+	wait              	1
+	playfram          	1
+	wait              	1
+	playfram          	2
+	wait              	1
+	playfram          	3
+	wait              	1
+	playfram          	4
+	wait              	1
+	playfram          	5
+	wait              	1
+	playfram          	6
+	wait              	1
+	playfram          	7
+	wait              	1
+	playfram          	8
+	wait              	1
+	playfram          	9
+	wait              	1
 	end
 	
 # ----------------------------------------------------------------------------- #
@@ -42831,7 +42643,7 @@ TarasqueSporesDeath:
 	playsnd           	79	# Bullet\ZLuHit00.wav
 	sprol             	365 0 0	# Glave Wurm/Seeker Spores Hit (thingy\SporeHit.grp)
 	domissiledmg
-	wait              	1 
+	wait              	1
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -52059,3 +51871,136 @@ Engines_MultiGlowHeader_OmniInit:
 	engframe			0x20
 	wait              	1
 	goto              	Engines_MultiGlowHeader_OmniInit
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1716 Hammerfall Beacon (cm\terran\ion-cannon-beacon.grp)
+.headerstart
+IsId          	731
+Type          	2
+Init          	HammerfallBeaconInit
+Death         	HammerfallBeaconDeath
+GndAttkInit   	HammerfallBeaconGndAttkInit
+AirAttkInit   	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+HammerfallBeaconInit:
+	playfram          	0x00
+	playsnd           	106 # Bullet\tvuFir00.wav
+	wait              	1
+	sigorder          	1
+	wait              	1
+HammerfallBeaconGndAttkInit:
+	sprol             	310 0 0 # Grenade Shot Smoke (thingy\GreSmoke.grp)
+	wait              	1
+HammerfallBeaconLocal00:
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	goto              	HammerfallBeaconLocal00
+
+HammerfallBeaconDeath:
+	imgol             	440 0 0 # Fragmentation Grenade Hit (thingy\efgHit.grp)
+	domissiledmg
+	wait              	1
+	imgol             	556 0 0	# EMP Shockwave Hit (Part2) (thingy\empl.grp)
+	wait				14
+	imgol             	556 0 0	# EMP Shockwave Hit (Part2) (thingy\empl.grp)
+	wait				14
+	imgol             	556 0 0	# EMP Shockwave Hit (Part2) (thingy\empl.grp)
+	wait				14
+	imgol             	556 0 0	# EMP Shockwave Hit (Part2) (thingy\empl.grp)
+	wait				14
+	imgol             	556 0 0	# EMP Shockwave Hit (Part2) (thingy\empl.grp)
+	wait				1
+	end
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1717 Zarcavrokor Bone (cm\zerg\zarcavrokor-bone.grp)
+.headerstart
+IsId          	732
+Type          	2
+Init          	ZarcavrokorBoneInit
+Death         	ZarcavrokorBoneDeath
+GndAttkInit   	ZarcavrokorBoneGndAttkInit
+AirAttkInit   	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ZarcavrokorBoneInit:
+	playfram          	0x00
+	wait              	1
+	sigorder          	1
+	playfram			0x20
+	wait              	1
+ZarcavrokorBoneGndAttkInit:
+	playfram			0x40
+	wait              	1
+ZarcavrokorBoneLocal00:
+	playfram          	0x60
+	wait              	1
+	playfram          	0x80
+	wait              	1
+	playfram          	0xA0
+	wait              	1
+	playfram          	0xC0
+	wait              	1
+	playfram          	0xE0
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	playfram          	0x20
+	wait              	1
+	playfram          	0x40
+	wait              	1
+	goto              	ZarcavrokorBoneLocal00
+
+ZarcavrokorBoneDeath:
+	playsnd           	79	# Bullet\ZLuHit00.wav
+	sprol             	365 0 0	# Glave Wurm/Seeker Spores Hit (thingy\SporeHit.grp)
+	domissiledmg
+	wait              	1
+	end
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1718 Cyprian Rail (cm\terran\cyprian-rail.grp)
+.headerstart
+IsId          	733
+Type          	2
+Init          	OmniBulletOneInit
+Death         	OmniBulletOneDeath
+GndAttkInit   	OmniBulletOneGndAttkInit
+AirAttkInit   	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+OmniBulletOneInit:
+	playfram          	0x00
+	wait              	1
+	sigorder          	1
+	wait              	1
+OmniBulletOneGndAttkInit:
+	playfram			0x00
+	wait              	125
+	goto              	OmniBulletOneGndAttkInit
+
+OmniBulletOneDeath:
+	if bullet.weapon_id == 147 goto OmniBulletOneBlueDeath
+	imgol             	530 0 0 # Gemini Missiles Explosion (thingy\ecaHit.grp)
+	domissiledmg
+	wait              	1
+	end
+
+OmniBulletOneBlueDeath:
+	imgol             	1249 0 0 # Burst Lasers Blue Impact (thingy\elbHit.grp)
+	domissiledmg
+	wait              	1
+	end

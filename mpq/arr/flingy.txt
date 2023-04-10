@@ -41,7 +41,7 @@ Solarion
 Dracadin
 Steward
 Scribe
-Panoptus
+Scout (deprecated)
 Envoy
 Cantavis
 Dark Templar (Hero)
@@ -468,10 +468,10 @@ Spirtith Colony
 Skortrith Colony
 Empress Plasma
 Engram
-Extended Flingy #262
-Extended Flingy #263
-Extended Flingy #264
-Extended Flingy #265
+Hammerfall Beacon
+Zarcavrokor Bone
+Cyprian Rail
+Sentinel Rail
 Extended Flingy #266
 Extended Flingy #267
 Extended Flingy #268

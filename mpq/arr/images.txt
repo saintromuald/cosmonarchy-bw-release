@@ -1714,10 +1714,10 @@ Zerg Unit Rubble (Small)
 Zerg Unit Rubble (Tiny)
 Engram
 Engram Shadow
-Extended Image #714
-Extended Image #715
-Extended Image #716
-Extended Image #717
+Hammerfall Beacon
+Zarcavrokor Bone
+Cyprian Rail
+Sentinel Rail
 Extended Image #718
 Extended Image #719
 Extended Image #720

@@ -153,7 +153,7 @@ Reset Collision (Harvester&Mine)
 Patrol (Normal)
 CTF COP (Initialize)
 Blissful Embrace (Akistrokor)
-Unknown CTF COP 2
+Grief of All Gods (Star Sovereign)
 Script (Computer)
 Attack Move (Computer)
 Move (Harass)

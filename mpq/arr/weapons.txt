@@ -127,7 +127,7 @@ Jackson Cannon (Wyvern)
 Skyfall (Paladin ability)
 Enthralling Assault (Akistrokor ability)
 Final Hour (Augur behavior)
-Ion Cannon
+Hammerfall Beacon (Ion Cannon)
 None
 Icarus Missiles (Luminary)
 Litany Cannons (Epigraph)
@@ -196,7 +196,7 @@ Antimatter Missile (Positron)
 Sparring Saber (Sycophant)
 Kissing Emoji (Smoochie Boy)
 Khaydarin Plasma Laser (Engram)
-Extended Weapon #69
+Ion Cannon (Ion Cannon)
 Extended Weapon #70
 Extended Weapon #71
 Extended Weapon #72

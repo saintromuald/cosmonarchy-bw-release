@@ -1,76 +1,99 @@
-# 29 March 2023
+# 9 April 2023
 
 ## Designer's Notes
-March Madness is in full swing! We need YOUR help to test it. Please report crashes, desyncs, and other issues if they appear!
+Continuing March Madness into April, tweaking the economic pacing some more, and improving AI - plus plenty of bugfixes and unit revisions!
 
-Core gameplay changes **saturate** this update, with economic changes, worker durability increases, and some passive and active ability modifications. Check 'em out!
-
-## Limits (c. DarkenedFantasies and Veeq7)
-- Unit limit now 4095, from 1700
-- Sprite limit now 8875, from 2500
-- Order limit now 4080, from 2000
-- Image limit now 16385, from 5000
-- Thingy limit now 2048, from 500
-- Fog of war sprite limit now 2048, from 500
+For the next patch, we will revise reclamation (and other corpse interactions), as well as Vulture mine-laying. Stay tuned!
 
 ## Resources
-- Harvest time now 4.8 seconds, from 3.125 seconds
-- Workers no longer accelerate or decelerate
-	- These changes are meant to reinstate diminishing returns on adding additional workers per patch, adding more value to the initial worker on any given node when compared to the second worker
-	- This also makes expansions more valuable, reduces the negative impact of distant resource nodes, slows down the early economic pacing, and makes workers more responsive - its impact is significant and will need to be evaluated!
-- 4-yield mineral nodes no longer provide collision
+- Harvest time now 4 seconds, from 4.8
+- Worker movement speeds now 10% faster
+- Worker wandering now works more consistently (c. Veeq7)
+- You can now return resources to an allied town center (note that your ally receives none of the returned resources)
+- You can now harvest vespene gas from an allied refinery
 
-## AI
-- Gas-only expansions will no longer request production
+## Gameplay
+- Burrowed units are no longer forcibly unburrowed when attacked (c. DarkenedFantasies)
+- Masons (and Taloses) now return to the point where they began construction, to avoid Masons getting stuck behind capped Geysers and similar silliness (c. DarkenedFantasies)
+- Sieged Phalanxes and burrowed Lakizilisks are no longer killed by landing structures
 
 ## Bugfixes
-- Phantom-selections of structures and Vultures no longer crash (c. DarkenedFantasies)
-- Irradiated units which transform into another unit no longer spawn a new Irradiate field (c. Veeq7)
-- Watchdogs and Sentinels no longer fail to change target on right-click (c. DarkenedFantasies)
-- Tyranny, Worship, and Anodyne Annex now recursively apply to all of a transport's cargo (c. Veeq7)
-- Misc abilities and channels now correctly proc decloak (c. Veeq7)
-- Vagrant icon has been corrected
-
-## Audiovisuals
-- New sprite:
-	- Scribe (c. Solstice)
+- Maelstrom hits from dead Mind Tyrants no longer crash (c. Veeq7)
+- Cancelling Controlled Demolition no longer desyncs
+- Internal handling of many new abilities has been restructured to be less error-prone (c. Veeq7)
+- Basic workers should no longer freeze in place (c. DarkenedFantasies)
+- Attack-move no longer causes units to ignores enemies when initially attacking a structure
+- Weapons with Prolonged Arms now pierce targets far more consistently (c. Veeq7)
+- Zarcavrokor Bones of Reflection now correctly respects weapon range (c. Veeq7)
+- Star Sovereigns no longer turn wildly when trying to cast Grief of All Gods while accelerating (c. Veeq7)
+- Burrowed units are no longer displaced by Striga Fleeting Focus, Magnetar Law of Attraction (c. Pr0nogo), or Anthelion Gravity Well (c. Veeq7)
+- Player color randomization now ignores the colors of witness players (c. Veeq7)
+- Anthelion weapon fire SFX no longer occasionally fails to play
+- Madrigal weapon range is now displayed correctly when tempo is up (c. Veeq7)
+- Missile Silo stats display is no longer wucked while arming missiles (c. Veeq7)
 
 ## UI
-- **Protoss structure command cards have been reshuffled... again!**
-- Transport and replay/witness mode UI has been updated (c. Veeq7)
-- Player APM is now logged in replay and witness mode (c. Veeq7)
-- Longer player names in the unit stats panel are now supported (c. Veeq7)
-- Maps with "ping all start locations" set now ping all possible player spawns instead of only the spawns that are occupied (c. Veeq7)
-- Witnesses now have their start locations centered around the first human player, or first AI player if no humans are present (c. Veeq7)
-- Open slots in multiplayer lobbies no longer convert to computer players (c. Veeq7)
+- Box selections are now sorted more consistently (c. Veeq7)
+- Centering onto control groups when members are far apart has been improved (c. Veeq7)
+- Minimap unit box update rate is now instant (c. DarkenedFantasies)
+- Witnesses are no longer shown in the score screen (c. DarkenedFantasies)
+
+## Config
+- New options are now available for:
+	- Showing allied camera positions, or player camera positions in witness/replay mode (c. Veeq7)
+	- Showing team UI, including resources/units, APM, and names (c. Veeq7)
+	- Hiding replay progress bars (c. DarkenedFantasies)
+
+## AI
+- Attack logic and mid-game production handling have been cleaned up to be more sensible with the current economic state
+- AI "drip-feed" attack waves less often
+- Zerg AI now request advanced defenses when at tier 2 and beyond
+
+## Audiovisuals
+- New sprite for:
+	- Cyprian Twin Railguns projectiles
+	- Sentinel Cerberus Railgun projectile
+	- Cabalist shadow
+	- Zarcavrokor Bones of Reflection projectile
+- Modified sprite for:
+	- Scribe (adjust back fins)
 
 ## Terran
-- [Mason](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/mason):
-	- HP now 75, from 60
-	- Weapon cooldown now 0.833, from 0.625
+- [Cyprian](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cyprian):
+	- Weapon factor and damage now 2x5, from 1x10
+	- Weapon now travels to maximum range, and no longer splashes
+	- Now benefits from Prolonged Arms, piercing all targets as it travels
+- [Heracles](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/heracles):
+	- HP now 140, from 120
+	- Armor now 4, from 3
+	- Weapon damage now 2x14, from 2x10
+	- Armor penetration now 0, from 4
+	- Nemean Reactors removed
+- [Apostle](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/apostle):
+	- Gas cost now 150, from 125
+	- Last Breath removed
 - [Treasury](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/treasury):
-	- Time cost now 45, from 40
-	- Armor now 3, from 4
-	- Sight range now 9, from 8
-	- **Now requires nothing, from Atlas**
+	- Time cost now 50, from 45
+- [Sentinel](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/sentinel):
+	- Mineral cost now 250, from 225
+	- Weapon can no longer target air units
 - [Ion Cannon](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/ion-cannon):
-	- Weapon cooldown now 10 seconds, from 7
+	- Placement size now 4x3, from 3x3
+	- Weapon cooldown now 7, from 10 (revert of previous change)
+	- Now fires a Hammerfall Beacon at target's initial position, before firing main gun at beacon position
 
 ## Protoss
-- [Scribe](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/scribe):
-	- HP now 45, from 30
-	- Weapon cooldown now 1.083, from 0.916
-- [Amaranth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/amaranth):
-	- Eternal Service now always heals shields for 100% of damage dealt, instead of scaling
-- [Didact](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/didact):
-	- Recall:
-		- Channel time now 2.25 seconds, from 5
-		- Now establishes a warp rift at the target location, draining 5 energy per second while active
-		- Cannot receive orders (other than cancel channel) while warp rift is open
+- [Cantavis](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/cantavis):
+	- Max energy now 150, from 200
+- [Charlatan](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/charlatan):
+	- Gas cost now 150, from 175
+- [Optecton](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/optecton):
+	- Splash type now ally-safe, from unsafe
+- [Architect](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/optecton):
+	- Mineral and gas costs now 300/150, from 350/200
+- [Panoptus](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/panoptus):
+	- Acceleration and halt distance now match the Aurora
 
 ## Zerg
-- [Droleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/droleth):
-	- HP now 60, from 45
-	- Weapon cooldown now 1.083, from 0.916
-- [Ultrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/ultrokor):
-	- Saber Siphon now heals HP for 100% of damage dealt, from 50%
+- [Izirokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/izirokor):
+	- Armor now 2, from 1

@@ -850,10 +850,10 @@ Zerg Unit Rubble (Medium)
 Zerg Unit Rubble (Small)
 Zerg Unit Rubble (Tiny)
 Engram
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
+Hammerfall Beacon
+Zarcavrokor Bone
+Cyprian Rail
+Sentinel Rail
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1
