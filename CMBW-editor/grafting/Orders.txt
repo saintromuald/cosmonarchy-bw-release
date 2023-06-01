@@ -1,0 +1,855 @@
+# Orders Requirement Scripts
+
+0:                  # [0] Die
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+1:                  # [1] Stop
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+2:                  # [2] Guard
+  0xFF12            # Can attack
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+3:                  # [3] Player Guard
+  0xFF12            # Can attack
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+4:                  # [4] Turret Guard
+  0xFF1A            # Is Subunit
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+5:                  # [5] Bunker Guard
+  0xFF02            # Current unit is...
+  125               # [125] Bunker
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  370               # [370] Dugout
+  0xFFFF            # ==End of List==
+
+6:                  # [6] Ignore
+  0xFF14            # Can move
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+7:                  # [7] Reaver Stop
+  0xFF02            # Current unit is...
+  83                # [83] Reaver
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+8:                  # [8] Attack1
+  0xFF12            # Can attack
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+9:                  # [9] Attack2
+  0xFF12            # Can attack
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+10:                 # [10] Attack Unit
+  0xFF14            # Can move
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+11:                 # [11] Attack Fixed Range
+  0xFF12            # Can attack
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+12:                 # [12] Attack Tile
+  0xFF12            # Can attack
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+13:                 # [13] Hover
+  0xFF14            # Can move
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+14:                 # [14] Attack Move
+  0xFF14            # Can move
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+15:                 # [15] Infest Mine
+  0xFF02            # Current unit is...
+  106               # [106] Command Center
+  0xFFFF            # ==End of List==
+
+18:                 # [18] Tower Guard
+  0xFF02            # Current unit is...
+  124               # [124] Watchdog
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  144               # [144] Spraith Colony
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  146               # [146] Surkith Colony
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  162               # [162] Warden
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  127               # [127] Ion Cannon
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  209               # [209] Sentinel
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  252               # [252] Matrix
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  292               # [292] Spirtith Colony
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  293               # [293] Skortrith Colony
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  162               # [294] Engram
+  0xFFFF            # ==End of List==
+
+19:                 # [19] Tower Attack
+  0xFF02            # Current unit is...
+  124               # [124] Watchdog
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  144               # [144] Spraith Colony
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  146               # [146] Surkith Colony
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  162               # [162] Warden
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  127               # [127] Ion Cannon
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  209               # [209] Sentinel
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  252               # [252] Matrix
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  292               # [292] Spirtith Colony
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  293               # [293] Skortrith Colony
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  162               # [294] Engram
+  0xFFFF            # ==End of List==
+
+20:                 # [20] Vulture Mine
+  0xFF02            # Current unit is...
+  13                # [13] Vulture Spider Mine
+  0xFFFF            # ==End of List==
+
+21:                 # [21] Stay In Range
+  0xFF14            # Can move
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+22:                 # [22] Turret Attack
+  0xFF1A            # Is Subunit
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+23:                 # [23] Nothing1
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+25:                 # [25] Drone Start Build
+  0xFF02            # Current unit is...
+  41                # [41] Droleth
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  47                # [47] Gosvileth
+  0xFFFF            # ==End of List==
+
+26:                 # [26] Drone Build
+  0xFF02            # Current unit is...
+  41                # [41] Droleth
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  47                # [47] Gosvileth
+  0xFFFF            # ==End of List==
+
+27:                 # [27] Infest Mine1
+  0xFF02            # Current unit is...
+  45                # [45] Matraleth
+  0xFFFF            # ==End of List==
+
+28:                 # [28] Infest Mine2
+  0xFF02            # Current unit is...
+  45                # [45] Matraleth
+  0xFFFF            # ==End of List==
+
+29:                 # [29] Infest Mine3
+  0xFF02            # Current unit is...
+  45                # [45] Matraleth
+  0xFFFF            # ==End of List==
+
+30:                 # [30] Build1
+  0xFF02            # Current unit is...
+  7                 # [7] Mason
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  20                # [20] Talos
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  367               # [367] Engineer
+  0xFFFF            # ==End of List==
+
+31:                 # [31] Build2
+  0xFF02            # Current unit is...
+  64                # [64] Scribe
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  182               # [182] Artisan
+  0xFFFF            # ==End of List==
+
+32:                 # [32] Build3
+  0xFF02            # Current unit is...
+  64                # [64] Scribe
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  182               # [182] Artisan
+  0xFFFF            # ==End of List==
+
+33:                 # [33] Build4
+  0xFF02            # Current unit is...
+  7                 # [7] Mason
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  20                # [20] Talos
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  367               # [367] Engineer
+  0xFFFF            # ==End of List==
+
+34:                 # [34] Repair1
+  0xFF02            # Current unit is...
+  7                 # [7] Mason
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  20                # [20] Talos
+  0xFFFF            # ==End of List==
+
+35:                 # [35] Repair2
+  0xFF02            # Current unit is...
+  7                 # [7] Mason
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  20                # [20] Talos
+  0xFFFF            # ==End of List==
+
+36:                 # [36] Place Add-On
+  0xFFFF            # ==End of List==
+
+39:                 # [39] Rally Point1
+  0xFF13            # Can set rally point
+  0xFFFF            # ==End of List==
+
+40:                 # [40] Rally Point2
+  0xFF13            # Can set rally point
+  0xFFFF            # ==End of List==
+
+41:                 # [41] Zerg Birth
+  0xFF02            # Current unit is...
+  36                # [36] Egg
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  59                # [59] Cocoon
+  0xFFFF            # ==End of List==
+
+46:                 # [46] Build5
+  0xFF02            # Current unit is...
+  134               # [134] Nydus Canal
+  0xFF0D            # unused
+  0xFFFF            # ==End of List==
+
+49:                 # [49] Follow
+  0xFF14            # Can move
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+50:                 # [50] Carrier
+  0xFF02            # Current unit is...
+  72                # [72] Solarion
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  82                # [82] Empyrean
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+51:                 # [51] Carrier Ignore1
+  0xFF02            # Current unit is...
+  72                # [72] Solarion
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  82                # [82] Empyrean
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  83                # [83] Reaver
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  81                # [81] Clarion
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+52:                 # [52] Carrier Stop
+  0xFF02            # Current unit is...
+  72                # [72] Solarion
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  82                # [82] Empyrean
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+53:                 # [53] Carrier Attack1
+  0xFF02            # Current unit is...
+  72                # [72] Solarion
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  82                # [82] Empyrean
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+54:                 # [54] Carrier Attack2
+  0xFF02            # Current unit is...
+  72                # [72] Solarion
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  82                # [82] Empyrean
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+55:                 # [55] Carrier Ignore2
+  0xFF02            # Current unit is...
+  72                # [72] Solarion
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  82                # [82] Empyrean
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  83                # [83] Reaver
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  81                # [81] Clarion
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+56:                 # [56] Carrier Fight
+  0xFF02            # Current unit is...
+  72                # [72] Solarion
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  82                # [82] Empyrean
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+57:                 # [57] Hold Position
+  0xFF02            # Current unit is...
+  72                # [72] Solarion
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  82                # [82] Empyrean
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+58:                 # [58] Reaver
+  0xFF02            # Current unit is...
+  83                # [83] Reaver
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  81                # [81] Clarion
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+59:                 # [59] Reaver Attack1
+  0xFF02            # Current unit is...
+  83                # [83] Reaver
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  81                # [81] Clarion
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+60:                 # [60] Reaver Attack2
+  0xFF02            # Current unit is...
+  83                # [83] Reaver
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  81                # [81] Clarion
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+61:                 # [61] Reaver Fight
+  0xFF02            # Current unit is...
+  83                # [83] Reaver
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  81                # [81] Clarion
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+62:                 # [62] Reaver Hold
+  0xFF02            # Current unit is...
+  83                # [83] Reaver
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  81                # [81] Clarion
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+64:                 # [64] Strafe Unit1
+  0xFF02            # Current unit is...
+  73                # [73] Steward
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+65:                 # [65] Strafe Unit2
+  0xFF02            # Current unit is...
+  85                # [85] Scarab
+  0xFFFF            # ==End of List==
+
+67:                 # [67] Recharge Shields2
+  0xFF02            # Current unit is...
+  172               # [172] Shield Battery
+  0xFFFF            # ==End of List==
+
+69:                 # [69] Return
+  0xFF16            # Is worker
+  0xFFFF            # ==End of List==
+
+70:                 # [70] Drone Land
+  0xFF02            # Current unit is...
+  41                # [41] Droleth
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  47                # [47] Gosvileth
+  0xFFFF            # ==End of List==
+
+71:                 # [71] Building Land
+  0xFF17            # Is flying building
+  0xFF06            # Is lifted off
+  0xFFFF            # ==End of List==
+
+72:                 # [72] Building Lift Off
+  0xFF17            # Is flying building
+  0xFF05            # Is not lifted off
+  0xFFFF            # ==End of List==
+
+74:                 # [74] Lift Off
+  0xFF17            # Is flying building
+  0xFFFF            # ==End of List==
+
+77:                 # [77] Larva
+  0xFF02            # Current unit is...
+  35                # [35] Larva
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+78:                 # [78] Spawning Larva
+  0xFF02            # Current unit is...
+  131               # [131] Hachirosk
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  132               # [132] Caphrolosk
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  133               # [133] Gathtelosk
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  216               # [216] Larvosk Colony
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  354               # [354] Ocsal Colony
+  0xFFFF            # ==End of List==
+
+79:                 # [79] Harvest1
+  0xFF16            # Is worker
+  0xFFFF            # ==End of List==
+
+80:                 # [80] Harvest2
+  0xFF16            # Is worker
+  0xFFFF            # ==End of List==
+
+81:                 # [81] Harvest Gas1
+  0xFF16            # Is worker
+  0xFFFF            # ==End of List==
+
+82:                 # [82] Harvest Gas2
+  0xFF16            # Is worker
+  0xFFFF            # ==End of List==
+
+84:                 # [84] Return Gas
+  0xFF16            # Is worker
+  0xFFFF            # ==End of List==
+
+85:                 # [85] Harvest Minerals1
+  0xFF16            # Is worker
+  0xFFFF            # ==End of List==
+
+86:                 # [86] Harvest Minerals2
+  0xFF16            # Is worker
+  0xFFFF            # ==End of List==
+
+90:                 # [90] Return Minerals
+  0xFF16            # Is worker
+  0xFFFF            # ==End of List==
+
+92:                 # [92] Enter Transport
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+93:                 # [93] Pick Up1
+  0xFF18            # Is transport
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  42                # [42] Ovileth
+  0xFFFF            # ==End of List==
+
+94:                 # [94] Pick Up2
+  0xFF18            # Is transport
+  0xFFFF            # ==End of List==
+
+95:                 # [95] Pick Up3
+  0xFF02            # Current unit is...
+  125               # [125] Bunker
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  370               # [370] Dugout
+  0xFFFF            # ==End of List==
+
+97:                 # [97] Powerup2
+  0xFF19            # Is powerup
+  0xFFFF            # ==End of List==
+
+100:                # [100] Watch Target
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+101:                # [101] Initiating Creep Growth
+  0xFF02            # Current unit is...
+  143               # [143] Cagrant Colony
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  131               # [131] Hachirosk
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  132               # [132] Caphrolosk
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  133               # [133] Gathtelosk
+  0xFFFF            # ==End of List==
+
+102:                # [102] Spread Creep
+  0xFFFF            # ==End of List==
+
+103:                # [103] Stopping Creep Growth
+  0xFF02            # Current unit is...
+  144               # [144] Spraith Colony
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  146               # [146] Surkith Colony
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  216               # [216] Larvosk Colony
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  292               # [292] Spirtith Colony
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  293               # [293] Skortrith Colony
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  355               # [355] Kazitrith Colony
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  354               # [354] Ocsal Colony
+  0xFFFF            # ==End of List==
+
+104:                # [104] Guardian Aspect
+  0xFF02            # Current unit is...
+  43                # [43] Mutalisk
+  0xFFFF            # ==End of List==
+
+107:                # [107] Hold Position1
+  0xFF1D            # Can hold position
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+108:                # [108] Hold Position2
+  0xFF02            # Current unit is...
+  45                # [45] Matraleth
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  49                # [49] Pazuzu
+  0xFFFF            # ==End of List==
+
+111:                # [111] Unload
+  0xFF18            # Is transport
+  0xFFFF            # ==End of List==
+
+112:                # [112] Move Unload
+  0xFF18            # Is transport
+  0xFFFF            # ==End of List==
+
+118:                # [118] Unburrow
+  0xFF26            # Is burrowed
+  0xFFFF            # ==End of List==
+
+123:                # [123] Nuke Wait
+  0xFF02            # Current unit is...
+  14                # [14] Nuclear Missile
+  0xFFFF            # ==End of List==
+
+125:                # [125] Nuke Launch
+  0xFF02            # Current unit is...
+  14                # [14] Nuclear Missile
+  0xFFFF            # ==End of List==
+
+126:                # [126] Nuke Paint
+  0xFF02            # Current unit is...
+  1                 # [1] Eidolon
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  9                 # [9] Seraph
+  0xFFFF            # ==End of List==
+
+127:                # [127] Nuke Unit
+  0xFF02            # Current unit is...
+  14                # [14] Nuclear Missile
+  0xFFFF            # ==End of List==
+
+128:                # [128] Nuke Ground
+  0xFF02            # Current unit is...
+  14                # [14] Nuclear Missile
+  0xFFFF            # ==End of List==
+
+129:                # [129] Nuke Track
+  0xFF02            # Current unit is...
+  14                # [14] Nuclear Missile
+  0xFFFF            # ==End of List==
+
+130:                # [130] Initializing Arbiter
+  0xFF02            # Current unit is...
+  71                # [71] Arbiter
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  86                # [86] Demiurge
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+131:                # [131] Cloaking Nearby Units
+  0xFF02            # Current unit is...
+  71                # [71] Arbiter
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  86                # [86] Demiurge
+  0xFFFF            # ==End of List==
+
+133:                # [133] Right Click Action
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+134:                # [134] Sap Unit
+  0xFF02            # Current unit is...
+  50                # [50] Cohort
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+135:                # [135] Sap Location
+  0xFF02            # Current unit is...
+  50                # [50] Cohort
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+136:                # [136] Hold Position3
+  0xFF02            # Current unit is...
+  50                # [50] Cohort
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  47                # [47] Gosvileth
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+140:                # [140] Scanner
+  0xFF02            # Current unit is...
+  33                # [33] Scanner Sweep
+  0xFFFF            # ==End of List==
+
+152:                # [152] Patrol
+  0xFF14            # Can move
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+155:                # [155] CTF COP2
+  0xFF02            # Current unit is...
+  197               # [197] Vithrath Haunt
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  198               # [198] Iron Foundry
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  199               # [199] Captaincy
+  0xFFFF            # ==End of List==
+
+157:                # [157] Atk Move EP
+  0xFF14            # Can move
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+165:                # [165] Self Destructing
+  0xFF02            # Current unit is...
+  85                # [85] Scarab
+  0xFFFF            # ==End of List==
+
+166:                # [166] Critter
+  0xFF02            # Current unit is...
+  89                # [89] Simulacrum
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  90                # [90] Charlatan
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  95                # [95] Quazilisk
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  93                # [93] Rililisk
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  94                # [94] Exemplar
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  96                # [96] Keskathalor
+  0xFF1E            # Allow on hallucinations
+  0xFFFF            # ==End of List==
+
+167:                # [167] Hidden Gun
+  0xFF02            # Current unit is...
+  209               # [209] Sentinel
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  210               # [210] Tarasque
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  211               # [211] Anticthon
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  212               # [212] Alkaj Chasm
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  213               # [213] Cosmic Altar
+  0xFFFF            # ==End of List==
+
+168:                # [168] Open Door
+  0xFF02            # Current unit is...
+  205               # [205] Left Upper Level Door
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  206               # [206] Right Upper Level Door
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  207               # [207] Left Pit Door
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  208               # [208] Right Pit Door
+  0xFFFF            # ==End of List==
+
+169:                # [169] Close Door
+  0xFF02            # Current unit is...
+  205               # [205] Left Upper Level Door
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  206               # [206] Right Upper Level Door
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  207               # [207] Left Pit Door
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  208               # [208] Right Pit Door
+  0xFFFF            # ==End of List==
+
+170:                # [170] Hide Trap
+  0xFF02            # Current unit is...
+  203               # [203] Nanite Assembly
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  209               # [209] Sentinel
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  210               # [210] Tarasque
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  211               # [211] Anticthon
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  212               # [212] Alkaj Chasm
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  213               # [213] Cosmic Altar
+  0xFFFF            # ==End of List==
+
+171:                # [171] Reveal Trap
+  0xFF02            # Current unit is...
+  203               # [203] Nanite Assembly
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  209               # [209] Sentinel
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  210               # [210] Tarasque
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  211               # [211] Anticthon
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  212               # [212] Alkaj Chasm
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  213               # [213] Cosmic Altar
+  0xFFFF            # ==End of List==
+
+175:                # [175] Medic
+  0xFF02            # Current unit is...
+  34                # [34] Cleric
+  0xFFFF            # ==End of List==
+
+176:                # [176] Medic Heal1
+  0xFF02            # Current unit is...
+  34                # [34] Cleric
+  0xFFFF            # ==End of List==
+
+177:                # [177] Heal Move
+  0xFF02            # Current unit is...
+  34                # [34] Cleric
+  0xFFFF            # ==End of List==
+
+178:                # [178] Medic Hold Position
+  0xFF02            # Current unit is...
+  34                # [34] Cleric
+  0xFFFF            # ==End of List==
+
+179:                # [179] Medic Heal2
+  0xFF02            # Current unit is...
+  34                # [34] Cleric
+  0xFFFF            # ==End of List==
+
+182:                # [182] Cast Mind Control
+  0xFF02            # Current unit is...
+  63                # [63] Mind Tyrant
+  0xFFFF            # ==End of List==
+
+189:                # [182] Cast Through the Looking Glass
+  0xFF02            # Current unit is...
+  287               # [287] Hypnagogue
+  0xFFFF            # ==End of List==

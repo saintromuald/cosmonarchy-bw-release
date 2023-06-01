@@ -88,7 +88,6 @@ military sevenstep = 286
 military hypnagogue = 287
 military armistice = 289
 military pythean = 290
-military ambassador = 292
 military heir = 293
 military horseman = 294
 military thespian = 297
@@ -346,11 +345,13 @@ building larvosk_colony = 216
 building geszkath_grotto = 219
 building irol_iris = 224
 building sibraelosk = 227
+building spirtith_colony = 292
 building rakzogth_roost = 303
 building axtoth_axis = 328
 building begrozith_barrow = 329
 building chokralgant_chazsal = 330
 building nephrilosk = 350
+building ocsal_colony = 354
 
 # Misc units
 military goliath_turret = 4

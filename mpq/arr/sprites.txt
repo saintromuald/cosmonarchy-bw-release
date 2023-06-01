@@ -160,7 +160,7 @@ Ultrokor Remnants
 Zethrokor
 Zethrokor Remnants
 Cerebrate
-Infested Command Center
+Infested Ministry
 Quazrok Pool
 Mature Chrysalis
 Almakis Antre
@@ -188,32 +188,32 @@ Zerg Building Rubble (Small)
 Zerg Building Rubble (Large)
 Didact
 Archon Energy
-Carrier
-Dragoon
-Dragoon Remnants
-Interceptor
-Probe
-Scout
-Shuttle
-High Templar
+Solarion
+Dracadin
+Dracadin Remains
+Steward
+Scribe
+Scout (deprecated)
+Envoy
+Cantavis
 Dark Templar (Hero)
-Reaver
-Scarab
+Accantor
+Plasma Shell
 Zealot
-Observer
+Witness
 Ancestral Archives
 Aquifer
-Observatory
+Machinist Hall
 Citadel of Adun
 Embassy
 Gateway
 Cenotaph
 Khaydarin Crystal Formation
 Nexus
-Photon Cannon
-Arbiter Tribunal
+Warden
+Celestial Tribune
 Pylon
-Robotics Facility
+Lattice
 Shield Battery
 Stargate
 Stasis Cell/Prison
@@ -250,17 +250,17 @@ Fountainhead
 Barracks
 Atelier
 Comsat Station
-Command Center
+Ministry
 Supply Depot
 Commandment
 Fulcrum
 Covert Ops
-Ion Cannon
+Ion Cannon (old, unused)
 Machine Shop
 Watchdog (Base)
 Crashed Minotaur
 Physics Lab
-Bunker
+Anchor
 Reservoir
 Daedala
 Nuclear Silo
@@ -354,7 +354,7 @@ EMP Shockwave Missile
 Needle Spine Hit
 Plasma Drip Hit (Unused)
 Sunken Colony Tentacle
-Venom (Unused Zerg Weapon)
+Venom
 Acid Spore
 Glave Wurm
 Seeker Spores
@@ -375,7 +375,7 @@ Scarab/Anti-Matter Missile Overlay
 Hallucination Death1
 Hallucination Death2
 Hallucination Death3
-Bunker Attack Overlay (Orange)
+Anchor Attack Overlay (Orange)
 Flamethrower
 Recall Field
 Scanner Sweep Hit
@@ -524,7 +524,7 @@ Paladin
 Madrigal
 Savant
 Scrapyard
-Munitions Bay
+Rotary
 Wyvern
 Oberon
 Zarcavrokor
@@ -590,7 +590,7 @@ Ecclesiast
 Atreus
 Amaranth
 Geszkath Grotto
-Shaman
+Shaman (Support Mode)
 Alkaj Chasm
 Idol
 Golem
@@ -635,15 +635,15 @@ Exemplar Torpedo Impact
 Planet Cracker Beam
 Planet Cracker Blast (Loop)
 Planet Cracker Blast
-Ion Cannon
-Ion Cannon Projectile
-Ion Cannon Projectile Impact
+Diadem
+Diadem Projectile
+Diadem Projectile Impact
 Keskathalor Weapon
 Keskathalor Weapon Impact
 Augur Death Explosion
 Burst Lasers (Explosive)
 Burst Lasers Impact (Damageless)
-Ion Cannon Turret
+Diadem Turret
 Herald
 Clarion
 Lobotomy Mine
@@ -657,8 +657,8 @@ Aion
 Rililisk
 Mason Death Explosion
 Mason Spark (Small)
-Command Center (Christmas)
-Infested Command Center (Christmas)
+Ministry (Christmas)
+Infested Ministry (Christmas)
 Nexus (Christmas)
 Hatchery (Christmas)
 Caphrolosk (Christmas)
@@ -749,11 +749,11 @@ Neutron Flare (Orange, Damageless)
 Mind Control Hit (Small)
 Mind Control Hit (Medium)
 Mind Control Hit (Large)
-Orboth Omlia
+Axtoth Axis
 Ovileth Death (Reversed)
 Zerg Air Explosion Large Reversed
 Zerg Air Explosion Small Reversed
-Ion Cannon Attack Glow
+Diadem Attack Glow
 Warp Anchor New
 Anthelion Teleport Depart
 Anthelion Teleport Arrive
@@ -833,15 +833,15 @@ Daniel's Mason
 Smoochie Boy
 Police Station
 Police Intern
-Police Academy
-Police Dispensary
+Ezigrisant
+Wellbore
 Police Deputy
-Police WAT Trooper
+Cuirass (Trench Mode)
 Cuirass Stonewall Protocol Overlay
 Spirtith Colony
 Skortrith Colony
-Bunker Attack Overlay (Green)
-Bunker Attack Overlay (Blue)
+Anchor Attack Overlay (Green)
+Anchor Attack Overlay (Blue)
 Terran Unit Rubble (Medium)
 Terran Unit Rubble (Small)
 Protoss Unit Rubble (Medium)
@@ -854,25 +854,25 @@ Hammerfall Beacon
 Zarcavrokor Bone
 Cyprian Rail
 Sentinel Rail
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
+Bactalisk Acid
+Ocsal Larva
+Burst Lasers Impact Red Damageless
+Burst Lasers Red Small
+Burst Lasers Red
+Phalanx Mortar
+Matador (Cinder Mode)
+Matador Turret (Tank Mode)
+Matador Turret (Cinder Mode)
+Wyvern Turret
+Analogue
+Mortothrokor
+Mortothrokor Remnants
+Shaman (Visionary Mode)
+Terran Cancel Structure
+Vilgoleth
+Madrigal Turret (Imperioso)
+Madrigal (Furia Mode)
+Madrigal Turret (Furia)
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1

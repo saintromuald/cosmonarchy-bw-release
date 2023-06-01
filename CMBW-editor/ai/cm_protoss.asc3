@@ -1890,7 +1890,6 @@ script_id PMCx
 	return
 	
 	:worker_request_advanced
-	local 255 AtL 28 scribe|artisan blank_return
 	local 255 Ex 0 strident_stratum blank_return
 	local 255 AtL 10 artisan blank_return
 	queue 1 artisan strident_stratum 255 Local Loc.63 200
@@ -1903,11 +1902,9 @@ script_id PMCx
 	:main_worker_loop
 	wait 150
 	var AtL|Wait can_worker_var 1 13
-	local 255 AtL 24 scribe main_worker_loop
 	res 13 AtL_W Ore 50 blank
 	call worker_conditions
 	c_queues train scribe|artisan 13
-	local 255 AtL 28 scribe|artisan main_worker_loop
 	res 13 AtL_C Any 100 worker_request_advanced
 	queue 1 scribe nexus 255 Local Loc.63 200
 	local 255 Ex 0 embassy main_worker_loop_2
@@ -2174,7 +2171,6 @@ script_id PMCx
 	
 	:expansion_worker_standard_loop
 	wait 150
-	local 255 AtL 28 scribe|artisan expansion_worker_standard_loop
 	res 13 AtL_W Ore 50 blank
 	call worker_conditions
 	c_queues train scribe|artisan 13
@@ -2735,7 +2731,7 @@ script_id PMCx
 	dth 13 Ex 3 dark_swarm_unit build_ranger_1GateRobo
 	dth 13 Ex 4 dark_swarm_unit build_ranger_LatticeExpo
 	dth 13 Ex 5 dark_swarm_unit build_ranger_SimulantSwarm
-	dth 13 Ex 7 dark_swarm_unit build_ranger_TheRegistry
+	dth 13 Ex 6 dark_swarm_unit build_ranger_TheRegistry
 	
 	:build_ranger_2GateStrider
 	var Ex|Jump debug_ai_messages_var 0 build_ranger_2GateStrider_Main 13
@@ -4062,8 +4058,8 @@ script_id PMCx
 	var Set prod_cycle_var 0 13
 	var Ex|Wait can_build_production_var 1 13
 	call production_cycle_check
-	wait 110
-	call main_wait_150
+	wait 480
+	call main_wait_1500
 	goto production_cycle_conditions
 	
 	:production_cycle_wait
@@ -4383,8 +4379,6 @@ script_id PMCx
 	
 	:attack_cycle_start
 	var Ex|wait can_attack_var 1 13
-	
-	:attack_restart
 	atk_do
 	atk_c
 	
@@ -4392,20 +4386,8 @@ script_id PMCx
 	call add_attack_wave
 	atk_prep
 	atk_do
-	wait 200
-	
-	:attack_generic_check
-	var add attack_cycle_var 1 13
-	wait 300
-	call add_attack_wave
-	var AtL|jump attack_cycle_var 2 attack_cycle_prep 13
-	bring 13 AtM 9 zealot|dracadin|ecclesiast|legionnaire|hierophant|amaranth|herald|atreus|vagrant|cabalist|barghest|pariah|potentate|sycophant|charlatan|archon|optecton|patriarch|manifold|simulacrum|vassal|golem|idol|servitor|positron|analogue|accantor|architect|mainstay|maven|cloudform|vibrance|oscilliant|demiurge|empress|aurora|panoptus|gladius|exemplar|magister|epigraph|didact|empyrean|solarion|star_sovereign|anthelion Loc.63 attack_generic_check
-	goto attack_cycle_prep
-	
-	:attack_cycle_prep
-	bring 13 AtL 60 zealot|dracadin|ecclesiast|legionnaire|hierophant|amaranth|herald|atreus|vagrant|cabalist|barghest|pariah|potentate|sycophant|charlatan|archon|optecton|patriarch|manifold|simulacrum|vassal|golem|idol|servitor|positron|analogue|accantor|architect|mainstay|maven|cloudform|vibrance|oscilliant|demiurge|empress|aurora|panoptus|gladius|exemplar|magister|epigraph|didact|empyrean|solarion|star_sovereign|anthelion Loc.63 attack_with_everything
-	bring 13 AtL 45 zealot|dracadin|ecclesiast|legionnaire|hierophant|amaranth|herald|atreus|vagrant|cabalist|barghest|pariah|potentate|sycophant|charlatan|archon|optecton|patriarch|manifold|simulacrum|vassal|golem|idol|servitor|positron|analogue|accantor|architect|mainstay|maven|cloudform|vibrance|oscilliant|demiurge|empress|aurora|panoptus|gladius|exemplar|magister|epigraph|didact|empyrean|solarion|star_sovereign|anthelion Loc.63 attack_expansion_check
-#	atk_now
+	wait 500
+	bring 13 AtL 40 zealot|dracadin|ecclesiast|legionnaire|hierophant|amaranth|herald|atreus|vagrant|cabalist|barghest|pariah|potentate|sycophant|charlatan|archon|optecton|patriarch|manifold|simulacrum|vassal|golem|idol|servitor|positron|analogue|accantor|architect|mainstay|maven|cloudform|vibrance|oscilliant|demiurge|empress|aurora|panoptus|gladius|exemplar|magister|epigraph|didact|empyrean|solarion|star_sovereign|anthelion Loc.63 attack_expansion_check
 	goto attack_cycle_fin
 	
 	:attack_expansion_check
@@ -4413,15 +4395,10 @@ script_id PMCx
 	target_expansion
 	goto attack_cycle_fin
 	
-	:attack_with_everything
-	send_suicide 0
-	
 	:attack_cycle_fin
+	wait 120
 	atk_c
 	c_queues train zealot|dracadin|ecclesiast|legionnaire|hierophant|amaranth|herald|atreus|vagrant|cabalist|barghest|pariah|potentate|sycophant|charlatan|archon|optecton|patriarch|manifold|simulacrum|vassal|golem|idol|servitor|positron|analogue|accantor|architect|mainstay|maven|cloudform|vibrance|oscilliant|demiurge|empress|aurora|panoptus|gladius|exemplar|magister|epigraph|didact|empyrean|solarion|star_sovereign|anthelion 13
-	var Set attack_cycle_var 0 13
-	var Add can_expand_var 1 13
-	var Set can_build_production_var 1 13
 	return
 	
 	:attack_conditions

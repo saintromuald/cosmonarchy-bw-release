@@ -13,11 +13,11 @@ Terran Trojan
 Terran Minotaur
 Spider Mine
 Nuclear Missile
-Terran Shaman
+Terran Shaman (Support Mode)
 Protoss Manifold
 Protoss Architect
 Terran Madcap
-Terran Cuirass
+Terran Cuirass (Tank Mode)
 Terran Talos
 Protoss Star Sovereign
 Terran Salamander
@@ -25,7 +25,7 @@ Terran Gorgon
 Terran Phobos
 Protoss Gladius
 Protoss Magister
-Terran Madrigal
+Terran Madrigal (Imperioso Mode)
 Terran Centaur
 Zerg Almaksalisk
 Terran Phalanx (Siege Mode)
@@ -104,7 +104,7 @@ Protoss Augur
 Zerg Lakizilisk
 Protoss Barghest
 Disruption Field
-Terran Command Center
+Terran Ministry
 Terran Comsat Station
 Terran Missile Silo
 Terran Supply Depot
@@ -119,16 +119,16 @@ Terran Covert Ops
 Terran Magnetar
 Terran Medbay
 Terran Machine Shop
-Terran Munitions Bay
+Terran Rotary
 Terran Atlas
 Zerg Sovroleth
 Terran Watchdog
-Terran Bunker
+Terran Anchor
 Zerg Kagralisk
-Terran Ion Cannon
+Terran Diadem
 Zerg Vorvrokor
 Zerg Bactalisk
-Zerg Orboth Omlia
+Zerg Axtoth Axis
 Zerg Hachirosk
 Zerg Caphrolosk
 Zerg Gathstelosk
@@ -254,7 +254,7 @@ Protoss Matrix
 Terran Sundog
 Terran Starpad
 Terran Ancile
-Terran Matador
+Terran Matador (Tank Mode)
 Terran Future Station
 Zerg Zarcavrokor
 Terran Quantum Institute
@@ -326,7 +326,7 @@ Zerg Begrothilisk
 Zerg Oztukrokor
 Zerg Kethrostalor
 Zerg Rakzilisk
-Zerg Axtoth Axis
+Unused Unit ID
 Zerg Begrozith Barrow
 Zerg Chokralgant Chazsal
 Protoss Bulwark
@@ -362,25 +362,25 @@ Protoss Vassal
 BTN Mixed Mason Training
 Daniel's Mason
 Smoochie Boy
-Police Station
-Police Dispensary
-Police Academy
+Zerg Ezigrisant
+Terran Wellbore
+Protoss Pennant
 Police Intern
 BTN Police Structure - Basic
 BTN Police Structure - Advanced
 Police Dugout
-Police Deputy
-Police WAT Trooper
-Police Slapdash
-Police Barker
-Police Priestess
-Extended Unit #149
-Extended Unit #150
-Extended Unit #151
-Extended Unit #152
-Extended Unit #153
-Extended Unit #154
-Extended Unit #155
+Terran Matador (Cinder Mode)
+Terran Cuirass (Trench Mode)
+Matador Turret (Tank Mode)
+Matador Turret (Cinder Mode)
+Lobotomy Mine
+Wyvern Turret
+Zerg Axitrilisk (Weaponless)
+Zerg Vilgoleth
+Terran Shaman (Visionary Mode)
+Madrigal Turret (Imperioso)
+Terran Madrigal (Furia Mode)
+Madrigal Turret (Furia)
 Extended Unit #156
 Extended Unit #157
 Extended Unit #158

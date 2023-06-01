@@ -180,7 +180,7 @@ Hold Position&Heal (Medic)
 Return To Idle After Heal
 Use Ability (Tertiary Eyes)
 Use Ability (Disruption Web)
-Use Ability (Mind Control)
+Use Ability (Tyranny)
 Dark Archon Meld
 Use Ability (Salvage)
 Use Ability (Optical Flare)

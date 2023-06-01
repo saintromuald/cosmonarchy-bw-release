@@ -175,20 +175,21 @@ script_id TMCx
 	dth 13 AtL_C 1 pazuzu prefUPazuzu
 	dth 13 AtL_C 1 claymore prefUClaymore
 	dth 13 AtL_C 1 penumbra prefUPenumbra
-	dth 13 AtL_C 1 anticthon prefUAion
 	dth 13 AtL_C 1 anticthon prefUAntichthon
+	dth 13 AtL_C 1 aion prefUAion
 	dth 13 AtL_C 1 wraith prefUWraith
 	dth 13 AtL_C 1 gorgon prefUGorgon
+	dth 13 AtL_C 1 wyvern prefUWyvern
 	dth 13 AtL_C 1 valkyrie prefUValkyrie
 	dth 13 AtL_C 1 salamander prefUSalamander
-	dth 13 AtL_C 1 wyvern prefUWyvern
+	dth 13 AtL_C 1 sundog prefUSundog
 	dth 13 AtL_C 1 seraph prefUSeraph
 	dth 13 AtL_C 1 azazel prefUAzazel
 	dth 13 AtL_C 1 centaur prefUCentaur
 	dth 13 AtL_C 1 minotaur prefUMinotaur
 	dth 13 AtL_C 1 magnetar prefUMagnetar
-	dth 13 AtL_C 1 hippogriff prefUHippogriff
 	dth 13 AtL_C 1 phobos prefUPhobos
+	dth 13 AtL_C 1 hippogriff prefUHippogriff
 	# production
 	dth 13 AtL_C 1 barracks prefBBarracks
 	dth 13 AtL_C 1 captaincy prefBCaptaincy
@@ -1317,6 +1318,8 @@ script_id TMCx
 	stop
 	
 	:gas_conditions
+	wait 24
+	notowns atlas gas_conditions
 	var Ex|Wait build_gas_var 1 13
 	aictrl build_gas
 	var Ex|Wait build_gas_var 1 13
@@ -2013,7 +2016,6 @@ script_id TMCx
 	return
 	
 	:worker_request_advanced
-	local 255 AtL 28 mason|talos blank_return
 	notowns parthenon blank_return
 	local 255 AtL 10 talos blank_return
 	queue 1 talos parthenon 255 Local Loc.63 100
@@ -2025,8 +2027,6 @@ script_id TMCx
 	
 	:main_worker_loop
 	wait 150
-	var AtL|Wait can_worker_var 1 13
-	local 255 AtL 24 mason main_worker_loop
 	var AtL|Wait can_worker_var 1 13
 	res 13 AtL_W Ore 50 blank
 	call worker_conditions
@@ -2306,7 +2306,7 @@ script_id TMCx
 	wait 24
 	local 255 Ex 0 command_center expansion_worker_start
 	bld 1 mason 98
-	w_bldstart 1 command_center	
+	w_bldstart 1 command_center
 	bld 2 mason 98
 	w_bld 1 command_center
 	bld 4 mason 98
@@ -2315,8 +2315,6 @@ script_id TMCx
 	
 	:expansion_worker_loop
 	wait 150
-	var AtL|Wait can_worker_var 1 13
-	local 255 AtL 24 mason expansion_worker_loop
 	var AtL|Wait can_worker_var 1 13
 	res 13 AtL_W Ore 50 blank
 	call worker_conditions
@@ -2419,7 +2417,7 @@ script_id TMCx
 	:build_order_skip_timing_gas
 	dth 13 AtL 1 mineral_field1 build_order_skip_custom_gas
 	call main_wait_450
-	bld 1 reservoir 105
+#	bld 1 reservoir 105
 	call main_wait_450
 	var Add build_gas_var 1 13
 	stop
@@ -2471,7 +2469,7 @@ script_id TMCx
 	
 	:build_order_skip_greed_gas
 	call main_wait_900
-	bld 1 reservoir 105
+#	bld 1 reservoir 105
 	call main_wait_900
 	var Add build_gas_var 1 13
 	
@@ -3302,7 +3300,6 @@ script_id TMCx
 	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_seraph 13
 	var Ex|Call pref_addon_starport 0 buildpref_orbital_commandment 13
 	call main_wait_900
-	print expansion_toggle
 	multi expansion_toggle
 	call main_wait_300
 	wait 600
@@ -3359,25 +3356,27 @@ script_id TMCx
 	var Ex|Call pref_armor_production 0 buildpref_armor_fulcrum 13
 	call main_wait_600
 	bld 1 fulcrum 121
-	call main_wait_600
+	call main_wait_1200
 	bld 1 barracks 121
-	call main_wait_600
-	multi expansion_toggle
 	call main_wait_900
 	bld 2 barracks 121
+	w_bldstart 2 barracks	
 	call main_wait_300
+	var Set can_attack_var 1 13
+	call main_wait_750
 	bld 2 fulcrum 121
 	w_bldstart 2 fulcrum
 	multi build_armor_DavidAndGoliath_Addon
-	call main_wait_450
+	call main_wait_600
+	multi expansion_toggle
+	call main_wait_1200
 	bld 3 barracks 121
 	call main_wait_600
 	bld 4 barracks 121
 	call main_wait_600
 	bld 3 fulcrum 121
 	call main_wait_150
-	var Set can_attack_var 1 13
-	call main_wait_1200
+	call main_wait_900
 	var Set build_gas_var 1 13
 	call main_wait_900
 	w_bld 1 fulcrum
@@ -3613,14 +3612,12 @@ script_id TMCx
 	call main_wait_600
 	bld 1 barracks 121
 	call main_wait_900
-	bld 1 reservoir 97
-	call main_wait_600
 	var Add can_expand_var 1 13
 	call main_wait_600
 	bld 2 barracks 121
 	call main_wait_600
 	bld 3 barracks 121
-	call main_wait_600
+	call main_wait_900
 	w_bldstart 3 barracks
 	var Set build_gas_var 1 13
 	call main_wait_600
@@ -4358,7 +4355,6 @@ script_id TMCx
 	:need_atlas
 	wait 24
 	bring 13 AtM 4 Group_Factories Loc.63 need_atlas
-	bring 13 AtM 1 reservoir Loc.63 need_atlas
 	
 	:need_atlas2
 	var Ex|Jump skip_building_var 1 blank_return 13
@@ -4374,7 +4370,7 @@ script_id TMCx
 	wait 24
 	notowns atlas need_fountainhead
 	bring 13 AtM 4 Group_Factories Loc.63 need_fountainhead
-	bring 13 AtM 2 reservoir Loc.63 need_fountainhead
+	bring 13 AtM 1 reservoir Loc.63 need_fountainhead
 	
 	:need_fountainhead2
 	var Ex|Jump skip_building_var 1 blank_return 13
@@ -4648,8 +4644,8 @@ script_id TMCx
 	call production_cycle_check
 	var Set production_cycle_var 0 13
 	var Set production_cycle_addon_var 0 13
-	wait 360
-	call main_wait_1200
+	wait 480
+	call main_wait_1500
 	goto production_cycle_conditions
 	
 	:production_cycle_wait
@@ -5076,32 +5072,15 @@ script_id TMCx
 	
 	:attack_cycle_start
 	var Ex|Wait can_attack_var 1 13
-	
-	:attack_restart
 	atk_do
 	atk_c
 	
 	:attack_generic
 	call add_attack_wave
+	wait 500
 	atk_prep
 	atk_do
-	wait 200
-	
-	:attack_generic_check
-	var add attack_cycle_var 1 13
-	wait 300
-	var AtL|jump attack_cycle_var 2 attack_cycle_prep 13
-	bring 13 AtM 9 maverick|harakan|cyprian|eidolon|savant|madcap|heracles|apostle|siren|striga|olympian|autocrat|dilettante|sevenstep|silvertongue|sevenstep|silvertongue|emperor|jester|vulture|cyclops|goliath|blackjack|matador|phalanx|madrigal|ramesses|durendal|cataphract|paladin|cuirass|pazuzu|claymore|penumbra|anticthon|aion|wraith|gorgon|wyvern|salamander|sundog|centaur|minotaur|magnetar|pegasus|hippogriff|oberon|phobos Loc.63 attack_generic_add
-	goto attack_cycle_prep
-	
-	:attack_generic_add
-	call add_attack_wave
-	goto attack_generic_check
-	
-	:attack_cycle_prep
-	bring 13 AtL 60 maverick|harakan|cyprian|eidolon|savant|madcap|heracles|apostle|siren|striga|olympian|autocrat|dilettante|sevenstep|silvertongue|sevenstep|silvertongue|emperor|jester|vulture|cyclops|goliath|blackjack|matador|phalanx|madrigal|ramesses|durendal|cataphract|paladin|cuirass|pazuzu|claymore|penumbra|anticthon|aion|wraith|gorgon|wyvern|salamander|sundog|centaur|minotaur|magnetar|pegasus|hippogriff|oberon|phobos Loc.63 attack_with_everything
-	bring 13 AtL 45 maverick|harakan|cyprian|eidolon|savant|madcap|heracles|apostle|siren|striga|olympian|autocrat|dilettante|sevenstep|silvertongue|sevenstep|silvertongue|emperor|jester|vulture|cyclops|goliath|blackjack|matador|phalanx|madrigal|ramesses|durendal|cataphract|paladin|cuirass|pazuzu|claymore|penumbra|anticthon|aion|wraith|gorgon|wyvern|salamander|sundog|centaur|minotaur|magnetar|pegasus|hippogriff|oberon|phobos Loc.63 attack_expansion
-#	atk_now
+	bring 13 AtL 50 maverick|harakan|cyprian|eidolon|savant|madcap|heracles|apostle|siren|striga|olympian|autocrat|dilettante|sevenstep|silvertongue|sevenstep|silvertongue|emperor|jester|vulture|cyclops|goliath|blackjack|matador|phalanx|madrigal|ramesses|durendal|cataphract|paladin|cuirass|pazuzu|claymore|penumbra|anticthon|aion|wraith|gorgon|wyvern|salamander|sundog|centaur|minotaur|magnetar|pegasus|hippogriff|oberon|phobos Loc.63 attack_expansion
 	goto attack_cycle_fin
 	
 	:attack_expansion
@@ -5109,20 +5088,15 @@ script_id TMCx
 	target_expansion
 	goto attack_cycle_fin
 	
-	:attack_with_everything
-	send_suicide 0
-	
 	:attack_cycle_fin
 	wait 120
 	atk_c
 	c_queues train maverick|harakan|cyprian|eidolon|savant|madcap|heracles|apostle|siren|striga|olympian|autocrat|dilettante|sevenstep|silvertongue|sevenstep|silvertongue|emperor|jester|vulture|cyclops|goliath|blackjack|matador|phalanx|madrigal|ramesses|durendal|cataphract|paladin|cuirass|pazuzu|claymore|penumbra|anticthon|aion|wraith|gorgon|wyvern|salamander|sundog|centaur|minotaur|magnetar|pegasus|hippogriff|oberon|phobos 13
-	var Set attack_cycle_var 0 13
-	var Set can_build_production_var 1 13
 	return
 	
 	:attack_conditions
 	wait 24
-	bring 13 AtM 12 mason Loc.63 attack_conditions
+	bring 13 AtM 12 mason|talos Loc.63 attack_conditions
 	bring 13 AtM 1 barracks|captaincy|apothecary|fulcrum|mantle|iron_foundry|starpad|starport|nanite_assembly Loc.63 attack_conditions
 	res 13 AtL Any 500 blank_return
 	var Ex|WF(360) under_attack_var 0 13

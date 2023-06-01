@@ -15,7 +15,7 @@ Matraleth
 Ultrokor
 Zethrokor
 Cerebrate
-Infested Command Center
+Infested Ministry
 Quazrok Pool
 Mature Chrysalis
 Almakis Antre
@@ -80,19 +80,19 @@ Maverick
 Scanner Sweep
 Wraith
 Mason
-Siege Tank (Tank) Base
-Siege Tank (Tank) Turret
-Siege Tank (Siege) Base
-Siege Tank (Siege) Turret
-Science Vessel (Base)
-Science Vessel (Turret)
+Phalanx (Tank) Base
+Phalanx (Tank) Turret
+Phalanx (Siege) Base
+Phalanx (Siege) Turret
+Seraph (Base)
+Seraph (Turret)
 Vulture
 Spider Mine
 Fountainhead
 Barracks
 Atelier
 Comsat Station
-Command Center
+Ministry
 Supply Depot
 Commandment
 Fulcrum
@@ -102,7 +102,7 @@ Machine Shop
 Watchdog (Base)
 Crashed Minotaur
 Physics Lab
-Bunker
+Anchor
 Reservoir
 Immobile Barracks
 Daedala
@@ -160,7 +160,7 @@ Yamato Gun
 Phase Disruptor
 STA/STS Cannon Overlay
 Sunken Colony Tentacle
-Venom (Unused Zerg Weapon)
+Venom
 Acid Spore
 Plasma Drip Hit (Unused)
 Glave Wurm
@@ -217,7 +217,7 @@ Paladin
 Madrigal
 Savant
 Scrapyard
-Munitions Bay
+Rotary
 Sundog
 Azazel
 Matador
@@ -281,7 +281,7 @@ Phobos Laser
 Salamander Torpedo copy
 Sanctum of Sorrow
 Geszkath Grotto
-Shaman
+Shaman (Support Mode)
 Alkaj Chasm
 Idol
 Golem
@@ -310,8 +310,8 @@ Architect Missile
 Burst Lasers Impact
 Burst Lasers Blue Impact
 Burst Lasers Red Impact
-Ion Cannon
-Ion Cannon Projectile
+Diadem
+Diadem Projectile
 Keskathalor Spore
 Burst Lasers Explosive
 Herald
@@ -326,7 +326,7 @@ Almaksalisk
 Aion
 Rililisk
 Fusion Cutter Impact Small
-Command Center Christmas
+Ministry Christmas
 Protathalor
 Nexus Christmas
 Hachirosk Christmas
@@ -359,7 +359,7 @@ Claymore
 Gorgral Swamp
 Keskathalor Weaponhit
 Alaszileth
-Ion Cannon Weaponhit
+Diadem Weaponhit
 Irradiate Small
 Irradiate Medium
 Irradiate Large
@@ -401,7 +401,7 @@ Empress
 Tarasque Spores
 Tarasque
 Neutron Flare Orange Damageless
-Orboth Omlia
+Axtoth Axis
 Shock Cannon Impact Damageless Silent
 Magnetar
 Izirokor
@@ -460,10 +460,10 @@ Daniel's Mason
 Smoochie Boy
 Police Station
 Police Intern
-Police Academy
-Police Dispensary
+Ezigrisant
+Wellbore
 Police Deputy
-Police WAT Trooper
+Cuirass (Trench Mode)
 Spirtith Colony
 Skortrith Colony
 Empress Plasma
@@ -472,22 +472,22 @@ Hammerfall Beacon
 Zarcavrokor Bone
 Cyprian Rail
 Sentinel Rail
-Extended Flingy #266
-Extended Flingy #267
-Extended Flingy #268
-Extended Flingy #269
-Extended Flingy #270
-Extended Flingy #271
-Extended Flingy #272
-Extended Flingy #273
-Extended Flingy #274
-Extended Flingy #275
-Extended Flingy #276
-Extended Flingy #277
-Extended Flingy #278
-Extended Flingy #279
-Extended Flingy #280
-Extended Flingy #281
+Bactalisk Acid
+Ocsal Larva
+Burst Lasers Red Small
+Burst Lasers Red
+Phalanx Mortar
+Matador (Cinder Mode)
+Matador Turret (Tank Mode)
+Matador Turret (Cinder Mode)
+Wyvern Turret
+Analogue
+Mortothrokor
+Shaman (Visionary Mode)
+Vilgoleth
+Madrigal Turret (Imperioso)
+Madrigal (Furia Mode)
+Madrigal Turret (Furia)
 Extended Flingy #282
 Extended Flingy #283
 Extended Flingy #284

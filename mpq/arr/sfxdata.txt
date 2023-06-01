@@ -1477,7 +1477,7 @@ Autocrat Weapon Fire 02
 Autocrat Weapon Fire 03
 Autocrat Weapon Fire 04
 Autocrat Weapon Fire 05
-Savant Ready 01
+unused
 Savant What 01
 Savant What 02
 Savant What 03
@@ -1495,7 +1495,7 @@ Wendigo Yes 01
 Wendigo Yes 02
 Wendigo Yes 03
 Wendigo Yes 04
-Siren Ready 01
+unused
 Siren What 01
 Siren What 02
 Siren What 03
@@ -1865,15 +1865,15 @@ Azazel Yes 01
 Azazel Yes 02
 Azazel Yes 03
 Azazel Yes 04
-Heracles Ready 01
-Heracles What 01
-Heracles What 02
-Heracles What 03
-Heracles What 04
-Heracles Yes 01
-Heracles Yes 02
-Heracles Yes 03
-Heracles Yes 04
+unused
+unused
+unused
+unused
+unused
+unused
+unused
+unused
+unused
 Magnetar Weapon Fire 01
 Magnetar Weapon Fire 02
 Magnetar Weapon Fire 03
@@ -2333,147 +2333,147 @@ Matador Help 01
 Matador Help 02
 Matador Help 03
 Matador Help 04
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Protoss Alert
+Terran Alert
+Zerg Alert
+Zerg Advisor - Zerg Under Attack
+Zerg Advisor - Terran Under Attack
+Zerg Advisor - Protoss Under Attack
+Terran Advisor - Zerg Under Attack
+Terran Advisor - Terran Under Attack
+Terran Advisor - Protoss Under Attack
+Protoss Advisor - Zerg Under Attack
+Protoss Advisor - Terran Under Attack
+Protoss Advisor - Protoss Under Attack
+Cataphract Weaponfire 01
+Cataphract Weaponfire 02
+Cataphract Weaponfire 03
+Cataphract Weaponfire 04
+Heracles Ready 01
+Heracles Ready 02
+Heracles Ready 03
+Heracles Selected 01
+Heracles Selected 02
+Heracles Selected 03
+Heracles Selected 04
+Heracles Order Passive 01
+Heracles Order Passive 02
+Heracles Order Passive 03
+Heracles Order Passive 04
+Heracles Order Aggressive 01
+Heracles Order Aggressive 02
+Heracles Order Aggressive 03
+Heracles Order Aggressive 04
+Heracles Under Attack 01
+Heracles Under Attack 02
+Heracles Under Attack 03
+Heracles Under Attack 04
+Madcap Ready 01
+Madcap Ready 02
+Madcap Ready 03
+Madcap Under Attack 01
+Madcap Under Attack 02
+Madcap Under Attack 03
+Anticthon Ready 01
+Anticthon Ready 02
+Anticthon Ready 03
+Anticthon Order Aggressive 01
+Anticthon Order Aggressive 02
+Anticthon Order Aggressive 03
+Anticthon Order Aggressive 04
+Anticthon Under Attack 01
+Anticthon Under Attack 02
+Anticthon Under Attack 03
+Anticthon Under Attack 04
+Savant Switch Steal 01
+Savant Switch Steal 02
+Savant Switch Steal 03
+Savant Switch Pierce 01
+Savant Switch Pierce 02
+Savant Switch Pierce 03
+Konvilisk Weaponhit 01
+Konvilisk Weaponhit 02
+Konvilisk Weaponhit 03
+Kalkalisk Weaponhit 01
+Kalkalisk Weaponhit 02
+Kalkalisk Weaponhit 03
+Protathalor Weaponhit 01
+Protathalor Weaponhit 02
+Protathalor Weaponhit 03
+Protathalor Weaponhit 04
+Savant Ready 01
+Savant Ready 02
+Savant Ready 03
+Savant Order Aggressive 01
+Savant Order Aggressive 02
+Savant Order Aggressive 03
+Savant Order Aggressive 04
+Savant Under Attack 01
+Savant Under Attack 02
+Savant Under Attack 03
+Savant Under Attack 04
+Savant Banter 01
+Savant Banter 02
+Savant Banter 03
+Savant Banter 04
+Siren Ready 01
+Siren Ready 02
+Siren Ready 03
+Siren Order Aggressive 01
+Siren Order Aggressive 02
+Siren Order Aggressive 03
+Siren Order Aggressive 04
+Siren Under Attack 01
+Siren Under Attack 02
+Siren Under Attack 03
+Siren Under Attack 04
+Matador Cinder Transform
+Matador Tank Transform
+Striga Ready 01
+Striga Ready 02
+Striga Ready 03
+Striga Order Aggressive 01
+Striga Order Aggressive 02
+Striga Order Aggressive 03
+Striga Order Aggressive 04
+Striga Under Attack 01
+Striga Under Attack 02
+Striga Under Attack 03
+Striga Under Attack 04
+Southpaw Weaponfire 01
+Southpaw Weaponfire 02
+Southpaw Ready 01
+Southpaw What 01
+Southpaw What 02
+Southpaw What 03
+Southpaw What 04
+Southpaw Order Passive 01
+Southpaw Order Passive 02
+Southpaw Order Passive 03
+Southpaw Order Passive 04
+Wendigo Weaponfire 01
+Wendigo Weaponfire 02
+Wendigo Death 01
+Wendigo Death 02
+Wendigo Death 03
+Wendigo Death 04
+Wendigo Ready 01
+Wendigo What 01
+Wendigo What 02
+Wendigo What 03
+Wendigo What 04
+Wendigo Order Passive 01
+Wendigo Order Passive 02
+Wendigo Order Passive 03
+Wendigo Order Passive 04
+Protoss Cancel Structure
+Terran Cancel Structure
+Apostle Toggle Lazarus 01
+Apostle Toggle Lazarus 02
+Apostle Toggle Lazarus 03
+Shaman Visionary 01
+Shaman Visionary 02
+Shaman Support 01
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

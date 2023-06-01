@@ -5,7 +5,7 @@ Skryling Death
 Skryling Explosion
 Rilirokor
 Rilirokor Shadow
-Rilirokor Remnants
+Rilirokor Remains
 Infested Terran
 Infested Terran Shadow
 Infested Terran Explosion
@@ -14,15 +14,15 @@ Zerg Cocoon Shadow
 Isthrathaleth
 Isthrathaleth Shadow
 Isthrathaleth Birth
-Isthrathaleth Remnants
+Isthrathaleth Remains
 Droleth
 Droleth Shadow
 Droleth Birth
-Droleth Remnants
+Droleth Remains
 Egg
 Egg Shadow
 Egg Spawn
-Egg Remnants
+Egg Remains
 Geszithalor
 Geszithalor Shadow
 Geszithalor Birth
@@ -30,12 +30,12 @@ Geszithalor Death
 Hydralisk
 Hydralisk Shadow
 Hydralisk Birth
-Hydralisk Remnants
+Hydralisk Remains
 Infested Kerrigan
 Infested Kerrigan Shadow
 Needle Spines
 Larva
-Larva Remnants
+Larva Remains
 Mutalisk
 Mutalisk Shadow
 Mutalisk Birth
@@ -51,17 +51,17 @@ Matraleth Birth
 Ultrokor
 Ultrokor Shadow
 Ultrokor Birth
-Ultrokor Remnants
+Ultrokor Remains
 Zethrokor
 Zethrokor Shadow
 Zethrokor Birth
-Zethrokor Remnants
+Zethrokor Remains
 Zerg Air Death Explosion (Large)
 Zerg Air Death Explosion (Small)
 Zerg Building Explosion
 Cerebrate
 Cerebrate Shadow
-Infested Command Center
+Infested Ministry
 Spawning Pool
 Spawning Pool Shadow
 Evolution Chamber
@@ -87,7 +87,7 @@ Matravil Nest Shadow
 Nydus Cesiant
 Nydus Cesiant Shadow
 Overmind With Shell
-Overmind Remnants
+Overmind Remains
 Overmind Without Shell
 Ultrok Cavern
 Ultrok Cavern Shadow
@@ -99,7 +99,7 @@ Muthrok Spire
 Muthrok Spire Shadow
 Spraith Colony
 Spraith Colony Shadow
-Infested Command Center Overlay
+Infested Ministry Overlay
 Zerg Construction (Large)
 Zerg Building Morph
 Zerg Construction (Medium)
@@ -110,28 +110,28 @@ Zerg Building Spawn (Medium)
 Zerg Building Spawn (Large)
 Zerg Building Rubble (Small)
 Zerg Building Rubble (Large)
-Carrier
-Carrier Shadow
-Carrier Engines
-Carrier Warp Flash
-Interceptor
-Interceptor Shadow
-Shuttle
-Shuttle Shadow
-Shuttle Engines
-Shuttle Warp Flash
-Dragoon
-Dragoon Shadow
-Dragoon Remnants
-Dragoon Warp Flash
-High Templar
-High Templar Shadow
-High Templar Warp Flash
-Dark Templar (Hero)
-Arbiter
-Arbiter Shadow
-Arbiter Engines
-Arbiter Warp Flash
+Solarion
+Solarion Shadow
+Solarion Engines
+Solarion Warp Flash
+Steward
+Steward Shadow
+Envoy
+Envoy Shadow
+Envoy Engines
+Envoy Warp Flash
+Dracadin
+Dracadin Shadow
+Dracadin Remains
+Dracadin Warp Flash
+Cantavis
+Cantavis Shadow
+Cantavis Warp Flash
+Cabalist (Hero)
+Didact
+Didact Shadow
+Didact Engines
+Didact Warp Flash
 Archon Energy
 Archon Being
 Archon Swirl
@@ -145,54 +145,54 @@ Panoptus Warp Flash
 Accantor
 Accantor Shadow
 Accantor Warp Flash
-Scarab
-Observer
-Observer Shadow
-Observer Warp Flash
+Plasma Shell
+Witness
+Witness Shadow
+Witness Warp Flash
 Zealot
 Zealot Shadow
 Zealot Death
 Zealot Warp Flash
-Templar Archives
-Templar Archives Warp Flash
-Templar Archives Shadow
-Assimilator
-Assimilator Warp Flash
-Assimilator Shadow
-Observatory
-Observatory Warp Flash
-Observatory Shadow
+Ancestral Archives
+Ancestral Archives Warp Flash
+Ancestral Archives Shadow
+Aquifer
+Aquifer Warp Flash
+Aquifer Shadow
+Machinist Hall
+Machinist Hall Warp Flash
+Machinist Hall Shadow
 Citadel of Adun
 Citadel of Adun Warp Flash
 Citadel of Adun Shadow
-Forge
-Forge Overlay
-Forge Warp Flash
-Forge Shadow
+Embassy
+Embassy Overlay
+Embassy Warp Flash
+Embassy Shadow
 Gateway
 Gateway Warp Flash
 Gateway Shadow
-Cybernetics Core
-Cybernetics Core Warp Flash
-Cybernetics Core Overlay
-Cybernetics Core Shadow
+Cenotaph
+Cenotaph Warp Flash
+Cenotaph Overlay
+Cenotaph Shadow
 Khaydarin Formation
 Nexus
 Nexus Warp Flash
 Nexus Overlay
 Nexus Shadow
-Photon Cannon
-Photon Cannon Shadow
-Photon Cannon Warp Flash
-Arbiter Tribunal
-Arbiter Tribunal Warp Flash
-Arbiter Tribunal Shadow
+Warden
+Warden Shadow
+Warden Warp Flash
+Celestial Tribune
+Celestial Tribune Warp Flash
+Celestial Tribune Shadow
 Pylon
 Pylon Warp Flash
 Pylon Shadow
-Robotics Facility
-Robotics Facility Warp Flash
-Robotics Facility Shadow
+Lattice
+Lattice Warp Flash
+Lattice Shadow
 Shield Battery
 Shield Battery Overlay
 Shileld Battery Warp Flash
@@ -224,12 +224,12 @@ Civilian Shadow
 Trojan
 Trojan Shadow
 Trojan Engines
-Firebat
-Firebat Shadow
-Ghost
-Ghost Shadow
-Ghost Remnants
-Ghost Death
+Harakan
+Harakan Shadow
+Eidolon
+Eidolon Shadow
+Eidolon Remains
+Eidolon Death
 Nuke Beam
 Nuke Target Dot
 Goliath Base
@@ -237,10 +237,10 @@ Goliath Turret
 Goliath Shadow
 Sarah Kerrigan
 Sarah Kerrigan Shadow
-Marine
-Marine Shadow
-Marine Remnants
-Marine Death
+Maverick
+Maverick Shadow
+Maverick Remains
+Maverick Death
 Wraith
 Wraith Shadow
 Wraith Engines
@@ -248,19 +248,19 @@ Scanner Sweep
 Mason
 Mason Shadow
 Mason Engines
-Siege Tank (Tank) Base
-Siege Tank (Tank) Turret
-Siege Tank (Tank) Base Shadow
-Siege Tank (Siege) Base
-Siege Tank (Siege) Turret
-Siege Tank (Siege) Base Shadow
+Phalanx (Tank) Base
+Phalanx (Tank) Turret
+Phalanx (Tank) Shadow
+Phalanx (Siege) Base
+Phalanx (Siege) Turret
+Phalanx (Siege) Shadow
 Vulture
 Vulture Shadow
 Spider Mine
 Spider Mine Shadow
-Science Vessel (Base)
-Science Vessel (Turret)
-Science Vessel Shadow
+Seraph (Base)
+Seraph (Turret)
+Seraph Shadow
 Fountainhead
 Fountainhead Overlay
 Fountainhead Shadow
@@ -273,9 +273,9 @@ Comsat Station
 Comsat Station Connector
 Comsat Station Overlay
 Comsat Station Shadow
-Command Center
-Command Center Overlay
-Command Center Shadow
+Ministry
+Ministry Overlay
+Ministry Shadow
 Supply Depot
 Supply Depot Overlay
 Supply Depot Shadow
@@ -290,7 +290,7 @@ Covert Ops
 Covert Ops Connector
 Covert Ops Overlay
 Covert Ops Shadow
-Ion Cannon
+Ion Cannon (old, unused)
 Machine Shop
 Machine Shop Connector
 Machine Shop Shadow
@@ -302,9 +302,9 @@ Crashed Minotaur Shadow
 Physics Lab
 Physics Lab Connector
 Physics Lab Shadow
-Bunker
-Bunker Shadow
-Bunker Attack Overlay (Orange)
+Anchor
+Anchor Shadow
+Anchor Attack Overlay (Orange)
 Reservoir
 Reservoir Shadow
 Daedala
@@ -505,7 +505,7 @@ White Circle
 Needle Spine Hit
 Plasma Drip Hit (Unused)
 Sunken Colony Tentacle
-Venom (Unused Zerg Weapon)
+Venom
 Venom Hit (Unused)
 Acid Spore
 Acid Spore Hit
@@ -918,7 +918,7 @@ Vithrilisk Shadow
 Vithrilisk Birth
 Vithrilisk Death
 Lakizilisk Birth
-Lakizilisk Remnants
+Lakizilisk Remains
 Lakizilisk
 Lakizilisk Shadow
 Overmind Cocoon
@@ -944,7 +944,7 @@ Valkyrie Engines2 (Unused)
 Valkyrie Afterburners (Unused)
 Cleric
 Cleric Shadow
-Cleric Remnants
+Cleric Remains
 Psi Disrupter
 Psi Disrupter Shadow
 Power Generator
@@ -1004,10 +1004,10 @@ Vespene Ridge
 Iroleth
 Matrix
 Paladin
-Madrigal
+Madrigal Base (Imperioso)
 Savant
 Scrapyard
-Munitions Bay
+Rotary
 Matrix Shadow
 Future Station
 Matrix Warpin
@@ -1068,7 +1068,7 @@ Malice Overlay Large
 Malediction Overlay Small
 Malediction Overlay Medium
 Malediction Overlay Large
-Munitions Bay Shadow
+Rotary Shadow
 Simulacrum
 Simulacrum Shadow
 Automaton Register
@@ -1117,7 +1117,7 @@ Star Sovereign
 Star Sovereign Shadow
 Apostle
 Apostle Shadow
-Apostle Remnants
+Apostle Remains
 Exemplar Weapon
 Future Station Shadow
 Argosy
@@ -1224,7 +1224,7 @@ Kalkalisk Birth
 Iroleth Birth
 Nathrokor Birth
 Alkajelisk Birth
-Shaman
+Shaman (Support Mode)
 Shaman Shadow
 Protoss Temple Shadow
 Burst Lasers Silent
@@ -1233,9 +1233,9 @@ Observance Overlay Large
 Observance Overlay Medium
 Observance Overlay Small
 Zerg Overmind Shadow
-Harakan Remnants
+Harakan Remains
 Bactalisk Birth
-Bactalisk Remnants
+Bactalisk Remains
 Alkajelisk Spores
 Alkajelisk Passive Spore
 Terran Heavy Missile
@@ -1253,12 +1253,12 @@ Grief of All Gods Channel
 Khaydarin Formation Shadow
 Grief of All Gods Blast Loop
 Grief of All Gods Blast
-Ion Cannon Base
-Ion Cannon Turret
+Diadem Base
+Diadem Turret
 Zerg Overmind (With Shell) Shadow
-Ion Cannon Shadow
-Ion Cannon Weapon
-Ion Cannon Weaponhit
+Diadem Shadow
+Diadem Weapon
+Diadem Weaponhit
 Keskathalor Spores
 Keskathalor Weaponhit
 Burst Lasers Explosive
@@ -1276,7 +1276,7 @@ Protoss Accelerant Medium
 Protoss Accelerant Small
 Vagrant
 Vagrant Shadow
-Ion Cannon Attack A2
+Diadem Attack A2
 Seeker Spores Silent
 Ion Field
 Ensnaring Brood Overlay
@@ -1298,7 +1298,7 @@ Rililisk Shadow
 Almaksalisk Birth
 Zoryusthaleth Birth
 Mason Spark Small
-Command Center Christmas
+Ministry Christmas
 Epigraph Engines
 Nexus Christmas
 Hachirosk Christmas
@@ -1346,7 +1346,7 @@ Cohort
 Cohort Shadow
 Aspirant
 Aspirant Shadow
-Aspirant Remnants
+Aspirant Remains
 Criticality Large
 Criticality Medium
 Criticality Small
@@ -1355,14 +1355,14 @@ Akistrokor Shadow
 Konvilisk
 Konvilisk Shadow
 Konvilisk Birth
-Konvilisk Remnants
+Konvilisk Remains
 Legionnaire Teleport
 Claymore
 Claymore Shadow
 Aion Shadow
-Scribe Remnants
-Orboth Omlia
-Orboth Omlia Shadow
+Scribe Remains
+unused
+unused
 Warp Anchor Underlay
 Alaszileth
 Alaszileth Shadow
@@ -1413,7 +1413,7 @@ Luminary
 Luminary Shadow
 Axitrilisk
 Axitrilisk Shadow
-Axitrilisk Remnants
+Axitrilisk Remains
 Anticthon
 Anticthon Shadow
 Anthelion
@@ -1445,14 +1445,14 @@ Explosion Medium Reversed
 Explosion Blue Medium Reversed
 Zealot Death Reversed
 Neutron Flare Orange Damageless
-Orboth Omlia
-Orboth Omlia Shadow
+Axtoth Axis
+Axtoth Axis Shadow
 Ovileth Death Reversed
 Zerg Air Explosion Large Reversed
 Zerg Air Explosion Small Reversed
-Ion Cannon Mouse Response
-Ion Cannon Attack A1
-Ion Cannon Attack B
+Diadem Mouse Response
+Diadem Attack A1
+Diadem Attack B
 Anthelion Teleport Depart
 Anthelion Teleport Arrive
 Skithrokor Birth
@@ -1498,7 +1498,7 @@ Emergency Detonation
 Madrigal Death Explosion
 Penumbra Death Explosion
 Tarasque Muzzle Flash
-Blackjack Remnants
+Blackjack Remains
 Sovroleth Birth Double
 Gods Made Flesh Small
 Gods Made Flesh Medium
@@ -1521,7 +1521,7 @@ Tyranny Stun Small
 Tyranny Stun Medium
 Tyranny Stun Large
 Tyranny Stun XLarge
-Matador
+Matador (Tank Mode)
 Fusion Cutter Hit Damageless
 Axitrilisk Birth
 Akistrokor Birth
@@ -1530,8 +1530,8 @@ Keskathalor Spores
 Seeker Spores Double Silent
 Kagralisk
 Kagralisk Shadow
-Kagralisk Remnants
-Matador Shadow
+Kagralisk Remains
+Matador (Tank Mode) Shadow
 Kagralisk Weaponhit
 Izkag Iteth
 Izkag Iteth Shadow
@@ -1540,7 +1540,7 @@ Kagralisk Birth
 Neutron Flare Blue Damageless
 Evigrilisk
 Evigrilisk Shadow
-Evigrilisk Remnants
+Evigrilisk Remains
 Evigrilisk Birth
 Sentinel Base
 Sentinel Turret
@@ -1686,25 +1686,25 @@ Police Station Shadow
 Police Intern
 Police Intern Shadow
 Police Station Overlay
-Police Academy
-Police Academy Shadow
+Ezigrisant
+Ezigrisant Shadow
 unused
-Police Dispensary
-Police Dispensary Shadow
-Police Dispensary Overlay
+Wellbore
+Wellbore Shadow
+Wellbore Overlay
 Police Deputy
 Police Deputy Shadow
-Police WAT Trooper
-Police WAT Trooper Shadow
+Cuirass (Trench Mode)
+Cuirass (Trench Mode) Shadow
 Madrigal Dirge Proc
 Spirtith Colony
 Spirtith Colony Shadow
-Ion Cannon Attack A3
-Ion Cannon Attack A4
+Diadem Attack A3
+Diadem Attack A4
 Skortrith Colony
 Skortrith Colony Shadow
-Bunker Attack Overlay (Green)
-Bunker Attack Overlay (Blue)
+Anchor Attack Overlay (Green)
+Anchor Attack Overlay (Blue)
 Terran Unit Rubble (Medium)
 Terran Unit Rubble (Small)
 Protoss Unit Rubble (Medium)
@@ -1718,31 +1718,31 @@ Hammerfall Beacon
 Zarcavrokor Bone
 Cyprian Rail
 Sentinel Rail
-Extended Image #718
-Extended Image #719
-Extended Image #720
-Extended Image #721
-Extended Image #722
-Extended Image #723
-Extended Image #724
-Extended Image #725
-Extended Image #726
-Extended Image #727
-Extended Image #728
-Extended Image #729
-Extended Image #730
-Extended Image #731
-Extended Image #732
-Extended Image #733
-Extended Image #734
-Extended Image #735
-Extended Image #736
-Extended Image #737
-Extended Image #738
-Extended Image #739
-Extended Image #740
-Extended Image #741
-Extended Image #742
+Bactalisk Acid
+Ocsal Larva
+Burst Lasers Impact Red Damageless
+Burst Lasers Silent Red Small
+Burst Lasers Silent Red
+Phalanx Mortar
+Matador (Cinder Mode)
+Matador Turret (Tank Mode)
+Matador Turret (Cinder Mode)
+Wyvern Turret
+Wyvern Turret Shadow
+Analogue
+Analogue Shadow
+Zerg Spore Explosion Large
+Pythean Engines
+Mortothrokor
+Mortothrokor Shadow
+Mortothrokor Remains
+Phantom Strike Proc
+Shaman (Visionary Mode)
+Terran Cancel Structure
+Vilgoleth
+Madrigal Turret (Imperioso)
+Madrigal Base (Furia)
+Madrigal Turret (Furia)
 Extended Image #743
 Extended Image #744
 Extended Image #745
