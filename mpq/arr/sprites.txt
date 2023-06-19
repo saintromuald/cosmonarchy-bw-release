@@ -247,7 +247,7 @@ Spider Mine
 Seraph (Base)
 Seraph (Turret)
 Fountainhead
-Barracks
+Stockade
 Atelier
 Comsat Station
 Ministry
@@ -263,8 +263,8 @@ Physics Lab
 Anchor
 Reservoir
 Daedala
-Nuclear Silo
-Nuclear Missile
+Anvil
+Morningstar
 Nuke Hit
 Starport
 Atlas
@@ -479,16 +479,16 @@ Unknown Desert
 10/5 Desert
 12/1 Desert Overlay
 11/3 Desert
-Lurker Egg
-Devourer
-Devourer Death
-Lurker Remnants
-Lurker
-Dark Archon Energy
-Corsair
-Dark Templar (Unit)
-Medic
-Medic Remnants
+Lakizilisk Egg (unused)
+Vithrilisk
+Vithrilisk Death
+Lakizilisk Remnants
+Lakizilisk
+Mind Tyrant Energy
+Lanifect
+Cabalist
+Cleric
+Cleric Remnants
 Valkyrie
 Scantid (Desert)
 Kakaru (Twilight)
@@ -535,7 +535,7 @@ Ghitorokor
 Aurora
 Panoptus
 Centaur
-Southpaw
+Unused
 Centaur Missile
 Augur
 Vorval Pond
@@ -673,7 +673,7 @@ Iron Foundry
 Mineral Field 01 (Christmas)
 Mineral Field 02 (Christmas)
 Mineral Field 03 (Christmas)
-Medbay
+Vestry
 Heracles
 Pazuzu
 Astral Blaster Hit
@@ -873,7 +873,7 @@ Vilgoleth
 Madrigal Turret (Imperioso)
 Madrigal (Furia Mode)
 Madrigal Turret (Furia)
-Extended Sprite #1
+Philoc
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1

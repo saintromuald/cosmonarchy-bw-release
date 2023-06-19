@@ -111,7 +111,7 @@
   293               # [293] Skortrith Colony
   0xFF01            # Or
   0xFF02            # Current unit is...
-  162               # [294] Engram
+  294               # [294] Engram
   0xFFFF            # ==End of List==
 
 19:                 # [19] Tower Attack
@@ -143,7 +143,7 @@
   293               # [293] Skortrith Colony
   0xFF01            # Or
   0xFF02            # Current unit is...
-  162               # [294] Engram
+  294               # [294] Engram
   0xFFFF            # ==End of List==
 
 20:                 # [20] Vulture Mine

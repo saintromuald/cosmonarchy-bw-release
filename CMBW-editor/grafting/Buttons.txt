@@ -472,7 +472,7 @@
   4, 195, 4, 3, 195, 195, 364, 0  # Blackjack, Can Create Unit\Building ([195] Blackjack), Create Unit ([195] Blackjack)
   5, 406, 4, 3, 256, 256, 537, 0  # Matador, Can Create Unit\Building ([256] Matador), Create Unit ([256] Matador)
   4, 5, 4, 3, 5, 5, 591, 704  # Phalanx (Tank Mode), Can Create Unit\Building ([5] Phalanx (Tank Mode)), Create Unit ([5] Phalanx (Tank Mode))
-  210, 5, 4, 3, 210, 210, 443, 0  # Tarasque, Can Create Unit\Building ([210] Tarasque), Create Unit ([210] Tarasque)
+  4, 210, 4, 3, 210, 210, 443, 0  # Tarasque, Can Create Unit\Building ([210] Tarasque), Create Unit ([210] Tarasque)
   5, 27, 4, 3, 27, 27, 1144, 1143  # Madrigal, Can Create Unit\Building ([27] Madrigal), Create Unit ([27] Madrigal)
   6, 286, 13, 1, 0, 0, 672, 0  # Set Rally Point, Rally Point (0), Rally Point (0)
   7, 200, 4, 32, 200, 200, 1145, 0  # Scrapyard, Can Create Unit\Building ([200] Scrapyard), Create AddOn ([200] Scrapyard)
@@ -692,7 +692,7 @@
 115:	# [115] Supreme Protoss Structures
   1, 159, 4, 31, 159, 159, 386, 0  # Prostration Stage, Can Create Unit\Building ([159] Prostration Stage), Create Building - Protoss ([159] Prostration Stage)
 # 2, 156, 4, 31, 295, 295, 1249, 0  # Xenolith, Can Create Unit\Building ([295] Xenolith), Create Building - Protoss ([295] Xenolith)
-  3, 402, 4, 31, 294, 294, 1248, 0  # Engram, Can Create Unit\Building ([294] Engram), Create Building - Protoss ([294] Engram)
+  3, 444, 4, 31, 294, 294, 1248, 0  # Engram, Can Create Unit\Building ([294] Engram), Create Building - Protoss ([294] Engram)
   4, 225, 4, 31, 225, 225, 1354, 0  # Sanctum of Sorrow, Can Create Unit\Building ([225] Sanctum of Sorrow), Create Building - Protoss ([225] Sanctum of Sorrow)
   5, 428, 4, 31, 278, 278, 1113, 0  # Strident Stratum, Can Create Unit\Building ([278] Strident Stratum), Create Building - Protoss ([278] Strident Stratum)
   6, 169, 4, 31, 169, 169, 643, 0  # Fleet Beacon, Can Create Unit\Building ([169] Fleet Beacon), Create Building - Protoss ([169] Fleet Beacon)
@@ -1349,7 +1349,7 @@
   4, 254, 41, 20, 0, 0, 667, 0  # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
   5, 255, 41, 21, 0, 0, 668, 0  # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
   6, 39, 4, 38, 39, 39, 577, 740  # Ultrokor, Can Create Unit\Building ([39] Ultrokor), Unit Morph ([39] Ultrokor)
-  7, 40, 23, 57, 34, 0, 1136, 1136  # Reconstitution, Spell Researched ([34] Healing - Cleric), Cancel (0)
+  7, 40, 23, 57, 34, 0, 1136, 1136  # Mitosis, Spell Researched ([34] Healing - Cleric), Cancel (0)
   8, 263, 23, 57, 34, 0, 331, 331  # Swarming Omen, Spell Researched ([34] Healing - Cleric), Cancel (0)
   9, 260, 39, 42, 11, 0, 373, 0  # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
   9, 259, 38, 41, 11, 11, 372, 382  # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
@@ -1738,6 +1738,7 @@
 247:	# Starpad
   1, 228, 35, 9, 0, 0, 664, 0  # Move, Building Can Move And Has Lifted Off (0), Move (0)
   1, 8, 4, 3, 8, 8, 593, 0  # Wraith, Can Create Unit\Building ([8] Wraith), Create Unit ([8] Wraith)
+  1, 478, 4, 3, 328, 328, 1511, 0  # Philoc, Can Create Unit\Building ([328] Philoc), Create Unit ([328] Philoc)
   2, 229, 35, 10, 0, 0, 665, 0  # Stop, Building Can Move And Has Lifted Off (0), Stop (0)
   2, 425, 4, 3, 275, 275, 712, 703  # Wendigo, Can Create Unit\Building ([275] Wendigo), Create Unit ([275] Wendigo)
   2, 405, 4, 3, 255, 255, 525, 0  # Ancile, Can Create Unit\Building ([255] Ancile), Create Unit ([255] Ancile)
@@ -2027,6 +2028,7 @@
   4, 254, 3, 20, 0, 0, 667, 0  # Patrol, Always (0), Patrol (0)
   5, 255, 3, 21, 0, 0, 668, 0  # Hold Position, Always (0), Hold Position (0)
   7, 290, 23, 57, 34, 0, 535, 535 # Forward March, Spell Researched ([34] Healing - Cleric), Cancel (0)
+  8, 343, 23, 57, 34, 0, 1091, 0  # Flyer Attack, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 280:	# Mixed Mason Training
   1, 7, 4, 3, 7, 7, 592, 0  # SCV, Can Create Unit\Building ([7] Mason), Create Unit ([7] Mason)
@@ -2203,6 +2205,10 @@
   7, 15, 31, 5, 5, 0, 1775, 1775  # Support Mode, Tank Is In Siege Mode ([5] Terran Deployment), Mobile Mode (0)
   8, 366, 23, 57, 34, 0, 1472, 1472  # Nanite Field, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
+306:	# Attacking Structure
+  2, 229, 9, 10, 0, 0, 665, 0  # Stop, Attacking Building (0), Stop (0)
+  3, 230, 9, 13, 0, 0, 666, 0  # Attack, Attacking Building (0), Attack (Building) (0)
+
 #### Buttonsets END ####
 #### Unit Settings START ####
 
@@ -2311,7 +2317,7 @@ Unit 30: # [30] Phalanx (Siege Mode)
                    # Stat Preset: Normal Unit
 
 Unit 32: # [32] Harakan
-  109, 65535, 1, 0  # Button Set: Firebat
+  109, 65535, 1, 0  # Button Set: Harakan
                    # Stat Preset: Normal Unit
 
 Unit 33: # [33] Scanner Sweep
@@ -3210,8 +3216,8 @@ Unit 293: # [293] Zerg Surkith Colony
   298, 65535, 2, 1 # Button Set: [298] Skortrith Colony
                    # Stat Preset: Building
 
-Unit 294: # [294] Terran Horseman
-  12, 65535, 1, 0  # Button Set: [12] Basic Commands
+Unit 294: # [294] Protoss Engram
+  306, 65535, 1, 0  # Button Set: [306] Attacking Structure
                    # Stat Preset: Normal Unit
 
 Unit 297: # [297] Terran Sevenstep
@@ -3260,6 +3266,10 @@ Unit 317: # [317] Protoss Patriarch
 
 Unit 319: # [319] Zerg Mortothrokor
   287, 65535, 1, 0  # Button Set: Mortothrokor
+                   # Stat Preset: Normal Unit
+
+Unit 328: # [238] Terran Philoc
+  12, 65535, 1, 0  # Button Set: [12] Basic Commands
                    # Stat Preset: Normal Unit
 
 Unit 332: # [332] Terran Civilian

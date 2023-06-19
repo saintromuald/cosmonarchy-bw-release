@@ -3950,7 +3950,12 @@ script_id PMCx
 	goto request_static_defense
 	
 	:request_static_defense_check
-	var AtL|Jump mining_count_var 3 request_matrix_check_pre 13
+	var AtL|Jump mining_count_var 3 request_engram_check_pre 13
+	var AtL|Jump mining_count_var 2 request_matrix_check_pre 13
+	goto request_warden_check
+	
+	:request_engram_check_pre
+	multi request_engram_check
 	
 	:request_matrix_check_pre
 	multi request_matrix_check
@@ -3990,6 +3995,23 @@ script_id PMCx
 	
 	:request_matrix_check3
 	add_bld 255 matrix 1 10 95
+	stop
+	
+	:request_engram_check
+	local 255 AtL 10 engram blank
+	local 255 AtL 4 engram request_engram_check2
+	add_bld 255 engram 1 4 96
+	stop
+	
+	:request_engram_check2
+	var Ex|Jump under_attack_by_ground_var 1 request_engram_check3 13
+	var Ex|Jump under_attack_by_air_var 1 request_engram_check3 13
+	var AtM|Jump mining_count_var 2 blank 13
+	add_bld 255 engram 1 7 96
+	stop
+	
+	:request_engram_check3
+	add_bld 255 engram 1 10 96
 	stop
 	
 	:request_embassy

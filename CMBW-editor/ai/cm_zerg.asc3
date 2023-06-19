@@ -1041,6 +1041,7 @@ script_id ZMCx
 	wait 1
 	var Sub gas_timer_loop_var 1 13
 	var AtL|Jump gas_timer_loop_var 1 gas_timer_loop 13
+	notowns irol_iris gas_timer_loop
 	var Set build_gas_var 1 13
 	stop
 	

@@ -11271,7 +11271,7 @@ CantavisWalking:
 	setvertpos        	0
 CantavisLocal00:
 	wait              	3 
-	spruluselo        	320 0 0	# High Templar Glow (thingy\pteglow.grp)
+	spruluselo        	320 0 0	# Cantavis Glow (thingy\pteglow.grp)
 	goto              	CantavisLocal00
 
 CantavisWalkingToIdle:
@@ -11284,7 +11284,7 @@ CantavisWalkingToIdle:
 	goto              	CantavisGndAttkToIdle
 
 CantavisWarpIn:
-	imgol             	128 0 0 # High Templar Warp Flash (protoss\templar.grp)
+	imgol             	128 0 0 # Cantavis Warp Flash (protoss\templar.grp)
 	goto              	InfestedTerranLocal00
 
 # ----------------------------------------------------------------------------- #
@@ -12601,15 +12601,15 @@ WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
-Built         	WardenBuilt
+Built         	ScourgeLocal00
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	WardenBuilt
-WorkingToIdle 	WardenBuilt
+IsWorking     	ScourgeLocal00
+WorkingToIdle 	ScourgeLocal00
 WarpIn        	WardenWarpIn
 Unused3       	[NONE]
 StarEditInit  	[NONE]
-Disable       	WardenBuilt
+Disable       	ScourgeLocal00
 Burrow        	[NONE]
 UnBurrow      	[NONE]
 Enable        	WardenEnable
@@ -12620,18 +12620,14 @@ WardenInit:
 	imgul             	184 0 0 # Warden Shadow (protoss\ppbShad.grp)
 WardenLocal00:
 	playfram          	0x00
-	goto              	WardenBuilt
-
-WardenBuilt:
-	wait              	125
-	goto              	WardenBuilt
+	goto              	ScourgeLocal00
 
 WardenDeath:
 	playsnd           	7 # Misc\ExploLrg.wav
 	imgol             	215 0 0 # Explosion (Large) (thingy\tBangX.grp)
-	wait              	3 
+	wait              	3
 	lowsprul          	223 0 0 # Protoss Building Rubble (Small) (thingy\PRubbleS.grp)
-	wait              	1 
+	wait              	1
 	end
 
 WardenGndAttkInit:
@@ -12657,11 +12653,11 @@ WardenGndAttkToIdle:
 	
 WardenEnable:
 	playfram			0x00
-	goto				WardenBuilt
+	goto				ScourgeLocal00
 
 WardenWarpIn:
 	imgol             	185 0 0 # Warden Warp Flash (protoss\photon.grp)
-	goto              	WardenBuilt
+	goto              	ScourgeLocal00
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -13436,7 +13432,7 @@ WarpAnchorLocal01:
 # 115 Carrier Warp Flash (protoss\carrier.grp)
 # 121 Envoy Warp Flash (protoss\shuttle.grp)
 # 125 Dracadin Warp Flash (protoss\dragoon.grp)
-# 128 High Templar Warp Flash (protoss\templar.grp)
+# 128 Cantavis Warp Flash (protoss\templar.grp)
 # 133 Didact Warp Flash (protoss\didact.grp)
 # 139 Scribe Warp Flash (protoss\probe.grp)
 # 143 Scout Warp Flash (protoss\scout.grp)
@@ -24250,6 +24246,7 @@ MadrigalImperiosoTurretGndAttkInit:
 	nobrkcodestart
 	wait              	1
 	playfram			0x00
+	wait              	1
 	playsndbtwn			1208 1211 # Madrigal weaponfire 01, 02, 03, 04
 	attackwith        	1
 	playfram			0x20
@@ -24467,9 +24464,9 @@ PaladinUnused1:
 PaladinGndAttkInit:
 	playfram          	0x00
 	wait              	1
+	nobrkcodestart
 	playsnd           	988	# Terran\Duran\TDnPss08.wav
 	wait              	10
-	nobrkcodestart
 	playsndbtwn			1144 1147 # Paladin weaponfire 01, 02, 03, 04
 	attack
 	wait              	3
@@ -28230,7 +28227,7 @@ GladiusDeath:
 GladiusGndAttkInit:
 	nobrkcodestart
 	playsndbtwn       	1926 1928 # Gladius weaponfire 01, 02, 03
-	playfram			0x11
+	playfram			0x20
 	attackwith        	1
 	wait              	2
 	playfram			0x00
@@ -28653,16 +28650,16 @@ Type          	21
 Init          	GorgonInit
 Death         	GorgonDeath
 GndAttkInit   	GorgonGndAttkInit
-AirAttkInit   	GorgonAirAttkInit
+AirAttkInit   	GorgonGndAttkInit
 Unused1       	[NONE]
 GndAttkRpt    	GorgonGndAttkInit
-AirAttkRpt    	GorgonAirAttkInit
+AirAttkRpt    	GorgonGndAttkInit
 CastSpell     	[NONE]
 GndAttkToIdle 	GorgonGndAttkToIdle
 AirAttkToIdle 	GorgonGndAttkToIdle
 Unused2       	[NONE]
 Walking       	GorgonWalking
-WalkingToIdle 	GorgonWalkingToIdle
+WalkingToIdle 	WraithGndAttkToIdle
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
@@ -28679,21 +28676,10 @@ GorgonInit:
 	imgul             	1147 0 42 # Gorgon Shadow (cm\terran\gorgon.grp)
 GorgonGndAttkToIdle:
 	playfram          	0x00
-	goto              	GorgonWalkingToIdle
-
-GorgonWalkingToIdle:
-	setvertpos        	0
-	wait 				8
-	setvertpos        	0
-	wait 				8
-	setvertpos        	-1
-	wait 				8
-	setvertpos        	0
-	wait 				8
-	goto              	GorgonWalkingToIdle
+	goto              	WraithGndAttkToIdle
 
 GorgonDeath:
-	playsndbtwn			1249 1251
+	playsndbtwn			1249 1251 # Gorgon death 01, 02, 03
 	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			844 0 42 # Terran Unit Rubble Medium
@@ -28702,30 +28688,17 @@ GorgonDeath:
 
 GorgonGndAttkInit:
 	wait              	1
-	playsndbtwn			1252 1253
+	playsndbtwn			1252 1253 # Gorgon weaponfire 01, 02
 	attack
 	sigorder 			32
-	wait 1
+	wait 				1
 	gotorepeatattk
-	goto              	GorgonWalkingToIdle
-
-GorgonLocal00:
-	wait              	125
-	goto              	GorgonLocal00
-
-GorgonAirAttkInit:
-	wait              	1
-	playsndbtwn			1252 1253
-	attack
-	sigorder 			32
-	wait              	1
-	gotorepeatattk
-	goto              	GorgonWalkingToIdle
+	goto              	WraithGndAttkToIdle
 
 GorgonWalking:
 	setvertpos        	0
 	imgol             	1198 0 0 # Gorgon Engines (cm\terran\gorgon-engine.grp)
-	goto              	GorgonLocal00
+	goto              	WraithLocal00
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -28745,7 +28718,7 @@ GndAttkToIdle 	PhobosGndAttkToIdle
 AirAttkToIdle 	PhobosGndAttkToIdle
 Unused2       	[NONE]
 Walking       	PhobosWalking
-WalkingToIdle 	PhobosWalkingToIdle
+WalkingToIdle 	ScourgeLocal00
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
@@ -28762,11 +28735,7 @@ PhobosInit:
 	imgul             	1151 0 42 # Phobos Shadow (cm\terran\phobos.grp)
 PhobosGndAttkToIdle:
 	playfram          	0x00
-	goto              	PhobosWalkingToIdle
-
-PhobosWalkingToIdle:
-	wait				125
-	goto              	PhobosWalkingToIdle
+	goto              	ScourgeLocal00
 
 PhobosDeath:
 	playsnd           	177	# Terran\BATTLE\tbaDth00.wav
@@ -28790,20 +28759,16 @@ PhobosGndAttkInit:
 	wait				1
 	nobrkcodeend
 	gotorepeatattk
-	goto              	PhobosWalkingToIdle
-
-PhobosLocal00:
-	wait              	125
-	goto              	PhobosLocal00
+	goto              	ScourgeLocal00
 
 PhobosWalking:
 	setvertpos        	0
 	imgol             	1162 0 0 # Phobos Engines (cm\terran\phobos-engine.grp)
-	goto              	PhobosLocal00
+	goto              	ScourgeLocal00
 	
 PhobosCastSpell:
 	imgolorig         	543 # Yamato Gun Overlay (thingy\eycBlast.grp)
-	goto				PhobosLocal00
+	goto				ScourgeLocal00
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -28814,10 +28779,10 @@ Type          	12
 Init          	PenumbraInit
 Death         	PenumbraDeath
 GndAttkInit   	PenumbraGndAttkInit
-AirAttkInit   	PenumbraAirAttkInit
+AirAttkInit   	PenumbraGndAttkInit
 Unused1       	PenumbraUnused1
 GndAttkRpt    	PenumbraGndAttkInit
-AirAttkRpt    	PenumbraAirAttkInit
+AirAttkRpt    	PenumbraGndAttkInit
 CastSpell     	[NONE]
 GndAttkToIdle 	PenumbraGndAttkToIdle
 AirAttkToIdle 	PenumbraGndAttkToIdle
@@ -28832,11 +28797,7 @@ PenumbraInit:
 	imgul             	1153 0 0 # Penumbra shadow (cm\terran\penumbra-shad.grp)
 PenumbraWalkingToIdle:
 	playfram          	0x110
-	goto              	PenumbraLocal00
-
-PenumbraLocal00:
-	wait              	125 
-	goto              	PenumbraLocal00
+	goto              	ScourgeLocal00
 
 PenumbraDeath:
 	playsndbtwn			1742 1743 # Penumbra death 01, 02
@@ -28888,29 +28849,6 @@ PenumbraGndAttkInit:
 	gotorepeatattk
 	ignorerest
 PenumbraGndAttkToIdle:
-	wait				2
-	goto              	PenumbraWalkingToIdle
-
-PenumbraAirAttkInit:
-	playfram          	0x110
-	wait				2
-	nobrkcodestart
-	playsndbtwn			1199 1202
-	attack
-	playfram			0x165
-	wait				2
-	playfram			0x154
-	wait				2
-	playfram			0x143
-	wait				2
-	playfram			0x132
-	wait				2
-	playfram			0x121
-	nobrkcodeend
-	wait				2
-	playfram			0x110
-	gotorepeatattk
-	ignorerest
 	wait				2
 	goto              	PenumbraWalkingToIdle
 
@@ -29740,7 +29678,7 @@ AtreusWalkingToIdle:
 	goto              	AtreusLocal00
 
 AtreusWarpIn:
-	imgol             	125 0 0	# High Templar Warp Flash (protoss\templar.grp)
+	imgol             	125 0 0	# Cantavis Warp Flash (protoss\templar.grp)
 	goto              	AtreusLocal00
 
 # ----------------------------------------------------------------------------- #
@@ -29887,7 +29825,7 @@ AmaranthWalkingToIdle:
 	goto              	AmaranthLocal69
 
 AmaranthWarpIn:
-	imgol             	128 0 0 # High Templar Warp Flash (protoss\templar.grp)
+	imgol             	128 0 0 # Cantavis Warp Flash (protoss\templar.grp)
 	goto              	InfestedTerranLocal00
 	
 # ----------------------------------------------------------------------------- #
@@ -30297,7 +30235,7 @@ EcclesiastWalkingToIdle:
 	goto				EcclesiastLocal69
 
 EcclesiastWarpIn:
-	imgol             	128 0 0	# High Templar Warp Flash (protoss\templar.grp)
+	imgol             	128 0 0	# Cantavis Warp Flash (protoss\templar.grp)
 	goto              	InfestedTerranLocal00
 	
 # ----------------------------------------------------------------------------- #
@@ -31754,7 +31692,7 @@ AirAttkInit   	ManifoldGndAttkInit
 Unused1       	[NONE]
 GndAttkRpt    	ManifoldGndAttkInit
 AirAttkRpt    	ManifoldGndAttkInit
-CastSpell     	ManifoldCastSpell
+CastSpell     	[NONE]
 GndAttkToIdle 	ManifoldGndAttkToIdle
 AirAttkToIdle 	ManifoldGndAttkToIdle
 Unused2       	[NONE]
@@ -31773,28 +31711,15 @@ WarpIn        	ManifoldWarpIn
 # ----------------------------------------------------------------------------- #
 
 ManifoldInit:
-	imgul             	1218 0 0 # Manifold Shadow (cm\protoss\manifold-shad.grp)
+	imgul             	1218 0 -1 # Manifold Shadow (cm\protoss\manifold-shad.grp)
 	playfram          	0x00
-	wait				2
-ManifoldLocal00:
-	playfram			0x11
-	wait				2
-	playfram			0x22
-	waitrand			2 3
-	playfram			0x33
-	wait				2
-	playfram			0x22
-	waitrand			2 3
-	playfram			0x11
-	wait				2
-	playfram			0x00
-	waitrand			2 3
-	goto				ManifoldLocal00
+	wait				1
+	goto				DidactGndAttkToIdle
 	
 ManifoldGndAttkToIdle:
 	playfram          	0x00
-	wait				2
-	goto              	ManifoldLocal00
+	wait				1
+	goto              	DidactGndAttkToIdle
 
 ManifoldDeath:
 	playsnd           	533	# Protoss\Scout\PScDth00.WAV
@@ -31807,69 +31732,28 @@ ManifoldDeath:
 ManifoldGndAttkInit:
 	playfram			0x00
 	wait				1
-	playfram			0x11
-ManifoldGndAttkRpt:
-	wait				1
 	nobrkcodestart
-	playfram			0x22
-	wait				1
-	playfram			0xcc
+	playfram			0x20
 	playsndbtwn			1310 1312 # Manifold weaponfire 01, 02, 03
 	attackwith        	1
 	wait				1
-	playfram			0x33
-	wait				1
-	playfram			0x22
-	wait				1
-	playfram			0x11
+	playfram			0x00
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
 	goto				ManifoldGndAttkToIdle
-	
-
-ManifoldCastSpell:
-	playsnd           	101	# Bullet\LaserB.wav
-	attackwith        	1 
-	wait 1
-	nobrkcodeend
-	gotorepeatattk
-	goto              	ManifoldGndAttkToIdle
 
 ManifoldWalking:
-	move				5
-	wait				1
-	playfram			0x44
-	move				5
-	wait				1
-	playfram			0x55
-	move				5
-	wait				1
-	playfram			0x66
-	move				5
-	wait				1
-	playfram			0x77
-	move				5
-	wait				1
-	playfram			0x88
-	move				5
-	wait				1
-	playfram			0x99
-	move				5
-	wait				1
-	playfram			0xaa
-	move				5
-	wait				1
-	playfram			0xbb
-	goto				ManifoldWalking
+	playfram			0x00
+	goto				ManifoldGndAttkToIdle
 
 ManifoldWalkingToIdle:
 	playfram          	0x00
-	goto              	ManifoldLocal00
+	goto              	ManifoldGndAttkToIdle
 
 ManifoldWarpIn:
-	imgol             	125 0 0	# High Templar Warp Flash (protoss\templar.grp)
-	goto              	ManifoldLocal00
+	imgol             	125 0 0	# Cantavis Warp Flash (protoss\templar.grp)
+	goto              	ManifoldGndAttkToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -32319,13 +32203,13 @@ TerranHeavyMissileGndAttkInit:
 TerranHeavyMissileDeath:
 	domissiledmg
 	if bullet.weapon_id == 159 goto TerranHeavyMissile_Aion # default case is Madrigal Imperioso Missiles
-	imgol             	530 0 0 # Gemini Missiles Explosion (thingy\ecaHit.grp)
+	imgol             	1749 0 0 # Heavy Missile Explosion Orange (cm\terran\heavy-missile-explosion-orange.grp)
 	playsndbtwn         2203 2205 # Madrigal Imperioso weaponhit 01, 02, 03
 	wait              	1
 	end
 
 TerranHeavyMissile_Aion:
-	imgol             	530 0 0 # Gemini Missiles Explosion (thingy\ecaHit.grp)
+	imgol             	1750 0 0 # Heavy Missile Explosion Green (cm\terran\heavy-missile-explosion-orange.grp)
 	playsndbtwn         2203 2205 # Madrigal Imperioso weaponhit 01, 02, 03
 	wait              	1
 	end
@@ -36149,31 +36033,31 @@ AirAttkInit   	[NONE]
 # ----------------------------------------------------------------------------- #
 
 AstralBlasterHitInit:
-	wait              	1 
-	sigorder          	1 
-	wait              	1 
+	wait              	1
+	sigorder          	1
+	wait              	1
 AstralBlasterHitDeath:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	domissiledmg
-	wait              	1 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	1 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	1 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	1 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	1 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	1 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	1 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	1 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	1 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	1 
+	wait              	1
+	playfram          	1
+	wait              	1
+	playfram          	2
+	wait              	1
+	playfram          	3
+	wait              	1
+	playfram          	4
+	wait              	1
+	playfram          	5
+	wait              	1
+	playfram          	6
+	wait              	1
+	playfram          	7
+	wait              	1
+	playfram          	8
+	wait              	1
+	playfram          	9
+	wait              	1
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -36188,7 +36072,21 @@ Death         	[NONE]
 # ----------------------------------------------------------------------------- #
 
 FullTilesetDoodadInit:
-	playframtile        0x00	# Frame set 0
+	playframtile        0x00
+	goto              	InfestedTerranLocal00
+
+# ----------------------------------------------------------------------------- #
+.headerstart
+IsId          	750
+Type          	0
+Init          	FullTilesetDoodadWithShadowInit
+Death         	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+FullTilesetDoodadWithShadowInit:
+	playframtile        0x00
+	imgulnextid			0 0
 	goto              	InfestedTerranLocal00
 
 # ----------------------------------------------------------------------------- #
@@ -36203,12 +36101,12 @@ Death         	FullTilesetDoodadFlipDeath
 # ----------------------------------------------------------------------------- #
 
 FullTilesetDoodadFlipInit:
-	playframtile        0x00	# Frame set 0
-	setflipstate      	1 
+	playframtile        0x00
+	setflipstate      	1
 	goto              	InfestedTerranLocal00
 
 FullTilesetDoodadFlipDeath:
-	wait              	1 
+	wait              	1
 	end
 	
 # ----------------------------------------------------------------------------- #
@@ -38711,7 +38609,7 @@ CharlatanWalkingToIdle:
 	goto				CharlatanLocal69
 
 CharlatanWarpIn:
-	imgol             	128 0 0	# High Templar Warp Flash (protoss\templar.grp)
+	imgol             	128 0 0	# Cantavis Warp Flash (protoss\templar.grp)
 	goto              	InfestedTerranLocal00
 	
 # ----------------------------------------------------------------------------- #
@@ -46168,7 +46066,7 @@ VagrantWalkingToIdle:
 	goto				VagrantLocal69
 
 VagrantWarpIn:
-	imgol             	128 0 0	# High Templar Warp Flash (protoss\templar.grp)
+	imgol             	128 0 0	# Cantavis Warp Flash (protoss\templar.grp)
 	goto              	InfestedTerranLocal00
 	
 # ----------------------------------------------------------------------------- #
@@ -46367,7 +46265,7 @@ HeraldWalkingToIdle:
 	goto				HeraldLocal00
 
 HeraldWarpIn:
-	imgol             	128 0 0	# High Templar Warp Flash (protoss\templar.grp)
+	imgol             	128 0 0	# Cantavis Warp Flash (protoss\templar.grp)
 	goto              	InfestedTerranLocal00
 	
 # ----------------------------------------------------------------------------- #
@@ -47966,16 +47864,26 @@ SouthpawDeath:
 	end
 
 SouthpawGndAttkInit:
+	playfram			0x00
 	wait              	1
 	nobrkcodestart
+	playfram			0x20
 	playsndbtwn			2442 2443 # Southpaw weaponfire 01, 02
 	attackwith			1
-	wait				2
+	wait				1
+	playfram			0x00
+	wait				1
+	playfram			0x40
 	playsndbtwn			2442 2443 # Southpaw weaponfire
 	attackwith			1
-	wait				2
+	wait				1
+	playfram			0x00
+	wait				1
+	playfram			0x60
 	playsndbtwn			2442 2443 # Southpaw weaponfire
 	attackwith			1
+	wait				1
+	playfram			0x00
 	wait				1
 	nobrkcodeend
 	gotorepeatattk
@@ -48014,7 +47922,7 @@ SpecialState1 	[NONE]
 # ----------------------------------------------------------------------------- #
 
 CyprianInit:
-	imgul             	1587 0 0 # Cyprian Shadow (cm\terran\cyprian.grp)
+	imgul             	1587 0 -2 # Cyprian Shadow (cm\terran\cyprian.grp)
 CyprianWalkingToIdle:
 	playfram			0x00
 	goto				CyprianLocal00
@@ -50416,7 +50324,7 @@ OptectonWalkingToIdle:
 	goto              	OptectonLocal00
 
 OptectonWarpIn:
-	imgol             	125 0 0	# High Templar Warp Flash (protoss\templar.grp)
+	imgol             	125 0 0	# Cantavis Warp Flash (protoss\templar.grp)
 	goto              	OptectonLocal00
 
 # ----------------------------------------------------------------------------- #
@@ -50588,7 +50496,7 @@ PatriarchWalkingToIdle:
 	goto				PatriarchLocal00
 
 PatriarchWarpIn:
-	imgol             	128 0 0	# High Templar Warp Flash (protoss\templar.grp)
+	imgol             	128 0 0	# Cantavis Warp Flash (protoss\templar.grp)
 	goto              	InfestedTerranLocal00
 	
 # ----------------------------------------------------------------------------- #
@@ -51627,4 +51535,157 @@ Type          	1
 Init          	SpiderMineExplosionDeath
 Death         	ScourgeExplosionDeath
 .headerend
+
 # ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1745 Philoc (cm\faction\philoc.grp)
+.headerstart
+IsId          	751
+Type          	12
+Init          	PhilocInit
+Death         	PhilocDeath
+GndAttkInit   	PhilocGndAttkInit
+AirAttkInit   	PhilocGndAttkInit
+Unused1       	[NONE]
+GndAttkRpt    	PhilocGndAttkInit
+AirAttkRpt    	PhilocGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	WraithGndAttkToIdle
+AirAttkToIdle 	WraithGndAttkToIdle
+Unused2       	[NONE]
+Walking       	PhilocWalking
+WalkingToIdle 	WraithGndAttkToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+PhilocInit:
+	imgulnextid         0 42 # Philoc Shadow (terran\philoc.grp)
+	playfram          	0x00
+	goto              	WraithGndAttkToIdle
+
+PhilocDeath:
+	playsnd           	257 # Terran\PHOENIX\TPhDth00.WAV
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			844 0 42 # Terran Unit Rubble Medium
+	end
+
+PhilocGndAttkInit:
+	nobrkcodestart
+	wait              	1
+	playfram			0x20
+	attackwith        	1
+	playsnd           	74 # Bullet\TPhFi100.wav
+	wait				1
+	playfram			0x00
+	gotorepeatattk
+	nobrkcodeend
+	goto              	WraithLocal00
+
+PhilocWalking:
+	setvertpos        	0
+	imgol             	1747 0 0 # Philoc Engines (terran\wraith-engine.grp)
+	goto              	WraithLocal00
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1714 Engram (cm\protoss\engram.grp)
+.headerstart
+IsId          	752
+Type          	27
+Init          	EngramInit
+Death         	NexusDeath
+GndAttkInit   	EngramGndAttkInit
+AirAttkInit   	EngramGndAttkInit
+Unused1       	[NONE]
+GndAttkRpt    	EngramGndAttkInit
+AirAttkRpt    	EngramGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	EngramGndAttkToIdle
+AirAttkToIdle 	EngramGndAttkToIdle
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	ScourgeLocal00
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	ScourgeLocal00
+WorkingToIdle 	ScourgeLocal00
+WarpIn        	EngramWarpIn
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+EngramInit:
+	imgul				1715 0 0 # Engram Shadow (cm\protoss\engram-shad.grp)
+	playfram          	0x00
+	goto				ScourgeLocal00
+
+EngramGndAttkInit:
+	wait              	1
+	attack
+	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
+	imgol				1163 0 -20 # Warden impact
+	gotorepeatattk
+	ignorerest
+EngramGndAttkToIdle:
+	goto              	ScourgeLocal00
+
+EngramWarpIn:
+	imgol             	185 0 0 # Engram Warp Flash (cm\protoss\engram.grp)
+	goto				ScourgeLocal00
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1749 Heavy Missile Explosion (Orange) (cm\terran\heavy-missile-explosion-orange.grp)
+# 1750 Heavy Missile Explosion (Green) (cm\terran\heavy-missile-explosion-green.grp)
+.headerstart
+IsId          	753
+Type          	1
+Init          	TerranHeavyMissileExplosionInit
+Death         	TerranHeavyMissileExplosionDeath
+.headerend
+# ----------------------------------------------------------------------------- #
+
+TerranHeavyMissileExplosionInit:
+	playfram          	0x00
+	wait              	1
+	playfram          	1
+	wait              	1
+	playfram          	2
+	wait              	1
+	playfram          	3
+	wait              	1
+	playfram          	4
+	wait              	1
+	playfram          	5
+	wait              	1
+	playfram          	6
+	wait              	1
+	playfram          	7
+	wait              	1
+	playfram          	8
+	wait              	1
+	playfram          	9
+	wait              	1
+	playfram          	10
+	wait              	1
+	playfram          	11
+	wait              	1
+	playfram          	12
+	wait              	1
+	playfram          	13
+	wait              	1
+	playfram          	14
+TerranHeavyMissileExplosionDeath:
+	wait              	1
+	end
+	
+# Next free isid: 754

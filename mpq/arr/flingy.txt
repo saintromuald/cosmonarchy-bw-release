@@ -89,7 +89,7 @@ Seraph (Turret)
 Vulture
 Spider Mine
 Fountainhead
-Barracks
+Stockade
 Atelier
 Comsat Station
 Ministry
@@ -106,8 +106,8 @@ Anchor
 Reservoir
 Immobile Barracks
 Daedala
-Missile Silo
-Nuclear Missile
+Anvil
+Morningstar
 Starport
 Atlas
 Terran Construction (Large)
@@ -127,7 +127,7 @@ Dark Swarm
 Flag
 Young Chrysalis
 Psi Emitter
-Data Disc
+Large Protoss Laser
 Khaydarin Crystal
 Mineral Chunk Type1
 Mineral Chunk Type2
@@ -342,7 +342,7 @@ Iron Foundry
 Mineral Field 1 Christmas
 Mineral Field 2 Christmas
 Mineral Field 3 Christmas
-Medbay
+Vestry
 Heracles
 Pazuzu
 Astral Blaster Impact
@@ -488,7 +488,7 @@ Vilgoleth
 Madrigal Turret (Imperioso)
 Madrigal (Furia Mode)
 Madrigal Turret (Furia)
-Extended Flingy #282
+Philoc
 Extended Flingy #283
 Extended Flingy #284
 Extended Flingy #285

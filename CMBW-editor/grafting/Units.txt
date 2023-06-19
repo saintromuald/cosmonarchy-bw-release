@@ -1132,7 +1132,7 @@
   182               # [182] Artisan
   0xFFFF            # ==End of List==
 
-162:                # [162] Photon Cannon
+162:                # [162] Warden
   0xFF02            # Current unit is...
   64                # [64] Scribe
   0xFF01            # Or
@@ -1920,11 +1920,12 @@
   0xFF05            # Is not lifted off
   0xFFFF            # ==End of List==
 
-294:                # [294] Horseman
+294:                # [294] Engram
   0xFF02            # Current unit is...
-  295               # [295] Iron Council
-  0xFF08            # Is not constructing add-on
-  0xFF05            # Is not lifted off
+  64                # [64] Scribe
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  182               # [182] Artisan
   0xFFFF            # ==End of List==
 
 295:                # [295] Iron Council
@@ -2101,14 +2102,10 @@
   303               # Has Unit: [303] Rakzogth Roost
   0xFFFF            # ==End of List==
 
-328:                # [328] Axtoth Axis
+328:                # [328] Philoc
   0xFF02            # Current unit is...
-  41                # [41] Droleth
-  0xFF01            # Or
-  0xFF02            # Current unit is...
-  47                # [47] Gosvileth
-  0xFF11            # Is not burrowed
-  152               # Has Unit: [152] Othstol Oviform
+  254               # [254] Starpad
+  0xFF05            # Is not lifted off
   0xFFFF            # ==End of List==
 
 329:                # [329] Begrozith Barrow

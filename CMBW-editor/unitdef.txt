@@ -36,7 +36,7 @@ military seraph = 9
 @spellcaster(seraph)
 military trojan = 11
 military minotaur = 12
-military nuclear_missile = 14
+military morningstar = 14
 military harakan = 32
 military cleric = 34
 @spellcaster(cleric)
@@ -98,32 +98,32 @@ military jester = 301
 # Terran buildings
 building mason = 7
 #
-building command_center = 106
+building ministry = 106
 building comsat_station = 107
-building missile_silo = 108
+building anvil = 108
 building supply_depot = 109
 building reservoir = 110
-building barracks = 111
+building stockade = 111
 building fulcrum = 113
 building starport = 114
 building commandment = 115
 building daedala = 116
-building covert_ops = 117
-building machine_shop = 120
+building covenant = 117
+building palladium = 120
 building atlas = 122
 building watchdog = 124
-building bunker = 125
+building anchor = 125
 
 # Terran NGS buildings
-building medbay = 119
-building munitions_bay = 121
-building ion_cannon = 127
+building vestry = 119
+building rotary = 121
+building diadem = 127
 building guildhall = 147
 building fountainhead = 163
 building quarry = 174
 building tinkerers_tower = 175
-building particle_accelerator = 189
-building biotic_base = 190
+building hadron = 189
+building biotic_bastion = 190
 building iron_foundry = 198
 building captaincy = 199
 building scrapyard = 200
@@ -238,6 +238,7 @@ building grand_library = 226
 building matrix = 252
 building strident_stratum = 278
 building auxiliary_oasis = 279
+building engram = 294
 building sequestered_icon = 304
 building unitary_union = 305
 building hall_of_heretics = 349

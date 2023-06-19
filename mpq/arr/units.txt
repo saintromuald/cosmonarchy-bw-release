@@ -12,7 +12,7 @@ Terran Apostle
 Terran Trojan
 Terran Minotaur
 Spider Mine
-Nuclear Missile
+Terran Morningstar
 Terran Shaman (Support Mode)
 Protoss Manifold
 Protoss Architect
@@ -106,10 +106,10 @@ Protoss Barghest
 Disruption Field
 Terran Ministry
 Terran Comsat Station
-Terran Missile Silo
+Terran Anvil
 Terran Supply Depot
 Terran Reservoir
-Terran Barracks
+Terran Stockade
 Zerg Liiralisk
 Terran Fulcrum
 Terran Starport
@@ -117,8 +117,8 @@ Terran Commandment
 Terran Daedala
 Terran Covert Ops
 Terran Magnetar
-Terran Medbay
-Terran Machine Shop
+Terran Vestry
+Terran Palladium
 Terran Rotary
 Terran Atlas
 Zerg Sovroleth
@@ -326,7 +326,7 @@ Zerg Begrothilisk
 Zerg Oztukrokor
 Zerg Kethrostalor
 Zerg Rakzilisk
-Unused Unit ID
+Terran Philoc
 Zerg Begrozith Barrow
 Zerg Chokralgant Chazsal
 Protoss Bulwark

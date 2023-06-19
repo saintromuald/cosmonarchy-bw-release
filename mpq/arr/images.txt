@@ -264,8 +264,8 @@ Seraph Shadow
 Fountainhead
 Fountainhead Overlay
 Fountainhead Shadow
-Barracks
-Barracks Shadow
+Stockade
+Stockade Shadow
 Atelier
 Atelier Overlay
 Atelier Shadow
@@ -310,12 +310,12 @@ Reservoir Shadow
 Daedala
 Daedala Overlay
 Daedala Shadow
-Missile Silo
-Missile Silo Connector
-Missile Silo Overlay
-Missile Silo Shadow
-Nuclear Missile
-Nuclear Missile Shadow
+Anvil
+Anvil Connector
+Anvil Overlay
+Anvil Shadow
+Morningstar
+Morningstar Shadow
 Nuke Hit
 Starport
 Starport Overlay
@@ -426,7 +426,7 @@ Shield Overlay
 Energy Pulse Underlay
 Double Explosion
 Phase Disruptor Hit
-Nuclear Missile Death
+Morningstar Explosion
 Spider Mine Death
 Vespene Geyser Smoke1
 Vespene Geyser Smoke2
@@ -1322,9 +1322,9 @@ Mineral Field 3 Christmas
 Mineral Field 3 Christmas Shadow
 Mineral Chunk Christmas
 Mineral Chunk Depleted Christmas
-Medbay
-Medbay Shadow
-Medbay Connector
+Vestry
+Vestry Shadow
+Vestry Connector
 Protoss Warp Fade
 Heracles
 Heracles Shadow
@@ -1743,12 +1743,12 @@ Vilgoleth
 Madrigal Turret (Imperioso)
 Madrigal Base (Furia)
 Madrigal Turret (Furia)
-Extended Image #743
-Extended Image #744
-Extended Image #745
-Extended Image #746
-Extended Image #747
-Extended Image #748
+Philoc
+Philoc Shadow
+Philoc Engines
+Engram Warp Flash
+Radial Explosion (Orange)
+Radial Explosion (Green)
 Extended Image #749
 Extended Image #750
 Extended Image #751
