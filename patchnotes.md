@@ -9,6 +9,7 @@ Much of this update is targeted at bringing AI back up to snuff, to complement t
 ## Bugfixes
 - Many more nullsprite crashes, along with other assorted instabilities, have been protected against
 - Spamming orders on Paladins during their attack sequence is no longer unstable, nor does it spam the target lock sound effect
+- Nuking Seraphs no longer play Eidolon action responses
 - A worker wandering edge case (fairly common in the early game) has been fixed (c. Veeq7)
 - Dual birth units created by Ocsal Larvae no longer regress into base strains
 - Units with Offset: Linear can no longer fail to update their line target
