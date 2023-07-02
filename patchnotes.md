@@ -1,57 +1,62 @@
-# 18 June 2023
+# 2 July 2023
 
 ## Designer's Notes
 
-Much of this update is targeted at bringing AI back up to snuff, to complement the latest campaign mission developments. Bugfixes and stability improvements are also featured, with the hope of achieving sufficient stability for a 1v1 tournament later this month!
+Welcome to yet another update that changes the economy!!!
 
-**The next official release will contain significant changes to resource gathering.** You have been warned!
+This update actually brings harvesting a bit further in line with how stock Brood War works. You still have improved wandering behavior that keeps your workers more passively efficient than the silliness present in the vanilla game, but we once again leverage depleting resource nodes to further incentivize expansions and reduce the degree to which games can become static on low base counts.
 
-## Bugfixes
-- Many more nullsprite crashes, along with other assorted instabilities, have been protected against
-- Spamming orders on Paladins during their attack sequence is no longer unstable, nor does it spam the target lock sound effect
-- Nuking Seraphs no longer play Eidolon action responses
-- A worker wandering edge case (fairly common in the early game) has been fixed (c. Veeq7)
-- Dual birth units created by Ocsal Larvae no longer regress into base strains
-- Units with Offset: Linear can no longer fail to update their line target
-- Units created by the custom "spawn" trigger command no longer move anywhere if %move_pos is not defined
-- Konvilisks and Akistrokors now correctly play order acknowledgement unit responses
-- Lardfix: Text in transmissions now remains onscreen for the total transmission length instead of sound file length (fixes text display coupled with short sounds; c. DarkenedFantasies)
+It is important to note that only mineral nodes will ever become depleted, at which point they will provide half the yield they previously had. This update does away with variable yields, instead allowing mapmakers to control how long players have before a mineral node becomes depleted. A general rule of thumb for mapmakers to keep in mind is that a saturated mineral field will lose 100 minerals per minute, so adjust your bases accordingly!
 
-## AI
-- Worker allocation has been better optimized for the new resource model (c. Veeq7)
-- AI should now harvest from more than 3 vespene nodes (c. Veeq7)
-- Terran and Zerg AI should no longer occasionally get refinery requests before unlocking tier 2
-- Terran and Zerg AI now request advanced refineries when tier 3 is unlocked
-- AI combatants will now focus deployed units (e.g. Matador, Phalanx) more often
+## Resources
+- *Many of these changes c. Veeq7*
+- Harvesting:
+	- Harvest time now 2 seconds
+	- Worker saturation now ~2.5 per node
+- Minerals:
+	- Base mineral yield now 4, from 8
+	- Minerals now deplete to a yield of 2 (and no collision) after being mined out
+- Vespene:
+	- Ridge yield now 2
+	- Uncapped geyser yield now 4
+	- Tier 2 capped yield now 5
+	- Tier 3 capped yield now 6
+
+## Bugfixes:
+- Stability:
+	- Protect against future shield overlay crashes, with debug info! (c. DarkenedFantasies)
+	- Fixed Engram shield overlay crash
+	- Fixed a selection-related nullsprite crash
+	- Fixed a very silly Phalanx desync
+- Gameplay:
+	- Fix Star Sovereign Grief of All Gods command having no effect
+	- Update Cantavis Psionic Storm damage collision to better match visuals (c. Veeq7)
+- Visuals:
+	- Fixed Engram warp flash animation using Warden silhouette
+	- Fixed Paladin turning to face targets during its firing sequence (c. DarkenedFantasies)
+- Audio:
+	- Fixed Stargate and Argosy selection response SFX playing over itself
+- User Interface:
+	- Fixed score screen colors picking the wrong player id's colors (c. DarkenedFantasies)
 
 ## Audiovisuals
-- New model for:
-	- Southpaw
-	- Manifold
-	- Gladius (c. Solstice)
-- Adjusted visuals for:
-	- Cyprian (shadow moved up visually)
-- New effect for:
-	- Madrigal (Imperioso weaponhit)
-	- Aion (weaponhit)
-- New names for:
-	- Stockade (formerly Barracks)
-	- Vestry (formerly Medbay)
-	- Covenant (formerly Covert Ops)
-- Improved collision for:
-	- Scrapyard
-	- Palladium
+- New sprites for:
+	- Phalanx (c. DarkenedFantasies)
 
-## Factions
-- [Futurist Federation](https://www.fraudsclub.com/cosmonarchy-bw/terran.php?faction=futurist-federation) now enables:
-	- [Philoc](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/philoc) from Starpad (replaces Wraith)
-- [Golden Republic](https://www.fraudsclub.com/cosmonarchy-bw/terran.php?faction=golden-republic) now enables:
-	- [Aspirant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/aspirant) from Fulcrum (replaces Goliath)
-	- [Luminary](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/luminary) from Starport (replaces Seraph)
-- [Nydus Trinity](https://www.fraudsclub.com/cosmonarchy-bw/terran.php?faction=nydus-trinity) now enables:
-	- [Cohort](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cohort) from Barracks (replaces Cyprian)
-	- [Tarasque](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/tarasque) from Fulcrum with attached Palladium (replaces Phalanx)
+## Terran
+- [Mason](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/mason):
+	- HP now 70, from 75
+- [Paladin](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/paladin):
+	- Weapon splash radius now 12/24/48, from 32/64/96
 
 ## Protoss
-- **NEW:** [Engram](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/engram):
-	- Heavy tower; Warped from Scribe and Artisan
+- [Scribe](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/scribe):
+	- HP now 40, from 45
+- [Cabalist](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/cabalist):
+	- Silent Strikes removed
+	- **New passive: Silent Strides:**
+		- While cloaked, Cabalists teleport into melee range of attack targets within 3 range, and decloak on arrival
+
+## Zerg
+- [Droleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/droleth):
+	- HP now 55, from 60

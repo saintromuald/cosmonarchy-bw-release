@@ -6888,18 +6888,18 @@ SeraphTurretInit:
 .headerstart
 IsId          	90
 Type          	23
-Init          	PhalanxTankBaseInit
-Death         	PhalanxTankBaseDeath
+Init          	Phalanx_Tank_BaseInit
+Death         	Phalanx_Tank_BaseDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
-Unused1       	PhalanxTankBaseUnused1
+Unused1       	[NONE]
 GndAttkRpt    	[NONE]
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
 GndAttkToIdle 	[NONE]
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
-Walking       	PhalanxTankBaseWalking
+Walking       	Phalanx_Tank_BaseWalking
 WalkingToIdle 	InfestedTerranWalkingToIdle
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
@@ -6911,34 +6911,22 @@ IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
 WarpIn        	[NONE]
 Unused3       	[NONE]
-StarEditInit  	[NONE]
+StarEditInit  	Phalanx_Tank_BaseStarEditInit
 .headerend
 # ----------------------------------------------------------------------------- #
 
-PhalanxTankBaseInit:
+Phalanx_Tank_BaseInit:
 	wait              	1
 	imgul             	252 0 0	# Phalanx (Tank) Base Shadow (terran\ttaShad.grp)
 	goto              	InfestedTerranWalkingToIdle
 
-PhalanxTankBaseDeath:
-	playsnd           	317 # Terran\TANK\TTaDth00.WAV
-	imgol             	333 0 0 # Explosion2 (Medium) (thingy\tBangL.grp)
+Phalanx_Tank_BaseDeath:
+	playsnd           	317	# Terran\TANK\TTaDth00.WAV
+	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
 	wait              	3
-	lowsprul			844 0 0 # Terran Unit Rubble Medium
-	wait              	1
 	end
-	
-PhalanxTankBaseUnused1:
-	wait				1
-	nobrkcodestart
-	playsnd           	1699
-	sprol				744 0 0 # Explosion Orange Medium Reversed
-	wait				12
-	setfldirect			13
-	nobrkcodeend
-	goto				InfestedTerranWalkingToIdle
 
-PhalanxTankBaseWalking:
+Phalanx_Tank_BaseWalking:
 	move              	4
 	wait              	1
 	playfram          	0x00
@@ -6948,7 +6936,15 @@ PhalanxTankBaseWalking:
 	move              	4
 	wait              	1
 	playfram          	0x22
-	goto              	PhalanxTankBaseWalking
+	goto              	Phalanx_Tank_BaseWalking
+
+Phalanx_Tank_BaseStarEditInit:
+	setfldirect       	12
+	imgoluselo        	251 2 0	# Phalanx (Tank) Turret (terran\tankt.grp)
+	wait              	1
+	imgul             	252 0 0	# Phalanx (Tank) Base Shadow (terran\ttaShad.grp)
+	setfldirect       	12
+	goto              	InfestedTerranWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -6956,12 +6952,12 @@ PhalanxTankBaseWalking:
 .headerstart
 IsId          	91
 Type          	13
-Init          	ScourgeLocal00
+Init          	InfestedTerranWalkingToIdle
 Death         	ScourgeExplosionDeath
-GndAttkInit   	PhalanxTankTurretGndAttkInit
+GndAttkInit   	Phalanx_Tank_TurretGndAttkInit
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
-GndAttkRpt    	PhalanxTankTurretGndAttkInit
+GndAttkRpt    	Phalanx_Tank_TurretGndAttkInit
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
 GndAttkToIdle 	ScourgeLocal00
@@ -6973,13 +6969,17 @@ SpecialState1 	ScourgeLocal00
 .headerend
 # ----------------------------------------------------------------------------- #
 
-PhalanxTankTurretGndAttkInit:
+Phalanx_Tank_TurretGndAttkInit:
 	wait              	1
 	nobrkcodestart
+	playfram          	0x11
 	playsnd           	68 # Bullet\TTaFir00.wav
-	imgol             	536 0 0 # Phalanx (Tank) Turret Attack Overlay (thingy\ettFlash.grp)
+	imgol             	536 0 0	# Phalanx (Tank) Turret Attack Overlay (thingy\ettFlash.grp)
 	wait              	2
 	attackwith        	1
+	playfram          	0x22
+	wait              	2
+	playfram          	0x00
 	nobrkcodeend
 	gotorepeatattk
 	goto              	ScourgeLocal00
@@ -6990,11 +6990,11 @@ PhalanxTankTurretGndAttkInit:
 .headerstart
 IsId          	92
 Type          	23
-Init          	PhalanxSiegeBaseInit
-Death         	PhalanxTankBaseDeath
+Init          	Phalanx_Siege_BaseInit
+Death         	Phalanx_Tank_BaseDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
-Unused1       	PhalanxSiegeBaseUnused1
+Unused1       	[NONE]
 GndAttkRpt    	[NONE]
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
@@ -7004,7 +7004,7 @@ Unused2       	[NONE]
 Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
-SpecialState2 	PhalanxSiegeBaseSpecialState2
+SpecialState2 	Phalanx_Siege_BaseSpecialState2
 AlmostBuilt   	[NONE]
 Built         	[NONE]
 Landing       	[NONE]
@@ -7013,51 +7013,74 @@ IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
 WarpIn        	[NONE]
 Unused3       	[NONE]
-StarEditInit  	[NONE]
+StarEditInit  	Phalanx_Siege_BaseStarEditInit
 .headerend
 # ----------------------------------------------------------------------------- #
 
-PhalanxSiegeBaseInit:
-	imgul             	255 0 0 # Phalanx (Siege) Base Shadow (terran\tstShad.grp)
+Phalanx_Siege_BaseInit:
+	playfram          	0x00
+	imgul             	255 0 0	# Phalanx (Siege) Base Shadow (terran\tstShad.grp)
 	wait              	1
 	setflspeed        	0
-	playsnd           	319 # Terran\TANK\TTaTra01.WAV
-	playfram          	0x00
-	wait              	5
+	playsnd           	319
+	wait              	1
 	playfram          	0x11
-	wait              	5
+	wait              	2
 	playfram          	0x22
-	wait              	5
+	wait              	2
 	playfram          	0x33
-	wait              	5
+	wait              	2
 	playfram          	0x44
-	wait              	38
+	wait              	2
+	playfram          	0x55
+	wait              	2
+	playfram          	0x66
+	wait              	2
+	playfram          	0x77
+	wait              	2
+	playfram          	0x88
+	wait              	2
+	playfram          	0x99
+	wait              	2
+	playfram          	0xAA
+	wait              	2
+	playfram          	0xBB
+	wait              	42
 	sigorder          	1
 	goto              	ScourgeLocal00
-	
-PhalanxSiegeBaseUnused1:
-	wait				1
-	nobrkcodestart
-	playsnd           	1699
-	sprol				744 0 0 # Medium orange explosion reversed
-	playfram          	5
-	wait				12
-	nobrkcodeend
-	goto				ScourgeLocal00
 
-PhalanxSiegeBaseSpecialState2:
+Phalanx_Siege_BaseSpecialState2:
 	wait              	38
-	playsnd           	319 # Terran\TANK\TTaTra01.WAV
+	playsnd           	319	# Terran\TANK\TTaTra01.WAV
+	wait              	3
+	playfram          	0xAA
+	wait              	2
+	playfram          	0x99
+	wait              	2
+	playfram          	0x88
+	wait              	2
+	playfram          	0x77
+	wait              	2
+	playfram          	0x66
+	wait              	2
+	playfram          	0x55
+	wait              	2
+	playfram          	0x44
+	wait              	2
 	playfram          	0x33
-	wait              	5
+	wait              	2
 	playfram          	0x22
-	wait              	5
+	wait              	2
 	playfram          	0x11
-	wait              	5
+	wait              	2
 	playfram          	0x00
-	wait              	5
+	wait              	2
 	sigorder          	1
 	goto              	ScourgeLocal00
+
+Phalanx_Siege_BaseStarEditInit:
+	imgoluselo        	254 2 0	# Phalanx (Siege) Turret (terran\stankt.grp)
+	goto              	Phalanx_Siege_BaseInit
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -7065,12 +7088,12 @@ PhalanxSiegeBaseSpecialState2:
 .headerstart
 IsId          	93
 Type          	14
-Init          	PhalanxSiegeTurretInit
+Init          	Phalanx_Siege_TurretInit
 Death         	ScourgeExplosionDeath
-GndAttkInit   	PhalanxSiegeTurretGndAttkInit
+GndAttkInit   	Phalanx_Siege_TurretGndAttkInit
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
-GndAttkRpt    	PhalanxSiegeTurretGndAttkInit
+GndAttkRpt    	Phalanx_Siege_TurretGndAttkInit
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
 GndAttkToIdle 	ScourgeLocal00
@@ -7079,55 +7102,84 @@ Unused2       	[NONE]
 Walking       	[NONE]
 WalkingToIdle 	ScourgeLocal00
 SpecialState1 	ScourgeLocal00
-SpecialState2 	PhalanxSiegeTurretSpecialState2
+SpecialState2 	Phalanx_Siege_TurretSpecialState2
 AlmostBuilt   	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-PhalanxSiegeTurretInit:
-	playfram          	0x11
+Phalanx_Siege_TurretInit:
+	playfram          	0x44
 	wait              	1
 	nobrkcodestart
-	wait              	38
-	playsnd           	318 # Terran\TANK\TTaTra00.WAV
-	wait              	3
-	playfram          	0x22
-	wait              	3
-	playfram          	0x33
-	wait              	3
-	playfram          	0x44
-	wait              	3
+	wait              	17
 	playfram          	0x55
-	wait              	3
+	wait              	2
+	playfram          	0x66
+	wait              	2
+	playfram          	0x77
+	wait              	17
+	playsnd           	318	# Terran\TANK\TTaTra00.WAV
+	wait              	1
+	playfram          	0x88
+	wait              	2
+	playfram          	0x99
+	wait              	2
+	playfram          	0xAA
+	wait              	2
+	playfram          	0xBB
+	wait              	2
+	playfram          	0xCC
+	wait              	2
+	playfram          	0xDD
+	wait              	2
+	playfram          	0xEE
+	wait              	2
 	playfram          	0x00
 	nobrkcodeend
 	goto              	ScourgeLocal00
 
-PhalanxSiegeTurretGndAttkInit:
+Phalanx_Siege_TurretGndAttkInit:
 	wait              	1
 	nobrkcodestart
-	playsnd           	96 # Bullet\TTaFi200.wav
-	imgoluselo        	537 2 0 # Siege Tank(Siege) Turret Attack Overlay (thingy\esiFire.grp)
+	playsnd           	96	# Bullet\TTaFi200.wav
+	imgoluselo        	537 2 0	# Siege Tank(Siege) Turret Attack Overlay (thingy\esiFire.grp)
 	wait              	2
+	playfram          	0x11
 	attackwith        	1
-	wait              	1
+	wait              	2
+	playfram          	0x22
+	wait              	2
+	playfram          	0x33
+	wait              	2
 	playfram          	0x00
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
 	goto              	ScourgeLocal00
 
-PhalanxSiegeTurretSpecialState2:
+Phalanx_Siege_TurretSpecialState2:
 	playsnd           	318	# Terran\TANK\TTaTra00.WAV
+	playfram          	0xEE
+	wait              	2
+	playfram          	0xDD
+	wait              	2
+	playfram          	0xCC
+	wait              	2
+	playfram          	0xBB
+	wait              	2
+	playfram          	0xAA
+	wait              	2
+	playfram          	0x99
+	wait              	2
+	playfram          	0x88
+	wait              	2
+	playfram          	0x77
+	wait              	27
+	playfram          	0x66
+	wait              	2
 	playfram          	0x55
-	wait              	3
+	wait              	2
 	playfram          	0x44
-	wait              	3
-	playfram          	0x33
-	wait              	3
-	playfram          	0x22
-	wait              	3
-	playfram          	0x11
 	goto              	ScourgeLocal00
 
 # ----------------------------------------------------------------------------- #
@@ -51639,7 +51691,7 @@ EngramGndAttkToIdle:
 	goto              	ScourgeLocal00
 
 EngramWarpIn:
-	imgol             	185 0 0 # Engram Warp Flash (cm\protoss\engram.grp)
+	imgol             	1748 0 0 # Engram Warp Flash (cm\protoss\engram.grp)
 	goto				ScourgeLocal00
 
 # ----------------------------------------------------------------------------- #
