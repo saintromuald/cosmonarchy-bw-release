@@ -57,6 +57,7 @@ In case you missed it, we have started weekly Ascension-style tournaments using 
 - [Madrigal](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/madrigal):
 	- Furia Missiles:
 		- Weapon cooldown now 0.92, from 0.83
+	- Transport space while in Furia Mode now 8, from 4
 - [Ancile](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/ancile):
 	- Gas cost now 100, from 75
 - [Gorgon](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/gorgon):
