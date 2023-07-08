@@ -324,9 +324,9 @@ building matravil_nest = 138
 building ultrok_cavern = 140
 building muthrok_spire = 141
 building quazrok_pool = 142
-building cagrant_colony = 143
-building spraith_colony = 144
-building surkith_colony = 146
+building cagrant_cesiant = 143
+building spraith_cesiant = 144
+building surkith_cesiant = 146
 building excisant = 149
 
 # Zerg NGS buildings
@@ -342,17 +342,17 @@ building zorkiz_shroud = 193
 building vithrath_haunt = 197
 building liivral_pond = 204
 building alkaj_chasm = 212
-building larvosk_colony = 216
+building larvosk_cesiant = 216
 building geszkath_grotto = 219
 building irol_iris = 224
 building sibraelosk = 227
-building spirtith_colony = 292
+building spirtith_cesiant = 292
 building rakzogth_roost = 303
 building axtoth_axis = 328
 building begrozith_barrow = 329
 building chokralgant_chazsal = 330
 building nephrilosk = 350
-building ocsal_colony = 354
+building ocsal_cesiant = 354
 
 # Misc units
 military goliath_turret = 4

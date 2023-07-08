@@ -190,7 +190,7 @@ script_id ZMCx
 	dth 13 Ex_C 1 ovileth prefBOvileth
 	dth 13 Ex_C 1 iroleth prefBIroleth
 	dth 13 Ex_C 1 othstoleth prefBOthstoleth
-	dth 13 Ex_C 1 larvosk_colony prefBLarvoskColony
+	dth 13 Ex_C 1 larvosk_cesiant prefBLarvoskCesiant
 	dth 13 Ex_C 1 hachirosk prefBHachirosk
 	dth 13 Ex_C 1 caphrolosk prefBCaphrolosk
 	dth 13 Ex_C 1 gathtelosk prefBGathtelosk
@@ -227,7 +227,7 @@ script_id ZMCx
 	dth 13 Set 0 ovileth blank
 	dth 13 Set 0 iroleth blank
 	dth 13 Set 0 othstoleth blank
-	dth 13 Set 0 larvosk_colony blank
+	dth 13 Set 0 larvosk_cesiant blank
 	dth 13 Set 0 hachirosk blank
 	dth 13 Set 0 caphrolosk blank
 	dth 13 Set 0 gathtelosk blank
@@ -661,16 +661,16 @@ script_id ZMCx
 	print prefOthstoleth
 	return
 	
-	:prefBLarvoskColony
-	var Set prefLarvoskColony 1 13
+	:prefBLarvoskCesiant
+	var Set prefLarvoskCesiant 1 13
 	var Set prefHachirosk 0 13
 	var Set pref_production 1 13
 	dth 13 Ex 0 start_location blank_return
-	print prefLarvoskColony
+	print prefLarvoskCesiant
 	return
 	
 	:prefBHachirosk
-	var Set prefLarvoskColony 0 13
+	var Set prefLarvoskCesiant 0 13
 	var Set prefHachirosk 1 13
 	var Set pref_production 1 13
 	dth 13 Ex 0 start_location blank_return
@@ -865,8 +865,8 @@ script_id ZMCx
 	var Set prefOthstoleth 1 13
 	return
 	
-	:buildpref_production_larvoskcolony
-	var Set prefLarvoskColony 1 13
+	:buildpref_production_larvoskcesiant
+	var Set prefLarvoskCesiant 1 13
 	return
 	
 	:buildpref_production_hachirosk
@@ -1647,10 +1647,12 @@ script_id ZMCx
 	call main_wait_1200
 	call request_larvosk
 	bring 13 AtL_W 1 othstol_oviform Loc.63 blank
-	bld 1 nydus_cesiant 98
+	add_bld 255 cagrant_cesiant 1 20 98
+	add_bld 255 nydus_cesiant 1 3 98
 	call main_wait_3600
 	call main_wait_3600
-	bld 2 nydus_cesiant 98
+	add_bld 255 cagrant_cesiant 1 20 98
+	add_bld 255 nydus_cesiant 1 3 98
 	goto idle
 	
 	:main_wait_150
@@ -1741,9 +1743,9 @@ script_id ZMCx
 	var AtL|WF(240) can_worker_all_var 1 13
 	local 255 AtL_W 1 hachirosk|caphrolosk|gathtelosk blank
 	local 255 AtL_W 1 larva blank
-	bring 13 AtL 5 hachirosk|caphrolosk|gathtelosk|larvosk_colony Loc.63 main_worker_loop_max
-	bring 13 AtL 3 hachirosk|caphrolosk|gathtelosk|larvosk_colony Loc.63 main_worker_loop_med
-	bring 13 AtL 2 hachirosk|caphrolosk|gathtelosk|larvosk_colony Loc.63 main_worker_loop_min
+	bring 13 AtL 5 hachirosk|caphrolosk|gathtelosk|larvosk_cesiant Loc.63 main_worker_loop_max
+	bring 13 AtL 3 hachirosk|caphrolosk|gathtelosk|larvosk_cesiant Loc.63 main_worker_loop_med
+	bring 13 AtL 2 hachirosk|caphrolosk|gathtelosk|larvosk_cesiant Loc.63 main_worker_loop_min
 	time_jump 6 main_worker_loop_med
 	goto main_worker_loop_early
 	
@@ -1959,9 +1961,11 @@ script_id ZMCx
 	call main_wait_300
 	call main_wait_300
 	bring 13 AtL_W 1 othstol_oviform Loc.63 blank
-	bld 1 nydus_cesiant 98
+	add_bld 255 cagrant_cesiant 1 20 98
+	add_bld 255 nydus_cesiant 1 3 98
 	wait 7200
-	bld 2 nydus_cesiant 98
+	add_bld 255 cagrant_cesiant 1 20 98
+	add_bld 255 nydus_cesiant 1 3 98
 	goto idle
 	
 	:count_expansion
@@ -1995,8 +1999,8 @@ script_id ZMCx
 	wait 12
 	local 255 Ex 0 larva expansion_worker_standard_loop
 	var AtL|WF(240) can_worker_all_var 1 13
-	bring 13 AtL 4 hachirosk|caphrolosk|gathtelosk|larvosk_colony Loc.63 expansion_worker_standard_loop_maximum
-	bring 13 AtL 3 hachirosk|caphrolosk|gathtelosk|larvosk_colony Loc.63 expansion_worker_standard_loop_medium
+	bring 13 AtL 4 hachirosk|caphrolosk|gathtelosk|larvosk_cesiant Loc.63 expansion_worker_standard_loop_maximum
+	bring 13 AtL 3 hachirosk|caphrolosk|gathtelosk|larvosk_cesiant Loc.63 expansion_worker_standard_loop_medium
 	wait 120
 	local 255 AtL 12 droleth|gosvileth expansion_worker_standard_loop
 	call worker_conditions
@@ -2532,7 +2536,7 @@ script_id ZMCx
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
 	var Ex|Call pref_matravil 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
-	var Ex|Call pref_production 0 buildpref_production_larvoskcolony 13
+	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
 	call main_wait_750
     var Sub can_worker_var 1 13
     multi expansion_loop_toggle
@@ -2596,7 +2600,7 @@ script_id ZMCx
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
 	var Ex|Call pref_almakis 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
-	var Ex|Call pref_production 0 buildpref_production_larvoskcolony 13
+	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
 	call main_wait_750
 	var Sub can_worker_var 1 13
     multi expansion_loop_toggle
@@ -2660,7 +2664,7 @@ script_id ZMCx
 	p_need 1 hydrok_den
 	call main_wait_300
 	var Add can_worker_var 1 13
-	add_bld 255 larvosk_colony 1 30 95
+	add_bld 255 larvosk_cesiant 1 30 95
 	call main_wait_300
 	bring 13 AtL_W 1 larva Loc.63 blank
 	queue 1 hydralisk larva 255 Global Loc.63 88
@@ -2724,7 +2728,7 @@ script_id ZMCx
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
 	var Ex|Call pref_almakis 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
-	var Ex|Call pref_production 0 buildpref_production_larvoskcolony 13
+	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
 	call main_wait_600
 	var Sub can_worker_var 1 13
     multi expansion_loop_toggle
@@ -2785,7 +2789,7 @@ script_id ZMCx
 	var Ex|Call pref_almakis 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
-	var Ex|Call pref_production 0 buildpref_production_larvoskcolony 13
+	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
 	call main_wait_600
 	var Sub can_worker_var 1 13
     multi expansion_loop_toggle
@@ -2846,7 +2850,7 @@ script_id ZMCx
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
 	var Ex|Call pref_almakis 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
-	var Ex|Call pref_production 0 buildpref_production_larvoskcolony 13
+	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
 	call main_wait_600
 	var Sub can_worker_var 1 13
     multi expansion_loop_toggle
@@ -2983,7 +2987,7 @@ script_id ZMCx
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
 	var Ex|Call pref_matravil 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
-	var Ex|Call pref_production 0 buildpref_production_larvoskcolony 13
+	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
 	call main_wait_750
 	var Sub can_worker_var 1 13
 	var Add can_expand_var 1 13
@@ -3047,7 +3051,7 @@ script_id ZMCx
 	var Ex|Call pref_alkaj 0 buildpref_gorgral_vithrilisk 13
 	var Ex|Call pref_matravil 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
-	var Ex|Call pref_production 0 buildpref_production_larvoskcolony 13
+	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
 	call main_wait_600
     multi expansion_loop_toggle
 	call main_wait_450
@@ -3139,7 +3143,7 @@ script_id ZMCx
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
 	call main_wait_750
 	call main_wait_600
-	bld 1 cagrant_colony 101
+	bld 1 cagrant_cesiant 101
 	multi build_assault_2BaseGeszkath_Morph
 	call main_wait_600
 	p_need 1 hydrok_den
@@ -3166,8 +3170,8 @@ script_id ZMCx
 	goto build_assault_fin
 	
 	:build_assault_2BaseGeszkath_Morph
-	w_bld 1 cagrant_colony
-	bld 1 larvosk_colony 105
+	w_bld 1 cagrant_cesiant
+	bld 1 larvosk_cesiant 105
 	call wait_for_IrolIris
 	w_bldstart 2 hachirosk
 	p_need 1 gorgral_swamp
@@ -3190,7 +3194,7 @@ script_id ZMCx
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
 	var Ex|Call pref_matravil 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
-	var Ex|Call pref_production 0 buildpref_production_larvoskcolony 13
+	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
 	call main_wait_600
 	var Sub can_worker_var 1 13
 	call main_wait_150
@@ -3252,7 +3256,7 @@ script_id ZMCx
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_keskathalor 13
 	var Ex|Call pref_matravil 0 buildpref_matravil_konvilisk 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
-	var Ex|Call pref_production 0 buildpref_production_larvoskcolony 13
+	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
 	call main_wait_450
 	p_need 1 hydrok_den
 	call main_wait_600
@@ -3399,7 +3403,7 @@ script_id ZMCx
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
 	var Ex|Call pref_matravil 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
-	var Ex|Call pref_production 0 buildpref_production_larvoskcolony 13
+	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
 	call main_wait_450
 	p_need 1 quazrok_pool
 	call main_wait_600
@@ -3744,7 +3748,7 @@ script_id ZMCx
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
 	var Ex|Call pref_matravil 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
-	var Ex|Call pref_production 0 buildpref_production_larvoskcolony 13
+	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
 	call main_wait_600
 	var Sub can_worker_var 1 13
 	call main_wait_600
@@ -3799,7 +3803,7 @@ script_id ZMCx
 	var Ex|Call pref_vithrath 0 buildpref_vithrath_sovroleth 13
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_keskathalor 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
-	var Ex|Call pref_production 0 buildpref_production_larvoskcolony 13
+	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
 	call main_wait_600
 	var Sub can_worker_var 1 13
 	call main_wait_600
@@ -4043,7 +4047,7 @@ script_id ZMCx
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
 	var Ex|Call pref_elthisth 0 buildpref_elthisth_isthrathaleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
-	var Ex|Call pref_production 0 buildpref_production_larvoskcolony 13
+	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
 	call main_wait_600
 	var Sub can_worker_var 1 13
 	call main_wait_150
@@ -4315,7 +4319,7 @@ script_id ZMCx
 	goto build_order_general
 	
 	:build_order_expansion
-	bring 13 AtL_W 1 hachirosk|caphrolosk|gathtelosk|larvosk_colony Loc.63 blank
+	bring 13 AtL_W 1 hachirosk|caphrolosk|gathtelosk|larvosk_cesiant Loc.63 blank
 	var Ex|Jump pref_assault 1 build_assault_fin2 13
 	var Ex|Jump pref_swarm 1 build_swarm_fin2 13
 	var Ex|Jump pref_sunblot 1 build_sunblot_fin2 13
@@ -4330,7 +4334,7 @@ script_id ZMCx
 	:need_irol
 	wait 24
 	bring 13 AtL 1 irol_iris|othstol_oviform Loc.63 blank
-	bring 13 AtM 3 larvosk_colony|hachirosk|caphrolosk|gathtelosk Loc.63 need_irol
+	bring 13 AtM 3 larvosk_cesiant|hachirosk|caphrolosk|gathtelosk Loc.63 need_irol
 	bring 13 Ex 0 quazrok_pool|liivral_pond|hydrok_den|gorgral_swamp|muthrok_spire|vithrath_haunt|zorkiz_shroud|ultrok_cavern|matravil_nest|almakis_antre|elthisth_mound|geszkath_grotto|alkaj_chasm Loc.63 need_irol
 	call main_wait_450
 	
@@ -4355,7 +4359,7 @@ script_id ZMCx
 	wait 24
 	bring 13 AtL 1 othstol_oviform Loc.63 blank
 	bring 13 Ex 0 irol_iris Loc.63 need_othstol
-	bring 13 AtM 5 larvosk_colony|hachirosk|caphrolosk|gathtelosk Loc.63 need_othstol
+	bring 13 AtM 5 larvosk_cesiant|hachirosk|caphrolosk|gathtelosk Loc.63 need_othstol
 	bring 13 Ex 2 quazrok_pool|liivral_pond|hydrok_den|gorgral_swamp|muthrok_spire|vithrath_haunt|zorkiz_shroud|ultrok_cavern|matravil_nest|almakis_antre|elthisth_mound|geszkath_grotto|alkaj_chasm Loc.63 need_othstol
 	bring 13 AtM 3 excisant Loc.63 need_othstol
 	call main_wait_450
@@ -4398,7 +4402,7 @@ script_id ZMCx
 	var AtL|wait town_count_var 1 13
 	wait 12
 	bring 13 Ex 0 droleth|gosvileth Loc.63 request_larvosk
-	add_bld 255 larvosk_colony 1 10 115
+	add_bld 255 larvosk_cesiant 1 10 115
 	return
 	
 	:wHachirosk
@@ -4522,7 +4526,7 @@ script_id ZMCx
 	wait 90
 	call main_wait_150
 	var Ex|Wait can_build_static_defense_var 1 13
-	add_bld 255 surkith_colony 1 5 106
+	add_bld 255 surkith_cesiant 1 5 106
 	wait 450
 	
 	:request_surkith_loop
@@ -4530,16 +4534,16 @@ script_id ZMCx
 	wait 12
 	local 255 Ex 0 hachirosk|caphrolosk|gathtelosk request_surkith_loop
 	bring 13 Ex 0 droleth|gosvileth Loc.63 request_surkith_loop
-	bring 13 AtL 1 cagrant_colony Loc.63 request_surkith_loop
+	bring 13 AtL 1 cagrant_cesiant Loc.63 request_surkith_loop
 	res 13 AtL_C Ore 125 request_surkith_check
 	wait 90
 	call main_wait_150
 	goto request_surkith_loop
 	
 	:request_surkith_check
-	local 255 AtL 5 surkith_colony request_surkith_check_2
+	local 255 AtL 5 surkith_cesiant request_surkith_check_2
 	call request_skortrith
-	add_bld 255 surkith_colony 1 5 106
+	add_bld 255 surkith_cesiant 1 5 106
 	var Ex|Jump under_attack_by_ground_var 1 add_return_wait_960 13
 	goto add_return_wait_1440
 	
@@ -4547,27 +4551,27 @@ script_id ZMCx
 	var Ex|Jump under_attack_by_ground_var 1 request_surkith_check_3 13
 	var AtM|Jump mining_count_var 2 add_return_wait_960 13
 	call request_skortrith_2
-	add_bld 255 surkith_colony 1 7 106
+	add_bld 255 surkith_cesiant 1 7 106
 	goto add_return_wait_960
 	
 	:request_surkith_check_3
 	call request_skortrith_3
-	add_bld 255 surkith_colony 1 10 106
+	add_bld 255 surkith_cesiant 1 10 106
 	goto add_return_wait_960
 	
 	:request_skortrith
 	bring 13 Ex 0 irol_iris|othstol_oviform Loc.63 blank_return
-	add_bld 255 skortrith_colony 1 5 106
+	add_bld 255 skortrith_cesiant 1 5 106
 	return
 	
 	:request_skortrith_2
 	bring 13 Ex 0 irol_iris|othstol_oviform Loc.63 blank_return
-	add_bld 255 skortrith_colony 1 7 106
+	add_bld 255 skortrith_cesiant 1 7 106
 	return
 	
 	:request_skortrith_3
 	bring 13 Ex 0 irol_iris|othstol_oviform Loc.63 blank_return
-	add_bld 255 skortrith_colony 1 10 106
+	add_bld 255 skortrith_cesiant 1 10 106
 	return
 	
 	:request_spraith
@@ -4576,7 +4580,7 @@ script_id ZMCx
 	wait 90
 	call main_wait_150
 	var Ex|Wait can_build_static_defense_var 1 13
-	add_bld 255 spraith_colony 1 5 106
+	add_bld 255 spraith_cesiant 1 5 106
 	wait 450
 	
 	:request_spraith_loop
@@ -4584,16 +4588,16 @@ script_id ZMCx
 	wait 12
 	local 255 Ex 0 hachirosk|caphrolosk|gathtelosk request_spraith_loop
 	bring 13 Ex 0 droleth|gosvileth Loc.63 request_spraith_loop
-	bring 13 AtL 1 cagrant_colony Loc.63 request_spraith_loop
+	bring 13 AtL 1 cagrant_cesiant Loc.63 request_spraith_loop
 	res 13 AtL_C Ore 125 request_spraith_check
 	wait 60
 	call main_wait_300
 	goto request_spraith_loop
 	
 	:request_spraith_check
-	local 255 AtL 3 spraith_colony request_spraith_check_2
+	local 255 AtL 3 spraith_cesiant request_spraith_check_2
 	call request_spirtith
-	add_bld 255 spraith_colony 1 10 106
+	add_bld 255 spraith_cesiant 1 10 106
 	var Ex|Jump under_attack_by_air_var 1 add_return_wait_960 13
 	goto add_return_wait_1440
 	
@@ -4601,27 +4605,27 @@ script_id ZMCx
 	var Ex|Jump under_attack_by_air_var 1 request_spraith_check_3 13
 	var AtM|Jump mining_count_var 2 add_return_wait_960 13
 	call request_spirtith_2
-	add_bld 255 spraith_colony 1 7 106
+	add_bld 255 spraith_cesiant 1 7 106
 	goto add_return_wait_960
 	
 	:request_spraith_check_3
 	call request_spirtith_3
-	add_bld 255 spraith_colony 1 10 106
+	add_bld 255 spraith_cesiant 1 10 106
 	goto add_return_wait_960
 	
 	:request_spirtith
 	bring 13 Ex 0 irol_iris|othstol_oviform Loc.63 blank_return
-	add_bld 255 spirtith_colony 1 5 106
+	add_bld 255 spirtith_cesiant 1 5 106
 	return
 	
 	:request_spirtith_2
 	bring 13 Ex 0 irol_iris|othstol_oviform Loc.63 blank_return
-	add_bld 255 spirtith_colony 1 7 106
+	add_bld 255 spirtith_cesiant 1 7 106
 	return
 	
 	:request_spirtith_3
 	bring 13 Ex 0 irol_iris|othstol_oviform Loc.63 blank_return
-	add_bld 255 spirtith_colony 1 10 106
+	add_bld 255 spirtith_cesiant 1 10 106
 	return
 	
 	:production_cycle
@@ -4687,26 +4691,26 @@ script_id ZMCx
 	return
 	
 	:production_cycle_check
-	var Ex|Call prefLarvoskColony 1 production_larvosk_colony 13
+	var Ex|Call prefLarvoskCesiant 1 production_larvosk_cesiant 13
 	var Ex|Call prefHachirosk 1 production_hachirosk 13
 	var Ex|Call prefCaphrolosk 1 production_caphrolosk 13
 	var Ex|Call prefGathtelosk 1 production_gathtelosk 13
 	var AtL|Call mining_count_var 5 production_gathtelosk 13
 	var AtL|Call mining_count_var 3 production_caphrolosk 13
 	res 13 AtL_C Any 500 production_hachirosk
-	call production_larvosk_colony
+	call production_larvosk_cesiant
 	call production_hachirosk
 	call production_caphrolosk
 	call production_gathtelosk
 	return
 	
-	:production_larvosk_colony
+	:production_larvosk_cesiant
 	wait 12
 	var AtL|Jump prod_cycle_var 1 blank_return 13
 	bring 13 Ex 0 droleth|gosvileth Loc.63 blank_return
-	bring 13 AtL 1 cagrant_colony Loc.63 blank_return
-	local 255 AtL 30 larvosk_colony blank_return
-	add_bld 255 larvosk_colony 1 5 100
+	bring 13 AtL 1 cagrant_cesiant Loc.63 blank_return
+	local 255 AtL 30 larvosk_cesiant blank_return
+	add_bld 255 larvosk_cesiant 1 5 100
 	call add_return_wait_960
 	goto production_cycle_success
 	
@@ -4841,8 +4845,8 @@ script_id ZMCx
 	wait 440
 	
 	:zLoopA
-	bring 13 AtL 8 hachirosk|caphrolosk|gathtelosk|larvosk_colony Loc.63 zLoopC
-	bring 13 AtL 4 hachirosk|caphrolosk|gathtelosk|larvosk_colony Loc.63 zLoopB
+	bring 13 AtL 8 hachirosk|caphrolosk|gathtelosk|larvosk_cesiant Loc.63 zLoopC
+	bring 13 AtL 4 hachirosk|caphrolosk|gathtelosk|larvosk_cesiant Loc.63 zLoopB
 	call attack_cycle_start
 	wait 240
 	goto zLoopA
@@ -4860,7 +4864,7 @@ script_id ZMCx
 	goto zLoopA
 	
 	:attack_generic_worker_check
-	bring 13 AtL 12 hachirosk|caphrolosk|gathtelosk|larvosk_colony Loc.63 blank_return
+	bring 13 AtL 12 hachirosk|caphrolosk|gathtelosk|larvosk_cesiant Loc.63 blank_return
 	var Set can_worker_all_var 0 13
 	return
 	
@@ -4893,7 +4897,7 @@ script_id ZMCx
 	wait 24
 	bring 13 Ex 0 quazrok_pool|liivral_pond|hydrok_den|gorgral_swamp|muthrok_spire|vithrath_haunt|zorkiz_shroud|ultrok_cavern|matravil_nest|almakis_antre|elthisth_mound|geszkath_grotto|alkaj_chasm Loc.63 attack_conditions
 	bring 13 AtM 10 droleth Loc.63 attack_conditions
-	bring 13 AtM 1 larvosk_colony|hachirosk|caphrolosk|gathtelosk Loc.63 attack_conditions
+	bring 13 AtM 1 larvosk_cesiant|hachirosk|caphrolosk|gathtelosk Loc.63 attack_conditions
 	res 13 AtL Any 500 blank_return
 	var Ex|WF(360) under_attack_var 0 13
 	return
@@ -5114,7 +5118,7 @@ script_id ZMCx
 	
 	:atk_zethrokor2
 	bring 13 Ex 0 quazrok_pool|liivral_pond Loc.63 blank_return
-	atk_rel zethrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.55
+	atk_rel zethrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.55
 	return
 	
 	:atk_quazilisk
@@ -5124,17 +5128,17 @@ script_id ZMCx
 	
 	:atk_quazilisk2
 	bring 13 Ex 0 quazrok_pool|liivral_pond Loc.63 blank_return
-	atk_rel quazilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.4
+	atk_rel quazilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.4
 	return
 	
 	:atk_nathrokor
 	bring 13 Ex 0 quazrok_pool|liivral_pond Loc.63 blank_return
-	queue_rel nathrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.66 larva 255 Global 63 100
+	queue_rel nathrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.66 larva 255 Global 63 100
 	atk_rel nathrokor nathrokor 0.8
 	
 	:atk_nathrokor2
 	bring 13 Ex 0 quazrok_pool|liivral_pond Loc.63 blank_return
-	atk_rel nathrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 1.25
+	atk_rel nathrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.25
 	return
 	
 	:atk_vorvrokor
@@ -5145,7 +5149,7 @@ script_id ZMCx
 	
 	:atk_vorvrokor2
 	bring 13 Ex 0 quazrok_pool|liivral_pond Loc.63 blank_return
-	atk_rel vorvrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.4
+	atk_rel vorvrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.4
 	return
 	
 	:atk_liiralisk
@@ -5156,458 +5160,458 @@ script_id ZMCx
 	
 	:atk_liiralisk2
 	bring 13 Ex 0 liivral_pond Loc.63 blank_return
-	atk_rel liiralisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.4
+	atk_rel liiralisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.4
 	return
 	
 	:atk_kalkalisk
 	notowns vithrath_haunt blank_return
-	queue_rel nathrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 100
-	queue_rel kalkalisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.75 nathrokor 255 Global 63 101
+	queue_rel nathrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 100
+	queue_rel kalkalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75 nathrokor 255 Global 63 101
 	atk_rel kalkalisk kalkalisk 0.8
 	
 	:atk_kalkalisk2
 	notowns vithrath_haunt blank_return
-	atk_rel kalkalisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel kalkalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_cikralisk
 	bring 13 Ex 0 muthrok_spire|vithrath_haunt Loc.63 blank_return
-	queue_rel cikralisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 101
+	queue_rel cikralisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 101
 	atk_rel cikralisk cikralisk 0.8
 	
 	:atk_cikralisk2
 	bring 13 Ex 0 muthrok_spire|vithrath_haunt Loc.63 blank_return
-	atk_rel cikralisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 1.5
+	atk_rel cikralisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.5
 	return
 	
 	:atk_protathalor
 	bring 13 Ex 0 muthrok_spire|vithrath_haunt Loc.63 blank_return
-	queue_rel protathalor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.66 larva 255 Global 63 101
+	queue_rel protathalor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.66 larva 255 Global 63 101
 	atk_rel protathalor protathalor 0.8
 	
 	:atk_protathalor2
 	bring 13 Ex 0 muthrok_spire|vithrath_haunt Loc.63 blank_return
-	atk_rel protathalor larvosk_colony|hachirosk|caphrolosk|gathtelosk 1.25
+	atk_rel protathalor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.25
 	return
 	
 	:atk_mutalisk
 	bring 13 Ex 0 muthrok_spire|vithrath_haunt Loc.63 blank_return
-	queue_rel mutalisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 101
+	queue_rel mutalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 101
 	atk_rel mutalisk mutalisk 0.8
 	
 	:atk_mutalisk2
 	bring 13 Ex 0 muthrok_spire|vithrath_haunt Loc.63 blank_return
-	atk_rel mutalisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 1.5
+	atk_rel mutalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.5
 	return
 	
 	:atk_ghitorokor
 	notowns vithrath_haunt blank_return
-	queue_rel cikralisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
-	queue_rel ghitorokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.75 cikralisk 255 Global 63 102
+	queue_rel cikralisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
+	queue_rel ghitorokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75 cikralisk 255 Global 63 102
 	atk_rel ghitorokor ghitorokor 0.8
 	
 	:atk_ghitorokor2
 	notowns vithrath_haunt blank_return
-	atk_rel ghitorokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 1.5
+	atk_rel ghitorokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.5
 	return
 	
 	:atk_sovroleth
 	notowns vithrath_haunt blank_return
-	queue_rel protathalor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 100
-	queue_rel sovroleth larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.75 protathalor 255 Global 63 102
+	queue_rel protathalor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 100
+	queue_rel sovroleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75 protathalor 255 Global 63 102
 	atk_rel sovroleth sovroleth 0.8
 	
 	:atk_sovroleth2
 	notowns vithrath_haunt blank_return
-	atk_rel sovroleth larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel sovroleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_tosgrilisk
 	notowns vithrath_haunt blank_return
-	queue_rel mutalisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 100
-	queue_rel tosgrilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.75 mutalisk 255 Global 63 102
+	queue_rel mutalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 100
+	queue_rel tosgrilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75 mutalisk 255 Global 63 102
 	atk_rel tosgrilisk tosgrilisk 0.8
 	
 	:atk_tosgrilisk2
 	notowns vithrath_haunt blank_return
-	atk_rel tosgrilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel tosgrilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_axitrilisk
 	bring 13 Ex 0 axtoth_axis|begrozith_barrow Loc.63 blank_return
-	queue_rel axitrilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 1 larva 255 Global 63 102
+	queue_rel axitrilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1 larva 255 Global 63 102
 	atk_rel axitrilisk axitrilisk 0.8
 	
 	:atk_axitrilisk2
 	bring 13 Ex 0 axtoth_axis|begrozith_barrow Loc.63 blank_return
-	atk_rel axitrilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 2
+	atk_rel axitrilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 2
 	return
 	
 	:atk_mortothrokor
 	bring 13 Ex 0 axtoth_axis|begrozith_barrow Loc.63 blank_return
-	queue_rel mortothrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 102
+	queue_rel mortothrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 102
 	atk_rel mortothrokor mortothrokor 0.8
 	
 	:atk_mortothrokor2
 	bring 13 Ex 0 axtoth_axis|begrozith_barrow Loc.63 blank_return
-	atk_rel mortothrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 1.5
+	atk_rel mortothrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.5
 	return
 	
 	:atk_begrothilisk
 	notowns begrozith_barrow blank_return
-	queue_rel axitrilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 100
-	queue_rel begrothilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.75 axitrilisk 255 Global 63 103
+	queue_rel axitrilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 100
+	queue_rel begrothilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75 axitrilisk 255 Global 63 103
 	atk_rel begrothilisk begrothilisk 0.8
 	
 	:atk_begrothilisk2
 	notowns begrozith_barrow blank_return
-	atk_rel begrothilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel begrothilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_oztukrokor
 	notowns begrozith_barrow blank_return
-	queue_rel mortothrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 100
-	queue_rel oztukrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.75 mortothrokor 255 Global 63 103
+	queue_rel mortothrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 100
+	queue_rel oztukrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75 mortothrokor 255 Global 63 103
 	atk_rel oztukrokor oztukrokor 0.8
 	
 	:atk_oztukrokor2
 	notowns begrozith_barrow blank_return
-	atk_rel oztukrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel oztukrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_hydralisk
 	bring 13 Ex 0 hydrok_den|gorgral_swamp Loc.63 blank_return
-	queue_rel hydralisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.68 larva 255 Global 63 100
+	queue_rel hydralisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.68 larva 255 Global 63 100
 	atk_rel hydralisk hydralisk 0.8
 	
 	:atk_hydralisk2
 	bring 13 Ex 0 hydrok_den|gorgral_swamp Loc.63 blank_return
-	atk_rel hydralisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 1.25
+	atk_rel hydralisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.25
 	return
 	
 	:atk_izirokor
 	bring 13 Ex 0 hydrok_den|gorgral_swamp Loc.63 blank_return
-	queue_rel izirokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
+	queue_rel izirokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
 	atk_rel izirokor izirokor 0.8
 	
 	:atk_izirokor2
 	bring 13 Ex 0 hydrok_den|gorgral_swamp Loc.63 blank_return
-	atk_rel izirokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel izirokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_skithrokor
 	bring 13 Ex 0 hydrok_den|gorgral_swamp Loc.63 blank_return
-	queue_rel skithrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.55 larva 255 Global 63 100
+	queue_rel skithrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.55 larva 255 Global 63 100
 	atk_rel skithrokor skithrokor 0.8
 	
 	:atk_skithrokor2
 	bring 13 Ex 0 hydrok_den|gorgral_swamp Loc.63 blank_return
-	atk_rel skithrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 1.1
+	atk_rel skithrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.1
 	return
 	
 	:atk_bactalisk
 	notowns gorgral_swamp blank_return
-	queue_rel hydralisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
-	queue_rel bactalisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 hydralisk 255 Global 63 101
+	queue_rel hydralisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
+	queue_rel bactalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 hydralisk 255 Global 63 101
 	atk_rel bactalisk bactalisk 0.8
 	
 	:atk_bactalisk2
 	notowns gorgral_swamp blank_return
-	atk_rel bactalisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel bactalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_tethzorokor
 	notowns gorgral_swamp blank_return
-	queue_rel izirokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
-	queue_rel tethzorokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 izirokor 255 Global 63 101
+	queue_rel izirokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
+	queue_rel tethzorokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 izirokor 255 Global 63 101
 	atk_rel tethzorokor tethzorokor 0.8
 	
 	:atk_tethzorokor2
 	notowns gorgral_swamp blank_return
-	atk_rel tethzorokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel tethzorokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_vithrilisk
 	notowns gorgral_swamp blank_return
-	queue_rel skithrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.2 larva 255 Global 63 101
+	queue_rel skithrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.2 larva 255 Global 63 101
 	atk_rel vithrilisk vithrilisk 0.8
 	
 	:atk_vithrilisk2
 	notowns gorgral_swamp blank_return
-	atk_rel vithrilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.4
+	atk_rel vithrilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.4
 	return
 	
 	:atk_kagralisk
 	bring 13 Ex 0 izkag_iteth|chokralgant_chazsal Loc.63 blank_return
-	queue_rel kagralisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.68 larva 255 Global 63 101
+	queue_rel kagralisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.68 larva 255 Global 63 101
 	atk_rel kagralisk kagralisk 0.8
 	
 	:atk_kagralisk2
 	bring 13 Ex 0 izkag_iteth|chokralgant_chazsal Loc.63 blank_return
-	atk_rel kagralisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 1.25
+	atk_rel kagralisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.25
 	return
 	
 	:atk_evigrilisk
 	bring 13 Ex 0 izkag_iteth|chokralgant_chazsal Loc.63 blank_return
-	queue_rel evigrilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 101
+	queue_rel evigrilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 101
 	atk_rel evigrilisk evigrilisk 0.8
 	
 	:atk_evigrilisk2
 	bring 13 Ex 0 izkag_iteth|chokralgant_chazsal Loc.63 blank_return
-	atk_rel evigrilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel evigrilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_almaksalisk
 	bring 13 Ex 0 izkag_iteth|chokralgant_chazsal Loc.63 blank_return
-	queue_rel almaksalisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 101
+	queue_rel almaksalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 101
 	atk_rel almaksalisk almaksalisk 0.8
 	
 	:atk_almaksalisk2
 	bring 13 Ex 0 izkag_iteth|chokralgant_chazsal Loc.63 blank_return
-	atk_rel almaksalisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 1.5
+	atk_rel almaksalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.5
 	return
 	
 	:atk_cherbrathalor
 	notowns chokralgant_chazsal blank_return
-	queue_rel kagralisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
-	queue_rel cherbrathalor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 kagralisk 255 Global 63 102
+	queue_rel kagralisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
+	queue_rel cherbrathalor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 kagralisk 255 Global 63 102
 	atk_rel cherbrathalor cherbrathalor 0.8
 	
 	:atk_cherbrathalor2
 	notowns chokralgant_chazsal blank_return
-	atk_rel cherbrathalor larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel cherbrathalor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_okrimnilisk
 	notowns chokralgant_chazsal blank_return
-	queue_rel evigrilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
-	queue_rel okrimnilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 evigrilisk 255 Global 63 102
+	queue_rel evigrilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
+	queue_rel okrimnilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 evigrilisk 255 Global 63 102
 	atk_rel okrimnilisk okrimnilisk 0.8
 	
 	:atk_okrimnilisk2
 	notowns chokralgant_chazsal blank_return
-	atk_rel okrimnilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel okrimnilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_algoztalisk
 	notowns chokralgant_chazsal blank_return
-	queue_rel almaksalisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
-	queue_rel algoztalisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 almaksalisk 255 Global 63 102
+	queue_rel almaksalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
+	queue_rel algoztalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 almaksalisk 255 Global 63 102
 	atk_rel algoztalisk algoztalisk 0.8
 	
 	:atk_algoztalisk2
 	notowns chokralgant_chazsal blank_return
-	atk_rel algoztalisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel algoztalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_keskathalor
 	bring 13 Ex 0 geszkath_grotto|alkaj_chasm Loc.63 blank_return
-	queue_rel keskathalor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 102
+	queue_rel keskathalor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 102
 	atk_rel keskathalor keskathalor 0.8
 	
 	:atk_keskathalor2
 	bring 13 Ex 0 geszkath_grotto|alkaj_chasm Loc.63 blank_return
-	atk_rel keskathalor larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel keskathalor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_geszithalor
 	bring 13 Ex 0 geszkath_grotto|alkaj_chasm Loc.63 blank_return
-	queue_rel geszithalor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 102
+	queue_rel geszithalor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 102
 	atk_rel geszithalor geszithalor 0.8
 	
 	:atk_geszithalor2
 	bring 13 Ex 0 geszkath_grotto|alkaj_chasm Loc.63 blank_return
-	atk_rel geszithalor larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel geszithalor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_kethrostalor
 	notowns alkaj_chasm blank_return
-	queue_rel keskathalor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
-	queue_rel kethrostalor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 keskathalor 255 Global 63 103
+	queue_rel keskathalor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
+	queue_rel kethrostalor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 keskathalor 255 Global 63 103
 	atk_rel kethrostalor kethrostalor 0.8
 	
 	:atk_kethrostalor2
 	notowns alkaj_chasm blank_return
-	atk_rel kethrostalor larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel kethrostalor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_alkajelisk
 	notowns alkaj_chasm blank_return
-	queue_rel geszithalor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
-	queue_rel alkajelisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 geszithalor 255 Global 63 103
+	queue_rel geszithalor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
+	queue_rel alkajelisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 geszithalor 255 Global 63 103
 	atk_rel alkajelisk alkajelisk 0.8
 	
 	:atk_alkajelisk2
 	notowns alkaj_chasm blank_return
-	atk_rel alkajelisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel alkajelisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_zoryusthaleth
 	bring 13 Ex 0 zorkiz_shroud|ultrok_cavern Loc.63 blank_return
-	queue_rel zoryusthaleth larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
+	queue_rel zoryusthaleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
 	
 	:atk_zoryusthaleth2
 	bring 13 Ex 0 zorkiz_shroud|ultrok_cavern Loc.63 blank_return
-	atk_rel zoryusthaleth larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.75
+	atk_rel zoryusthaleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75
 	atk_rel zoryusthaleth zoryusthaleth 0.8
 	return
 	
 	:atk_lakizilisk
 	bring 13 Ex 0 zorkiz_shroud|ultrok_cavern Loc.63 blank_return
-	queue_rel lakizilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 100
+	queue_rel lakizilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 100
 	atk_rel lakizilisk lakizilisk 0.8
 	
 	:atk_lakizilisk2
 	bring 13 Ex 0 zorkiz_shroud|ultrok_cavern Loc.63 blank_return
-	atk_rel lakizilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel lakizilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_gorgrokor
 	bring 13 Ex 0 zorkiz_shroud|ultrok_cavern Loc.63 blank_return
-	queue_rel gorgrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 100
+	queue_rel gorgrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 100
 	atk_rel gorgrokor gorgrokor 0.8
 	
 	:atk_gorgrokor2
 	notowns gorgral_swamp blank_return
-	atk_rel gorgrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 1.5
+	atk_rel gorgrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.5
 	return
 	
 	:atk_konvilisk
 	bring 13 Ex 0 matravil_nest|almakis_antre Loc.63 blank_return
-	queue_rel konvilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 101
+	queue_rel konvilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 101
 	atk_rel konvilisk konvilisk 0.8
 	
 	:atk_konvilisk2
 	bring 13 Ex 0 matravil_nest|almakis_antre Loc.63 blank_return
-	atk_rel konvilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 1.5
+	atk_rel konvilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.5
 	return
 	
 	:atk_vilgorokor
 	bring 13 Ex 0 matravil_nest|almakis_antre Loc.63 blank_return
-	queue_rel vilgorokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 101
+	queue_rel vilgorokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 101
 	atk_rel vilgorokor vilgorokor 0.8
 	
 	:atk_vilgorokor2
 	bring 13 Ex 0 matravil_nest|almakis_antre Loc.63 blank_return
-	atk_rel vilgorokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 1.5
+	atk_rel vilgorokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.5
 	return
 	
 	:atk_matraleth
 	bring 13 Ex 0 matravil_nest|almakis_antre Loc.63 blank_return
-	queue_rel matraleth larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.25 larva 255 Global 63 101
+	queue_rel matraleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.25 larva 255 Global 63 101
 	atk_rel matraleth matraleth 0.8
 	
 	:atk_matraleth2
 	bring 13 Ex 0 matravil_nest|almakis_antre Loc.63 blank_return
-	atk_rel matraleth larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5
+	atk_rel matraleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5
 	return
 	
 	:atk_ultrokor
 	bring 13 Ex 0 ultrok_cavern Loc.63 blank_return
-	queue_rel zoryusthaleth larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
-	queue_rel ultrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 zoryusthaleth 255 Global 63 102
+	queue_rel zoryusthaleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
+	queue_rel ultrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 zoryusthaleth 255 Global 63 102
 	atk_rel ultrokor ultrokor 0.8
 	
 	:atk_ultrokor2
 	bring 13 Ex 0 ultrok_cavern Loc.63 blank_return
-	atk_rel ultrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel ultrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_zobriolisk
 	bring 13 Ex 0 ultrok_cavern Loc.63 blank_return
-	queue_rel lakizilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
-	queue_rel zobriolisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 lakizilisk 255 Global 63 102
+	queue_rel lakizilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
+	queue_rel zobriolisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 lakizilisk 255 Global 63 102
 	atk_rel zobriolisk zobriolisk 0.8
 	
 	:atk_zobriolisk2
 	bring 13 Ex 0 ultrok_cavern Loc.63 blank_return
-	atk_rel zobriolisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel zobriolisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_zarcavrokor
 	bring 13 Ex 0 ultrok_cavern Loc.63 blank_return
-	queue_rel gorgrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
-	queue_rel zarcavrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 gorgrokor 255 Global 63 102
+	queue_rel gorgrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
+	queue_rel zarcavrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 gorgrokor 255 Global 63 102
 	atk_rel zarcavrokor zarcavrokor 0.8
 	
 	:atk_zarcavrokor2
 	bring 13 Ex 0 ultrok_cavern Loc.63 blank_return
-	atk_rel zarcavrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel zarcavrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_tetcaerokor
 	notowns almakis_antre blank_return
-	queue_rel konvilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
-	queue_rel tetcaerokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 konvilisk 255 Global 63 102
+	queue_rel konvilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
+	queue_rel tetcaerokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 konvilisk 255 Global 63 102
 	atk_rel tetcaerokor tetcaerokor 0.8
 	
 	:atk_tetcaerokor2
 	notowns almakis_antre blank_return
-	atk_rel tetcaerokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel tetcaerokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atkSelkerilisk
 	notowns almakis_antre blank_return
-	queue_rel vilgorokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
-	queue_rel selkerilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 vilgorokor 255 Global 63 102
+	queue_rel vilgorokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
+	queue_rel selkerilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 vilgorokor 255 Global 63 102
 	atk_rel selkerilisk selkerilisk 0.8
 	
 	:atkSelkerilisk2
 	notowns almakis_antre blank_return
-	atk_rel selkerilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel selkerilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:atk_akistrokor
 	notowns almakis_antre blank_return
-	queue_rel matraleth larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.4 larva 255 Global 63 100
-	queue_rel akistrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.4 matraleth 255 Global 63 102
+	queue_rel matraleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.4 larva 255 Global 63 100
+	queue_rel akistrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.4 matraleth 255 Global 63 102
 	atk_rel akistrokor akistrokor 0.8
 	
 	:atk_akistrokor2
 	notowns almakis_antre blank_return
-	atk_rel akistrokor larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5
+	atk_rel akistrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5
 	return
 	
 	:atk_isthrathaleth
 	bring 13 Ex 0 elthisth_mound|rakzogth_roost Loc.63 blank_return
-	queue_rel isthrathaleth larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.2 larva 255 Global 63 103
+	queue_rel isthrathaleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.2 larva 255 Global 63 103
 	atk_rel isthrathaleth isthrathaleth 0.8
 	
 	:atk_isthrathaleth2
 	notowns elthisth_mound blank_return
-	atk_rel isthrathaleth larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.33
+	atk_rel isthrathaleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.33
 	return
 	
 	:atk_elthrazalisk
 	bring 13 Ex 0 elthisth_mound|rakzogth_roost Loc.63 blank_return
-	queue_rel elthrazalisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.2 larva 255 Global 63 103
+	queue_rel elthrazalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.2 larva 255 Global 63 103
 	atk_rel elthrazalisk elthrazalisk 0.8
 	
 	:atk_elthrazalisk2
 	notowns elthisth_mound blank_return
-	atk_rel elthrazalisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.33
+	atk_rel elthrazalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.33
 	return
 	
 	:atk_ogroszaleth
 	notowns almakis_antre blank_return
-	queue_rel isthrathaleth larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.4 larva 255 Global 63 100
-	queue_rel ogroszaleth larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.4 isthrathaleth 255 Global 63 104
+	queue_rel isthrathaleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.4 larva 255 Global 63 100
+	queue_rel ogroszaleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.4 isthrathaleth 255 Global 63 104
 	atk_rel ogroszaleth ogroszaleth 0.8
 	
 	:atk_ogroszaleth2
 	notowns almakis_antre blank_return
-	atk_rel ogroszaleth larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5
+	atk_rel ogroszaleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5
 	return
 	
 	:atk_rakzilisk
 	notowns almakis_antre blank_return
-	queue_rel elthrazalisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
-	queue_rel rakzilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 0.5 elthrazalisk 255 Global 63 104
+	queue_rel elthrazalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
+	queue_rel rakzilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 elthrazalisk 255 Global 63 104
 	atk_rel rakzilisk rakzilisk 0.8
 	
 	:atk_rakzilisk2
 	notowns almakis_antre blank_return
-	atk_rel rakzilisk larvosk_colony|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel rakzilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
 	return
 	
 	:early_military
@@ -5677,7 +5681,7 @@ script_id ZMCx
 	bring 13 AtL 24 zethrokor Loc.63 blank
 	bring 13 AtM_C 2 larva Loc.63 wait_for_larva
 	res 13 AtM Ore 49 blank
-	queue_rel zethrokor hachirosk|caphrolosk|gathtelosk|larvosk_colony 1 larva 255 Global 63 100
+	queue_rel zethrokor hachirosk|caphrolosk|gathtelosk|larvosk_cesiant 1 larva 255 Global 63 100
 	stop
 	
 	:early_vorvrokor
@@ -5685,8 +5689,8 @@ script_id ZMCx
 	bring 13 AtL 12 vorvrokor Loc.63 blank
 	bring 13 AtM_C 2 larva Loc.63 wait_for_larva
 	res 13 AtM Ore 74 blank
-	queue_rel zethrokor hachirosk|caphrolosk|gathtelosk|larvosk_colony 1 larva 255 Global 63 100
-	queue_rel vorvrokor hachirosk|caphrolosk|gathtelosk|larvosk_colony 1 zethrokor 255 Global 63 100
+	queue_rel zethrokor hachirosk|caphrolosk|gathtelosk|larvosk_cesiant 1 larva 255 Global 63 100
+	queue_rel vorvrokor hachirosk|caphrolosk|gathtelosk|larvosk_cesiant 1 zethrokor 255 Global 63 100
 	stop
 	
 	:early_nathrokor
@@ -5694,7 +5698,7 @@ script_id ZMCx
 	bring 13 AtL 12 nathrokor Loc.63 blank
 	bring 13 AtM_C 2 larva Loc.63 wait_for_larva
 	res 13 AtM Ore 149 blank
-	queue_rel nathrokor hachirosk|caphrolosk|gathtelosk|larvosk_colony 1 larva 255 Global 63 100
+	queue_rel nathrokor hachirosk|caphrolosk|gathtelosk|larvosk_cesiant 1 larva 255 Global 63 100
 	stop
 	
 	:early_hydralisk
@@ -5703,7 +5707,7 @@ script_id ZMCx
 	bring 13 AtM_C 2 larva Loc.63 wait_for_larva
 	res 13 AtM Ore 74 blank
 	res 13 AtM Gas 24 blank
-	queue_rel hydralisk hachirosk|caphrolosk|gathtelosk|larvosk_colony 1 larva 255 Global 63 100
+	queue_rel hydralisk hachirosk|caphrolosk|gathtelosk|larvosk_cesiant 1 larva 255 Global 63 100
 	stop
 	
 	:early_bactalisk
@@ -5712,8 +5716,8 @@ script_id ZMCx
 	bring 13 AtM_C 2 larva Loc.63 wait_for_larva
 	res 13 AtM Ore 124 blank
 	res 13 AtM Gas 74 blank
-	queue_rel hydralisk hachirosk|caphrolosk|gathtelosk|larvosk_colony 1 larva 255 Global 63 100
-	queue_rel bactalisk hachirosk|caphrolosk|gathtelosk|larvosk_colony 1 hydralisk 255 Global 63 100
+	queue_rel hydralisk hachirosk|caphrolosk|gathtelosk|larvosk_cesiant 1 larva 255 Global 63 100
+	queue_rel bactalisk hachirosk|caphrolosk|gathtelosk|larvosk_cesiant 1 hydralisk 255 Global 63 100
 	stop
 	
 	:early_quazilisk
@@ -5722,7 +5726,7 @@ script_id ZMCx
 	bring 13 AtM_C 2 larva Loc.63 wait_for_larva
 	res 13 AtM Ore 124 blank
 	res 13 AtM Gas 24 blank
-	queue_rel quazilisk hachirosk|caphrolosk|gathtelosk|larvosk_colony 1 larva 255 Global 63 100
+	queue_rel quazilisk hachirosk|caphrolosk|gathtelosk|larvosk_cesiant 1 larva 255 Global 63 100
 	stop
 	
 	:early_almaksalisk
@@ -5731,8 +5735,8 @@ script_id ZMCx
 	bring 13 AtM_C 2 larva Loc.63 wait_for_larva
 	res 13 AtM Ore 174 blank
 	res 13 AtM Gas 124 blank
-	queue_rel konvilisk hachirosk|caphrolosk|gathtelosk|larvosk_colony 1 larva 255 Global 63 100
-	queue_rel almaksalisk hachirosk|caphrolosk|gathtelosk|larvosk_colony 1 konvilisk 255 Global 63 100
+	queue_rel konvilisk hachirosk|caphrolosk|gathtelosk|larvosk_cesiant 1 larva 255 Global 63 100
+	queue_rel almaksalisk hachirosk|caphrolosk|gathtelosk|larvosk_cesiant 1 konvilisk 255 Global 63 100
 	stop
 	
 	:early_zoryusthaleth
@@ -5741,7 +5745,7 @@ script_id ZMCx
 	bring 13 AtM_C 2 larva Loc.63 wait_for_larva
 	res 13 AtM Ore 99 blank
 	res 13 AtM Gas 74 blank
-	queue_rel zoryusthaleth hachirosk|caphrolosk|gathtelosk|larvosk_colony 1 larva 255 Global 63 100
+	queue_rel zoryusthaleth hachirosk|caphrolosk|gathtelosk|larvosk_cesiant 1 larva 255 Global 63 100
 	stop
 	
 	:early_lakizilisk
@@ -5750,7 +5754,7 @@ script_id ZMCx
 	bring 13 AtM_C 2 larva Loc.63 wait_for_larva
 	res 13 AtM Ore 124 blank
 	res 13 AtM Gas 124 blank
-	queue_rel lakizilisk hachirosk|caphrolosk|gathtelosk|larvosk_colony 1 larva 255 Global 63 100
+	queue_rel lakizilisk hachirosk|caphrolosk|gathtelosk|larvosk_cesiant 1 larva 255 Global 63 100
 	stop
 	
 	:early_mutalisk
@@ -5758,7 +5762,7 @@ script_id ZMCx
 	bring 13 AtL 10 mutalisk Loc.63 blank
 	bring 13 AtM_C 2 larva Loc.63 wait_for_larva
 	res 13 AtM Any 99 blank
-	queue_rel mutalisk hachirosk|caphrolosk|gathtelosk|larvosk_colony 1 larva 255 Global 63 100
+	queue_rel mutalisk hachirosk|caphrolosk|gathtelosk|larvosk_cesiant 1 larva 255 Global 63 100
 	stop
 	
 	:early_ultrokor
@@ -5766,8 +5770,8 @@ script_id ZMCx
 	bring 13 AtL 6 ultrokor Loc.63 blank
 	bring 13 AtM_C 2 larva Loc.63 wait_for_larva
 	res 13 AtM Any 199 blank
-	queue_rel zoryusthaleth hachirosk|caphrolosk|gathtelosk|larvosk_colony 1 larva 255 Global 63 100
-	queue_rel ultrokor hachirosk|caphrolosk|gathtelosk|larvosk_colony 1 larva 255 Global 63 100
+	queue_rel zoryusthaleth hachirosk|caphrolosk|gathtelosk|larvosk_cesiant 1 larva 255 Global 63 100
+	queue_rel ultrokor hachirosk|caphrolosk|gathtelosk|larvosk_cesiant 1 larva 255 Global 63 100
 	stop
 	
 	:anti_grief
@@ -5788,7 +5792,7 @@ script_id ZMCx
 	stop
 	
 	:anti_grief_air
-	bring 13 AtL 5 nathrokor|hydralisk|bactalisk|quazilisk|mutalisk|vithrilisk|spraith_colony Loc.63 blank
+	bring 13 AtL 5 nathrokor|hydralisk|bactalisk|quazilisk|mutalisk|vithrilisk|spraith_cesiant Loc.63 blank
 	wait 24
 	var Ex|Jump under_attack_by_air_var 0 anti_grief_air 13
 	bring 13 AtL 5 hydralisk|quazilisk|mutalisk Loc.63 blank
@@ -5798,25 +5802,25 @@ script_id ZMCx
 	goto anti_grief_air_general
 	
 	:anti_grief_air_assault
-	add_bld 255 spraith_colony 2 50 140
+	add_bld 255 spraith_cesiant 2 50 140
 	call tech_to_hydrok
 	train 6 hydralisk
 	stop
 	
 	:anti_grief_air_swarm
-	add_bld 255 spraith_colony 2 50 140
+	add_bld 255 spraith_cesiant 2 50 140
 	call tech_to_quazrok
 	train 6 quazilisk
 	stop
 	
 	:anti_grief_air_sunblot
-	add_bld 255 spraith_colony 2 50 140
+	add_bld 255 spraith_cesiant 2 50 140
 	call tech_to_muthrok
 	train 4 mutalisk
 	stop
 	
 	:anti_grief_air_general
-	add_bld 255 spraith_colony 3 50 140
+	add_bld 255 spraith_cesiant 3 50 140
 	call tech_to_hydrok
 	train 4 skithrokor
 	stop

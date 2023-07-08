@@ -24296,7 +24296,7 @@ MadrigalImperiosoTurretInit:
 MadrigalImperiosoTurretGndAttkInit:
 	wait              	1
 	nobrkcodestart
-	wait              	1
+	wait              	2
 	playfram			0x00
 	wait              	1
 	playsndbtwn			1208 1211 # Madrigal weaponfire 01, 02, 03, 04
@@ -33235,7 +33235,7 @@ Burrow        	[NONE]
 
 IonCannonBaseInit:
 	playfram          	0x00
-	imgul             	1258 -32 -1 # Ion Cannon shadow
+	imgul             	1258 -27 0 # Ion Cannon shadow
 	imgul             	1452 0 0 # Ion Cannon mouse response
 IonCannonBaseIsWorking:
 	wait              	125
@@ -33273,7 +33273,7 @@ IonCannonBaseGndAttkToIdle:
 	goto              	IonCannonBaseIsWorking
 
 IonCannonBaseAlmostBuilt:
-	playfram          	0x4C
+	playfram          	0xCC
 	setfldirect       	20
 	goto              	IonCannonBaseIsWorking
 	
@@ -33281,14 +33281,14 @@ IonCannonBaseLiftOff:
 	nobrkcodestart
 	playsnd           	471	# Misc\LiftOff.WAV
 	playfram			0x00
-	wait				1
-#	playfram          	5
+	wait              	1
+	playfram          	0x60
 	wait              	8
-#	playfram          	2
+	playfram          	0x80
 	wait              	8
-#	playfram          	3
+	playfram          	0xA0
 	wait              	8
-#	playfram          	4
+	playfram          	0xC0
 	sigorder          	16
 	nobrkcodeend
 	goto              	IonCannonBaseIsWorking
@@ -33297,13 +33297,12 @@ IonCannonBaseLanding:
 	nobrkcodestart
 	wait              	15
 	playsnd           	472	# Misc\Land.WAV
-#	playfram          	4
 	wait              	8
-#	playfram          	3
+	playfram          	0xA0
 	wait              	8
-#	playfram          	2
+	playfram          	0x80
 	wait              	8
-#	playfram          	5
+	playfram          	0x60
 	wait              	8
 	playfram          	0x00
 	sigorder          	16
@@ -33318,7 +33317,7 @@ IonCannonBaseBuilt:
 	imgol             	1278 127 -128 # ioncannon-attack-A2
 	imgol             	1701 -128 127 # ioncannon-attack-A3
 	imgol             	1702 127 127 # ioncannon-attack-A4
-	imgol             	1256 -1 -54 # ioncannon-turret
+	imgol             	1256 -1 -38 # ioncannon-turret
 	setfldirect       	20
 	goto              	IonCannonBaseIsWorking
 
