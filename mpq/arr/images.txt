@@ -1058,7 +1058,7 @@ Treasury
 Treasury Shadow
 Sibraelosk
 Sibraelosk Shadow
-Crucible Overlay
+Crucible Khaydarin Charge Overlay
 Cowardice Overlay Small
 Cowardice Overlay Medium
 Cowardice Overlay Large

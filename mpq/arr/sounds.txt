@@ -2474,3 +2474,6 @@ cm\t\apostle\toggle-03.wav
 cm\t\shaman\switch-01.wav
 cm\t\shaman\switch-02.wav
 cm\t\shaman\switch-03.wav
+protoss\advisor\paderr03.wav
+protoss\advisor\padupd03.wav
+cm\t\_building\treasury.wav

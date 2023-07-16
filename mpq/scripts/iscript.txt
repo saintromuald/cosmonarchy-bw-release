@@ -24518,6 +24518,8 @@ PaladinGndAttkInit:
 	wait              	1
 	nobrkcodestart
 	playsnd           	988	# Terran\Duran\TDnPss08.wav
+	goto				PaladinGndAttkRpt
+PaladinGndAttkRpt:
 	wait              	10
 	playsndbtwn			1144 1147 # Paladin weaponfire 01, 02, 03, 04
 	attack
@@ -25343,19 +25345,19 @@ TreasuryIsWorking:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1060 Treasury Overlay (cm\effect\treasury-overlay.grp)
+# 1060 Khaydarin Charge Overlay (cm\effect\treasury-overlay.grp)
 .headerstart
 IsId          	440
 Type          	1
-Init          	TreasuryEnhanceInit
-Death         	TreasuryEnhanceDeath
+Init          	KhaydarinChargeInit
+Death         	KhaydarinChargeDeath
 .headerend
 # ----------------------------------------------------------------------------- #
 
-TreasuryEnhanceInit:
+KhaydarinChargeInit:
 	playfram          	0x00
 	wait              	2 
-TreasuryEnhanceLocal00:
+KhaydarinChargeLocal00:
 	playfram			1
 	wait 				2
 	playfram			3
@@ -25388,9 +25390,9 @@ TreasuryEnhanceLocal00:
 	wait				2
 	playfram			1
 	wait				2
-	goto				TreasuryEnhanceDeath
+	goto				KhaydarinChargeDeath
 
-TreasuryEnhanceDeath:
+KhaydarinChargeDeath:
 	wait              	1
 	end
 	
@@ -27177,7 +27179,6 @@ StarSovereignLocal00:
 StarSovereignCastSpell:
 	wait				1
 	nobrkcodestart
-	playsnd				1246 # Star Sovereign Grief of All Gods channel 01
 	wait				20
 	imgul				1251 0 30
 	wait				100
