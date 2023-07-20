@@ -68,8 +68,6 @@ We are now testing a revised method of handling stuns. If you find any bugs with
 	- Movement speed now 12.5% slower (now matches Trojan)
 - [Quarry](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/quarry):
 	- Gas cost now 50, from 25
-- [Anchor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/anchor):
-	- Mineral cost now 150, from 100
 - [Treasury](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/treasury):
 	- HP now 850, from 1000
 
