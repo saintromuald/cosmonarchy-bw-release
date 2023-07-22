@@ -796,7 +796,7 @@
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 247, 23, 24, 6, 6, 340, 350 # Defensive Matrix, Spell Researched ([6] Defensive Matrix - Azazel), Use Technology ([6] Defensive Matrix - Azazel)
- 8, 319, 23, 24, 40, 40, 1807, 1806 # Apial Sensors, Spell Researched ([40] Sublime Shepherd - Azazel), Use Technology ([40] Sublime Shepherd - Azazel)
+ 8, 319, 23, 57, 34, 0, 1807, 1806 # Apial Sensors, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 130: # unused
  2, 229, 9, 10, 0, 0, 665, 0 # Stop, Attacking Building (0), Stop (0)

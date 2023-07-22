@@ -4759,79 +4759,79 @@ AlmostBuilt   	ZergConstruction_Medium_AlmostBuilt
 
 ZergConstruction_Medium_Init:
 	imgul             	106 0 0	# Zerg Building Construction Shadow (zerg\ZBShad.grp)
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
 ZergConstruction_Medium_Local00:
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	5
+	wait              	2
 	goto              	ZergConstruction_Medium_Local00
 
 ZergConstruction_Medium_Death:
-	playsnd           	774	# Zerg\Bldg\ZBldgDth.WAV
-	imgol             	60 0 0	# Zerg Building Explosion (thingy\zBldDthS.grp)
-	wait              	3 
-	lowsprul          	186 0 0	# Zerg Building Rubble (Small) (thingy\ZRubbleS.grp)
-	wait              	1 
+	playsnd           	774 # Zerg\Bldg\ZBldgDth.WAV
+	imgol             	60 0 0 # Zerg Building Explosion (thingy\zBldDthS.grp)
+	wait              	3
+	lowsprul          	186 0 0 # Zerg Building Rubble (Small) (thingy\ZRubbleS.grp)
+	wait              	1
 	end
 
 ZergConstruction_Medium_SpecialState1:
-	playfram          	13	# Frame set 0, direction 13
-	wait              	2 
-	playfram          	14	# Frame set 0, direction 14
-	wait              	2 
-	playfram          	15	# Frame set 0, direction 15
-	wait              	2 
-	playfram          	16	# Frame set 0, direction 16
-	wait              	2 
-	playfram          	0x11	# Frame set 1
-	wait              	2 
-	playfram          	18	# Frame set 1, direction 1
-	wait              	2 
-	playfram          	0x11	# Frame set 1
-	wait              	2 
-	playfram          	16	# Frame set 0, direction 16
-	wait              	2 
-	playfram          	15	# Frame set 0, direction 15
-	wait              	2 
-	playfram          	14	# Frame set 0, direction 14
-	wait              	2 
+	playfram          	13
+	wait              	2
+	playfram          	14
+	wait              	2
+	playfram          	15
+	wait              	2
+	playfram          	16
+	wait              	2
+	playfram          	0x11
+	wait              	2
+	playfram          	18
+	wait              	2
+	playfram          	0x11
+	wait              	2
+	playfram          	16
+	wait              	2
+	playfram          	15
+	wait              	2
+	playfram          	14
+	wait              	2
 	goto              	ZergConstruction_Medium_SpecialState1
 
 ZergConstruction_Medium_AlmostBuilt:
-	sigorder          	32 
-	playfram          	19	# Frame set 1, direction 2
-	wait              	2 
-	playfram          	20	# Frame set 1, direction 3
-	wait              	2 
-	playfram          	21	# Frame set 1, direction 4
-	wait              	2 
-	sigorder          	4 
+	sigorder          	32
+	playfram          	19
+	wait              	2
+	playfram          	20
+	wait              	2
+	playfram          	21
+	wait              	2
+	sigorder          	4
 	goto              	ZergConstruction_Medium_Local01
 
 ZergConstruction_Medium_Local01:
-	wait              	125 
+	wait              	125
 	goto              	ZergConstruction_Medium_Local01
 
 # ----------------------------------------------------------------------------- #
@@ -27367,7 +27367,7 @@ Enable        	[NONE]
 # ----------------------------------------------------------------------------- #
 
 ApostleInit:
-	imgul             	1118 0 0 # Apostle Shadow (cm\terran\apostle-shad.grp)
+	imgul             	1118 0 4 # Apostle Shadow (cm\terran\apostle-shad.grp)
 ApostleWalkingToIdle:
 	playfram          	0x00
 ApostleLocal00:
@@ -46020,7 +46020,7 @@ WarpIn        	VagrantWarpIn
 # ----------------------------------------------------------------------------- #
 
 VagrantInit:
-	imgul             	1277 0 0 # Vagrant Shadow (cm\protoss\vagrant-shad.grp)
+	imgul             	1277 0 -2 # Vagrant Shadow (cm\protoss\vagrant-shad.grp)
 	playfram          	0x00
 	wait				2
 	goto				VagrantLocal69

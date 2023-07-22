@@ -187,7 +187,7 @@ Zerg Skithrokor
 Terran Paladin
 Terran Savant
 Vespene Geyser
-Terran Particle Accelerator
+Terran Hadron
 Terran Biotic Base
 Zerg Axitrilisk
 Town Center Marker (AI)
