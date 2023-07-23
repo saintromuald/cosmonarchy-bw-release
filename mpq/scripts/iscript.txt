@@ -45842,7 +45842,7 @@ ZarcavrokorDeath:
 
 ZarcavrokorGndAttkInit:
 	nobrkcodestart
-	playsndbtwn			1294 1295 # Zarcavrokor weapon fire 01, 02
+	playsndbtwn			1295 1296 # Gorgrokor weapon fire 01, 02
 	playfram 			0x100
 	wait 				1
 	playfram 			0x120

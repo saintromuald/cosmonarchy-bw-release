@@ -22,6 +22,11 @@ A very minor update lies ahead of [Ascension #3](https://www.youtube.com/playlis
 	- Madcap, Cataphract (lighting and animations, c. Solstice)
 
 ## Bugfixes
+- **Hotfix 23 July 2023:**
+	- The Diadem's damage overlay has been disabled again to prevent freezing (r. HelltRYKS)
+	- Zarcavrokors no longer have their main weapon put on cooldown when launching Bones of Reflection
+	- Sycophants now correctly display "unable to attack target" when ordered to attack air units (r. IskatuMesk)
+	- Zarcavrokor weaponfire SFX has been corrected
 - Stability:
 	- Fixed another nullsprite crash (r. The Shambler/Alexhandr)
 - Audiovisuals:
