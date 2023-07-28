@@ -22,6 +22,9 @@ A very minor update lies ahead of [Ascension #3](https://www.youtube.com/playlis
 	- Madcap, Cataphract (lighting and animations, c. Solstice)
 
 ## Bugfixes
+- **Hotfix 28 July 2023:**
+	- Cancelling Zerg Eggs after the Larva-producing structure has been destroyed no longer crashes the game (r. Mystery Meat)
+	- Lakizilisks will no longer become unresponsive when receiving an unburrow order while already unburrowed (r. exosus & fagguto)
 - **Hotfix 23 July 2023:**
 	- The Diadem's damage overlay has been disabled again to prevent freezing (r. HelltRYKS)
 	- Zarcavrokors no longer have their main weapon put on cooldown when launching Bones of Reflection
