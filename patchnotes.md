@@ -95,6 +95,7 @@ A menagerie of bugfixes and balance changes are also present, alongside the depl
 - [Herald](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/herald):
 	- Weapon cooldown now 0.92, from 1
 - [Sycophant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/sycophant):
+	- Armor penetration now 3, from 2
 	- Now splashes targets in 0.25/0.5/0.75 radii
 - [Optecton](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/optecton):
 	- Transport space cost now 8, from 10

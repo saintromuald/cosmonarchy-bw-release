@@ -30431,14 +30431,16 @@ GolemGndAttkInit:
 	playfram          	0xbb
 	wait              	1
 	playfram          	0xcc
-	attackmelee       	1 664 # Protoss\ZEALOT\pzeHit00.WAV
+	attackwith 			1
+	playsnd				664 # Protoss\ZEALOT\pzeHit00.WAV
 	wait              	1
 	playfram			0xdd
 	wait				1
 	playfram			0xee
 	wait				1
 	playfram			0xff
-	attackmelee       	1 664 # Protoss\ZEALOT\pzeHit00.WAV
+	attackwith 			1
+	playsnd				664 # Protoss\ZEALOT\pzeHit00.WAV
 	wait				1
 	playfram			0x110
 	nobrkcodeend
@@ -49783,7 +49785,8 @@ SycophantGndAttkRpt:
 	wait				1
 	nobrkcodestart
 	playfram          	0x240
-	attackmelee       	1 664 # Protoss\ZEALOT\pzeHit00.WAV
+	attackwith 			1
+	playsnd				664 # Protoss\ZEALOT\pzeHit00.WAV
 	wait              	1
 	playfram          	0x260
 	wait              	1
@@ -51406,12 +51409,14 @@ MortothrokorGndAttkRpt:
 	playfram          	0x66
 	wait              	1
 	playfram          	0x77
-	attackmelee       	2 894 895 # Zerg\Ultra\zulHit00.WAV | Zerg\Ultra\zulHit01.WAV
+	attackwith 			1
+	playsndbtwn			894 895	# Zerg\Ultra\zulHit00.WAV | Zerg\Ultra\zulHit01.WAV
 	wait              	2
 	playfram			0x66
 	wait				2
 	playfram			0x77
-	attackmelee       	2 894 895 # Zerg\Ultra\zulHit00.WAV | Zerg\Ultra\zulHit01.WAV
+	attackwith 			1
+	playsndbtwn			894 895	# Zerg\Ultra\zulHit00.WAV | Zerg\Ultra\zulHit01.WAV
 	wait				1
 	playfram			0x66
 	wait				1
