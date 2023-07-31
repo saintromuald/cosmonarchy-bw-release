@@ -449,12 +449,6 @@ script_id PARx
 #	p_need 1 sanctum_of_sorrow
 	return
 	
-	:need_waywardlure
-	wait 12
-	bring 13 AtL 1 wayward_lure Loc.63 blank_return
-	p_need 1 wayward_lure
-	return
-	
 	:need_monumentofsin
 	wait 12
 	bring 13 AtL 1 monument_of_sin Loc.63 blank_return

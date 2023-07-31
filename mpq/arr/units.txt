@@ -214,7 +214,7 @@ Zerg Alkaj Chasm
 Terran Atelier
 Start Location
 Terran Treasury
-Zerg Larvosk Colony
+Zerg Larvosk Cesiant
 Zerg Konvilisk
 Zerg Akistrokor
 Zerg Geszkath Grotto

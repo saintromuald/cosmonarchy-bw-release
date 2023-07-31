@@ -37,7 +37,7 @@ script_id ZARx
 	goto idle
 	
 	:build_order_expansion
-	bring 13 AtL_W 1 hachirosk|caphrolosk|gathtelosk|larvosk_colony Loc.63 blank
+	bring 13 AtL_W 1 hachirosk|caphrolosk|gathtelosk|larvosk_cesiant Loc.63 blank
 	var Ex|Jump pref_assault 1 build_assault_fin2 13
 	var Ex|Jump pref_swarm 1 build_swarm_fin2 13
 	var Ex|Jump pref_sunblot 1 build_sunblot_fin2 13
@@ -212,8 +212,8 @@ script_id ZARx
 	wait 12
 	local 255 Ex 0 larva expansion_worker_standard_loop
 	var AtL|WF(240) can_worker_all_var 1 13
-	bring 13 AtL 4 hachirosk|caphrolosk|gathtelosk|larvosk_colony Loc.63 expansion_worker_standard_loop_maximum
-	bring 13 AtL 3 hachirosk|caphrolosk|gathtelosk|larvosk_colony Loc.63 expansion_worker_standard_loop_medium
+	bring 13 AtL 4 hachirosk|caphrolosk|gathtelosk|larvosk_cesiant Loc.63 expansion_worker_standard_loop_maximum
+	bring 13 AtL 3 hachirosk|caphrolosk|gathtelosk|larvosk_cesiant Loc.63 expansion_worker_standard_loop_medium
 	wait 120
 	local 255 AtL 12 droleth|gosvileth expansion_worker_standard_loop
 	call worker_conditions
@@ -280,7 +280,7 @@ script_id ZARx
 	:need_irol
 	wait 24
 	bring 13 AtL 1 irol_iris|irulent_ivoa|othstol_oviform|orboth_omlia Loc.63 blank
-	bring 13 AtM 3 larvosk_colony|hachirosk|caphrolosk|gathtelosk Loc.63 need_irol
+	bring 13 AtM 3 larvosk_cesiant|hachirosk|caphrolosk|gathtelosk Loc.63 need_irol
 	bring 13 Ex 0 quazrok_pool|liivral_pond|hydrok_den|gorgral_swamp|muthrok_spire|vithrath_haunt|zorkiz_shroud|ultrok_cavern|matravil_nest|almakis_antre|elthisth_mound|geszkath_grotto|alkaj_chasm Loc.63 need_irol
 	bring 13 AtM 1 excisant Loc.63 need_irol
 	call main_wait_450
@@ -300,7 +300,7 @@ script_id ZARx
 	wait 24
 	bring 13 AtL 1 irulent_ivoa|othstol_oviform|orboth_omlia Loc.63 blank
 	notowns irol_iris need_irulent
-	bring 13 AtM 4 larvosk_colony|hachirosk|caphrolosk|gathtelosk Loc.63 need_irulent
+	bring 13 AtM 4 larvosk_cesiant|hachirosk|caphrolosk|gathtelosk Loc.63 need_irulent
 	bring 13 Ex 1 quazrok_pool|liivral_pond|hydrok_den|gorgral_swamp|muthrok_spire|vithrath_haunt|zorkiz_shroud|ultrok_cavern|matravil_nest|almakis_antre|elthisth_mound|geszkath_grotto|alkaj_chasm Loc.63 need_irulent
 	bring 13 AtM 2 excisant Loc.63 need_irulent
 	call main_wait_450
@@ -325,7 +325,7 @@ script_id ZARx
 	wait 24
 	bring 13 AtL 1 othstol_oviform|orboth_omlia Loc.63 blank
 	bring 13 Ex 0 irol_iris|irulent_ivoa Loc.63 need_othstol
-	bring 13 AtM 5 larvosk_colony|hachirosk|caphrolosk|gathtelosk Loc.63 need_othstol
+	bring 13 AtM 5 larvosk_cesiant|hachirosk|caphrolosk|gathtelosk Loc.63 need_othstol
 	bring 13 Ex 2 quazrok_pool|liivral_pond|hydrok_den|gorgral_swamp|muthrok_spire|vithrath_haunt|zorkiz_shroud|ultrok_cavern|matravil_nest|almakis_antre|elthisth_mound|geszkath_grotto|alkaj_chasm Loc.63 need_othstol
 	bring 13 AtM 4 excisant Loc.63 need_othstol
 	call main_wait_450
@@ -344,7 +344,7 @@ script_id ZARx
 	wait 24
 	bring 13 AtL 1 orboth_omlia Loc.63 blank
 	notowns othstol_oviform need_orboth
-	bring 13 AtM 7 larvosk_colony|hachirosk|caphrolosk|gathtelosk Loc.63 need_orboth
+	bring 13 AtM 7 larvosk_cesiant|hachirosk|caphrolosk|gathtelosk Loc.63 need_orboth
 	bring 13 Ex 4 quazrok_pool|liivral_pond|hydrok_den|gorgral_swamp|muthrok_spire|vithrath_haunt|zorkiz_shroud|ultrok_cavern|matravil_nest|almakis_antre|elthisth_mound|geszkath_grotto|alkaj_chasm Loc.63 need_orboth
 	bring 13 AtM 4 excisant Loc.63 need_orboth
 	call main_wait_450
@@ -387,7 +387,7 @@ script_id ZARx
 	var AtL|wait town_count_var 1 13
 	wait 12
 	bring 13 Ex 0 droleth|gosvileth Loc.63 request_larvosk
-	add_bld 255 larvosk_colony 1 10 109
+	add_bld 255 larvosk_cesiant 1 10 109
 	return
 	
 	:wHachirosk
@@ -510,7 +510,7 @@ script_id ZARx
 	wait 90
 	call main_wait_150
 	var Ex|Wait can_build_static_defense_var 1 13
-	add_bld 255 surkith_colony 1 5 106
+	add_bld 255 surkith_cesiant 1 5 106
 	wait 450
 	
 	:request_surkith_loop
@@ -518,26 +518,26 @@ script_id ZARx
 	wait 12
 	local 255 Ex 0 hachirosk|caphrolosk|gathtelosk request_surkith_loop
 	bring 13 Ex 0 droleth|gosvileth Loc.63 request_surkith_loop
-	bring 13 AtL 1 cagrant_colony Loc.63 request_surkith_loop
+	bring 13 AtL 1 cagrant_cesiant Loc.63 request_surkith_loop
 	res 13 AtL_C Ore 125 request_surkith_check
 	wait 90
 	call main_wait_150
 	goto request_surkith_loop
 	
 	:request_surkith_check
-	local 255 AtL 5 surkith_colony request_surkith_check_2
-	add_bld 255 surkith_colony 1 5 106
+	local 255 AtL 5 surkith_cesiant request_surkith_check_2
+	add_bld 255 surkith_cesiant 1 5 106
 	var Ex|Jump under_attack_by_ground_var 1 add_return_wait_960 13
 	goto add_return_wait_1440
 	
 	:request_surkith_check_2
 	var Ex|Jump under_attack_by_ground_var 1 request_surkith_check_3 13
 	var AtM|Jump mining_count_var 2 add_return_wait_960 13
-	add_bld 255 surkith_colony 1 7 106
+	add_bld 255 surkith_cesiant 1 7 106
 	goto add_return_wait_960
 	
 	:request_surkith_check_3
-	add_bld 255 surkith_colony 1 10 106
+	add_bld 255 surkith_cesiant 1 10 106
 	goto add_return_wait_960
 	
 	:request_spraith
@@ -545,7 +545,7 @@ script_id ZARx
 	wait 90
 	call main_wait_150
 	var Ex|Wait can_build_static_defense_var 1 13
-	add_bld 255 spraith_colony 1 5 106
+	add_bld 255 spraith_cesiant 1 5 106
 	wait 450
 	
 	:request_spraith_loop
@@ -553,26 +553,26 @@ script_id ZARx
 	wait 12
 	local 255 Ex 0 hachirosk|caphrolosk|gathtelosk request_spraith_loop
 	bring 13 Ex 0 droleth|gosvileth Loc.63 request_spraith_loop
-	bring 13 AtL 1 cagrant_colony Loc.63 request_spraith_loop
+	bring 13 AtL 1 cagrant_cesiant Loc.63 request_spraith_loop
 	res 13 AtL_C Ore 125 request_spraith_check
 	wait 60
 	call main_wait_300
 	goto request_spraith_loop
 	
 	:request_spraith_check
-	local 255 AtL 3 spraith_colony request_spraith_check_2
-	add_bld 255 spraith_colony 1 10 106
+	local 255 AtL 3 spraith_cesiant request_spraith_check_2
+	add_bld 255 spraith_cesiant 1 10 106
 	var Ex|Jump under_attack_by_air_var 1 add_return_wait_960 13
 	goto add_return_wait_1440
 	
 	:request_spraith_check_2
 	var Ex|Jump under_attack_by_air_var 1 request_spraith_check_3 13
 	var AtM|Jump mining_count_var 2 add_return_wait_960 13
-	add_bld 255 spraith_colony 1 7 106
+	add_bld 255 spraith_cesiant 1 7 106
 	goto add_return_wait_960
 	
 	:request_spraith_check_3
-	add_bld 255 spraith_colony 1 10 106
+	add_bld 255 spraith_cesiant 1 10 106
 	goto add_return_wait_960
 	
 	:production_cycle
@@ -637,26 +637,26 @@ script_id ZARx
 	return
 	
 	:production_cycle_check
-	var Ex|Call prefLarvoskColony 1 production_larvosk_colony 13
+	var Ex|Call prefLarvoskcesiant 1 production_larvosk_cesiant 13
 	var Ex|Call prefHachirosk 1 production_hachirosk 13
 	var Ex|Call prefCaphrolosk 1 production_caphrolosk 13
 	var Ex|Call prefGathtelosk 1 production_gathtelosk 13
 	var AtL|Call mining_count_var 5 production_gathtelosk 13
 	var AtL|Call mining_count_var 3 production_caphrolosk 13
 	res 13 AtL_C Any 500 production_hachirosk
-	call production_larvosk_colony
+	call production_larvosk_cesiant
 	call production_hachirosk
 	call production_caphrolosk
 	call production_gathtelosk
 	return
 	
-	:production_larvosk_colony
+	:production_larvosk_cesiant
 	wait 12
 	var AtL|Jump prod_cycle_var 1 blank_return 13
 	bring 13 Ex 0 droleth|gosvileth Loc.63 blank_return
-	bring 13 AtL 1 cagrant_colony Loc.63 blank_return
-	local 255 AtL 30 larvosk_colony blank_return
-	add_bld 255 larvosk_colony 1 30 100
+	bring 13 AtL 1 cagrant_cesiant Loc.63 blank_return
+	local 255 AtL 30 larvosk_cesiant blank_return
+	add_bld 255 larvosk_cesiant 1 30 100
 	call add_return_wait_960
 	goto production_cycle_success
 	

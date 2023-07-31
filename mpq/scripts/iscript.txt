@@ -1143,10 +1143,10 @@ Death         	[NONE]
 # ----------------------------------------------------------------------------- #
 
 GeszithalorDeathInit:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
+	playfram          	0x00
+	wait              	2
 	imgol             	58 0 0	# Zerg Air Death Explosion (Large) (thingy\zAirDthL.grp)
-	wait              	1 
+	wait              	1
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -2667,7 +2667,7 @@ ZergBuildingExplosionInit:
 IsId          	36
 Type          	13
 Init          	ZergBirthInit
-Death         	ZergBirthDeath
+Death         	EggDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -6924,6 +6924,8 @@ Phalanx_Tank_BaseDeath:
 	playsnd           	317	# Terran\TANK\TTaDth00.WAV
 	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
 	wait              	3
+	lowsprul			273 0 0 # Terran Building Rubble Small
+	wait				1
 	end
 
 Phalanx_Tank_BaseWalking:
@@ -20464,20 +20466,7 @@ ZergEggAllMutationsSpecialState2:
 	goto              	ZergEggAllMutationsLocal01
 
 ZergEggAllMutationsGndAttkToIdle:
-	playfram          	48
-	wait              	2
-	playfram          	49
-	wait              	2
-	playfram          	50
-	wait              	2
-	playfram          	51
-	wait              	2
-	playfram          	52
-	wait              	2
-	playfram          	53
-	wait              	2
-	playfram          	54
-	waitrand          	1 3 
+	wait				1
 	goto              	ZergEggAllMutationsLocal00
 
 ZergEggAllMutationsAirAttkToIdle:
@@ -34228,8 +34217,8 @@ Death         	QuaziliskDeath
 GndAttkInit   	QuaziliskGndAttkInit
 AirAttkInit   	QuaziliskGndAttkInit
 Unused1       	QuaziliskUnused1
-GndAttkRpt    	QuaziliskGndAttkInit
-AirAttkRpt    	QuaziliskGndAttkInit
+GndAttkRpt    	QuaziliskGndAttkRpt
+AirAttkRpt    	QuaziliskGndAttkRpt
 CastSpell     	[NONE]
 GndAttkToIdle 	QuaziliskGndAttkToIdle
 AirAttkToIdle 	QuaziliskGndAttkToIdle
@@ -34357,12 +34346,25 @@ QuaziliskLocal06:
 	goto				QuaziliskGndAttkToIdle
 
 QuaziliskDeath:
-	playsndbtwn			1707 1708 # Quazilisk death 01, 02
-	imgol             	3 0 0 # Scourge Death (zerg\zavDeath.grp)
-	wait              	5
-	lowsprul			814 0 0 # Quazilisk Remains
-	wait              	1
-	end
+    playsndbtwn         1707 1708 # Quazilisk death 01, 02
+    setfldirect         0
+    playfram            357
+    wait                2
+    playfram            358
+    wait                2
+    playfram            359
+    wait                2
+    playfram            360
+    wait                2
+    playfram            361
+    wait                2
+    playfram            362
+    wait                2
+    playfram            363
+    wait                2
+    lowsprul            814 0 0 # Quazilisk Remains
+    wait                1
+    end
 	
 QuaziliskUnused1:
 	wait				1
@@ -34379,47 +34381,52 @@ QuaziliskUnused1:
 	goto				QuaziliskGndAttkToIdle
 
 QuaziliskGndAttkInit:
-	playfram          	0x00	# Frame set 0
-	wait              	1 
-	nobrkcodestart
-	playfram			0x110
-	playsndbtwn			1329 1331 # Quazilisk attack 01, 02, 03
-	attack
-	wait				1
-	playfram			0x00
-	wait              	1 
-	playfram			0x110
-	wait              	1 
-	playfram			0x00
-	wait              	1 
-	nobrkcodeend
-	gotorepeatattk
-	goto              	QuaziliskGndAttkToIdle
+    playfram            0x110
+QuaziliskGndAttkRpt:
+    wait                1
+    nobrkcodestart
+    playfram            0x121
+    playsndbtwn         1329 1331 # Quazilisk attack 01, 02, 03
+    imgol               1752 0 0 # Quazilisk Attack Overlay
+    attack
+    wait                1
+    playfram            0x132
+    wait                1
+    playfram            0x143
+    wait                1
+    playfram            0x132
+    wait                1
+    playfram            0x121
+    wait                1
+    playfram            0x110
+    nobrkcodeend
+    gotorepeatattk
+    goto                QuaziliskGndAttkToIdle
 
 QuaziliskWalking:
 	move              	5
-	wait              	1 
+	wait              	1
 	playfram          	0x11
 	move              	5
-	wait              	1 
+	wait              	1
 	playfram          	0x22
 	move              	5
-	wait              	1 
+	wait              	1
 	playfram          	0x33
 	move              	5
-	wait              	1 
+	wait              	1
 	playfram          	0x44
 	move              	5
-	wait              	1 
+	wait              	1
 	playfram          	0x55
 	move              	5
-	wait              	1 
+	wait              	1
 	playfram          	0x66
 	move              	5
-	wait              	1 
+	wait              	1
 	playfram          	0x77
 	move              	5
-	wait              	1 
+	wait              	1
 	playfram          	0x88
 	goto              	QuaziliskWalking
 
@@ -34444,7 +34451,7 @@ QuaziliskBurrow:
 	playfram			0xee
 	wait				1
 	playfram			0xff
-	sigorder          	4 
+	sigorder          	4
 	goto              	QuaziliskLocal07
 
 QuaziliskUnBurrow:
@@ -34452,16 +34459,16 @@ QuaziliskUnBurrow:
 	waitrand          	1 4
 	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
 	playfram          	0xee
-	wait              	1 
+	wait              	1
 	playfram          	0xdd
-	wait              	1 
+	wait              	1
 	playfram          	0xbb
-	wait              	1 
+	wait              	1
 	playfram          	0xaa
-	wait              	1 
+	wait              	1
 	playfram          	0x99
-	wait              	1 
-	sigorder          	4 
+	wait              	1
+	sigorder          	4
 	goto              	QuaziliskGndAttkToIdle
 	
 # ----------------------------------------------------------------------------- #
@@ -51739,5 +51746,100 @@ TerranHeavyMissileExplosionInit:
 TerranHeavyMissileExplosionDeath:
 	wait              	1
 	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1751 Quazilisk Mutate (cm\zerg\quazilisk-mutate.grp)
+.headerstart
+IsId          	754
+Type          	13
+Init          	ZergMutateInit
+Death         	EggDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	ZergMutateUnused
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	ZergMutateSpecialState1
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ZergMutateInit:
+	playfram          	0x00
+	goto              	InfestedTerranLocal00
+
+ZergMutateDeath:
+	wait              	1
+	end
+
+ZergMutateUnused:
+	wait				1
+	nobrkcodestart
+	playfram          	6
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	0
+	wait				2
+	sigorder			4
+	wait				2
+	nobrkcodeend
+	goto              	InfestedTerranLocal00
+
+ZergMutateSpecialState1:
+	playfram          	0
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
+	waitrand          	1 3
+	sigorder			8
+	goto              	InfestedTerranLocal00
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1752 Quazilisk Attack Overlay (cm\zerg\quazilisk-attack.grp)
+.headerstart
+IsId          	755
+Type          	1
+Init          	QuaziliskAttackOverlayInit
+Death         	ScourgeExplosionDeath
+.headerend
+# ----------------------------------------------------------------------------- #
+
+QuaziliskAttackOverlayInit:
+	playfram          	0x00
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	end
 	
-# Next free isid: 754
+# Next free isid: 756

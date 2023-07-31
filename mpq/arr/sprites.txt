@@ -874,7 +874,7 @@ Madrigal Turret (Imperioso)
 Madrigal (Furia Mode)
 Madrigal Turret (Furia)
 Philoc
-Extended Sprite #1
+Quazilisk Attack Overlay
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1

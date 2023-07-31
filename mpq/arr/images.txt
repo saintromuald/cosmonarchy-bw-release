@@ -1749,8 +1749,8 @@ Philoc Engines
 Engram Warp Flash
 Radial Explosion (Orange)
 Radial Explosion (Green)
-Extended Image #749
-Extended Image #750
+Quazilisk Mutate
+Quazilisk Attack Overlay
 Extended Image #751
 Extended Image #752
 Extended Image #753

@@ -6,7 +6,7 @@ script_id TARx
 	wait 1
 	set_free_id
 	local 255 AtL 1 treasury expansion_body_treasury_atown
-	bld 1 command_center 180
+	bld 1 ministry 180
 	goto select_build_type_atown
 	
 	:expansion_body_treasury_atown
@@ -83,12 +83,12 @@ script_id TARx
 	
 	:outpost_handling
 	multi atown_worker_start
-	local 255 AtL_W 1 command_center|treasury blank
+	local 255 AtL_W 1 ministry|treasury blank
 	multi atown_build_order
 	var Ex|Jump skip_building_var 1 idle 13
-	bring 13 AtL_W 1 barracks|captaincy Loc.63 blank
+	bring 13 AtL_W 1 stockade|captaincy Loc.63 blank
 	call main_wait_atown_150
-	multi request_bunker_atown
+	multi request_anchor_atown
 	call main_wait_atown_150
 	multi request_watchdog_atown
 	call main_wait_atown_600
@@ -100,13 +100,13 @@ script_id TARx
 	bld 1 starpad 121
 	call main_wait_atown_600
 	bring 13 AtL_W 1 daedala Loc.63 blank
-	multi request_ion_cannon_atown
+	multi request_diadem_atown
 	goto idle
 	
 	:expansion_main_atown
 	multi atown_worker_start
-	w_bldstart 1 command_center
-	w_bld 1 command_center
+	w_bldstart 1 ministry
+	w_bld 1 ministry
 #	multi count_expansion_atown
 	placeholder_count Local AtL|Jump 1 Group_Buildings expansion_normal_atown 13
 	var Ex|Jump skip_building_var 1 idle 13
@@ -116,7 +116,7 @@ script_id TARx
 	call main_wait_atown_450
 	multi production_cycle_atown
 	call main_wait_atown_600
-	multi request_bunker_atown
+	multi request_anchor_atown
 	var Ex|Wait build_done_var_atown 1 13
 	call main_wait_atown_450
 	multi atown_build_order_atown
@@ -129,11 +129,11 @@ script_id TARx
 	call main_wait_atown_450
 	bring 13 AtL_W 1 daedala Loc.63 blank
 	call main_wait_atown_900
-	multi request_ion_cannon_atown
+	multi request_diadem_atown
 	goto idle
 	
 	:atown_build_order_atown
-	bring 13 AtL_W 1 barracks|captaincy|apothecary|fulcrum|mantle|iron_foundry|starpad|starport|nanite_assembly Loc.63 blank
+	bring 13 AtL_W 1 stockade|captaincy|apothecary|fulcrum|mantle|iron_foundry|starpad|starport|nanite_assembly Loc.63 blank
 	var Ex|Jump pref_armor 1 build_armor_atown_fin_atown 13
 	var Ex|Jump pref_raider 1 build_raider_atown_fin_atown 13
 	var Ex|Jump pref_orbital 1 build_orbital_atown_fin_atown 13
@@ -146,9 +146,9 @@ script_id TARx
 	call main_wait_atown_300
 	multi atown_need_atlas
 	call main_wait_atown_300
-	call add_barracks_atown_simple
+	call add_stockade_atown_simple
 	call main_wait_atown_150
-	bld 1 covert_ops 120
+	bld 1 covenant 120
 	call main_wait_atown_600
 	call add_starport_atown_simple
 	call main_wait_atown_1200
@@ -169,9 +169,9 @@ script_id TARx
 	:build_raider_atown_fin_atown
 	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
 	call main_wait_atown_300
-	bld 1 medbay 120
+	bld 1 vestry 120
 	call main_wait_atown_300
-	bld 1 covert_ops 120
+	bld 1 covenant 120
 	call main_wait_atown_1200
 	call main_wait_atown_600
 	multi atown_need_atlas
@@ -285,9 +285,9 @@ script_id TARx
 	
 	:count_expansion_atown
 	wait 12
-	local 255 Ex 0 command_center count_expansion_atown
+	local 255 Ex 0 ministry count_expansion_atown
 	var add town_count_var 1 13
-	local 255 Ex_W 0 command_center blank
+	local 255 Ex_W 0 ministry blank
 	var subtract town_count_var 1 13
 	goto count_expansion_atown
 	
@@ -306,9 +306,9 @@ script_id TARx
 	
 	:atown_worker_start
 	wait 24
-	local 255 Ex 0 command_center|quarry atown_worker_start
+	local 255 Ex 0 ministry|quarry atown_worker_start
 	bld 1 mason 98
-	local 255 AtL_W 1 command_center|treasury blank
+	local 255 AtL_W 1 ministry|treasury blank
 	bld 4 mason 98
 	multi worker_track_atown
 	
@@ -321,7 +321,7 @@ script_id TARx
 #	c_queues train mason|talos 13
 	res 13 AtL_C Any 100 worker_request_advanced_atown
 	local 255 AtL 28 mason|talos atown_worker_loop
-	queue 1 mason command_center 255 Local Loc.63 200
+	queue 1 mason ministry 255 Local Loc.63 200
 	wait 150
 	local 255 Ex 0 quarry atown_worker_loop
 	queue 1 mason quarry 255 Local Loc.63 200
@@ -335,14 +335,14 @@ script_id TARx
 	var Sub mining_count_var 1 13
 	goto worker_track_atown
 	
-	:add_barracks_atown_simple
+	:add_stockade_atown_simple
 	wait 12
-	notowns command_center add_barracks_atown_simple
-	add_bld 255 barracks 1 99 97
+	notowns ministry add_stockade_atown_simple
+	add_bld 255 stockade 1 99 97
 	return
 	
-	:add_barracks_atown_simple2
-	p_need 1 barracks
+	:add_stockade_atown_simple2
+	p_need 1 stockade
 	return
 	
 	:add_captaincy_atown_simple
@@ -357,7 +357,7 @@ script_id TARx
 	
 	:add_fulcrum_atown_simple
 	wait 12
-	notowns command_center add_fulcrum_atown_simple
+	notowns ministry add_fulcrum_atown_simple
 	add_bld 255 fulcrum 1 99 97
 	return
 	
@@ -377,7 +377,7 @@ script_id TARx
 	
 	:add_starpad_atown_simple
 	wait 12
-	notowns command_center add_starpad_atown_simple
+	notowns ministry add_starpad_atown_simple
 	add_bld 255 starpad 1 99 97
 	return
 	
@@ -387,7 +387,7 @@ script_id TARx
 	
 	:add_starport_atown_simple
 	wait 12
-	notowns command_center add_starport_atown_simple
+	notowns ministry add_starport_atown_simple
 	notowns atlas add_starport_atown_simple
 	add_bld 255 starport 1 99 97
 	return
@@ -408,7 +408,7 @@ script_id TARx
 	
 	:add_atlas_atown_simple
 	wait 12
-	notowns command_center add_atlas_atown_simple
+	notowns ministry add_atlas_atown_simple
 	multi atown_need_atlas
 	return
 	
@@ -487,28 +487,28 @@ script_id TARx
 	notowns atelier atown_wait_for_atelier
 	return
 	
-	:request_bunker_atown
+	:request_anchor_atown
 	var Ex|Wait can_build_static_defense_var_atown 1 13
 	wait 12
-	bring 13 Ex 0 barracks|captaincy|apothecary|fulcrum|mantle|iron_foundry Loc.63 request_bunker_atown
-	call request_bunker_atown_check
+	bring 13 Ex 0 stockade|captaincy|apothecary|fulcrum|mantle|iron_foundry Loc.63 request_anchor_atown
+	call request_anchor_atown_check
 	wait 60
 	call main_wait_atown_900
-	goto request_bunker_atown
+	goto request_anchor_atown
 	
-	:request_bunker_atown_check
-	local 255 AtL 4 bunker blank_return
-	var Ex|Jump under_attack_var 1 request_bunker_atown_check2 13
-	add_bld 255 bunker 1 2 95
-	goto request_bunker_atown_guards_tier3
+	:request_anchor_atown_check
+	local 255 AtL 4 anchor blank_return
+	var Ex|Jump under_attack_var 1 request_anchor_atown_check2 13
+	add_bld 255 anchor 1 2 95
+	goto request_anchor_atown_guards_tier3
 	
-	:request_bunker_atown_check2
-	add_bld 255 bunker 1 3 95
-	var AtL|Jump mining_count_var 3 request_bunker_atown_guards_tier3 13
-	var AtL|Jump mining_count_var 2 request_bunker_atown_guards_tier2 13
-	goto request_bunker_atown_guards_tier1
+	:request_anchor_atown_check2
+	add_bld 255 anchor 1 3 95
+	var AtL|Jump mining_count_var 3 request_anchor_atown_guards_tier3 13
+	var AtL|Jump mining_count_var 2 request_anchor_atown_guards_tier2 13
+	goto request_anchor_atown_guards_tier1
 	
-	:request_bunker_atown_guards_tier1
+	:request_anchor_atown_guards_tier1
 	p_guard maverick 0
 	p_guard maverick 0
 	p_guard maverick 1
@@ -516,15 +516,15 @@ script_id TARx
 	p_guard cyprian 1
 	goto add_return_atown__wait_960
 	
-	:request_bunker_atown_guards_tier2
-	notowns captaincy request_bunker_atown_guards_tier1
+	:request_anchor_atown_guards_tier2
+	notowns captaincy request_anchor_atown_guards_tier1
 	p_guard madcap 0
 	p_guard madcap 0
 	p_guard heracles 1
 	goto add_return_atown__wait_960
 	
-	:request_bunker_atown_guards_tier3
-	notowns guildhall request_bunker_atown_guards_tier2
+	:request_anchor_atown_guards_tier3
+	notowns guildhall request_anchor_atown_guards_tier2
 	p_guard olympian 0
 	p_guard olympian 0
 	p_guard autocrat 1
@@ -533,7 +533,7 @@ script_id TARx
 	:request_watchdog_atown
 	var Ex|Wait can_build_static_defense_var_atown 1 13
 	wait 12
-	notowns command_center request_watchdog_atown
+	notowns ministry request_watchdog_atown
 	call request_watchdog_atown_check
 	call main_wait_atown_600
 	goto request_watchdog_atown
@@ -557,7 +557,7 @@ script_id TARx
 	:request_sentinel_atown
 	var Ex|Wait can_build_static_defense_var_atown 1 13
 	wait 12
-	notowns command_center request_sentinel_atown
+	notowns ministry request_sentinel_atown
 	notowns atlas request_sentinel_atown
 	call request_sentinel_atown_check
 	call main_wait_atown_600
@@ -579,24 +579,24 @@ script_id TARx
 	add_bld 255 sentinel 1 10 98
 	goto add_return_atown__wait_480
 	
-	:request_ion_cannon_atown
+	:request_diadem_atown
 	var Ex|Wait can_build_static_defense_var_atown 1 13
 	wait 12
-	notowns command_center request_ion_cannon_atown
-	notowns daedala request_ion_cannon_atown
-	call request_ion_cannon_atown_check
+	notowns ministry request_diadem_atown
+	notowns daedala request_diadem_atown
+	call request_diadem_atown_check
 	wait 60
 	call main_wait_atown_900
-	goto request_ion_cannon_atown
+	goto request_diadem_atown
 	
-	:request_ion_cannon_atown_check
-	local 255 AtL 1 ion_cannon request_ion_cannon_atown_check2
-	add_bld 255 ion_cannon 1 1 98
+	:request_diadem_atown_check
+	local 255 AtL 1 diadem request_diadem_atown_check2
+	add_bld 255 diadem 1 1 98
 	goto add_return_atown__wait_960
 	
-	:request_ion_cannon_atown_check2
+	:request_diadem_atown_check2
 	var Ex|Jump under_attack_var 0 add_return_atown__wait_960 13
-	add_bld 255 ion_cannon 1 2 98
+	add_bld 255 diadem 1 2 98
 	goto add_return_atown__wait_960
 	
 	:request_infrastructure_atown
@@ -605,15 +605,15 @@ script_id TARx
 	var Ex|Wait can_build_production_var_atown 1 13
 	
 	:request_infrastructure_atown_parthenon
-	notowns daedala request_infrastructure_atown_silo
+	notowns daedala request_infrastructure_atown_anvil
 	call add_parthenon_check_atown
 	
-	:request_infrastructure_atown_silo
+	:request_infrastructure_atown_anvil
 	notowns daedala request_infrastructure_atown_quarry
 	var Ex|Jump infrastructure_cycle_var_atown 1 request_infrastructure_atown_loop 13
-	var Ex|Call pref_missile_silo 1 add_nuclear_silo 13
+	var Ex|Call pref_anvil 1 add_anvil 13
 	var Ex|Jump infrastructure_cycle_var_atown 1 request_infrastructure_atown_loop 13
-	call add_nuclear_silo_check_atown
+	call add_anvil_check_atown
 	
 	:request_infrastructure_atown_quarry
 	var Ex|Jump infrastructure_cycle_var_atown 1 request_infrastructure_atown_loop 13
@@ -635,14 +635,14 @@ script_id TARx
 	call main_wait_atown_900
 	goto add_return_atown
 	
-	:add_nuclear_silo_check_atown
-	local 255 AtL 1 missile_silo blank_return
+	:add_anvil_check_atown
+	local 255 AtL 1 anvil blank_return
 	
-	:add_nuclear_silo
-	local 255 AtL 2 missile_silo|quarry blank_return
-	add_bld 255 missile_silo 1 1 98
+	:add_anvil
+	local 255 AtL 2 anvil|quarry blank_return
+	add_bld 255 anvil 1 1 98
 	var Set infrastructure_cycle_var_atown 1 13
-	w_bldstart 1 missile_silo
+	w_bldstart 1 anvil
 	wait 240
 	call main_wait_atown_900
 	goto add_return_atown
@@ -651,7 +651,7 @@ script_id TARx
 	local 255 AtL 1 quarry blank_return
 	
 	:add_quarry_atown
-	local 255 AtL 2 missile_silo|quarry blank_return
+	local 255 AtL 2 anvil|quarry blank_return
 	add_bld 255 quarry 1 1 98
 	var Set infrastructure_cycle_var_atown 1 13
 	w_bldstart 1 quarry
@@ -665,7 +665,7 @@ script_id TARx
 	:production_cycle_atown_conditions
 	wait 24
 	var Ex|Jump mining_count_var 0 production_cycle_atown_conditions 13
-	local 255 Ex 0 command_center|quarry production_cycle_atown_conditions
+	local 255 Ex 0 ministry|quarry production_cycle_atown_conditions
 	local 255 AtM 4 mason|talos production_cycle_atown_conditions
 	bring 13 Ex 0 atlas|daedala Loc.63 production_cycle_atown_conditions
 	bring 13 AtL 31 Group_Factories Loc.63 production_cycle_atown_conditions_6
@@ -707,8 +707,8 @@ script_id TARx
 	goto production_cycle_atown_conditions
 	
 	:production_cycle_atown_wait
-	bring 13 AtM 3 barracks|captaincy|apothecary|fulcrum|mantle|iron_foundry|starpad|starport|nanite_assembly Loc.63 blank_return
-	local 255 AtM 1 barracks|captaincy|apothecary|fulcrum|mantle|iron_foundry|starpad|starport|nanite_assembly blank_return
+	bring 13 AtM 3 stockade|captaincy|apothecary|fulcrum|mantle|iron_foundry|starpad|starport|nanite_assembly Loc.63 blank_return
+	local 255 AtM 1 stockade|captaincy|apothecary|fulcrum|mantle|iron_foundry|starpad|starport|nanite_assembly blank_return
 	var AtL|Jump mining_count_var 3 blank_return 13
 	var Ex|Jump mining_count_var 2 production_cycle_atown_wait2 13
 	call main_wait_atown_750
@@ -743,9 +743,9 @@ script_id TARx
 	return
 	
 	:production_cycle_atown_check_raider
-	var AtL|Call pref_barracks 1 production_cycle_atown_barracks 13
+	var AtL|Call pref_stockade 1 production_cycle_atown_stockade 13
 	var AtL|Call pref_captaincy 1 production_cycle_atown_captaincy 13
-	call production_cycle_atown_barracks
+	call production_cycle_atown_stockade
 	call production_cycle_atown_captaincy
 	call production_cycle_atown_apothecary
 	return
@@ -758,38 +758,38 @@ script_id TARx
 	call production_cycle_atown_nanite_assembly
 	return
 	
-	:production_cycle_atown_barracks
+	:production_cycle_atown_stockade
 	wait 12
 	var AtL|Jump production_cycle_atown_var 1 blank_return 13
-	notowns command_center blank_return
+	notowns ministry blank_return
 	bring 13 Ex 0 mason|talos Loc.63 blank_return
-	add_bld 255 barracks 1 20 97
+	add_bld 255 stockade 1 20 97
 	wait 150
 	call main_wait_atown_750
 	
-	:production_cycle_atown_barracks_addon
-	var AtL|Jump pref_medbay 1 production_cycle_atown_medbay 13
-	var AtL|Jump pref_covert_ops 1 production_cycle_atown_covert_ops 13
-	local 255 Ex 0 medbay production_cycle_atown_medbay
-	call production_cycle_atown_covert_ops
-	call production_cycle_atown_medbay
+	:production_cycle_atown_stockade_addon
+	var AtL|Jump pref_vestry 1 production_cycle_atown_vestry 13
+	var AtL|Jump pref_covenant 1 production_cycle_atown_covenant 13
+	local 255 Ex 0 vestry production_cycle_atown_vestry
+	call production_cycle_atown_covenant
+	call production_cycle_atown_vestry
 	goto production_cycle_atown_success
 	
-	:production_cycle_atown_medbay
+	:production_cycle_atown_vestry
 	wait 12
 	var AtL|Jump production_cycle_atown_addon_var 1 blank_return 13
-	notowns barracks blank_return
-	add_bld 255 medbay 1 20 96
+	notowns stockade blank_return
+	add_bld 255 vestry 1 20 96
 	var Add production_cycle_atown_addon_var 1 13
 	call main_wait_atown_300
 	return
 	
-	:production_cycle_atown_covert_ops
+	:production_cycle_atown_covenant
 	wait 12
 	var AtL|Jump production_cycle_atown_addon_var 1 blank_return 13
-	notowns barracks blank_return
+	notowns stockade blank_return
 	notowns atlas blank_return
-	add_bld 255 covert_ops 1 20 96
+	add_bld 255 covenant 1 20 96
 	var Add production_cycle_atown_addon_var 1 13
 	call main_wait_atown_300
 	return
@@ -840,16 +840,16 @@ script_id TARx
 	:production_cycle_atown_fulcrum
 	wait 12
 	var AtL|Jump production_cycle_atown_var 1 blank_return 13
-	notowns command_center blank_return
+	notowns ministry blank_return
 	bring 13 Ex 0 mason|talos Loc.63 blank_return
 	add_bld 255 fulcrum 1 20 97
 	wait 180
 	call main_wait_atown_900
 	
 	:production_cycle_atown_fulcrum_addon
-	var AtL|Jump pref_machine_shop 1 production_cycle_atown_machine_shop 13
+	var AtL|Jump pref_palladium 1 production_cycle_atown_palladium 13
 	var AtL|Jump pref_scrapyard 1 production_cycle_atown_scrapyard 13
-	call production_cycle_atown_machine_shop
+	call production_cycle_atown_palladium
 	call production_cycle_atown_scrapyard
 	goto production_cycle_atown_success
 	
@@ -862,12 +862,12 @@ script_id TARx
 	call main_wait_atown_300
 	return
 	
-	:production_cycle_atown_machine_shop
+	:production_cycle_atown_palladium
 	wait 12
 	var AtL|Jump production_cycle_atown_addon_var 1 blank_return 13
 	notowns fulcrum blank_return
 	notowns atlas blank_return
-	add_bld 255 machine_shop 1 20 96
+	add_bld 255 palladium 1 20 96
 	var Add production_cycle_atown_addon_var 1 13
 	call main_wait_atown_300
 	return
@@ -875,7 +875,7 @@ script_id TARx
 	:production_cycle_atown_mantle
 	wait 12
 	var AtL|Jump production_cycle_atown_var 1 blank_return 13
-	notowns command_center blank_return
+	notowns ministry blank_return
 	bring 13 Ex 0 mason|talos Loc.63 blank_return
 	add_bld 255 mantle 1 10 97
 	wait 180
@@ -892,7 +892,7 @@ script_id TARx
 	
 	:production_cycle_atown_iron_foundry_addon
 	call production_cycle_atown_future_station
-	call production_cycle_atown_biotic_base
+	call production_cycle_atown_biotic_bastion
 	goto production_cycle_atown_success
 	
 	:production_cycle_atown_future_station
@@ -904,11 +904,11 @@ script_id TARx
 	call main_wait_atown_300
 	return
 	
-	:production_cycle_atown_biotic_base
+	:production_cycle_atown_biotic_bastion
 	wait 12
 	var AtL|Jump production_cycle_atown_var 1 blank_return 13
 	notowns iron_foundry blank_return
-	add_bld 255 biotic_base 1 20 97
+	add_bld 255 biotic_bastion 1 20 97
 	var Add production_cycle_atown_var 1 13
 	call main_wait_atown_300
 	return
@@ -916,7 +916,7 @@ script_id TARx
 	:production_cycle_atown_starpad
 	wait 12
 	var AtL|Jump production_cycle_atown_var 1 blank_return 13
-	notowns command_center blank_return
+	notowns ministry blank_return
 	bring 13 Ex 0 mason|talos Loc.63 blank_return
 	add_bld 255 starpad 1 10 97
 	wait 180
@@ -933,28 +933,28 @@ script_id TARx
 	call main_wait_atown_900
 	
 	:production_cycle_atown_starport_addon
-	var AtL|Jump pref_munitions_bay 1 production_cycle_atown_munitions_bay 13
-	var AtL|Jump pref_control_tower 1 production_cycle_atown_control_tower 13
-	call production_cycle_atown_munitions_bay
-	call production_cycle_atown_control_tower
+	var AtL|Jump pref_rotary 1 production_cycle_atown_rotary 13
+	var AtL|Jump pref_commandment 1 production_cycle_atown_commandment 13
+	call production_cycle_atown_rotary
+	call production_cycle_atown_commandment
 	goto production_cycle_atown_success
 	
-	:production_cycle_atown_munitions_bay
+	:production_cycle_atown_rotary
 	wait 12
 	var AtL|Jump production_cycle_atown_var 1 blank_return 13
 	notowns starport blank_return
 	notowns atlas blank_return
-	add_bld 255 munitions_bay 1 20 97
+	add_bld 255 rotary 1 20 97
 	var Add production_cycle_atown_var 1 13
 	call main_wait_atown_300
 	return
 	
-	:production_cycle_atown_control_tower
+	:production_cycle_atown_commandment
 	wait 12
 	var AtL|Jump production_cycle_atown_var 1 blank_return 13
 	notowns starport blank_return
 	notowns daedala blank_return
-	add_bld 255 control_tower 1 20 97
+	add_bld 255 commandment 1 20 97
 	var Add production_cycle_atown_var 1 13
 	call main_wait_atown_300
 	return
@@ -968,14 +968,14 @@ script_id TARx
 	call main_wait_atown_1200
 	
 	:production_cycle_atown_nanite_assembly_addon
-	call production_cycle_atown_particle_accelerator
+	call production_cycle_atown_hadron
 	goto production_cycle_atown_success
 	
-	:production_cycle_atown_particle_accelerator
+	:production_cycle_atown_hadron
 	wait 12
 	var AtL|Jump production_cycle_atown_var 1 blank_return 13
 	notowns nanite_assembly blank_return
-	add_bld 255 particle_accelerator 1 20 98
+	add_bld 255 hadron 1 20 98
 	var Add production_cycle_atown_var 1 13
 	call main_wait_atown_300
 	return
@@ -1202,13 +1202,13 @@ script_id TARx
 	
 	:build_general_atown_2FulcMech_Main
 	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_heracles 13
-	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_shaman 13
+	var Ex|Call pref_raider_vestry 0 buildpref_raider_vestry_shaman 13
 	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
 	var Ex|Call pref_armor_iron 0 buildpref_armor_ironfoundry_pazuzu 13
 	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_salamander 13
 	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_azazel 13
 	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
-	var Ex|Call pref_addon_barracks 0 buildpref_raider_medbay 13
+	var Ex|Call pref_addon_stockade 0 buildpref_raider_vestry 13
 	var Ex|Call pref_armor_production 0 buildpref_armor_fulcrum 13
 	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_machineshop 13
 	var Ex|Call pref_orbital_production 0 buildpref_orbital_naniteassembly 13
@@ -1248,9 +1248,9 @@ script_id TARx
 	w_bld 2 fulcrum
 	bld 2 scrapyard 120
 	w_bld 3 fulcrum
-	bld 1 machine_shop 120
+	bld 1 palladium 120
 	w_bld 4 fulcrum
-	bld 2 machine_shop 120
+	bld 2 palladium 120
 	stop
 	
 	:build_general_atown_EarlyRiser
@@ -1258,21 +1258,21 @@ script_id TARx
 	print Terran<32>General<32>greed<32>1:<32>Early<32>Riser
 	
 	:build_general_atown_EarlyRiser_Main
-	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
-	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_cleric 13
+	var Ex|Call pref_raider_stockade 0 buildpref_raider_stockade_maverick 13
+	var Ex|Call pref_raider_vestry 0 buildpref_raider_vestry_cleric 13
 	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_madcap 13
 	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_cyclops 13
 	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starport_gorgon 13
 	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_sundog 13
 	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_seraph 13
 	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
-	var Ex|Call pref_addon_barracks 0 buildpref_raider_medbay 13
+	var Ex|Call pref_addon_stockade 0 buildpref_raider_vestry 13
 	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_scrapyard 13
 	call main_wait_atown_900
 	call main_wait_atown_300
 	var Add can_expand_var_atown 1 13
 	call main_wait_atown_600
-	bld 1 barracks 121
+	bld 1 stockade 121
 	call main_wait_atown_300
 	call main_wait_atown_600
 	bld 1 fulcrum 121
@@ -1281,7 +1281,7 @@ script_id TARx
 	call main_wait_atown_300
 	bld 1 starpad 121
 	call main_wait_atown_300
-	bld 2 barracks 121
+	bld 2 stockade 121
 	call main_wait_atown_600
 	var Set build_gas_var_atown 1 13
 	call main_wait_atown_150
@@ -1293,11 +1293,11 @@ script_id TARx
 	goto build_general_atown_fin
 	
 	:build_general_atown_EarlyRiser_Addon
-	w_bld 1 barracks
-	bld 1 medbay 120
+	w_bld 1 stockade
+	bld 1 vestry 120
 	call atown_wait_for_atlas
 	w_bld 1 fulcrum
-	bld 1 machine_shop 120
+	bld 1 palladium 120
 	stop
 	
 	:build_general_atown_TheCube
@@ -1305,7 +1305,7 @@ script_id TARx
 	print Terran<32>General<32>rush<32>1:<32>The<32>Cube
 	
 	:build_general_atown_TheCube_Main
-	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
+	var Ex|Call pref_raider_stockade 0 buildpref_raider_stockade_maverick 13
 	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_apostle 13
 	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_vulture 13
 	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
@@ -1318,7 +1318,7 @@ script_id TARx
 	call main_wait_atown_600
 	bld 1 fulcrum 121
 	call main_wait_atown_600
-	bld 1 barracks 121
+	bld 1 stockade 121
 	call main_wait_atown_300
 	bld 1 starpad 121
 	call main_wait_atown_600
@@ -1342,16 +1342,16 @@ script_id TARx
 	goto build_general_atown_fin
 	
 	:build_general_atown_TheCube_Addon
-	w_bld 1 barracks
-	bld 1 medbay 120
+	w_bld 1 stockade
+	bld 1 vestry 120
 	call atown_wait_for_atlas
 	w_bld 1 fulcrum
-	bld 1 machine_shop 120
+	bld 1 palladium 120
 	call atown_wait_for_fountainhead
 	bld 1 starport 121
 	w_bld 1 starport
-	bld 1 munitions_bay 120
-	w_bldstart 1 munitions_bay
+	bld 1 rotary 120
+	w_bldstart 1 rotary
 	stop
 	
 	:build_general_atown_DoublingUp
@@ -1359,9 +1359,9 @@ script_id TARx
 	print Terran<32>General<32>rush<32>2:<32>Doubling<32>Up
 	
 	:build_general_atown_DoublingUp_Main
-	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
-	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_shaman 13
-	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_raider_stockade 0 buildpref_raider_stockade_maverick 13
+	var Ex|Call pref_raider_vestry 0 buildpref_raider_vestry_shaman 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_stockade 13
 	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_cyclops 13
 	var Ex|Call pref_armor_machine 0 buildpref_armor_fulcrum_goliath 13
 	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_blackjack 13
@@ -1369,10 +1369,10 @@ script_id TARx
 	var Ex|Call pref_armor_production 0 buildpref_armor_ironfoundry 13
 	var Ex|Call pref_orbital_production 0 buildpref_orbital_naniteassembly 13
 	call main_wait_atown_900
-	bld 1 barracks 121
+	bld 1 stockade 121
 	call main_wait_atown_150
 	var Sub can_worker_var_atown 1 13
-	bld 2 barracks 121
+	bld 2 stockade 121
 	wait 24
 	var Set can_attack_var_atown 1 13
 	call main_wait_atown_1200
@@ -1399,18 +1399,18 @@ script_id TARx
 	goto build_general_atown_fin
 	
 	:build_general_atown_DoublingUp_Addon
-	w_bld 1 barracks
-	bld 1 medbay 120
+	w_bld 1 stockade
+	bld 1 vestry 120
 	w_bld 1 fulcrum
 	bld 1 scrapyard 120
 	w_bld 2 fulcrum
 	bld 2 scrapyard 120
 	call atown_wait_for_atlas
-	w_bld 2 barracks
-	bld 1 covert_ops 120
+	w_bld 2 stockade
+	bld 1 covenant 120
 	call main_wait_atown_150
 	w_bld 3 fulcrum
-	bld 1 machine_shop 120
+	bld 1 palladium 120
 	stop
 	
 	:build_general_atown_MechIntoAir
@@ -1428,7 +1428,7 @@ script_id TARx
 	var Ex|Call pref_orbital_nanite 0 buildpref_orbital_naniteassembly_minotaur 13
 	call main_wait_atown_600
 	call main_wait_atown_300
-	bld 1 barracks 121
+	bld 1 stockade 121
 	call main_wait_atown_300
 	bld 1 fulcrum 121
 	call main_wait_atown_750
@@ -1475,25 +1475,25 @@ script_id TARx
 	call atown_wait_for_atlas
 	bld 1 quarry 120
 	w_bld 3 fulcrum
-	bld 1 machine_shop 120
+	bld 1 palladium 120
 	w_bld 4 fulcrum
-	bld 2 machine_shop 120
+	bld 2 palladium 120
 	call atown_wait_for_fountainhead
 	bld 2 starport 121
 	w_bld 1 starport
-	bld 1 munitions_bay 120
+	bld 1 rotary 120
 	w_bld 2 starport
-	bld 2 munitions_bay 120
+	bld 2 rotary 120
 	w_bld 5 fulcrum
-	bld 3 machine_shop 120
+	bld 3 palladium 120
 	w_bld 6 fulcrum
-	bld 4 machine_shop 120
+	bld 4 palladium 120
 	w_bld 3 starport
-	bld 3 munitions_bay 120
+	bld 3 rotary 120
 	w_bld 4 starport
-	bld 4 munitions_bay 120
+	bld 4 rotary 120
 	w_bld 5 starport
-	bld 5 munitions_bay 120
+	bld 5 rotary 120
 	call atown_wait_for_daedala
 	w_bld 6 starport
 	bld 1 commandment 120
@@ -1510,12 +1510,12 @@ script_id TARx
 	print Terran<32>General<32>timing<32>3:<32>Observant
 	
 	:build_general_atown_Observant_Main
-	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_cyprian 13
+	var Ex|Call pref_raider_stockade 0 buildpref_raider_stockade_cyprian 13
 	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_seraph 13
 	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
 	var Ex|Call pref_addon_starport 0 buildpref_orbital_commandment 13
 	call main_wait_atown_600
-	bld 1 barracks 121
+	bld 1 stockade 121
 	call main_wait_atown_300
 	call main_wait_atown_150
 	wait 24
@@ -1549,15 +1549,15 @@ script_id TARx
 	multi production_cycle_atown
 	
 	:build_general_atown_Observant_Addon
-	w_bld 1 barracks
-	bld 1 medbay 120
+	w_bld 1 stockade
+	bld 1 vestry 120
 	w_bld 1 fulcrum
 	bld 1 scrapyard 120
 	call atown_wait_for_atlas
 	w_bld 2 fulcrum
-	bld 1 machine_shop 120
+	bld 1 palladium 120
 	w_bld 3 fulcrum
-	bld 2 machine_shop 120
+	bld 2 palladium 120
 	call atown_wait_for_fountainhead
 	bld 2 starport 121
 	call atown_wait_for_daedala
@@ -1580,9 +1580,9 @@ script_id TARx
 	call main_wait_atown_300
 	multi atown_need_atlas
 	call main_wait_atown_300
-	call add_barracks_atown_simple
+	call add_stockade_atown_simple
 	call main_wait_atown_150
-	bld 1 covert_ops 120
+	bld 1 covenant 120
 	call main_wait_atown_600
 	multi atown_need_fountainhead
 	call main_wait_atown_900
@@ -1651,7 +1651,7 @@ script_id TARx
 	print Terran<32>Armor<32>timing<32>1:<32>Phalanx<32>Timing
 	
 	:build_armor_atown_PhalanxTiming_Main
-	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_cyprian 13
+	var Ex|Call pref_raider_stockade 0 buildpref_raider_stockade_cyprian 13
 	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_madcap 13
 	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
 	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_cyclops 13
@@ -1689,7 +1689,7 @@ script_id TARx
 	call main_wait_atown_900
 	var Set can_attack_var_atown 1 13
 	wait 24
-	bld 1 barracks 121
+	bld 1 stockade 121
 	call main_wait_atown_600
 	multi production_cycle_atown
 	goto build_armor_atown_fin
@@ -1697,19 +1697,19 @@ script_id TARx
 	:build_armor_atown_PhalanxTiming_Addon
 	call atown_wait_for_atlas
 	w_bld 1 fulcrum
-	bld 1 machine_shop 120
+	bld 1 palladium 120
 	w_bld 2 fulcrum
-	bld 2 machine_shop 120
-	w_bld 1 machine_shop
+	bld 2 palladium 120
+	w_bld 1 palladium
 	queue 1 phalanx fulcrum 255 Local Loc.63 100
-	w_bld 2 machine_shop
+	w_bld 2 palladium
 	queue 1 madrigal fulcrum 255 Local Loc.63 100
 	w_bld 3 fulcrum
-	bld 3 machine_shop 120
-	w_bld 1 barracks
+	bld 3 palladium 120
+	w_bld 1 stockade
 	call main_wait_atown_450
-	bld 1 medbay 120
-	w_bld 2 machine_shop
+	bld 1 vestry 120
+	w_bld 2 palladium
 	queue 2 phalanx fulcrum 255 Local Loc.63 100
 	call main_wait_atown_150
 	queue 2 madrigal fulcrum 255 Local Loc.63 100
@@ -1727,17 +1727,17 @@ script_id TARx
 	var Ex|Call pref_armor_iron 0 buildpref_armor_futurestation_penumbra 13
 	var Ex|Call pref_armor_production 0 buildpref_armor_fulcrum 13
 	call main_wait_atown_600
-	bld 1 barracks 121
+	bld 1 stockade 121
 	call main_wait_atown_300
 	call main_wait_atown_600
 	wait 24
-	queue 1 maverick barracks 255 Global Loc.63 100
+	queue 1 maverick stockade 255 Global Loc.63 100
 	call main_wait_atown_300
-	queue 1 maverick barracks 255 Global Loc.63 100
+	queue 1 maverick stockade 255 Global Loc.63 100
 	wait 24
 	bld 1 fulcrum 121
 	call main_wait_atown_300
-	queue 1 maverick barracks 255 Global Loc.63 100
+	queue 1 maverick stockade 255 Global Loc.63 100
 	call main_wait_atown_300
 	wait 24
 	queue 1 vulture fulcrum 255 Global Loc.63 100
@@ -1749,7 +1749,7 @@ script_id TARx
 	call main_wait_atown_600
 	var Add can_worker_var_atown 1 13
 	call main_wait_atown_600
-	queue 1 maverick barracks 255 Global Loc.63 100
+	queue 1 maverick stockade 255 Global Loc.63 100
 	wait 24
 	bld 3 fulcrum 121
 	call main_wait_atown_150
@@ -1812,9 +1812,9 @@ script_id TARx
 	bld 1 scrapyard 120
 	call atown_wait_for_atlas
 	w_bld 2 fulcrum
-	bld 1 machine_shop 120
+	bld 1 palladium 120
 	w_bld 3 fulcrum
-	bld 2 machine_shop 120
+	bld 2 palladium 120
 	call atown_wait_for_fountainhead
 	bld 1 starport 121
 	call atown_wait_for_daedala
@@ -1852,7 +1852,7 @@ script_id TARx
 	var Add can_expand_var_atown 1 13
 	bld 3 fulcrum 121
 	call main_wait_atown_150
-	bld 1 barracks 121
+	bld 1 stockade 121
 	multi production_cycle_atown
 	goto build_armor_atown_fin
 	
@@ -1880,7 +1880,7 @@ script_id TARx
 	w_bld 1 fulcrum
 	w_bldstart 2 fulcrum
 	call main_wait_atown_300
-	bld 1 barracks 121
+	bld 1 stockade 121
 	call main_wait_atown_450
 	var Add can_worker_var_atown 1 13
 	call main_wait_atown_1200
@@ -1896,7 +1896,7 @@ script_id TARx
 	call main_wait_atown_300
 	call atown_wait_for_atlas
 	w_bld 2 fulcrum
-	bld 1 machine_shop 120
+	bld 1 palladium 120
 	stop
 	
 	:build_armor_atown_IronCrusade
@@ -1905,8 +1905,8 @@ script_id TARx
 	
 	:build_armor_atown_IronCrusade_Main
 	var Ex|Call pref_raider_covert 0 buildpref_raider_covertops_eidolon 13
-	var Ex|Call pref_addon_barracks 0 buildpref_raider_covertops 13
-	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_addon_stockade 0 buildpref_raider_covertops 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_stockade 13
 	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
 	var Ex|Call pref_armor_production 0 buildpref_armor_ironfoundry 13
 	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_seraph 13
@@ -1960,8 +1960,8 @@ script_id TARx
 	print Terran<32>Armor<32>timing<32>3:<32>David<32>and<32>Goliath
 	
 	:build_armor_atown_DavidAndGoliath_Main
-	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
-	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_raider_stockade 0 buildpref_raider_stockade_maverick 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_stockade 13
 	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_goliath 13
 	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_matador 13
 	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
@@ -1969,19 +1969,19 @@ script_id TARx
 	call main_wait_atown_600
 	bld 1 fulcrum 121
 	call main_wait_atown_600
-	bld 1 barracks 121
+	bld 1 stockade 121
 	call main_wait_atown_600
 	#mutli expansion_toggle
 	call main_wait_atown_900
-	bld 2 barracks 121
+	bld 2 stockade 121
 	call main_wait_atown_300
 	bld 2 fulcrum 121
 	w_bldstart 2 fulcrum
 	multi build_armor_atown_DavidAndGoliath_Addon
 	call main_wait_atown_450
-	bld 3 barracks 121
+	bld 3 stockade 121
 	call main_wait_atown_600
-	bld 4 barracks 121
+	bld 4 stockade 121
 	call main_wait_atown_600
 	bld 3 fulcrum 121
 	call main_wait_atown_150
@@ -2010,13 +2010,13 @@ script_id TARx
 	bld 1 scrapyard 120
 	call atown_wait_for_atlas
 	w_bld 2 fulcrum
-	bld 1 machine_shop 120
+	bld 1 palladium 120
 	call main_wait_atown_150
 	w_bld 3 fulcrum
-	bld 2 machine_shop 120
+	bld 2 palladium 120
 	call main_wait_atown_300
 	w_bld 5 fulcrum
-	bld 3 machine_shop 120
+	bld 3 palladium 120
 	call main_wait_atown_300
 	stop
 	
@@ -2095,32 +2095,32 @@ script_id TARx
 	print Terran<32>Raider<32>timing<32>1:<32>8Rax
 	
 	:build_raider_atown_8Rax_Main
-	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
-	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_cleric 13
+	var Ex|Call pref_raider_stockade 0 buildpref_raider_stockade_maverick 13
+	var Ex|Call pref_raider_vestry 0 buildpref_raider_vestry_cleric 13
 	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_madcap 13
-	var Ex|Call pref_addon_barracks 0 buildpref_raider_medbay 13
+	var Ex|Call pref_addon_stockade 0 buildpref_raider_vestry 13
 	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
 	call main_wait_atown_300
-	bld 1 barracks 121
+	bld 1 stockade 121
 	call main_wait_atown_300
-	bld 2 barracks 121
+	bld 2 stockade 121
 	call main_wait_atown_300
-	bld 3 barracks 121
+	bld 3 stockade 121
 	call main_wait_atown_300
-	bld 4 barracks 121
+	bld 4 stockade 121
 	call main_wait_atown_300
-	bld 5 barracks 121
+	bld 5 stockade 121
 	call main_wait_atown_300
-	bld 6 barracks 121
+	bld 6 stockade 121
 	call main_wait_atown_300
 	var Set can_attack_var_atown 1 13
 	call main_wait_atown_300
-	w_bldstart 6 barracks
+	w_bldstart 6 stockade
 	var Set build_gas_var_atown 1 13
 	call main_wait_atown_600
 	#mutli expansion_toggle
 	call main_wait_atown_900
-	bld 8 barracks 121
+	bld 8 stockade 121
 	call main_wait_atown_600
 	var Set can_build_static_defense_var_atown 1 13
 	call main_wait_atown_600
@@ -2132,15 +2132,15 @@ script_id TARx
 	goto build_raider_atown_fin
 	
 	:build_raider_atown_8Rax_Addon
-	w_bld 1 barracks
-	bld 1 medbay 120
-	w_bld 2 barracks
-	bld 2 medbay 120
+	w_bld 1 stockade
+	bld 1 vestry 120
+	w_bld 2 stockade
+	bld 2 vestry 120
 	call atown_wait_for_atlas
-	w_bld 3 barracks
-	bld 1 covert_ops 120
-	w_bld 4 barracks
-	bld 2 covert_ops 120
+	w_bld 3 stockade
+	bld 1 covenant 120
+	w_bld 4 stockade
+	bld 2 covenant 120
 	stop
 	
 	:build_raider_atown_3RaxBiotic
@@ -2148,44 +2148,44 @@ script_id TARx
 	print Terran<32>Raider<32>timing<32>2:<32>3Rax<32>Biotic
 	
 	:build_raider_atown_3RaxBiotic_Main
-	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
-	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_cleric 13
+	var Ex|Call pref_raider_stockade 0 buildpref_raider_stockade_maverick 13
+	var Ex|Call pref_raider_vestry 0 buildpref_raider_vestry_cleric 13
 	var Ex|Call pref_raider_covert 0 buildpref_raider_covertops_eidolon 13
 	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_heracles 13
-	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_stockade 13
 	call main_wait_atown_600
-	bld 1 barracks 121
+	bld 1 stockade 121
 	call main_wait_atown_300
-	bld 2 barracks 121
+	bld 2 stockade 121
 	call main_wait_atown_600
 	call main_wait_atown_300
-	queue 1 maverick barracks 255 Local Loc.63 100
+	queue 1 maverick stockade 255 Local Loc.63 100
 	wait 24
-	queue 1 maverick barracks 255 Local Loc.63 100
+	queue 1 maverick stockade 255 Local Loc.63 100
 	call main_wait_atown_300
-	queue 1 maverick barracks 255 Local Loc.63 100
+	queue 1 maverick stockade 255 Local Loc.63 100
 	call main_wait_atown_300
-	queue 1 maverick barracks 255 Local Loc.63 100
+	queue 1 maverick stockade 255 Local Loc.63 100
 	wait 24
-	queue 1 maverick barracks 255 Local Loc.63 100
+	queue 1 maverick stockade 255 Local Loc.63 100
 	wait 24
 	call main_wait_atown_300
 	multi build_raider_atown_3RaxBiotic_Addon
 	call main_wait_atown_450
 	var Sub can_worker_var_atown 1 13
-	bld 3 barracks 121
+	bld 3 stockade 121
 	call main_wait_atown_150
-	queue 1 maverick barracks 255 Local Loc.63 100
+	queue 1 maverick stockade 255 Local Loc.63 100
 	wait 24
-	queue 2 maverick barracks 255 Local Loc.63 100
+	queue 2 maverick stockade 255 Local Loc.63 100
 	wait 24
-	queue 1 maverick barracks 255 Local Loc.63 100
+	queue 1 maverick stockade 255 Local Loc.63 100
 	wait 24
-	queue 1 maverick barracks 255 Local Loc.63 100
+	queue 1 maverick stockade 255 Local Loc.63 100
 	wait 24
-	queue 1 mason command_center 255 Local Loc.63 200
+	queue 1 mason ministry 255 Local Loc.63 200
 	wait 24
-	w_bldstart 3 barracks
+	w_bldstart 3 stockade
 	var Add can_expand_var_atown 1 13
 	wait 300
 	var Add can_worker_var_atown 1 13
@@ -2200,10 +2200,10 @@ script_id TARx
 	goto build_raider_atown_fin
 	
 	:build_raider_atown_3RaxBiotic_Addon
-	w_bld 1 barracks
-	bld 1 medbay 120
-	w_bld 2 barracks
-	bld 2 medbay 120
+	w_bld 1 stockade
+	bld 1 vestry 120
+	w_bld 2 stockade
+	bld 2 vestry 120
 	call atown_wait_for_atlas
 	multi atown_need_fountainhead
 	stop
@@ -2214,30 +2214,30 @@ script_id TARx
 	
 	:build_raider_atown_FastNuke_Main
 	var Ex|Call pref_infrastructure_addon 0 buildpref_commandcenter_missilesilo 13
-	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_cyprian 13
+	var Ex|Call pref_raider_stockade 0 buildpref_raider_stockade_cyprian 13
 	var Ex|Call pref_raider_covert 0 buildpref_raider_covertops_eidolon 13
 	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_madcap 13
-	var Ex|Call pref_addon_barracks 0 buildpref_raider_covertops 13
+	var Ex|Call pref_addon_stockade 0 buildpref_raider_covertops 13
 	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
 	call main_wait_atown_600
-	bld 1 barracks 121
+	bld 1 stockade 121
 	call main_wait_atown_900
 	bld 1 reservoir 97
 	call main_wait_atown_600
 	var Add can_expand_var_atown 1 13
 	call main_wait_atown_600
-	bld 2 barracks 121
+	bld 2 stockade 121
 	call main_wait_atown_600
-	bld 3 barracks 121
+	bld 3 stockade 121
 	call main_wait_atown_600
-	w_bldstart 3 barracks
+	w_bldstart 3 stockade
 	var Set build_gas_var_atown 1 13
 	call main_wait_atown_600
 	multi atown_need_atlas
 	call main_wait_atown_600
 	multi build_raider_atown_FastNuke_Addon
 	call main_wait_atown_300
-	bld 4 barracks 121
+	bld 4 stockade 121
 	call main_wait_atown_900
 	var Set can_attack_var_atown 1 13
 	wait 24
@@ -2245,18 +2245,18 @@ script_id TARx
 	goto build_raider_atown_fin
 	
 	:build_raider_atown_FastNuke_Addon
-	w_bld 1 barracks
-	bld 1 medbay 120
+	w_bld 1 stockade
+	bld 1 vestry 120
 	call atown_wait_for_atlas
-	w_bld 2 barracks
-	bld 1 covert_ops 120
-	w_bldstart 1 covert_ops
-	bld 1 missile_silo 120
-	w_bld 3 barracks
-	w_bldstart 1 missile_silo
-	bld 2 covert_ops 120
-	w_bld 4 barracks
-	bld 3 covert_ops 120
+	w_bld 2 stockade
+	bld 1 covenant 120
+	w_bldstart 1 covenant
+	bld 1 anvil 120
+	w_bld 3 stockade
+	w_bldstart 1 anvil
+	bld 2 covenant 120
+	w_bld 4 stockade
+	bld 3 covenant 120
 	stop
 	
 	:build_raider_atown_4RaxPressure
@@ -2264,20 +2264,20 @@ script_id TARx
 	print Terran<32>Raider<32>rush<32>1:<32>4Rax<32>Pressure
 	
 	:build_raider_atown_4RaxPressure_Main
-	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_shaman 13
+	var Ex|Call pref_raider_vestry 0 buildpref_raider_vestry_shaman 13
 	var Ex|Call pref_raider_covert 0 buildpref_raider_covertops_savant 13
 	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_heracles 13
-	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_stockade 13
 	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_sundog 13
 	var Ex|Call pref_addon_starport 0 buildpref_orbital_munitionsbay 13
 	call main_wait_atown_900
-	bld 1 barracks 121
+	bld 1 stockade 121
 	call main_wait_atown_900
-	bld 2 barracks 121
+	bld 2 stockade 121
 	call main_wait_atown_600
-	bld 3 barracks 121
+	bld 3 stockade 121
 	call main_wait_atown_450
-	bld 4 barracks 121
+	bld 4 stockade 121
 	call main_wait_atown_300
 	call main_wait_atown_300
 	call main_wait_atown_300
@@ -2291,7 +2291,7 @@ script_id TARx
 	call main_wait_atown_150
 	multi build_raider_atown_4RaxPressure_Addon
 	call main_wait_atown_150
-	w_bld 4 barracks
+	w_bld 4 stockade
 	var Set build_gas_var_atown 1 13
 	call main_wait_atown_600
 	multi atown_need_atlas
@@ -2302,15 +2302,15 @@ script_id TARx
 	goto build_raider_atown_fin
 	
 	:build_raider_atown_4RaxPressure_Addon
-	w_bld 1 barracks
-	bld 1 medbay 120
-	w_bld 2 barracks
-	bld 2 medbay 120
+	w_bld 1 stockade
+	bld 1 vestry 120
+	w_bld 2 stockade
+	bld 2 vestry 120
 	call atown_wait_for_atlas
-	w_bld 3 barracks
-	bld 1 covert_ops 120
-	w_bld 4 barracks
-	bld 2 covert_ops 120
+	w_bld 3 stockade
+	bld 1 covenant 120
+	w_bld 4 stockade
+	bld 2 covenant 120
 	stop
 	
 	:build_raider_atown_Uprising
@@ -2318,44 +2318,44 @@ script_id TARx
 	print Terran<32>Raider<32>timing<32>3:<32>Uprising
 	
 	:build_raider_atown_Uprising_Main
-	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_cyprian 13
-	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_cleric 13
-	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_raider_stockade 0 buildpref_raider_stockade_cyprian 13
+	var Ex|Call pref_raider_vestry 0 buildpref_raider_vestry_cleric 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_stockade 13
 	call main_wait_atown_600
-	bld 1 barracks 121
+	bld 1 stockade 121
 	call main_wait_atown_450
-	bld 2 barracks 121
+	bld 2 stockade 121
 	wait 24
-	queue 1 maverick barracks 255 Local Loc.63 100
+	queue 1 maverick stockade 255 Local Loc.63 100
 	wait 24
-	queue 1 maverick barracks 255 Local Loc.63 100
+	queue 1 maverick stockade 255 Local Loc.63 100
 	call main_wait_atown_450
-	bld 3 barracks 121
+	bld 3 stockade 121
 	wait 24
-	queue 1 maverick barracks 255 Local Loc.63 100
+	queue 1 maverick stockade 255 Local Loc.63 100
 	wait 24
-	queue 1 maverick barracks 255 Local Loc.63 100
+	queue 1 maverick stockade 255 Local Loc.63 100
 	call main_wait_atown_300
 	call main_wait_atown_150
 	wait 24
-	queue 1 maverick barracks 255 Local Loc.63 100
+	queue 1 maverick stockade 255 Local Loc.63 100
 	wait 24
-	queue 1 maverick barracks 255 Local Loc.63 100
+	queue 1 maverick stockade 255 Local Loc.63 100
 	call main_wait_atown_300
 	multi build_raider_atown_Uprising_Addon
 	call main_wait_atown_300
-	bld 4 barracks 121
+	bld 4 stockade 121
 	wait 24
-	queue 2 shaman barracks 255 Local Loc.63 100
+	queue 2 shaman stockade 255 Local Loc.63 100
 	wait 24
-	queue 2 cyprian barracks 255 Local Loc.63 100
+	queue 2 cyprian stockade 255 Local Loc.63 100
 	call main_wait_atown_450
-	queue 2 shaman barracks 255 Local Loc.63 100
+	queue 2 shaman stockade 255 Local Loc.63 100
 	wait 24
-	queue 2 cyprian barracks 255 Local Loc.63 100
+	queue 2 cyprian stockade 255 Local Loc.63 100
 	call main_wait_atown_300
-	w_bld 4 barracks
-	w_bld 2 medbay
+	w_bld 4 stockade
+	w_bld 2 vestry
 	var Set build_gas_var_atown 1 13
 	call main_wait_atown_600
 	multi atown_need_atlas
@@ -2365,20 +2365,20 @@ script_id TARx
 	call main_wait_atown_600
 	var Add can_worker_var_atown 1 13
 	call main_wait_atown_600
-	queue 2 cyprian barracks 255 Local Loc.63 100
+	queue 2 cyprian stockade 255 Local Loc.63 100
 	call main_wait_atown_450
-	queue 2 cyprian barracks 255 Local Loc.63 100
+	queue 2 cyprian stockade 255 Local Loc.63 100
 	wait 24
-	queue 2 cyprian barracks 255 Local Loc.63 100
+	queue 2 cyprian stockade 255 Local Loc.63 100
 	call main_wait_atown_300
 	multi production_cycle_atown
 	goto build_raider_atown_fin
 	
 	:build_raider_atown_Uprising_Addon
-	w_bld 1 barracks
-	bld 1 medbay 120
-	w_bld 4 barracks
-	bld 2 medbay 120
+	w_bld 1 stockade
+	bld 1 vestry 120
+	w_bld 4 stockade
+	bld 2 vestry 120
 	stop
 	
 	:build_raider_atown_HolyAckmeds
@@ -2386,33 +2386,33 @@ script_id TARx
 	print Terran<32>Raider<32>rush<32>2:<32>Holy<32>Ackmeds!
 	
 	:build_raider_atown_HolyAckmeds_Main
-	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_harakan 13
-	var Ex|Call pref_addon_barracks 0 buildpref_raider_covertops 13
-	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_raider_stockade 0 buildpref_raider_stockade_harakan 13
+	var Ex|Call pref_addon_stockade 0 buildpref_raider_covertops 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_stockade 13
 	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
 	call main_wait_atown_900
-	bld 1 barracks 121
+	bld 1 stockade 121
 	call main_wait_atown_300
 	call main_wait_atown_600
 	do_morph 1 maverick
 	call main_wait_atown_600
-	bld 2 barracks 121
+	bld 2 stockade 121
 	wait 24
 	do_morph 1 harakan
 	call main_wait_atown_600
-	bld 3 barracks 121
+	bld 3 stockade 121
 	call main_wait_atown_300
 	call main_wait_atown_300
 	var Sub can_worker_var_atown 1 13
 	call main_wait_atown_300
 	var Set can_attack_var_atown 1 13
 	call main_wait_atown_600
-	bld 4 barracks 121
+	bld 4 stockade 121
 	call main_wait_atown_300
 	var Add can_worker_var_atown 1 13
 	var Add can_expand_var_atown 1 13
 	call main_wait_atown_900
-	w_bldstart 4 barracks
+	w_bldstart 4 stockade
 	var Set build_gas_var_atown 1 13
 	call main_wait_atown_600
 	multi atown_need_atlas
@@ -2423,14 +2423,14 @@ script_id TARx
 	goto build_raider_atown_fin
 	
 	:build_raider_atown_HolyAckmeds_Addon
-	w_bld 1 barracks
-	bld 1 medbay 120
+	w_bld 1 stockade
+	bld 1 vestry 120
 	call atown_wait_for_atlas
 	multi atown_need_fountainhead
 	call atown_wait_for_fountainhead
 	bld 1 starport 121
 	w_bld 1 starport
-	bld 1 munitions_bay 120
+	bld 1 rotary 120
 	stop
 	
 	:build_raider_atown_fin
@@ -2440,11 +2440,11 @@ script_id TARx
 	:build_raider_atown_fin2
 	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
 	call main_wait_atown_300
-	bld 1 medbay 120
+	bld 1 vestry 120
 	call main_wait_atown_300
 	multi atown_need_atlas
 	call atown_wait_for_atlas
-	bld 1 covert_ops 120
+	bld 1 covenant 120
 	call main_wait_atown_1800
 	multi atown_need_fountainhead
 	call main_wait_atown_3600
@@ -2525,7 +2525,7 @@ script_id TARx
 	call main_wait_atown_300
 	var Set build_gas_var_atown 1 13
 	call main_wait_atown_300
-	bld 1 barracks 121
+	bld 1 stockade 121
 	call main_wait_atown_300
 	var Set can_attack_var_atown 1 13
 	call main_wait_atown_1200
@@ -2551,10 +2551,10 @@ script_id TARx
 	call atown_wait_for_fountainhead
 	bld 1 starport 121
 	w_bld 1 starport
-	bld 1 munitions_bay 120
+	bld 1 rotary 120
 	bld 2 starport 121
 	w_bld 2 starport
-	bld 2 munitions_bay 120
+	bld 2 rotary 120
 	bld 3 starport 121
 	call atown_wait_for_daedala
 	w_bld 3 starport
@@ -2575,11 +2575,11 @@ script_id TARx
 	#mutli expansion_toggle
 	call main_wait_atown_300
 	call main_wait_atown_600
-	bld 1 barracks 121
+	bld 1 stockade 121
 	call main_wait_atown_600
 	var Set build_gas_var_atown 1 13
 	call main_wait_atown_900
-	w_bld 1 barracks
+	w_bld 1 stockade
 	var Set build_gas_var_atown 1 13
 	call main_wait_atown_600
 	p_need 1 atlas
@@ -2608,7 +2608,7 @@ script_id TARx
 	print Terran<32>Orbital<32>timing<32>1:<32>Wraith<32>Bio
 	
 	:build_orbital_atown_WraithBio_Main
-	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
+	var Ex|Call pref_raider_stockade 0 buildpref_raider_stockade_maverick 13
 	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_madcap 13
 	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
 	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starpad_wraith 13
@@ -2616,15 +2616,15 @@ script_id TARx
 	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
 	call main_wait_atown_300
 	call main_wait_atown_150
-	bld 1 barracks 121
+	bld 1 stockade 121
 	call main_wait_atown_750
 	bld 1 starpad 121
 	wait 24
-	queue 1 maverick barracks 255 Local Loc.63 100
+	queue 1 maverick stockade 255 Local Loc.63 100
 	call main_wait_atown_300
-	queue 1 maverick barracks 255 Local Loc.63 100
+	queue 1 maverick stockade 255 Local Loc.63 100
 	call main_wait_atown_300
-	queue 1 maverick barracks 255 Local Loc.63 100
+	queue 1 maverick stockade 255 Local Loc.63 100
 	wait 24
 	queue 1 wraith starpad 255 Local Loc.63 100
 	call main_wait_atown_300
@@ -2639,25 +2639,25 @@ script_id TARx
 	wait 24
 	bld 2 starpad 121
 	call main_wait_atown_150
-	bld 2 barracks 121
+	bld 2 stockade 121
 	call main_wait_atown_300
-	queue 1 maverick barracks 255 Local Loc.63 100
+	queue 1 maverick stockade 255 Local Loc.63 100
 	wait 24
-	queue 1 maverick barracks 255 Local Loc.63 100
+	queue 1 maverick stockade 255 Local Loc.63 100
 	call main_wait_atown_150
 	queue 1 wraith starpad 255 Local Loc.63 100
 	wait 24
 	queue 1 wraith starpad 255 Local Loc.63 100
 	call main_wait_atown_300
-	bld 3 barracks 121
+	bld 3 stockade 121
 	wait 24
-	queue 1 maverick barracks 255 Local Loc.63 100
+	queue 1 maverick stockade 255 Local Loc.63 100
 	call main_wait_atown_150
 	w_bld 2 starpad
 	var Add can_expand_var_atown 1 13
 	call main_wait_atown_900
-	w_bldstart 3 barracks
-	bld 1 medbay 120
+	w_bldstart 3 stockade
+	bld 1 vestry 120
 	call main_wait_atown_300
 	var Set build_gas_var_atown 1 13
 	call main_wait_atown_600
@@ -2671,19 +2671,19 @@ script_id TARx
 	print Terran<32>Orbital<32>timing<32>2:<32>Hotdrop
 	
 	:build_orbital_atown_Hotdrop_Main
-	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_harakan 13
-	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_cleric 13
-	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_raider_stockade 0 buildpref_raider_stockade_harakan 13
+	var Ex|Call pref_raider_vestry 0 buildpref_raider_vestry_cleric 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_stockade 13
 	var Ex|Call pref_addon_starport 0 buildpref_orbital_commandment 13
 	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
     call main_wait_atown_300
     call main_wait_atown_300
-    bld 1 barracks 121
+    bld 1 stockade 121
     call main_wait_atown_300
 	call main_wait_atown_600
 	bld 1 starpad 121
 	call main_wait_atown_150
-    queue 1 maverick barracks 255 Local Loc.63 100
+    queue 1 maverick stockade 255 Local Loc.63 100
 	call main_wait_atown_600
 	bld 2 starpad 121
 	call main_wait_atown_600
@@ -2693,15 +2693,15 @@ script_id TARx
 	call main_wait_atown_300
 	queue 1 trojan starpad 255 Local Loc.63 100
 	call main_wait_atown_150
-    bld 2 barracks 121
+    bld 2 stockade 121
 	call main_wait_atown_450
     bld 3 starpad 121
     call main_wait_atown_300
     queue 1 trojan starpad 255 Local Loc.63 100
 	call main_wait_atown_150
-	queue 2 maverick barracks 255 Local Loc.63 100
+	queue 2 maverick stockade 255 Local Loc.63 100
 	call main_wait_atown_300
-	queue 2 maverick barracks 255 Local Loc.63 100
+	queue 2 maverick stockade 255 Local Loc.63 100
     wait 24
 	var Set can_attack_var_atown 1 13
 	call main_wait_atown_300
@@ -2713,7 +2713,7 @@ script_id TARx
     var Set can_build_static_defense_var_atown 1 13
     call main_wait_atown_300
 	w_bld 3 starpad
-	w_bldstart 2 barracks
+	w_bldstart 2 stockade
 	var Set build_gas_var_atown 1 13
 	call main_wait_atown_600
 	multi atown_need_atlas
@@ -2729,16 +2729,16 @@ script_id TARx
 	
 	:build_orbital_atown_Hotdrop_Addon
 	call atown_wait_for_atlas
-	bld 1 covert_ops 120
-	w_bld 1 covert_ops
-	bld 1 missile_silo 120
+	bld 1 covenant 120
+	w_bld 1 covenant
+	bld 1 anvil 120
 	call atown_wait_for_fountainhead
 	bld 1 starport 121
 	w_bld 1 starport
-	bld 1 munitions_bay 120
+	bld 1 rotary 120
 	bld 2 starport 121
 	w_bld 2 starport
-	bld 2 munitions_bay 120
+	bld 2 rotary 120
 	call main_wait_atown_300
     queue 2 wyvern starport 255 Local Loc.63 100
 	call main_wait_atown_300
@@ -2754,16 +2754,16 @@ script_id TARx
 	print Terran<32>Orbital<32>timing<32>3:<32>Sudden<32>Starport
 	
 	:build_orbital_atown_SuddenStarport_Main
-	var Ex|Call pref_raider_barracks 0 buildpref_raider_barracks_maverick 13
-	var Ex|Call pref_raider_medbay 0 buildpref_raider_medbay_cleric 13
-	var Ex|Call pref_raider_production 0 buildpref_raider_barracks 13
+	var Ex|Call pref_raider_stockade 0 buildpref_raider_stockade_maverick 13
+	var Ex|Call pref_raider_vestry 0 buildpref_raider_vestry_cleric 13
+	var Ex|Call pref_raider_production 0 buildpref_raider_stockade 13
 	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starport_gorgon 13
 	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_sundog 13
 	var Ex|Call pref_addon_starport 0 buildpref_orbital_munitionsbay 13
 	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
     call main_wait_atown_300
     call main_wait_atown_300
-    bld 1 barracks 121
+    bld 1 stockade 121
     call main_wait_atown_300
 	call main_wait_atown_600
 	var Sub can_worker_var_atown 1 13
@@ -2771,9 +2771,9 @@ script_id TARx
 	call main_wait_atown_600
 	var Add can_worker_var_atown 1 13
 	call main_wait_atown_300
-	bld 2 barracks 121
+	bld 2 stockade 121
 	call main_wait_atown_450
-	bld 3 barracks 121
+	bld 3 stockade 121
 	call main_wait_atown_300
 	var Set can_attack_var_atown 1 13
 	call main_wait_atown_300
@@ -2781,7 +2781,7 @@ script_id TARx
     call main_wait_atown_450
     var Set can_build_static_defense_var_atown 1 13
 	call main_wait_atown_450
-	w_bldstart 3 barracks
+	w_bldstart 3 stockade
 	multi build_orbital_atown_SuddenStarport_Addon
 	call main_wait_atown_300
 	multi atown_need_atlas
@@ -2795,21 +2795,21 @@ script_id TARx
 	goto build_orbital_atown_fin
 	
 	:build_orbital_atown_SuddenStarport_Addon
-	w_bld 2 barracks
-	bld 1 medbay 120
+	w_bld 2 stockade
+	bld 1 vestry 120
 	call atown_wait_for_atlas
 	call atown_wait_for_fountainhead
 	bld 1 starport 121
 	w_bldstart 1 starport
 	bld 4 starport 121
 	w_bld 1 starport
-	bld 1 munitions_bay 120
+	bld 1 rotary 120
 	w_bld 2 starport
-	bld 2 munitions_bay 120
+	bld 2 rotary 120
 	w_bld 3 starport
-	bld 3 munitions_bay 120
+	bld 3 rotary 120
 	w_bld 4 starport
-	bld 4 munitions_bay 120
+	bld 4 rotary 120
 	call main_wait_atown_300
 	stop
 	

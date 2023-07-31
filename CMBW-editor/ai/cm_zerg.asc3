@@ -1668,7 +1668,6 @@ script_id ZMCx
 	return
 	
 	:main_wait_450
-	wait 24
 	call main_wait_300
 	call main_wait_150
 	return
@@ -1681,7 +1680,6 @@ script_id ZMCx
 	return
 	
 	:main_wait_750
-	wait 24
 	call main_wait_600
 	call main_wait_150
 	return
@@ -1694,32 +1692,32 @@ script_id ZMCx
 	wait 900
 	return
 	
+	:main_wait_1050
+	call main_wait_900
+	call main_wait_150
+	return
+	
 	:main_wait_1200
-	wait 24
 	call main_wait_900
 	call main_wait_300
 	return
 	
 	:main_wait_1500
-	wait 24
 	call main_wait_1200
 	call main_wait_300
 	return
 	
 	:main_wait_1800
-	wait 24
 	call main_wait_900
 	call main_wait_900
 	return
 	
 	:main_wait_2400
-	wait 24
 	call main_wait_1200
 	call main_wait_1200
 	return
 	
 	:main_wait_3600
-	wait 24
 	call main_wait_1200
 	call main_wait_1200
 	return
@@ -2537,7 +2535,7 @@ script_id ZMCx
 	var Ex|Call pref_matravil 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
-	call main_wait_750
+	call main_wait_1050
     var Sub can_worker_var 1 13
     multi expansion_loop_toggle
     call main_wait_600
@@ -2560,15 +2558,13 @@ script_id ZMCx
 	bld 1 caphrolosk 98
 	call main_wait_750
     bld 2 hachirosk 98
-    call main_wait_150
-    call main_wait_600
+    call main_wait_750
 	p_need 1 zorkiz_shroud
 	call main_wait_600
 	multi build_general_SleepingGiant_Morph
     call main_wait_600
     multi need_othstol
-    call main_wait_600
-	call main_wait_600
+    call main_wait_1200
 	bld 1 gathtelosk 99
 	call main_wait_300
     multi production_cycle
@@ -2601,7 +2597,7 @@ script_id ZMCx
 	var Ex|Call pref_almakis 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
-	call main_wait_750
+	call main_wait_1050
 	var Sub can_worker_var 1 13
     multi expansion_loop_toggle
 	call main_wait_600
@@ -2653,11 +2649,10 @@ script_id ZMCx
 	var Ex|Call pref_almakis 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_hachirosk 13
-	call main_wait_600
+	call main_wait_1050
 	var Sub can_worker_var 1 13
-	call main_wait_150
     multi expansion_loop_toggle
-	call main_wait_600
+	call main_wait_750
 	bring 13 AtL_W 1 larva Loc.63 blank
 	queue 1 droleth larva 255 Local Loc.63 200
 	call main_wait_150
@@ -2703,8 +2698,7 @@ script_id ZMCx
 	multi build_general_Subjugation_Morph
 	call main_wait_300
 	bld 1 caphrolosk 98
-	call main_wait_750
-	call main_wait_300
+	call main_wait_1050
 	p_need 1 zorkiz_shroud
 	goto build_general_fin
 	
@@ -2729,7 +2723,7 @@ script_id ZMCx
 	var Ex|Call pref_almakis 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
-	call main_wait_600
+	call main_wait_1050
 	var Sub can_worker_var 1 13
     multi expansion_loop_toggle
 	call main_wait_600
@@ -2790,7 +2784,7 @@ script_id ZMCx
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
-	call main_wait_600
+	call main_wait_1050
 	var Sub can_worker_var 1 13
     multi expansion_loop_toggle
 	call main_wait_600
@@ -2851,7 +2845,7 @@ script_id ZMCx
 	var Ex|Call pref_almakis 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
-	call main_wait_600
+	call main_wait_1050
 	var Sub can_worker_var 1 13
     multi expansion_loop_toggle
 	call main_wait_600
@@ -2988,14 +2982,12 @@ script_id ZMCx
 	var Ex|Call pref_matravil 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
-	call main_wait_750
+	call main_wait_1050
 	var Sub can_worker_var 1 13
-	var Add can_expand_var 1 13
+	multi expansion_loop_toggle
 	call main_wait_600
 	var Add can_worker_var 1 13
-	call main_wait_150
-	var Sub can_expand_var 1 13
-	call main_wait_750
+	call main_wait_900
 	p_need 1 hydrok_den
 	call main_wait_600
 	var Set can_build_static_defense_var 1 13
@@ -3052,10 +3044,9 @@ script_id ZMCx
 	var Ex|Call pref_matravil 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
-	call main_wait_600
+	call main_wait_1050
     multi expansion_loop_toggle
-	call main_wait_450
-	call main_wait_600
+	call main_wait_1050
 	p_need 1 hydrok_den
 	call main_wait_900
 	do_morph 4 hydralisk
@@ -3100,7 +3091,7 @@ script_id ZMCx
 	var Ex|Call pref_matravil 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_hachirosk 13
-	call main_wait_600
+	call main_wait_1050
 	var Sub can_worker_var 1 13
     multi expansion_loop_toggle
 	call main_wait_300
@@ -3195,7 +3186,7 @@ script_id ZMCx
 	var Ex|Call pref_matravil 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
-	call main_wait_600
+	call main_wait_1050
 	var Sub can_worker_var 1 13
 	call main_wait_150
 	multi expansion_loop_toggle
@@ -3262,7 +3253,7 @@ script_id ZMCx
 	call main_wait_600
 	var Sub can_worker_var 1 13
 	var Set can_attack_var 1 13
-	call main_wait_750
+	call main_wait_1050
 	multi expansion_loop_toggle
 	call main_wait_600
 	var Add can_worker_var 1 13
@@ -3494,7 +3485,7 @@ script_id ZMCx
 	var Ex|Call pref_matravil 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_hachirosk 13
-	call main_wait_450
+	call main_wait_1050
 	var Sub can_worker_var 1 13
 	wait 24
     multi expansion_loop_toggle
@@ -3652,7 +3643,7 @@ script_id ZMCx
 	var Ex|Call pref_matravil 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_hachirosk 13
-	call main_wait_600
+	call main_wait_1050
 	var Sub can_worker_var 1 13
 	wait 24
     multi expansion_loop_toggle
@@ -3749,11 +3740,10 @@ script_id ZMCx
 	var Ex|Call pref_matravil 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
-	call main_wait_600
+	call main_wait_1050
 	var Sub can_worker_var 1 13
-	call main_wait_600
     multi expansion_loop_toggle
-	call main_wait_600
+	call main_wait_900
 	call expansion_loop_normal
 	call main_wait_900
 	var Set can_build_static_defense_var 1 13
@@ -3804,12 +3794,11 @@ script_id ZMCx
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_keskathalor 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
-	call main_wait_600
+	call main_wait_1050
 	var Sub can_worker_var 1 13
-	call main_wait_600
     multi expansion_loop_toggle
-	call main_wait_600
-	var Add can_worker_all_var 1 13
+	call main_wait_900
+	var Add can_worker_var 1 13
 	call main_wait_300
 	p_need 1 quazrok_pool
 	call main_wait_450
