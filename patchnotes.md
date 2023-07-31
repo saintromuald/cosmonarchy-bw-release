@@ -94,11 +94,15 @@ A menagerie of bugfixes and balance changes are also present, alongside the depl
 	- Armor penetration now 0, from 1
 - [Herald](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/herald):
 	- Weapon cooldown now 0.92, from 1
+- [Sycophant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/sycophant):
+	- Now splashes targets in 0.25/0.5/0.75 radii
 - [Optecton](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/optecton):
 	- Transport space cost now 8, from 10
 	- Skybond Ray weapon damage now 8, from 10
 - [Idol](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/idol):
 	- Shields now 45, from 65
+- [Golem](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/golem):
+	- Now splashes targets in 0.25/0.5/0.75 radii
 - [Accantor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/accantor):
 	- HP now 140, from 160
 	- Shields now 70, from 80
@@ -112,6 +116,8 @@ A menagerie of bugfixes and balance changes are also present, alongside the depl
 	- No longer a detector
 
 ## Zerg
+- [Mortothrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/mortothrokor):
+	- Now splashes targets in 0.75/1/1.5 radii
 - [Hydralisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/hydralisk):
 	- Mineral cost now 75, from 100
 	- HP now 90, from 100
