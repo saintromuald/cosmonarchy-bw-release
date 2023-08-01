@@ -24,6 +24,7 @@ A menagerie of bugfixes and balance changes are also present, alongside the depl
 		- Left-click selects all units of that type
 		- Shift-click deselects one unit of that type
 		- Ctrl-shift-click deselects all units of that type
+	- Added a new config option for always showing condensed selections (c. DF)
 - Game modes: (c. Veeq7)
 	- Added "Competitive Mode" to once again display "kills" on combatants
 	- Renamed "Use Map Settings" to "Scenario Mode"
