@@ -35,7 +35,7 @@ EMP Shockwave (unused)
 Irradiate (Seraph ability)
 Claws (Zethrokor)
 Claws (Vorvrokor)
-Plasmid Breath (Nathrokor)
+Vestigial Strike (Nathrokor)
 Needle Spines (Hydralisk)
 Erebol Shock Cannon (Penumbra)
 Kaiser Blades (Ultrokor)
@@ -202,8 +202,8 @@ Geometric Rifle (Sevenstep, Piercing)
 Twinstrike Cannons (Matador)
 Cylindrical Blaster (Analogue)
 Heirloom Batteries (Philoc)
-Extended Weapon #75
-Extended Weapon #76
+Nathrok Claws (Nathrokor)
+Calcification (Gorgrokor)
 Extended Weapon #77
 Extended Weapon #78
 Extended Weapon #79

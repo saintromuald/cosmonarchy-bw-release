@@ -140,7 +140,7 @@ Zerg Matravil Nest
 Zerg Almakis Antre
 Zerg Ultrok Cavern
 Zerg Muthrok Spire
-Zerg Quazrok Pool
+Zerg Quazeth Pool
 Zerg Cagrant Colony
 Zerg Spraith Colony
 Terran Autocrat
@@ -352,8 +352,8 @@ Zerg Nephrilosk
 Protoss Vagrant Shade
 Protoss Accantor
 Zerg Ocsal Larva
-Zerg Ocsal Colony
-Zerg Kazitrith Colony
+Zerg Ocsal Cesiant
+Zerg Kazitrith Cesiant
 BTN Ocsal Larva - Swarm
 BTN Ocsal Larva - Assault
 BTN Ocsal Larva - Control
@@ -366,7 +366,7 @@ Zerg Ezigrisant
 Terran Wellbore
 Protoss Pennant
 Police Intern
-BTN Police Structure - Basic
+BTN Mixed Scribe Training
 BTN Police Structure - Advanced
 Police Dugout
 Terran Matador (Cinder Mode)
@@ -381,8 +381,8 @@ Terran Shaman (Visionary Mode)
 Madrigal Turret (Imperioso)
 Terran Madrigal (Furia Mode)
 Madrigal Turret (Furia)
-Extended Unit #156
-Extended Unit #157
+Omnivale
+Terran Lodestone
 Extended Unit #158
 Extended Unit #159
 Extended Unit #160

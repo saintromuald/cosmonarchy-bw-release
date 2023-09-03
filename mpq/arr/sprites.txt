@@ -667,7 +667,7 @@ Mason (Christmas)
 Scribe (Christmas)
 Droleth (Christmas)
 Cikralisk
-Larvosk Colony
+Larvosk Cesiant
 Captaincy
 Iron Foundry
 Mineral Field 01 (Christmas)
@@ -875,12 +875,12 @@ Madrigal (Furia Mode)
 Madrigal Turret (Furia)
 Philoc
 Quazilisk Attack Overlay
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
+Cyclops Passive Arming Overlay
+Sevenstep Rail
+Quazilisk (April Fools)
+Omnivale
+Lodestone
+Ocsal Cesiant
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1

@@ -1,61 +1,61 @@
-Marine
-Ghost
-Firebat
+Maverick
+Eidolon
+Harakan
 Vulture
-Spider Mine
+Lobotomy Mine
 Goliath
-Siege Tank
-SCV
+Phalanx
+Mason
 Wraith
-Science Vessel
-Dropship
-Battlecruiser
-Sarah Kerrigan
-Jim Raynor
-Edmund Duke
-Civilian
+Seraph
+Trojan
+Minotaur
+Silvertongue
+Penumbra
+Madrigal
+Blackjack
 Arcturus Mengsk
 Terran Advisor
 Larva
 Egg
 Zethrokor
 Hydralisk
-Ultralisk
-Broodling
-Drone
-Overlord
+Ultrokor
+Rilirokor
+Droleth
+Ovileth
 Mutalisk
-Guardian
-Queen
-Defiler
-Scourge
+Geszithalor
+Matraleth
+Isthrathaleth
+Skryling
 Cocoon
 Mature Chrysalis
-Infested Terran
+Cohort
 Zasz
 Daggoth
 Infested Kerrigan
 Hunter Killer
 Overmind
-Probe
+Scribe
 Zealot
-Dragoon
-High Templar
+Dracadin
+Cantavis
 Archon
-Shuttle
-Scout
-Arbiter
-Carrier
-Interceptor
-Dark Templar
-Fenix (Zealot)
-Fenix (Dragoon)
-Zeratul
-Tassadar
+Envoy
+Panoptus
+Didact
+Solarion
+Steward
+Cabalist
+Amaranth
+Atreus
+Anthelion
+Vagrant
 Gantrithor
-Observer
-Reaver
-Scarab
+Witness
+Accantor
+Plasma Shell
 Khaydarin Crystal Formation
 Aldaris
 Protoss Advisor
@@ -88,18 +88,18 @@ Flag (Orange) (Pl.5)
 Flag (Brown) (Pl.6)
 Flag (White) (Pl.7)
 Flag (Yellow) (Pl.8)
-Medic
+Cleric
 Valkyrie
 Dugalle
-Stukov
+Autocrat
 Duran
-Artanis
-Raszagal
-Devourer
-Lurker
-Dark Archon
-Corsair
-Scantid
+Exemplar
+Empress
+Vithrilisk
+Lakizilisk
+Mind Tyrant
+Lanifect
+Konvilisk
 Kakaru
 Ursadon
 Uraj Crystal

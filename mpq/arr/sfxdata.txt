@@ -122,15 +122,15 @@ Zerg\Advisor\ZAdUpd01.WAV
 Terran\Advisor\TAdUpd01.WAV
 Protoss\Advisor\PAdUpd01.WAV
 Zerg\Advisor\ZAdUpd02.WAV
-Terran\Advisor\TAdUpd02.WAV (1)
+Terran\Advisor\TAdUpd02.WAV
 Protoss\Advisor\PAdUpd02.WAV
 Terran\Advisor\TAdUpd03.WAV
 Zerg\Advisor\ZAdUpd04.WAV
 Terran\Advisor\TAdUpd04.WAV
 Protoss\Advisor\PAdUpd04.WAV
 Terran\Advisor\TAdUpd05.WAV
+Zerg\Advisor\ZAdUpd06.WAV
 Terran\Advisor\TAdUpd06.WAV
-Terran\Advisor\TAdUpd02.WAV (2)
 Protoss\Advisor\PAdUpd06.WAV
 Terran\Advisor\TAdUpd07.WAV
 Zerg\Bldg\ZChRdy00.WAV
@@ -1317,19 +1317,19 @@ Magister Attack 03
 Kalkalisk Attack 01
 Kalkalisk Attack 02
 Kalkalisk Attack 03
-Ion Cannon Charge 01
-Ion Cannon Attack 01
-Ion Cannon Attack 02
-Ion Cannon Attack 03
-Empyrean Attack 01
-Empyrean Attack 02
-Empyrean Attack 03
-Nathrokor Attack 01
-Nathrokor Attack 02
-Nathrokor Attack 03
-Quazilisk Attack 01
-Quazilisk Attack 02
-Quazilisk Attack 03
+Diadem Charge 01
+Diadem Attack 01
+Diadem Attack 02
+Diadem Attack 03
+Empyrean Weaponfire 01
+Empyrean Weaponfire 02
+Empyrean Weaponfire 03
+Nathrokor Weapon1fire
+Nathrokor Weapon2hit 01
+Nathrokor Weapon2hit 02
+Quazilisk Weaponfire 01
+Quazilisk Weaponfire 02
+Quazilisk Weaponfire 03
 Simulacrum Clone 01
 Madcap Ready 01
 Architect Death 01
@@ -2477,45 +2477,45 @@ Shaman Support 01
 Protoss Advisor Error - Placement
 Protoss Advisor Update - Structure
 Treasury Selected 01
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Silvertongue Weaponfire 01
+Silvertongue Weaponfire 02
+Silvertongue Weaponfire 03
+Silvertongue Weaponfire 04
+Silvertongue Weaponfire 05
+Lakizilisk Weaponfire 01
+Droleth Weaponfire 01
+Silvertongue Ready 01
+Silvertongue Ready 02
+Silvertongue Ready 03
+Silvertongue Under Attack 01
+Silvertongue Under Attack 02
+Silvertongue Under Attack 03
+Silvertongue Under Attack 04
+Nathrokor Weaponhit A 01
+Mesk Advisor No Minerals 01
+Mesk Advisor No Minerals 02
+Mesk Advisor No Minerals 03
+Mesk Advisor No Minerals 04
+Error Protoss
+Error Terran
+Error Zerg
+Mesk Advisor No Vespene 01
+Mesk Advisor No Vespene 02
+Mesk Advisor No Vespene 03
+Mesk Advisor No Vespene 04
+Mesk Advisor No Vespene 05
+Mesk Advisor No Energy 01
+Mesk Advisor No Energy 02
+Mesk Advisor No Energy 03
+Mesk Advisor No Energy 04
+Mesk Advisor No Energy 05
+Mesk Advisor Missile Launch 01
+Mesk Advisor Missile Launch 02
+Mesk Advisor Addon 01
+Mesk Advisor Tech 01
+Mesk Advisor Tech 02
+Mesk Advisor Warp 01
+Omnivale Selected 01
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

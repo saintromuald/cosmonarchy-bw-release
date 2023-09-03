@@ -312,7 +312,7 @@ Unused1       	ZergCocoonUnused1
 GndAttkRpt    	[NONE]
 AirAttkRpt    	[NONE]
 CastSpell     	ZergCocoonCastSpell
-GndAttkToIdle 	[NONE]
+GndAttkToIdle 	ZergCocoonGndAttkToIdle
 AirAttkToIdle 	[NONE]
 Unused2       	ZergCocoonUnused2
 Walking       	ZergCocoonWalking
@@ -385,8 +385,12 @@ ZergCocoonSpecialState2:
 	sigorder          	4
 	goto              	InfestedTerranLocal00
 	
+ZergCocoonGndAttkToIdle:
+	wait				1
+	goto              	ZergCocoonWalking
+	
 ZergCocoonUnused1:
-	# Nathrokor mutate
+	# unused
 	playfram			23
 	wait				2
 	playfram			24
@@ -402,7 +406,7 @@ ZergCocoonUnused1:
 	goto				ZergCocoonWalking
 
 ZergCocoonUnused2:
-	# Nathrokor cancel
+	# unused
 	playfram			27
 	wait				2
 	playfram			26
@@ -767,7 +771,7 @@ DrolethUnused1:
 
 DrolethGndAttkInit:
 	setvertpos        	0 
-	playsnd           	64 # Bullet\SpoogHit.wav
+	playsnd           	2485 # Droleth Weaponfire 01
 	sproluselo        	332 0 # Needle Spines (thingy\spooge.grp)
 	wait              	1 
 	attackwith        	1 
@@ -2823,12 +2827,12 @@ CerebrateIsWorking:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 063 Infested Command Center (terran\control.grp)
+# 063 Infested Ministry (terran\control.grp)
 .headerstart
 IsId          	39
 Type          	20
-Init          	InfestedCommandCenterInit
-Death         	InfestedCommandCenterDeath
+Init          	InfestedMinistryInit
+Death         	InfestedMinistryDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -2838,28 +2842,28 @@ CastSpell     	[NONE]
 GndAttkToIdle 	[NONE]
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
-Walking       	InfestedCommandCenterWalking
-WalkingToIdle 	InfestedCommandCenterBuilt
-SpecialState1 	InfestedCommandCenterSpecialState1
+Walking       	InfestedMinistryWalking
+WalkingToIdle 	InfestedMinistryBuilt
+SpecialState1 	InfestedMinistrySpecialState1
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
-Built         	InfestedCommandCenterBuilt
-Landing       	InfestedCommandCenterLanding
-LiftOff       	InfestedCommandCenterLiftOff
-IsWorking     	InfestedCommandCenterIsWorking
-WorkingToIdle 	InfestedCommandCenterBuilt
+Built         	InfestedMinistryBuilt
+Landing       	InfestedMinistryLanding
+LiftOff       	InfestedMinistryLiftOff
+IsWorking     	InfestedMinistryIsWorking
+WorkingToIdle 	InfestedMinistryBuilt
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-InfestedCommandCenterInit:
-	imgul             	277 0 0 # Command Center Shadow (terran\tccShad.grp)
-	imgol             	101 0 0 # Infested Command Center Overlay (zerg\Infest03.grp)
-InfestedCommandCenterBuilt:
+InfestedMinistryInit:
+	imgul             	277 0 0 # Ministry Shadow (terran\tccShad.grp)
+	imgol             	101 0 0 # Infested Ministry Overlay (zerg\Infest03.grp)
+InfestedMinistryBuilt:
 	playfram          	0x00
 	goto              	InfestedTerranLocal00
 
-InfestedCommandCenterDeath:
+InfestedMinistryDeath:
 	playsnd           	7 # Misc\ExploLrg.wav
 	imgol             	334 0 0 # Building Explosion (Large) (thingy\tBangX.grp)
 	wait              	3
@@ -2873,15 +2877,15 @@ LiftedTerranStructureDeath:
 	wait              	1
 	end
 
-InfestedCommandCenterSpecialState1:
+InfestedMinistrySpecialState1:
 	playfram          	4
 	goto              	InfestedTerranLocal00
 	
-InfestedCommandCenterWalking:
+InfestedMinistryWalking:
 	wait              	125 
-	goto              	InfestedCommandCenterWalking
+	goto              	InfestedMinistryWalking
 
-InfestedCommandCenterLanding:
+InfestedMinistryLanding:
 	nobrkcodestart
 	wait              	18
 	playsnd           	472	# Misc\Land.WAV
@@ -2896,9 +2900,9 @@ InfestedCommandCenterLanding:
 	playfram          	0x00
 	sigorder          	16
 	nobrkcodeend
-	goto              	InfestedCommandCenterBuilt
+	goto              	InfestedMinistryBuilt
 
-InfestedCommandCenterLiftOff:
+InfestedMinistryLiftOff:
 	nobrkcodestart
 	playsnd           	471	# Misc\LiftOff.WAV
 	playfram          	5
@@ -2910,9 +2914,9 @@ InfestedCommandCenterLiftOff:
 	playfram          	4
 	sigorder          	16
 	nobrkcodeend
-	goto              	InfestedCommandCenterWalking
+	goto              	InfestedMinistryWalking
 
-InfestedCommandCenterIsWorking:
+InfestedMinistryIsWorking:
 	playfram          	6
 	wait              	4
 	playfram          	0
@@ -2961,7 +2965,7 @@ InfestedCommandCenterIsWorking:
 	wait              	1
 	playfram          	0
 	wait              	1
-	goto              	InfestedCommandCenterIsWorking
+	goto              	InfestedMinistryIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -4641,7 +4645,7 @@ SpraithColonyBuilt:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 101 Infested Command Center Overlay (zerg\Infest03.grp)
+# 101 Infested Ministry Overlay (zerg\Infest03.grp)
 # 1487 Infested Overlay (Small) (cm\zerg\infested-small.grp)
 # 1488 Infested Overlay (Medium) (cm\zerg\infested-medium.grp)
 # 1489 Infested Overlay (Large) (cm\zerg\infested-large.grp)
@@ -5337,6 +5341,7 @@ HarakanGndAttkRpt:
 	nobrkcodestart
 	imgol             	421 0 0 # FlameThrower (thingy\flamer.grp)
 	playfram          	0x11
+	sigorder			32
 	attkshiftproj     	24
 	wait              	1
 	attkshiftproj     	52
@@ -5901,6 +5906,7 @@ Goliath_Turret_Walking:
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 237 Sarah Kerrigan (terran\ughost.grp)
+# 1615 Silvertongue (cm\terran\silvertongue.grp)
 .headerstart
 IsId          	77
 Type          	13
@@ -5998,7 +6004,7 @@ SarahKerriganLocal02:
 SarahKerriganDeath:
 	playsnd           	470 # Terran\KERRIGAN\UKeDth00.wav
 	imgol             	231 0 0 # Eidolon Death (terran\ghost.grp)
-	wait              	1 
+	wait              	1
 	end
 
 SarahKerriganGndAttkInit:
@@ -6010,7 +6016,7 @@ SarahKerriganGndAttkInit:
 SarahKerriganGndAttkRpt:
 	wait              	1
 	nobrkcodestart
-	playsnd           	98 # Bullet\TGhFir00.wav
+	playsndbtwn			2479 2483 # Silvertongue weaponfire 01 ... 05
 	attack
 	playfram          	0xcc
 	wait              	1
@@ -7047,12 +7053,12 @@ Phalanx_Siege_BaseInit:
 	playfram          	0xAA
 	wait              	2
 	playfram          	0xBB
-	wait              	42
+	wait              	32
 	sigorder          	1
 	goto              	ScourgeLocal00
 
 Phalanx_Siege_BaseSpecialState2:
-	wait              	38
+	wait              	28
 	playsnd           	319	# Terran\TANK\TTaTra01.WAV
 	wait              	3
 	playfram          	0xAA
@@ -7113,13 +7119,13 @@ Phalanx_Siege_TurretInit:
 	playfram          	0x44
 	wait              	1
 	nobrkcodestart
-	wait              	17
+	wait              	13
 	playfram          	0x55
 	wait              	2
 	playfram          	0x66
 	wait              	2
 	playfram          	0x77
-	wait              	17
+	wait              	13
 	playsnd           	318	# Terran\TANK\TTaTra00.WAV
 	wait              	1
 	playfram          	0x88
@@ -7176,7 +7182,7 @@ Phalanx_Siege_TurretSpecialState2:
 	playfram          	0x88
 	wait              	2
 	playfram          	0x77
-	wait              	27
+	wait              	21
 	playfram          	0x66
 	wait              	2
 	playfram          	0x55
@@ -7282,7 +7288,7 @@ FountainheadOverlayDeath:
 IsId          	96
 Type          	24
 Init          	BarracksInit
-Death         	InfestedCommandCenterDeath
+Death         	InfestedMinistryDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -7495,11 +7501,11 @@ AtelierOverlayDeath:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 271 Comsat Station (terran\ComSat.grp)
+# 1758 Lodestone (cm\terran\lodestone.grp)
 .headerstart
 IsId          	99
 Type          	20
-Init          	ComsatStationInit
+Init          	LodestoneInit
 Death         	AtelierDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
@@ -7514,43 +7520,41 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	ComsatStationAlmostBuilt
-Built         	ComsatStationBuilt
-Landing       	ComsatStationLanding
+AlmostBuilt   	LodestoneAlmostBuilt
+Built         	LodestoneBuilt
+Landing       	LodestoneLanding
 LiftOff       	InfestedTerranLocal00
 IsWorking     	InfestedTerranLocal00
-WorkingToIdle 	ComsatStationWorkingToIdle
+WorkingToIdle 	LodestoneBuilt
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-ComsatStationInit:
+LodestoneInit:
 	playfram          	0x00
-	imgul             	274 0 0	# Comsat Station Shadow (terran\tcsShad.grp)
+	imgul             	1761 0 0 # Lodestone Shadow (terran\tcsShad.grp)
 	goto              	InfestedTerranLocal00
 
-ComsatStationAlmostBuilt:
+LodestoneAlmostBuilt:
 	playfram          	1
 	goto              	InfestedTerranLocal00
 
-ComsatStationBuilt:
-	imgol             	273 0 0 # Comsat Station Overlay (terran\ComSatT.grp)
-ComsatStationWorkingToIdle:
+LodestoneBuilt:
 	playfram          	0x00
 	goto              	InfestedTerranLocal00
 
-ComsatStationLanding:
-	imgol             	272 0 0 # Comsat Station Connector (terran\ComSatC.grp)
+LodestoneLanding:
+#	imgol             	1759 0 0 # Lodestone Connector (terran\ComSatC.grp)
 	goto              	InfestedTerranLocal00
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 272 Comsat Station Connector (terran\ComSatC.grp)
+# 272 Lodestone Connector (terran\ComSatC.grp)
 .headerstart
 IsId          	100
 Type          	24
-Init          	ComsatConnectorInit
-Death         	ComsatConnectorDeath
+Init          	LodestoneConnectorInit
+Death         	LodestoneConnectorDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -7566,9 +7570,9 @@ SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
 Built         	[NONE]
-Landing       	ComsatConnectorDeath
-LiftOff       	ComsatConnectorLiftOff
-IsWorking     	ComsatConnectorIsWorking
+Landing       	LodestoneConnectorDeath
+LiftOff       	LodestoneConnectorLiftOff
+IsWorking     	LodestoneConnectorIsWorking
 WorkingToIdle 	InfestedTerranLocal00
 WarpIn        	[NONE]
 Unused3       	[NONE]
@@ -7578,22 +7582,22 @@ Burrow        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-ComsatConnectorInit:
+LodestoneConnectorInit:
 	playfram          	0x00
 	wait              	2
 	playfram          	1
 	wait              	2
 	playfram          	2
 	wait              	2
-ComsatConnectorIsWorking:
+LodestoneConnectorIsWorking:
 	playfram          	3
 	goto              	InfestedTerranLocal00
 
-ComsatConnectorDeath:
+LodestoneConnectorDeath:
 	wait              	1
 	end
 
-ComsatConnectorLiftOff:
+LodestoneConnectorLiftOff:
 	playfram          	2
 	wait              	2
 	playfram          	1
@@ -7605,12 +7609,12 @@ ComsatConnectorLiftOff:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 273 Comsat Station Overlay (terran\ComSatT.grp)
+# 273 Lodestone Overlay (terran\ComSatT.grp)
 .headerstart
 IsId          	101
 Type          	24
-Init          	ComsatOverlayInit
-Death         	ComsatOverlayDeath
+Init          	LodestoneOverlayInit
+Death         	LodestoneOverlayDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -7626,10 +7630,10 @@ SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
 Built         	[NONE]
-Landing       	ComsatOverlayLanding
+Landing       	LodestoneOverlayLanding
 LiftOff       	InfestedTerranLocal00
-IsWorking     	ComsatOverlayIsWorking
-WorkingToIdle 	ComsatOverlayIsWorking
+IsWorking     	LodestoneOverlayIsWorking
+WorkingToIdle 	LodestoneOverlayIsWorking
 WarpIn        	[NONE]
 Unused3       	[NONE]
 StarEditInit  	[NONE]
@@ -7638,17 +7642,17 @@ Burrow        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-ComsatOverlayInit:
+LodestoneOverlayInit:
 	playfram          	0x00
 	goto              	InfestedTerranLocal00
 
-ComsatOverlayDeath:
+LodestoneOverlayDeath:
 	wait              	1
 	end
 
-ComsatOverlayLanding:
+LodestoneOverlayLanding:
 	wait              	13
-ComsatOverlayIsWorking:
+LodestoneOverlayIsWorking:
 	playfram          	0x00
 	wait              	2
 	playfram          	1
@@ -7669,16 +7673,16 @@ ComsatOverlayIsWorking:
 	wait              	2
 	playfram          	9
 	wait              	2
-	goto              	ComsatOverlayIsWorking
+	goto              	LodestoneOverlayIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 275 Command Center (terran\control.grp)
+# 275 Ministry (terran\control.grp)
 .headerstart
 IsId          	102
 Type          	20
-Init          	CommandCenterInit
-Death         	CommandCenterDeath
+Init          	MinistryInit
+Death         	MinistryDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -7688,31 +7692,31 @@ CastSpell     	[NONE]
 GndAttkToIdle 	[NONE]
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
-Walking       	CommandCenterWalking
-WalkingToIdle 	CommandCenterWalking
-SpecialState1 	CommandCenterSpecialState1
+Walking       	MinistryWalking
+WalkingToIdle 	MinistryWalking
+SpecialState1 	MinistrySpecialState1
 SpecialState2 	[NONE]
-AlmostBuilt   	CommandCenterAlmostBuilt
-Built         	CommandCenterBuilt
-Landing       	CommandCenterLanding
-LiftOff       	CommandCenterLiftOff
-IsWorking     	CommandCenterIsWorking
-WorkingToIdle 	CommandCenterWorkingToIdle
+AlmostBuilt   	MinistryAlmostBuilt
+Built         	MinistryBuilt
+Landing       	MinistryLanding
+LiftOff       	MinistryLiftOff
+IsWorking     	MinistryIsWorking
+WorkingToIdle 	MinistryWorkingToIdle
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-CommandCenterInit:
-	imgul             	277 0 0 # Command Center Shadow (terran\tccShad.grp)
-CommandCenterBuilt:
+MinistryInit:
+	imgul             	277 0 0 # Ministry Shadow (terran\tccShad.grp)
+MinistryBuilt:
 	playfram          	0x00
-	goto              	CommandCenterWalking
+	goto              	MinistryWalking
 
-CommandCenterWalking:
+MinistryWalking:
 	wait              	125
-	goto              	CommandCenterWalking
+	goto              	MinistryWalking
 
-CommandCenterDeath:
+MinistryDeath:
 	playsnd           	7 # Misc\ExploLrg.wav
 	imgol             	334 0 0 # Building Explosion (Large) (thingy\tBangX.grp)
 	wait              	3
@@ -7721,15 +7725,15 @@ CommandCenterDeath:
 	wait              	1
 	end
 
-CommandCenterSpecialState1:
+MinistrySpecialState1:
 	playfram          	4
-	goto              	CommandCenterWalking
+	goto              	MinistryWalking
 
-CommandCenterAlmostBuilt:
+MinistryAlmostBuilt:
 	playfram          	1
-	goto              	CommandCenterWalking
+	goto              	MinistryWalking
 
-CommandCenterLanding:
+MinistryLanding:
 	nobrkcodestart
 	wait              	18
 	playsnd           	472	# Misc\Land.WAV
@@ -7744,9 +7748,9 @@ CommandCenterLanding:
 	playfram          	0x00
 	sigorder          	16
 	nobrkcodeend
-	goto              	CommandCenterWalking
+	goto              	MinistryWalking
 
-CommandCenterLiftOff:
+MinistryLiftOff:
 	nobrkcodestart
 	playsnd           	471 # Misc\LiftOff.WAV
 	playfram          	5
@@ -7758,9 +7762,9 @@ CommandCenterLiftOff:
 	playfram          	4
 	sigorder          	16
 	nobrkcodeend
-	goto              	CommandCenterWalking
+	goto              	MinistryWalking
 
-CommandCenterIsWorking:
+MinistryIsWorking:
 	playfram          	6
 	wait              	4
 	playfram          	0x00
@@ -7809,24 +7813,24 @@ CommandCenterIsWorking:
 	wait              	1
 	playfram          	0x00
 	wait              	1
-	goto              	CommandCenterIsWorking
+	goto              	MinistryIsWorking
 
-CommandCenterWorkingToIdle:
+MinistryWorkingToIdle:
 	wait              	1
-	goto              	CommandCenterBuilt
+	goto              	MinistryBuilt
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 276 Command Center Overlay (terran\controlT.grp)
+# 276 Ministry Overlay (terran\controlT.grp)
 .headerstart
 IsId          	103
 Type          	1
-Init          	CommandCenterOverlayInit
-Death         	CommandCenterOverlayDeath
+Init          	MinistryOverlayInit
+Death         	MinistryOverlayDeath
 .headerend
 # ----------------------------------------------------------------------------- #
 
-CommandCenterOverlayInit:
+MinistryOverlayInit:
 	playfram          	0x00
 	wait              	2
 	playfram          	1
@@ -7838,7 +7842,7 @@ CommandCenterOverlayInit:
 	playfram          	4
 	wait              	2
 	playfram          	5
-CommandCenterOverlayDeath:
+MinistryOverlayDeath:
 	wait              	1
 	end
 
@@ -9012,11 +9016,11 @@ PhysicsLabConnectorLiftOff:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 304 Bunker (terran\pillbox.grp)
+# 304 Anchor (terran\pillbox.grp)
 .headerstart
 IsId          	123
 Type          	24
-Init          	BunkerInit
+Init          	AnchorInit
 Death         	AtelierDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
@@ -9031,10 +9035,10 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	BunkerAlmostBuilt
-Built         	BunkerBuilt
-Landing       	BunkerLanding
-LiftOff       	BunkerLiftOff
+AlmostBuilt   	AnchorAlmostBuilt
+Built         	AnchorBuilt
+Landing       	AnchorLanding
+LiftOff       	AnchorLiftOff
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
 WarpIn        	[NONE]
@@ -9045,13 +9049,13 @@ Burrow        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-BunkerInit:
-	imgul             	305 0 0 # Bunker Shadow (terran\tpbShad.grp)
-BunkerBuilt:
+AnchorInit:
+	imgul             	305 0 0 # Anchor Shadow (terran\tpbShad.grp)
+AnchorBuilt:
 	playfram          	0x00
 	goto              	InfestedTerranLocal00
 
-BunkerLiftOff:
+AnchorLiftOff:
 	nobrkcodestart
 	playsnd           	471
 	playfram          	0x02
@@ -9091,7 +9095,7 @@ BunkerLiftOff:
 	nobrkcodeend
 	goto              	InfestedTerranLocal00
 
-BunkerLanding:
+AnchorLanding:
 	nobrkcodestart
 	wait              	12
 	playfram          	0x11
@@ -9129,24 +9133,24 @@ BunkerLanding:
 	wait              	1
 	sigorder          	16
 	nobrkcodeend
-	goto              	BunkerBuilt
+	goto              	AnchorBuilt
 	
-BunkerAlmostBuilt:
+AnchorAlmostBuilt:
 	playfram          	1
 	goto              	InfestedTerranLocal00
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 306 Bunker Overlay (terran\PillBoxT.grp)
+# 306 Anchor Overlay (terran\PillBoxT.grp)
 .headerstart
 IsId          	124
 Type          	0
-Init          	BunkerOverlayInit
+Init          	AnchorOverlayInit
 Death         	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-BunkerOverlayInit:
+AnchorOverlayInit:
 	playfram          	0x00
 	wait              	1
 	tmprmgraphicstart
@@ -9247,7 +9251,7 @@ ReservoirLocal01:
 IsId          	126
 Type          	20
 Init          	DaedalaInit
-Death         	CommandCenterDeath
+Death         	MinistryDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -9688,7 +9692,7 @@ NukeExplosionInit:
 IsId          	134
 Type          	20
 Init          	StarportInit
-Death         	InfestedCommandCenterDeath
+Death         	InfestedMinistryDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -9816,7 +9820,7 @@ StarportOverlayDeath:
 IsId          	136
 Type          	24
 Init          	AtlasInit
-Death         	CommandCenterDeath
+Death         	MinistryDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -20681,7 +20685,7 @@ LakiziliskGndAttkInit:
 	nobrkcodestart
 LakiziliskGndAttkRpt:
 	wait              	1
-	playsnd           	64 # Bullet\SpoogHit.wav
+	playsnd           	2484 # Lakizilisk weaponfire 01
 	sigorder			32
 	attack
 	wait              	1
@@ -20746,6 +20750,20 @@ LakiziliskBurrow:
 	wait              	1
 	playfram          	0x143
 	wait              	1
+	imgol             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
+	playfram          	0xee
+	wait              	1
+	playfram          	0xff
+	wait              	1
+	playfram          	0x110
+	wait              	1
+	playfram          	0x121
+	wait              	1
+	playfram          	0x132
+	wait              	1
+	playfram          	0x143
+	wait              	1
+	imgol             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
 	playfram          	0xee
 	wait              	1
 	playfram          	0xff
@@ -21226,6 +21244,8 @@ ValkyrieDeath:
 ValkyrieAirAttkInit:
 	wait              	2
 	nobrkcodestart
+	attackwith        	2
+	wait				4
 	attackwith        	2
 	wait				1
 	nobrkcodeend
@@ -23409,10 +23429,10 @@ Type          	12
 Init          	GorgrokorInit
 Death         	GorgrokorDeath
 GndAttkInit   	GorgrokorGndAttkInit
-AirAttkInit   	GorgrokorGndAttkInit
+AirAttkInit   	GorgrokorAirAttkInit
 Unused1       	[NONE]
 GndAttkRpt    	GorgrokorGndAttkInit
-AirAttkRpt    	GorgrokorGndAttkInit
+AirAttkRpt    	GorgrokorAirAttkInit
 CastSpell     	[NONE]
 GndAttkToIdle 	GorgrokorWalkingToIdle
 AirAttkToIdle 	GorgrokorWalkingToIdle
@@ -23471,6 +23491,22 @@ GorgrokorGndAttkInit:
 	wait 				1
 	playfram 			0x180
 	wait 				1
+	nobrkcodeend
+	gotorepeatattk
+	goto              	GorgrokorWalkingToIdle
+
+GorgrokorAirAttkInit:
+	nobrkcodestart
+	playsndbtwn			1295 1296 # Gorgrokor weapon fire 01, 02
+	playfram 			0x120
+	wait 				1
+	playfram 			0x140
+	wait 				1
+	playfram 			0x160
+	wait 				1
+	attackwith			2
+	playfram 			0x140
+	wait				1
 	nobrkcodeend
 	gotorepeatattk
 	goto              	GorgrokorWalkingToIdle
@@ -26146,7 +26182,7 @@ CelestialShrineWarpIn:
 IsId          	450
 Type          	20
 Init          	ParthenonInit
-Death         	InfestedCommandCenterDeath
+Death         	InfestedMinistryDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -26266,10 +26302,10 @@ Type          	12
 Init          	NathrokorInit
 Death         	NathrokorDeath
 GndAttkInit   	NathrokorGndAttkInit
-AirAttkInit   	NathrokorGndAttkInit
+AirAttkInit   	NathrokorAirAttkInit
 Unused1       	[NONE]
 GndAttkRpt    	NathrokorGndAttkInit
-AirAttkRpt    	NathrokorGndAttkInit
+AirAttkRpt    	NathrokorAirAttkInit
 CastSpell     	[NONE]
 GndAttkToIdle 	NathrokorGndAttkToIdle
 AirAttkToIdle 	NathrokorGndAttkToIdle
@@ -26310,10 +26346,48 @@ NathrokorDeath:
 	end
 
 NathrokorGndAttkInit:
-	playsndbtwn			1326 1328 # Nathrokor attack 01, 02, 03
-	attackwith			1
-	wait              	2
-	gotorepeatattk
+    playfram            0x100
+    wait                1
+	nobrkcodestart
+    playfram            0x120
+	playsnd				1326 # Nathrokor weaponfire 01
+    wait                1
+    playfram            0x140
+    wait                1
+    playfram            0x160
+	attackmelee       	1 894 # Zerg\Ultra\zulHit00.WAV
+    wait                2
+    playfram            0x140
+    wait                2
+    playfram            0x120
+    wait                2
+    playfram            0x100
+    wait                1
+	nobrkcodeend
+    gotorepeatattk
+    goto                NathrokorGndAttkToIdle
+
+NathrokorAirAttkInit:
+	playfram			0x180
+	wait				1
+	nobrkcodestart
+	playfram			0x1A0
+	playsnd				1326 # Nathrokor weaponfire 01
+	wait				1
+	playfram			0x1C0
+	attackmelee       	1 894 # Zerg\Ultra\zulHit00.WAV
+	wait				1
+	playfram			0x1E0
+	wait				1
+	playfram			0x200
+	attackmelee       	1 894 # Zerg\Ultra\zulHit00.WAV
+	wait				1
+	playfram			0x220
+	wait				1
+	playfram			0x240
+	wait              	1
+	nobrkcodeend
+    gotorepeatattk
 	goto              	NathrokorGndAttkToIdle
 
 NathrokorWalking:
@@ -27861,7 +27935,7 @@ NaniteAssemblyIsWorking:
 IsId          	469
 Type          	24
 Init          	ParticleAcceleratorInit
-Death         	InfestedCommandCenterDeath
+Death         	InfestedMinistryDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -34260,45 +34334,45 @@ QuaziliskLocal00:
 	goto              	QuaziliskLocal00
 	
 QuaziliskLocal01:
-	playfram			0x88
+	playfram			0x100
 	wait				1
 	turnccwise			1
-	playfram			0x77
+	playfram			0xE0
 	wait				1
 	turnccwise			1
-	playfram			0x66
+	playfram			0xC0
 	wait				1
 	turnccwise			1
-	playfram			0x77
+	playfram			0xE0
 	wait				1
 	turnccwise			1
-	playfram			0x88
+	playfram			0x100
 	wait				1
 	turnccwise			1
 	goto				QuaziliskGndAttkToIdle
 	
 QuaziliskLocal02:
-	playfram			0x88
+	playfram			0x100
 	wait				1
 	turncwise			1
-	playfram			0x77
+	playfram			0xE0
 	wait				1
 	turncwise			1
-	playfram			0x66
+	playfram			0xC0
 	wait				1
 	turncwise			1
-	playfram			0x77
+	playfram			0xE0
 	wait				1
 	turncwise			1
-	playfram			0x88
+	playfram			0x100
 	wait				1
 	turncwise			1
 	goto				QuaziliskGndAttkToIdle
 	
 QuaziliskLocal03:
-	playfram			0x88
+	playfram			0x100
 	wait				1
-	playfram			0x77
+	playfram			0xE0
 	randcondjmp			85 QuaziliskLocal04
 	goto				QuaziliskLocal06
 
@@ -34343,26 +34417,26 @@ QuaziliskLocal05:
 	
 QuaziliskLocal06:
 	waitrand			8 20
-	playfram			0x88
+	playfram			0x100
 	wait				1
 	goto				QuaziliskGndAttkToIdle
 
 QuaziliskDeath:
     playsndbtwn         1707 1708 # Quazilisk death 01, 02
     setfldirect         0
-    playfram            357
+    playfram            672
     wait                2
-    playfram            358
+    playfram            673
     wait                2
-    playfram            359
+    playfram            674
     wait                2
-    playfram            360
+    playfram            675
     wait                2
-    playfram            361
+    playfram            676
     wait                2
-    playfram            362
+    playfram            677
     wait                2
-    playfram            363
+    playfram            678
     wait                2
     lowsprul            814 0 0 # Quazilisk Remains
     wait                1
@@ -34383,24 +34457,22 @@ QuaziliskUnused1:
 	goto				QuaziliskGndAttkToIdle
 
 QuaziliskGndAttkInit:
-    playfram            0x110
+    playfram            0x200
 QuaziliskGndAttkRpt:
     wait                1
     nobrkcodestart
-    playfram            0x121
+    playfram            0x200
     playsndbtwn         1329 1331 # Quazilisk attack 01, 02, 03
     imgol               1752 0 0 # Quazilisk Attack Overlay
     attack
     wait                1
-    playfram            0x132
+    playfram            0x220
     wait                1
-    playfram            0x143
+    playfram            0x240
     wait                1
-    playfram            0x132
+    playfram            0x220
     wait                1
-    playfram            0x121
-    wait                1
-    playfram            0x110
+    playfram            0x200
     nobrkcodeend
     gotorepeatattk
     goto                QuaziliskGndAttkToIdle
@@ -34408,32 +34480,32 @@ QuaziliskGndAttkRpt:
 QuaziliskWalking:
 	move              	5
 	wait              	1
-	playfram          	0x11
+	playfram          	0x20
 	move              	5
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 	move              	5
 	wait              	1
-	playfram          	0x33
+	playfram          	0x60
 	move              	5
 	wait              	1
-	playfram          	0x44
+	playfram          	0x80
 	move              	5
 	wait              	1
-	playfram          	0x55
+	playfram          	0xA0
 	move              	5
 	wait              	1
-	playfram          	0x66
+	playfram          	0xC0
 	move              	5
 	wait              	1
-	playfram          	0x77
+	playfram          	0xE0
 	move              	5
 	wait              	1
-	playfram          	0x88
+	playfram          	0x100
 	goto              	QuaziliskWalking
 
 QuaziliskSpecialState2:
-	playfram          	0xff
+	playfram          	0x1E0
 	goto              	QuaziliskLocal07
 
 QuaziliskLocal07:
@@ -34442,17 +34514,17 @@ QuaziliskLocal07:
 
 QuaziliskBurrow:
 	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
-	playfram			0x99
+	playfram			0x140
 	wait				1
-	playfram			0xaa
+	playfram			0x160
 	wait				1
-	playfram			0xbb
+	playfram			0x180
 	wait				1
-	playfram			0xdd
+	playfram			0x1A0
 	wait				1
-	playfram			0xee
+	playfram			0x1C0
 	wait				1
-	playfram			0xff
+	playfram          	0x1E0
 	sigorder          	4
 	goto              	QuaziliskLocal07
 
@@ -34460,15 +34532,15 @@ QuaziliskUnBurrow:
 	wait 				1
 	waitrand          	1 4
 	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
-	playfram          	0xee
+	playfram          	0x1C0
 	wait              	1
-	playfram          	0xdd
+	playfram          	0x1A0
 	wait              	1
-	playfram          	0xbb
+	playfram          	0x180
 	wait              	1
-	playfram          	0xaa
+	playfram          	0x160
 	wait              	1
-	playfram          	0x99
+	playfram          	0x140
 	wait              	1
 	sigorder          	4
 	goto              	QuaziliskGndAttkToIdle
@@ -35157,7 +35229,7 @@ LarvalColonyLocal00:
 IsId          	554
 Type          	24
 Init          	CaptaincyInit
-Death         	InfestedCommandCenterDeath
+Death         	InfestedMinistryDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -35270,7 +35342,7 @@ CaptaincyDisable:
 IsId          	555
 Type          	24
 Init          	IronFoundryInit
-Death         	InfestedCommandCenterDeath
+Death         	InfestedMinistryDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -36270,15 +36342,9 @@ HierophantUnused1:
 HierophantGndAttkInit:
 	playfram          	0x110
 	wait              	1
-	playfram          	0x121
-	wait              	1
 	playfram          	0x132
 	wait              	1
-	playfram          	0x143
-	wait              	1
 	playfram          	0x154
-	wait              	1
-	playfram          	0x165
 	wait              	1
 HierophantGndAttkRpt:
 	playfram          	0x176
@@ -39214,15 +39280,15 @@ LiiraliskWalkingToIdle:
 	playfram          	0x00
 	wait				2
 LiiraliskLocal00:
-	playfram			0x11
+	playfram			0x20
 	wait				2
-	playfram			0x22
+	playfram			0x40
 	wait				2
-	playfram			0x33
+	playfram			0x60
 	wait				2
-	playfram			0x44
+	playfram			0x80
 	wait				2
-	playfram			0x55
+	playfram			0xA0
 	wait				2
 	playfram          	0x00
 	wait				2
@@ -39260,104 +39326,103 @@ LiiraliskUnused1:
 	goto				LiiraliskGndAttkToIdle
 
 LiiraliskGndAttkInit:
-	playfram          	0xee
-	wait              	1 
-	playfram			0xff
-	wait				1
-	playfram			0x110
+    playfram            0x00
+    wait                1
+    playfram            0x1C0
+    wait                2
 LiiraliskGndAttkRpt:
-	wait				1
-	nobrkcodestart
-	playsndbtwn			2014 2015 # Liiralisk attack 01, 02
-	playfram			0x121
-	wait				1
-	playfram			0x132
-	attack
-	attack
-	wait				1
-	playfram			0x143
-	wait              	1 
-	playfram			0x132
-	wait              	1 
-	playfram			0x121
-	wait              	1 
-	nobrkcodeend
-	gotorepeatattk
-	ignorerest	
+    wait                1
+    nobrkcodestart
+    playsndbtwn         2014 2015 # Liiralisk attack 01, 02
+    playfram            0x1E0
+    wait                1
+    playfram            0x200
+    attack
+    attack
+    wait                1
+    playfram            0x220
+    wait                1
+    playfram            0x240
+    wait                1
+    playfram            0x260
+    wait                1
+    nobrkcodeend
+    gotorepeatattk
+    ignorerest
 LiiraliskGndAttkToIdle:
-	playfram			0x110
-	wait				1
-	playfram			0xff
-	wait				1
-	playfram			0xee
-	wait				1
-	goto				LiiraliskWalkingToIdle
+    playfram            0x1E0
+    wait                1
+    playfram            0x1C0
+    wait                1
+    playfram            0x00
+    wait                1
+    goto                LiiraliskWalkingToIdle
 
 LiiraliskWalking:
-	move              	6 
-	wait              	1 
-	playfram          	0x66
+	move              	6
+	wait              	1
+	playfram          	0xC0
+	move              	6
+	wait              	1
+	playfram          	0xE0
+	move              	6
+	wait              	1
+	playfram          	0x100
 	move              	6
 	wait              	1 
-	playfram          	0x77
-	move              	6 
-	wait              	1 
-	playfram          	0x88
-	move              	6 
-	wait              	1 
-	playfram          	0x99
-	move              	6 
-	wait              	1 
-	playfram          	0xaa
-	move              	6 
-	wait              	1 
-	playfram          	0xbb
+	playfram          	0x120
 	move              	6
-	wait              	1 
-	playfram          	0xcc
-	move              	6 
-	wait              	1 
-	playfram          	0xdd
+	wait              	1
+	playfram          	0x140
+	move              	6
+	wait              	1
+	playfram          	0x160
+	move              	6
+	wait              	1
+	playfram          	0x180
+	move              	6
+	wait              	1
+	playfram          	0x1A0
 	goto              	LiiraliskWalking
 
 LiiraliskSpecialState2:
-	playfram          	0x1a9
+	playfram          	0x320
 	goto              	LiiraliskLocal07
 
 LiiraliskLocal07:
-	wait              	125 
+	wait              	125
 	goto              	LiiraliskLocal07
 
 LiiraliskBurrow:
 	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
 	playfram			0x00
 	wait				1
-	playfram			0x154
+	playfram			0x280
 	wait				1
-	playfram			0x165
+	playfram			0x2A0
 	wait				1
-	playfram			0x176
+	playfram			0x2C0
 	wait				1
-	playfram			0x187
+	playfram			0x2E0
 	wait				1
-	playfram			0x198
+	playfram			0x300
 	sigorder          	4
-	playfram			0x1a9
+	playfram			0x320
 	goto              	LiiraliskLocal07
 
 LiiraliskUnBurrow:
 	wait 				1
 	waitrand          	1 4
 	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
-	playfram          	0x198
+	playfram          	0x300
 	wait              	1
-	playfram          	0x187
+	playfram          	0x2E0
 	wait              	1
-	playfram          	0x176
+	playfram          	0x2C0
 	wait              	1
-	playfram          	0x165
+	playfram          	0x2A0
 	wait              	1
-	playfram          	0x154
+	playfram          	0x280
 	wait              	1
 	sigorder          	4
 	goto              	LiiraliskWalkingToIdle
@@ -42242,11 +42307,7 @@ IzirokorUnused1:
 IzirokorGndAttkInit:
 	playfram          	0x1ba
 	wait				1
-	playfram			0x1cb
-	wait				1
 	playfram			0x1dc
-	wait				1
-	playfram			0x1ed
 IzirokorGndAttkRpt:
 	nobrkcodestart
 	playsndbtwn			1880 1881 # Izirokor weapon fire 01, 02
@@ -45402,10 +45463,8 @@ SundogGndAttkInit:
 	nobrkcodestart
 	playsndbtwn			1148 1153 # Sundog weapon fire 01, 02, 03, 04, 05, 06
 	attackwith        	1
-	attackwith        	1
 	wait				4
 	playsndbtwn			1148 1153 # Sundog weapon fire 01, 02, 03, 04, 05, 06
-	attackwith        	1
 	attackwith        	1
 	nobrkcodeend
 	gotorepeatattk
@@ -47429,6 +47488,14 @@ TosgriliskGndAttkInit:
 	attackwith        	1
 	wait              	1
 	playfram			0x220
+	wait				1
+	playfram			0x1C0
+	wait				1
+	playfram			0x200
+	playsnd           	113 # Bullet\zmuFir00.wav
+	attackwith        	1
+	wait              	1
+	playfram			0x220
 	nobrkcodeend
 	wait				1
 	playfram			0x00
@@ -48504,7 +48571,7 @@ TetcaerokorDeath:
 
 TetcaerokorGndAttkInit:
 	nobrkcodestart
-	playsndbtwn			1294 1295 # Tetcaerokor weapon fire 01, 02
+	playsndbtwn			1295 1296 # Tetcaerokor weapon fire 01, 02
 	playfram 			0x440
 	wait 				1
 	playfram 			0x480
@@ -50715,13 +50782,13 @@ OmniBulletOneGndAttkInit:
 	playfram			0x00
 	wait              	125
 	goto              	OmniBulletOneGndAttkInit
-
+	
 OmniBulletOneDeathOrange:
 	imgol             	530 0 0 # Gemini Missiles Explosion (thingy\ecaHit.grp)
 	domissiledmg
 	wait              	1
 	end
-
+	
 OmniBulletOneBlueDeath:
 	if bullet.weapon_id == 26 goto OmniBulletOneDeathOrange
 	imgol             	1249 0 0 # Burst Lasers Blue Impact (thingy\elbHit.grp)
@@ -51779,10 +51846,6 @@ ZergMutateInit:
 	playfram          	0x00
 	goto              	InfestedTerranLocal00
 
-ZergMutateDeath:
-	wait              	1
-	end
-
 ZergMutateUnused:
 	wait				1
 	nobrkcodestart
@@ -51837,14 +51900,197 @@ Death         	ScourgeExplosionDeath
 QuaziliskAttackOverlayInit:
 	playfram          	0x00
 	wait              	1
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 	wait              	1
-	playfram          	0x33
+	playfram          	0x60
 	wait              	1
-	playfram          	0x44
+	playfram          	0x80
 	wait              	1
 	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1753 Sevenstep Rail (cm\terran\sentinel-rail.grp)
+.headerstart
+IsId          	756
+Type          	2
+Init          	SevenstepRailInit
+Death         	SevenstepRailDeath
+GndAttkInit   	SevenstepRailGndAttkInit
+AirAttkInit   	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+SevenstepRailInit:
+	playfram          	0x00
+	wait              	1
+	sigorder          	1
+	wait              	1
+SevenstepRailGndAttkInit:
+	playfram			0x00
+	wait              	125
+	goto              	SevenstepRailGndAttkInit
 	
-# Next free isid: 756
+SevenstepRailDeath:
+	imgol             	1249 0 0 # Burst Lasers Blue Impact (thingy\elbHit.grp)
+	domissiledmg
+	wait              	1
+	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1754 Nathrokor Mutate (cm\zerg\nathrokor-mutate.grp)
+.headerstart
+IsId          	757
+Type          	13
+Init          	ZergMutateAirInit
+Death         	EggDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	ZergMutateAirUnused
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	ZergMutateAirSpecialState1
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ZergMutateAirInit:
+	playfram          	0x00
+	goto              	InfestedTerranLocal00
+
+ZergMutateAirUnused:
+	wait				1
+	nobrkcodestart
+	playfram          	5
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	0
+	wait				2
+	sigorder			4
+	wait				2
+	nobrkcodeend
+	goto              	InfestedTerranLocal00
+
+ZergMutateAirSpecialState1:
+	playfram          	0
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	waitrand          	1 3
+	sigorder			8
+	goto              	InfestedTerranLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1756 Omnivale (cm\gamemodes\omnipresence\omnivale.grp)
+.headerstart
+IsId          	758
+Type          	27
+Init          	OmnivaleInit
+Death         	NexusDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	OmnivaleSpecialState1
+SpecialState2 	OmnivaleSpecialState2
+AlmostBuilt   	OmnivaleAlmostBuilt
+Built         	OmnivaleBuilt
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	OmnivaleIsWorking
+WorkingToIdle 	OmnivaleWorkingToIdle
+WarpIn        	OmnivaleAlmostBuilt
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	[NONE]
+UnBurrow      	[NONE]
+Enable        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+OmnivaleInit:
+	imgul             	1757 0 0 # Omnivale Shadow (cm\gamemodes\omnipresence\omnivale-shadow.grp)
+	playfram          	0x00
+	wait              	2
+	goto              	OmnivaleBuilt
+
+OmnivaleBuilt:
+	wait              	125
+	goto              	OmnivaleBuilt
+
+OmnivaleSpecialState1:
+	playsnd           	528 # Protoss\SHUTTLE\pshBld00.wav
+	wait              	1 
+	goto              	OmnivaleLocal00
+
+OmnivaleLocal00:
+	wait              	255 
+	goto              	OmnivaleLocal00
+
+OmnivaleSpecialState2:
+	wait              	1 
+	goto              	OmnivaleWorkingToIdle
+
+OmnivaleWorkingToIdle:
+	playfram          	0x00
+	goto              	OmnivaleBuilt
+
+OmnivaleAlmostBuilt:
+	imgol             	172 0 0 # Omnivale Warp Flash (cm\gamemodes\omnipresence\omnivale.grp)
+	goto              	OmnivaleBuilt
+
+OmnivaleIsWorking:
+	playfram          	1
+	wait				1
+	playfram			2
+	wait				1
+	playfram			3
+	wait				1
+	playfram			4
+	wait				1
+	playfram			5
+	wait				1
+	playfram			6
+	wait				1
+	playfram			7
+	wait				1
+	playfram			8
+	wait				1
+	playfram			9
+	wait				1
+	playfram			0x00
+	wait				1
+	goto              	OmnivaleIsWorking
+	
+# Next free isid: 759

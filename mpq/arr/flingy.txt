@@ -270,7 +270,7 @@ Magister
 Vassal
 Madcap
 Salamander
-Salamander Torpedo
+Silvertongue Laser
 Gorgon
 Pegasus
 Phobos
@@ -278,7 +278,7 @@ Penumbra
 Cyclops
 Pegasus Missile
 Phobos Laser
-Salamander Torpedo copy
+Salamander Torpedo
 Sanctum of Sorrow
 Geszkath Grotto
 Shaman (Support Mode)
@@ -336,7 +336,7 @@ Mason Christmas
 Scribe Christmas
 Droleth Christmas
 Cikralisk
-Larvosk Colony
+Larvosk Cesiant
 Captaincy
 Iron Foundry
 Mineral Field 1 Christmas
@@ -489,10 +489,10 @@ Madrigal Turret (Imperioso)
 Madrigal (Furia Mode)
 Madrigal Turret (Furia)
 Philoc
-Extended Flingy #283
-Extended Flingy #284
-Extended Flingy #285
-Extended Flingy #286
+Sevenstep Projectile
+Omnivale
+Lodestone
+Ocsal Cesiant
 Extended Flingy #287
 Extended Flingy #288
 Extended Flingy #289

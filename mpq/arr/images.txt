@@ -1308,8 +1308,8 @@ Mason Christmas
 Scribe Christmas
 Droleth Christmas
 Tethzorokor
-Larvosk Colony
-Larvosk Colony Shadow
+Larvosk Cesiant
+Larvosk Cesiant Shadow
 Captaincy
 Captaincy Shadow
 Iron Foundry
@@ -1751,17 +1751,17 @@ Radial Explosion (Orange)
 Radial Explosion (Green)
 Quazilisk Mutate
 Quazilisk Attack Overlay
-Extended Image #751
-Extended Image #752
-Extended Image #753
-Extended Image #754
-Extended Image #755
-Extended Image #756
-Extended Image #757
-Extended Image #758
-Extended Image #759
-Extended Image #760
-Extended Image #761
+Sevenstep Rail
+Nathrokor Mutate
+Quazilisk April Fools
+Omnivale
+Omnivale Shadow
+Lodestone
+Lodestone Connector
+Lodestone Overlay
+Lodestone Shadow
+Ocsal Cesiant
+Ocsal Cesiant Shadow
 Extended Image #762
 Extended Image #763
 Extended Image #764
