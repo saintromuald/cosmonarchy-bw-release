@@ -159,7 +159,7 @@ Psionic Storm
 Yamato Gun
 Phase Disruptor
 STA/STS Cannon Overlay
-Sunken Colony Tentacle
+Surkith Cesiant Tentacle
 Venom
 Acid Spore
 Plasma Drip Hit (Unused)
@@ -493,9 +493,9 @@ Sevenstep Projectile
 Omnivale
 Lodestone
 Ocsal Cesiant
-Extended Flingy #287
-Extended Flingy #288
-Extended Flingy #289
+Potentate
+Skortrith Cesiant Tentacle
+Cyclops Weapon Impact
 Extended Flingy #290
 Extended Flingy #291
 Extended Flingy #292

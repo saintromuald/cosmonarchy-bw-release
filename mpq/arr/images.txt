@@ -78,8 +78,8 @@ Surkith Colony
 Surkith Colony Shadow
 Mature Chrysalis
 Mature Chrysalis Shadow
-Vithrath Haunt
-Vithrath Haunt Shadow
+Tosvrol Haunt
+Tosvrol Haunt Shadow
 Sovthrath Mound
 Sovthrath Mound Shadow
 Matravil Nest
@@ -504,7 +504,7 @@ Building Lifting Dust Type4
 White Circle
 Needle Spine Hit
 Plasma Drip Hit (Unused)
-Sunken Colony Tentacle
+Surkith Cesiant Tentacle
 Venom
 Venom Hit (Unused)
 Acid Spore
@@ -1701,8 +1701,8 @@ Spirtith Colony
 Spirtith Colony Shadow
 Diadem Attack A3
 Diadem Attack A4
-Skortrith Colony
-Skortrith Colony Shadow
+Skortrith Cesiant
+Skortrith Cesiant Shadow
 Anchor Attack Overlay (Green)
 Anchor Attack Overlay (Blue)
 Terran Unit Rubble (Medium)
@@ -1762,10 +1762,10 @@ Lodestone Overlay
 Lodestone Shadow
 Ocsal Cesiant
 Ocsal Cesiant Shadow
-Extended Image #762
-Extended Image #763
-Extended Image #764
-Extended Image #765
+Potentate
+Potentate Shadow
+Skortrith Cesiant Tentacle
+Cyclops Weapon Impact
 Extended Image #766
 Extended Image #767
 Extended Image #768

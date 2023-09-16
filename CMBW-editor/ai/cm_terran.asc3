@@ -1272,7 +1272,7 @@ script_id TMCx
 	
 	:under_attack_by_ground_calc
 	var AtL|Wait under_attack_var 1 13
-	player_combat 17 13 63 False Jump maverick|harakan|cyprian|eidolon|savant|madcap|heracles|apostle|siren|striga|olympian|autocrat|dilettante|sevenstep|silvertongue|sevenstep|silvertongue|vulture|cyclops|goliath|blackjack|matador|phalanx|phalanx_siege_mode|madrigal|ramesses|durendal|cataphract|paladin|cuirass|pazuzu|claymore|penumbra|anticthon|aion|zealot|dracadin|ecclesiast|legionnaire|hierophant|amaranth|atreus|herald|cantavis|vagrant|cabalist|pariah|charlatan|archon|optecton|patriarch|apostate|augur|manifold|simulacrum|idol|golem|accantor|architect|demiurge|zethrokor|quazilisk|vorvrokor|liiralisk|cikralisk|protathalor|axitrilisk|mortothrokor|hydralisk|izirokor|bactalisk|tethzorokor|kagralisk|evigrilisk|keskathalor|zoryusthaleth|lakizilisk|konvilisk|vilgorokor|rilirokor|ultrokor|zobriolisk|aspirant|cohort|tarasque Any under_attack_by_ground_calc_fin 13
+	player_combat 17 13 63 False Jump maverick|harakan|cyprian|eidolon|savant|madcap|heracles|apostle|siren|striga|olympian|autocrat|dilettante|sevenstep|hypnagogue|sevenstep|silvertongue|vulture|cyclops|goliath|blackjack|matador|phalanx|phalanx_siege_mode|madrigal|ramesses|durendal|cataphract|paladin|cuirass|pazuzu|claymore|penumbra|anticthon|aion|zealot|dracadin|ecclesiast|legionnaire|hierophant|amaranth|atreus|herald|cantavis|vagrant|cabalist|charlatan|pariah|potentate|sycophant|archon|optecton|patriarch|manifold|simulacrum|idol|golem|accantor|architect|demiurge|zethrokor|quazilisk|vorvrokor|liiralisk|cikralisk|protathalor|axitrilisk|mortothrokor|hydralisk|izirokor|bactalisk|tethzorokor|kagralisk|evigrilisk|keskathalor|zoryusthaleth|lakizilisk|konvilisk|vilgorokor|rilirokor|ultrokor|zobriolisk|aspirant|cohort|tarasque Group_Buildings|mason|talos under_attack_by_ground_calc_fin 13
 	var Set under_attack_by_ground_var 1 13
 	
 	:under_attack_by_ground_calc_fin
@@ -1281,7 +1281,7 @@ script_id TMCx
 	
 	:under_attack_by_air_calc
 	var Ex|Wait under_attack_var 1 13
-	player_combat 17 13 63 False Jump talos|wraith|gorgon|wyvern|valkyrie|salamander|sundog|centaur|minotaur|magnetar|pegasus|hippogriff|oberon|phobos|artisan|barghest|vassal|empress|aurora|panoptus|lanifect|gladius|exemplar|magister|epigraph|didact|empyrean|solarion|star_sovereign|anthelion|gosvileth|nathrokor|kalkalisk|mutalisk|ghitorokor|sovroleth|tosgrilisk|skithrokor|vithrilisk|almaksalisk|geszithalor|algoztalisk|alkajelisk|gorgrokor|rililisk|zarcavrokor|tetcaerokor|akistrokor|luminary Any under_attack_by_air_calc_fin 13
+	player_combat 17 13 63 False Jump talos|wraith|gorgon|wyvern|valkyrie|salamander|sundog|centaur|minotaur|magnetar|pegasus|hippogriff|oberon|phobos|artisan|barghest|vassal|empress|aurora|panoptus|lanifect|gladius|exemplar|magister|epigraph|didact|empyrean|solarion|star_sovereign|anthelion|gosvileth|nathrokor|kalkalisk|mutalisk|ghitorokor|sovroleth|tosgrilisk|skithrokor|vithrilisk|almaksalisk|geszithalor|algoztalisk|alkajelisk|gorgrokor|rililisk|zarcavrokor|tetcaerokor|akistrokor|luminary Group_Buildings|mason|talos under_attack_by_air_calc_fin 13
 	var Set under_attack_by_air_var 1 13
 	
 	:under_attack_by_air_calc_fin
@@ -2017,9 +2017,9 @@ script_id TMCx
 	return
 	
 	:worker_request_advanced
-	notowns parthenon blank_return
+	notowns quarry blank_return
 	local 255 AtL 10 talos blank_return
-	queue 1 talos parthenon 255 Local Loc.63 100
+	queue 1 talos quarry 255 Local Loc.63 100
 	wait 150
 	return
 	
@@ -2057,7 +2057,7 @@ script_id TMCx
 	:main_transport_loop
 	wait 12
 	bring 13 AtL_C 4 trojan|pythean Loc.63 main_wait_600
-	bring 13 Ex 0 starpad|parthenon Loc.63 main_transport_loop
+	bring 13 Ex 0 starpad|nanite_assembly Loc.63 main_transport_loop
 	var Ex|Wait under_attack_var 0 13
 	bring 13 AtL 8 trojan|pythean Loc.63 main_transport_loop
 	bring 13 AtL 4 trojan|pythean Loc.63 main_transport_pythean
@@ -2070,8 +2070,8 @@ script_id TMCx
 	goto main_transport_wait
 	
 	:main_transport_pythean
-	notowns parthenon main_transport_trojan_2
-	queue 1 pythean parthenon 255 Global Loc.63 120
+	notowns nanite_assembly main_transport_trojan_2
+	queue 1 pythean nanite_assembly 255 Global Loc.63 120
 	wait 720
 	var Ex|Jump is_island_var 1 main_transport_wait 13
 	wait 720
@@ -2092,7 +2092,7 @@ script_id TMCx
 	goto main_transport_loop
 	
 	:main_transport_on
-	bring 13 AtL_W 1 starpad|parthenon|trojan|pythean Loc.63 blank
+	bring 13 AtL_W 1 starpad|nanite_assembly|trojan|pythean Loc.63 blank
 	check_transports
 	stop
 	
@@ -2237,6 +2237,19 @@ script_id TMCx
 	wait 3600
 	return
 	
+	:wait_buildstart_towncenter
+	bring 13 AtL_W 1 ministry|treasury Loc.63 blank
+	return
+	
+	:wait_build_towncenter
+	wait 12
+	notowns ministry wait_build_towncenter_2
+	return
+	
+	:wait_build_towncenter_2
+	notowns treasury wait_build_towncenter
+	return
+	
 	:expansion_init_area_town
 	call init_area_town
 	goto expansion_body
@@ -2249,15 +2262,21 @@ script_id TMCx
 	bld 1 ministry 180
 	goto expansion_main
 	
+	:expansion_body_quarry
+	wait 12
+	notowns atlas expansion_body_quarry
+	bld 1 quarry 179
+	stop
+	
 	:expansion_body_treasury
 	bld 1 treasury 180
-	bld 1 quarry 120
+	multi expansion_body_quarry
 	
 	:expansion_main
 	multi expansion_worker_start
-	w_bldstart 1 ministry
+	call wait_buildstart_towncenter
 	var Set try_expand_var 0 13
-	w_bld 1 ministry
+	call wait_build_towncenter
 	multi count_expansion
 	var Ex|Jump skip_building_var 1 idle 13
 	placeholder_count Local AtL|Jump 2 Group_Buildings idle 13
@@ -4547,16 +4566,12 @@ script_id TMCx
 	var Ex|Wait build_done_var 1 13
 	var Ex|Wait can_build_production_var 1 13
 	
-	:request_infrastructure_parthenon
-	notowns daedala request_infrastructure_silo
-	call add_parthenon_check
-	
-	:request_infrastructure_silo
+	:request_infrastructure_anvil
 	notowns daedala request_infrastructure_quarry
 	var Ex|Jump infrastructure_cycle_var 1 request_infrastructure_loop 13
-	var Ex|Call pref_anvil 1 add_nuclear_silo 13
+	var Ex|Call pref_anvil 1 add_anvil 13
 	var Ex|Jump infrastructure_cycle_var 1 request_infrastructure_loop 13
-	call add_nuclear_silo_check
+	call add_anvil_check
 	
 	:request_infrastructure_quarry
 	var Ex|Jump infrastructure_cycle_var 1 request_infrastructure_loop 13
@@ -4570,18 +4585,10 @@ script_id TMCx
 	call main_wait_1200
 	goto request_infrastructure
 	
-	:add_parthenon_check
-	local 255 AtL 1 parthenon blank_return
-	add_bld 255 parthenon 1 1 99
-	w_bldstart 1 parthenon
-	wait 60
-	call main_wait_900
-	goto add_return
-	
-	:add_nuclear_silo_check
+	:add_anvil_check
 	local 255 AtL 1 anvil blank_return
 	
-	:add_nuclear_silo
+	:add_anvil
 	local 255 AtL 2 anvil|quarry blank_return
 	add_bld 255 anvil 1 1 98
 	var Set infrastructure_cycle_var 1 13

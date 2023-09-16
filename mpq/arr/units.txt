@@ -383,7 +383,7 @@ Terran Madrigal (Furia Mode)
 Madrigal Turret (Furia)
 Omnivale
 Terran Lodestone
-Extended Unit #158
+Floor Hatch
 Extended Unit #159
 Extended Unit #160
 Extended Unit #161

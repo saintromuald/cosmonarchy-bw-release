@@ -25,10 +25,13 @@
 
 5:                  # [5] Bunker Guard
   0xFF02            # Current unit is...
-  125               # [125] Bunker
+  125               # [125] Anchor
   0xFF01            # Or
   0xFF02            # Current unit is...
   370               # [370] Dugout
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  384               # [384] Lodestone
   0xFFFF            # ==End of List==
 
 6:                  # [6] Ignore
@@ -472,6 +475,9 @@
   0xFF01            # Or
   0xFF02            # Current unit is...
   354               # [354] Ocsal Colony
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  383               # [383] Omnivale
   0xFFFF            # ==End of List==
 
 79:                 # [79] Harvest1
@@ -523,10 +529,13 @@
 
 95:                 # [95] Pick Up3
   0xFF02            # Current unit is...
-  125               # [125] Bunker
+  125               # [125] Anchor
   0xFF01            # Or
   0xFF02            # Current unit is...
   370               # [370] Dugout
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  384               # [384] Lodestone
   0xFFFF            # ==End of List==
 
 97:                 # [97] Powerup2
@@ -549,6 +558,9 @@
   0xFF01            # Or
   0xFF02            # Current unit is...
   133               # [133] Gathtelosk
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  384               # [384] Omnivale
   0xFFFF            # ==End of List==
 
 102:                # [102] Spread Creep

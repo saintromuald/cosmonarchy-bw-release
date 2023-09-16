@@ -353,7 +353,7 @@ Yamato Gun Trail
 EMP Shockwave Missile
 Needle Spine Hit
 Plasma Drip Hit (Unused)
-Sunken Colony Tentacle
+Surkith Colony Tentacle
 Venom
 Acid Spore
 Glave Wurm
@@ -881,9 +881,9 @@ Quazilisk (April Fools)
 Omnivale
 Lodestone
 Ocsal Cesiant
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
+Potentate
+Skortrith Cesiant Tentacle
+Cyclops Weapon Impact
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1

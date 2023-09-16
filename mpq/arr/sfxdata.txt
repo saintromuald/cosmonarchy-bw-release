@@ -1400,11 +1400,11 @@ Siren Weapon Fire 03
 Keskathalor Weapon Fire 01
 Keskathalor Weapon Fire 02
 Ancile Passive Deactivate 01
-Cohort Weapon Fire 01
-Cohort Weapon Fire 02
-Cohort Weapon Fire 03
-Demiurge Weapon Fire 01
-Demiurge Weapon Fire 02
+Cohort Weaponfire 01
+Cohort Weaponfire 02
+Cohort Weaponfire 03
+Demiurge Weaponhit 01
+Demiurge Weaponhit 02
 Demiurge Gods Made Flesh Cast 01
 Demiurge Gods Made Flesh Cast 02
 Aspirant Weapon Fire 01
@@ -2083,9 +2083,9 @@ Azazel Help 01
 Azazel Help 02
 Azazel Help 03
 Azazel Help 04
-Cyclops Weaponfire 01
-Cyclops Weaponfire 02
-Cyclops Weaponfire 03
+Ramesses Weaponfire 01
+Ramesses Weaponfire 02
+Ramesses Weaponfire 03
 Dilettante Weaponfire 01
 Dilettante Weaponfire 02
 Dilettante Weaponfire 03
@@ -2516,45 +2516,45 @@ Mesk Advisor Tech 01
 Mesk Advisor Tech 02
 Mesk Advisor Warp 01
 Omnivale Selected 01
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Cataphract Weaponhit 01
+Cataphract Weaponhit 02
+Cataphract Weaponhit 03
+Claymore Weaponhit 01
+Claymore Weaponhit 02
+Potentate Weaponfire 01
+Potentate Weaponfire 02
+Demiurge Weaponfire 01
+Demiurge Weaponfire 02
+Demiurge Weaponfire 03
+Epigraph Weaponfire 01
+Epigraph Weaponfire 02
+Epigraph Weaponfire 03
+Gorgrokor Weaponfire B 01
+Gorgrokor Weaponfire B 02
+Gorgrokor Weaponfire B 03
+Tosgrilisk Weaponfire 01
+Tosgrilisk Weaponfire 02
+Protathalor Weaponfire 01
+Protathalor Weaponfire 02
+Protathalor Weaponfire 03
+Bactalisk Death 01
+Skortrith Weaponfire 01
+Skortrith Weaponhit 01
+Spirtith Weaponfire 01
+Spirtith Weaponfire 02
+Spirtith Weaponfire 03
+Spirtith Weaponhit 01
+Spirtith Weaponhit 02
+Psionic Storm Cast 01
+Cyclops Weaponfire 01
+Cyclops Weaponfire 02
+Cyclops Weapon Channel
+Cyclops Weaponhit 01
+Cyclops Weaponhit 02
+Cyclops Weaponhit 03
+Patriarch Weaponfire 01
+Patriarch Weaponfire 02
+Patriarch Weaponfire 03
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

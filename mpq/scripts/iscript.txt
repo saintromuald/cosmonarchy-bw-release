@@ -662,7 +662,7 @@ IsthrathalethBurrow:
 
 IsthrathalethUnBurrow:
 	wait 				1
-	waitrand          	1 4
+	waitrand          	1 2
 	imgul             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
 	playfram          	0xff
 	wait              	1
@@ -851,7 +851,7 @@ DrolethBurrow:
 
 DrolethUnBurrow:
 	wait 				1
-	waitrand          	1 4
+	waitrand          	1 2
 	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
 	playfram          	0x165
 	wait              	1
@@ -1195,8 +1195,7 @@ HydraliskInit:
 HydraliskWalkingToIdle:
 	playfram          	0x55
 HydraliskLocal00:
-	wait				1
-	waitrand          	62 74
+	wait				62
 	randcondjmp       	25 HydraliskLocal01
 	randcondjmp       	128 HydraliskLocal02
 	goto              	HydraliskLocal00
@@ -1420,7 +1419,7 @@ HydraliskBurrow:
 
 HydraliskUnBurrow:
 	wait 				1
-	waitrand          	1 4
+	waitrand          	1 2
 	imgul             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
 	playfram          	263
 	wait              	1
@@ -1503,24 +1502,23 @@ Enable        	[NONE]
 # ----------------------------------------------------------------------------- #
 
 InfestedKerriganInit:
-	imgul             	34 0 0	# Infested Kerrigan Shadow (zerg\uikShad.grp)
+	imgul             	34 0 0 # Infested Kerrigan Shadow (zerg\uikShad.grp)
 InfestedKerriganWalkingToIdle:
-	playfram          	0x88	# Frame set 8
+	playfram          	0x88
 InfestedKerriganLocal00:
-	wait				1
-	waitrand          	62 74
+	wait				62
 	randcondjmp       	128 InfestedKerriganLocal01
 	goto              	InfestedKerriganLocal00
 
 InfestedKerriganLocal01:
-	playfram          	0x88	# Frame set 8
-	wait              	1 
-	playfram          	0x99	# Frame set 9
-	wait              	1 
-	turnrand          	3 
-	wait              	1 
-	playfram          	0x88	# Frame set 8
-	wait              	1 
+	playfram          	0x88
+	wait              	1
+	playfram          	0x99
+	wait              	1
+	turnrand          	3
+	wait              	1
+	playfram          	0x88
+	wait              	1
 	goto              	InfestedKerriganWalkingToIdle
 
 InfestedKerriganDeath:
@@ -1530,121 +1528,121 @@ InfestedKerriganDeath:
 	end
 
 InfestedKerriganGndAttkInit:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	0x11	# Frame set 1
-	wait              	2 
-	playfram          	0x22	# Frame set 2
-	wait              	2 
+	playfram          	0x00
+	wait              	2
+	playfram          	0x11
+	wait              	2
+	playfram          	0x22
+	wait              	2
 InfestedKerriganGndAttkRpt:
 	nobrkcodestart
 	playsnd           	112	# Bullet\UKiFir00.wav
-	playfram          	0x33	# Frame set 3
-	wait              	2 
-	playfram          	0x44	# Frame set 4
-	wait              	2 
-	playfram          	0x55	# Frame set 5
-	wait              	2 
-	playfram          	0x66	# Frame set 6
-	wait              	2 
-	playfram          	0x77	# Frame set 7
+	playfram          	0x33
+	wait              	2
+	playfram          	0x44
+	wait              	2
+	playfram          	0x55
+	wait              	2
+	playfram          	0x66
+	wait              	2
+	playfram          	0x77
 	attackmelee       	1 0	# Protoss\Artanis\PAtYes03.wav
-	wait              	3 
-	playfram          	0x66	# Frame set 6
-	wait              	2 
-	playfram          	0x55	# Frame set 5
-	wait              	2 
-	playfram          	0x44	# Frame set 4
-	wait              	2 
-	playfram          	0x33	# Frame set 3
-	wait              	2 
+	wait              	3
+	playfram          	0x66
+	wait              	2
+	playfram          	0x55
+	wait              	2
+	playfram          	0x44
+	wait              	2
+	playfram          	0x33
+	wait              	2
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
 InfestedKerriganGndAttkToIdle:
-	playfram          	0x22	# Frame set 2
-	wait              	2 
-	playfram          	0x11	# Frame set 1
-	wait              	2 
-	playfram          	0x00	# Frame set 0
-	wait              	2 
+	playfram          	0x22
+	wait              	2
+	playfram          	0x11
+	wait              	2
+	playfram          	0x00
+	wait              	2
 	goto              	InfestedKerriganWalkingToIdle
 
 InfestedKerriganCastSpell:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	nobrkcodestart
-	wait              	1 
-	playfram          	0x11	# Frame set 1
-	wait              	1 
-	playfram          	0x22	# Frame set 2
-	wait              	1 
-	playfram          	0x33	# Frame set 3
-	wait              	1 
-	playfram          	0x44	# Frame set 4
-	wait              	1 
-	playfram          	0x55	# Frame set 5
-	wait              	1 
-	playfram          	0x66	# Frame set 6
-	wait              	1 
-	playfram          	0x77	# Frame set 7
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	playfram          	0x55
+	wait              	1
+	playfram          	0x66
+	wait              	1
+	playfram          	0x77
 	castspell
-	sigorder          	2 
-	wait              	2 
-	playfram          	0x66	# Frame set 6
-	wait              	1 
-	playfram          	0x55	# Frame set 5
-	wait              	1 
-	playfram          	0x44	# Frame set 4
-	wait              	1 
-	playfram          	0x33	# Frame set 3
-	wait              	1 
-	playfram          	0x22	# Frame set 2
-	wait              	1 
-	playfram          	0x11	# Frame set 1
-	wait              	1 
-	playfram          	0x00	# Frame set 0
+	sigorder          	2
+	wait              	2
+	playfram          	0x66
+	wait              	1
+	playfram          	0x55
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	0x00
 	nobrkcodeend
 	gotorepeatattk
 	goto              	InfestedTerranLocal00
 
 InfestedKerriganWalking:
-	move              	4 
-	wait              	1 
-	playfram          	0x99	# Frame set 9
-	move              	4 
-	wait              	1 
-	playfram          	0xaa	# Frame set 10
-	move              	4 
-	wait              	1 
-	playfram          	0xbb	# Frame set 11
-	move              	4 
-	wait              	1 
-	playfram          	0xcc	# Frame set 12
-	move              	4 
-	wait              	1 
-	playfram          	0xdd	# Frame set 13
-	move              	4 
-	wait              	1 
-	playfram          	0xee	# Frame set 14
-	move              	4 
-	wait              	1 
-	playfram          	0xff	# Frame set 15
-	move              	4 
-	wait              	1 
-	playfram          	0x88	# Frame set 8
+	move              	4
+	wait              	1
+	playfram          	0x99
+	move              	4
+	wait              	1
+	playfram          	0xaa
+	move              	4
+	wait              	1
+	playfram          	0xbb
+	move              	4
+	wait              	1
+	playfram          	0xcc
+	move              	4
+	wait              	1
+	playfram          	0xdd
+	move              	4
+	wait              	1
+	playfram          	0xee
+	move              	4
+	wait              	1
+	playfram          	0xff
+	move              	4
+	wait              	1
+	playfram          	0x88
 	goto              	InfestedKerriganWalking
 
 InfestedKerriganBurrow:
-	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
-	sigorder          	4 
+	imgol             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
+	sigorder          	4
 	goto              	InfestedTerranLocal00
 
 InfestedKerriganUnBurrow:
 	wait				1
-	waitrand			1 4
+	waitrand			1 2
 	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
-	playfram          	0x88	# Frame set 8
-	sigorder          	4 
+	playfram          	0x88
+	sigorder          	4
 	goto              	InfestedTerranLocal00
 
 # ----------------------------------------------------------------------------- #
@@ -2093,8 +2091,7 @@ UltrokorGndAttkToIdle:
 	goto              	UltrokorLocal00
 
 UltrokorLocal00:
-	wait              	1
-	waitrand          	62 74
+	wait              	62
 	randcondjmp       	25 UltrokorLocal01
 	randcondjmp       	128 UltrokorLocal02
 	goto              	UltrokorLocal00
@@ -2314,9 +2311,9 @@ UltrokorBurrow:
 
 UltrokorUnBurrow:
 	wait 				1
+	waitrand          	1 2
 	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
 	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
-	waitrand          	1 3
 	playfram          	0x176
 	wait              	1 
 	playfram          	0x165
@@ -2384,8 +2381,7 @@ ZethrokorGndAttkToIdle:
 	goto              	ZethrokorLocal00
 
 ZethrokorLocal00:
-	wait              	1
-	waitrand          	62 74
+	wait              	63
 	randcondjmp       	25 ZethrokorLocal01
 	randcondjmp       	128 ZethrokorLocal02
 	goto              	ZethrokorLocal00
@@ -2558,7 +2554,7 @@ ZethrokorBurrow:
 
 ZethrokorUnBurrow:
 	wait 				1
-	waitrand          	1 4
+	waitrand          	1 2
 	imgul             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
 	playfram          	0xff
 	wait              	1
@@ -2973,8 +2969,8 @@ InfestedMinistryIsWorking:
 .headerstart
 IsId          	40
 Type          	20
-Init          	QuazrokPoolInit
-Death         	QuazrokPoolDeath
+Init          	QuazethPoolInit
+Death         	QuazethPoolDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -2988,22 +2984,22 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	QuazrokPoolAlmostBuilt
-Built         	QuazrokPoolBuilt
+AlmostBuilt   	QuazethPoolAlmostBuilt
+Built         	QuazethPoolBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	QuazrokPoolIsWorking
-WorkingToIdle 	QuazrokPoolWorkingToIdle
+IsWorking     	QuazethPoolIsWorking
+WorkingToIdle 	QuazethPoolWorkingToIdle
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-QuazrokPoolInit:
+QuazethPoolInit:
 	playfram          	0x00
 	imgul             	65 0 0 # Quazrok Pool Shadow (zerg\zchShad.grp)
-	goto              	QuazrokPoolWorkingToIdle
+	goto              	QuazethPoolWorkingToIdle
 
-QuazrokPoolWorkingToIdle:
+QuazethPoolWorkingToIdle:
 	playfram          	0x00
 	wait              	2
 	playfram          	1
@@ -3012,9 +3008,9 @@ QuazrokPoolWorkingToIdle:
 	wait              	2
 	playfram          	3
 	wait              	2
-	goto              	QuazrokPoolWorkingToIdle
+	goto              	QuazethPoolWorkingToIdle
 
-QuazrokPoolDeath:
+QuazethPoolDeath:
 	playsnd           	774	# Zerg\Bldg\ZBldgDth.WAV
 	imgol             	60 0 0 # Zerg Building Explosion (thingy\zBldDthS.grp)
 	wait              	3
@@ -3022,17 +3018,17 @@ QuazrokPoolDeath:
 	wait              	1
 	end
 
-QuazrokPoolAlmostBuilt:
+QuazethPoolAlmostBuilt:
 	imgol             	108 0 0	# Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
 	playfram          	0x00
-	goto              	QuazrokPoolBuilt
+	goto              	QuazethPoolBuilt
 
-QuazrokPoolBuilt:
+QuazethPoolBuilt:
 	playfram          	0x00
 	wait				2
-	goto              	QuazrokPoolWorkingToIdle
+	goto              	QuazethPoolWorkingToIdle
 
-QuazrokPoolIsWorking:
+QuazethPoolIsWorking:
 	playfram          	4
 	wait              	2
 	playfram          	5
@@ -3057,7 +3053,7 @@ QuazrokPoolIsWorking:
 	wait              	2
 	playfram          	3
 	waitrand          	2 4 
-	goto              	QuazrokPoolIsWorking
+	goto              	QuazethPoolIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -3065,8 +3061,8 @@ QuazrokPoolIsWorking:
 .headerstart
 IsId          	41
 Type          	20
-Init          	EvolutionChamberInit
-Death         	EvolutionChamberDeath
+Init          	QuazethPoolInit
+Death         	QuazethPoolDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -3080,69 +3076,23 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	EvolutionChamberAlmostBuilt
-Built         	EvolutionChamberBuilt
+AlmostBuilt   	QuazethPoolAlmostBuilt
+Built         	QuazethPoolBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	EvolutionChamberIsWorking
-WorkingToIdle 	EvolutionChamberWorkingToIdle
+IsWorking     	QuazethPoolIsWorking
+WorkingToIdle 	QuazethPoolWorkingToIdle
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-EvolutionChamberInit:
-	imgul             	67 0 0 # Evolution Chamber Shadow (zerg\zceShad.grp)
-	playfram          	0x00
-	goto              	EvolutionChamberWorkingToIdle
-
-EvolutionChamberWorkingToIdle:
-	playfram          	1
-	wait              	3
-	playfram          	2
-	wait              	3
-	playfram          	0x00
-	wait              	3
-	goto              	EvolutionChamberWorkingToIdle
-
-EvolutionChamberDeath:
-	playsnd           	774 # Zerg\Bldg\ZBldgDth.WAV
-	imgol             	60 0 0 # Zerg Building Explosion (thingy\zBldDthS.grp)
-	wait              	3
-	lowsprul          	186 0 0 # Zerg Building Rubble (Small) (thingy\ZRubbleS.grp)
-	wait              	1 
-	end
-
-EvolutionChamberAlmostBuilt:
-	imgol             	108 0 0	# Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
-EvolutionChamberBuilt:
-	playfram          	0x00
-	wait				2
-	goto              	EvolutionChamberWorkingToIdle
-
-EvolutionChamberIsWorking:
-	playfram          	3
-	wait              	2
-	playfram          	4
-	wait              	2
-	playfram          	5
-	wait              	3
-	playfram          	6
-	wait              	2
-	playfram          	5
-	wait              	3
-	playfram          	4
-	wait              	2
-	playfram          	3
-	waitrand          	2 3
-	goto              	EvolutionChamberIsWorking
-
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 068 Creep Colony (zerg\fcolony.grp)
+# 068 Cagrant Cesiant (zerg\fcolony.grp)
 .headerstart
 IsId          	42
 Type          	20
-Init          	CreepColonyInit
+Init          	CagrantCesiantInit
 Death         	CerebrateDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
@@ -3157,8 +3107,8 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	CreepColonyAlmostBuilt
-Built         	CreepColonyBuilt
+AlmostBuilt   	CagrantCesiantAlmostBuilt
+Built         	CagrantCesiantBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	InfestedTerranLocal00
@@ -3167,17 +3117,17 @@ WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-CreepColonyInit:
-	imgul             	69 0 0 # Creep Colony Shadow (zerg\zfcShad.grp)
+CagrantCesiantInit:
+	imgul             	69 0 0 # Cagrant Cesiant Shadow (zerg\zfcShad.grp)
 	playfram          	0x00
 	goto              	InfestedTerranLocal00
 
-CreepColonyAlmostBuilt:
+CagrantCesiantAlmostBuilt:
 	imgol             	108 0 0 # Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
-CreepColonyBuilt:
+CagrantCesiantBuilt:
 	playfram          	0x00
 	wait				2
-CreepColonyLocal00:
+CagrantCesiantLocal00:
 	playfram          	1
 	wait              	2
 	playfram          	2
@@ -3186,7 +3136,7 @@ CreepColonyLocal00:
 	wait              	2
 	playfram          	0x00
 	wait              	2
-	goto              	CreepColonyLocal00
+	goto              	CagrantCesiantLocal00
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -3493,43 +3443,43 @@ CaphroloskIsWorking:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 076 Surkith Colony (zerg\Lurker.grp)
+# 076 Surkith Cesiant (zerg\Lurker.grp)
 .headerstart
 IsId          	46
 Type          	20
-Init          	SurkithColonyInit
+Init          	SurkithCesiantInit
 Death         	CerebrateDeath
-GndAttkInit   	SurkithColonyGndAttkInit
+GndAttkInit   	SurkithCesiantGndAttkInit
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
-GndAttkRpt    	SurkithColonyGndAttkInit
+GndAttkRpt    	SurkithCesiantGndAttkInit
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
-GndAttkToIdle 	SurkithColonyGndAttkToIdle
+GndAttkToIdle 	SurkithCesiantGndAttkToIdle
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
 Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	SurkithColonyAlmostBuilt
-Built         	SurkithColonyBuilt
+AlmostBuilt   	SurkithCesiantAlmostBuilt
+Built         	SurkithCesiantBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	SurkithColonyIsWorking
-WorkingToIdle 	SurkithColonyIsWorking
+IsWorking     	SurkithCesiantIsWorking
+WorkingToIdle 	SurkithCesiantIsWorking
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-SurkithColonyInit:
+SurkithCesiantInit:
 	playfram          	0x00
-	imgul             	77 0 0 # Surkith Colony Shadow (zerg\zluShad.grp)
+	imgul             	77 0 0 # Surkith Cesiant Shadow (zerg\zluShad.grp)
 	goto              	InfestedTerranLocal00
 
-SurkithColonyGndAttkInit:
-	trgtarccondjmp    	74 42 SurkithColonyLocal00
-	trgtarccondjmp    	159 42 SurkithColonyLocal01
+SurkithCesiantGndAttkInit:
+	trgtarccondjmp    	74 42 SurkithCesiantLocal00
+	trgtarccondjmp    	159 42 SurkithCesiantLocal01
 	nobrkcodestart
 	playsnd           	78
 	playfram          	24
@@ -3575,19 +3525,19 @@ SurkithColonyGndAttkInit:
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
-SurkithColonyGndAttkToIdle:
-	goto              	SurkithColonyIsWorking
+SurkithCesiantGndAttkToIdle:
+	goto              	SurkithCesiantIsWorking
 
-SurkithColonyIsWorking:
+SurkithCesiantIsWorking:
 	playfram          	0x00
 	wait              	2
 	playfram          	1
 	wait              	2
 	playfram          	2
 	wait              	2
-	goto              	SurkithColonyIsWorking
+	goto              	SurkithCesiantIsWorking
 
-SurkithColonyLocal00:
+SurkithCesiantLocal00:
 	nobrkcodestart
 	playsnd           	78 # Bullet\ZLuFir00.wav
 	playfram          	3
@@ -3637,9 +3587,9 @@ SurkithColonyLocal00:
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
-	goto              	SurkithColonyIsWorking
+	goto              	SurkithCesiantIsWorking
 
-SurkithColonyLocal01:
+SurkithCesiantLocal01:
 	nobrkcodestart
 	playsnd           	78 # Bullet\ZLuFir00.wav
 	playfram          	14
@@ -3687,11 +3637,11 @@ SurkithColonyLocal01:
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
-	goto              	SurkithColonyIsWorking
+	goto              	SurkithCesiantIsWorking
 
-SurkithColonyAlmostBuilt:
+SurkithCesiantAlmostBuilt:
 	imgol             	107 0 0	# Zerg Building Spawn (Small) (zerg\zSpawn01.grp)
-SurkithColonyBuilt:
+SurkithCesiantBuilt:
 	playfram          	0x00
 	wait				2
 	playfram          	0x00
@@ -3700,7 +3650,7 @@ SurkithColonyBuilt:
 	wait              	2
 	playfram          	2
 	wait              	2
-	goto              	SurkithColonyIsWorking
+	goto              	SurkithCesiantIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -3763,12 +3713,12 @@ MatureChrysalisIsWorking:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 080 Greater Spire (zerg\MutaCham.grp)
+# 080 Tosvrol Haunt (zerg\MutaCham.grp)
 .headerstart
 IsId          	48
 Type          	20
-Init          	GreaterSpireInit
-Death         	GreaterSpireDeath
+Init          	TosvrolHauntInit
+Death         	TosvrolHauntDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -3782,76 +3732,76 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	GreaterSpireAlmostBuilt
-Built         	GreaterSpireBuilt
+AlmostBuilt   	TosvrolHauntAlmostBuilt
+Built         	TosvrolHauntBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	GreaterSpireIsWorking
-WorkingToIdle 	GreaterSpireWorkingToIdle
+IsWorking     	TosvrolHauntIsWorking
+WorkingToIdle 	TosvrolHauntWorkingToIdle
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-GreaterSpireInit:
-	imgul             	81 0 0	# Greater Spire Shadow (zerg\zmcShad.grp)
-	playfram          	0x00	# Frame set 0
-	goto              	GreaterSpireWorkingToIdle
+TosvrolHauntInit:
+	imgul             	81 0 0 # Tosvrol Haunt Shadow (zerg\zmcShad.grp)
+	playfram          	0x00
+	goto              	TosvrolHauntWorkingToIdle
 
-GreaterSpireWorkingToIdle:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	goto              	GreaterSpireWorkingToIdle
+TosvrolHauntWorkingToIdle:
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	goto              	TosvrolHauntWorkingToIdle
 
-GreaterSpireDeath:
-	playsnd           	774	# Zerg\Bldg\ZBldgDth.WAV
-	imgol             	60 0 0	# Zerg Building Explosion (thingy\zBldDthS.grp)
+TosvrolHauntDeath:
+	playsnd           	774 # Zerg\Bldg\ZBldgDth.WAV
+	imgol             	60 0 0 # Zerg Building Explosion (thingy\zBldDthS.grp)
 	wait              	3 
-	lowsprul          	186 0 0	# Zerg Building Rubble (Small) (thingy\ZRubbleS.grp)
+	lowsprul          	186 0 0 # Zerg Building Rubble (Small) (thingy\ZRubbleS.grp)
 	wait              	1 
 	end
 
-GreaterSpireAlmostBuilt:
-	imgol             	107 0 0	# Zerg Building Spawn (Small) (zerg\zSpawn01.grp)
-GreaterSpireBuilt:
-	playfram          	0x00	# Frame set 0
+TosvrolHauntAlmostBuilt:
+	imgol             	107 0 0 # Zerg Building Spawn (Small) (zerg\zSpawn01.grp)
+TosvrolHauntBuilt:
+	playfram          	0x00
 	wait				2
-	goto              	GreaterSpireWorkingToIdle
+	goto              	TosvrolHauntWorkingToIdle
 
-GreaterSpireIsWorking:
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	4 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	3 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	4 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	3 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	waitrand          	2 3 
-	goto              	GreaterSpireIsWorking
+TosvrolHauntIsWorking:
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	4
+	playfram          	6
+	wait              	3
+	playfram          	7
+	wait              	4
+	playfram          	6
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	4
+	wait              	3
+	playfram          	3
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	waitrand          	2 3
+	goto              	TosvrolHauntIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 082 Isthrathaleth Mound (zerg\Mutapit.grp)
+# 082 ElthisthMound (zerg\Mutapit.grp)
 .headerstart
 IsId          	49
 Type          	20
-Init          	IsthrathalethMoundInit
-Death         	IsthrathalethMoundDeath
+Init          	ElthisthMoundInit
+Death         	ElthisthMoundDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -3865,82 +3815,82 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	IsthrathalethMoundAlmostBuilt
-Built         	IsthrathalethMoundBuilt
+AlmostBuilt   	ElthisthMoundAlmostBuilt
+Built         	ElthisthMoundBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	IsthrathalethMoundIsWorking
-WorkingToIdle 	IsthrathalethMoundWorkingToIdle
+IsWorking     	ElthisthMoundIsWorking
+WorkingToIdle 	ElthisthMoundWorkingToIdle
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-IsthrathalethMoundInit:
-	imgul             	83 0 0	# Isthrathaleth Mound Shadow (zerg\zmhShad.grp)
-	playfram          	0x00	# Frame set 0
-	goto              	IsthrathalethMoundWorkingToIdle
+ElthisthMoundInit:
+	imgul             	83 0 0 # Elthisth Mound Shadow (zerg\zmhShad.grp)
+	playfram          	0x00
+	goto              	ElthisthMoundWorkingToIdle
 
-IsthrathalethMoundWorkingToIdle:
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	3 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	0x00	# Frame set 0
-	wait              	3 
-	goto              	IsthrathalethMoundWorkingToIdle
+ElthisthMoundWorkingToIdle:
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	3
+	playfram          	3
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	0x00
+	wait              	3
+	goto              	ElthisthMoundWorkingToIdle
 
-IsthrathalethMoundDeath:
-	playsnd           	774	# Zerg\Bldg\ZBldgDth.WAV
-	imgol             	60 0 0	# Zerg Building Explosion (thingy\zBldDthS.grp)
-	wait              	3 
-	lowsprul          	186 0 0	# Zerg Building Rubble (Small) (thingy\ZRubbleS.grp)
-	wait              	1 
+ElthisthMoundDeath:
+	playsnd           	774 # Zerg\Bldg\ZBldgDth.WAV
+	imgol             	60 0 0 # Zerg Building Explosion (thingy\zBldDthS.grp)
+	wait              	3
+	lowsprul          	186 0 0 # Zerg Building Rubble (Small) (thingy\ZRubbleS.grp)
+	wait              	1
 	end
 
-IsthrathalethMoundAlmostBuilt:
-	imgol             	108 0 0	# Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
-IsthrathalethMoundBuilt:
-	playfram          	0x00	# Frame set 0
+ElthisthMoundAlmostBuilt:
+	imgol             	108 0 0 # Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
+ElthisthMoundBuilt:
+	playfram          	0x00
 	wait				2
-	goto              	IsthrathalethMoundWorkingToIdle
+	goto              	ElthisthMoundWorkingToIdle
 
-IsthrathalethMoundIsWorking:
-	playfram          	4	# Frame set 0, direction 4
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	3 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	3 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	9	# Frame set 0, direction 9
-	wait              	2 
-	playfram          	8	# Frame set 0, direction 8
-	wait              	2 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	3 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	goto              	IsthrathalethMoundIsWorking
+ElthisthMoundIsWorking:
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	3
+	playfram          	6
+	wait              	3
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	6
+	wait              	3
+	playfram          	5
+	wait              	2
+	goto              	ElthisthMoundIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 084 Matraleth's Nest (zerg\nest.grp)
+# 084 Matravil Nest (zerg\nest.grp)
 .headerstart
 IsId          	50
 Type          	20
-Init          	MatralethNestInit
-Death         	MatralethNestDeath
+Init          	MatravilNestInit
+Death         	MatravilNestDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -3954,33 +3904,33 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	MatralethNestAlmostBuilt
-Built         	MatralethNestBuilt
+AlmostBuilt   	MatravilNestAlmostBuilt
+Built         	MatravilNestBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	MatralethNestIsWorking
-WorkingToIdle 	MatralethNestWorkingToIdle
+IsWorking     	MatravilNestIsWorking
+WorkingToIdle 	MatravilNestWorkingToIdle
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-MatralethNestInit:
-	imgul             	85 0 0	# Matraleth Nest Shadow (zerg\zneShad.grp)
-	playfram          	0x00	# Frame set 0
-	goto              	MatralethNestWorkingToIdle
+MatravilNestInit:
+	imgul             	85 0 0 # Matravil Nest Shadow (zerg\zneShad.grp)
+	playfram          	0x00
+	goto              	MatravilNestWorkingToIdle
 
-MatralethNestWorkingToIdle:
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	4 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	0x00	# Frame set 0
-	wait              	4 
-	goto              	MatralethNestWorkingToIdle
+MatravilNestWorkingToIdle:
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	4
+	playfram          	1
+	wait              	2
+	playfram          	0x00
+	wait              	4
+	goto              	MatravilNestWorkingToIdle
 
-MatralethNestDeath:
+MatravilNestDeath:
 	playsnd           	774	# Zerg\Bldg\ZBldgDth.WAV
 	imgol             	60 0 0	# Zerg Building Explosion (thingy\zBldDthS.grp)
 	wait              	3 
@@ -3988,46 +3938,46 @@ MatralethNestDeath:
 	wait              	1 
 	end
 
-MatralethNestAlmostBuilt:
-	imgol             	108 0 0	# Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
-MatralethNestBuilt:
-	playfram          	0x00	# Frame set 0
+MatravilNestAlmostBuilt:
+	imgol             	108 0 0 # Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
+MatravilNestBuilt:
+	playfram          	0x00
 	wait				2
-	goto              	MatralethNestWorkingToIdle
+	goto              	MatravilNestWorkingToIdle
 
-MatralethNestIsWorking:
-	playfram          	4	# Frame set 0, direction 4
+MatravilNestIsWorking:
+	playfram          	4
 	wait 				1
 	waitrand			1 2
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	4 
-	playfram          	7	# Frame set 0, direction 7
-	wait              	3 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	2 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	4	# Frame set 0, direction 4
-	waitrand          	2 3 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	2 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	3 
-	playfram          	7	# Frame set 0, direction 7
-	waitrand          	2 4 
-	playfram          	5	# Frame set 0, direction 5
-	waitrand          	2 3 
-	goto              	MatralethNestIsWorking
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	4
+	playfram          	7
+	wait              	3
+	playfram          	6
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	4
+	waitrand          	2 3
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	3
+	playfram          	7
+	waitrand          	2 4
+	playfram          	5
+	waitrand          	2 3
+	goto              	MatravilNestIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 086 Nydus Canal (zerg\NydusPit.grp)
+# 086 Nydus Cesiant (zerg\NydusPit.grp)
 .headerstart
 IsId          	51
 Type          	20
-Init          	NydusCanalInit
+Init          	NydusCesiantInit
 Death         	CerebrateDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
@@ -4042,49 +3992,49 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	NydusCanalAlmostBuilt
-Built         	NydusCanalBuilt
+AlmostBuilt   	NydusCesiantAlmostBuilt
+Built         	NydusCesiantBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	NydusCanalIsWorking
-WorkingToIdle 	NydusCanalIsWorking
+IsWorking     	NydusCesiantIsWorking
+WorkingToIdle 	NydusCesiantIsWorking
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-NydusCanalInit:
-	playfram          	0x00	# Frame set 0
-	imgul             	87 0 0	# Nydus Canal Shadow (zerg\znyShad.grp)
+NydusCesiantInit:
+	playfram          	0x00
+	imgul             	87 0 0 # Nydus Cesiant Shadow (zerg\znyShad.grp)
 	goto              	InfestedTerranLocal00
 
-NydusCanalAlmostBuilt:
+NydusCesiantAlmostBuilt:
 	imgol             	108 0 0	# Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
-NydusCanalBuilt:
-	playfram          	0x00	# Frame set 0
+NydusCesiantBuilt:
+	playfram          	0x00
 	wait				2
-NydusCanalIsWorking:
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	4 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	0x00	# Frame set 0
-	wait              	4 
-	goto              	NydusCanalIsWorking
+NydusCesiantIsWorking:
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	4
+	playfram          	2
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	0x00
+	wait              	4
+	goto              	NydusCesiantIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 088 Overmind With Shell (zerg\Over1.grp)
+# 088 Overmind (with shell) (zerg\Over1.grp)
 .headerstart
 IsId          	52
 Type          	20
-Init          	Overmind_withShell_Init
-Death         	Overmind_withShell_Death
+Init          	OvermindShellInit
+Death         	OvermindShellDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -4098,58 +4048,58 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	Overmind_withShell_AlmostBuilt
-Built         	Overmind_withShell_Built
+AlmostBuilt   	OvermindShellAlmostBuilt
+Built         	OvermindShellBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	Overmind_withShell_IsWorking
-WorkingToIdle 	Overmind_withShell_IsWorking
+IsWorking     	OvermindShellIsWorking
+WorkingToIdle 	OvermindShellIsWorking
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-Overmind_withShell_Init:
-	imgul				1257 0 0 # Overmind (With Shell) Shadow (cm\zerg\overmind-shell-shadow.grp)
+OvermindShellInit:
+	imgul				1257 0 0 # Overmind (with shell) Shadow (cm\zerg\overmind-shell-shadow.grp)
 	playfram          	0x00
-	goto              	Overmind_withShell_Local00
+	goto              	OvermindShellLocal00
 
-Overmind_withShell_Local00:
+OvermindShellLocal00:
 	wait              	125 
-	goto              	Overmind_withShell_Local00
+	goto              	OvermindShellLocal00
 
-Overmind_withShell_Death:
+OvermindShellDeath:
 	playsnd           	774	# Zerg\Bldg\ZBldgDth.WAV
-	imgol             	60 0 0	# Zerg Building Explosion (thingy\zBldDthS.grp)
-	wait              	7 
+	imgol             	60 0 0 # Zerg Building Explosion (thingy\zBldDthS.grp)
+	wait              	7
 	playsnd           	774	# Zerg\Bldg\ZBldgDth.WAV
-	imgol             	60 0 0	# Zerg Building Explosion (thingy\zBldDthS.grp)
-	wait              	7 
+	imgol             	60 0 0 # Zerg Building Explosion (thingy\zBldDthS.grp)
+	wait              	7
 	playsnd           	774	# Zerg\Bldg\ZBldgDth.WAV
-	imgol             	60 0 0	# Zerg Building Explosion (thingy\zBldDthS.grp)
-	wait              	3 
+	imgol             	60 0 0 # Zerg Building Explosion (thingy\zBldDthS.grp)
+	wait              	3
 	end
 
-Overmind_withShell_AlmostBuilt:
-	imgol             	108 0 0	# Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
-	playfram          	0x00	# Frame set 0
-	goto              	Overmind_withShell_Built
+OvermindShellAlmostBuilt:
+	imgol             	108 0 0 # Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
+	playfram          	0x00
+	goto              	OvermindShellBuilt
 
-Overmind_withShell_Built:
+OvermindShellBuilt:
 	wait				2
-Overmind_withShell_IsWorking:
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	4 
-	wait              	1 
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	0x00	# Frame set 0
-	wait              	4 
-	goto              	Overmind_withShell_IsWorking
+OvermindShellIsWorking:
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	4
+	wait              	1
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	0x00	
+	wait              	4
+	goto              	OvermindShellIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -4177,12 +4127,12 @@ OvermindRemnantsDeath:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 090 Overmind Without Shell (zerg\Over2.grp)
+# 090 Overmind (without shell) (zerg\Over2.grp)
 .headerstart
 IsId          	54
 Type          	20
-Init          	Overmind_withoutShell_Init
-Death         	Overmind_withoutShell_Death
+Init          	OvermindNoShellInit
+Death         	OvermindNoShellDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -4196,26 +4146,26 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	Overmind_withoutShell_AlmostBuilt
-Built         	Overmind_withoutShell_Built
+AlmostBuilt   	OvermindNoShellAlmostBuilt
+Built         	OvermindNoShellBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	Overmind_withoutShell_IsWorking
-WorkingToIdle 	Overmind_withoutShell_IsWorking
+IsWorking     	OvermindNoShellIsWorking
+WorkingToIdle 	OvermindNoShellIsWorking
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-Overmind_withoutShell_Init:
-	imgul				1234 0 0 # Overmind Shadow (cm\zerg\overmind-shadow.grp)
+OvermindNoShellInit:
+	imgul				1234 0 0 # Overmind (without shell) Shadow (cm\zerg\overmind-shadow.grp)
 	playfram          	0x00
-	goto              	Overmind_withoutShell_Local00
+	goto              	OvermindNoShellLocal00
 
-Overmind_withoutShell_Local00:
+OvermindNoShellLocal00:
 	wait              	125
-	goto              	Overmind_withoutShell_Local00
+	goto              	OvermindNoShellLocal00
 
-Overmind_withoutShell_Death:
+OvermindNoShellDeath:
 	playsnd           	774 # Zerg\Bldg\ZBldgDth.WAV
 	imgol             	60 0 0 # Zerg Building Explosion (thingy\zBldDthS.grp)
 	wait              	3
@@ -4223,14 +4173,14 @@ Overmind_withoutShell_Death:
 	wait              	1
 	end
 
-Overmind_withoutShell_AlmostBuilt:
+OvermindNoShellAlmostBuilt:
 	imgol             	108 0 0 # Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
 	playfram          	0x00
-	goto              	Overmind_withoutShell_Built
+	goto              	OvermindNoShellBuilt
 
-Overmind_withoutShell_Built:
+OvermindNoShellBuilt:
 	waitrand          	1 3
-Overmind_withoutShell_IsWorking:
+OvermindNoShellIsWorking:
 	playfram          	1
 	wait              	2
 	playfram          	2
@@ -4243,7 +4193,7 @@ Overmind_withoutShell_IsWorking:
 	wait              	2
 	playfram          	0x00
 	wait              	4
-	goto              	Overmind_withoutShell_IsWorking
+	goto              	OvermindNoShellIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -4324,12 +4274,12 @@ UltrokCavernIsWorking:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 093 Extractor (zerg\Extract.grp)
+# 093 Excisant (zerg\Extract.grp)
 .headerstart
 IsId          	56
 Type          	20
-Init          	ExtractorInit
-Death         	ExtractorDeath
+Init          	ExcisantInit
+Death         	ExcisantDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -4343,33 +4293,33 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	ExtractorAlmostBuilt
-Built         	ExtractorBuilt
+AlmostBuilt   	ExcisantAlmostBuilt
+Built         	ExcisantBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	ExtractorIsWorking
-WorkingToIdle 	ExtractorIsWorking
+IsWorking     	ExcisantIsWorking
+WorkingToIdle 	ExcisantIsWorking
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-ExtractorInit:
-	imgul             	94 0 0 # Extractor Shadow (zerg\zreShad.grp)
+ExcisantInit:
+	imgul             	94 0 0 # Excisant Shadow (zerg\zreShad.grp)
 	playfram          	0x00
 	goto              	InfestedTerranLocal00
 
-ExtractorDeath:
+ExcisantDeath:
 	playsnd           	774	# Zerg\Bldg\ZBldgDth.WAV
 	sprol             	185 0 0 # Zerg Building Explosion (thingy\zBldDthS.grp)
 	wait              	3
 	end
 
-ExtractorAlmostBuilt:
+ExcisantAlmostBuilt:
 	imgol             	109 0 0 # Zerg Building Spawn (Large) (zerg\zSpawn03.grp)
-ExtractorBuilt:
+ExcisantBuilt:
 	playfram          	0x00
 	wait				2
-ExtractorIsWorking:
+ExcisantIsWorking:
 	playfram          	1
 	wait              	2
 	playfram          	2
@@ -4395,16 +4345,16 @@ ExtractorIsWorking:
 	wait              	2
 	playfram          	0x00
 	wait              	2
-	goto              	ExtractorIsWorking
+	goto              	ExcisantIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 095 Hydrok Den (zerg\Snakey.grp)
+# 095 Hydrith Den (zerg\Snakey.grp)
 .headerstart
 IsId          	57
 Type          	20
-Init          	HydrokDenInit
-Death         	HydrokDenDeath
+Init          	HydrithDenInit
+Death         	HydrithDenDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -4418,22 +4368,22 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	HydrokDenAlmostBuilt
-Built         	HydrokDenBuilt
+AlmostBuilt   	HydrithDenAlmostBuilt
+Built         	HydrithDenBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	HydrokDenIsWorking
-WorkingToIdle 	HydrokDenWorkingToIdle
+IsWorking     	HydrithDenIsWorking
+WorkingToIdle 	HydrithDenWorkingToIdle
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-HydrokDenInit:
-	imgul             	96 0 0 # Hydrok Den Shadow (zerg\zsbShad.grp)
+HydrithDenInit:
+	imgul             	96 0 0 # Hydrith Den Shadow (zerg\zsbShad.grp)
 	playfram          	0x00
-	goto              	HydrokDenWorkingToIdle
+	goto              	HydrithDenWorkingToIdle
 
-HydrokDenWorkingToIdle:
+HydrithDenWorkingToIdle:
 	playfram          	1
 	wait              	2
 	playfram          	2
@@ -4442,9 +4392,9 @@ HydrokDenWorkingToIdle:
 	wait              	2
 	playfram          	0x00
 	wait              	4
-	goto              	HydrokDenWorkingToIdle
+	goto              	HydrithDenWorkingToIdle
 
-HydrokDenDeath:
+HydrithDenDeath:
 	playsnd           	774 # Zerg\Bldg\ZBldgDth.WAV
 	imgol             	60 0 0 # Zerg Building Explosion (thingy\zBldDthS.grp)
 	wait              	3
@@ -4452,14 +4402,14 @@ HydrokDenDeath:
 	wait              	1 
 	end
 
-HydrokDenAlmostBuilt:
+HydrithDenAlmostBuilt:
 	imgol             	107 0 0 # Zerg Building Spawn (Small) (zerg\zSpawn01.grp)
-HydrokDenBuilt:
+HydrithDenBuilt:
 	playfram          	0x00
 	wait				2
-	goto              	HydrokDenWorkingToIdle
+	goto              	HydrithDenWorkingToIdle
 
-HydrokDenIsWorking:
+HydrithDenIsWorking:
 	playfram          	3
 	wait				1
 	waitrand          	1 2
@@ -4481,16 +4431,16 @@ HydrokDenIsWorking:
 	wait              	2
 	playfram          	4
 	waitrand          	2 3
-	goto              	HydrokDenIsWorking
+	goto              	HydrithDenIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 097 Muthrok Spire (zerg\spire.grp)
+# 097 Mutath Spire (zerg\spire.grp)
 .headerstart
 IsId          	58
 Type          	20
-Init          	MuthrokSpireInit
-Death         	MuthrokSpireDeath
+Init          	MutathSpireInit
+Death         	MutathSpireDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -4504,22 +4454,22 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	MuthrokSpireAlmostBuilt
-Built         	MuthrokSpireBuilt
+AlmostBuilt   	MutathSpireAlmostBuilt
+Built         	MutathSpireBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	MuthrokSpireIsWorking
-WorkingToIdle 	MuthrokSpireWorkingToIdle
+IsWorking     	MutathSpireIsWorking
+WorkingToIdle 	MutathSpireWorkingToIdle
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-MuthrokSpireInit:
+MutathSpireInit:
 	imgul             	98 0 0 # Spire Shadow (zerg\zspShad.grp)
 	playfram          	0x00
-	goto              	MuthrokSpireWorkingToIdle
+	goto              	MutathSpireWorkingToIdle
 
-MuthrokSpireWorkingToIdle:
+MutathSpireWorkingToIdle:
 	playfram          	1
 	wait              	2
 	playfram          	2
@@ -4528,9 +4478,9 @@ MuthrokSpireWorkingToIdle:
 	wait              	2
 	playfram          	0x00
 	wait              	4
-	goto              	MuthrokSpireWorkingToIdle
+	goto              	MutathSpireWorkingToIdle
 
-MuthrokSpireDeath:
+MutathSpireDeath:
 	playsnd           	774 # Zerg\Bldg\ZBldgDth.WAV
 	imgol             	60 0 0 # Zerg Building Explosion (thingy\zBldDthS.grp)
 	wait              	3
@@ -4538,14 +4488,14 @@ MuthrokSpireDeath:
 	wait              	1
 	end
 
-MuthrokSpireAlmostBuilt:
+MutathSpireAlmostBuilt:
 	imgol             	108 0 0 # Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
-MuthrokSpireBuilt:
+MutathSpireBuilt:
 	playfram          	0x00
 	wait				2
-	goto              	MuthrokSpireWorkingToIdle
+	goto              	MutathSpireWorkingToIdle
 
-MuthrokSpireIsWorking:
+MutathSpireIsWorking:
 	playfram          	2
 	wait              	2
 	playfram          	3
@@ -4570,50 +4520,50 @@ MuthrokSpireIsWorking:
 	wait              	2
 	playfram          	3
 	waitrand          	2 3
-	goto              	MuthrokSpireIsWorking
+	goto              	MutathSpireIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 099 Spraith Colony (zerg\SColony.grp)
+# 099 Spraith Cesiant (zerg\SCesiant.grp)
 .headerstart
 IsId          	59
 Type          	20
-Init          	SpraithColonyInit
+Init          	SpraithCesiantInit
 Death         	CerebrateDeath
 GndAttkInit   	[NONE]
-AirAttkInit   	SpraithColonyAirAttkInit
+AirAttkInit   	SpraithCesiantAirAttkInit
 Unused1       	[NONE]
 GndAttkRpt    	[NONE]
-AirAttkRpt    	SpraithColonyAirAttkInit
+AirAttkRpt    	SpraithCesiantAirAttkInit
 CastSpell     	[NONE]
 GndAttkToIdle 	[NONE]
-AirAttkToIdle 	SpraithColonyAirAttkToIdle
+AirAttkToIdle 	SpraithCesiantAirAttkToIdle
 Unused2       	[NONE]
 Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	SpraithColonyAlmostBuilt
-Built         	SpraithColonyBuilt
+AlmostBuilt   	SpraithCesiantAlmostBuilt
+Built         	SpraithCesiantBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	SpraithColonyBuilt
-WorkingToIdle 	SpraithColonyBuilt
+IsWorking     	SpraithCesiantBuilt
+WorkingToIdle 	SpraithCesiantBuilt
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-SpraithColonyInit:
-	imgul             	100 0 0 # Spraith Colony Shadow (zerg\zscShad.grp)
+SpraithCesiantInit:
+	imgul             	100 0 0 # Spraith Cesiant Shadow (zerg\zscShad.grp)
 	playfram          	0x00
 	goto              	InfestedTerranLocal00
 
-SpraithColonyAirAttkInit:
+SpraithCesiantAirAttkInit:
 	playfram			4
 	wait              	1
 	playfram			5
 	attackwith			2
-	playsndbtwn			2155 2157 # Spraith Colony weaponfire 01, 02, 03
+	playsndbtwn			2155 2157 # Spraith Cesiant weaponfire 01, 02, 03
 	wait				2
 	playfram			6
 	wait				1
@@ -4621,17 +4571,17 @@ SpraithColonyAirAttkInit:
 	wait				2
 	gotorepeatattk
 	ignorerest
-	goto              	SpraithColonyAirAttkToIdle
+	goto              	SpraithCesiantAirAttkToIdle
 
-SpraithColonyAirAttkToIdle:
+SpraithCesiantAirAttkToIdle:
 	playfram			4
 	wait				2
-	goto              	SpraithColonyBuilt
+	goto              	SpraithCesiantBuilt
 
-SpraithColonyAlmostBuilt:
+SpraithCesiantAlmostBuilt:
 	imgol             	108 0 0 # Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
 	playfram          	0x00
-SpraithColonyBuilt:
+SpraithCesiantBuilt:
 	wait				2
 	playfram          	1
 	wait              	2
@@ -4641,7 +4591,7 @@ SpraithColonyBuilt:
 	wait              	2
 	playfram          	0x00
 	wait              	2
-	goto              	SpraithColonyBuilt
+	goto              	SpraithCesiantBuilt
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -5121,7 +5071,7 @@ CivilianInit:
 CivilianWalkingToIdle:
 	playfram          	0x77
 CivilianLocal00:
-	waitrand          	63 75
+	wait				62
 	randcondjmp       	128 CivilianLocal01
 	goto              	CivilianLocal00
 
@@ -5231,8 +5181,7 @@ HarakanInit:
 HarakanWalkingToIdle:
 	playfram          	0x22
 HarakanLocal00:
-	wait				1
-	waitrand          	62 74
+	wait				63
 	randcondjmp       	25 HarakanLocal01
 	randcondjmp       	128 HarakanLocal02
 	goto              	HarakanLocal00
@@ -5409,8 +5358,7 @@ EidolonInit:
 EidolonWalkingToIdle:
 	playfram          	0x33
 EidolonLocal00:
-	wait				1
-	waitrand          	62 74
+	wait				63
 	randcondjmp       	25 EidolonLocal01
 	randcondjmp       	128 EidolonLocal02
 	goto              	EidolonLocal00
@@ -5932,8 +5880,7 @@ SarahKerriganInit:
 SarahKerriganWalkingToIdle:
 	playfram          	0x33
 SarahKerriganLocal00:
-	wait				1
-	waitrand          	62 74
+	wait				63
 	randcondjmp       	25 SarahKerriganLocal01
 	randcondjmp       	128 SarahKerriganLocal02
 	goto              	SarahKerriganLocal00
@@ -6115,8 +6062,7 @@ MaverickInit:
 MaverickWalkingToIdle:
 	playfram          	0x44
 MaverickLocal00:
-	wait				1
-	waitrand          	62 74
+	wait				63
 	randcondjmp       	25 MaverickLocal01
 	randcondjmp       	128 MaverickLocal02
 	goto              	MaverickLocal00
@@ -11175,10 +11121,10 @@ IsId          	158
 Type          	21
 Init          	CantavisInit
 Death         	CantavisDeath
-GndAttkInit   	CantavisGndAttkInit
+GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	CantavisUnused1
-GndAttkRpt    	CantavisGndAttkInit
+GndAttkRpt    	[NONE]
 AirAttkRpt    	[NONE]
 CastSpell     	CantavisCastSpell
 GndAttkToIdle 	CantavisGndAttkToIdle
@@ -11263,28 +11209,50 @@ CantavisUnused1:
 	nobrkcodeend
 	goto				CantavisWalkingToIdle
 
-CantavisGndAttkInit:
-	playsnd           	101	# Bullet\LaserB.wav
+CantavisCastSpell:
 	playfram          	0x00
-	wait              	1
 	nobrkcodestart
+	playsnd				2547 # Psionic Storm cast 01
+	wait              	1
 	playfram          	0x11
 	wait              	1
 	playfram          	0x22
 	wait              	1
 	playfram          	0x33
 	wait              	1
-	attackwith        	1
 	playfram          	0x44
 	wait              	1
-	nobrkcodeend
-	gotorepeatattk
-	playfram          	0x66
-	goto              	InfestedTerranLocal00
-
-CantavisCastSpell:
-	playfram          	0x00
-	nobrkcodestart
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x44
 	wait              	1
 	playfram          	0x11
 	wait              	1
@@ -11540,8 +11508,7 @@ ZealotInit:
 ZealotWalkingToIdle:
 	playfram          	0x55
 ZealotLocal00:
-	wait              	1
-	waitrand          	42 60
+	wait              	62
 	randcondjmp       	64 ZealotLocal01
 	randcondjmp       	85 ZealotLocal02
 	goto              	ZealotLocal00
@@ -14572,8 +14539,7 @@ VorvrokorGndAttkToIdle:
 	goto              	VorvrokorLocal00
 
 VorvrokorLocal00:
-	wait 				1
-	waitrand          	62 74
+	wait 				62
 	randcondjmp       	25 VorvrokorLocal01
 	randcondjmp       	128 VorvrokorLocal02
 	goto              	VorvrokorLocal00
@@ -14722,7 +14688,7 @@ VorvrokorBurrow:
 
 VorvrokorUnBurrow:
 	wait 				1
-	waitrand          	1 4
+	waitrand          	1 2
 	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
 	playfram          	0xff
 	wait              	1
@@ -15535,8 +15501,14 @@ ATA_ATSLaserBattery_BurstLasersGndAttkInit:
 
 ATA_ATSLaserBattery_BurstLasersDeath:
 	imgol             	447 0 0 # Burst Lasers Hit (thingy\elbHit.grp)
-	playsnd           	77 # Bullet\LASRHIT3.wav
 	domissiledmg
+	if bullet.weapon_id == 173 goto ATA_ATSLaserBattery_BurstLasersCataphract
+	playsnd           	77 # Bullet\LASRHIT3.wav
+	goto				ATA_ATSLaserBattery_BurstLasersDeath2
+
+ATA_ATSLaserBattery_BurstLasersCataphract:
+	playsndbtwn			2518 2520 # Cataphract weapon hit 01, 02, 03
+ATA_ATSLaserBattery_BurstLasersDeath2:
 	wait              	1
 	end
 
@@ -16045,7 +16017,7 @@ Venom_Unused_SpecialState1:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 506 Surkith Colony Tentacle (bullet\Tentacle.grp)
+# 506 Surkith Cesiant Tentacle (bullet\Tentacle.grp)
 .headerstart
 IsId          	258
 Type          	2
@@ -20792,7 +20764,7 @@ LakiziliskBurrow:
 
 LakiziliskUnBurrow:
 	wait 				1
-	waitrand          	1 4
+	waitrand          	1 2
 	imgul             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
 	playfram          	0x77
 	wait              	1
@@ -21032,8 +21004,7 @@ ClericInit:
 ClericLocal00:
 	playfram          	0x00
 ClericLocal01:
-	wait				1
-	waitrand          	62 74
+	wait				62
 	randcondjmp       	128 ClericLocal02
 	goto              	ClericLocal01
 
@@ -21915,7 +21886,13 @@ NeutronFlareInit:
 NeutronFlareDeath:
 	playfram          	0x00
 	domissiledmg
-	playsnd				95 # Neutron Flare impact
+	if bullet.weapon_id == 106 goto NeutronFlareDeathDemiurge
+	playsnd				95 # Lanifect weaponhit 01
+	goto				NeutronFlareDeath2
+	
+NeutronFlareDeathDemiurge:
+	playsndbtwn			1405 1406 # Demiurge weaponhit 01, 02
+NeutronFlareDeath2:
 	wait              	1
 	playfram          	1
 	wait              	1
@@ -24503,8 +24480,7 @@ PaladinWalkingToIdle:
 	goto              	PaladinLocal00
 
 PaladinLocal00:
-	wait				1
-	waitrand			62 74
+	wait				62
 	randcondjmp       	25 PaladinLocal01
 	goto              	PaladinLocal00
 
@@ -25423,11 +25399,11 @@ KhaydarinChargeDeath:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1009 Munitions Bay (cm\terran\munitionsbay.grp)
+# 1009 Rotary (cm\terran\rotary.grp)
 .headerstart
 IsId          	441
 Type          	24
-Init          	MunitionsBayInit
+Init          	RotaryInit
 Death         	AtelierDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
@@ -25442,35 +25418,35 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	MunitionsBayAlmostBuilt
-Built         	MunitionsBayBuilt
-Landing       	MunitionsBayLanding
+AlmostBuilt   	RotaryAlmostBuilt
+Built         	RotaryBuilt
+Landing       	RotaryLanding
 LiftOff       	InfestedTerranLocal00
-IsWorking     	MunitionsBayIsWorking
-WorkingToIdle 	MunitionsBayBuilt
+IsWorking     	RotaryIsWorking
+WorkingToIdle 	RotaryBuilt
 WarpIn        	[NONE]
 Unused3       	[NONE]
 StarEditInit  	[NONE]
-Disable       	MunitionsBayDisable
+Disable       	RotaryDisable
 Burrow        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-MunitionsBayInit:
-	imgul             	1070 0 0 # Munitions Bay Shadow (cm\terran\munitionsbay-shad.grp)
-MunitionsBayBuilt:
+RotaryInit:
+	imgul             	1070 0 0 # Rotary Shadow (cm\terran\rotary-shad.grp)
+RotaryBuilt:
 	playfram          	0x00
 	goto              	InfestedTerranLocal00
 
-MunitionsBayAlmostBuilt:
+RotaryAlmostBuilt:
 	playfram          	1
 	goto              	InfestedTerranLocal00
 
-MunitionsBayLanding:
+RotaryLanding:
 	imgol             	294 0 0 # Machine Shop Connector (terran\machineC.grp)
 	goto              	InfestedTerranLocal00
 
-MunitionsBayIsWorking:
+RotaryIsWorking:
 	playfram			2
 	wait				2
 	playfram			3
@@ -25479,9 +25455,9 @@ MunitionsBayIsWorking:
 	wait				2
 	playfram			0x00
 	waitrand			2 5
-	goto              	MunitionsBayIsWorking
+	goto              	RotaryIsWorking
 
-MunitionsBayDisable:
+RotaryDisable:
 	goto              	InfestedTerranLocal00
 	
 # ----------------------------------------------------------------------------- #
@@ -25512,8 +25488,7 @@ SavantInit:
 SavantWalkingToIdle:
 	playfram          	0x00
 SavantLocal00:
-	wait				1
-	waitrand          	62 74 
+	wait				62
 	randcondjmp       	25 SavantLocal01
 	randcondjmp       	128 SavantLocal01
 	goto              	SavantLocal00
@@ -27012,8 +26987,7 @@ KeskathalorGndAttkToIdle:
 	goto              	KeskathalorLocal00
 
 KeskathalorLocal00:
-	wait				1
-	waitrand          	51 74
+	wait				62
 	randcondjmp       	25 KeskathalorLocal02
 	randcondjmp       	85 KeskathalorLocal01
 	goto              	KeskathalorLocal00
@@ -29079,8 +29053,7 @@ CyclopsWalkingToIdle:
 	goto              	CyclopsLocal00
 
 CyclopsLocal00:
-	wait				1
-	waitrand			62 74
+	wait				62
 	randcondjmp       	25 CyclopsLocal01
 	goto              	CyclopsLocal00
 
@@ -29130,7 +29103,7 @@ CyclopsGndAttkRpt:
 	playfram			0x300
 	wait				1
 	playfram			0x320
-	playsndbtwn			2085 2087 # Cyclops weapon fire 01, 02, 03
+	playsndbtwn			2548 2549 # Cyclops weapon fire 01, 02
 	attack
 	wait				1
 	playfram			0x00
@@ -29657,8 +29630,7 @@ AtreusInit:
 	playfram          	0x00
 	wait				2
 AtreusLocal00:
-	wait				1
-	waitrand			62 74
+	wait				62
 	randcondjmp       	25 AtreusLocal01
 	randcondjmp       	13 AtreusLocal02
 	goto              	AtreusLocal00
@@ -29862,7 +29834,7 @@ AmaranthGndAttkRpt:
 	playfram 			0x44
 	wait 				1
 	playfram 			0x55
-	playsndbtwn			1231 1234
+	playsndbtwn			1231 1234 # Amaranth weaponfire 01, 02, 03, 04
 	attackmelee       	1 664 # Protoss\ZEALOT\pzeHit00.WAV
 	wait 				1
 	playfram 			0x66
@@ -29946,12 +29918,12 @@ AmaranthWarpIn:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1176 Keskath Cavern (cm\zerg\keskathcavern.grp)
+# 1176 Geszkath Grotto (cm\zerg\keskathcavern.grp)
 .headerstart
 IsId          	494
 Type          	20
-Init          	KeskathCavernInit
-Death         	KeskathCavernDeath
+Init          	GeszkathGrottoInit
+Death         	GeszkathGrottoDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -29965,23 +29937,23 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	KeskathCavernAlmostBuilt
-Built         	KeskathCavernBuilt
+AlmostBuilt   	GeszkathGrottoAlmostBuilt
+Built         	GeszkathGrottoBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	KeskathCavernIsWorking
-WorkingToIdle 	KeskathCavernWorkingToIdle
+IsWorking     	GeszkathGrottoIsWorking
+WorkingToIdle 	GeszkathGrottoWorkingToIdle
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-KeskathCavernInit:
-	imgul             	1177 0 0 # Keskath Cavern Shadow (cm\zerg\keskathcavern-shad.grp)
-	playfram          	0x00	# Frame set 0
-	goto              	KeskathCavernWorkingToIdle
+GeszkathGrottoInit:
+	imgul             	1177 0 0 # Geszkath Grotto Shadow (cm\zerg\keskathcavern-shad.grp)
+	playfram          	0x00
+	goto              	GeszkathGrottoWorkingToIdle
 
-KeskathCavernWorkingToIdle:
-	playfram          	0x00	# Frame set 0
+GeszkathGrottoWorkingToIdle:
+	playfram          	0x00
 	wait				2
 	playfram			1
 	wait				2
@@ -30001,9 +29973,9 @@ KeskathCavernWorkingToIdle:
 	wait				2
 	playfram			9
 	wait				2
-	goto              	KeskathCavernWorkingToIdle
+	goto              	GeszkathGrottoWorkingToIdle
 
-KeskathCavernDeath:
+GeszkathGrottoDeath:
 	playsnd           	774	# Zerg\Bldg\ZBldgDth.WAV
 	imgol             	60 0 0	# Zerg Building Explosion (thingy\zBldDthS.grp)
 	wait              	3 
@@ -30011,15 +29983,15 @@ KeskathCavernDeath:
 	wait              	1 
 	end
 
-KeskathCavernAlmostBuilt:
+GeszkathGrottoAlmostBuilt:
 	imgol             	107 0 0	# Zerg Building Spawn (Small) (zerg\zSpawn01.grp)
-KeskathCavernBuilt:
-	playfram          	0x00	# Frame set 0
+GeszkathGrottoBuilt:
+	playfram          	0x00
 	wait				2
-	goto              	KeskathCavernWorkingToIdle
+	goto              	GeszkathGrottoWorkingToIdle
 
-KeskathCavernIsWorking:
-	playfram          	0x00	# Frame set 0
+GeszkathGrottoIsWorking:
+	playfram          	0x00
 	wait				1
 	playfram			1
 	waitrand			1 2
@@ -30039,7 +30011,7 @@ KeskathCavernIsWorking:
 	wait				1
 	playfram			9
 	waitrand			1 2
-	goto              	KeskathCavernIsWorking
+	goto              	GeszkathGrottoIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -30047,8 +30019,8 @@ KeskathCavernIsWorking:
 .headerstart
 IsId          	495
 Type          	20
-Init          	VithrilHauntInit
-Death         	VithrilHauntDeath
+Init          	TosvrolHauntInit
+Death         	TosvrolHauntDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -30062,163 +30034,15 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	VithrilHauntAlmostBuilt
-Built         	VithrilHauntBuilt
+AlmostBuilt   	TosvrolHauntAlmostBuilt
+Built         	TosvrolHauntBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	VithrilHauntIsWorking
-WorkingToIdle 	VithrilHauntWorkingToIdle
+IsWorking     	TosvrolHauntIsWorking
+WorkingToIdle 	TosvrolHauntWorkingToIdle
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
-
-VithrilHauntInit:
-	imgul             	1179 0 0 # Vithril Haunt Shadow (cm\zerg\devourerhaunt-shad.grp)
-	playfram          	0x00	# Frame set 0
-	goto              	VithrilHauntWorkingToIdle
-
-VithrilHauntWorkingToIdle:
-	playfram          	0x00	# Frame set 0
-	wait				2
-	playfram			1
-	wait				2
-	playfram			2
-	wait				2
-	playfram			3
-	wait				2
-	playfram			4
-	wait				2
-	playfram			5
-	wait				2
-	playfram			4
-	wait				2
-	playfram			3
-	wait				2
-	playfram			2
-	wait				2
-	playfram			1
-	wait				2
-	goto              	VithrilHauntWorkingToIdle
-
-VithrilHauntDeath:
-	playsnd           	774	# Zerg\Bldg\ZBldgDth.WAV
-	imgol             	60 0 0	# Zerg Building Explosion (thingy\zBldDthS.grp)
-	wait              	3 
-	lowsprul          	186 0 0	# Zerg Building Rubble (Small) (thingy\ZRubbleS.grp)
-	wait              	1 
-	end
-
-VithrilHauntAlmostBuilt:
-	imgol             	107 0 0	# Zerg Building Spawn (Small) (zerg\zSpawn01.grp)
-VithrilHauntBuilt:
-	playfram          	0x00	# Frame set 0
-	wait				2
-	goto              	VithrilHauntWorkingToIdle
-
-VithrilHauntIsWorking:
-	playfram          	0x00	# Frame set 0
-	wait				1
-	playfram			1
-	waitrand			1 2
-	playfram			2
-	wait				1
-	playfram			3
-	waitrand			1 2
-	playfram			4
-	wait				1
-	playfram			5
-	waitrand			1 2
-	wait				1
-	playfram			4
-	waitrand			1 2
-	playfram			3
-	wait				1
-	playfram			2
-	waitrand			1 2
-	playfram			1
-	wait				1
-	goto              	VithrilHauntIsWorking
-
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 1180 Alkaj Cavern (cm\zerg\alkajcavern.grp)
-.headerstart
-IsId          	496
-Type          	20
-Init          	AlkajCavernInit
-Death         	AlkajCavernDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
-Unused1       	[NONE]
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
-Walking       	[NONE]
-WalkingToIdle 	[NONE]
-SpecialState1 	[NONE]
-SpecialState2 	[NONE]
-AlmostBuilt   	AlkajCavernAlmostBuilt
-Built         	AlkajCavernBuilt
-Landing       	[NONE]
-LiftOff       	[NONE]
-IsWorking     	AlkajCavernIsWorking
-WorkingToIdle 	AlkajCavernWorkingToIdle
-WarpIn        	[NONE]
-.headerend
-# ----------------------------------------------------------------------------- #
-
-AlkajCavernInit:
-	imgul             	1181 0 0 # Alkaj Cavern Shadow (cm\zerg\alkajcavern-shad.grp)
-	playfram          	0x00
-	goto              	AlkajCavernWorkingToIdle
-
-AlkajCavernWorkingToIdle:
-	playfram          	0x00
-	wait				2
-	playfram			1
-	wait				2
-	playfram			2
-	wait				2
-	playfram			3
-	wait				2
-	playfram			2
-	wait				2
-	playfram			1
-	wait				2
-	goto              	AlkajCavernWorkingToIdle
-
-AlkajCavernDeath:
-	playsnd           	774 # Zerg\Bldg\ZBldgDth.WAV
-	imgol             	60 0 0 # Zerg Building Explosion (thingy\zBldDthS.grp)
-	wait              	3
-	lowsprul          	186 0 0 # Zerg Building Rubble (Small) (thingy\ZRubbleS.grp)
-	wait              	1 
-	end
-
-AlkajCavernAlmostBuilt:
-	imgol             	107 0 0 # Zerg Building Spawn (Small) (zerg\zSpawn01.grp)
-AlkajCavernBuilt:
-	playfram          	0x00
-	wait				2
-	goto              	AlkajCavernWorkingToIdle
-
-AlkajCavernIsWorking:
-	playfram          	0x00
-	wait				1
-	playfram			1
-	waitrand			1 2
-	playfram			2
-	wait				1
-	playfram			3
-	waitrand			1 2
-	playfram			2
-	wait				1
-	playfram			1
-	waitrand			1 2
-	goto              	AlkajCavernIsWorking
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -31160,15 +30984,15 @@ BactaliskInit:
 	imgul             	1208 0 0 # Bactalisk Shadow (cm\zerg\bactalisk-shad.grp)
 BactaliskWalkingToIdle:
 	playfram          	0xcc
+	goto				BactaliskLocal00
 BactaliskLocal00:
-	wait				1
-	waitrand          	62 74
+	wait				63
 	randcondjmp       	25 BactaliskLocal01
 	randcondjmp       	128 BactaliskLocal02
 	goto              	BactaliskLocal00
 
 BactaliskLocal01:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	wait              	1 
 	playfram          	0xcc
 	wait              	1 
@@ -31206,7 +31030,7 @@ BactaliskLocal02:
 	goto              	BactaliskWalkingToIdle
 
 BactaliskDeath:
-	playsnd           	867	# Zerg\Hydra\ZHyDth00.WAV
+	playsnd           	2539 # Bactalisk death 01
 	setfldirect       	0 
 	playfram          	561
 	wait              	2 
@@ -31252,7 +31076,7 @@ BactaliskUnused1:
 	goto				BactaliskWalkingToIdle
 
 BactaliskGndAttkInit:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	wait              	1 
 	nobrkcodestart
 	playfram          	0xcc
@@ -31353,7 +31177,7 @@ BactaliskBurrow:
 
 BactaliskUnBurrow:
 	wait 				1
-	waitrand          	1 4
+	waitrand          	1 2
 	setfldirect			14
 	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
 	playfram			0x20f
@@ -32048,7 +31872,7 @@ IrolethBirthSpecialState1:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1227 Gorgral Swamp (cm\zerg\lakizden.grp)
+# 1227 Bactith Swamp (cm\zerg\lakizden.grp)
 .headerstart
 IsId          	517
 Type          	20
@@ -33982,9 +33806,7 @@ SeekerSporesSilentDeathGen:
 	goto				SeekerSporesSilentDeath
 
 SeekerSporesSilentDeathSpraith:
-	playsndbtwn			1194 1195
-	goto				SeekerSporesSilentDeath
-
+	playsndbtwn			1194 1195 # Spraith Cesiant weaponhit 01, 02
 SeekerSporesSilentDeath:
 	sprol             	365 0 0 # Glave Wurm/Seeker Spores Hit (thingy\SporeHit.grp)
 	domissiledmg
@@ -34326,8 +34148,7 @@ QuaziliskGndAttkToIdle:
 	goto              	QuaziliskLocal00
 
 QuaziliskLocal00:
-	wait				1
-	waitrand			51 72
+	wait				62
 	randcondjmp			43 QuaziliskLocal01
 	randcondjmp			51 QuaziliskLocal02
 	randcondjmp			128 QuaziliskLocal03
@@ -34416,7 +34237,8 @@ QuaziliskLocal05:
 	goto				QuaziliskLocal06
 	
 QuaziliskLocal06:
-	waitrand			8 20
+	wait				1
+	waitrand			7 19
 	playfram			0x100
 	wait				1
 	goto				QuaziliskGndAttkToIdle
@@ -34530,7 +34352,7 @@ QuaziliskBurrow:
 
 QuaziliskUnBurrow:
 	wait 				1
-	waitrand          	1 4
+	waitrand          	1 2
 	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
 	playfram          	0x1C0
 	wait              	1
@@ -34684,8 +34506,7 @@ ZoryusthalethGndAttkToIdle:
 	goto              	ZoryusthalethLocal00
 
 ZoryusthalethLocal00:
-	wait				1
-	waitrand			51 85
+	wait				62
 	randcondjmp			25 ZoryusthalethLocal03
 	randcondjmp			32 ZoryusthalethLocal02
 	randcondjmp			100 ZoryusthalethLocal01
@@ -34765,7 +34586,8 @@ ZoryusthalethLocal05:
 	goto				ZoryusthalethLocal06
 	
 ZoryusthalethLocal06:
-	waitrand			8 20
+	wait				1
+	waitrand			7 19
 	playfram			0xbb
 	wait				1
 	playfram			0xaa
@@ -34886,7 +34708,7 @@ ZoryusthalethBurrow:
 
 ZoryusthalethUnBurrow:
 	wait 				1
-	waitrand          	1 4
+	waitrand          	1 2
 	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
 	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
 	playfram          	0x143
@@ -34995,12 +34817,12 @@ RililiskWalking:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1292 Almak Antre (cm\zerg\almakantre.grp)
+# 1292 Almakis Antre (cm\zerg\AlmakisAntre.grp)
 .headerstart
 IsId          	551
 Type          	20
-Init          	AlmakAntreInit
-Death         	AlmakAntreDeath
+Init          	AlmakisAntreInit
+Death         	AlmakisAntreDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -35014,37 +34836,37 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	AlmakAntreAlmostBuilt
-Built         	AlmakAntreBuilt
+AlmostBuilt   	AlmakisAntreAlmostBuilt
+Built         	AlmakisAntreBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	AlmakAntreIsWorking
-WorkingToIdle 	AlmakAntreWorkingToIdle
+IsWorking     	AlmakisAntreIsWorking
+WorkingToIdle 	AlmakisAntreWorkingToIdle
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-AlmakAntreInit:
-	playfram          	0x00	# Frame set 0
-	imgul             	1293 0 0 # Almak Antre Shadow (cm\zerg\almakantre-shad.grp)
-	goto              	AlmakAntreWorkingToIdle
+AlmakisAntreInit:
+	playfram          	0x00
+	imgul             	1293 0 0 # Almakis Antre Shadow (cm\zerg\AlmakisAntre-shad.grp)
+	goto              	AlmakisAntreWorkingToIdle
 
-AlmakAntreWorkingToIdle:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	2 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	2 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	2 
-	playfram          	2
-	wait              	2 
+AlmakisAntreWorkingToIdle:
+	playfram          	0x00
+	wait              	2
 	playfram          	1
-	wait              	2 
-	goto              	AlmakAntreWorkingToIdle
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	1
+	wait              	2
+	goto              	AlmakisAntreWorkingToIdle
 
-AlmakAntreDeath:
+AlmakisAntreDeath:
 	playsnd           	774	# Zerg\Bldg\ZBldgDth.WAV
 	imgol             	60 0 0	# Zerg Building Explosion (thingy\zBldDthS.grp)
 	wait              	3 
@@ -35052,17 +34874,17 @@ AlmakAntreDeath:
 	wait              	1 
 	end
 
-AlmakAntreAlmostBuilt:
+AlmakisAntreAlmostBuilt:
 	imgol             	108 0 0	# Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
-	playfram          	0x00	# Frame set 0
-	goto              	AlmakAntreBuilt
+	playfram          	0x00
+	goto              	AlmakisAntreBuilt
 
-AlmakAntreBuilt:
-	playfram          	0x00	# Frame set 0
+AlmakisAntreBuilt:
+	playfram          	0x00
 	wait				2
-	goto              	AlmakAntreWorkingToIdle
+	goto              	AlmakisAntreWorkingToIdle
 
-AlmakAntreIsWorking:
+AlmakisAntreIsWorking:
 	playfram          	0x00
 	wait              	1 
 	playfram          	1
@@ -35070,12 +34892,12 @@ AlmakAntreIsWorking:
 	playfram          	2
 	wait              	1 
 	playfram          	3
-	waitrand          	1 2 
+	waitrand          	1 2
 	playfram          	2
 	wait              	1 
 	playfram          	1
 	wait				1
-	goto              	AlmakAntreIsWorking
+	goto              	AlmakisAntreIsWorking
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -35168,11 +34990,11 @@ ZoryusShroudIsWorking:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1310 Larval Colony (cm\zerg\larvalcolony.grp)
+# 1310 Larval Cesiant (cm\zerg\larvalcolony.grp)
 .headerstart
 IsId          	553
 Type          	20
-Init          	LarvalColonyInit
+Init          	LarvalCesiantInit
 Death         	CerebrateDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
@@ -35187,8 +35009,8 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	LarvalColonyAlmostBuilt
-Built         	LarvalColonyBuilt
+AlmostBuilt   	LarvalCesiantAlmostBuilt
+Built         	LarvalCesiantBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	InfestedTerranLocal00
@@ -35197,17 +35019,17 @@ WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-LarvalColonyInit:
-	imgul             	1311 0 0 # Larval Colony Shadow (cm\zerg\larvalcolony-shad.grp)
+LarvalCesiantInit:
+	imgul             	1311 0 0 # Larval Cesiant Shadow (cm\zerg\larvalcolony-shad.grp)
 	playfram          	0x00	# Frame set 0
 	goto              	InfestedTerranLocal00
 
-LarvalColonyAlmostBuilt:
+LarvalCesiantAlmostBuilt:
 	imgol             	108 0 0	# Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
-LarvalColonyBuilt:
+LarvalCesiantBuilt:
 	playfram          	0x00	# Frame set 0
 	wait				2
-LarvalColonyLocal00:
+LarvalCesiantLocal00:
 	playfram          	1	# Frame set 0, direction 1
 	wait              	2 
 	playfram          	2	# Frame set 0, direction 2
@@ -35220,7 +35042,7 @@ LarvalColonyLocal00:
 	wait              	2 
 	playfram          	0x00	# Frame set 0
 	wait              	2 
-	goto              	LarvalColonyLocal00
+	goto              	LarvalCesiantLocal00
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -36674,8 +36496,7 @@ BlackjackWalkingToIdle:
 	goto              	BlackjackLocal00
 
 BlackjackLocal00:
-	wait				1
-	waitrand			62 74
+	wait				62
 	randcondjmp       	25 BlackjackLocal01
 	goto              	BlackjackLocal00
 
@@ -36836,8 +36657,7 @@ CohortInit:
 CohortWalkingToIdle:
 	playfram          	0x44
 CohortLocal00:
-	wait				1
-	waitrand          	62 74
+	wait				62
 	randcondjmp       	25 CohortLocal01
 	randcondjmp       	128 CohortLocal02
 	goto              	CohortLocal00
@@ -37039,7 +36859,7 @@ CohortBurrow:
 
 CohortUnBurrow:
 	wait 				1
-	waitrand          	1 4
+	waitrand          	1 2
 	imgul             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
 #	playfram          	0x143
 	wait              	1
@@ -37665,8 +37485,7 @@ KonviliskGndAttkToIdle:
 	goto              	KonviliskLocal00
 
 KonviliskLocal00:
-	wait				1
-	waitrand			51 72
+	wait				62
 	randcondjmp			43 KonviliskLocal01
 	randcondjmp			51 KonviliskLocal02
 	randcondjmp			128 KonviliskLocal03
@@ -37755,7 +37574,8 @@ KonviliskLocal05:
 	goto				KonviliskLocal06
 	
 KonviliskLocal06:
-	waitrand			8 20
+	wait				1
+	waitrand			7 19
 	playfram			0x11
 	wait				1
 	goto				KonviliskGndAttkToIdle
@@ -37878,7 +37698,7 @@ KonviliskBurrow:
 
 KonviliskUnBurrow:
 	wait 				1
-	waitrand          	1 4
+	waitrand          	1 2
 	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
 	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
 	playfram          	0x143
@@ -38047,12 +37867,12 @@ ClaymoreTurretWalking:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1363 Gorgral Swamp (cm\zerg\GorgralSwamp.grp)
+# 1363 Bactith Swamp (cm\zerg\bactith-swamp.grp)
 .headerstart
 IsId          	581
 Type          	20
-Init          	GorgralSwampInit
-Death         	GorgralSwampDeath
+Init          	BactithSwampInit
+Death         	BactithSwampDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -38066,22 +37886,22 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	GorgralSwampAlmostBuilt
-Built         	GorgralSwampBuilt
+AlmostBuilt   	BactithSwampAlmostBuilt
+Built         	BactithSwampBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	GorgralSwampIsWorking
-WorkingToIdle 	GorgralSwampWorkingToIdle
+IsWorking     	BactithSwampIsWorking
+WorkingToIdle 	BactithSwampWorkingToIdle
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-GorgralSwampInit:
-	imgul             	1364 0 0 # Gorgral Swamp Shadow (cm\zerg\gorgralswamp-shad.grp)
+BactithSwampInit:
+	imgul             	1364 0 0 # Bactith Swamp Shadow (cm\zerg\bactith-swamp-shad.grp)
 	playfram          	0x00
-	goto              	GorgralSwampWorkingToIdle
+	goto              	BactithSwampWorkingToIdle
 
-GorgralSwampWorkingToIdle:
+BactithSwampWorkingToIdle:
 	playfram          	1
 	wait              	2
 	playfram          	2
@@ -38094,9 +37914,9 @@ GorgralSwampWorkingToIdle:
 	wait              	2
 	playfram          	0x00
 	wait              	4
-	goto              	GorgralSwampWorkingToIdle
+	goto              	BactithSwampWorkingToIdle
 
-GorgralSwampDeath:
+BactithSwampDeath:
 	playsnd           	774	# Zerg\Bldg\ZBldgDth.WAV
 	imgol             	60 0 0 # Zerg Building Explosion (thingy\zBldDthS.grp)
 	wait              	3 
@@ -38104,16 +37924,16 @@ GorgralSwampDeath:
 	wait              	1 
 	end
 
-GorgralSwampAlmostBuilt:
+BactithSwampAlmostBuilt:
 	imgol             	107 0 0 # Zerg Building Spawn (Small) (zerg\zSpawn01.grp)
-GorgralSwampBuilt:
+BactithSwampBuilt:
 	playfram          	0x00
 	wait              	1
-	randcondjmp       	128 GorgralSwampWorkingToIdle
+	randcondjmp       	128 BactithSwampWorkingToIdle
 	wait              	1
-	goto              	GorgralSwampWorkingToIdle
+	goto              	BactithSwampWorkingToIdle
 
-GorgralSwampIsWorking:
+BactithSwampIsWorking:
 	playfram          	1
 	wait              	1
 	playfram          	2
@@ -38124,7 +37944,7 @@ GorgralSwampIsWorking:
 	wait              	1
 	playfram          	0x00
 	wait              	2
-	goto              	GorgralSwampIsWorking
+	goto              	BactithSwampIsWorking
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -38270,10 +38090,10 @@ Type          	21
 Init          	DemiurgeInit
 Death         	DemiurgeDeath
 GndAttkInit   	DemiurgeGndAttkInit
-AirAttkInit   	DemiurgeAirAttkInit
+AirAttkInit   	DemiurgeGndAttkInit
 Unused1       	[NONE]
 GndAttkRpt    	DemiurgeGndAttkInit
-AirAttkRpt    	DemiurgeAirAttkInit
+AirAttkRpt    	DemiurgeGndAttkInit
 CastSpell     	[NONE]
 GndAttkToIdle 	DemiurgeGndAttkToIdle
 AirAttkToIdle 	DemiurgeGndAttkToIdle
@@ -38320,32 +38140,7 @@ DemiurgeGndAttkInit:
 	playfram			0xff
 	wait              	1 
 	playfram			0x110
-	playsndbtwn			1405 1406 # Demiurge weapon fire 01, 02
-	attack
-	wait				1
-	playfram			0x121
-	wait              	1 
-	playfram			0x132
-	wait              	1 
-	playfram			0x143
-	wait				1
-	playfram			0x154
-	wait				1
-	playfram			0xdd
-	nobrkcodeend
-	gotorepeatattk
-	goto				DemiurgeGndAttkToIdle
-	
-DemiurgeAirAttkInit:
-	playfram          	0xdd
-	wait              	1 
-	nobrkcodestart
-	playfram			0xee
-	wait              	1 
-	playfram			0xff
-	wait              	1 
-	playfram			0x110
-	playsndbtwn			1405 1406 # Demiurge weapon fire 01, 02
+	playsndbtwn			2525 2527 # Demiurge weapon fire 01, 02, 03
 	attack
 	wait				1
 	playfram			0x121
@@ -38430,8 +38225,7 @@ SirenGndAttkToIdle:
 	goto              	SirenLocal00
 
 SirenLocal00:
-	wait              	1
-	waitrand          	62 74
+	wait              	62
 	randcondjmp       	43 SirenLocal01
 	goto              	SirenLocal00
 
@@ -38800,25 +38594,25 @@ AirAttkInit   	[NONE]
 # ----------------------------------------------------------------------------- #
 
 NeutronFlareSilentInit:
-	wait              	1 
-	sigorder          	1 
-	wait              	1 
+	wait              	1
+	sigorder          	1
+	wait              	1
 NeutronFlareSilentDeath:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	domissiledmg
-	wait              	1 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	1 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	1 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	1 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	1 
-	playfram          	5	# Frame set 0, direction 5
-	wait              	1 
-	playfram          	6	# Frame set 0, direction 6
-	wait              	1 
+	wait              	1
+	playfram          	1
+	wait              	1
+	playfram          	2
+	wait              	1
+	playfram          	3
+	wait              	1
+	playfram          	4
+	wait              	1
+	playfram          	5
+	wait              	1
+	playfram          	6
+	wait              	1
 	end
 	
 # ----------------------------------------------------------------------------- #
@@ -39412,7 +39206,7 @@ LiiraliskBurrow:
 
 LiiraliskUnBurrow:
 	wait 				1
-	waitrand          	1 4
+	waitrand          	1 2
 	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
 	playfram          	0x300
 	wait              	1
@@ -39571,17 +39365,28 @@ SeekerSporesBounceDeath:
 	sprol             	365 0 0	# Glave Wurm/Seeker Spores Hit (thingy\SporeHit.grp)
 	domissiledmg
 	if bullet.weapon_id == 163 goto ProtathalorSporesBounceDeath
+	if bullet.weapon_id == 178 goto SpirtithSporesBounceDeath
 	playsnd           	79	# Bullet\ZLuHit00.wav
-	wait              	1 
-	end
+	goto				SeekerSporesBounceDeath2
 
 ProtathalorSporesBounceDeath:
 	playsndbtwn			2399 2402 # Protathalor weaponhit 01, 02, 03, 04
-	wait              	1 
+	goto				SeekerSporesBounceDeath2
+	
+SpirtithSporesBounceDeath:
+	playsndbtwn			2545 2546 # Spirtith Cesiant weaponhit 01, 02
+SeekerSporesBounceDeath2:
+	wait				1
 	end
 
 SeekerSporesBounceSpecialState1:
+	if bullet.weapon_id == 178 goto SeekerSporesBounceSpecialState1Spirtith
 	playsnd           	79	# Bullet\ZLuHit00.wav
+	goto				SeekerSporesBounceSpecialState1Fin
+
+SeekerSporesBounceSpecialState1Spirtith:
+	playsndbtwn			2545 2546 # Spirtith Cesiant weaponhit 01, 02
+SeekerSporesBounceSpecialState1Fin:
 	sprol             	365 0 0	# Glave Wurm/Seeker Spores Hit (thingy\SporeHit.grp)
 	domissiledmg
 	goto              	SeekerSporesBounceGndAttkInit
@@ -39831,8 +39636,7 @@ AutocratInit:
 AutocratWalkingToIdle:
 	playfram          	0x00
 AutocratLocal00:
-	wait				1
-	waitrand          	62 74
+	wait				62
 	randcondjmp       	25 AutocratLocal01
 	randcondjmp       	128 AutocratLocal01
 	goto              	AutocratLocal00
@@ -40112,8 +39916,7 @@ StrigaInit:
 StrigaWalkingToIdle:
 	playfram          	0xee
 StrigaLocal00:
-	wait				1
-	waitrand          	62 74 
+	wait				62
 	randcondjmp       	25 StrigaLocal01
 	randcondjmp       	128 StrigaLocal01
 	goto              	StrigaLocal00
@@ -40372,8 +40175,7 @@ AxitriliskInit:
 	imgul             	1414 0 -5 # Axitrilisk Shadow (cm\zerg\axitrilisk-shadow.grp)
 AxitriliskWalkingToIdle:
 	playfram          	0x00
-	wait				1
-	waitrand          	42 60
+	wait				62
 	randcondjmp       	64 AxitriliskLocal00
 	goto				AxitriliskWalkingToIdle
 AxitriliskLocal00:
@@ -40510,7 +40312,7 @@ AxitriliskBurrow:
 
 AxitriliskUnBurrow:
 	wait 				1
-	waitrand          	1 4
+	waitrand          	1 2
 	setfldirect			14
 	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
 #	playfram          	0x198
@@ -42183,8 +41985,7 @@ IzirokorGndAttkToIdle:
 	goto              	IzirokorLocal00
 
 IzirokorLocal00:
-	wait              	1
-	waitrand          	62 74
+	wait              	62
 	randcondjmp       	128 IzirokorLocal01
 	goto              	IzirokorLocal00
 
@@ -42408,7 +42209,7 @@ IzirokorBurrow:
 
 IzirokorUnburrow:
 	wait 				1
-	waitrand          	1 4
+	waitrand          	1 2
 	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
 	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
 	playfram          	0x2ec
@@ -43797,8 +43598,7 @@ KagraliskInit:
 KagraliskWalkingToIdle:
 	playfram          	0x00
 KagraliskLocal00:
-	wait				1
-	waitrand          	62 74
+	wait				62
 	randcondjmp       	25 KagraliskLocal01
 	randcondjmp       	128 KagraliskLocal02
 	goto              	KagraliskLocal00
@@ -43990,7 +43790,7 @@ KagraliskBurrow:
 
 KagraliskUnBurrow:
 	wait 				1
-	waitrand          	1 4
+	waitrand          	1 2
 	imgul             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
 	playfram          	0x143
 	wait              	1
@@ -44260,8 +44060,7 @@ EvigriliskInit:
 EvigriliskWalkingToIdle:
 	playfram          	0x00
 EvigriliskLocal00:
-	wait				1
-	waitrand          	62 74
+	wait				62
 	randcondjmp       	25 EvigriliskLocal01
 	randcondjmp       	128 EvigriliskLocal02
 	goto              	EvigriliskLocal00
@@ -44477,7 +44276,7 @@ EvigriliskBurrow:
 
 EvigriliskUnBurrow:
 	wait 				1
-	waitrand          	1 4
+	waitrand          	1 2
 	imgul             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
 	playfram          	0xbb
 	wait              	1
@@ -45730,10 +45529,10 @@ Type          	21
 Init          	HippogriffInit
 Death         	HippogriffDeath
 GndAttkInit   	HippogriffGndAttkInit
-AirAttkInit   	HippogriffGndAttkInit
+AirAttkInit   	HippogriffAirAttkInit
 Unused1       	[NONE]
 GndAttkRpt    	HippogriffGndAttkInit
-AirAttkRpt    	HippogriffGndAttkInit
+AirAttkRpt    	HippogriffAirAttkInit
 CastSpell     	[NONE]
 GndAttkToIdle 	HippogriffGndAttkToIdle
 AirAttkToIdle 	HippogriffGndAttkToIdle
@@ -45769,12 +45568,37 @@ HippogriffDeath:
 HippogriffGndAttkInit:
 	wait              	1
 	nobrkcodestart
-	playsndbtwn			2139 2141 # Hippogriff Weaponfire 01, 02, 03
+	playsndbtwn			2139 2141 # Hippogriff Cannon Weaponfire 01, 02, 03
 	attack
 	attack
 	wait				3
-	playsndbtwn			2139 2141 # Hippogriff Weaponfire 01, 02, 03
+	playsndbtwn			2139 2141 # Hippogriff Cannon Weaponfire 01, 02, 03
 	attack
+	attack
+	wait				1
+	nobrkcodeend
+	gotorepeatattk
+	goto              	MinotaurGndAttkToIdle
+
+HippogriffAirAttkInit:
+	wait              	1
+	nobrkcodestart
+	playsndbtwn			2146 2149 # Hippogriff Missile Weaponfire 01, 02, 03, 04
+	attack
+	wait				3
+	playsndbtwn			2146 2149 # Hippogriff Missile Weaponfire 01, 02, 03, 04
+	attack
+	wait				3
+	playsndbtwn			2146 2149 # Hippogriff Missile Weaponfire 01, 02, 03, 04
+	attack
+	wait				3
+	playsndbtwn			2146 2149 # Hippogriff Missile Weaponfire 01, 02, 03, 04
+	attack
+	wait				3
+	playsndbtwn			2146 2149 # Hippogriff Missile Weaponfire 01, 02, 03, 04
+	attack
+	wait				3
+	playsndbtwn			2146 2149 # Hippogriff Missile Weaponfire 01, 02, 03, 04
 	attack
 	wait				1
 	nobrkcodeend
@@ -46445,23 +46269,28 @@ EpigraphDeath:
 	end
 
 EpigraphGndAttkInit:
+	playfram			0x00
+	wait				1
 	nobrkcodestart
-	playsndbtwn       	1926 1928 # Epigraph weaponfire 01, 02, 03
+	playsndbtwn       	2528 2530 # Epigraph weaponfire 01, 02, 03
 	playfram			0x20
 	attackwith        	1
 	wait              	1
 	playfram			0x00
-	wait              	1
+	wait              	3
+	playsndbtwn       	2528 2530 # Epigraph weaponfire 01, 02, 03
 	playfram			0x40
 	attackwith        	1
 	wait              	1
 	playfram			0x00
-	wait              	1
+	wait              	3
+	playsndbtwn       	2528 2530 # Epigraph weaponfire 01, 02, 03
 	playfram			0x60
 	attackwith        	1
 	wait              	1
 	playfram			0x00
-	wait              	1
+	wait              	3
+	playsndbtwn       	2528 2530 # Epigraph weaponfire 01, 02, 03
 	playfram			0x80
 	attackwith        	1
 	wait              	1
@@ -46524,8 +46353,7 @@ TethzorokorLocal42:
 	goto              	TethzorokorLocal00
 
 TethzorokorLocal00:
-	wait				1
-	waitrand			62 74
+	wait				62
 	randcondjmp       	85 TethzorokorLocal01
 	goto				TethzorokorLocal00
 
@@ -46842,8 +46670,7 @@ ProtathalorLocal42:
 	goto              	ProtathalorLocal00
 
 ProtathalorLocal00:
-	wait				1
-	waitrand			62 74
+	wait				62
 	randcondjmp       	85 ProtathalorLocal01
 	goto				ProtathalorLocal00
 
@@ -46908,16 +46735,12 @@ ProtathalorGndAttkInit:
 	playfram          	0x2A0
 	wait              	1
 	playfram          	0x2C0
-	playsndbtwn			2014 2015 # Liiralisk attack 01, 02
+	playsndbtwn			2536 2538 # Protathalor weaponfire 01, 02, 03
 	attackwith			1
 	wait              	1
 	playfram          	0x2E0
-	playsndbtwn			2014 2015 # Liiralisk attack 01, 02
-	attackwith			1
 	wait              	1
 	playfram          	0x300
-	playsndbtwn			2014 2015 # Liiralisk attack 01, 02
-	attackwith			1
 	wait              	1
 	playfram          	0x320
 	wait              	1
@@ -47036,8 +46859,7 @@ VilgorokorLocal42:
 	goto              	VilgorokorLocal00
 
 VilgorokorLocal00:
-	wait				1
-	waitrand			62 74
+	wait				62
 	randcondjmp       	25 VilgorokorLocal01
 	goto				VilgorokorLocal00
 
@@ -47231,8 +47053,7 @@ CikraliskLocal42:
 	goto              	CikraliskLocal00
 
 CikraliskLocal00:
-	wait              	1
-	waitrand          	62 74
+	wait              	62
 	randcondjmp       	25 CikraliskLocal01
 	randcondjmp       	128 CikraliskLocal02
 	goto              	CikraliskLocal00
@@ -47484,7 +47305,7 @@ TosgriliskGndAttkInit:
 	playfram			0x1C0
 	wait				1
 	playfram			0x200
-	playsnd           	113 # Bullet\zmuFir00.wav
+	playsndbtwn			2534 2535 # Tosgrilisk weaponfire 01, 02
 	attackwith        	1
 	wait              	1
 	playfram			0x220
@@ -47492,7 +47313,7 @@ TosgriliskGndAttkInit:
 	playfram			0x1C0
 	wait				1
 	playfram			0x200
-	playsnd           	113 # Bullet\zmuFir00.wav
+	playsndbtwn			2534 2535 # Tosgrilisk weaponfire 01, 02
 	attackwith        	1
 	wait              	1
 	playfram			0x220
@@ -47668,8 +47489,7 @@ ZobrioliskLocal42:
 	goto              	ZobrioliskLocal00
 
 ZobrioliskLocal00:
-	wait				1
-	waitrand			62 74
+	wait				62
 	randcondjmp       	25 ZobrioliskLocal01
 	goto				ZobrioliskLocal00
 
@@ -48267,7 +48087,7 @@ SpecialState1 	[NONE]
 # ----------------------------------------------------------------------------- #
 
 DurendalInit:
-	imgul             	1590 0 0 # Durendal shadow (cm\terran\durendal-shadow.grp)
+	imgul             	1590 0 -9 # Durendal shadow (cm\terran\durendal-shadow.grp)
 DurendalWalkingToIdle:
 	playfram          	0x00
 	goto              	DurendalLocal00
@@ -48402,8 +48222,7 @@ SevenstepWalkingToIdle:
 	goto				SevenstepLocal00
 
 SevenstepLocal00:
-	wait				1
-	waitrand			62 74
+	wait				62
 	randcondjmp       	25 SevenstepLocal01
 	goto              	SevenstepLocal00
 	
@@ -48670,8 +48489,7 @@ DilettanteInit:
 DilettanteWalkingToIdle:
 	playfram          	0x00
 DilettanteLocal00:
-	wait				1
-	waitrand          	62 74
+	wait				62
 	randcondjmp       	25 DilettanteLocal01
 	randcondjmp       	128 DilettanteLocal02
 	goto              	DilettanteLocal00
@@ -48846,8 +48664,7 @@ HypnagogueInit:
 HypnagogueWalkingToIdle:
 	playfram          	0x00
 HypnagogueLocal00:
-	wait				1
-	waitrand          	62 74
+	wait				62
 	randcondjmp       	25 HypnagogueLocal01
 	randcondjmp       	128 HypnagogueLocal02
 	goto              	HypnagogueLocal00
@@ -49793,8 +49610,7 @@ SycophantInit:
 SycophantWalkingToIdle:
 	playfram          	0x00
 SycophantLocal00:
-	wait				1
-	waitrand			62 74
+	wait				62
 	randcondjmp       	25 SycophantLocal01
 	goto              	SycophantLocal00
 
@@ -49978,7 +49794,7 @@ SpecialState1 	[NONE]
 SmoochieInit:
 	imgul             	1682 0 42 # Smoochie Boy Shadow
 	playfram          	0x88
-	waitrand          	1 4
+	wait				1
 SmoochieGndAttkToIdle:
 	playfram          	0x88
 	wait              	2
@@ -50211,46 +50027,46 @@ MadrigalDirgeProcDeath:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1699 Spirtith Colony (cm\zerg\spirtith-colony.grp)
+# 1699 Spirtith Cesiant (cm\zerg\spirtith-colony.grp)
 .headerstart
 IsId          	727
 Type          	20
-Init          	SpirtithColonyInit
+Init          	SpirtithCesiantInit
 Death         	CerebrateDeath
 GndAttkInit   	[NONE]
-AirAttkInit   	SpirtithColonyAirAttkInit
+AirAttkInit   	SpirtithCesiantAirAttkInit
 Unused1       	[NONE]
 GndAttkRpt    	[NONE]
-AirAttkRpt    	SpirtithColonyAirAttkInit
+AirAttkRpt    	SpirtithCesiantAirAttkInit
 CastSpell     	[NONE]
 GndAttkToIdle 	[NONE]
-AirAttkToIdle 	SpirtithColonyAirAttkToIdle
+AirAttkToIdle 	SpirtithCesiantAirAttkToIdle
 Unused2       	[NONE]
 Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	SpirtithColonyAlmostBuilt
-Built         	SpirtithColonyBuilt
+AlmostBuilt   	SpirtithCesiantAlmostBuilt
+Built         	SpirtithCesiantBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	SpirtithColonyBuilt
-WorkingToIdle 	SpirtithColonyBuilt
+IsWorking     	SpirtithCesiantBuilt
+WorkingToIdle 	SpirtithCesiantBuilt
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-SpirtithColonyInit:
-	imgul             	1700 0 0 # Spirtith Colony Shadow (cm\zerg\spirtith-colony-shadow.grp)
+SpirtithCesiantInit:
+	imgul             	1700 0 0 # Spirtith Cesiant Shadow (cm\zerg\spirtith-colony-shadow.grp)
 	playfram          	0x00
 	goto              	InfestedTerranLocal00
 
-SpirtithColonyAirAttkInit:
+SpirtithCesiantAirAttkInit:
 	playfram			4
 	wait              	1
 	playfram			5
 	attackwith			2
-	playsndbtwn			2155 2157 # Spirtith Colony weaponfire 01, 02, 03
+	playsndbtwn			2542 2544 # Spirtith Cesiant weaponfire 01, 02, 03
 	wait				2
 	playfram			6
 	wait				1
@@ -50258,17 +50074,17 @@ SpirtithColonyAirAttkInit:
 	wait				2
 	gotorepeatattk
 	ignorerest
-	goto              	SpirtithColonyAirAttkToIdle
+	goto              	SpirtithCesiantAirAttkToIdle
 
-SpirtithColonyAirAttkToIdle:
+SpirtithCesiantAirAttkToIdle:
 	playfram			4
 	wait				2
-	goto              	SpirtithColonyBuilt
+	goto              	SpirtithCesiantBuilt
 
-SpirtithColonyAlmostBuilt:
+SpirtithCesiantAlmostBuilt:
 	imgol             	108 0 0 # Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
 	playfram          	0x00
-SpirtithColonyBuilt:
+SpirtithCesiantBuilt:
 	wait				2
 	playfram          	1
 	wait              	2
@@ -50278,7 +50094,7 @@ SpirtithColonyBuilt:
 	wait              	2
 	playfram          	0x00
 	wait              	2
-	goto              	SpirtithColonyBuilt
+	goto              	SpirtithCesiantBuilt
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -50316,8 +50132,7 @@ OptectonInit:
 	playfram          	0x00
 	wait				2
 OptectonLocal00:
-	wait				1
-	waitrand			62 74
+	wait				62
 	randcondjmp       	25 OptectonLocal01
 	randcondjmp       	13 OptectonLocal02
 	goto              	OptectonLocal00
@@ -50494,8 +50309,7 @@ PatriarchInit:
 	goto              	PatriarchLocal00
 
 PatriarchLocal00:
-	wait				1
-	waitrand			62 74
+	wait				62
 	randcondjmp       	25 PatriarchLocal01
 	goto              	PatriarchLocal00
 
@@ -50553,7 +50367,7 @@ PatriarchGndAttkInit:
 	wait              	1
 	nobrkcodestart
 	playfram          	0x165
-	playsndbtwn			2126 2130 # Patriarch attack 01, 02, 03, 04, 05
+	playsndbtwn			2554 2556 # Patriarch attack 01, 02, 03
 	attackwith        	1
 	wait              	1
 	playfram          	0x176
@@ -50726,6 +50540,7 @@ AirAttkInit   	[NONE]
 
 ZarcavrokorBoneInit:
 	playfram          	0x00
+	playsndbtwn			2531 2533 # Gorgrokor weaponfire B 01, 02, 03
 	wait              	1
 	sigorder          	1
 	playfram			0x20
@@ -51366,8 +51181,7 @@ MortothrokorGndAttkToIdle:
 	goto              	MortothrokorLocal00
 
 MortothrokorLocal00:
-	wait              	1
-	waitrand          	62 74
+	wait              	62
 	randcondjmp       	25 MortothrokorLocal01
 	randcondjmp       	128 MortothrokorLocal02
 	goto              	MortothrokorLocal00
@@ -51666,58 +51480,6 @@ Type          	1
 Init          	SpiderMineExplosionDeath
 Death         	ScourgeExplosionDeath
 .headerend
-
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 1745 Philoc (cm\faction\philoc.grp)
-.headerstart
-IsId          	751
-Type          	12
-Init          	PhilocInit
-Death         	PhilocDeath
-GndAttkInit   	PhilocGndAttkInit
-AirAttkInit   	PhilocGndAttkInit
-Unused1       	[NONE]
-GndAttkRpt    	PhilocGndAttkInit
-AirAttkRpt    	PhilocGndAttkInit
-CastSpell     	[NONE]
-GndAttkToIdle 	WraithGndAttkToIdle
-AirAttkToIdle 	WraithGndAttkToIdle
-Unused2       	[NONE]
-Walking       	PhilocWalking
-WalkingToIdle 	WraithGndAttkToIdle
-SpecialState1 	[NONE]
-.headerend
-# ----------------------------------------------------------------------------- #
-
-PhilocInit:
-	imgulnextid         0 42 # Philoc Shadow (terran\philoc.grp)
-	playfram          	0x00
-	goto              	WraithGndAttkToIdle
-
-PhilocDeath:
-	playsnd           	257 # Terran\PHOENIX\TPhDth00.WAV
-	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
-	wait              	3
-	lowsprul			844 0 42 # Terran Unit Rubble Medium
-	end
-
-PhilocGndAttkInit:
-	nobrkcodestart
-	wait              	1
-	playfram			0x20
-	attackwith        	1
-	playsnd           	74 # Bullet\TPhFi100.wav
-	wait				1
-	playfram			0x00
-	gotorepeatattk
-	nobrkcodeend
-	goto              	WraithLocal00
-
-PhilocWalking:
-	setvertpos        	0
-	imgol             	1747 0 0 # Philoc Engines (terran\wraith-engine.grp)
-	goto              	WraithLocal00
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -52093,4 +51855,412 @@ OmnivaleIsWorking:
 	wait				1
 	goto              	OmnivaleIsWorking
 	
-# Next free isid: 759
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1170 Potentate (cm\protoss\potentate.grp)
+.headerstart
+IsId          	759
+Type          	21
+Init          	PotentateInit
+Death         	PotentateDeath
+GndAttkInit   	PotentateGndAttkInit
+AirAttkInit   	PotentateGndAttkInit
+Unused1       	PotentateUnused1
+GndAttkRpt    	PotentateGndAttkRpt
+AirAttkRpt    	PotentateGndAttkRpt
+CastSpell     	[NONE]
+GndAttkToIdle 	PotentateGndAttkToIdle
+AirAttkToIdle 	PotentateGndAttkToIdle
+Unused2       	[NONE]
+Walking       	PotentateWalking
+WalkingToIdle 	PotentateWalkingToIdle
+SpecialState1 	PotentateMeleeAttkRpt
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	PotentateWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+PotentateInit:
+	imgul             	1172 0 0 # Potentate Shadow (cm\protoss\potentate-shad.grp)
+	playfram          	0x00
+	wait				2
+	goto				PotentateLocal69
+
+PotentateLocal42:
+	playfram			0x00
+	goto				PotentateLocal69
+
+PotentateLocal69:
+	wait				125
+	goto				PotentateLocal69
+	
+PotentateGndAttkToIdle:
+	playfram          	0x180
+	wait              	1
+	playfram          	0x160
+	wait              	1
+	playfram          	0x140
+	wait              	1
+	playfram          	0x120
+	wait              	1
+	goto				PotentateLocal511
+
+PotentateLocal511:
+	playfram 			0x00
+	wait 				1
+	goto              	PotentateLocal69
+
+PotentateDeath:
+	playsnd           	635 # Protoss\TEMPLAR\PTeDth00.WAV
+	imgol             	153 0 0 # Zealot Death (protoss\zealot.grp)
+	wait              	3
+	lowsprul			818 0 0 # Potentate Remains
+	end
+	
+PotentateUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect       	0
+	playsnd				1186 # Cantavis revive 01
+	imgol             	1445 0 0 # Zealot death reversed
+	wait				12
+	setfldirect       	12
+	nobrkcodeend
+	goto				PotentateLocal42
+
+PotentateGndAttkInit:
+	sigorder			32
+	playfram          	0x120
+	wait              	1
+	playfram          	0x140
+	wait              	1
+	playfram          	0x160
+	wait              	1
+	playfram          	0x180
+	goto              	PotentateGndAttkRpt
+PotentateGndAttkRpt:
+	wait				1
+	nobrkcodestart
+	playsndbtwn			2523 2524 # Potentate attack 01, 02
+	attackwith        	2
+	playfram          	0x1A0
+	wait				1
+	playfram          	0x180
+	wait				1
+	sigorder			32
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto				PotentateGndAttkToIdle
+
+PotentateMeleeAttkRpt:
+	playfram			0x1C0
+	wait				1
+	nobrkcodestart
+	playfram			0x1C0
+	wait				1
+	playfram			0x1E0
+	wait				1
+	playfram			0x200
+	playsndbtwn			1231 1234 # Amaranth weaponfire 01, 02, 03, 04
+	attackmelee       	1 664 # Protoss\ZEALOT\pzeHit00.WAV
+	wait				1
+	nobrkcodeend
+	playfram          	0x220
+	wait				1
+	playfram			0x00
+	gotorepeatattk
+	ignorerest
+	goto				PotentateLocal511
+
+PotentateWalking:
+	move              	5
+	wait              	1
+	playfram          	0x100
+	move              	5
+	wait              	1
+	playfram          	0x20
+	move              	5
+	wait              	1
+	playfram          	0x40
+	move              	5
+	wait              	1
+	playfram          	0x60
+	move              	5
+	wait              	1
+	playfram          	0x80
+	move              	5
+	wait              	1
+	playfram          	0xA0
+	move              	5
+	wait              	1
+	playfram          	0xC0
+	move              	5
+	wait              	1
+	playfram          	0xE0
+	goto				PotentateWalking
+	
+PotentateWalkingToIdle:
+	playfram			0x00
+	goto				PotentateLocal69
+
+PotentateWarpIn:
+	imgol             	128 0 0	# Cantavis Warp Flash (protoss\templar.grp)
+	goto              	InfestedTerranLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 076 Surkith Cesiant (cm\zerg\skortrith-cesiant.grp)
+.headerstart
+IsId          	760
+Type          	20
+Init          	SkortrithCesiantInit
+Death         	CerebrateDeath
+GndAttkInit   	SkortrithCesiantGndAttkInit
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	SkortrithCesiantGndAttkInit
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	SurkithCesiantGndAttkToIdle
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	SurkithCesiantAlmostBuilt
+Built         	SurkithCesiantBuilt
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	SurkithCesiantIsWorking
+WorkingToIdle 	SurkithCesiantIsWorking
+WarpIn        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+SkortrithCesiantInit:
+	playfram          	0x00
+	imgul             	1704 0 0 # Skortrith Cesiant Shadow (cm\zerg\skortrith-cesiant-shadow.grp)
+	goto              	InfestedTerranLocal00
+
+SkortrithCesiantGndAttkInit:
+	trgtarccondjmp    	74 42 SkortrithCesiantLocal00
+	trgtarccondjmp    	159 42 SkortrithCesiantLocal01
+	nobrkcodestart
+	playsnd           	2540 # Skortrith Cesiant weaponfire 01
+	playfram          	24
+	wait              	1
+	playfram          	25
+	wait              	1
+	playfram          	26
+	wait              	1
+	playfram          	27
+	wait              	1
+	playfram          	28
+	wait              	1
+	playfram          	29
+	wait              	1
+	playfram          	30
+	wait              	1
+	playfram          	31
+	wait              	1
+	playfram          	32
+	wait              	1
+	playfram          	33
+	wait              	1
+	attackwith        	1
+	wait              	6
+	playfram          	32
+	wait              	1
+	playfram          	31
+	wait              	1
+	playfram          	30
+	wait              	1
+	playfram          	29
+	wait              	1
+	playfram          	28
+	wait              	1
+	playfram          	27
+	wait              	1
+	playfram          	26
+	wait              	1
+	playfram          	25
+	wait              	1
+	playfram          	24
+	wait              	1
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto				SurkithCesiantGndAttkToIdle
+
+SkortrithCesiantLocal00:
+	nobrkcodestart
+	playsnd           	2540 # Skortrith Cesiant weaponfire 01
+	playfram          	3
+	wait              	1
+	playfram          	4
+	wait              	1
+	playfram          	5
+	wait              	1
+	playfram          	6
+	wait              	1
+	playfram          	7
+	wait              	1
+	playfram          	8
+	wait              	1
+	playfram          	9
+	wait              	1
+	playfram          	10
+	wait              	1
+	playfram          	11
+	wait              	1
+	playfram          	12
+	wait              	1
+	playfram          	13
+	wait              	1
+	attackwith        	1
+	wait              	6
+	playfram          	12
+	wait              	1
+	playfram          	11
+	wait              	1
+	playfram          	10
+	wait              	1
+	playfram          	9
+	wait              	1
+	playfram          	8
+	wait              	1
+	playfram          	7
+	wait              	1
+	playfram          	6
+	wait              	1
+	playfram          	5
+	wait              	1
+	playfram          	4
+	wait              	1
+	playfram          	3
+	wait              	1
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto              	SurkithCesiantIsWorking
+
+SkortrithCesiantLocal01:
+	nobrkcodestart
+	playsnd           	2540 # Skortrith Cesiant weaponfire 01
+	playfram          	14
+	wait              	1
+	playfram          	15
+	wait              	1
+	playfram          	16
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	18
+	wait              	1
+	playfram          	19
+	wait              	1
+	playfram          	20
+	wait              	1
+	playfram          	21
+	wait              	1
+	playfram          	22
+	wait              	1
+	playfram          	23
+	wait              	1
+	attackwith        	1
+	wait              	6
+	playfram          	23
+	wait              	1
+	playfram          	22
+	wait              	1
+	playfram          	21
+	wait              	1
+	playfram          	20
+	wait              	1
+	playfram          	19
+	wait              	1
+	playfram          	18
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	16
+	wait              	1
+	playfram          	15
+	wait              	1
+	playfram          	14
+	wait              	1
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto              	SurkithCesiantIsWorking
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1766 Skortrith Cesiant Tentacle (bullet\Tentacle.grp)
+.headerstart
+IsId          	761
+Type          	2
+Init          	SkortrithTentacleInit
+Death         	SubterraneanTentacleDeath
+GndAttkInit   	SubterraneanTentacleDeath
+AirAttkInit   	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+SkortrithTentacleInit:
+	playsnd				2541 # Skortrith Cesiant weaponhit 01
+	wait              	1
+	sigorder          	1
+	wait              	1
+	goto				SubterraneanTentacleDeath
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1248 Cyclops Weapon Impact (thingy\elbHit.grp)
+.headerstart
+IsId          	762
+Type          	1
+Init          	CyclopsWeaponImpactInit
+Death         	CyclopsWeaponImpactDeath
+.headerend
+# ----------------------------------------------------------------------------- #
+
+CyclopsWeaponImpactInit:
+	wait              	1
+	playsndbtwn			2551 2553 # Cyclops weaponhit 01
+#	playsnd				2550 # Cyclops weapon channel 01
+	sigorder          	1
+	wait              	1
+CyclopsWeaponImpactDeath:
+	playfram          	0x00
+	domissiledmg
+	wait              	1
+	playfram          	1
+	wait              	1
+	playfram          	2
+	wait              	1
+	playfram          	3
+	wait              	1
+	playfram          	4
+	wait              	1
+	playfram          	5
+	wait              	1
+	playfram          	6
+	wait              	1
+	playfram          	7
+	wait              	1
+	playfram          	8
+	wait              	1
+	playfram          	9
+	wait              	1
+	end
+	
+# Next free isid: 763

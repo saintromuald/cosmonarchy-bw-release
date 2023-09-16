@@ -113,19 +113,19 @@
 
 9:                  # [9] Select Shared - Zerg Structure
   0xFF02            # Current unit is...
-  131               # [131] Hatchery
+  131               # [131] Hachirosk
   0xFF01            # Or
   0xFF02            # Current unit is...
-  132               # [132] Lair
+  132               # [132] Caphrolosk
   0xFF01            # Or
   0xFF02            # Current unit is...
-  133               # [133] Hive
+  133               # [133] Gathtelosk
   0xFF01            # Or
   0xFF02            # Current unit is...
-  226               # [226] Grand Library
+  216               # [216] Larvosk Cesiant
   0xFF01            # Or
   0xFF02            # Current unit is...
-  215               # Flag
+  383               # [383] Omnivale
   0xFFFF            # ==End of List==
 
 10:                 # [10] Personnel Cloaking
@@ -292,19 +292,19 @@
 
 28:                 # [28] Select Control - Zerg Structure
   0xFF02            # Current unit is...
-  131               # [131] Hatchery
+  131               # [131] Hachirosk
   0xFF01            # Or
   0xFF02            # Current unit is...
-  132               # [132] Lair
+  132               # [132] Caphrolosk
   0xFF01            # Or
   0xFF02            # Current unit is...
-  133               # [133] Hive
+  133               # [133] Gathtelosk
   0xFF01            # Or
   0xFF02            # Current unit is...
-  226               # [226] Grand Library
+  216               # [216] Larvosk Cesiant
   0xFF01            # Or
   0xFF02            # Current unit is...
-  215               # Flag
+  383               # [383] Omnivale
   0xFFFF            # ==End of List==
 
 29:                 # [29] Grief of All Gods - Star Sovereign
@@ -329,19 +329,19 @@
 
 33:                 # [33] Select Swarm - Zerg Structure
   0xFF02            # Current unit is...
-  131               # [131] Hatchery
+  131               # [131] Hachirosk
   0xFF01            # Or
   0xFF02            # Current unit is...
-  132               # [132] Lair
+  132               # [132] Caphrolosk
   0xFF01            # Or
   0xFF02            # Current unit is...
-  133               # [133] Hive
+  133               # [133] Gathtelosk
   0xFF01            # Or
   0xFF02            # Current unit is...
-  226               # [226] Grand Library
+  216               # [216] Larvosk Cesiant
   0xFF01            # Or
   0xFF02            # Current unit is...
-  215               # Flag
+  383               # [383] Omnivale
   0xFFFF            # ==End of List==
 
 34:                 # [34] Healing - Cleric
@@ -369,19 +369,19 @@
 
 38:                 # [38] Select Assault - Zerg Structure
   0xFF02            # Current unit is...
-  131               # [131] Hatchery
+  131               # [131] Hachirosk
   0xFF01            # Or
   0xFF02            # Current unit is...
-  132               # [132] Lair
+  132               # [132] Caphrolosk
   0xFF01            # Or
   0xFF02            # Current unit is...
-  133               # [133] Hive
+  133               # [133] Gathtelosk
   0xFF01            # Or
   0xFF02            # Current unit is...
-  226               # [226] Grand Library
+  216               # [216] Larvosk Cesiant
   0xFF01            # Or
   0xFF02            # Current unit is...
-  215               # Flag
+  383               # [383] Omnivale
   0xFFFF            # ==End of List==
 
 39:                 # [39] Emergency Detonation - Terran Structure
