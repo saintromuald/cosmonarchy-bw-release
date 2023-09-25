@@ -13,7 +13,8 @@
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
  4, 231, 18, 39, 0, 0, 675, 0 # Gather, Unit Is Carrying Nothing (Gather - Probe) (0), Gather (0)
- 5, 233, 19, 40, 0, 0, 676, 0 # Return Resources, Unit Is Carrying Something(Return Cargo - Probe) (0), Return Cargo (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
+ 6, 233, 19, 40, 0, 0, 676, 0 # Return Resources, Unit Is Carrying Something(Return Cargo - Probe) (0), Return Cargo (0)
 
 14: # [14] Transport
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
@@ -45,9 +46,9 @@
  9, 97, 47, 59, 0, 208, 487, 0 # Control Strains, Zerg Basic Buildings (0), Change Displayed Buttons ([208] Right Pit Door)
 
 18: # [18] Droleth
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
  4, 231, 43, 39, 0, 0, 675, 0 # Gather, Has No Cargo (Gather - Drone) (0), Gather (0)
  5, 233, 44, 40, 0, 0, 676, 0 # Return Resources, Has Cargo (Return Cargo - Drone) (0), Return Cargo (0)
  6, 47, 4, 38, 47, 47, 466, 469 # Gosvileth, Can Create Unit\Building ([47] Gosvileth), Unit Morph ([47] Gosvileth)
@@ -72,14 +73,23 @@
  7, 130, 4, 33, 130, 130, 447, 429 # Axtoth Axis, Can Create Unit\Building ([130] Axtoth Axis), Create Building - Zerg ([130] Axtoth Axis)
  8, 219, 4, 33, 219, 219, 1399, 1398 # Geszkath Grotto, Can Create Unit\Building ([219] Geszkath Grotto), Create Building - Zerg ([219] Geszkath Grotto)
  9, 136, 4, 33, 136, 136, 623, 755 # Sovthrath Mound, Can Create Unit\Building ([136] Sovthrath Mound), Create Building - Zerg ([136] Sovthrath Mound)
-# 9, 236, 3, 59, 0, 228, 688, 0 # Cancel, Always (0), Change Displayed Buttons ([228] Blank)
+#9, 236, 3, 59, 0, 228, 688, 0 # Cancel, Always (0), Change Displayed Buttons ([228] Blank)
+
+21: [21] Basic Burrower
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
+ 9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
+ 9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
 22: # [22] Hydralisk
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  6, 129, 4, 38, 129, 129, 1063, 1057 # Bactalisk, Can Create Unit\Building ([129] Bactalisk), Unit Morph ([129] Bactalisk)
  9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
@@ -94,16 +104,16 @@
  8, 344, 23, 57, 34, 0, 564, 564 # Acid Spore, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 24: # [24] Lakizilisk
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 45, 10, 0, 0, 665, 0 # Stop, Burrowed (Stop - Lurker) (0), Stop (0)
- 3, 230, 23, 57, 34, 0, 1464, 1464 # Pneumatized Carapace, Spell Researched ([34] Healing - Cleric), Cancel (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 45, 10, 0, 0, 665, 0 # Stop, Burrowed (Stop - Lakizilisk) (0), Stop (0)
+ 3, 230, 23, 57, 34, 0, 1464, 1464 # Burrowed Attacker, Spell Researched ([34] Healing - Cleric), Cancel (0)
  3, 230, 39, 11, 11, 0, 666, 0 # Attack, Is Using Ability ([11] Burrowing - Zerg Ground), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
-# 6, 423, 4, 38, 273, 273, 1061, 1064 # Zobriolisk, Can Create Unit\Building ([273] Zobriolisk), Unit Morph ([273] Zobriolisk)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
+#6, 423, 4, 38, 273, 273, 1061, 1064 # Zobriolisk, Can Create Unit\Building ([273] Zobriolisk), Unit Morph ([273] Zobriolisk)
  7, 382, 23, 57, 34, 0, 1051, 1051 # Subterranean Spines, Spell Researched ([34] Healing - Cleric), Cancel (0)
- 9, 377, 38, 41, 11, 11, 372, 382 # Lurker Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
- 9, 398, 39, 42, 11, 0, 373, 0 # Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
+ 9, 377, 38, 41, 11, 11, 372, 382 # Lakizilisk Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
+ 9, 398, 39, 42, 11, 0, 373, 0 # Lakizilisk Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
 25: # [25] Matraleth
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
@@ -115,24 +125,24 @@
  8, 267, 23, 57, 34, 0, 381, 0 # Ensnaring Brood, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 26: # [26] Isthrathaleth
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 270, 23, 24, 14, 14, 376, 385 # Dark Swarm, Spell Researched ([14] Dark Swarm - Isthrathaleth), Use Technology ([14] Dark Swarm - Isthrathaleth)
  8, 265, 23, 24, 15, 15, 380, 387 # Plague, Spell Researched ([15] Plague - Isthrathaleth), Use Technology ([15] Plague - Isthrathaleth)
  9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
 27: # [27] Protathalor
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  6, 123, 4, 38, 123, 123, 480, 479 # Sovroleth, Can Create Unit\Building ([123] Sovroleth), Unit Morph ([123] Sovroleth)
-# 9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
-# 9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
+ 9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
+ 9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
 30: # [30] Hachirosk
  1, 35, 3, 2, 0, 0, 674, 0 # Larva, Always (0), Select Larva (0)
@@ -166,12 +176,11 @@
  9, 0, 16, 27, 0, 0, 0, 0 # Marine, Upgrade Underway (0), Cancel Upgrade Research (0)
  9, 97, 23, 24, 28, 28, 487, 0 # Zoryusthaleth, Spell Researched ([28] Select Control - Zerg Structure), Use Technology ([28] Select Control - Zerg Structure)
 
-34: # [34] Muthrok Spire
+34: # [34] Mutath Spire
  7, 197, 4, 35, 197, 197, 560, 561 # Vithrath Haunt, Can Create Unit\Building ([197] Vithrath Haunt), Building Morph ([197] Vithrath Haunt)
 
 36: # [36] Quazeth Pool
  7, 204, 4, 35, 204, 204, 396, 558 # Liivral Pond, Can Create Unit\Building ([204] Liivral Pond), Building Morph ([204] Liivral Pond)
- 9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
 37: # [37] Cagrant Cesiant
  1, 146, 4, 35, 146, 146, 628, 758 # Surkith Cesiant, Can Create Unit\Building ([146] Surkith Cesiant), Building Morph ([146] Surkith Cesiant)
@@ -179,10 +188,8 @@
  4, 216, 4, 35, 216, 216, 534, 585 # Larvosk Cesiant, Can Create Unit\Building ([216] Larvosk Cesiant), Building Morph ([216] Larvosk Cesiant)
  5, 134, 4, 35, 134, 134, 619, 748 # Nydus Cesiant, Can Create Unit\Building ([134] Nydus Cesiant), Create Building - Zerg ([134] Nydus Cesiant)
 
-38: # [38] Hydrok Den
+38: # [38] Hydrith Den
  7, 153, 4, 35, 153, 153, 1053, 1058 # Gorgral Swamp, Can Create Unit\Building ([153] Gorgral Swamp), Building Morph ([153] Gorgral Swamp)
- 9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
- 9, 236, 17, 23, 0, 0, 692, 0 # Cancel, Research Underway (0), Cancel Technology Research (0)
 
 39: # [39] Matravil Nest
  7, 139, 4, 35, 139, 139, 617, 753 # Almakis Antre, Can Create Unit\Building ([139] Almakis Antre), Building Morph ([139] Almakis Antre)
@@ -543,11 +550,11 @@
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
 93: # [93] Nathrokor
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  6, 51, 4, 38, 51, 51, 1552, 1555 # Kalkalisk, Can Create Unit\Building ([51] Kalkalisk), Unit Morph ([51] Kalkalisk)
  7, 264, 23, 57, 34, 0, 1473, 1473 # Adrenal Frenzy, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
@@ -555,7 +562,7 @@
  9, 236, 17, 23, 0, 0, 692, 0 # Cancel, Research Underway (0), Cancel Technology Research (0)
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
-95: # [95] Machine Shop (unused)
+95: # [95] Palladium (unused)
  9, 236, 17, 23, 0, 0, 692, 0 # Cancel, Research Underway (0), Cancel Technology Research (0)
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
@@ -569,11 +576,11 @@
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
 
 98: # [98] Zethrokor
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  6, 128, 4, 38, 128, 128, 1554, 1539 # Vorvrokor, Can Create Unit\Building ([128] Vorvrokor), Unit Morph ([128] Vorvrokor)
  9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
@@ -583,22 +590,22 @@
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
 100: # [100] Vorvrokor
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 263, 23, 57, 34, 0, 1776, 1776 # Metabolic Boost, Spell Researched ([34] Healing - Cleric), Cancel (0)
  8, 267, 23, 57, 34, 0, 1059, 1059 # Captivating Claws, Spell Researched ([34] Healing - Cleric), Cancel (0)
  9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
 101: # [101] Bactalisk
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 344, 23, 57, 34, 0, 1628, 1628 # Caustic Fission, Spell Researched ([34] Healing - Cleric), Cancel (0)
  9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
@@ -607,29 +614,29 @@
  7, 179, 4, 35, 179, 179, 386, 388 # Blank (Cave - Unused), Can Create Unit\Building ([179] Anthelion), Building Morph ([179] Anthelion)
 
 103: # Shaman (Support Mode)
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 15, 30, 6, 5, 5, 1774, 1774 # Visionary Mode, Tank Is In Tank Mode ([5] Terran Deployment), Visionary Mode ([5] Terran Deployment)
  7, 15, 31, 5, 5, 0, 1775, 1775 # Support Mode, Tank Is In Siege Mode ([5] Terran Deployment), Support Mode (0)
  8, 366, 23, 57, 34, 0, 1383, 1383 # Nanite Field, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 104: # Legionnaire
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 355, 23, 57, 34, 0, 563, 563 # Psi Assault, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 105: # Hierophant
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 362, 23, 57, 34, 0, 1074, 1074 # Signify: Cowardice, Spell Researched ([34] Healing - Cleric), Cancel (0)
  8, 360, 23, 57, 34, 0, 1076, 1075 # Signify: Malice, Spell Researched ([34] Healing - Cleric), Cancel (0)
  9, 305, 23, 57, 34, 0, 1470, 1470 # Ascension, Spell Researched ([34] Healing - Cleric), Cancel (0)
@@ -654,11 +661,11 @@
  7, 343, 23, 57, 34, 0, 1091, 0 # Flyer Attack, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 110: # Dracadin (unused)
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
 
 111: # [111] Envoy (unused)
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
@@ -729,62 +736,62 @@
  3, 230, 9, 13, 0, 0, 666, 0 # Attack, Attacking Building (0), Attack (Building) (0)
 
 122: # Zealot
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 353, 3, 57, 34, 0, 1734, 1733 # Phase Blades, Always (34), Cancel (0)
 
 123: # [123] Panoptus
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
 
 124: # [124] Witness
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 252, 23, 57, 34, 0, 757, 757 # Cloak, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 125: # [125] Ultrokor
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 340, 23, 57, 34, 0, 1745, 1745 # Saber Siphon, Spell Researched ([34] Healing - Cleric), Cancel (0)
  8, 378, 23, 57, 34, 0, 1748, 1748 # Kaiser Rampage, Spell Researched ([34] Healing - Cleric), Cancel (0)
  9, 259, 38, 41, 11, 11, 372, 372 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
  9, 260, 39, 42, 11, 0, 373, 373 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
 126: # Broodspawn
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 269, 23, 57, 34, 0, 1512, 1512 # Death Cycle, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 127: # Archon
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 308, 23, 57, 34, 0, 1756, 1756 # Astral Aegis, Spell Researched ([34] Healing - Cleric), Cancel (0)
  8, 307, 23, 57, 34, 0, 1773, 1773 # Vengeance, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 128: # unused
- 1, 0, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 51, 4, 38, 51, 51, 1552, 1555 # Kalkalisk, Can Create Unit\Building ([51] Kalkalisk), Unit Morph ([51] Kalkalisk)
  8, 350, 23, 57, 34, 0, 1412, 1412 # Suicide (Scourge), Spell Researched ([34] Healing - Cleric), Cancel (0)
 
@@ -874,11 +881,11 @@
  6, 408, 4, 38, 258, 258, 1549, 1550 # Zarcavrokor, Can Create Unit\Building ([258] Zarcavrokor), Unit Morph ([258] Zarcavrokor)
 
 142: # Aurora
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 80, 23, 57, 34, 0, 1742, 1742 # Aurora, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 143: # unused
@@ -1314,11 +1321,11 @@
  8, 307, 23, 57, 34, 0, 1773, 1773 # Vengeance, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 200: # Quazilisk
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  6, 112, 4, 38, 112, 112, 478, 477 # Liiralisk, Can Create Unit\Building ([112] Liiralisk), Unit Morph ([112] Liiralisk)
  9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
@@ -1332,11 +1339,11 @@
 #6, 472, 4, 38, 322, 322, 1801, 1800 # Algoztalisk, Can Create Unit\Building ([322] Algoztalisk), Unit Morph ([322] Algoztalisk)
 
 202: # Zoryusthaleth
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  6, 39, 4, 38, 39, 39, 577, 740 # Ultrokor, Can Create Unit\Building ([39] Ultrokor), Unit Morph ([39] Ultrokor)
  7, 40, 23, 57, 34, 0, 1136, 1136 # Mitosis, Spell Researched ([34] Healing - Cleric), Cancel (0)
  8, 263, 23, 57, 34, 0, 331, 331 # Swarming Omen, Spell Researched ([34] Healing - Cleric), Cancel (0)
@@ -1487,6 +1494,8 @@
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
 #7, 476, 4, 38, 326, 326, 1348, 1349 # Kethrostalor, Can Create Unit\Building ([326] Kethrostalor), Unit Morph ([326] Kethrostalor)
  7, 346, 23, 57, 34, 0, 472, 472 # Caustic Discharge, Spell Researched ([34] Healing - Cleric), Cancel (0)
+ 9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
+ 9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
 218: # Ion Cannon
  1, 228, 35, 9, 0, 0, 664, 0 # Move, Building Can Move And Has Lifted Off (0), Move (0)
@@ -1624,14 +1633,14 @@
  8, 355, 23, 57, 34, 0, 497, 497 # Fleeting Focus, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 234: # Axitrilisk
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 269, 23, 57, 34, 0, 434, 434 # Perpetual Wind, Spell Researched ([34] Healing - Cleric), Cancel (0)
-# 9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
-# 9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
+ 9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
+ 9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
 235: # [235] Reservoir, addons
  7, 314, 23, 24, 2, 2, 500, 500 # Controlled Demolition, Spell Researched ([2] Controlled Demolition - Terran Structure), Use Technology ([2] Controlled Demolition - Terran Structure)
@@ -1676,9 +1685,9 @@
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
 240: # [240] Gosvileth
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
  4, 231, 43, 39, 0, 0, 675, 0 # Gather, Has No Cargo (Gather - Drone) (0), Gather (0)
  5, 233, 44, 40, 0, 0, 676, 0 # Return Resources, Has Cargo (Return Cargo - Drone) (0), Return Cargo (0)
  6, 261, 23, 57, 34, 0, 461, 461 # Plethoral Gestation, Spell Researched ([34] Healing - Cleric), Cancel (0)
@@ -1706,8 +1715,10 @@
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
-#6, 417, 4, 38, 267, 267, 612, 638 # Tethzorokor, Can Create Unit\Building ([267] Tethzorokor), Unit Morph ([267] Tethzorokor)
+#6, 417, 4, 38, 321, 321, 612, 638 # Okrimnilisk, Can Create Unit\Building ([321] Okrimnilisk), Unit Morph ([321] Okrimnilisk)
  7, 341, 23, 57, 34, 0, 515, 515 # Lashing Limbs, Spell Researched ([34] Healing - Cleric), Cancel (0)
+ 9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
+ 9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
 245: # Sentinel
  1, 228, 35, 9, 0, 0, 664, 0 # Move, Building Can Move And Has Lifted Off (0), Move (0)
@@ -1780,11 +1791,11 @@
  7, 274, 23, 57, 34, 0, 559, 559 # Nihilism, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 253: # Cikralisk
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  6, 422, 4, 38, 272, 272, 1052, 1056 # Ghitorokor, Can Create Unit\Building ([272] Ghitorokor), Unit Morph ([272] Ghitorokor)
  9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
@@ -1946,10 +1957,9 @@
  1, 129, 4, 38, 129, 129, 1063, 1057 # Bactalisk, Can Create Unit\Building ([129] Bactalisk), Unit Morph ([129] Bactalisk)
  2, 417, 4, 38, 267, 267, 612, 638 # Tethzorokor, Can Create Unit\Building ([267] Tethzorokor), Unit Morph ([267] Tethzorokor)
  3, 62, 4, 38, 62, 62, 1288, 1297 # Vithrilisk, Can Create Unit\Building ([62] Vithrilisk), Unit Morph ([62] Vithrilisk)
-# 4, 126, 4, 38, 126, 126, 1362, 1374 # Kagralisk, Can Create Unit\Building ([126] Kagralisk), Unit Morph ([126] Kagralisk)
-# 5, 191, 4, 38, 191, 191, 432, 433 # Axitrilisk, Can Create Unit\Building ([191] Axitrilisk), Unit Morph ([191] Axitrilisk)
-# 5, 52, 4, 38, 52, 52, 517, 518 # Evigrilisk, Can Create Unit\Building ([52] Evigrilisk), Unit Morph ([52] Evigrilisk)
-# 6, 29, 4, 38, 29, 29, 367, 366 # Almaksalisk, Can Create Unit\Building ([29] Almaksalisk), Unit Morph ([29] Almaksalisk)
+# 4, 126, 4, 38, 126, 126, 1362, 1374 # Cherbrathalor, Can Create Unit\Building ([126] Kagralisk), Unit Morph ([126] Kagralisk)
+# 5, 52, 4, 38, 52, 52, 517, 518 # Okrimnilisk, Can Create Unit\Building ([52] Evigrilisk), Unit Morph ([52] Evigrilisk)
+# 6, 29, 4, 38, 29, 29, 367, 366 # Algoztalisk, Can Create Unit\Building ([29] Almaksalisk), Unit Morph ([29] Almaksalisk)
 # 7, 96, 4, 38, 96, 96, 1346, 1347 # Keskathalor, Can Create Unit\Building ([96] Keskathalor), Unit Morph ([96] Keskathalor)
  8, 48, 4, 38, 48, 48, 1348, 1349 # Alkajelisk, Can Create Unit\Building ([48] Alkajelisk), Unit Morph ([48] Alkajelisk)
 
@@ -2067,14 +2077,14 @@
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
 287: # Mortothrokor
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 296, 23, 57, 34, 0, 481, 481 # Whetted Appetite, Spell Researched ([34] Healing - Cleric), Cancel (0)
-#9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
-#9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
+ 9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
+ 9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
 288: # Steward
  7, 359, 23, 57, 34, 0, 1793, 1793 # Evasive Maneuvers, Spell Researched ([34] Healing - Cleric), Cancel (0)
@@ -2165,25 +2175,25 @@
  7, 243, 23, 57, 34, 0, 476, 476 # Dazing Detonation, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 303: # Axitrilisk (Weaponless)
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 269, 23, 57, 34, 0, 1469, 1469 # Perpetual Wind, Spell Researched ([34] Healing - Cleric), Cancel (0)
-#9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
-#9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
+ 9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
+ 9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
  
 304: # Vilgoleth
 #7, 350, 23, 57, 34, 0, 1770, 1770 # Host Autophagy, Spell Researched ([34] Healing - Cleric), Cancel (0)
  7, 296, 23, 57, 34, 0, 1771, 1771 # Corpse Autophagy, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 305: # Shaman (Visionary Mode)
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 379, 30, 6, 5, 5, 1774, 1774 # Visionary Mode, Tank Is In Tank Mode ([5] Terran Deployment), Deployed Mode ([5] Terran Deployment)
  7, 15, 31, 5, 5, 0, 1775, 1775 # Support Mode, Tank Is In Siege Mode ([5] Terran Deployment), Mobile Mode (0)
  8, 366, 23, 57, 34, 0, 1472, 1472 # Nanite Field, Spell Researched ([34] Healing - Cleric), Cancel (0)
@@ -2223,6 +2233,8 @@
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 340, 23, 57, 34, 0, 1745, 1745 # Saber Siphon, Spell Researched ([34] Healing - Cleric), Cancel (0)
+ 9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
+ 9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
 
 311: # Attacking Structure + Interception
  2, 229, 9, 10, 0, 0, 665, 0 # Stop, Attacking Building (0), Stop (0)
@@ -2247,19 +2259,19 @@
  9, 39, 23, 24, 28, 28, 487, 0 # Ultrokor, Spell Researched ([28] Select Control - Zerg Structure), Use Technology ([28] Select Control - Zerg Structure)
 
 314: # Zealot
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 307, 23, 57, 34, 0, 1350, 1350 # Deathless Procession, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 315: # Potentate
- 1, 228, 41, 9, 0, 0, 664, 0 # Move, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Move (0)
- 2, 229, 41, 10, 0, 0, 665, 0 # Stop, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Stop (0)
- 3, 230, 42, 11, 0, 0, 666, 0 # Attack, Not Burrowed (Attack) (0), Attack (0)
- 4, 254, 41, 20, 0, 0, 667, 0 # Patrol, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Patrol (0)
- 5, 255, 41, 21, 0, 0, 668, 0 # Hold Position, Not Burrowed(Move\Stop\Patrol\Hold Position) (0), Hold Position (0)
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 308, 23, 57, 34, 0, 1480, 1480 # Transcendent Tide, Spell Researched ([34] Healing - Cleric), Cancel (0)
  
 #### Buttonsets END ####
@@ -3032,7 +3044,7 @@ Unit 214: # [214] Start Location
  164, 65535, 2, 1 # Button Set: Treasury
           # Stat Preset: Building
 
-Unit 214: # [215] Treasury
+Unit 215: # [215] Treasury
  164, 65535, 2, 1 # Button Set: Treasury
           # Stat Preset: Building
 
@@ -3105,6 +3117,9 @@ Unit 243: # [243] Advanced Protoss Buildings
 
 Unit 245: # [245] Group - Workers
  13, 65535, 0, 0 # Button Set: [13] Group - Workers
+
+Unit 247: # [247] Group - Burrowables
+ 21, 65535, 0, 0 # Button Set: [21] Basic Burrower
 
 Unit 250: # [250] Supreme Terran Buildings
  248, 65535, 0, 0 # Button Set: [248] Supreme Terran Buildings

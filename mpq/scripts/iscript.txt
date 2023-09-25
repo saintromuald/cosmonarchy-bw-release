@@ -5698,14 +5698,14 @@ IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
 WarpIn        	[NONE]
 Unused3       	[NONE]
-StarEditInit  	Goliath_Base_StarEditInit
+StarEditInit  	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
 Goliath_Base_Init:
 	imgul             	236 0 0 # Goliath Shadow (terran\tgoShad.grp)
 Goliath_Base_WalkingToIdle:
-	playfram          	0x77
+	playfram          	0x00
 	goto              	Goliath_Base_Local00
 
 Goliath_Base_Local00:
@@ -5732,13 +5732,16 @@ Goliath_Base_Unused1:
 Goliath_Base_Walking:
 	move              	5
 	wait              	1
-	playfram          	0x88
-	move              	5
-	wait              	1
 	playfram          	0x99
 	move              	5
 	wait              	1
-	playfram          	0x00
+	playfram          	0xaa
+	move              	5
+	wait              	1
+	playfram          	0xbb
+	move              	5
+	wait              	1
+	playfram          	0xcc
 	move              	5
 	wait              	1
 	playfram          	0x11
@@ -5760,13 +5763,10 @@ Goliath_Base_Walking:
 	move              	5
 	wait              	1
 	playfram          	0x77
+	move              	5
+	wait              	1
+	playfram          	0x88
 	goto              	Goliath_Base_Walking
-
-Goliath_Base_StarEditInit:
-	imgol             	235 0 0	# Goliath Turret (terran\goliathT.grp)
-	imgul             	236 0 0	# Goliath Shadow (terran\tgoShad.grp)
-	playfram          	0x77	# Frame set 7
-	goto              	Goliath_Base_Local00
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -5792,22 +5792,28 @@ SpecialState1 	[NONE]
 # ----------------------------------------------------------------------------- #
 
 Goliath_Turret_Init:
-	playfram          	0x77
+	playfram          	0x00
 	goto              	InfestedTerranLocal00
 
 Goliath_Turret_GndAttkInit:
-	playfram          	0xaa
+	playfram          	0xdd
 	playsnd           	70 # Bullet\TGoFir00.wav
 	attackwith        	1
 	wait              	1
-	playfram          	0x77
+	nobrkcodestart
+	playfram          	0x00
 	wait              	1
-	playfram          	0xaa
+	playfram          	0xdd
 	wait              	1
-	playfram          	0x77
+	playfram          	0x00
 	wait              	1
-	playfram          	0xaa
+	playfram          	0xdd
 	wait              	1
+	playfram          	0x00
+	wait              	1
+	playfram          	0xdd
+	wait              	1
+	nobrkcodeend
 	gotorepeatattk
 	goto              	Goliath_Turret_Init
 
@@ -5821,13 +5827,16 @@ Goliath_Turret_AirAttkInit:
 Goliath_Turret_Walking:
 	move              	0
 	wait              	1
-	playfram          	0x88
-	move              	0
-	wait              	1
 	playfram          	0x99
 	move              	0
 	wait              	1
-	playfram          	0x00
+	playfram          	0xaa
+	move              	0
+	wait              	1
+	playfram          	0xbb
+	move              	0
+	wait              	1
+	playfram          	0xcc
 	move              	0
 	wait              	1
 	playfram          	0x11
@@ -5849,6 +5858,9 @@ Goliath_Turret_Walking:
 	move              	0
 	wait              	1
 	playfram          	0x77
+	move              	0
+	wait              	1
+	playfram          	0x88
 	goto              	Goliath_Turret_Walking
 
 # ----------------------------------------------------------------------------- #
@@ -6863,7 +6875,7 @@ IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
 WarpIn        	[NONE]
 Unused3       	[NONE]
-StarEditInit  	Phalanx_Tank_BaseStarEditInit
+StarEditInit  	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -6891,14 +6903,6 @@ Phalanx_Tank_BaseWalking:
 	wait              	1
 	playfram          	0x22
 	goto              	Phalanx_Tank_BaseWalking
-
-Phalanx_Tank_BaseStarEditInit:
-	setfldirect       	12
-	imgoluselo        	251 2 0	# Phalanx (Tank) Turret (terran\tankt.grp)
-	wait              	1
-	imgul             	252 0 0	# Phalanx (Tank) Base Shadow (terran\ttaShad.grp)
-	setfldirect       	12
-	goto              	InfestedTerranWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -6967,7 +6971,7 @@ IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
 WarpIn        	[NONE]
 Unused3       	[NONE]
-StarEditInit  	Phalanx_Siege_BaseStarEditInit
+StarEditInit  	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -6999,7 +7003,7 @@ Phalanx_Siege_BaseInit:
 	playfram          	0xAA
 	wait              	2
 	playfram          	0xBB
-	wait              	32
+	wait              	28
 	sigorder          	1
 	goto              	ScourgeLocal00
 
@@ -7032,10 +7036,6 @@ Phalanx_Siege_BaseSpecialState2:
 	sigorder          	1
 	goto              	ScourgeLocal00
 
-Phalanx_Siege_BaseStarEditInit:
-	imgoluselo        	254 2 0	# Phalanx (Siege) Turret (terran\stankt.grp)
-	goto              	Phalanx_Siege_BaseInit
-
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 254 Phalanx (Siege) Turret (terran\stankt.grp)
@@ -7065,13 +7065,13 @@ Phalanx_Siege_TurretInit:
 	playfram          	0x44
 	wait              	1
 	nobrkcodestart
-	wait              	13
+	wait              	18
 	playfram          	0x55
 	wait              	2
 	playfram          	0x66
 	wait              	2
 	playfram          	0x77
-	wait              	13
+	wait              	8
 	playsnd           	318	# Terran\TANK\TTaTra00.WAV
 	wait              	1
 	playfram          	0x88
@@ -7095,7 +7095,7 @@ Phalanx_Siege_TurretInit:
 Phalanx_Siege_TurretGndAttkInit:
 	wait              	1
 	nobrkcodestart
-	playsnd           	96	# Bullet\TTaFi200.wav
+	playsnd           	96 # Bullet\TTaFi200.wav
 	imgoluselo        	537 2 0	# Siege Tank(Siege) Turret Attack Overlay (thingy\esiFire.grp)
 	wait              	2
 	playfram          	0x11
@@ -7128,7 +7128,7 @@ Phalanx_Siege_TurretSpecialState2:
 	playfram          	0x88
 	wait              	2
 	playfram          	0x77
-	wait              	21
+	wait              	17
 	playfram          	0x66
 	wait              	2
 	playfram          	0x55
@@ -14665,11 +14665,7 @@ VorvrokorWalking:
 
 VorvrokorSpecialState2:
 	playfram          	0x110
-	goto              	VorvrokorLocal04
-
-VorvrokorLocal04:
-	wait              	125
-	goto              	VorvrokorLocal04
+	goto              	ZoryusthalethLocal07
 
 VorvrokorBurrow:
 	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
@@ -14684,7 +14680,7 @@ VorvrokorBurrow:
 	playfram          	0x110
 	wait              	1
 	sigorder          	4
-	goto              	VorvrokorLocal04
+	goto              	ZoryusthalethLocal07
 
 VorvrokorUnBurrow:
 	wait 				1
@@ -19306,11 +19302,11 @@ IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
 WarpIn        	[NONE]
 Unused3       	[NONE]
-StarEditInit  	InstallationDoodad2StarEditInit
+StarEditInit  	[NONE]
 Disable       	InstallationDoodad2Disable
 Burrow        	[NONE]
 UnBurrow      	[NONE]
-Enable        	InstallationDoodad2StarEditInit
+Enable        	InstallationDoodad2Enable
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -19324,7 +19320,7 @@ InstallationDoodad2AlmostBuilt:
 	setflipstate      	1
 	goto              	InfestedTerranLocal00
 
-InstallationDoodad2StarEditInit:
+InstallationDoodad2Enable:
 	playfram          	9
 	setflipstate      	1
 	wait              	2
@@ -19489,7 +19485,7 @@ IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
 WarpIn        	[NONE]
 Unused3       	[NONE]
-StarEditInit  	FloorMissileTrapStarEditInit
+StarEditInit  	[NONE]
 Disable       	FloorMissileTrapSpecialState2
 Burrow        	[NONE]
 UnBurrow      	[NONE]
@@ -19569,28 +19565,6 @@ FloorMissileTrapLocal01:
 	wait              	2
 	playfram          	1
 	sigorder          	1
-	goto              	InfestedTerranLocal00
-
-FloorMissileTrapStarEditInit:
-	playfram          	1
-	wait              	2
-	playfram          	2
-	wait              	2
-	playfram          	3
-	wait              	2
-	playfram          	4
-	wait              	2
-	playfram          	5
-	wait              	2
-	playfram          	6
-	wait              	2
-	playfram          	7
-	wait              	2
-	playfram          	8
-	wait              	2
-	playfram          	9
-	wait              	2
-	playfram          	10
 	goto              	InfestedTerranLocal00
 
 # ----------------------------------------------------------------------------- #
@@ -19674,7 +19648,7 @@ IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
 WarpIn        	[NONE]
 Unused3       	[NONE]
-StarEditInit  	FloorGunTrapSpecialState1
+StarEditInit  	[NONE]
 Disable       	FloorGunTrapSpecialState2
 Burrow        	[NONE]
 UnBurrow      	[NONE]
@@ -19790,7 +19764,7 @@ IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
 WarpIn        	[NONE]
 Unused3       	[NONE]
-StarEditInit  	WallMissileTrapType1SpecialState1
+StarEditInit  	[NONE]
 Disable       	WallMissileTrapType1SpecialState2
 Burrow        	[NONE]
 UnBurrow      	[NONE]
@@ -19873,7 +19847,7 @@ IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
 WarpIn        	[NONE]
 Unused3       	[NONE]
-StarEditInit  	WallMissileTrapTypet2SpecialState1
+StarEditInit  	[NONE]
 Disable       	WallMissileTrapTypet2SpecialState2
 Burrow        	[NONE]
 UnBurrow      	[NONE]
@@ -19958,7 +19932,7 @@ IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
 WarpIn        	[NONE]
 Unused3       	[NONE]
-StarEditInit  	WallFlameTrapType1SpecialState1
+StarEditInit  	[NONE]
 Disable       	WallFlameTrapType1SpecialState2
 Burrow        	[NONE]
 UnBurrow      	[NONE]
@@ -20065,7 +20039,7 @@ IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
 WarpIn        	[NONE]
 Unused3       	[NONE]
-StarEditInit  	WallFlameTrapType2SpecialState1
+StarEditInit  	[NONE]
 Disable       	WallFlameTrapType2SpecialState2
 Burrow        	[NONE]
 UnBurrow      	[NONE]
@@ -26962,7 +26936,7 @@ AlkajeliskWalking:
 # 1113 Keskathalor (zerg\keskathalor.grp)
 .headerstart
 IsId          	461
-Type          	12
+Type          	26
 Init          	KeskathalorInit
 Death         	KeskathalorDeath
 GndAttkInit   	KeskathalorGndAttkInit
@@ -26977,6 +26951,20 @@ Unused2       	[NONE]
 Walking       	KeskathalorWalking
 WalkingToIdle 	KeskathalorGndAttkToIdle
 SpecialState1 	[NONE]
+SpecialState2 	KeskathalorSpecialState2
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	KeskathalorBurrow
+UnBurrow      	KeskathalorUnBurrow
+Enable        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -27115,6 +27103,50 @@ KeskathalorWalking:
 	wait              	1
 	playfram          	0x77
 	goto              	KeskathalorWalking
+	
+KeskathalorSpecialState2:
+	playfram          	0x165
+	goto              	ZoryusthalethLocal07
+
+KeskathalorBurrow:
+	setfldirect			14
+	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	playfram			0x11
+	wait				1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	playfram          	0x55
+	wait              	1
+	playfram          	0x66
+	wait              	1
+	playfram          	0x165
+	wait              	1
+	sigorder          	4
+	goto              	ZoryusthalethLocal07
+
+KeskathalorUnBurrow:
+	wait 				1
+	waitrand          	1 2
+	setfldirect			14
+	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	playfram          	0x66
+	wait              	1
+	playfram          	0x55
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram			0x11
+	wait				1
+	sigorder          	4
+	goto              	KeskathalorGndAttkToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -29094,78 +29126,68 @@ CyclopsUnused1:
 	goto				CyclopsWalkingToIdle
 
 CyclopsGndAttkInit:
-	playfram          	0x2C0
+    playfram              0x00
 CyclopsGndAttkRpt:
-	wait				1
-	nobrkcodestart
-	playfram			0x2E0
-	wait				1
-	playfram			0x300
-	wait				1
-	playfram			0x320
-	playsndbtwn			2548 2549 # Cyclops weapon fire 01, 02
-	attack
-	wait				1
-	playfram			0x00
-	wait				1
-	nobrkcodeend
-	gotorepeatattk
-	ignorerest
+    wait                1
+    nobrkcodestart
+    playfram            0x220
+    playsndbtwn 		2085 2087 # Cyclops weapon fire 01, 02, 03
+    attack
+    wait                1
+    playfram            0x240
+    wait                1
+    playfram			0x260
+    wait				1
+    playfram			0x280
+    wait				1
+    playfram			0x00
+    wait				1
+    nobrkcodeend
+    gotorepeatattk
+    ignorerest
 CyclopsGndAttkToIdle:
-	playfram			0x00
-	wait				1
-	goto              	CyclopsWalkingToIdle
+    playfram			0x00
+    wait				1
+    goto				CyclopsWalkingToIdle
 
 CyclopsWalking:
-	playfram          	0x240
-	move              	5
-	wait              	1
-	playfram          	0x260
-	move              	5
-	wait              	1
-	playfram          	0x280
-	move              	5
-	wait              	1
-	playfram          	0xA0
-	move              	5
-	wait              	1
-	playfram          	0xC0
-	move              	5
-	wait              	1
-	playfram          	0xE0
-	move              	5
-	wait              	1
-	playfram          	0x100
-	move              	5
-	wait              	1
-	playfram          	0x120
-	move              	5
-	wait              	1
-	playfram          	0x140
-	move              	5
-	wait              	1
-	playfram          	0x160
-	move              	5
-	wait              	1
-	playfram          	0x180
-	move              	5
-	wait              	1
-	playfram          	0x1A0
-	move              	5
-	wait              	1
-	playfram          	0x1C0
-	move              	5
-	wait              	1
-	playfram          	0x1E0
-	move              	5
-	wait              	1
-	playfram          	0x200
-	move              	5
-	wait              	1
-	playfram          	0x220
-	move              	5
-	wait              	1
-	goto              	CyclopsWalking
+    playfram			0xA0
+    move				5
+    wait				1
+    playfram			0xC0
+    move				5
+    wait				1
+    playfram			0xE0
+    move				5
+    wait				1
+    playfram			0x100
+    move				5
+    wait				1
+    playfram			0x120
+    move				5
+    wait				1
+    playfram			0x140
+    move				5
+    wait				1
+    playfram			0x160
+    move				5
+    wait				1
+    playfram			0x180
+    move				5
+    wait				1
+    playfram			0x1A0
+    move				5
+    wait				1
+    playfram			0x1C0
+    move				5
+    wait				1
+    playfram			0x1E0
+    move				5
+    wait				1
+    playfram			0x200
+    move				5
+    wait				1
+    goto    			CyclopsWalking
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -34687,23 +34709,23 @@ ZoryusthalethBurrow:
 	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
 	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
 	playfram          	0xee
-	wait              	1 
+	wait              	1
 	playfram          	0xff
-	wait              	1 
+	wait              	1
 	playfram          	0x110
-	wait              	1 
+	wait              	1
 	playfram          	0x121
-	wait              	1 
+	wait              	1
 	playfram          	0x132
 	imgol             	423 15 12 # Burrowing Dust (thingy\bDust.grp)
 	imgol             	423 12 -15 # Burrowing Dust (thingy\bDust.grp)
 	imgol             	423 -12 -3 # Burrowing Dust (thingy\bDust.grp)
-	wait              	1 
+	wait              	1
 	playfram          	0x143
-	wait              	1 
+	wait              	1
 	playfram          	0x154
-	wait              	1 
-	sigorder          	4 
+	wait              	1
+	sigorder          	4
 	goto              	ZoryusthalethLocal07
 
 ZoryusthalethUnBurrow:
@@ -34712,20 +34734,20 @@ ZoryusthalethUnBurrow:
 	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
 	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
 	playfram          	0x143
-	wait              	1 
+	wait              	1
 	playfram          	0x132
-	wait              	1 
+	wait              	1
 	playfram          	0x121
-	wait              	1 
+	wait              	1
 	playfram          	0x110
 	imgol             	423 12 -15 # Burrowing Dust (thingy\bDust.grp)
 	imgol             	423 -12 -12 # Burrowing Dust (thingy\bDust.grp)
-	wait              	1 
+	wait              	1
 	playfram          	0xff
-	wait              	1 
+	wait              	1
 	playfram          	0xee
-	wait              	1 
-	sigorder          	4 
+	wait              	1
+	sigorder          	4
 	goto              	ZoryusthalethGndAttkToIdle
 	
 # ----------------------------------------------------------------------------- #
@@ -40283,49 +40305,45 @@ AxitriliskWalking:
 	goto              	AxitriliskWalking
 
 AxitriliskSpecialState2:
-#	playfram          	0x1a9
-	goto              	AxitriliskLocal04
-
-AxitriliskLocal04:
-	wait              	125
-	goto              	AxitriliskLocal04
+	playfram          	0x200
+	goto              	ZoryusthalethLocal07
 
 AxitriliskBurrow:
 	setfldirect			14
 	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
-#	playfram			0x143
+	playfram			0x20
 	wait				1
-#	playfram          	0x154
+	playfram          	0x40
 	wait              	1
-#	playfram          	0x165
+	playfram          	0x60
 	wait              	1
-#	playfram          	0x176
+	playfram          	0x80
 	wait              	1
-#	playfram          	0x187
+	playfram          	0xA0
 	wait              	1
-#	playfram          	0x198
+	playfram          	0xC0
 	wait              	1
-#	playfram          	0x1a9
+	playfram          	0x200
 	wait              	1
 	sigorder          	4
-	goto              	AxitriliskLocal04
+	goto              	ZoryusthalethLocal07
 
 AxitriliskUnBurrow:
 	wait 				1
 	waitrand          	1 2
 	setfldirect			14
 	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
-#	playfram          	0x198
+	playfram          	0xC0
 	wait              	1
-#	playfram          	0x187
+	playfram          	0xA0
 	wait              	1
-#	playfram          	0x176
+	playfram          	0x80
 	wait              	1
-#	playfram          	0x165
+	playfram          	0x60
 	wait              	1
-#	playfram          	0x154
+	playfram          	0x40
 	wait              	1
-#	playfram			0x143
+	playfram			0x20
 	wait				1
 	sigorder          	4
 	goto              	AxitriliskWalkingToIdle
@@ -44250,43 +44268,35 @@ EvigriliskWalking:
 	goto              	EvigriliskWalking
 
 EvigriliskSpecialState2:
-	playfram          	0xcc
-	goto              	EvigriliskLocal04
-
-EvigriliskLocal04:
-	wait              	125
-	goto              	EvigriliskLocal04
+	playfram          	0x176
+	goto              	ZoryusthalethLocal07
 
 EvigriliskBurrow:
 	imgol             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
-	playfram			0x77
+	playfram			0xdd
 	wait              	1
-	playfram          	0x88
+	playfram          	0xee
 	wait              	1
-	playfram          	0x99
+	playfram          	0xff
 	wait              	1
-	playfram          	0xaa
+	playfram          	0x110
 	wait              	1
-	playfram          	0xbb
-	wait              	1
-	playfram          	0xcc
+	playfram          	0x176
 	sigorder          	4
 	wait              	1
-	goto              	EvigriliskLocal04
+	goto              	ZoryusthalethLocal07
 
 EvigriliskUnBurrow:
 	wait 				1
 	waitrand          	1 2
 	imgul             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
-	playfram          	0xbb
+	playfram          	0x110
 	wait              	1
-	playfram          	0xaa
+	playfram          	0xff
 	wait              	1
-	playfram          	0x99
+	playfram          	0xee
 	wait              	1
-	playfram          	0x88
-	wait              	1
-	playfram			0x77
+	playfram          	0xdd
 	wait              	1
 	sigorder          	4
 	goto              	EvigriliskWalkingToIdle
@@ -46318,7 +46328,7 @@ EpigraphWarpIn:
 # 1309 Tethzorokor (cm\zerg\tethzorokor.grp)
 .headerstart
 IsId          	692
-Type          	21
+Type          	26
 Init          	TethzorokorInit
 Death         	TethzorokorDeath
 GndAttkInit   	TethzorokorGndAttkInit
@@ -46333,7 +46343,7 @@ Unused2       	[NONE]
 Walking       	TethzorokorWalking
 WalkingToIdle 	TethzorokorWalkingToIdle
 SpecialState1 	[NONE]
-SpecialState2 	[NONE]
+SpecialState2 	TethzorokorSpecialState2
 AlmostBuilt   	[NONE]
 Built         	[NONE]
 Landing       	[NONE]
@@ -46341,6 +46351,11 @@ LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
 WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	TethzorokorBurrow
+UnBurrow      	TethzorokorUnBurrow
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -46530,6 +46545,50 @@ TethzorokorWalking:
 TethzorokorWalkingToIdle:
 	playfram			0x00
 	goto				TethzorokorLocal00
+	
+TethzorokorSpecialState2:
+	playfram          	0x4A0
+	goto              	ZoryusthalethLocal07
+
+TethzorokorBurrow:
+	setfldirect			14
+	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	playfram			0x1A0
+	wait				1
+	playfram          	0x1C0
+	wait              	1
+	playfram          	0x1E0
+	wait              	1
+	playfram          	0x200
+	wait              	1
+	playfram          	0x220
+	wait              	1
+	playfram          	0x240
+	wait              	1
+	playfram          	0x4A0
+	wait              	1
+	sigorder          	4
+	goto              	ZoryusthalethLocal07
+
+TethzorokorUnBurrow:
+	wait 				1
+	waitrand          	1 2
+	setfldirect			14
+	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	playfram          	0x240
+	wait              	1
+	playfram          	0x220
+	wait              	1
+	playfram          	0x200
+	wait              	1
+	playfram          	0x1E0
+	wait              	1
+	playfram          	0x1C0
+	wait              	1
+	playfram			0x1A0
+	wait				1
+	sigorder          	4
+	goto              	TethzorokorWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -46635,7 +46694,7 @@ AionLocal00:
 # 1554 Protathalor (cm\zerg\protathalor.grp)
 .headerstart
 IsId          	694
-Type          	21
+Type          	26
 Init          	ProtathalorInit
 Death         	ProtathalorDeath
 GndAttkInit   	ProtathalorGndAttkInit
@@ -46650,7 +46709,7 @@ Unused2       	[NONE]
 Walking       	ProtathalorWalking
 WalkingToIdle 	ProtathalorWalkingToIdle
 SpecialState1 	[NONE]
-SpecialState2 	[NONE]
+SpecialState2 	ProtathalorSpecialState2
 AlmostBuilt   	[NONE]
 Built         	[NONE]
 Landing       	[NONE]
@@ -46658,6 +46717,12 @@ LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
 WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	ProtathalorBurrow
+UnBurrow      	ProtathalorUnBurrow
+Enable        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -46786,7 +46851,7 @@ ProtathalorCastSpell:
 
 ProtathalorWalking:
 	move              	5
-	playfram			0xe0
+	playfram			0xE0
 	wait				1
 	move              	5
 	playfram			0x100
@@ -46819,12 +46884,56 @@ ProtathalorWalkingToIdle:
 	playfram			0x00
 	goto				ProtathalorLocal00
 	
+ProtathalorSpecialState2:
+	playfram          	0x340
+	goto              	ZoryusthalethLocal07
+
+ProtathalorBurrow:
+	setfldirect			14
+	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	playfram			0xE0
+	wait				1
+	playfram          	0x100
+	wait              	1
+	playfram          	0x120
+	wait              	1
+	playfram          	0x140
+	wait              	1
+	playfram          	0x160
+	wait              	1
+	playfram          	0x180
+	wait              	1
+	playfram          	0x340
+	wait              	1
+	sigorder          	4
+	goto              	ZoryusthalethLocal07
+
+ProtathalorUnBurrow:
+	wait 				1
+	waitrand          	1 2
+	setfldirect			14
+	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	playfram          	0x180
+	wait              	1
+	playfram          	0x160
+	wait              	1
+	playfram          	0x140
+	wait              	1
+	playfram          	0x120
+	wait              	1
+	playfram          	0x100
+	wait              	1
+	playfram			0xE0
+	wait				1
+	sigorder          	4
+	goto              	ProtathalorWalkingToIdle
+	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 1569 Vilgorokor (cm\zerg\vilgorokor.grp)
 .headerstart
 IsId          	695
-Type          	21
+Type          	26
 Init          	VilgorokorInit
 Death         	VilgorokorDeath
 GndAttkInit   	VilgorokorGndAttkInit
@@ -46832,14 +46941,14 @@ AirAttkInit   	VilgorokorGndAttkInit
 Unused1       	VilgorokorUnused1
 GndAttkRpt    	VilgorokorGndAttkInit
 AirAttkRpt    	VilgorokorGndAttkInit
-CastSpell     	VilgorokorCastSpell
+CastSpell     	[NONE]
 GndAttkToIdle 	VilgorokorGndAttkToIdle
 AirAttkToIdle 	VilgorokorGndAttkToIdle
 Unused2       	[NONE]
 Walking       	VilgorokorWalking
 WalkingToIdle 	VilgorokorWalkingToIdle
 SpecialState1 	[NONE]
-SpecialState2 	[NONE]
+SpecialState2 	VilgorokorSpecialState2
 AlmostBuilt   	[NONE]
 Built         	[NONE]
 Landing       	[NONE]
@@ -46847,6 +46956,12 @@ LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
 WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	VilgorokorBurrow
+UnBurrow      	VilgorokorUnBurrow
+Enable        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -46939,36 +47054,6 @@ VilgorokorGndAttkToIdle:
 	wait 				1
 	goto              	VilgorokorLocal00
 
-VilgorokorCastSpell:
-	playfram          	0x00
-	wait              	1
-	nobrkcodestart
-	playfram          	0x200
-	wait              	1
-	playfram          	0x220
-	wait              	1
-	playfram          	0x240
-	wait              	1
-	playfram          	0x260
-	wait              	1
-	playfram          	0x280
-	wait              	1
-	playfram          	0x2A0
-	wait              	1
-	playfram          	0x2C0
-	playsndbtwn			2014 2015 # Liiralisk attack 01, 02
-	castspell
-	wait              	1
-	playfram          	0x2E0
-	wait              	1
-	playfram          	0x300
-	wait              	1
-	playfram          	0x320
-	wait              	1
-	nobrkcodeend
-	gotorepeatattk
-	goto              	VilgorokorGndAttkToIdle
-
 VilgorokorWalking:
 	move              	5
 	playfram			0x55
@@ -47012,13 +47097,62 @@ VilgorokorWalking:
 VilgorokorWalkingToIdle:
 	playfram			0x00
 	goto				VilgorokorLocal00
+
+VilgorokorSpecialState2:
+	playfram          	0x198
+	goto              	ZoryusthalethLocal07
+	
+VilgorokorBurrow:
+	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
+	playfram          	0x55
+	wait              	1
+	playfram          	0x66
+	wait              	1
+	playfram          	0x77
+	wait              	1
+	playfram          	0x88
+	wait              	1
+	playfram          	0x99
+	imgol             	423 15 12 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 12 -15 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 -12 -3 # Burrowing Dust (thingy\bDust.grp)
+	wait              	1
+	playfram          	0xaa
+	wait              	1
+	playfram          	0x198
+	wait              	1
+	sigorder          	4
+	goto              	ZoryusthalethLocal07
+
+VilgorokorUnBurrow:
+	wait 				1
+	waitrand          	1 2
+	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
+	playfram          	0xaa
+	wait              	1
+	playfram          	0x99
+	wait              	1
+	playfram          	0x88
+	wait              	1
+	playfram          	0x77
+	imgol             	423 12 -15 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 -12 -12 # Burrowing Dust (thingy\bDust.grp)
+	wait              	1
+	playfram          	0x66
+	wait              	1
+	playfram          	0x55
+	wait              	1
+	sigorder          	4
+	goto              	VilgorokorGndAttkToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 1372 Cikralisk (cm\zerg\cikralisk.grp)
 .headerstart
 IsId          	696
-Type          	21
+Type          	26
 Init          	CikraliskInit
 Death         	CikraliskDeath
 GndAttkInit   	CikraliskGndAttkInit
@@ -47033,7 +47167,7 @@ Unused2       	[NONE]
 Walking       	CikraliskWalking
 WalkingToIdle 	CikraliskWalkingToIdle
 SpecialState1 	[NONE]
-SpecialState2 	[NONE]
+SpecialState2 	CikraliskSpecialState2
 AlmostBuilt   	[NONE]
 Built         	[NONE]
 Landing       	[NONE]
@@ -47041,6 +47175,12 @@ LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
 WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	CikraliskBurrow
+UnBurrow      	CikraliskUnBurrow
+Enable        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -47231,6 +47371,44 @@ CikraliskWalking:
 CikraliskWalkingToIdle:
 	playfram			0x00
 	goto				CikraliskLocal00
+
+CikraliskSpecialState2:
+	playfram          	0x1A0
+	goto              	ZoryusthalethLocal07
+
+CikraliskBurrow:
+	imgol             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
+	playfram			0x20
+	wait              	1
+	playfram          	0x40
+	wait              	1
+	playfram          	0x60
+	wait              	1
+	playfram          	0x80
+	wait              	1
+	playfram          	0xA0
+	wait              	1
+	playfram          	0x1A0
+	sigorder          	4
+	wait              	1
+	goto              	ZoryusthalethLocal07
+
+CikraliskUnBurrow:
+	wait 				1
+	waitrand          	1 2
+	imgul             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
+	playfram			0xA0
+	wait              	1
+	playfram          	0x80
+	wait              	1
+	playfram          	0x60
+	wait              	1
+	playfram          	0x40
+	wait              	1
+	playfram          	0x20
+	wait              	1
+	sigorder          	4
+	goto              	CikraliskWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -51157,7 +51335,7 @@ Unused2       	[NONE]
 Walking       	MortothrokorWalking
 WalkingToIdle 	MortothrokorGndAttkToIdle
 SpecialState1 	[NONE]
-SpecialState2 	[NONE]
+SpecialState2 	MortothrokorSpecialState2
 AlmostBuilt   	[NONE]
 Built         	[NONE]
 Landing       	[NONE]
@@ -51168,8 +51346,8 @@ WarpIn        	[NONE]
 Unused3       	[NONE]
 StarEditInit  	[NONE]
 Disable       	[NONE]
-Burrow        	[NONE]
-UnBurrow      	[NONE]
+Burrow        	MortothrokorBurrow
+UnBurrow      	MortothrokorUnBurrow
 Enable        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
@@ -51336,6 +51514,50 @@ MortothrokorWalking:
 	move              	4
 	wait				1
 	goto              	MortothrokorWalking
+	
+MortothrokorSpecialState2:
+ 	playfram          	0xAF
+	goto              	ZoryusthalethLocal07
+
+MortothrokorBurrow:
+	setfldirect			14
+	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	playfram			0x11
+	wait				1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	0xAF
+	wait              	1
+	sigorder          	4
+	goto              	ZoryusthalethLocal07
+
+MortothrokorUnBurrow:
+	wait 				1
+	waitrand          	1 2
+	setfldirect			14
+	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram			0x11
+	wait				1
+	sigorder          	4
+	goto              	MortothrokorGndAttkToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:

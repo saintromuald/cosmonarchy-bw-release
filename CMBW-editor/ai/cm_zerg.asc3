@@ -4501,37 +4501,27 @@ script_id ZMCx
 	goto request_surkith_loop
 	
 	:request_surkith_check
-	local 255 AtL 5 surkith_cesiant request_surkith_check_2
+	local 255 AtL 3 surkith_cesiant|skortrith_cesiant request_surkith_check_2
 	call request_skortrith
-	add_bld 255 surkith_cesiant 1 5 106
+	add_bld 255 surkith_cesiant 1 3 106
 	var Ex|Jump under_attack_by_ground_var 1 add_return_wait_960 13
 	goto add_return_wait_1440
 	
 	:request_surkith_check_2
-	var Ex|Jump under_attack_by_ground_var 1 request_surkith_check_3 13
-	var AtM|Jump mining_count_var 2 add_return_wait_960 13
+	local 255 AtL 6 surkith_cesiant|skortrith_cesiant add_return_wait_1440
+	var Ex|Jump under_attack_by_ground_var 0 add_return_wait_1440 13
 	call request_skortrith_2
-	add_bld 255 surkith_cesiant 1 7 106
-	goto add_return_wait_960
-	
-	:request_surkith_check_3
-	call request_skortrith_3
-	add_bld 255 surkith_cesiant 1 10 106
+	add_bld 255 surkith_cesiant 1 6 106
 	goto add_return_wait_960
 	
 	:request_skortrith
 	bring 13 Ex 0 irol_iris|othstol_oviform Loc.63 blank_return
-	add_bld 255 skortrith_cesiant 1 5 106
+	add_bld 255 skortrith_cesiant 1 3 106
 	return
 	
 	:request_skortrith_2
 	bring 13 Ex 0 irol_iris|othstol_oviform Loc.63 blank_return
-	add_bld 255 skortrith_cesiant 1 7 106
-	return
-	
-	:request_skortrith_3
-	bring 13 Ex 0 irol_iris|othstol_oviform Loc.63 blank_return
-	add_bld 255 skortrith_cesiant 1 10 106
+	add_bld 255 skortrith_cesiant 1 6 106
 	return
 	
 	:request_spraith
@@ -4555,37 +4545,27 @@ script_id ZMCx
 	goto request_spraith_loop
 	
 	:request_spraith_check
-	local 255 AtL 3 spraith_cesiant request_spraith_check_2
+	local 255 AtL 3 spraith_cesiant|spirtith_cesiant request_spraith_check_2
 	call request_spirtith
-	add_bld 255 spraith_cesiant 1 10 106
+	add_bld 255 spraith_cesiant 1 3 106
 	var Ex|Jump under_attack_by_air_var 1 add_return_wait_960 13
 	goto add_return_wait_1440
 	
 	:request_spraith_check_2
-	var Ex|Jump under_attack_by_air_var 1 request_spraith_check_3 13
-	var AtM|Jump mining_count_var 2 add_return_wait_960 13
+	local 255 AtL 6 spraith_cesiant|spirtith_cesiant add_return_wait_1440
+	var Ex|Jump under_attack_by_air_var 0 add_return_wait_1440 13
 	call request_spirtith_2
-	add_bld 255 spraith_cesiant 1 7 106
-	goto add_return_wait_960
-	
-	:request_spraith_check_3
-	call request_spirtith_3
-	add_bld 255 spraith_cesiant 1 10 106
+	add_bld 255 spraith_cesiant 1 6 106
 	goto add_return_wait_960
 	
 	:request_spirtith
 	bring 13 Ex 0 irol_iris|othstol_oviform Loc.63 blank_return
-	add_bld 255 spirtith_cesiant 1 5 106
+	add_bld 255 spirtith_cesiant 1 3 106
 	return
 	
 	:request_spirtith_2
 	bring 13 Ex 0 irol_iris|othstol_oviform Loc.63 blank_return
-	add_bld 255 spirtith_cesiant 1 7 106
-	return
-	
-	:request_spirtith_3
-	bring 13 Ex 0 irol_iris|othstol_oviform Loc.63 blank_return
-	add_bld 255 spirtith_cesiant 1 10 106
+	add_bld 255 spirtith_cesiant 1 6 106
 	return
 	
 	:production_cycle

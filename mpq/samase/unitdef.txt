@@ -347,6 +347,7 @@ building geszkath_grotto = 219
 building irol_iris = 224
 building sibraelosk = 227
 building spirtith_cesiant = 292
+building skortrith_cesiant = 293
 building rakzogth_roost = 303
 building begrozith_barrow = 329
 building chokralgant_chazsal = 330

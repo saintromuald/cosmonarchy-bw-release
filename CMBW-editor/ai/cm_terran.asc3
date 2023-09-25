@@ -4456,7 +4456,7 @@ script_id TMCx
 	goto request_anchor
 	
 	:request_anchor_check
-	local 255 AtL 4 anchor blank_return
+	local 255 AtL 3 anchor blank_return
 	var Ex|Jump under_attack_by_ground_var 1 request_anchor_check2 13
 	var Ex|Jump under_attack_by_air_var 1 request_anchor_check2 13
 	add_bld 255 anchor 1 2 95
@@ -4499,19 +4499,14 @@ script_id TMCx
 	goto request_watchdog
 	
 	:request_watchdog_check
-	local 255 AtL 4 watchdog request_watchdog_check2
-	add_bld 255 watchdog 1 4 97
+	local 255 AtL 3 watchdog request_watchdog_check2
+	add_bld 255 watchdog 1 3 98
 	var Ex|Jump under_attack_by_air_var 1 add_return_wait_480 13
 	goto add_return_wait_960
 	
 	:request_watchdog_check2
-	var Ex|Jump under_attack_by_air_var 1 request_watchdog_check3 13
-	var AtM|Jump mining_count_var 2 add_return_wait_480 13
-	add_bld 255 watchdog 1 7 97
-	goto add_return_wait_480
-	
-	:request_watchdog_check3
-	add_bld 255 watchdog 1 10 97
+	var Ex|Jump under_attack_by_air_var 0 add_return_wait_960 13
+	add_bld 255 watchdog 1 6 98
 	goto add_return_wait_480
 	
 	:request_sentinel
@@ -4525,21 +4520,14 @@ script_id TMCx
 	
 	:request_sentinel_check
 	local 255 AtL 4 sentinel request_sentinel_check2
-	add_bld 255 sentinel 1 4 98
+	add_bld 255 sentinel 1 3 98
 	var Ex|Jump under_attack_by_ground_var 1 add_return_wait_480 13
-	var Ex|Jump under_attack_by_air_var 1 add_return_wait_480 13
 	goto add_return_wait_960
 	
 	:request_sentinel_check2
-	var Ex|Jump under_attack_by_ground_var 1 request_sentinel_check3 13
-	var Ex|Jump under_attack_by_air_var 1 request_sentinel_check3 13
-	var AtM|Jump mining_count_var 2 add_return_wait_480 13
-	add_bld 255 sentinel 1 7 98
-	goto add_return_wait_480
-	
-	:request_sentinel_check3
-	add_bld 255 sentinel 1 10 98
-	goto add_return_wait_480
+	var Ex|Jump under_attack_by_ground_var 0 add_return_wait_960 13
+	add_bld 255 sentinel 1 6 98
+	goto add_return_wait_960
 	
 	:request_diadem
 	var Ex|Wait can_build_static_defense_var 1 13
@@ -4553,12 +4541,12 @@ script_id TMCx
 	
 	:request_diadem_check
 	local 255 AtL 1 diadem request_diadem_check2
-	add_bld 255 diadem 1 1 98
+	add_bld 255 diadem 1 1 99
 	goto add_return_wait_960
 	
 	:request_diadem_check2
-	var Ex|Jump under_attack_var 0 add_return_wait_960 13
-	add_bld 255 diadem 1 2 98
+	var AtM|Jump mining_count_var 3 add_return_wait_960 13
+	add_bld 255 diadem 1 2 99
 	goto add_return_wait_960
 	
 	:request_infrastructure

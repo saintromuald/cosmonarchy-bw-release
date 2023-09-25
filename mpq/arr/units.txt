@@ -384,7 +384,7 @@ Madrigal Turret (Furia)
 Omnivale
 Terran Lodestone
 Floor Hatch
-Extended Unit #159
+Terran Treasury
 Extended Unit #160
 Extended Unit #161
 Extended Unit #162

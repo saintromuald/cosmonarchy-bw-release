@@ -3860,37 +3860,37 @@ script_id PMCx
 	local 255 AtL_M 10 warden request_matrix_check
 	local 255 AtL 10 warden blank_return
 	local 255 AtL 4 warden request_warden_check2
-	add_bld 255 warden 1 4 95
+	add_bld 255 warden 1 3 95
 	var Ex|Jump under_attack_by_ground_var 1 add_return_wait_480 13
 	var Ex|Jump under_attack_by_air_var 1 add_return_wait_480 13
 	goto add_return_wait_960
 	
 	:request_warden_check2
-	var Ex|Jump under_attack_by_ground_var 1 request_warden_check3 13
-	var Ex|Jump under_attack_by_air_var 1 request_warden_check3 13
-	var AtM|Jump mining_count_var 2 add_return_wait_960 13
-	add_bld 255 warden 1 7 95
-	goto add_return_wait_480
+	var Ex|Jump under_attack_by_ground_var 0 request_warden_check2a 13
+	goto request_warden_check2b
 	
-	:request_warden_check3
-	add_bld 255 warden 1 10 95
-	goto add_return_wait_480
+	:request_warden_check2a
+	var Ex|Jump under_attack_by_air_var 0 add_return_wait_960 13
+	
+	:request_warden_check2b
+	add_bld 255 warden 1 6 95
+	goto add_return_wait_960
 	
 	:request_matrix_check
 	local 255 AtL 10 matrix blank
 	local 255 AtL 4 matrix request_matrix_check2
-	add_bld 255 matrix 1 4 95
+	add_bld 255 matrix 1 2 95
 	stop
 	
 	:request_matrix_check2
-	var Ex|Jump under_attack_by_ground_var 1 request_matrix_check3 13
-	var Ex|Jump under_attack_by_air_var 1 request_matrix_check3 13
-	var AtM|Jump mining_count_var 2 blank 13
-	add_bld 255 matrix 1 7 95
-	stop
+	var Ex|Jump under_attack_by_ground_var 0 request_matrix_check2a 13
+	goto request_matrix_check2b
 	
-	:request_matrix_check3
-	add_bld 255 matrix 1 10 95
+	:request_matrix_check2a
+	var Ex|Jump under_attack_by_air_var 0 blank 13
+	
+	:request_matrix_check2b
+	add_bld 255 matrix 1 5 95
 	stop
 	
 	:request_engram_check
@@ -3900,14 +3900,14 @@ script_id PMCx
 	stop
 	
 	:request_engram_check2
-	var Ex|Jump under_attack_by_ground_var 1 request_engram_check3 13
-	var Ex|Jump under_attack_by_air_var 1 request_engram_check3 13
-	var AtM|Jump mining_count_var 2 blank 13
-	add_bld 255 engram 1 4 96
-	stop
+	var Ex|Jump under_attack_by_ground_var 0 request_engram_check2a 13
+	goto request_engram_check2b
 	
-	:request_engram_check3
-	add_bld 255 engram 1 6 96
+	:request_engram_check2a
+	var Ex|Jump under_attack_by_air_var 0 blank 13
+	
+	:request_engram_check2b
+	add_bld 255 engram 1 4 96
 	stop
 	
 	:request_embassy
