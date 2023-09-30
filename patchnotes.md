@@ -1,82 +1,84 @@
-# 25 September 2023
+# 30 September 2023
 
 ## Designer's Notes
 
-A similarly-sized patch will be on the horizon before our next tournament on 30 Sep! See you all then.
-
 Patch goals include:
-- Pulling the trigger on the "shroud piercer" Kinetic Penetration revision
-- Continuing to adjust balance in the wake of Ascension #4
-- Further improving audiovisuals
+- Adjust balance after Kinetic Penetration changes
+- Improve role identity and synergy for a few problem units
+- Further improve audiovisuals
 
 ## Summary
-- Kinetic Penetration now deals full damage to the first target, and half damage to all others
-- Melee air unit performance has been significantly improved
+- Fairly minor changes were made in this update, with a few nasty bugs finally quashed!
 
 ## Latest content
-- [Ascension #4 - Calm Before the Storm](https://www.youtube.com/playlist?list=PLACFHAM2MlxOlZKGsQvv3wOH3G7gzPSc1)
-- [Pr0totype #24 - A Psionic Hurricane!](https://youtu.be/1cXLyQIFcZw)
-
-## Map Pool
-- Competitive 1v1:
-	- Removed: Equilibrium
-	- Added: Ex Situ
+- [Crash Course: Micro!](https://youtu.be/pgrVDYiMzeM)
+- [Pr0totype #25 - Titans Walk Among Us!](https://youtu.be/2ZZ7i1CmAz8):
 
 ## Internals
-- Cagra spread now uses a safer random function, which may help with network stability
+- Terrain height has been extended by DarkenedFantasies, allowing tilesets to have significantly more height levels!
+	- This required some changes to vision range and weapon range; be on the lookout for any related issues!
 
-## Gameplay
-- Kinetic Penetration now deals full damage only to the first target, and half damage to all other victims (c. Veeq7)
-- Stewards now reveal their parent Solarions when attacking from out of vision
-- The following Zerg ground units can now burrow:
-	- Cikralisk, Protathalor, Axitrilisk, Mortothrokor, Tethzorokor, Evigrilisk, Keskathalor, Vilgorokor
+## Tilesets
+- The following tiles now provide a height difference:
+	- Desert: Sandy Sunken Pit (both variants)
+	- Iceworld: Ice
+	- Twilight: Sunken Ground (both variants)
 
 ## Bugfixes
+- Stability:
+	- A null unit crash related to updating unit speed has been fixed (r. greeneggsnspam, c. DF)
 - Gameplay:
-	- Lifted turreted units (e.g. Goliath) can no longer attack from lifted Anchors (r. Mystery Meat)
-	- Melee air unit tracking has vastly improved (c. DF)
-	- Lardfix: Mixed selections of burrowed and unburrowed units (including selections with Lakizilisks) no longer prohibit basic commands
-- Audiovisuals:
-	- Terran error SFX can now correctly plays no more than once at any time
-	- Phalanx siege transforms have had turret and base relations corrected (r. DF)
-	- Vagrant unit responses have been corrected
-	- Treasuries now display progress bars while under construction, and no longer display an armor icon
-	- Birthing Zerg units now use the correct armor icon
-	- Vagrant selection circle has been corrected
-	- Custom UI graphics (order lines, transport UI, etc) are now reset between games (c. Veeq7)
-	- Lardfix: title music now plays again after concluding a multiplayer game (c. DF)
-- Tilesets:
-	- Adjusted pathing for default Ashworld dirt and magma cliffs to be more consistent
-	- Fixed numerous height and buildability issues on niche Jungle tiles (r. TheBeaver99)
-
-## AI
-- Increased refinery request priorities to improve gas capping pace
-- Reduced number of tower requests per base to reduce clutter
-- Madcaps and short-range units will no longer attempt kiting
-
-## Audiovisuals
-- New sprite for:
-	- Goliath (c. Solstice, wireframe c. jun3hong)
-- Updated sprite for:
-	- Cyclops (c. Solstice, wireframe updates c. jun3hong)
+	- Changing selections after units die no longer occasionally breaks selections (c. DF)
+	- Reclaiming Terran addons no longer sometimes sets the parent to neutral (r. neblime)
+	- Lobotomy Mine, Claymore, and Gorgon slows now correctly apply to flingy-based units (r. neblime & TheBeaver99)
+	- Psionic Storm now correctly damages the caster (c. Veeq7)
+	- Iroleths now correctly regress to Ovileths
+	- Group-selecting Lakizilisks and other units no longer occasionally shows a disabled attack icon
+	- Fixed a rare issue with Olympians becoming unresponsive when moving after a melee attack (r. lolrsk8s)
 
 ## Terran
-- [Sentinel](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/sentinel):
-	- Weapon damage now 1x24, from 1x20
+- [Savant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/savant):
+	- Armor now 2, from 1
+	- No longer has energy
+	- Entropy Gauntlets now always provides Kinetic Penetration
+- [Madcap](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/madcap):
+	- Cabeirus Feeders now provides 15% attack speed per stack, from ~10%
+- [Vulture](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/vulture):
+	- HP now 85, from 90
+	- Now moves 6.25% faster
+	- Now visibly shoots two projectiles for better visual clarity
+- [Cataphract](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cataphract):
+	- Weapon range now 9, from 8
+- [Gorgon](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/gorgon):
+	- Weapon cooldown now 0.79, from 0.83
+- [Azazel](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/azazel):
+	- Defensive Matrix:
+		- Timer now 10 seconds, from 30
+		- Heal now 10 HP per second, from 5
+- [Magnetar](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/magnetar):
+	- Max energy now 150, from 250
+- [Fountainhead](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/fountainhead):
+	- Mineral, gas, and time costs now 250/500/45, from 200/400/30
+- [Tinkerer's Tower](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/tinkerers-tower):
+	- Mineral and gas costs now 100/50, from 75/75
 
 ## Protoss
-- [Matrix](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/matrix):
-	- HP now 180, from 150
-- [Star Sovereign](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/star-sovereign):
-	- Intervention Missiles no longer deal splash damage
-- [Patriarch](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/patriarch):
-	- Weapon cooldown now 1.25, from 1.5
+- [Cabalist](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/cabalist):
+	- Shields now 30, from 20
+	- Now decloaks on teleport
+- [Positron](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/positron):
+	- Weapon now has Interception
+- [Clarion](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/clarion):
+	- Now a Detector
+- [Ancestral Archives](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/ancestral-archives):
+	- Mineral and gas costs now 450/400, from 500/500
 
 ## Zerg
-- [Quazilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/quazilisk):
-	- Mineral cost now 75, from 100
 - [Nathrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/nathrokor):
-	- Time cost now 25, from 22
-	- Vestigial Strike armor penetration now 1, from 2
-- [Gorgrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/gorgrokor):
-	- Calcification weapon damage now 1x8, from 1x5
+	- Vestigial Strike armor penetration now 0, from 1
+- [Bactalisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/bactalisk):
+	- Armor now 2, from 3
+- [Matraleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/matraleth):
+	- Parasitic Excision:
+		- Cast range now 2, from 8
+		- Now has a 1-second channel

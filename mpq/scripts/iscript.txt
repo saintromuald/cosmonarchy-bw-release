@@ -2006,6 +2006,43 @@ MatralethCastSpell:
 	playsnd				920 # Matraleth Spellcast 01
 	wait              	1
 	playfram          	0x88
+	wait              	1
+	playfram          	0x77
+	wait              	1
+	playfram          	0x66
+	wait              	1
+	playfram          	0x55
+	wait              	1
+	playfram          	0x66
+	wait              	1
+	playfram          	0x77
+	wait              	1
+	playfram          	0x88
+	wait              	1
+	playfram          	0x77
+	wait              	1
+	playfram          	0x66
+	wait              	1
+	playfram          	0x55
+	wait              	1
+	playfram          	0x66
+	wait              	1
+	playfram          	0x77
+	wait              	1
+	playfram          	0x88
+	wait              	1
+	playfram          	0x77
+	wait              	1
+	playfram          	0x66
+	wait              	1
+	playfram          	0x55
+	wait              	1
+	playfram          	0x66
+	wait              	1
+	playfram          	0x77
+	wait              	1
+	playfram          	0x88
+	wait              	1
 	castspell
 	sigorder          	2
 	wait              	1
@@ -6602,6 +6639,7 @@ VultureUnused1:
 
 VultureGndAttkInit:
 	wait              	1
+	attackwith        	1
 	attackwith        	1
 	playsnd           	106 # Bullet\tvuFir00.wav
 	gotorepeatattk
@@ -15465,7 +15503,6 @@ FragmentationGrenadeLocal00:
 
 FragmentationGrenadeDeath:
 	imgol             	440 0 0 # Fragmentation Grenade Hit (thingy\efgHit.grp)
-	domissiledmg
 	domissiledmg
 	wait              	1
 	end
@@ -31108,15 +31145,15 @@ BactaliskGndAttkInit:
 	playfram          	0xee
 	wait              	1 
 	playfram          	0xff
-	playsndbtwn       	46 48	# Misc\CRITTERS\JCrWht00.wav | Misc\CRITTERS\JCrWht02.wav
-	sproluselo        	332 0	# Needle Spines (thingy\spooge.grp)
+	playsndbtwn       	46 48 # Misc\CRITTERS\JCrWht00.wav | Misc\CRITTERS\JCrWht02.wav
+	sproluselo        	332 0 # Needle Spines (thingy\spooge.grp)
 	attackwith        	1 
 	wait              	2 
 	playfram          	0x110
 	wait              	2 
 	playfram          	0x121
 	attackwith        	1 
-	sproluselo        	332 0	# Needle Spines (thingy\spooge.grp)
+	sproluselo        	332 0 # Needle Spines (thingy\spooge.grp)
 	wait              	2 
 	playfram          	0x132
 	wait              	1 
@@ -39546,8 +39583,8 @@ OlympianGndAttkRpt:
 	wait				1
 	playfram          	0x260
 	wait				1
-	sigorder			32
 	nobrkcodeend
+	sigorder			32
 	gotorepeatattk
 	ignorerest
 OlympianGndAttkToIdle:
@@ -39562,10 +39599,9 @@ OlympianGndAttkToIdle:
 OlympianSpecialState1:
 	playfram			0x2A0
 	wait				1
-	playfram			0x2C0
-OlympianLocal05:
-	wait				1
 	nobrkcodestart
+	playfram			0x2C0
+	wait				1
 	playfram			0x2E0
 	attackmelee			3 1577 1578 1579 # Olympian Melee 01, 02, 03
 	wait				1
