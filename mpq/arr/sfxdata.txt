@@ -2555,7 +2555,7 @@ Cyclops Weaponhit 03
 Patriarch Weaponfire 01
 Patriarch Weaponfire 02
 Patriarch Weaponfire 03
-Extended Sound #1
+Lobby -- Player Join
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

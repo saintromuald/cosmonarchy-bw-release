@@ -2555,3 +2555,4 @@ cm\t\cyclops\wh-03.wav
 cm\p\patriarch\wf-01.wav
 cm\p\patriarch\wf-02.wav
 cm\p\patriarch\wf-03.wav
+cm\ui\lobby_player-join.wav
