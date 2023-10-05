@@ -14,6 +14,12 @@ Patch goals include:
 - [Crash Course: Micro!](https://youtu.be/pgrVDYiMzeM)
 - [Pr0totype #25 - Titans Walk Among Us!](https://youtu.be/2ZZ7i1CmAz8):
 
+## Hotfix 5 October 2023
+- Partially-fixed burrowed regression interactions
+- Fixed Magnetar max energy (r. Mystery Meat)
+- Added initial support for middle mouse button scrolling (c. Veeq7)
+- Added lobby join sound (with help from DF)
+
 ## Internals
 - Terrain height has been extended by DarkenedFantasies, allowing tilesets to have significantly more height levels!
 	- This required some changes to vision range and weapon range; be on the lookout for any related issues!
