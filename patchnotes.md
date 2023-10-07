@@ -62,7 +62,7 @@ Patch goals include:
 		- Timer now 10 seconds, from 30
 		- Heal now 10 HP per second, from 5
 - [Magnetar](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/magnetar):
-	- Max energy now 150, from 250
+	- Max energy now 200, from 250
 - [Fountainhead](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/fountainhead):
 	- Mineral, gas, and time costs now 250/500/45, from 200/400/30
 - [Tinkerer's Tower](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/tinkerers-tower):
