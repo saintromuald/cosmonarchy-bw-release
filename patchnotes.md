@@ -14,6 +14,10 @@ Patch goals include:
 - [Crash Course: Micro!](https://youtu.be/pgrVDYiMzeM)
 - [Pr0totype #25 - Titans Walk Among Us!](https://youtu.be/2ZZ7i1CmAz8):
 
+## Hotfix 9 October 2023
+- Mortothrokor death animations no longer cause instability (r. TheBeaver99)
+- Irradiate now sends "under attack" notifications (r. The Shambler)
+
 ## Hotfix 5 October 2023
 - Partially-fixed burrowed regression interactions
 - Fixed Magnetar max energy (r. Mystery Meat)

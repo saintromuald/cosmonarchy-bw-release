@@ -51473,7 +51473,7 @@ MortothrokorDeath:
 	wait              	2
 	playfram          	174
 	wait              	2
-	lowsprul          	1737 0 0 # Mortothrokor Remnants (cm\zerg\mortothrokor-remnants.grp)
+	lowsprul          	868 0 0 # Mortothrokor Remnants (cm\zerg\mortothrokor-remnants.grp)
 	wait              	1
 	end
 	
