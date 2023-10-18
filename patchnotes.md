@@ -14,6 +14,10 @@ Patch goals include:
 - [Crash Course: Micro!](https://youtu.be/pgrVDYiMzeM)
 - [Pr0totype #25 - Titans Walk Among Us!](https://youtu.be/2ZZ7i1CmAz8):
 
+## Hotfix 18 October 2023
+- Missile interception and penetration vs cloaked/burrowed units can no longer crash if the attacker dies before the projectile strikes (r. neblime)
+- Trying to enter a Nydus Cesiant while its exit is in-progress no longer crashes (r. Boris)
+
 ## Hotfix 9 October 2023
 - Mortothrokor death animations no longer cause instability (r. TheBeaver99)
 - Irradiate now sends "under attack" notifications (r. The Shambler)
