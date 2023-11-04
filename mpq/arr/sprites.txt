@@ -853,7 +853,7 @@ Engram
 Hammerfall Beacon
 Zarcavrokor Bone
 Cyprian Rail
-Sentinel Rail
+Sevenstep Rail
 Bactalisk Acid
 Ocsal Larva
 Burst Lasers Impact Red Damageless
@@ -884,7 +884,7 @@ Ocsal Cesiant
 Potentate
 Skortrith Cesiant Tentacle
 Cyclops Weapon Impact
-Extended Sprite #1
+Sentinel Rail
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1

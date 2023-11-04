@@ -471,7 +471,7 @@ Engram
 Hammerfall Beacon
 Zarcavrokor Bone
 Cyprian Rail
-Sentinel Rail
+Sevenstep Rail
 Bactalisk Acid
 Ocsal Larva
 Burst Lasers Red Small
@@ -496,7 +496,7 @@ Ocsal Cesiant
 Potentate
 Skortrith Cesiant Tentacle
 Cyclops Weapon Impact
-Extended Flingy #290
+Sentinel Rail
 Extended Flingy #291
 Extended Flingy #292
 Extended Flingy #293

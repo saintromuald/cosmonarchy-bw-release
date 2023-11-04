@@ -8891,47 +8891,47 @@ WarpIn        	[NONE]
 # ----------------------------------------------------------------------------- #
 
 PhysicsLabInit:
-	imgul             	303 0 0	# Physics Lab Shadow (terran\tplShad.grp)
+	imgul             	303 0 0 # Physics Lab Shadow (terran\tplShad.grp)
 PhysicsLabBuilt:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	goto              	PhysicsLabLocal00
 
 PhysicsLabLocal00:
-	wait              	125 
+	wait              	125
 	goto              	PhysicsLabLocal00
 
 PhysicsLabDeath:
-	playsnd           	7	# Misc\ExploLrg.wav
-	imgol             	334 0 0	# Building Explosion (Large) (thingy\tBangX.grp)
-	wait              	3 
+	playsnd           	7 # Misc\ExploLrg.wav
+	imgol             	334 0 0 # Building Explosion (Large) (thingy\tBangX.grp)
+	wait              	3
 	liftoffcondjmp    	PhysicsLabLocal01
-	lowsprul          	273 0 0	# Terran Building Rubble (Small) (thingy\RubbleS.grp)
-	wait              	1 
+	lowsprul          	273 0 0 # Terran Building Rubble (Small) (thingy\RubbleS.grp)
+	wait              	1
 	end
 
 PhysicsLabLocal01:
-	wait              	1 
+	wait              	1
 	end
 
 PhysicsLabAlmostBuilt:
-	playfram          	6	# Frame set 0, direction 6
+	playfram          	6
 	goto              	PhysicsLabLocal00
 
 PhysicsLabLanding:
-	imgol             	302 0 0	# Physics Lab Connector (terran\physicsC.grp)
+	imgol             	302 0 0 # Physics Lab Connector (terran\physicsC.grp)
 	goto              	PhysicsLabLocal00
 
 PhysicsLabIsWorking:
-	playfram          	1	# Frame set 0, direction 1
-	wait              	3 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	3 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	3 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	3 
-	playfram          	0x00	# Frame set 0
-	wait              	3 
+	playfram          	1
+	wait              	3
+	playfram          	2
+	wait              	3
+	playfram          	3
+	wait              	3
+	playfram          	4
+	wait              	3
+	playfram          	0x00
+	wait              	3
 	goto              	PhysicsLabIsWorking
 
 # ----------------------------------------------------------------------------- #
@@ -10991,17 +10991,17 @@ InterceptorDeath:
 	end
 
 InterceptorGndAttkInit:
-	wait              	1 
-	attackwith        	1 
-	playfram          	0x11	# Frame set 1
-	wait              	1 
-	playfram          	0x00	# Frame set 0
+	wait              	1
+	attackwith        	1
+	playfram          	0x11
+	wait              	1
+	playfram          	0x00
 	gotorepeatattk
 	goto              	InfestedTerranLocal00
 
 InterceptorWalking:
-	playfram          	0x00	# Frame set 0
-	setvertpos        	0 
+	playfram          	0x00
+	setvertpos        	0
 	goto              	InfestedTerranLocal00
 
 # ----------------------------------------------------------------------------- #
@@ -11041,7 +11041,7 @@ ScribeInit:
 	goto              	InfestedTerranLocal00
 
 ScribeDeath:
-	setfldirect       	0 
+	setfldirect       	0
 	playsnd           	598	# Protoss\PROBE\PPrDth00.WAV
 	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
 	playfram			17
@@ -11078,7 +11078,11 @@ ScribeUnused1:
 
 ScribeGndAttkInit:
 	wait              	1
+	nobrkcodestart
+	playfram			0x20
 	attackwith        	1
+	playfram			0x00
+	nobrkcodeend
 	gotorepeatattk
 	goto              	InfestedTerranLocal00
 
@@ -11088,8 +11092,7 @@ ScribeWalking:
 
 ScribeAlmostBuilt:
 	useweapon         	63 # Particle Beam (Harvest) (Particle Beam)
-	wait              	1 
-	wait 				8
+	wait              	9
 	goto              	ScribeAlmostBuilt
 
 ScribeWarpIn:
@@ -14659,7 +14662,7 @@ VorvrokorDeath:
 	wait              	2
 	playfram          	295
 	wait              	2
-	lowsprul          	160 0 0 # Zergling Remnants (zerg\zzeDeath.grp)
+	lowsprul          	160 0 0 # Zethrokor Remnants (zerg\zzeDeath.grp)
 	wait              	1 
 	end
 
@@ -21593,7 +21596,7 @@ MindTyrantDeathInit:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 929 Lanifect (protoss\corsair.grp)
+# 929 Lanifect (cm\protoss\lanifect.grp)
 .headerstart
 IsId          	369
 Type          	21
@@ -21623,7 +21626,7 @@ WarpIn        	LanifectWarpIn
 # ----------------------------------------------------------------------------- #
 
 LanifectInit:
-	imgul             	930 0 42 # Lanifect Shadow (protoss\corsair.grp)
+	imgul             	930 0 42 # Lanifect Shadow (cm\protoss\lanifect.grp)
 LanifectGndAttkToIdle:
 	playfram          	0x00
 	goto              	OvilethLocal00
@@ -21638,23 +21641,17 @@ LanifectDeath:
 
 LanifectAirAttkInit:
 	nobrkcodestart
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
 	attackwith        	2
-	playsnd           	1060 # Protoss\Lanifect\PCorlasr2.wav
-	playfram          	0x22
+	playsnd           	1060 # Protoss\Corsair\PCorlasr2.wav
+	playfram          	0x60
 	wait              	1
-	playfram          	0x33
+	playfram          	0x80
 	wait              	1
-	playfram          	0x44
+	playfram          	0x40
 	wait              	1
-	playfram          	0x11
-	wait              	1
-	playfram          	0x22
-	wait              	1
-	playfram          	0x33
-	wait              	1
-	playfram          	0x44
+	playfram          	0x20
 	wait              	1
 	playfram          	0x00
 	wait              	1
@@ -21663,12 +21660,12 @@ LanifectAirAttkInit:
 	goto              	LanifectGndAttkToIdle
 
 LanifectCastSpell:
-	playfram          	0x00
+	playfram          	0xA0
 	nobrkcodestart
 	wait              	1
-	playfram          	0x00
+	playfram          	0xC0
 	wait              	1
-	playsnd           	1059 # Protoss\Lanifect\PCorWeb1.wav
+	playsnd           	1059 # Protoss\Corsair\PCorWeb1.wav
 	castspell
 	nobrkcodeend
 	gotorepeatattk
@@ -21678,7 +21675,7 @@ LanifectCastSpell:
 LanifectWalking:
 	playfram          	0x00
 	setvertpos        	0
-	imgol             	931 0 0 # Lanifect Engines (thingy\pcsGlow.grp)
+	imgol             	931 0 0 # Lanifect Engines (cm\protoss\lanifect-engines.grp)
 	goto              	InfestedTerranLocal00
 
 LanifectWarpIn:
@@ -23187,72 +23184,72 @@ PsiDisrupterDeath:
 	wait              	1
 	end
 
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 949 Power Generator (neutral\Generate.grp)
-.headerstart
-IsId          	408
-Type          	20
-Init          	PowerGeneratorInit
-Death         	PowerGeneratorDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
-Unused1       	[NONE]
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
-Walking       	[NONE]
-WalkingToIdle 	[NONE]
-SpecialState1 	[NONE]
-SpecialState2 	[NONE]
-AlmostBuilt   	[NONE]
-Built         	PowerGeneratorBuilt
-Landing       	[NONE]
-LiftOff       	[NONE]
-IsWorking     	PowerGeneratorIsWorking
-WorkingToIdle 	PowerGeneratorIsWorking
-WarpIn        	[NONE]
-.headerend
-# ----------------------------------------------------------------------------- #
-
-PowerGeneratorInit:
-	imgul             	950 0 0 # Power Generator Shadow (neutral\tgnShad.grp)
-PowerGeneratorBuilt:
-	playfram          	0x00
-	wait              	2
-	playfram          	1
-	wait              	2
-	playfram          	2
-	wait              	2
-	playfram          	3
-	wait              	2
-	playfram          	4
-	wait              	2
-	playfram          	5
-	wait              	2
-	playfram          	6
-	wait              	2
-	goto              	PowerGeneratorBuilt
-
-PowerGeneratorDeath:
-	playsnd           	7 # Misc\ExploLrg.wav
-	imgol             	334 0 0	# Building Explosion (Large) (thingy\tBangX.grp)
-	wait              	3
-	liftoffcondjmp    	PowerGeneratorLocal00
-	lowsprul          	273 0 0 # Terran Building Rubble (Small) (thingy\RubbleS.grp)
-	wait              	1
-	end
-
-PowerGeneratorLocal00:
-	wait              	1
-	end
-
-PowerGeneratorIsWorking:
-	wait              	125
-	goto              	PowerGeneratorIsWorking
+## # ----------------------------------------------------------------------------- #
+## # This header is used by images.dat entries:
+## # 949 Power Generator (neutral\Generate.grp)
+## .headerstart
+## IsId          	408
+## Type          	20
+## Init          	PowerGeneratorInit
+## Death         	PowerGeneratorDeath
+## GndAttkInit   	[NONE]
+## AirAttkInit   	[NONE]
+## Unused1       	[NONE]
+## GndAttkRpt    	[NONE]
+## AirAttkRpt    	[NONE]
+## CastSpell     	[NONE]
+## GndAttkToIdle 	[NONE]
+## AirAttkToIdle 	[NONE]
+## Unused2       	[NONE]
+## Walking       	[NONE]
+## WalkingToIdle 	[NONE]
+## SpecialState1 	[NONE]
+## SpecialState2 	[NONE]
+## AlmostBuilt   	[NONE]
+## Built         	PowerGeneratorBuilt
+## Landing       	[NONE]
+## LiftOff       	[NONE]
+## IsWorking     	PowerGeneratorIsWorking
+## WorkingToIdle 	PowerGeneratorIsWorking
+## WarpIn        	[NONE]
+## .headerend
+## # ----------------------------------------------------------------------------- #
+## 
+## PowerGeneratorInit:
+## 	imgul             	950 0 0 # Power Generator Shadow (neutral\tgnShad.grp)
+## PowerGeneratorBuilt:
+## 	playfram          	0x00
+## 	wait              	2
+## 	playfram          	1
+## 	wait              	2
+## 	playfram          	2
+## 	wait              	2
+## 	playfram          	3
+## 	wait              	2
+## 	playfram          	4
+## 	wait              	2
+## 	playfram          	5
+## 	wait              	2
+## 	playfram          	6
+## 	wait              	2
+## 	goto              	PowerGeneratorBuilt
+## 
+## PowerGeneratorDeath:
+## 	playsnd           	7 # Misc\ExploLrg.wav
+## 	imgol             	334 0 0	# Building Explosion (Large) (thingy\tBangX.grp)
+## 	wait              	3
+## 	liftoffcondjmp    	PowerGeneratorLocal00
+## 	lowsprul          	273 0 0 # Terran Building Rubble (Small) (thingy\RubbleS.grp)
+## 	wait              	1
+## 	end
+## 
+## PowerGeneratorLocal00:
+## 	wait              	1
+## 	end
+## 
+## PowerGeneratorIsWorking:
+## 	wait              	125
+## 	goto              	PowerGeneratorIsWorking
 
 
 # ----------------------------------------------------------------------------- #
@@ -29744,7 +29741,7 @@ AtreusGndAttkToIdle:
 AtreusDeath:
 	playsnd           	533	# Protoss\Scout\PScDth00.WAV
 	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
-	wait 2
+	wait 				2
 	lowsprul          	192 0 0	# Dracadin Remnants (protoss\pdrDeath.grp)
 	wait              	1
 	end
@@ -30166,6 +30163,7 @@ EcclesiastDeath:
 	imgol             	153 0 0 # Zealot Death (protoss\zealot.grp)
 	wait              	3
 	lowsprul			818 0 0 # Ecclesiast Remains
+	wait				1
 	end
 	
 EcclesiastUnused1:
@@ -30383,21 +30381,21 @@ GolemGndAttkInit:
 	wait              	1
 	nobrkcodestart
 	playsndbtwn			1937 1938 # Golem weaponfire 01, 02
+	attackwith 			1
 	playfram          	0xaa
 	wait              	1
 	playfram          	0xbb
-	wait              	1
-	playfram          	0xcc
 	attackwith 			1
 	playsnd				664 # Protoss\ZEALOT\pzeHit00.WAV
+	wait              	1
+	playfram          	0xcc
 	wait              	1
 	playfram			0xdd
 	wait				1
 	playfram			0xee
+	playsnd				664 # Protoss\ZEALOT\pzeHit00.WAV
 	wait				1
 	playfram			0xff
-	attackwith 			1
-	playsnd				664 # Protoss\ZEALOT\pzeHit00.WAV
 	wait				1
 	playfram			0x110
 	nobrkcodeend
@@ -31293,7 +31291,7 @@ Enable        	PennantEnable
 
 PennantInit:
 	imgul             	1209 0 0 # Pennant Shadow (cm\protoss\pennant-shad.grp)
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	wait              	1
 	goto              	PennantBuilt
 
@@ -31302,29 +31300,29 @@ PennantBuilt:
 	goto				PennantBuilt
 
 PennantDeath:
-	playfram          	0x00	# Frame set 0
-	playsnd           	7	# Misc\ExploLrg.wav
-	imgol             	215 0 0	# Explosion (Large) (thingy\tBangX.grp)
-	wait              	3 
-	lowsprul          	223 0 0	# Protoss Building Rubble (Small) (thingy\PRubbleS.grp)
-	wait              	1 
+	playfram          	0x00
+	playsnd           	7 # Misc\ExploLrg.wav
+	imgol             	215 0 0 # Explosion (Large) (thingy\tBangX.grp)
+	wait              	3
+	lowsprul          	223 0 0 # Protoss Building Rubble (Small) (thingy\PRubbleS.grp)
+	wait              	1
 	end
 
 PennantSpecialState1:
 	playsnd           	528	# Protoss\SHUTTLE\pshBld00.wav
-	wait              	1 
+	wait              	1
 	goto              	PennantLocal00
 
 PennantLocal00:
-	wait              	255 
+	wait              	255
 	goto              	PennantLocal00
 
 PennantSpecialState2:
-	wait              	1 
+	wait              	1
 	goto              	PennantWorkingToIdle
 
 PennantWorkingToIdle:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	wait				1
 	goto              	PennantBuilt
 
@@ -32252,10 +32250,9 @@ KalkaliskSporesGndAttkInit:
 KalkaliskSporesDeath:
 	playsndbtwn			2396 2398 # Kalkalisk weaponhit 01, 02, 03
 	sprol             	365 0 0 # Glave Wurm/Seeker Spores Hit (thingy\SporeHit.grp)
-	domissiledmg
-	sigorder 128
-	wait 2
-	end
+	#domissiledmg
+	sigorder 			128
+	wait 				2
 	end
 	
 KalkaliskSporesAirAttkInit:
@@ -33149,7 +33146,7 @@ PlanetCrackerBlastInit:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1255 Ion Cannon (Base) (cm\terran\ioncannon-base.grp)
+# 1255 Diadem (Base) (cm\terran\ioncannon-base.grp)
 .headerstart
 IsId          	531
 Type          	24
@@ -33195,7 +33192,7 @@ IonCannonBaseDeath:
 	imgol             	334 0 0 # Building Explosion (Large) (thingy\tBangX.grp)
 	wait              	3
 	liftoffcondjmp    	LiftedTerranStructureDeath
-	lowsprul          	273 0 0 # Terran Building Rubble (small)
+	lowsprul          	274 0 0 # Terran Building Rubble (Large) (thingy\RubbleL.grp)
 	wait              	1
 	end
 
@@ -33868,7 +33865,9 @@ SeekerSporesSilentDeathSpraith:
 	playsndbtwn			1194 1195 # Spraith Cesiant weaponhit 01, 02
 SeekerSporesSilentDeath:
 	sprol             	365 0 0 # Glave Wurm/Seeker Spores Hit (thingy\SporeHit.grp)
+	if bullet.weapon_id == 54 goto SeekerSporesSilentDeathSkithrokor
 	domissiledmg
+SeekerSporesSilentDeathSkithrokor:
 	wait              	1
 	end
 	
@@ -40031,7 +40030,7 @@ StrigaDeath:
 	playsnd           	238	# Terran\Ghost\TGhDth00.wav
 	setfldirect       	0 
 	playfram          	0x00
-	imgol             	3 0 0	# Scourge Death (zerg\zavDeath.grp)
+	imgol             	3 0 0 # Scourge Death (zerg\zavDeath.grp)
 	wait              	2 
 	lowsprul          	230 0 0	# Eidolon Remnants (terran\tghDeath.grp)
 	wait              	1 
@@ -40047,7 +40046,7 @@ StrigaGndAttkInit:
 	wait              	1
 	playfram			0x99
 	playsndbtwn			1615 1616 # Striga weapon fire 01, 02
-	imgoluselo			1195 0 0
+	imgoluselo			1768 0 0
 	attkshiftproj		24
 	wait              	1
 	playfram			0xaa
@@ -40621,13 +40620,13 @@ AnticthonUnused1:
 	wait				1
 	nobrkcodestart
 	playsnd           	1699
-	sprol				744 0 0
+	imgol				1443 0 0
 	wait				12
 	playsnd           	1699
-	sprol				744 0 0
+	imgol				1443 0 0
 	wait				12
 	playsnd           	1699
-	sprol				744 0 0
+	imgol				1443 0 0
 	wait				12
 	setfldirect			13
 	nobrkcodeend
@@ -41974,11 +41973,16 @@ MagnetarUnused1:
 
 MagnetarGndAttkInit:
 	wait              	1
+	nobrkcodestart
+	wait				2
+	playfram			0x00
+	wait				1
 	playfram			0x11
 	playsndbtwn			1876 1879 # Magnetar weapon fire 01, 02, 03, 04
 	attack
 	wait				1
 	playfram			0x00
+	nobrkcodeend
 	gotorepeatattk
 	goto              	MinotaurGndAttkToIdle
 
@@ -45615,13 +45619,18 @@ HippogriffGndAttkInit:
 	wait              	1
 	nobrkcodestart
 	playsndbtwn			2139 2141 # Hippogriff Cannon Weaponfire 01, 02, 03
-	attack
-	attack
-	wait				3
-	playsndbtwn			2139 2141 # Hippogriff Cannon Weaponfire 01, 02, 03
+	playfram			0x20
 	attack
 	attack
 	wait				1
+	playfram			0x00
+	wait				2
+	playsndbtwn			2139 2141 # Hippogriff Cannon Weaponfire 01, 02, 03
+	playfram			0x40
+	attack
+	attack
+	wait				1
+	playfram			0x00
 	nobrkcodeend
 	gotorepeatattk
 	goto              	MinotaurGndAttkToIdle
@@ -45657,8 +45666,7 @@ HippogriffLocal00:
 
 HippogriffWalking:
 	setvertpos        	0
-#	imgol             	1551 0 0 # Hippogriff Engines 1 (cm\terran\hippogriff-engines-1.grp)
-#	imgol             	1552 0 0 # Hippogriff Engines 2 (cm\terran\hippogriff-engines-2.grp)
+	imgol             	1551 0 0 # Hippogriff Engines (cm\terran\hippogriff-engines.grp)
 	goto              	HippogriffLocal00
 
 # ----------------------------------------------------------------------------- #
@@ -45899,6 +45907,7 @@ ShamanSupportModeDeath:
 	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			821 0 0 # Shaman Remains
+	wait				1
 	end
 
 ShamanSupportModeUnused1:
@@ -50820,7 +50829,7 @@ OmniBulletOneDeathOrange:
 	
 OmniBulletOneBlueDeath:
 	if bullet.weapon_id == 26 goto OmniBulletOneDeathOrange
-	imgol             	1249 0 0 # Burst Lasers Blue Impact (thingy\elbHit.grp)
+	imgol             	1505 0 0 # Burst Lasers Blue Impact (thingy\elbHit.grp)
 	domissiledmg
 	wait              	1
 	end
@@ -51473,7 +51482,7 @@ MortothrokorDeath:
 	wait              	2
 	playfram          	174
 	wait              	2
-	lowsprul          	868 0 0 # Mortothrokor Remnants (cm\zerg\mortothrokor-remnants.grp)
+	lowsprul			868 0 0 # Mortothrokor Remnants (cm\zerg\mortothrokor-remnants.grp)
 	wait              	1
 	end
 	
@@ -52179,6 +52188,7 @@ PotentateDeath:
 	imgol             	153 0 0 # Zealot Death (protoss\zealot.grp)
 	wait              	3
 	lowsprul			818 0 0 # Potentate Remains
+	wait				1
 	end
 	
 PotentateUnused1:
@@ -52520,5 +52530,46 @@ CyclopsWeaponImpactDeath:
 	playfram          	9
 	wait              	1
 	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1769 Helix Bolt Orange (cm\terran\helix-bolt.grp)
+# 1770 Helix Bolt Blue 1 (cm\terran\helix-bolt.grp)
+# 1771 Helix Bolt Blue 2 (cm\terran\helix-bolt-blue.grp)
+.headerstart
+IsId          	763
+Type          	2
+Init          	HelixBoltInit
+Death         	HelixBoltDeath
+GndAttkInit   	HelixBoltGndAttkInit
+AirAttkInit   	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+HelixBoltInit:
+	playfram          	0x00
+	wait              	1
+	sigorder          	1
+	wait              	1
+HelixBoltGndAttkInit:
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	playfram          	0x55
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	goto              	HelixBoltGndAttkInit
 	
-# Next free isid: 763
+HelixBoltDeath:
+	imgol             	1249 0 0 # Burst Lasers Blue Impact (thingy\elbHit.grp)
+	domissiledmg
+	wait              	1
+	end
+	
+## Next free IsId: 764

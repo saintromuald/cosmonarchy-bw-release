@@ -1486,10 +1486,10 @@ Savant Yes 01
 Savant Yes 02
 Savant Yes 03
 Savant Yes 04
-Wendigo Ready 01
-Wendigo What 01
-Wendigo What 02
-Wendigo What 03
+Skithrokor Weaponfire 01
+Skithrokor Weaponfire 02
+Blackjack Death 01
+Blackjack Death 02
 Wendigo What 04
 Wendigo Yes 01
 Wendigo Yes 02
@@ -2556,8 +2556,8 @@ Patriarch Weaponfire 01
 Patriarch Weaponfire 02
 Patriarch Weaponfire 03
 Lobby -- Player Join
-Extended Sound #1
-Extended Sound #1
+Cloak Terran On
+Cloak Terran Off
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

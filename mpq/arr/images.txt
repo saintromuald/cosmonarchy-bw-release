@@ -1549,8 +1549,8 @@ Simulacrum Autovitality Proc
 Recharge Shields Medium
 Recharge Shields XLarge
 Idol Weaponhit
-Hippogriff Engines 1
-Hippogriff Engines 2
+Hippogriff Engines
+unused
 Salamander Death
 Protathalor
 Vulture Engines
@@ -1766,10 +1766,10 @@ Potentate
 Potentate Shadow
 Skortrith Cesiant Tentacle
 Cyclops Weapon Impact
-Extended Image #766
-Extended Image #767
-Extended Image #768
-Extended Image #769
+Striga Attack
+Helix Bolt Orange
+Helix Bolt Blue 1
+Helix Bolt Blue 2
 Extended Image #770
 Extended Image #771
 Extended Image #772

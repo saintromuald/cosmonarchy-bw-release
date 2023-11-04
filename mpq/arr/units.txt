@@ -133,7 +133,7 @@ Zerg Hachirosk
 Zerg Caphrolosk
 Zerg Gathstelosk
 Zerg Nydus Cesiant
-Zerg Hydrok Den
+Zerg Hydrith Den
 Zerg Elthisth Mound
 Terran Olympian
 Zerg Matravil Nest
@@ -188,7 +188,7 @@ Terran Paladin
 Terran Savant
 Vespene Geyser
 Terran Hadron
-Terran Biotic Base
+Terran Biotic Bastion
 Zerg Axitrilisk
 Town Center Marker (AI)
 Zerg Zorkiz Shroud
@@ -385,7 +385,7 @@ Omnivale
 Terran Lodestone
 Floor Hatch
 Terran Treasury
-Extended Unit #160
+Terran Lodestone (Standalone)
 Extended Unit #161
 Extended Unit #162
 Extended Unit #163
