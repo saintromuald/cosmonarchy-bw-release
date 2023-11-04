@@ -1,98 +1,354 @@
-# 30 September 2023
+# 4 November 2023
+# "The New Horizon"
 
 ## Designer's Notes
 
 Patch goals include:
-- Adjust balance after Kinetic Penetration changes
-- Improve role identity and synergy for a few problem units
-- Further improve audiovisuals
-
-## Summary
-- Fairly minor changes were made in this update, with a few nasty bugs finally quashed!
+- Revise or remove 2.5 and 3.5 tech for Terran
+- Continue to address overdetermined role overlaps
+- Shuffle costs of tier 2 and 3 units to properly incentivize gas capping
+- Complete tileset updates to use extra height levels and improve available varieties
 
 ## Latest content
-- [Crash Course: Micro!](https://youtu.be/pgrVDYiMzeM)
-- [Pr0totype #25 - Titans Walk Among Us!](https://youtu.be/2ZZ7i1CmAz8):
+- [Ascension #5 - Imminent Growth](https://www.youtube.com/playlist?list=PLACFHAM2MlxP3_sacU_4VUoJ5iMeUU2a7)
+- [Pr0totype #26 - The Wild Worlds...](https://youtu.be/TgiH2EBvXBo)
+- [Ascension Format Explainer](https://youtu.be/kl0RlFWqvXU)
+- [Pr0totype #27 - For the Faithful](https://youtu.be/n6jupKt7wQg)
+- [Pr0totype #28 - How Far We've Come](https://youtu.be/cimvhnWc1U4)
+- [Pr0totype #29 - The Mapman Cometh](https://youtu.be/PcLMfM9c3jw)
+- [Pr0totype #30 - The Hype Is Real](https://youtu.be/iisw27ellgs)
+- [Ascension #6 Hype Video](https://youtu.be/V5lO2_ETu88)
 
-## Hotfix 18 October 2023
-- Missile interception and penetration vs cloaked/burrowed units can no longer crash if the attacker dies before the projectile strikes (r. neblime)
-- Trying to enter a Nydus Cesiant while its exit is in-progress no longer crashes (r. Boris)
-
-## Hotfix 9 October 2023
-- Mortothrokor death animations no longer cause instability (r. TheBeaver99)
-- Irradiate now sends "under attack" notifications (r. The Shambler)
-
-## Hotfix 5 October 2023
-- Partially-fixed burrowed regression interactions
-- Fixed Magnetar max energy (r. Mystery Meat)
-- Added initial support for middle mouse button scrolling (c. Veeq7)
-- Added lobby join sound (with help from DF)
-
-## Internals
-- Terrain height has been extended by DarkenedFantasies, allowing tilesets to have significantly more height levels!
-	- This required some changes to vision range and weapon range; be on the lookout for any related issues!
+## General
+- Vision update timer has been sped up significantly (c. Veeq7 and DF)
+- Painting missile launches with Eidolons and Seraphs can now be queued (c. DF)
+- Terran cloaked units now use the new **Proximity Cloaking**, and are only decloaked if hostiles are within 3 range
+- Burrowed units are now revealed slightly more generously by nearby ground units
+- Worker wandering searches for better mineral nodes within 5 range, from 8, reducing unintentional inefficiences
 
 ## Tilesets
 - The following tiles now provide a height difference:
-	- Desert: Sandy Sunken Pit (both variants)
-	- Iceworld: Ice
-	- Twilight: Sunken Ground (both variants)
+	- Jungle: Swamp, sunken jungle
+- The following tiles were added:
+	- Ashworld:
+		- Magma cliff to crushed rock, jungle (level 1)
+		- Cooled magma cliff (level 1)
+		- Magma cliff to jungle (level 1)
+		- Active lava to jungle (level 1)
+		- Mud to jungle (level 1)
+	- Desert:
+		- Cooled lava to dirt (all levels)
+		- Compound to cooled lava (level 1)
+- The following tiles were deprecated and are now removed:
+	- Jungle:
+		- Sunken jungle cliffs for temple and dirt
+
+## UI
+- Scrolling with middle-mouse button is now buttery-smooth, complete with a config option for inverting the direction (c. Veeq7)
+	- This sometimes creates pixel artifacts, which will be addressed in time
+- Joining a lobby now plays a sound (with help from DF)
+
+## Game modes:
+- Briefings are now skipped in Competitive, Debug, and Omnipresence modes
+- In Competitive, Debug, and Omnipresence modes, unit stats are no longer loaded from map info, making this exclusively a Scenario feature
+
+## AI:
+- On competitive maps (class 1 and 2), AI can no longer roll greed builds
+- Improved worker resource assignment when at low worker counts
+- Improved pre-5 minute attack handling
+- Further increased priority of refinery structures
+- Boosted priority of tech tier structures
+- Made adjustments to how frequently Zerg request multiple tech nodes
+- Removed worker transfer calls to improve early-game worker efficiency
+
+## Audiovisuals:
+- Provided a new sound read for Terran proximity cloak, to contrast with Protoss passive cloak (c. lolrsk8s)
+- New sprite for:
+	- Lanifect (c. Baelethal)
+- Upgraded Hippogriff sprite with new materials, animations, and thrusters (with lots of help from Solstice)
+- Upgraded Wyvern sprite with new materials
+- Diadems now leave behind large rubble, instead of small rubble
 
 ## Bugfixes
 - Stability:
-	- A null unit crash related to updating unit speed has been fixed (r. greeneggsnspam, c. DF)
+	- Fixed a common crash with Nydus Cesiants (r. Boris)
+	- Fixed instability related to the Mortothrokor death animation (r. TheBeaver99)
+	- Fixed a rare crash related to bouncing attackers (r. Enozlliks)
+	- Fixed a rare crash related to Solarions and Stewards (r. GreenEggs'NSpam, c. DF)
+	- Fixed an AI-only nullsprite crash (r. Myrian) and a selection-related nullsprite crash (r. 3crow)
+	- Fixed a rare image function crash (r. GreenEggs'NSpam, c. DF)
+	- Fixed a rare missile launch crash (r. GreenEggs'NSpam)
 - Gameplay:
-	- Changing selections after units die no longer occasionally breaks selections (c. DF)
-	- Reclaiming Terran addons no longer sometimes sets the parent to neutral (r. neblime)
-	- Lobotomy Mine, Claymore, and Gorgon slows now correctly apply to flingy-based units (r. neblime & TheBeaver99)
-	- Psionic Storm now correctly damages the caster (c. Veeq7)
-	- Iroleths now correctly regress to Ovileths
-	- Group-selecting Lakizilisks and other units no longer occasionally shows a disabled attack icon
-	- Fixed a rare issue with Olympians becoming unresponsive when moving after a melee attack (r. lolrsk8s)
+	- Fixed Zerg regression failing if the attacker is killed or otherwise unavailable before their projectile deals fatal damage to the Zerg target (r. Mystery Meat & DF)
+	- Partially-resolved an issue with Zerg regression on burrowed units (r. lolrsk8s)
+	- Sentinel and Sevenstep no longer deal double damage in some cases (r. Mystery Meat)
+	- Queueing Lay Mine orders can no longer provide infinite mines (r. TheBeaver99)
+	- Lardfix: Irradiate (from Seraph and Morningstar) now sends under attack notification (r. The Shambler)
+	- Prevented advanced workers from displacing each other during harvesting or construction (r. The Shambler, c. DF)
+	- Fixed Optecton target acquisition misbehaving when both ground and air targets were within range (r. The Shambler, c. DF)
+	- Gladius Binding Plasma no longer seeks out invisible targets (r. Mystery Meat)
+	- Didacts cloaking warping structures no longer causes them to be untargetable until completion
+	- Alkajelisks can now be mutated from Ocsal Larvae by players (r. GreenEggs'NSpam)
+	- Azazel Defensive Matrix: no longer cleanse debuffs (r. GreenEggs'NSpam)
+	- Lobotomy Mine Dazing Detonation: clear slow for flingy units
+	- Mind Tyrant Maelstrom: apply debuff to flingy units
+	- Claymore Kelvin Munitions: clear debuff for flingy units (r. TheBeaver99)
+	- Fixed failed Magnetar attacks when turning or at max range (r. Mystery Meat)
+	- Fixed many interactions between Akistrokor Blissful Embrace and transports (r. Mystery Meat)
+	- Removed Salvage, for real this time (r. lucifirius & GreenEggs'NSpam)
+	- Savant Power Siphon: Correctly reduce attack rate of turreted units (e.g. Goliaths) (r. GreenEggs'NSpam)
+	- Standardized behaviors for landing on deployed Terran units, and fixed an issue where unsieging Phalanxes became unresponsive when landed on (r. Mystery Meat)
+	- Factories with queued units now cancel their queues when mind controlled (r. Mystery Meat)
+	- Fixed a rare case where Aion Reclamation Fields could be permanent (r. GreenEggs'NSpam)
+	- Kalkalisks no longer deal double damage to their primary target
+	- Mortothrokor: properly leave behind corpses (r. TheBeaver99)
+	- Properly inherit facing angles when transforming between unit types (i.e. Zerg regression, Vagrant, Axitrilisk) (r. TheBeaver99)
+	- Resolve hotkey conflicts between Analogue and Architect (r. DF), Apostle and Tinkerer's Tower, Return Resources and Supreme Construction (r. GreenEggs'NSpam)
+	- Lodestones undergoing Emergency Detonation now kill their cargo (r. Mystery Meat)
+	- Stopped Optectons from attacking transports when right-clicking to enter them
+	- Fixed cancelling Morningstars refunding without interrupting the train order (r. GreenEggs'NSpam)
+	- Fixed random race rolling not working properly in your first singleplayer match (c. DF)
+		- Caveat: Currently doesn't hide witness slots, but setting them to computer does nothing
+	- Sevenstep no longer has energy (r. GreenEggs'NSpam)
+- Audiovisuals:
+	- Standardize missile strike dot to always be sorted above air units (r. Mystery Meat, c. DF)
+	- Correctly redraw unit names when selecting Anchors and Lodestones
+	- Hide decaying overlays on reclaimed units while they're cloaked (r. GreenEggs'NSpam)
+	- Ban light blue tints on iceworld maps
+	- Removed the Attack button on garrisons, since it currently does nothing (r. neblime)
+	- Reset animations correctly for Protoss structures that re-gain power while in the middle of training a unit (r. The Shambler, c. DF)
+	- Stop counting Morningstars as military units in unit counter
+	- Correctly show cast range for Eidolon Missile Strike (r. GreenEggs'NSpam)
+	- Improved sync between Golem attack animation and actual damage (r. TheBeaver99)
+	- Added placeholder liftoff and landing dust overlays for Mantle and Starpad (r. TheBeaver99)
+	- Siren weapon tooltip now displays the full potential damage of its attack
+	- Fixed Mind Tyrant Tyranny cast range preview (r. GreenEggs'NSpam)
+	- Corrected ability tooltips for Cuirass Stonewall Protocol (r. GreenEggs'NSpam), Mind Tyrant Maelstrom, and Akistrokor Blissful Embrace (r. GreenEggs'NSpam)
+	- Fixed tooltip handling for Savant Breathing Battery (r. GreenEggs'NSpam) and Lanifect Disruption Field
+	- Infestation overlays no longer linger when the infestation is destroyed
+	- Clear rally point display when canceling Hachirosks (r. Mystery Meat)
+	- Fixed Cohort command card (r. 3crow)
+	- Corrected Apollyoid Adhesive tooltip (r. Veeq7)
+	- Corrected Vagrant Nihilism tooltip (r. GreenEggs'NSpam)
+	- Cleaned up tooltips that referenced 'weapon range' without involving weapons
+	- Talos: use the Shaman portrait, instead of Data Disc
+	- Vagrant Shade: use the same portrait as the Vagrant (r. TheBeaver99)
+	- Cleaned up some silent missing frame errors (r. beriso)
 
 ## Terran
-- [Savant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/savant):
+- [Eidolon](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/eidolon):
+	- Weapon range now 8, from 9
+	- Sight range now 8, from 10
+	- Now moves ~8% slower
+	- **Pacifist Cloaking replaced with Proximity Cloaking**
+- [Siren](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/siren):
+	- Mineral and gas costs now 100/75, from 175/50
+	- HP now 100, from 140
+	- Armor now 1, from 2
+	- Weapon cooldown now 1.17, from 0.83
+	- Weapon range now 9, from 4
+- [Striga](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/striga):
+	- Mineral cost now 125, from 150
+	- Armor now 3, from 4
+	- Now applies Apollyoid Adhesive
+- [Dilettante](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/dilettante):
+	- Mineral and gas cost now 150/0, from 125/25
 	- Armor now 2, from 1
-	- No longer has energy
-	- Entropy Gauntlets now always provides Kinetic Penetration
-- [Madcap](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/madcap):
-	- Cabeirus Feeders now provides 15% attack speed per stack, from ~10%
-- [Vulture](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/vulture):
-	- HP now 85, from 90
-	- Now moves 6.25% faster
-	- Now visibly shoots two projectiles for better visual clarity
+	- Weapon damage now 3, from 2
+- [Sevenstep](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/sevenstep):
+	- Gas cost now 75, from 100
+- [Lobotomy Mine](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/lobotomy-mine):
+	- Dazing Detonation:
+		- Stun time now 3 seconds, from 2
+		- Slow time now 3 seconds, from 4
+		- If destroyed, now procs the slow effect
+- [Goliath](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/goliath):
+	- Time cost now 28, from 25
+	- Twin Autocannons (anti-ground) weapon cooldown now 0.75, from 0.83
+- [Blackjack](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/blackjack):
+	- Time cost now 18, from 20
+	- Weapon range now 6, from 5
+- [Matador](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/matador):
+	- Time cost now 18, from 20
+	- Twinstrike Cannons weapon range now 5, from 4
+	- Cinder Servos now grants +2 armor, from +1
+- [Ramesses](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/ramesses):
+	- Time cost now 28, from 25
+	- Now moves ~10% slower
+- [Durendal](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/durendal):
+	- Gas and time costs now 75/35, from 50/30
+	- Armor now 3, from 4
 - [Cataphract](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cataphract):
-	- Weapon range now 9, from 8
-- [Gorgon](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/gorgon):
-	- Weapon cooldown now 0.79, from 0.83
+	- Weapon damage now 12, from 10
+	- Weapon armor penetration now 2, from 1
+- [Penumbra](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/penumbra):
+	- Weapon armor penetration now 4, from 0
+	- Now collides with Cataphracts, Paladins, and Architects
+	- *Standardizing the Penumbra to use the same Kinetic Penetration rules as everyone else.*
+- [Anticthon](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/anticthon):
+	- Significantly boosted turn radius to prevent pathing issues
+- [Wraith](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/wraith):
+	- Time cost now 28, from 25
+	- Sight range now 6, from 7
+	- Now moves ~10% slower
+	- Weapon damage now 2x5, from 1x10
+	- **Pacifist Cloaking replaced with Proximity Cloaking**
+	- *Since Wraiths can now attack from max range without decloaking, reigning in their offensive power vs armor and their general mobility seemed appropriate.*
+- [Wyvern](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/wyvern):
+	- HP now 180, from 200
+	- Jackson Cannon:
+		- No longer deals splash damage
+		- Now benefits from Kinetic Penetration
+	- *Wyverns emerged as an extremely low-skill method of wiping ground armies. Kinetic Penetration requires more control to accomplish what standard splash did previously.*
+- [Sundog](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/sundog):
+	- Mineral and gas costs now 125/100, from 150/75
+	- Sight range now 7, from 8
+	- Now moves ~3% slower
+	- **Pacifist Cloaking replaced with Proximity Cloaking**
+- [Salamander](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/salamander):
+	- HP now 160, from 175
 - [Azazel](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/azazel):
-	- Defensive Matrix:
-		- Timer now 10 seconds, from 30
-		- Heal now 10 HP per second, from 5
-- [Magnetar](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/magnetar):
-	- Max energy now 200, from 250
-- [Fountainhead](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/fountainhead):
-	- Mineral, gas, and time costs now 250/500/45, from 200/400/30
+	- Gas cost now 150, from 100
+	- Sublime Shepherd:
+		- No longer provides bonuses to enemy units
 - [Tinkerer's Tower](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/tinkerers-tower):
-	- Mineral and gas costs now 100/50, from 75/75
+	- Gas cost now 100, from 50
+	- No longer requires Fountainhead
+- [Apothecary](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/apothecary):
+	- Gas cost now 300, from 200
+- [Fulcrum](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/fulcrum):
+	- Time cost now 45, from 50
+- [Scrapyard](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/scrapyard)
+	- Time cost now 20, from 25
+- [Mantle](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/mantle):
+	- Mineral cost now 250, from 150
+	- No longer requires Fountainhead
+- [Iron Foundry](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/iron-foundry):
+	- Mineral, gas, and time costs now 400/150/60, from 300/100/50
+- [Future Station](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/future-station):
+	- Mineral, gas, and time costs now 400/200/40, from 200/150/30
+	- No longer requires Atelier
+- [Biotic Bastion](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/biotic-bastion):
+	- Time cost now 45, from 30
+	- HP now 850, from 800
+	- No longer requires Atelier
+- [Starpad](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/starpad):
+	- Mineral and gas costs now 100/100, from 125/75
+- [Starport](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/starport):
+	- Gas cost now 150, from 125
+- [Rotary](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/rotary) and [Commandment](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/commandment):
+	- No longer requires Fountainhead
+- [Nanite Assembly](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/nanite-assembly):
+	- Mineral, gas, and time costs now 600/400/75, from 300/250/60
+	- HP now 1700, from 1500
+	- No longer requires Atelier
+- Fountainhead, Atelier:
+	- Removed
+- [Wellbore](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/wellbore):
+	- Time cost now 50, from 60
 
 ## Protoss
-- [Cabalist](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/cabalist):
-	- Shields now 30, from 20
-	- Now decloaks on teleport
+- [Envoy](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/envoy):
+	- Now moves ~5% slower
+- [Amaranth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/amaranth):
+	- Time cost now 22, from 25
+- [Atreus](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/atreus):
+	- Shields now 70, from 80
+	- Weapon now homes in on target
+	- *Improving the Atreus's consistency should provide Protoss with a more "core" response to throngs of hostiles.*
+- [Herald](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/herald):
+	- Mineral and gas costs now 100/100, from 150/50
+- [Cantavis](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/cantavis):
+	- Gas cost now 150, from 125
+	- HP now 50, from 40
+	- Shields now 50, from 40
+- [Sycophant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/sycophant):
+	- Armor now 3, from 2
+- [Vassal](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/vassal):
+	- HP now 40, from 35
+	- Shields now 30, from 35
+	- Now moves 5% slower
+- [Golem](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/golem):
+	- Time cost now 28, from 25
+	- Shields now 60, from 80
+	- Armor now 3, from 2
+	- **New passive: Tranquility Array**
+		- Upon taking shield damage, restore 2 shields for all allies within 3 range.
+	- *Helping the Golem live up to its intended combat role.*
 - [Positron](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/positron):
-	- Weapon now has Interception
-- [Clarion](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/clarion):
-	- Now a Detector
-- [Ancestral Archives](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/ancestral-archives):
-	- Mineral and gas costs now 450/400, from 500/500
+	- Armor now 2, from 3
+	- Transport size now 4, from 2
+	- No longer has Interception
+	- *Providing missile interception to the Positron was an experiment that wound up failing. Reverting that change and dropping its armor will keep the unit reliant on a proper backline and good target selection.*
+- [Accantor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/accantor):
+	- Mineral cost now 250, from 200
+	- Shields now 60, from 70
+	- Transport space now 6, from 4
+	- *Requiring more of an investment to make more than one Accantor drop seems appropriate in a world without the "Shuttle Speed" upgrade.*
+- [Aurora](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/aurora):
+	- Last Orders damage now 25, from 20
+- [Lanifect](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/lanifect):
+	- HP now 100, from 90
+	- Now moves ~10% slower
+	- *This gives Disruption Field more time to be active in skirmishes, while making repositioning a bit more feasible. The Lanifect should also be a bit more reliable in sorties.*
+- [Pylon](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/pylon):
+	- Mineral cost now 75, from 50
+	- *Protoss players should think a bit more about when and where to add Pylons. This also reduces manner Pylon frequency, without removing it entirely.*
+- [Crucible]():
+	- No longer a resource depot
 
 ## Zerg
+- [Ovileth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/ovileth):
+	- Sight range now 10, from 9
+	- *Cautious change to allow Zerg to combat Eidolons from a range, in the wake of Proximity Cloak.*
+- [Quazilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/quazilisk):
+	- Now moves ~16% slower
+	- Weapon armor penetration now 1, from 0
+	- *In an attempt to diversify the Quazeth Pool, the Quazilisk should fall off later in the game now, while not being able to react to enemy movement as swiftly as its counterparts.*
 - [Nathrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/nathrokor):
-	- Vestigial Strike armor penetration now 0, from 1
+	- Mineral cost now 75, from 50
+	- Now moves ~5% slower
+- [Kalkalisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/kalkalisk):
+	- Weapon damage now 5, from 4
+	- *After fixing a bug where the Kalkalisk was dealing double damage to its primary target, this change keeps their damage relatively similar.*
+- [Mutalisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/mutalisk):
+	- Gas cost now 75, from 50
+	- Armor penetration now 0, from 2
+	- Now moves ~5% slower
+	- *Keeping an eye on mass Muta...*
+- [Tosgrilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/tosgrilisk):
+	- Mineral, gas, and time costs now 100/150/28, from 150/100/25
+	- Weapon cooldown now 1, from 1.25
+	- *...and providing them better scaling once tier 3 is achieved.*
+- [Skithrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/skithrokor):
+	- Skittering Spores:
+		- Damage now 4, from 8
+		- Cooldown now 0.791, from 0.708
+		- Range now 3, from 2
+	- New passive: **Ablative Whiplash**
+		- Projectiles deal damage to all targets, reducing by 1 for every target pierced, and return to the attacker after reaching their target
+	- *Riffing on the passives of the Kalkalisk and the Lakizilisk, this change lets the Skithrokor compete with stacked air units - without erasing worker lines in the process, we hope!*
 - [Bactalisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/bactalisk):
-	- Armor now 2, from 3
-- [Matraleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/matraleth):
-	- Parasitic Excision:
-		- Cast range now 2, from 8
-		- Now has a 1-second channel
+	- Weapon range now 7, from 8
+	- *Reducing the Bactalisk's weapon range should encourage other options if you need to siege someone at tier 2.*
+- [Evigrilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/evigrilisk):
+	- Mineral and gas costs now 200/100, from 250/50
+- [Keskathalor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/keskathalor):
+	- Mineral and gas costs now 300/250, from 400/150
+- [Geszithalor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/geszithalor):
+	- Mineral and gas costs now 250/175, from 300/125
+- [Alkajelisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/alkajelisk):
+	- Gas cost now 250, from 200
+- [Gorgrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/gorgrokor):
+	- Serrated Cleavers (vs. ground) weapon cooldown now 0.583, from 0.5
+- [Ultrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/ultrokor):
+	- Mineral and gas costs now 250/150, from 325/75
+- [Zarcavrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/zarcavrokor):
+	- Mineral and gas costs now 175/150, from 225/100
+- [Spraith Cesiant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/spraith-cesiant):
+	- Weapon range now 9, from 8
+	- *Part of the recent push to increase security against early air.*
+- [Quazeth Pool](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/quazeth-pool):
+	- Time cost now 45, from 40
+- [Ezigrisant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/ezigrisant):
+	- Time cost now 45, from 50
