@@ -2330,7 +2330,7 @@ script_id TMCx
 	bld 2 mason 98
 	w_bld 1 ministry
 	bld 4 mason 98
-	maynard 4
+#	maynard 4
 	multi worker_track
 	
 	:expansion_worker_loop
@@ -2349,9 +2349,7 @@ script_id TMCx
 	
 	:tech_handling
 	multi rich_boy_atlas
-	multi rich_boy_fountainhead
 	multi rich_boy_daedala
-	multi rich_boy_atelier
 #	Currently, units are unlocked exclusively through addons, and thus handled through production_cycle.
 #	The "rich boy" blocks, combined with needs called after build_bool, *should* handle the segmented tech progression.
 	wait 1
@@ -2364,28 +2362,12 @@ script_id TMCx
 	p_need 1 atlas
 	stop
 	
-	:rich_boy_fountainhead
-	wait 12
-	bring 13 AtL 1 fountainhead Loc.63 blank
-	call wait_for_atlas
-	res 13 AtM Gas 399 rich_boy_fountainhead
-	p_need 1 fountainhead
-	stop
-	
 	:rich_boy_daedala
 	wait 12
 	bring 13 AtL 1 daedala Loc.63 blank
 	call wait_for_atlas
 	res 13 AtM Gas 1199 rich_boy_daedala
 	p_need 1 daedala
-	stop
-	
-	:rich_boy_atelier
-	wait 12
-	bring 13 AtL 1 atelier Loc.63 blank
-	call wait_for_daedala
-	res 13 AtM Gas 999 rich_boy_atelier
-	p_need 1 atelier
 	stop
 	
 	:build_bool
@@ -2640,8 +2622,6 @@ script_id TMCx
 	call main_wait_900
 	var Set can_attack_var 1 13
 	call main_wait_900
-	multi need_fountainhead
-	call main_wait_300
 	bld 2 mantle 121
 	multi production_cycle
 	goto build_general_fin
@@ -2740,8 +2720,6 @@ script_id TMCx
 	multi need_atlas
 	call main_wait_300
 	bld 2 fulcrum 121
-	call main_wait_450
-	multi need_fountainhead
 	call main_wait_600
 	multi production_cycle
 	goto build_general_fin
@@ -2752,7 +2730,7 @@ script_id TMCx
 	call wait_for_atlas
 	w_bld 1 fulcrum
 	bld 1 palladium 120
-	call wait_for_fountainhead
+	wait 24
 	bld 1 starport 121
 	w_bld 1 starport
 	bld 1 rotary 120
@@ -2857,8 +2835,6 @@ script_id TMCx
 	var Set build_gas_var 1 13
 	call main_wait_1200
 	bld 6 fulcrum 121
-	call main_wait_1800
-	multi need_fountainhead
 	call main_wait_3600
 	multi need_daedala
 	call main_wait_1200
@@ -2867,7 +2843,6 @@ script_id TMCx
 	call main_wait_3600
 	bld 8 starport 121
 	call main_wait_1200
-	multi need_atelier
 	call main_wait_600
 	multi production_cycle
 	goto build_general_fin
@@ -2883,7 +2858,7 @@ script_id TMCx
 	bld 1 palladium 120
 	w_bld 4 fulcrum
 	bld 2 palladium 120
-	call wait_for_fountainhead
+	wait 24
 	bld 2 starport 121
 	w_bld 1 starport
 	bld 1 rotary 120
@@ -2906,7 +2881,6 @@ script_id TMCx
 	bld 2 commandment 120
 	w_bld 8 starport
 	bld 3 commandment 120
-	call wait_for_atelier
 	bld 2 nanite_assembly 121
 	stop
 	
@@ -2947,8 +2921,6 @@ script_id TMCx
 	call main_wait_300
 	bld 3 fulcrum 121
 	call main_wait_600
-	multi need_fountainhead
-	call main_wait_150
 	call build_bool
 	call main_wait_600
 	multi production_cycle
@@ -2963,7 +2935,7 @@ script_id TMCx
 	bld 1 palladium 120
 	w_bld 3 fulcrum
 	bld 2 palladium 120
-	call wait_for_fountainhead
+	wait 24
 	bld 2 starport 121
 	call wait_for_daedala
 	w_bld 2 starport
@@ -2989,14 +2961,11 @@ script_id TMCx
 	call main_wait_150
 	bld 1 covenant 120
 	call main_wait_600
-	multi need_fountainhead
 	call main_wait_900
 	call add_starport_simple
 	call main_wait_1200
 	call main_wait_600
 	multi need_daedala
-	call main_wait_3600
-	multi need_atelier
 	stop
 	
 	:build_order_armor
@@ -3205,11 +3174,9 @@ script_id TMCx
 	queue 1 goliath fulcrum 255 Global Loc.63 100
 	wait 24
 	queue 1 goliath fulcrum 255 Global Loc.63 100
-	call main_wait_300
-	multi need_fountainhead
-	call main_wait_900
+	call main_wait_600
 	multi production_cycle
-	call main_wait_300
+	call main_wait_600
 	goto build_armor_fin
 	
 	:build_armor_FE5Fulc_Addon
@@ -3220,7 +3187,7 @@ script_id TMCx
 	bld 1 palladium 120
 	w_bld 3 fulcrum
 	bld 2 palladium 120
-	call wait_for_fountainhead
+	wait 24
 	bld 1 starport 121
 	call wait_for_daedala
 	w_bld 1 starport
@@ -3239,21 +3206,16 @@ script_id TMCx
 	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_machineshop 13
 	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_azazel 13
 	call main_wait_750
-	call main_wait_1200
 	bld 1 fulcrum 121
 	call main_wait_300
 	bld 2 fulcrum 121
 	call main_wait_300
 	var Sub can_worker_var 1 13
-	call main_wait_150
-	do_morph 2 vulture
-	call main_wait_150
-	do_morph 2 vulture
-	call main_wait_300
+	call main_wait_1500
 	var Set can_attack_var 1 13
 	call main_wait_300
 	var Add can_worker_var 1 13
-	call main_wait_600
+	call main_wait_900
 	multi expansion_toggle
 	bld 3 fulcrum 121
 	call main_wait_150
@@ -3350,8 +3312,6 @@ script_id TMCx
 	call main_wait_450
 	multi need_daedala
 	call wait_for_daedala
-	multi need_atelier
-	call wait_for_atelier
 	call main_wait_150
 	bld 1 iron_foundry 122
 	call main_wait_150
@@ -3437,14 +3397,10 @@ script_id TMCx
 	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
 	call main_wait_900
 	multi need_atlas
-	call main_wait_1800
-	multi need_fountainhead
-	call main_wait_2400
+	call main_wait_3600
 	multi need_daedala
 	call main_wait_900
 	call add_starport_simple
-	call main_wait_3600
-	multi need_atelier
 	stop
 	
 	:build_order_raider
@@ -3614,8 +3570,6 @@ script_id TMCx
 	bld 1 vestry 120
 	w_bld 2 stockade
 	bld 2 vestry 120
-	call wait_for_atlas
-	multi need_fountainhead
 	stop
 	
 	:build_raider_FastNuke
@@ -3834,8 +3788,6 @@ script_id TMCx
 	w_bld 1 stockade
 	bld 1 vestry 120
 	call wait_for_atlas
-	multi need_fountainhead
-	call wait_for_fountainhead
 	bld 1 starport 121
 	w_bld 1 starport
 	bld 1 rotary 120
@@ -3853,12 +3805,8 @@ script_id TMCx
 	multi need_atlas
 	call wait_for_atlas
 	bld 1 covenant 120
-	call main_wait_1800
-	multi need_fountainhead
 	call main_wait_3600
 	multi need_daedala
-	call main_wait_3600
-	multi need_atelier
 	stop
 	
 	:build_order_orbital
@@ -3956,8 +3904,6 @@ script_id TMCx
 	
 	:build_orbital_2PortWraith_Addon
 	call wait_for_atlas
-	multi need_fountainhead
-	call wait_for_fountainhead
 	bld 1 starport 121
 	w_bld 1 starport
 	bld 1 rotary 120
@@ -3999,8 +3945,6 @@ script_id TMCx
 	call main_wait_1200
 	multi need_daedala
 	call wait_for_daedala
-	multi need_atelier
-	call wait_for_atelier
 	bld 2 nanite_assembly 122
 	call main_wait_450
 	bld 3 nanite_assembly 122
@@ -4130,9 +4074,7 @@ script_id TMCx
 	queue 1 wraith starpad 255 Local Loc.63 100
 	call main_wait_150
 	multi build_orbital_Hotdrop_Addon
-    call main_wait_750
-	multi need_fountainhead
-    call main_wait_750
+    call main_wait_900
 	multi production_cycle
 	goto build_orbital_fin
 	
@@ -4141,7 +4083,7 @@ script_id TMCx
 	bld 1 covenant 120
 	w_bld 1 covenant
 	bld 1 anvil 120
-	call wait_for_fountainhead
+	wait 24
 	bld 1 starport 121
 	w_bld 1 starport
 	bld 1 rotary 120
@@ -4197,9 +4139,7 @@ script_id TMCx
 	call main_wait_900
 	multi expansion_toggle
 	call wait_for_atlas
-    call main_wait_750
-	multi need_fountainhead
-    call main_wait_750
+    call main_wait_900
 	multi production_cycle
 	goto build_orbital_fin
 	
@@ -4207,7 +4147,6 @@ script_id TMCx
 	w_bld 2 stockade
 	bld 1 vestry 120
 	call wait_for_atlas
-	call wait_for_fountainhead
 	bld 1 starport 121
 	w_bldstart 1 starport
 	bld 4 starport 121
@@ -4282,10 +4221,6 @@ script_id TMCx
 	multi need_atlas
 	call main_wait_3600
 	multi need_daedala
-	call main_wait_3600
-	multi need_fountainhead
-	call main_wait_3600
-	multi need_atelier
 	stop
 	
 	:build_order_expansion
@@ -4375,31 +4310,16 @@ script_id TMCx
 	:need_atlas
 	wait 24
 	bring 13 AtM 4 Group_Factories Loc.63 need_atlas
+	var AtL|Jump under_attack_var 1 need_atlas 13
 	
 	:need_atlas2
-	var Ex|Jump skip_building_var 1 blank_return 13
+	var Ex|Jump skip_building_var 1 blank 13
 	p_need 1 atlas
 	stop
 	
 	:wait_for_atlas
 	wait 12
 	notowns atlas wait_for_atlas
-	return
-	
-	:need_fountainhead
-	wait 24
-	notowns atlas need_fountainhead
-	bring 13 AtM 4 Group_Factories Loc.63 need_fountainhead
-	bring 13 AtM 1 reservoir Loc.63 need_fountainhead
-	
-	:need_fountainhead2
-	var Ex|Jump skip_building_var 1 blank_return 13
-	p_need 1 fountainhead
-	stop
-	
-	:wait_for_fountainhead
-	wait 12
-	notowns fountainhead wait_for_fountainhead
 	return
 	
 	:add_daedala_simple
@@ -4413,6 +4333,7 @@ script_id TMCx
 	notowns atlas need_daedala
 	bring 13 AtM 8 Group_Factories Loc.63 need_daedala
 	bring 13 AtM 3 reservoir Loc.63 need_daedala
+	var AtL|Jump under_attack_var 1 need_daedala 13
 	
 	:need_daedala2
 	var Ex|Jump skip_building_var 1 blank_return 13
@@ -4422,28 +4343,6 @@ script_id TMCx
 	:wait_for_daedala
 	wait 12
 	notowns daedala wait_for_daedala
-	return
-	
-	:add_atelier_simple
-	wait 12
-	notowns atelier add_atelier_simple
-	multi need_atelier
-	return
-	
-	:need_atelier
-	wait 24
-	notowns daedala need_atelier
-	bring 13 AtM 10 Group_Factories Loc.63 need_atelier
-	bring 13 AtM 4 reservoir Loc.63 need_atelier
-	
-	:need_atelier2
-	var Ex|Jump skip_building_var 1 blank_return 13
-	p_need 1 atelier
-	stop
-	
-	:wait_for_atelier
-	wait 12
-	notowns atelier wait_for_atelier
 	return
 	
 	:request_anchor
@@ -4784,7 +4683,7 @@ script_id TMCx
 	return
 	
 	:production_cycle_captaincy
-	notowns fountainhead blank_return
+	notowns atlas blank_return
 	local 255 AtL 8 captaincy blank_return
 	add_bld 255 captaincy 1 5 98
 	
@@ -4857,7 +4756,7 @@ script_id TMCx
 	
 	:production_cycle_mantle_check
 	bring 13 AtM 2 mantle Loc.63 production_cycle_mantle
-	notowns fountainhead production_cycle_mantle
+	notowns atlas production_cycle_mantle
 	return
 	
 	:production_cycle_mantle
@@ -4874,7 +4773,7 @@ script_id TMCx
 	return
 	
 	:production_cycle_iron_foundry
-	notowns atelier blank_return
+	notowns daedala blank_return
 	local 255 AtL 8 iron_foundry blank_return
 	add_bld 255 iron_foundry 1 5 98
 	call main_wait_1200
@@ -4914,7 +4813,7 @@ script_id TMCx
 	
 	:production_cycle_starport_check
 	bring 13 AtM 1 starport Loc.63 production_cycle_starport
-	notowns fountainhead production_cycle_starport
+	notowns atlas production_cycle_starport
 	return
 	
 	:production_cycle_starport
@@ -4953,7 +4852,7 @@ script_id TMCx
 	return
 	
 	:production_cycle_nanite_assembly
-	notowns atelier blank_return
+	notowns daedala blank_return
 	local 255 AtL 8 nanite_assembly blank_return
 	add_bld 255 nanite_assembly 1 5 99
 	call main_wait_1200
@@ -5068,6 +4967,10 @@ script_id TMCx
 	
 	:attack_cycle_start
 	var Ex|Wait can_attack_var 1 13
+	time AtM 5760 Frames attack_cycle_cont
+	bring 13 AtM 3 Group_Factories Loc.63 blank_return
+	
+	:attack_cycle_cont
 	atk_do
 	atk_c
 	
@@ -5092,8 +4995,9 @@ script_id TMCx
 	
 	:attack_conditions
 	wait 24
+	bring 13 Ex 0 stockade|captaincy|apothecary|fulcrum|mantle|iron_foundry|starpad|starport|nanite_assembly Loc.63 attack_conditions
+	time AtM 5760 Frames blank_return
 	bring 13 AtM 12 mason|talos Loc.63 attack_conditions
-	bring 13 AtM 1 stockade|captaincy|apothecary|fulcrum|mantle|iron_foundry|starpad|starport|nanite_assembly Loc.63 attack_conditions
 	res 13 AtL Any 500 blank_return
 	var Ex|WF(360) under_attack_var 0 13
 	return

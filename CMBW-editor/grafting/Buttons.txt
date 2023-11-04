@@ -1,6 +1,6 @@
 #### Button Sets ####
 
-9: # [9] Hachirosk (Morphing)
+9: # Hachirosk (Morphing)
  1, 35, 3, 2, 0, 0, 674, 0 # Larva, Always (0), Select Larva (0)
  2, 286, 14, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point - While Upgrading Only (0), Rally Point (0)
  6, 236, 15, 7, 0, 0, 698, 0 # Cancel, Construction\Mutation Underway (0), Cancel Construction (0)
@@ -8,7 +8,7 @@
  8, 38, 23, 24, 38, 38, 486, 0 # Hydralisk, Spell Researched ([38] Select Assault - Zerg Structure), Use Technology ([38] Select Assault - Zerg Structure)
  9, 97, 23, 24, 28, 28, 487, 0 # Zoryusthaleth, Spell Researched ([28] Select Control - Zerg Structure), Use Technology ([28] Select Control - Zerg Structure)
 
-13: # [13] Group - Workers
+13: # Group - Workers
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -16,7 +16,7 @@
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  6, 233, 19, 40, 0, 0, 676, 0 # Return Resources, Unit Is Carrying Something(Return Cargo - Probe) (0), Return Cargo (0)
 
-14: # [14] Transport
+14: # Transport
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -25,7 +25,7 @@
  8, 309, 20, 46, 0, 0, 683, 0 # Load (into Transport), Unit's Capacity Has Not Been Met (0), Load (0)
  9, 312, 3, 47, 0, 0, 684, 0 # Unload All (from Transport), Always (0), Unload (0)
 
-16: # [16] Larva
+16: # Larva
  1, 41, 4, 38, 41, 41, 578, 0 # Droleth, Can Create Unit\Building ([41] Droleth), Unit Morph ([41] Droleth)
  2, 42, 4, 38, 42, 42, 579, 0 # Ovileth, Can Create Unit\Building ([42] Ovileth), Unit Morph ([42] Ovileth)
  3, 57, 4, 38, 57, 57, 1373, 1367 # Othstoleth, Can Create Unit\Building ([57] Othstoleth), Unit Morph ([57] Othstoleth)
@@ -35,7 +35,7 @@
  8, 38, 47, 59, 0, 207, 486, 0 # Assault Strains, Zerg Basic Buildings (0), Change Displayed Buttons ([207] Left Pit Door)
  9, 97, 47, 59, 0, 208, 487, 0 # Control Strains, Zerg Basic Buildings (0), Change Displayed Buttons ([208] Right Pit Door)
 
-17: # [17] Egg
+17: # Egg
  1, 41, 4, 38, 41, 41, 578, 0 # Droleth, Can Create Unit\Building ([41] Droleth), Unit Morph ([41] Droleth)
  2, 42, 4, 38, 42, 42, 579, 0 # Ovileth, Can Create Unit\Building ([42] Ovileth), Unit Morph ([42] Ovileth)
  3, 57, 4, 38, 57, 57, 1373, 1367 # Othstoleth, Can Create Unit\Building ([57] Othstoleth), Unit Morph ([57] Othstoleth)
@@ -45,7 +45,7 @@
  8, 38, 47, 59, 0, 207, 486, 0 # Assault Strains, Zerg Basic Buildings (0), Change Displayed Buttons ([207] Left Pit Door)
  9, 97, 47, 59, 0, 208, 487, 0 # Control Strains, Zerg Basic Buildings (0), Change Displayed Buttons ([208] Right Pit Door)
 
-18: # [18] Droleth
+18: # Droleth
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -57,7 +57,7 @@
  9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
-19: # [19] Basic Zerg Buildings
+19: # Basic Zerg Buildings
  1, 131, 4, 33, 131, 131, 613, 0 # Hachirosk, Can Create Unit\Building ([131] Hachirosk), Create Building - Zerg ([131] Hachirosk)
  2, 143, 4, 33, 143, 143, 614, 0 # Cagrant Cesiant, Can Create Unit\Building ([143] Cagrant Cesiant), Create Building - Zerg ([143] Cagrant Cesiant)
  4, 142, 4, 33, 142, 142, 616, 0 # Quazeth Pool, Can Create Unit\Building ([142] Quazeth Pool), Create Building - Zerg ([142] Quazeth Pool)
@@ -65,7 +65,7 @@
  6, 193, 4, 33, 193, 193, 387, 389 # Zoryus Shroud, Can Create Unit\Building ([193] Zoryus Shroud), Create Building - Zerg ([193] Zoryus Shroud)
  7, 224, 4, 33, 224, 224, 1366, 1365 # Irol Iris, Can Create Unit\Building ([224] Irol Iris), Create Building - Zerg ([224] Irol Iris)
 
-20: # [20] Advanced Zerg Buildings
+20: # Advanced Zerg Buildings
  3, 149, 4, 33, 149, 149, 615, 1467 # Excisant, Can Create Unit\Building ([149] Excisant), Create Building - Zerg ([149] Excisant)
  4, 141, 4, 33, 141, 141, 620, 1098 # Muthrok Spire, Can Create Unit\Building ([141] Muthrok Spire), Create Building - Zerg ([141] Muthrok Spire)
  5, 170, 4, 33, 170, 170, 1386, 1103 # Izkag Iteth, Can Create Unit\Building ([170] Izkag Iteth), Create Building - Zerg ([170] Izkag Iteth)
@@ -75,7 +75,7 @@
  9, 136, 4, 33, 136, 136, 623, 755 # Sovthrath Mound, Can Create Unit\Building ([136] Sovthrath Mound), Create Building - Zerg ([136] Sovthrath Mound)
 #9, 236, 3, 59, 0, 228, 688, 0 # Cancel, Always (0), Change Displayed Buttons ([228] Blank)
 
-21: [21] Basic Burrower
+21: Basic Burrower
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -84,7 +84,7 @@
  9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
-22: # [22] Hydralisk
+22: # Hydralisk
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -94,7 +94,7 @@
  9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
-23: # [23] Mutalisk
+23: # Mutalisk
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -103,7 +103,7 @@
  6, 421, 4, 38, 271, 271, 1049, 1048 # Tosgrilisk, Can Create Unit\Building ([271] Tosgrilisk), Unit Morph ([271] Tosgrilisk)
  8, 344, 23, 57, 34, 0, 564, 564 # Acid Spore, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-24: # [24] Lakizilisk
+24: # Lakizilisk
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 45, 10, 0, 0, 665, 0 # Stop, Burrowed (Stop - Lakizilisk) (0), Stop (0)
  3, 230, 23, 57, 34, 0, 1464, 1464 # Burrowed Attacker, Spell Researched ([34] Healing - Cleric), Cancel (0)
@@ -115,7 +115,7 @@
  9, 377, 38, 41, 11, 11, 372, 382 # Lakizilisk Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
  9, 398, 39, 42, 11, 0, 373, 0 # Lakizilisk Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
-25: # [25] Matraleth
+25: # Matraleth
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
@@ -124,7 +124,7 @@
  7, 271, 23, 24, 18, 18, 377, 0 # Parasite, Spell Researched ([18] Parasite - Matraleth), Use Technology ([18] Parasite - Matraleth)
  8, 267, 23, 57, 34, 0, 381, 0 # Ensnaring Brood, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-26: # [26] Isthrathaleth
+26: # Isthrathaleth
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
@@ -134,7 +134,7 @@
  9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
-27: # [27] Protathalor
+27: # Protathalor
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -144,7 +144,7 @@
  9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
-30: # [30] Hachirosk
+30: # Hachirosk
  1, 35, 3, 2, 0, 0, 674, 0 # Larva, Always (0), Select Larva (0)
  2, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  4, 132, 4, 35, 132, 132, 624, 746 # Caphrolosk, Can Create Unit\Building ([132] Caphrolosk), Building Morph ([132] Caphrolosk)
@@ -155,7 +155,7 @@
  9, 236, 17, 23, 0, 0, 692, 0 # Cancel, Research Underway (0), Cancel Technology Research (0)
  9, 97, 23, 24, 28, 28, 487, 0 # Zoryusthaleth, Spell Researched ([28] Select Control - Zerg Structure), Use Technology ([28] Select Control - Zerg Structure)
 
-31: # [31] Caphrolosk
+31: # Caphrolosk
  1, 35, 3, 2, 0, 0, 674, 0 # Larva, Always (0), Select Larva (0)
  2, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  6, 350, 23, 57, 34, 0, 1808, 0 # Ocsal Gestation, Spell Researched ([34] Healing - Cleric), Cancel (0)
@@ -165,7 +165,7 @@
  9, 236, 17, 23, 0, 0, 692, 0 # Cancel, Research Underway (0), Cancel Technology Research (0)
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
-32: # [32] Gathtelosk
+32: # Gathtelosk
  1, 35, 3, 2, 0, 0, 674, 0 # Larva, Always (0), Select Larva (0)
  2, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
 # 4, 500, 4, 35, 350, 350, 1371, 1370 # Nephrilosk, Can Create Unit\Building ([350] Nephrilosk), Building Morph ([350] Nephrilosk)
@@ -176,35 +176,35 @@
  9, 0, 16, 27, 0, 0, 0, 0 # Marine, Upgrade Underway (0), Cancel Upgrade Research (0)
  9, 97, 23, 24, 28, 28, 487, 0 # Zoryusthaleth, Spell Researched ([28] Select Control - Zerg Structure), Use Technology ([28] Select Control - Zerg Structure)
 
-34: # [34] Mutath Spire
+34: # Mutath Spire
  7, 197, 4, 35, 197, 197, 560, 561 # Vithrath Haunt, Can Create Unit\Building ([197] Vithrath Haunt), Building Morph ([197] Vithrath Haunt)
 
-36: # [36] Quazeth Pool
+36: # Quazeth Pool
  7, 204, 4, 35, 204, 204, 396, 558 # Liivral Pond, Can Create Unit\Building ([204] Liivral Pond), Building Morph ([204] Liivral Pond)
 
-37: # [37] Cagrant Cesiant
+37: # Cagrant Cesiant
  1, 146, 4, 35, 146, 146, 628, 758 # Surkith Cesiant, Can Create Unit\Building ([146] Surkith Cesiant), Building Morph ([146] Surkith Cesiant)
  2, 144, 4, 35, 144, 144, 627, 757 # Spraith Cesiant, Can Create Unit\Building ([144] Spraith Cesiant), Building Morph ([144] Spraith Cesiant)
  4, 216, 4, 35, 216, 216, 534, 585 # Larvosk Cesiant, Can Create Unit\Building ([216] Larvosk Cesiant), Building Morph ([216] Larvosk Cesiant)
  5, 134, 4, 35, 134, 134, 619, 748 # Nydus Cesiant, Can Create Unit\Building ([134] Nydus Cesiant), Create Building - Zerg ([134] Nydus Cesiant)
 
-38: # [38] Hydrith Den
+38: # Hydrith Den
  7, 153, 4, 35, 153, 153, 1053, 1058 # Gorgral Swamp, Can Create Unit\Building ([153] Gorgral Swamp), Building Morph ([153] Gorgral Swamp)
 
-39: # [39] Matravil Nest
+39: # Matravil Nest
  7, 139, 4, 35, 139, 139, 617, 753 # Almakis Antre, Can Create Unit\Building ([139] Almakis Antre), Building Morph ([139] Almakis Antre)
 
-40: # [40] Excisant
+40: # Excisant
  7, 526, 4, 35, 364, 364, 1465, 1466 # Evigrisant, Can Create Unit\Building ([364] Evigrisant), Create Building - Zerg ([364] Evigrisant)
  9, 236, 15, 7, 0, 0, 698, 0 # Cancel, Construction\Mutation Underway (0), Cancel Construction (0)
 
-41: # [41] unused
+41: # unused
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
-42: # [42] Geszkath Grotto
+42: # Geszkath Grotto
 #7, 212, 4, 35, 212, 212, 1397, 1396 # Alkaj Chasm, Can Create Unit\Building ([212] Alkaj Chasm), Building Morph ([212] Alkaj Chasm)
 
-44: # [44] Scribe, Artisan
+44: # Scribe, Artisan
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -214,7 +214,7 @@
  8, 226, 56, 59, 0, 243, 1066, 0 # Grand Library, Advanced Protoss Buildings (0), Change Displayed Buttons ([243] Basic Protoss Buildings)
  9, 165, 56, 59, 0, 33, 1352, 0 # Ancestral Archives, Supreme Protoss Buildings (0), Change Displayed Buttons ([33] Advanced Protoss Buildings)
 
-45: # [45] Basic Protoss Structures
+45: # Basic Protoss Structures
  1, 154, 4, 31, 154, 154, 630, 0 # Nexus, Can Create Unit\Building ([154] Nexus), Create Building - Protoss ([154] Nexus)
  2, 156, 4, 31, 156, 156, 632, 0 # Pylon, Can Create Unit\Building ([156] Pylon), Create Building - Protoss ([156] Pylon)
  3, 157, 4, 31, 157, 157, 631, 0 # Aquifer, Can Create Unit\Building ([157] Aquifer), Create Building - Protoss ([157] Aquifer)
@@ -223,7 +223,7 @@
  7, 160, 4, 31, 160, 160, 633, 0 # Gateway, Can Create Unit\Building ([160] Gateway), Create Building - Protoss ([160] Gateway)
  8, 155, 4, 31, 155, 155, 639, 0 # Lattice, Can Create Unit\Building ([155] Lattice), Create Building - Protoss ([155] Lattice)
 
-46: # [46] Advanced Protoss Structures
+46: # Advanced Protoss Structures
  1, 201, 4, 31, 201, 201, 1054, 0 # Crucible, Can Create Unit\Building ([201] Crucible), Create Building - Protoss ([201] Crucible)
  2, 402, 4, 31, 252, 252, 526, 0 # Matrix, Can Create Unit\Building ([252] Matrix), Create Building - Protoss ([252] Matrix)
  4, 161, 4, 31, 161, 161, 388, 0 # Rogue Gallery, Can Create Unit\Building ([161] Rogue Gallery), Create Building - Protoss ([161] Rogue Gallery)
@@ -232,7 +232,7 @@
  8, 220, 4, 31, 220, 220, 1281, 0 # Ardent Authority, Can Create Unit\Building ([220] Ardent Authority), Create Building - Protoss ([220] Ardent Authority)
  9, 168, 4, 31, 168, 168, 1086, 0 # Argosy, Can Create Unit\Building ([168] Argosy), Create Building - Protoss ([168] Argosy)
 
-47: # [47] Cantavis
+47: # Cantavis
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
@@ -240,16 +240,16 @@
  7, 277, 23, 24, 20, 20, 401, 406 # Hallucination, Spell Researched ([20] Hallucinate - Cantavis), Use Technology ([20] Hallucinate - Cantavis)
  8, 275, 23, 24, 19, 19, 400, 405 # Psionic Storm, Spell Researched ([19] Psionic Storm - Cantavis), Use Technology ([19] Psionic Storm - Cantavis)
 
-48: # [48] Cabalist
+48: # Cabalist
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
- 7, 252, 23, 57, 34, 0, 716, 716 # Cloak, Spell Researched ([34] Healing - Cleric), Cancel (0)
- 8, 305, 23, 57, 34, 0, 1587, 1587 # Ground Weapons, Spell Researched ([34] Healing - Cleric), Cancel (0)
+ 7, 395, 23, 57, 34, 0, 717, 717 # Steady Shroud, Spell Researched ([34] Healing - Cleric), Cancel (0)
+ 8, 305, 23, 57, 34, 0, 1587, 1587 # Silent Strides, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-49: # [49] Solarion
+49: # Solarion
  1, 228, 3, 14, 0, 0, 664, 0 # Move, Always (0), Move (Carrier\Reaver) (0)
  2, 229, 3, 15, 0, 0, 665, 0 # Stop, Always (0), Stop Carrier (0)
  3, 230, 49, 17, 0, 0, 666, 759 # Attack, Has Interceptors (0), Attack Carrier (0)
@@ -257,18 +257,18 @@
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 73, 23, 57, 34, 0, 385, 385 # Interceptor, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-51: # [51] Didact
+51: # Didact
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
- 6, 395, 23, 57, 34, 0, 528, 528 # Shroud of Adun, Spell Researched ([34] Healing - Cleric), Cancel (0)
- 7, 278, 23, 24, 22, 22, 403, 408 # Stasis Field, Spell Researched ([22] Stasis Field - Didact), Use Technology ([22] Stasis Field - Didact)
- 8, 280, 23, 24, 21, 21, 402, 407 # Recall, Spell Researched ([21] Recall - Didact), Use Technology ([21] Recall - Didact)
- 9, 236, 23, 24, 26, 26, 475, 475 # Cancel, Spell Researched ([26] Cancel New Ability), Use Technology ([26] Cancel New Ability)
+ 7, 280, 23, 24, 21, 21, 402, 407 # Recall, Spell Researched ([21] Recall - Didact), Use Technology ([21] Recall - Didact)
+ 7, 236, 23, 24, 26, 26, 475, 475 # Cancel, Spell Researched ([26] Cancel New Ability), Use Technology ([26] Cancel New Ability)
+ 8, 278, 23, 24, 22, 22, 403, 408 # Stasis Field, Spell Researched ([22] Stasis Field - Didact), Use Technology ([22] Stasis Field - Didact)
+ 9, 395, 23, 57, 34, 0, 528, 528 # Shroud of Adun, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-54: # [54] Mind Tyrant
+54: # Mind Tyrant
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
@@ -277,7 +277,7 @@
  8, 381, 23, 24, 31, 31, 1268, 1274 # Maelstrom, Spell Researched ([31] Maelstrom - Mind Tyrant), Use Technology ([31] Maelstrom - Mind Tyrant)
  9, 236, 23, 24, 26, 26, 1250, 1250 # Cancel, Spell Researched ([26] Cancel New Ability), Use Technology ([26] Cancel New Ability)
 
-55: # [55] Lattice
+55: # Lattice
  1, 89, 4, 3, 89, 89, 1388, 1389 # Simulacrum, Can Create Unit\Building ([89] Simulacrum), Create Unit ([89] Simulacrum)
  2, 16, 4, 3, 16, 16, 1403, 1403 # Manifold, Can Create Unit\Building ([16] Manifold), Create Unit ([16] Manifold)
  3, 522, 4, 3, 360, 360, 382, 0 # Vassal, Can Create Unit\Building ([360] Vassal), Create Unit ([360] Vassal)
@@ -286,7 +286,7 @@
  6, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
 
-56: # [56] Gateway
+56: # Gateway
  1, 65, 4, 3, 65, 65, 600, 0 # Zealot, Can Create Unit\Building ([65] Zealot), Create Unit ([65] Zealot)
  2, 66, 4, 3, 66, 66, 601, 719 # Dracadin, Can Create Unit\Building ([66] Dracadin), Create Unit ([66] Dracadin)
  3, 79, 4, 3, 79, 79, 349, 1273 # Ecclesiast, Can Create Unit\Building ([79] Ecclesiast), Create Unit ([79] Ecclesiast)
@@ -295,7 +295,7 @@
  6, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
 
-57: # [57] Stargate
+57: # Stargate
  1, 80, 4, 3, 80, 80, 1132, 0 # Aurora, Can Create Unit\Building ([80] Aurora), Create Unit ([80] Aurora)
  2, 60, 4, 3, 60, 60, 1292, 0 # Lanifect, Can Create Unit\Building ([60] Lanifect), Create Unit ([60] Lanifect)
  3, 70, 4, 3, 70, 70, 604, 0 # Panoptus, Can Create Unit\Building ([70] Panoptus), Create Unit ([70] Panoptus)
@@ -304,24 +304,24 @@
  6, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
 
-58: # [58] Astral Omen
+58: # Astral Omen -- unused
  6, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
 
-59: # [59] Monument of Sin
+59: # Monument of Sin
  1, 21, 4, 3, 21, 21, 1428, 1427 # Star Sovereign, Can Create Unit\Building ([21] Star Sovereign), Create Unit ([21] Star Sovereign)
  2, 179, 4, 3, 179, 179, 1283, 1284 # Anthelion, Can Create Unit\Building ([179] Anthelion), Create Unit ([179] Anthelion)
  6, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
 
-60: # [60] Ancestral Archives
+60: # Ancestral Archives
  1, 68, 4, 3, 68, 68, 404, 410 # Archon, Can Create Unit\Building ([68] Archon), Create Unit ([68] Archon)
  2, 466, 4, 3, 316, 316, 1435, 0 # Optecton, Can Create Unit\Building ([316] Optecton), Create Unit ([316] Optecton)
  3, 467, 4, 3, 317, 317, 1436, 0 # Patriarch, Can Create Unit\Building ([317] Patriarch), Create Unit ([317] Patriarch)
  6, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
 
-61: # [61] Embassy
+61: # Embassy
  1, 64, 4, 3, 64, 64, 599, 599 # Scribe, Can Create Unit\Building ([64] Scribe), Create Unit ([64] Scribe)
  2, 182, 4, 3, 182, 182, 471, 506 # Artisan, Can Create Unit\Building ([182] Artisan), Create Unit ([182] Artisan)
  4, 69, 4, 3, 69, 69, 603, 1287 # Envoy, Can Create Unit\Building ([69] Envoy), Create Unit ([69] Envoy)
@@ -329,22 +329,22 @@
  6, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
 
-62: # [62] Fleet Beacon
+62: # Fleet Beacon -- unused
  6, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
 
-64: # [64] Synthetic Synod
+64: # Synthetic Synod
  1, 86, 4, 3, 86, 86, 853, 723 # Demiurge, Can Create Unit\Building ([86] Demiurge), Create Unit ([86] Demiurge)
  2, 183, 4, 3, 183, 183, 452, 453 # Empress, Can Create Unit\Building ([183] Empress), Create Unit ([183] Empress)
  3, 81, 4, 3, 81, 81, 522, 526 # Clarion, Can Create Unit\Building ([81] Clarion), Create Unit ([81] Clarion)
  6, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
 
-66: # [66] Automaton Register
+66: # Automaton Register -- unused
  6, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
 
-69: # [69] Cleric
+69: # Cleric
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -352,7 +352,7 @@
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 365, 23, 53, 34, 34, 1247, 0 # Heal, Spell Researched ([34] Healing - Cleric), Heal ([34] Healing - Cleric)
 
-71: # [71] Basic Terran Buildings
+71: # Basic Terran Buildings
  1, 106, 4, 29, 106, 106, 646, 0 # Command Center, Can Create Unit\Building ([106] Command Center), Create Building - Terran ([106] Command Center)
  2, 124, 4, 29, 124, 124, 651, 0 # Watchdog, Can Create Unit\Building ([124] Watchdog), Create Building - Terran ([124] Watchdog)
  3, 215, 4, 29, 215, 215, 1379, 1378 # Treasury, Can Create Unit\Building (Treasury), Create Building - Terran (Treasury)
@@ -362,24 +362,24 @@
  7, 125, 4, 29, 125, 125, 653, 718 # Anchor, Can Create Unit\Building ([125] Anchor), Create Building - Terran ([125] Anchor)
 # 9, 236, 3, 59, 0, 228, 688, 0 # Cancel, Always (0), Change Displayed Buttons ([228] Blank)
 
-72: # [72] Advanced Terran Buildings
+72: # Advanced Terran Buildings
  1, 122, 4, 29, 122, 122, 650, 715 # Atlas, Can Create Unit\Building ([122] Atlas), Create Building - Terran ([122] Atlas)
- 2, 209, 4, 29, 209, 209, 1387, 1389 # Sentinel, Can Create Unit\Building ([209] Sentinel), Create Building - Terran ([209] Sentinel)
+ 2, 209, 4, 29, 209, 209, 1387, 1390 # Sentinel, Can Create Unit\Building ([209] Sentinel), Create Building - Terran ([209] Sentinel)
  3, 110, 4, 29, 110, 110, 648, 1378 # Reservoir, Can Create Unit\Building ([110] Reservoir), Create Building - Terran ([110] Reservoir)
  4, 199, 4, 29, 199, 199, 1088, 720 # Captaincy, Can Create Unit\Building ([199] Captaincy), Create Building - Terran ([199] Captaincy)
  5, 430, 4, 29, 280, 280, 1090, 1114 # Mantle, Can Create Unit\Building ([280] Mantle), Create Building - Terran ([280] Mantle)
  6, 114, 4, 29, 114, 114, 655, 713 # Starport, Can Create Unit\Building ([114] Starport), Create Building - Terran ([114] Starport)
 
-73: # [73] Eidolon
+73: # Eidolon
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
- 7, 252, 23, 57, 34, 0, 716, 716 # Permanent Cloaking, Spell Researched ([34] Healing - Cleric), Cancel (0)
+ 7, 317, 23, 57, 34, 0, 716, 716 # Proximity Cloaking, Spell Researched ([34] Healing - Cleric), Cancel (0)
  9, 311, 33, 51, 0, 0, 685, 761 # Nuclear Strike, Nuke Available (0), Nuclear Strike (0)
 
-76: # [76] Phalanx
+76: # Phalanx
  1, 228, 32, 9, 0, 0, 664, 0 # Move, Tank Is In Tank Mode(Move) (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -389,7 +389,7 @@
  7, 246, 31, 5, 5, 0, 339, 0 # Tank Mode, Tank Is In Siege Mode ([5] Siege Mode - Phalanx), Tank Mode (0)
  8, 293, 23, 57, 34, 0, 1227, 1417 # Vehicle Armor, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-78: # [78] Seraph
+78: # Seraph
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -399,7 +399,7 @@
  8, 249, 23, 24, 34, 0, 737, 737 # Ocular Implants, Spell Researched ([34] Healing - Cleric), Cancel (0)
  9, 311, 33, 51, 0, 0, 685, 1122 # Nuclear Strike, Nuke Available (0), Nuclear Strike (0)
 
-79: # [79] Minotaur
+79: # Minotaur
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -408,7 +408,7 @@
  7, 281, 23, 57, 34, 0, 365, 0 # Singularity Charge, Spell Researched ([34] Healing - Cleric), Cancel (0)
  8, 291, 23, 57, 34, 0, 1690, 0 # Ship Plating, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-81: # [81] Ministry
+81: # Ministry
  1, 228, 35, 9, 0, 0, 664, 0 # Move, Building Can Move And Has Lifted Off (0), Move (0)
  1, 7, 4, 3, 7, 7, 592, 0 # Mason, Can Create Unit\Building ([7] Mason), Create Unit ([7] Mason)
  2, 229, 35, 10, 0, 0, 665, 0 # Stop, Building Can Move And Has Lifted Off (0), Stop (0)
@@ -421,13 +421,13 @@
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
  9, 236, 11, 28, 0, 0, 694, 0 # Cancel, Cancel AddOn (0), Cancel AddOn (0)
 
-82: # [82] Comsat Station
+82: # Comsat Station -- unused
  1, 250, 23, 24, 4, 4, 337, 0 # Scanner Sweep, Spell Researched ([4] Scanner Sweep - Comsat Station), Use Technology ([4] Scanner Sweep - Comsat Station)
  7, 311, 23, 24, 39, 39, 501, 501 # Emergency Detonation, Spell Researched ([39] Emergency Detonation - Terran Structure), Use Technology ([39] Emergency Detonation - Terran Structure)
  7, 314, 23, 24, 2, 2, 500, 500 # Controlled Demolition, Spell Researched ([2] Controlled Demolition - Terran Structure), Use Technology ([2] Controlled Demolition - Terran Structure)
  9, 236, 23, 24, 26, 26, 1792, 1792 # Cancel, Spell Researched ([26] Cancel New Ability), Use Technology ([26] Cancel New Ability)
 
-83: # [83] Anvil
+83: # Anvil
  1, 14, 66, 3, 14, 14, 597, 0 # Nuclear Missile, Nuke Train ([14] Nuclear Missile), Create Unit ([14] Nuclear Missile)
  7, 311, 23, 24, 39, 39, 501, 501 # Nuclear Strike, Spell Researched ([39] Emergency Detonation - Terran Structure), Use Technology ([39] Emergency Detonation - Terran Structure)
  7, 314, 23, 24, 2, 2, 500, 500 # Scarab Damage, Spell Researched ([2] Controlled Demolition - Terran Structure), Use Technology ([2] Controlled Demolition - Terran Structure)
@@ -435,7 +435,7 @@
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
  9, 236, 23, 24, 26, 26, 1792, 1792 # Cancel, Spell Researched ([26] Cancel New Ability), Use Technology ([26] Cancel New Ability)
 
-84: # [84] Anchor
+84: # Anchor
  1, 228, 35, 9, 0, 0, 664, 0 # Move, Building Can Move And Has Lifted Off (0), Move (0)
  2, 229, 35, 10, 0, 0, 665, 0 # Stop, Building Can Move And Has Lifted Off (0), Stop (0)
  2, 229, 9, 10, 0, 0, 665, 0 # Stop, Attacking Building (0), Stop (0)
@@ -445,7 +445,7 @@
  9, 282, 37, 45, 0, 0, 671, 0 # Lift off, Building Has Landed (0), Lift Off (0)
  9, 283, 36, 36, 0, 125, 670, 0 # Land, Building Has Lifted Off (0), Land ([125] Anchor)
 
-85: # [85] Barracks
+85: # Barracks
  1, 228, 35, 9, 0, 0, 664, 0 # Move, Building Can Move And Has Lifted Off (0), Move (0)
  1, 0, 4, 3, 0, 0, 586, 0 # Maverick, Can Create Unit\Building ([0] Maverick), Create Unit ([0] Maverick)
  2, 229, 35, 10, 0, 0, 665, 0 # Stop, Building Can Move And Has Lifted Off (0), Stop (0)
@@ -466,7 +466,7 @@
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
  9, 236, 11, 28, 0, 0, 694, 0 # Cancel, Cancel AddOn (0), Cancel AddOn (0)
 
-86: # [86] Fulcrum
+86: # Fulcrum
  1, 228, 35, 9, 0, 0, 664, 0 # Move, Building Can Move And Has Lifted Off (0), Move (0)
  1, 2, 4, 3, 2, 2, 589, 0 # Vulture, Can Create Unit\Building ([2] Vulture), Create Unit ([2] Vulture)
  2, 229, 35, 10, 0, 0, 665, 0 # Stop, Building Can Move And Has Lifted Off (0), Stop (0)
@@ -490,15 +490,15 @@
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
  9, 236, 11, 28, 0, 0, 694, 0 # Cancel, Cancel AddOn (0), Cancel AddOn (0)
 
-87: # [87] Daedala
+87: # Daedala
  1, 228, 35, 9, 0, 0, 664, 0 # Move, Building Can Move And Has Lifted Off (0), Move (0)
  2, 229, 35, 10, 0, 0, 665, 0 # Stop, Building Can Move And Has Lifted Off (0), Stop (0)
- 7, 213, 4, 32, 213, 213, 1060, 0 # Atelier, Can Create Unit\Building ([213] Atelier), Create AddOn ([213] Atelier)
+#7, 213, 4, 32, 213, 213, 1060, 0 # Atelier, Can Create Unit\Building ([213] Atelier), Create AddOn ([213] Atelier)
  9, 283, 36, 36, 0, 116, 670, 0 # Land, Building Has Lifted Off (0), Land ([116] Daedala)
  9, 282, 37, 45, 0, 0, 671, 0 # Lift off, Building Has Landed (0), Lift Off (0)
  9, 236, 11, 28, 0, 0, 694, 0 # Cancel, Cancel AddOn (0), Cancel AddOn (0)
 
-88: # [88] Starport
+88: # Starport
  1, 228, 35, 9, 0, 0, 664, 0 # Move, Building Can Move And Has Lifted Off (0), Move (0)
  1, 23, 4, 3, 23, 23, 1072, 0 # Gorgon, Can Create Unit\Building ([23] Gorgon), Create Unit ([23] Gorgon)
  2, 229, 35, 10, 0, 0, 665, 0 # Stop, Building Can Move And Has Lifted Off (0), Stop (0)
@@ -518,19 +518,19 @@
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
  9, 236, 11, 28, 0, 0, 694, 0 # Cancel, Cancel AddOn (0), Cancel AddOn (0)
 
-89: # [89] Commandment
+89: # Commandment
  9, 236, 17, 23, 0, 0, 692, 0 # Cancel, Research Underway (0), Cancel Technology Research (0)
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
-90: # [90] Atlas
+90: # Atlas
  1, 228, 35, 9, 0, 0, 664, 0 # Move, Building Can Move And Has Lifted Off (0), Move (0)
  2, 229, 35, 10, 0, 0, 665, 0 # Stop, Building Can Move And Has Lifted Off (0), Stop (0)
- 7, 163, 4, 32, 163, 163, 427, 0 # Fountainhead, Can Create Unit\Building ([163] Fountainhead), Create AddOn ([163] Fountainhead)
+#7, 163, 4, 32, 163, 163, 427, 0 # Fountainhead, Can Create Unit\Building ([163] Fountainhead), Create AddOn ([163] Fountainhead)
  9, 283, 36, 36, 0, 122, 670, 0 # Land, Building Has Lifted Off (0), Land ([122] Atlas)
  9, 282, 37, 45, 0, 0, 671, 0 # Lift off, Building Has Landed (0), Lift Off (0)
  9, 236, 11, 28, 0, 0, 694, 0 # Cancel, Cancel AddOn (0), Cancel AddOn (0)
 
-91: # [91] Covert Ops
+91: # Covert Ops
  1, 240, 22, 22, 1, 1, 325, 1775 # Lockdown, Tech Spell Not Researched ([1] Lobotomy Mine - Unused), Research Technology ([1] Lobotomy Mine - Unused)
  2, 249, 25, 26, 114, 114, 1797, 1591 # Ocular Implants, Upgrade Not At Max Level ([114] Somatic Implants - Ghost), Research Upgrade ([114] Somatic Implants - Ghost)
  3, 256, 25, 26, 21, 21, 477, 0 # Moebius Reactor, Upgrade Not At Max Level ([21] Moebius Reactor - Ghost), Research Upgrade ([21] Moebius Reactor - Ghost)
@@ -540,7 +540,7 @@
  9, 236, 17, 23, 0, 0, 692, 0 # Cancel, Research Underway (0), Cancel Technology Research (0)
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
-92: # [92] Physics Lab
+92: # Physics Lab
  1, 251, 22, 22, 8, 8, 331, 0 # Yamato Gun, Tech Spell Not Researched ([8] Yamato Cannon - Phobos), Research Technology ([8] Yamato Cannon - Phobos)
  2, 322, 25, 26, 70, 70, 1691, 0 # Khaydarin Core, Upgrade Not At Max Level ([70] Umojan Batteries - Battlecruiser), Research Upgrade ([70] Umojan Batteries - Battlecruiser)
  3, 285, 25, 26, 23, 23, 479, 0 # Colossus Reactor, Upgrade Not At Max Level ([23] Colossus Reactor - Battlecruiser), Research Upgrade ([23] Colossus Reactor - Battlecruiser)
@@ -549,7 +549,7 @@
  9, 236, 17, 23, 0, 0, 692, 0 # Cancel, Research Underway (0), Cancel Technology Research (0)
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
-93: # [93] Nathrokor
+93: # Nathrokor
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -558,15 +558,15 @@
  6, 51, 4, 38, 51, 51, 1552, 1555 # Kalkalisk, Can Create Unit\Building ([51] Kalkalisk), Unit Morph ([51] Kalkalisk)
  7, 264, 23, 57, 34, 0, 1473, 1473 # Adrenal Frenzy, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-94: # [94] Academy (unused)
+94: # Academy -- unused
  9, 236, 17, 23, 0, 0, 692, 0 # Cancel, Research Underway (0), Cancel Technology Research (0)
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
-95: # [95] Palladium (unused)
+95: # Palladium -- unused
  9, 236, 17, 23, 0, 0, 692, 0 # Cancel, Research Underway (0), Cancel Technology Research (0)
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
-96: # [96] Infested Command Center
+96: # Infested Ministry -- unused
  1, 228, 35, 9, 0, 0, 664, 0 # Move, Building Can Move And Has Lifted Off (0), Move (0)
  1, 35, 3, 2, 0, 0, 674, 0 # Larva, Always (0), Select Larva (0)
  2, 229, 35, 10, 0, 0, 665, 0 # Stop, Building Can Move And Has Lifted Off (0), Stop (0)
@@ -575,7 +575,7 @@
  9, 282, 37, 45, 0, 0, 671, 0 # Lift off, Building Has Landed (0), Lift Off (0)
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
 
-98: # [98] Zethrokor
+98: # Zethrokor
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -585,11 +585,11 @@
  9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
-99: # Medbay (unused)
+99: # Vestry -- unused
  9, 236, 17, 23, 0, 0, 692, 0 # Cancel, Research Underway (0), Cancel Technology Research (0)
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
-100: # [100] Vorvrokor
+100: # Vorvrokor
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -600,7 +600,7 @@
  9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
-101: # [101] Bactalisk
+101: # Bactalisk
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -610,7 +610,7 @@
  9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
-102: # [102] unused
+102: # unused
  7, 179, 4, 35, 179, 179, 386, 388 # Blank (Cave - Unused), Can Create Unit\Building ([179] Anthelion), Building Morph ([179] Anthelion)
 
 103: # Shaman (Support Mode)
@@ -641,11 +641,11 @@
  8, 360, 23, 57, 34, 0, 1076, 1075 # Signify: Malice, Spell Researched ([34] Healing - Cleric), Cancel (0)
  9, 305, 23, 57, 34, 0, 1470, 1470 # Ascension, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-106: # Principality (unused)
+106: # Principality -- unused
  6, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
 
-107: # [107] Vicarage (unused)
+107: # [107] Vicarage -- unused
  6, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
 
@@ -660,14 +660,14 @@
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 343, 23, 57, 34, 0, 1091, 0 # Flyer Attack, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-110: # Dracadin (unused)
+110: # Dracadin -- unused
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
 
-111: # [111] Envoy (unused)
+111: # Envoy -- unused
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -677,14 +677,14 @@
  8, 309, 20, 46, 0, 0, 683, 0 # Load (into Transport), Unit's Capacity Has Not Been Met (0), Load (0)
  9, 312, 3, 47, 0, 0, 684, 0 # Unload All (from Transport), Always (0), Unload (0)
 
-112: # [112] Anthelion
+112: # Anthelion
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 280, 23, 57, 34, 0, 734, 734 # Recall, Spell Researched ([34] Healing - Cleric), Cancel (0)
  8, 383, 23, 57, 34, 0, 736, 736 # Argus Jewel, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-113: # [113] Anticthon
+113: # Anticthon
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -697,7 +697,7 @@
  1, 305, 3, 10, 0, 0, 1, 0 # Ground Weapons, Always (0), Stop (0)
  9, 236, 3, 59, 0, 228, 688, 0 # Cancel, Always (0), Change Displayed Buttons ([228] Blank)
 
-115: # [115] Supreme Protoss Structures
+115: # Supreme Protoss Structures
  1, 428, 4, 31, 278, 278, 1113, 0 # Strident Stratum, Can Create Unit\Building ([278] Strident Stratum), Create Building - Protoss ([278] Strident Stratum)
  2, 444, 4, 31, 294, 294, 1248, 0 # Engram, Can Create Unit\Building ([294] Engram), Create Building - Protoss ([294] Engram)
 #2, 156, 4, 31, 295, 295, 1249, 0 # Xenolith, Can Create Unit\Building ([295] Xenolith), Create Building - Protoss ([295] Xenolith)
@@ -708,13 +708,13 @@
  8, 171, 4, 31, 171, 171, 644, 0 # Synthetic Synod, Can Create Unit\Building ([171] Synthetic Synod), Create Building - Protoss ([171] Synthetic Synod)
  9, 223, 4, 31, 223, 223, 428, 0 # Monument of Sin, Can Create Unit\Building ([223] Monument of Sin), Create Building - Protoss ([223] Monument of Sin)
 
-116: # [116] Unused (was Protoss Structures)
+116: # Unused (was Protoss Structures)
 # 9, 236, 3, 59, 0, 228, 688, 0 # Cancel, Always (0), Change Displayed Buttons ([228] Blank)
 
-117: # [117] Profane Protoss Structures -- unused
+117: # Profane Protoss Structures -- unused
 # 9, 236, 3, 59, 0, 228, 688, 0 # Cancel, Always (0), Change Displayed Buttons ([228] Blank)
 
-118: # Cyprian (unused)
+118: # Cyprian -- unused
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -722,12 +722,12 @@
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 374, 23, 24, 26, 26, 1633, 1632 # Afterburners ON (Unused), Spell Researched ([26] Cancel New Ability), Use Technology ([26] Cancel New Ability)
 
-119: # Reliquary (unused)
+119: # Reliquary -- unused
  8, 309, 20, 46, 0, 0, 683, 0 # Load (into Transport), Unit's Capacity Has Not Been Met (0), Load (0)
  9, 312, 21, 47, 0, 0, 684, 0 # Unload All (from Transport), Carrying Some Units (0), Unload (0)
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
-120: # [120] Cancel Warp + Rally
+120: # Cancel Warp + Rally
  6, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  9, 236, 15, 7, 0, 0, 1680, 0 # Cancel, Construction\Mutation Underway (0), Cancel Construction (0)
 
@@ -743,22 +743,22 @@
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 353, 3, 57, 34, 0, 1734, 1733 # Phase Blades, Always (34), Cancel (0)
 
-123: # [123] Panoptus
+123: # Panoptus
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
 
-124: # [124] Witness
+124: # Witness
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
- 7, 252, 23, 57, 34, 0, 757, 757 # Cloak, Spell Researched ([34] Healing - Cleric), Cancel (0)
+ 7, 395, 23, 57, 34, 0, 717, 717 # Steady Shroud, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-125: # [125] Ultrokor
+125: # Ultrokor
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -795,7 +795,7 @@
  7, 51, 4, 38, 51, 51, 1552, 1555 # Kalkalisk, Can Create Unit\Building ([51] Kalkalisk), Unit Morph ([51] Kalkalisk)
  8, 350, 23, 57, 34, 0, 1412, 1412 # Suicide (Scourge), Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-129: # [129] Azazel
+129: # Azazel
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -809,11 +809,11 @@
  3, 230, 9, 13, 0, 0, 666, 0 # Attack, Attacking Building (0), Attack (Building) (0)
  7, 326, 23, 57, 34, 0, 1696, 1727 # Twin Autocannons, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-131: # [131] unused
+131: # unused
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
  9, 236, 17, 23, 0, 0, 692, 0 # Cancel, Research Underway (0), Cancel Technology Research (0)
 
-132: # [132] Trojan
+132: # Trojan
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -823,7 +823,7 @@
  8, 309, 20, 46, 0, 0, 683, 0 # Load (into Transport), Unit's Capacity Has Not Been Met (0), Load (0)
  9, 312, 3, 47, 0, 0, 684, 0 # Unload All (from Transport), Always (0), Unload (0)
 
-133: # [133] Prostration Stage
+133: # Prostration Stage
  1, 87, 4, 3, 87, 87, 1261, 1260 # Pariah, Can Create Unit\Building ([87] Pariah), Create Unit ([87] Pariah)
  2, 464, 4, 3, 314, 314, 1481, 1481 # Potentate, Can Create Unit\Building ([314] Potentate), Create Unit ([314] Potentate)
  3, 465, 4, 3, 315, 315, 1271, 1271 # Sycophant, Can Create Unit\Building ([315] Sycophant), Create Unit ([315] Sycophant)
@@ -831,7 +831,7 @@
  6, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
 
-134: # [134] Rogue Gallery
+134: # Rogue Gallery
  1, 172, 4, 3, 172, 172, 562, 0 # Vagrant, Can Create Unit\Building ([172] Vagrant), Create Unit ([172] Vagrant)
  2, 61, 4, 3, 61, 61, 1293, 1296 # Cabalist, Can Create Unit\Building ([61] Cabalist), Create Unit ([61] Cabalist)
  3, 79, 4, 3, 90, 90, 512, 512 # Charlatan, Can Create Unit\Building ([90] Charlatan), Create Unit ([90] Charlatan)
@@ -850,13 +850,14 @@
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 369, 23, 24, 17, 17, 1112, 0 # Land Grab, Spell Researched ([17] Land Grab - Wyvern), Use Technology ([17] Land Grab - Wyvern)
- 8, 374, 23, 57, 34, 0, 1703, 0 # Reverse Thrust, Spell Researched ([34] Healing - Cleric), Cancel (0)
- 9, 236, 23, 24, 26, 26, 475, 475 # Cancel, Spell Researched ([26] Cancel New Ability), Use Technology ([26] Cancel New Ability)
+ 7, 236, 23, 24, 26, 26, 475, 475 # Cancel, Spell Researched ([26] Cancel New Ability), Use Technology ([26] Cancel New Ability)
+ 8, 391, 23, 57, 34, 0, 1391, 1391 # Kinetic Penetration, Spell Researched ([34] Healing - Cleric), Cancel (0)
+ 9, 374, 23, 57, 34, 0, 1703, 0 # Reverse Thrust, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 137: # Mutation Pit -- unused
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
-138: # [138] unused
+138: # unused
  1, 301, 25, 26, 12, 12, 468, 528 # Flyer Attacks, Upgrade Not At Max Level ([12] Zerg Flyer Attacks), Research Upgrade ([12] Zerg Flyer Attacks)
  2, 298, 25, 26, 4, 4, 460, 531 # Flyer Caparace, Upgrade Not At Max Level ([4] Zerg Flyer Caparace), Research Upgrade ([4] Zerg Flyer Caparace)
  4, 344, 25, 26, 117, 117, 566, 0 # Acid Spore, Upgrade Not At Max Level ([117] Lithe Organelle - Mutalisk), Research Upgrade ([117] Lithe Organelle - Mutalisk)
@@ -867,12 +868,12 @@
 139: # Vorval Pond -- unused
  7, 220, 4, 35, 220, 220, 532, 749 # Blank (Mineral Chunk Type 1), Can Create Unit\Building ([220] Ardent Authority), Building Morph ([220] Ardent Authority)
 
-140: # [140] Gorgrok Apiary -- unused
+140: # Gorgrok Apiary -- unused
  7, 137, 4, 35, 137, 137, 626, 751 # Greater Spire, Can Create Unit\Building ([137] Olympian), Building Morph ([137] Olympian)
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
  9, 236, 17, 23, 0, 0, 692, 0 # Cancel, Research Underway (0), Cancel Technology Research (0)
 
-141: # [141] Gorgrokor
+141: # Gorgrokor
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -925,7 +926,7 @@
  9, 236, 17, 23, 0, 0, 692, 0 # Cancel, Research Underway (0), Cancel Technology Research (0)
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
-149: # [149] Maverick
+149: # Maverick
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -933,14 +934,14 @@
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 237, 23, 25, 0, 0, 335, 0 # Use Stimpack, Spell Researched ([0] Stim Packs - Maverick), StimPack ([0] Stim Packs - Maverick)
 
-150: # [150] Irol Iris
+150: # Irol Iris
  7, 152, 4, 35, 152, 152, 1358, 0 # Othstol Oviform, Can Create Unit\Building ([152] Othstol Oviform), Building Morph ([152] Othstol Oviform)
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
-151: # [151] Othstol Oviform -- unused
+151: # Othstol Oviform -- unused
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
-152: # [152] Alaszil Arbor -- unused
+152: # Alaszil Arbor -- unused
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
 153: # Iroleth
@@ -1092,7 +1093,8 @@
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
- 7, 332, 23, 57, 34, 0, 1101, 1101 # Shroud Piercer, Spell Researched ([34] Healing - Cleric), Cancel (0)
+ 7, 391, 23, 57, 34, 0, 1391, 1391 # Kinetic Penetration, Spell Researched ([34] Healing - Cleric), Cancel (0)
+ 8, 307, 23, 57, 34, 0, 1518, 1518 # Phantasmal Passage, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 171: # Phobos
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
@@ -1134,18 +1136,18 @@
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 383, 23, 57, 34, 0, 1414, 1414 # Petrification, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-176: # Sequestered Icon
+176: # Sequestered Icon -- unused
  6, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
 
-177: # [177] Talos
+177: # Talos
  1, 228, 58, 9, 0, 0, 664, 0 # Move, Move (Mason) (0), Move (0)
  2, 229, 59, 10, 0, 0, 665, 0 # Stop, Stop (Mason) (0), Stop (0)
  3, 230, 60, 11, 0, 0, 666, 0 # Attack, Attack (Mason) (0), Attack (0)
- 4, 232, 61, 37, 0, 0, 677, 0 # Repair, Repair (Mason) (0), Repair (0)
- 5, 231, 62, 39, 0, 0, 675, 0 # Gather, Gather (Mason) (0), Gather (0)
- 5, 233, 63, 40, 0, 0, 676, 0 # Return Resources, Return Cargo (Mason) (0), Return Cargo (0)
- 6, 329, 23, 24, 41, 41, 1251, 1251 # Fusion Cutter, Spell Researched ([41] Salvage - Talos), Use Technology ([41] Salvage - Talos)
+ 4, 231, 62, 39, 0, 0, 675, 0 # Gather, Gather (Mason) (0), Gather (0)
+ 4, 233, 63, 40, 0, 0, 676, 0 # Return Resources, Return Cargo (Mason) (0), Return Cargo (0)
+ 5, 232, 61, 37, 0, 0, 677, 0 # Repair, Repair (Mason) (0), Repair (0)
+ 6, 329, 23, 57, 34, 0, 1251, 1251 # Fusion Cutter, Spell Researched ([34] Healing - Cleric), Cancel (0)
  7, 234, 64, 59, 0, 239, 678, 0 # Terran Basic Buildings, Terran Basic Buildings (0), Change Displayed Buttons ([239] Basic Terran Buildings)
  8, 235, 65, 59, 0, 242, 679, 0 # Terran Advanced Buildings, Terran Advanced Buildings (0), Change Displayed Buttons ([242] Advanced Terran Buildings)
  9, 234, 47, 59, 0, 250, 1434, 0 # Terran Supreme Buildings, Terran Supreme Buildings (0), Change Displayed Buttons ([250] Supreme Terran Buildings)
@@ -1175,7 +1177,7 @@
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
- 7, 252, 23, 57, 34, 0, 716, 716 # Permanent Cloaking, Spell Researched ([34] Healing - Cleric), Cancel (0)
+ 7, 395, 23, 57, 34, 0, 717, 717 # Steady Shroud, Spell Researched ([34] Healing - Cleric), Cancel (0)
  8, 319, 23, 57, 34, 0, 540, 540 # Multi-Attack III, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 181: # Magister
@@ -1195,10 +1197,10 @@
  7, 308, 23, 24, 32, 32, 1744, 1744 # Lazarus Agent, Spell Researched ([32] Lazarus Agent - Apostle), Use Technology ([32] Lazarus Agent - Apostle)
  8, 236, 23, 24, 26, 26, 687, 687 # Cancel, Spell Researched ([26] Cancel New Ability), Use Technology ([26] Cancel New Ability)
 
-183: # [183] Quazil Quay -- unused
+183: # Quazil Quay -- unused
  9, 236, 16, 27, 0, 0, 691, 0 # Cancel, Upgrade Underway (0), Cancel Upgrade Research (0)
 
-184: # [184] Kalkalisk
+184: # Kalkalisk
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -1318,7 +1320,7 @@
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
- 8, 307, 23, 57, 34, 0, 1773, 1773 # Vengeance, Spell Researched ([34] Healing - Cleric), Cancel (0)
+ 7, 307, 23, 57, 34, 0, 1773, 1773 # Vengeance, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 200: # Quazilisk
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
@@ -1350,8 +1352,8 @@
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
  9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
 
-203: # [203] Zorkiz Shroud
- 7, 140, 4, 35, 140, 140, 622, 754 # Ultralisk Cavern, Can Create Unit\Building ([140] Ultrok Cavern), Building Morph ([140] Ultrok Cavern)
+203: # Zorkiz Shroud
+ 7, 140, 4, 35, 140, 140, 622, 754 # Ultrav Cavern, Can Create Unit\Building ([140] Ultrav Cavern), Building Morph ([140] Ultrav Cavern)
 
 204: # Larvosk Cesiant
  1, 35, 3, 2, 0, 0, 674, 0 # Larva, Always (0), Select Larva (0)
@@ -1402,13 +1404,13 @@
  9, 283, 36, 36, 0, 199, 670, 0 # Land, Building Has Lifted Off (0), Land ([199] Captaincy)
  9, 282, 37, 45, 0, 0, 671, 0 # Lift off, Building Has Landed (0), Lift Off (0)
 
-207: # Basic commands + permacloak
+207: # Basic commands + Proximity Cloak
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
- 7, 252, 23, 57, 34, 0, 716, 716 # Permanent Cloaking, Spell Researched ([34] Healing - Cleric), Cancel (0)
+ 7, 317, 23, 57, 34, 0, 716, 716 # Proximity Cloaking, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 208: # Pazuzu
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
@@ -1497,7 +1499,7 @@
  9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
-218: # Ion Cannon
+218: # Diadem
  1, 228, 35, 9, 0, 0, 664, 0 # Move, Building Can Move And Has Lifted Off (0), Move (0)
  2, 229, 9, 10, 0, 0, 665, 0 # Stop, Attacking Building (0), Stop (0)
  2, 229, 35, 10, 0, 0, 665, 0 # Stop, Building Can Move And Has Lifted Off (0), Stop (0)
@@ -1550,6 +1552,7 @@
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  6, 62, 4, 38, 62, 62, 1288, 1297 # Vithrilisk, Can Create Unit\Building ([62] Vithrilisk), Unit Morph ([62] Vithrilisk)
+ 7, 344, 23, 57, 34, 0, 1377, 1377 # Ablative Return, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 225: # Larva - Swarm
  1, 37, 4, 38, 37, 37, 575, 738 # Zethrokor, Can Create Unit\Building ([37] Zethrokor), Unit Morph ([37] Zethrokor)
@@ -1613,7 +1616,8 @@
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
- 7, 249, 23, 57, 34, 0, 489, 489 # Controlled Opposition, Spell Researched ([34] Healing - Cleric), Cancel (0)
+ 7, 391, 23, 57, 34, 0, 1391, 1391 # Kinetic Penetration, Spell Researched ([34] Healing - Cleric), Cancel (0)
+ 8, 249, 23, 57, 34, 0, 489, 489 # Controlled Opposition, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 232: # Luminary
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
@@ -1631,6 +1635,7 @@
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 354, 23, 57, 34, 0, 555, 555 # Projection, Spell Researched ([34] Healing - Cleric), Cancel (0)
  8, 355, 23, 57, 34, 0, 497, 497 # Fleeting Focus, Spell Researched ([34] Healing - Cleric), Cancel (0)
+ 9, 343, 23, 57, 34, 0, 1091, 0 # Flyer Attack, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
 234: # Axitrilisk
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
@@ -1663,7 +1668,7 @@
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 352, 23, 57, 34, 0, 435, 435 # Anodyne Annex, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-238: # [238] Magnetar
+238: # Magnetar
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -1855,9 +1860,9 @@
  1, 228, 58, 9, 0, 0, 664, 0 # Move, Move (Mason) (0), Move (0)
  2, 229, 59, 10, 0, 0, 665, 0 # Stop, Stop (Mason) (0), Stop (0)
  3, 230, 60, 11, 0, 0, 666, 0 # Attack, Attack (Mason) (0), Attack (0)
- 4, 232, 61, 37, 0, 0, 677, 0 # Repair, Repair (Mason) (0), Repair (0)
- 5, 231, 62, 39, 0, 0, 675, 0 # Gather, Gather (Mason) (0), Gather (0)
- 5, 233, 63, 40, 0, 0, 676, 0 # Return Resources, Return Cargo (Mason) (0), Return Cargo (0)
+ 4, 231, 62, 39, 0, 0, 675, 0 # Gather, Gather (Mason) (0), Gather (0)
+ 4, 233, 63, 40, 0, 0, 676, 0 # Return Resources, Return Cargo (Mason) (0), Return Cargo (0)
+ 5, 232, 61, 37, 0, 0, 677, 0 # Repair, Repair (Mason) (0), Repair (0)
  7, 234, 64, 59, 0, 239, 678, 0 # Terran Basic Buildings, Terran Basic Buildings (0), Change Displayed Buttons ([239] Basic Terran Buildings)
  8, 235, 65, 59, 0, 242, 679, 0 # Terran Advanced Buildings, Terran Advanced Buildings (0), Change Displayed Buttons ([242] Advanced Terran Buildings)
  9, 234, 47, 59, 0, 250, 1434, 0 # Terran Supreme Buildings, Terran Supreme Buildings (0), Change Displayed Buttons ([250] Supreme Terran Buildings)
@@ -1920,7 +1925,7 @@
  
 268: # Ocsal Larva
  1, 47, 4, 38, 47, 47, 466, 469 # Scourge, Can Create Unit\Building ([47] Gosvileth), Unit Morph ([47] Gosvileth)
- 2, 222, 4, 38, 222, 222, 1140, 1050 # Iroleth, Can Create Unit\Building ([222] Iroleth), Unit Morph ([222] Iroleth)
+ 2, 222, 4, 38, 222, 222, 1140, 1060 # Iroleth, Can Create Unit\Building ([222] Iroleth), Unit Morph ([222] Iroleth)
  5, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  6, 236, 3, 8, 0, 0, 695, 0 # Cancel, Always (0), Cancel Morph (0)
  7, 128, 47, 59, 0, 356, 485, 0 # Swarm Strains, Zerg Basic Buildings (0), Change Displayed Buttons ([206] Right Upper Level Door)
@@ -1972,7 +1977,7 @@
  6, 218, 4, 38, 218, 218, 1368, 1431 # Data Disc, Can Create Unit\Building ([218] Akistrokor), Unit Morph ([218] Akistrokor)
 # 7, 46, 4, 38, 46, 46, 583, 744 # Isthrathaleth, Can Create Unit\Building ([46] Isthrathaleth), Unit Morph ([46] Isthrathaleth)
 
-274: # [274] Tosgrilisk
+274: # Tosgrilisk
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -1980,7 +1985,7 @@
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 344, 23, 57, 34, 0, 564, 564 # Crushing Tide, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-275: # [275] Ardent Authority
+275: # Ardent Authority
  1, 456, 4, 3, 306, 306, 1369, 0 # Servitor, Can Create Unit\Building ([306] Servitor), Create Unit ([306] Servitor)
  2, 457, 4, 3, 307, 307, 1370, 0 # Positron, Can Create Unit\Building ([307] Positron), Create Unit ([307] Positron)
  3, 458, 4, 3, 308, 308, 1371, 706 # Analogue, Can Create Unit\Building ([308] Analogue), Create Unit ([308] Analogue)
@@ -1989,7 +1994,7 @@
  6, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
 
-276: # [276] Positron
+276: # Positron
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -1997,7 +2002,7 @@
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 314, 23, 57, 34, 0, 1260, 1260 # Particle Annihilation, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-277: # [277] Sycophant
+277: # Sycophant
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -2005,7 +2010,7 @@
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 308, 23, 57, 34, 0, 1269, 1269 # Idolatry, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-278: # [278] Multi-Target IV - Cataphract
+278: # Multi-Target IV - Cataphract
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -2013,7 +2018,7 @@
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 319, 23, 57, 34, 0, 523, 523 # Multi-Attack IV, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-279: # [279] Durendal
+279: # Durendal
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -2027,7 +2032,7 @@
  6, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
 
-281: # [281] Matador
+281: # Matador
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -2037,7 +2042,7 @@
  7, 406, 31, 5, 5, 0, 1813, 0 # Tank Mode, Tank Is In Siege Mode ([5] Cinder Mode - Matador), Tank Mode (0)
  8, 343, 23, 57, 34, 0, 1091, 1284 # Apollyoid Adhesive, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-282: # [282] Aion
+282: # Aion
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -2046,7 +2051,7 @@
  7, 308, 23, 57, 34, 0, 1802, 1802 # Reclamation Fields, Spell Researched ([34] Healing - Cleric), Cancel (0)
  8, 361, 23, 57, 34, 0, 543, 543 # Offset: Linear, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-283: # [283] Basic Commands + Kinetic Penetration - Hippogriff
+283: # Basic Commands + Kinetic Penetration - Hippogriff
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -2241,7 +2246,7 @@
  3, 230, 9, 13, 0, 0, 666, 0 # Attack, Attacking Building (0), Attack (Building) (0)
  7, 359, 23, 57, 34, 0, 1382, 1382 # Interception, Spell Researched ([34] Healing - Cleric), Cancel (0)
 
-312: # [312] Grounded Garrison
+312: # Grounded Garrison + Self-destruct
  2, 229, 9, 10, 0, 0, 665, 0 # Stop, Attacking Building (0), Stop (0)
  3, 230, 9, 13, 0, 0, 666, 325 # Attack, Attacking Building (0), Attack (Building) (0)
  4, 314, 23, 24, 2, 2, 500, 500 # Scarab Damage, Spell Researched ([2] Controlled Demolition - Terran Structure), Use Technology ([2] Controlled Demolition - Terran Structure)
@@ -2273,7 +2278,30 @@
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 308, 23, 57, 34, 0, 1480, 1480 # Transcendent Tide, Spell Researched ([34] Healing - Cleric), Cancel (0)
- 
+
+316: # Golem
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
+ 7, 310, 23, 57, 34, 0, 1380, 1380 # Tranquility Array, Spell Researched ([34] Healing - Cleric), Cancel (0)
+
+317: # Mixed Repairmen
+ 1, 228, 58, 9, 0, 0, 664, 0 # Move, Move (Mason) (0), Move (0)
+ 2, 229, 59, 10, 0, 0, 665, 0 # Stop, Stop (Mason) (0), Stop (0)
+ 3, 230, 60, 11, 0, 0, 666, 0 # Attack, Attack (Mason) (0), Attack (0)
+ 4, 231, 62, 39, 0, 0, 675, 0 # Gather, Gather (Mason) (0), Gather (0)
+ 4, 233, 63, 40, 0, 0, 676, 0 # Return Resources, Return Cargo (Mason) (0), Return Cargo (0)
+ 5, 232, 61, 37, 0, 0, 677, 0 # Repair, Repair (Mason) (0), Repair (0)
+
+318: # Grounded Garrison
+ 2, 229, 9, 10, 0, 0, 665, 0 # Stop, Attacking Building (0), Stop (0)
+ 3, 230, 9, 13, 0, 0, 666, 325 # Attack, Attacking Building (0), Attack (Building) (0)
+ 9, 236, 23, 24, 26, 26, 1792, 1792 # Cancel, Spell Researched ([26] Cancel New Ability), Use Technology ([26] Cancel New Ability)
+ 7, 309, 20, 46, 0, 0, 683, 0 # Load (into Transport), Unit's Capacity Has Not Been Met (0), Load (0)
+ 8, 312, 21, 47, 0, 0, 684, 0 # Unload All (from Transport), Carrying Some Units (0), Unload (0)
+
 #### Buttonsets END ####
 #### Unit Settings START ####
 
@@ -2454,7 +2482,7 @@ Unit 49: # [49] Pazuzu
           # Stat Preset: Normal Unit
 
 Unit 50: # [50] Cohort
- 212, 65535, 1, 0 # Button Set: Cohort
+ 12, 65535, 1, 0 # Button Set: [12] Basic Commands
           # Stat Preset: Normal Unit
 
 Unit 51: # [51] Kalkalisk
@@ -2638,7 +2666,7 @@ Unit 99: # [99] Idol
           # Stat Preset: Normal Unit
 
 Unit 100: # [100] Golem
- 12, 65535, 1, 0 # Button Set: [12] Basic Commands
+ 316, 65535, 1, 0 # Button Set: [316] Golem
           # Stat Preset: Normal Unit
 
 Unit 101: # [101] Map Revealer
@@ -3431,8 +3459,8 @@ Unit 368: # [368] Mixed Scribe Training
  307, 65535, 0, 8 # Button Set: Mixed Scribe Training
           # Stat Preset: Unselectable
 
-Unit 369: # [369] Police Structures - Advanced
- 291, 65535, 0, 8 # Button Set: Police Structures - Advanced
+Unit 369: # [369] Mixed Repairmen
+ 317, 65535, 0, 8 # Button Set: Mixed Repairmen
           # Stat Preset: Unselectable
 
 Unit 370: # [370] Dugout
@@ -3472,5 +3500,9 @@ Unit 383: # [383] Omnivale
           # Stat Preset: Building
 		  
 Unit 384: # [384] Lodestone
- 312, 65535, 3, 2 # Button Set: [312] Grounded Garrison
+ 312, 65535, 3, 2 # Button Set: [312] Grounded Garrison + Self-destruct
+          # Stat Preset: Transport
+		  
+Unit 387: # [387] Lodestone (Standalone)
+ 318, 65535, 3, 2 # Button Set: [318] Grounded Garrison
           # Stat Preset: Transport

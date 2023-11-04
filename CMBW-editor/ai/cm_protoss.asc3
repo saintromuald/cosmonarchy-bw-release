@@ -2123,7 +2123,7 @@ script_id PMCx
 	bld 2 scribe 98
 	w_bld 1 nexus
 	bld 4 scribe 98
-	maynard 4
+#	maynard 4
 	
 	:expansion_worker_standard_start
 	multi worker_track
@@ -4226,6 +4226,10 @@ script_id PMCx
 	
 	:attack_cycle_start
 	var Ex|wait can_attack_var 1 13
+	time AtM 5760 Frames attack_cycle_cont
+	bring 13 AtM 3 Group_Factories Loc.63 blank_return
+	
+	:attack_cycle_cont
 	atk_do
 	atk_c
 	
@@ -4250,8 +4254,9 @@ script_id PMCx
 	
 	:attack_conditions
 	wait 24
+	bring 13 Ex 0 gateway|grand_library|rogue_gallery|prostration_stage|ancestral_archives|lattice|ardent_authority|stargate|argosy|monument_of_sin Loc.63 attack_conditions
+	time AtM 5760 Frames blank_return
 	bring 13 AtM 12 scribe Loc.63 attack_conditions
-	bring 13 AtM 1 gateway|grand_library|rogue_gallery|prostration_stage|ancestral_archives|lattice|ardent_authority|stargate|argosy|monument_of_sin Loc.63 attack_conditions
 	res 13 AtL Any 500 blank_return
 	var Ex|WF(360) under_attack_var 0 13
 	return
