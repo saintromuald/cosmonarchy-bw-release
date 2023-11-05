@@ -19,6 +19,11 @@ Patch goals include:
 - [Pr0totype #30 - The Hype Is Real](https://youtu.be/iisw27ellgs)
 - [Ascension #6 Hype Video](https://youtu.be/V5lO2_ETu88)
 
+## Hotfix 5 November 2023
+- Multiselecting Terran workers now correctly hides the building submenus
+- Burrowed Vorvrokors now correctly display the burrow mound graphic (c. DF)
+- Added an additional sanity check to prevent displaying passive icons in mixed selections
+
 ## General
 - Vision update timer has been sped up significantly (c. Veeq7 and DF)
 - Painting missile launches with Eidolons and Seraphs can now be queued (c. DF)

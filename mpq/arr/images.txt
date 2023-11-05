@@ -393,7 +393,7 @@ Recall Field
 Flag
 Young Chrysalis
 Psi Emitter
-Data Disc
+Large Protoss Laser
 Khaydarin Crystal
 Mineral Chunk Type1
 Mineral Chunk Type2
@@ -956,8 +956,8 @@ Kakaru (Twilight)
 Kakaru (Twilight) Shadow
 Ursadon (Ice)
 Ursadon (Ice) Shadow
-Uraj
-Khalis
+Vorvrokor
+Bactalisk
 Halo Rockets Trail
 Subterranean Spines
 Corrosive Acid Shot
@@ -1038,9 +1038,9 @@ Starpad
 Scrapyard Shadow
 Augur Energy
 Augur Being
-Kalkiivorv Sathrant
+Kalkiir Pond
 Othstol Oviform
-Kalkiivorv Sathrant Shadow
+Kalkiir Pond Shadow
 Othstol Oviform Shadow
 Quantum Institute
 Quantum Institute Shadow
@@ -1205,7 +1205,7 @@ Empyrean Engines
 Gladius Engines
 Star Sovereign Engines
 Vassal Engines
-Bactalisk
+Selkerilisk
 Bactalisk Shadow
 Vespene Ridge Shadow
 Zarcavrokor Shadow
@@ -1770,7 +1770,7 @@ Striga Attack
 Helix Bolt Orange
 Helix Bolt Blue 1
 Helix Bolt Blue 2
-Extended Image #770
+Vorvrokor Shadow
 Extended Image #771
 Extended Image #772
 Extended Image #773

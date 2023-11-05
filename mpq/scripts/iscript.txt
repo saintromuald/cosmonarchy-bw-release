@@ -14538,7 +14538,7 @@ CrystalsShadowsDeath:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 393 Vorvrokor (neutral\KerrEgg.grp)
+# 393 Vorvrokor (cm\zerg\vorvrokor.grp)
 .headerstart
 IsId          	220
 Type          	26
@@ -14574,7 +14574,7 @@ Enable        	[NONE]
 # ----------------------------------------------------------------------------- #
 
 VorvrokorInit:
-	imgul             	415 -1 -5 # Young Chrysalis Shadow (Ground) (neutral\nkeShad.grp)
+	imgul             	1772 -1 -5 # Vorvrokor Shadow (cm\zerg\vorvrokor-shadow.grp)
 VorvrokorGndAttkToIdle:
 	playfram          	0x55
 	goto              	VorvrokorLocal00
