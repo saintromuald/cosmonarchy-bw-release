@@ -20,6 +20,7 @@ Patch goals include:
 - [Ascension #6 Hype Video](https://youtu.be/V5lO2_ETu88)
 
 ## Hotfix 5 November 2023
+- Fixed Azazel Defensive Matrix not putting energy regen on cooldown
 - Multiselecting Terran workers now correctly hides the building submenus
 - Burrowed Vorvrokors now correctly display the burrow mound graphic (c. DF)
 - Added an additional sanity check to prevent displaying passive icons in mixed selections
