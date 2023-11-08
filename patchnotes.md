@@ -19,6 +19,12 @@ Patch goals include:
 - [Pr0totype #30 - The Hype Is Real](https://youtu.be/iisw27ellgs)
 - [Ascension #6 Hype Video](https://youtu.be/V5lO2_ETu88)
 
+## Hotfix 8 November 2023
+- Fixed Azazel Defensive Matrix not healing anymore (broken from previous hotfix)
+- Fixed Sentinel and Sevenstop dealing double damage when not piercing
+- Fixed burrowed units not transforming/regressing properly (c. DF)
+- Fixed units in Anchors being able to attack if the Anchor was loaded into a Pythean
+
 ## Hotfix 5 November 2023
 - Fixed Azazel Defensive Matrix not putting energy regen on cooldown
 - Multiselecting Terran workers now correctly hides the building submenus

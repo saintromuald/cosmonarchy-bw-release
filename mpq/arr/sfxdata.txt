@@ -2558,9 +2558,9 @@ Patriarch Weaponfire 03
 Lobby -- Player Join
 Cloak Terran On
 Cloak Terran Off
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Star Sovereign Weaponfire 2 01
+Star Sovereign Weaponfire 2 02
+Star Sovereign Weaponfire 2 03
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

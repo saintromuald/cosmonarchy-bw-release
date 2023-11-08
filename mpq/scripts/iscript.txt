@@ -51964,7 +51964,6 @@ SevenstepRailGndAttkInit:
 	
 SevenstepRailDeath:
 	imgol             	1249 0 0 # Burst Lasers Blue Impact (thingy\elbHit.grp)
-	domissiledmg
 	wait              	1
 	end
 
@@ -52568,7 +52567,6 @@ HelixBoltGndAttkInit:
 	
 HelixBoltDeath:
 	imgol             	1249 0 0 # Burst Lasers Blue Impact (thingy\elbHit.grp)
-	domissiledmg
 	wait              	1
 	end
 	
