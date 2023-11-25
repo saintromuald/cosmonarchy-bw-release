@@ -1928,10 +1928,10 @@ Death         	[NONE]
 # ----------------------------------------------------------------------------- #
 
 OvilethDeathInit:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
-	imgol             	58 0 0	# Zerg Air Death Explosion (Large) (thingy\zAirDthL.grp)
-	wait              	1 
+	playfram          	0x00
+	wait              	2
+	imgol             	58 0 0 # Zerg Air Death Explosion (Large) (thingy\zAirDthL.grp)
+	wait              	1
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -1958,7 +1958,7 @@ SpecialState1 	[NONE]
 # ----------------------------------------------------------------------------- #
 
 MatralethInit:
-	imgul             	47 0 42	# Matraleth Shadow (zerg\queen.grp)
+	imgul             	47 0 42 # Matraleth Shadow (zerg\queen.grp)
 	playfram          	0x00
 	wait				2
 MatralethGndAttkToIdle:
@@ -2723,10 +2723,6 @@ SpecialState1 	ZergBirthSpecialState1
 ZergBirthInit:
 	playfram          	0x00
 	goto              	InfestedTerranLocal00
-
-ZergBirthDeath:
-	wait              	1
-	end
 
 ZergBirthUnused:
 	wait              	1
@@ -7103,7 +7099,7 @@ Phalanx_Siege_TurretInit:
 	playfram          	0x44
 	wait              	1
 	nobrkcodestart
-	wait              	18
+	wait              	17
 	playfram          	0x55
 	wait              	2
 	playfram          	0x66
@@ -10850,6 +10846,7 @@ DracadinLocal00:
 
 DracadinDeath:
 	playsnd           	493	# Protoss\DRAGOON\PDrDth00.WAV
+	imgol             	1774 0 0 # Dracadin death explosion (cm\protoss\dracadin-explosion.grp)
 	setfldirect       	0
 	playfram          	0x198
 	wait              	2
@@ -11081,6 +11078,7 @@ ScribeGndAttkInit:
 	nobrkcodestart
 	playfram			0x20
 	attackwith        	1
+	wait				1
 	playfram			0x00
 	nobrkcodeend
 	gotorepeatattk
@@ -13116,6 +13114,7 @@ Unused3       	[NONE]
 StarEditInit  	[NONE]
 Disable       	StargateOverlayDisable
 Burrow        	[NONE]
+UnBurrow      	[NONE]
 Enable        	StargateOverlayEnable
 .headerend
 # ----------------------------------------------------------------------------- #
@@ -15752,7 +15751,7 @@ Lockdown_EMPShockwaveMissileDeath:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 536 Phalanx(Tank) Turret Attack Overlay (thingy\ettFlash.grp)
+# 536 Phalanx (Tank) Turret Attack Overlay (thingy\ettFlash.grp)
 .headerstart
 IsId          	250
 Type          	1
@@ -15762,13 +15761,13 @@ Death         	ScourgeExplosionDeath
 # ----------------------------------------------------------------------------- #
 
 PhalanxTankTurretOverlayInit:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	wait              	2 
 	end
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 537 Phalanx(Siege) Turret Attack Overlay (thingy\esiFire.grp)
+# 537 Phalanx (Siege) Turret Attack Overlay (thingy\esiFire.grp)
 .headerstart
 IsId          	251
 Type          	1
@@ -20195,7 +20194,7 @@ MapRevealerDeath:
 # 914 Zerg Egg (All Mutations) (zerg\Lurkegg.grp)
 .headerstart
 IsId          	353
-Type          	14
+Type          	20
 Init          	ZergEggAllMutationsInit
 Death         	ZergEggAllMutationsDeath
 GndAttkInit   	ZergEggAllMutationsGndAttkInit
@@ -20217,6 +20216,7 @@ Landing       	ZergEggAllMutationsLanding
 LiftOff       	ZergEggAllMutationsLiftoff
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
+WarpIn			[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -21635,7 +21635,7 @@ LanifectDeath:
 	playsnd           	1351 # Lanifect death 01
 	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	3
-	lowsprul			847 0 42 # Protoss Unit Rubble Small
+	lowsprul			887 0 42 # Lanifect Remains
 	wait              	1
 	end
 
@@ -23801,8 +23801,12 @@ AuroraDeath:
 
 AuroraGndAttkInit:
 	playfram			0x20
-	playsnd           	66	# Bullet\HKMISSLE.wav
+	playsnd           	66 # Bullet\HKMISSLE.wav
 	attackwith        	1
+	wait				1
+	playfram			0x00
+	wait				1
+	playfram			0x20
 	wait				1
 	playfram			0x00
 	wait				1
@@ -24327,7 +24331,7 @@ Init          	MadrigalFuriaBaseInit
 Death         	MadrigalImperiosoBaseDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
-Unused1       	MadrigalImperiosoBaseUnused1
+Unused1       	MadrigalFuriaBaseUnused1
 GndAttkRpt    	[NONE]
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
@@ -25759,140 +25763,7 @@ SimulacrumWarpIn:
 SimulacrumLocal01:
 	wait              	125
 	goto              	SimulacrumLocal01
-	
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 1075 Ancestral Effigy (cm\protoss\blazingeffigy.grp)
-.headerstart
-IsId          	444
-Type          	20
-Init          	AncestralEffigyInit
-Death         	AncestralEffigyDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
-Unused1       	[NONE]
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
-Walking       	[NONE]
-WalkingToIdle 	[NONE]
-SpecialState1 	[NONE]
-SpecialState2 	[NONE]
-AlmostBuilt   	[NONE]
-Built         	AncestralEffigyBuilt
-Landing       	AncestralEffigyLanding
-LiftOff       	AncestralEffigyLanding
-IsWorking     	AncestralEffigyLanding
-WorkingToIdle 	AncestralEffigyBuilt
-WarpIn        	[NONE]
-.headerend
-# ----------------------------------------------------------------------------- #
 
-AncestralEffigyInit:
-	playfram          	0x00	# Frame set 0
-	imgul             	1076 0 0 # Ancestral Effigy Shadow (cm\protoss\blazingeffigy-shad.grp)
-	goto              	AncestralEffigyLanding
-
-AncestralEffigyLanding:
-	wait				125
-	goto              	AncestralEffigyLanding
-
-AncestralEffigyDeath:
-	playsnd           	7	# Misc\ExploLrg.wav
-	imgol             	215 0 0	# Explosion (Large) (thingy\tBangX.grp)
-	wait              	3 
-	lowsprul          	223 0 0	# Protoss Building Rubble (Small) (thingy\PRubbleS.grp)
-	wait              	1 
-	end
-
-AncestralEffigyBuilt:
-	playfram          	0x00	# Frame set 0
-	goto              	AncestralEffigyLanding
-	
-AncestralEffigyWarpIn:
-	imgol             	1077 0 0	# Blazing Effigy Warp Flash (cm\protoss\blazingeffigy.grp)
-	goto              	AncestralEffigyLanding
-	
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 1073 Automaton Register (cm\protoss\automatonregister.grp)
-.headerstart
-IsId          	445
-Type          	27
-Init          	AutomatonRegisterInit
-Death         	AutomatonRegisterDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
-Unused1       	[NONE]
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
-Walking       	[NONE]
-WalkingToIdle 	[NONE]
-SpecialState1 	[NONE]
-SpecialState2 	[NONE]
-AlmostBuilt   	[NONE]
-Built         	AutomatonRegisterBuilt
-Landing       	AutomatonRegisterLanding
-LiftOff       	AutomatonRegisterLanding
-IsWorking     	AutomatonRegisterIsWorking
-WorkingToIdle 	AutomatonRegisterBuilt
-WarpIn        	AutomatonRegisterWarpIn
-Unused3       	[NONE]
-StarEditInit  	[NONE]
-Disable       	AutomatonRegisterDisable
-Burrow        	[NONE]
-UnBurrow      	[NONE]
-Enable        	AutomatonRegisterBuilt
-.headerend
-# ----------------------------------------------------------------------------- #
-
-AutomatonRegisterInit:
-	playfram          	0x00
-	imgul             	1078 0 0 # Automaton Register Shadow (cm\protoss\automatonregister-shad.grp)
-	goto              	AutomatonRegisterLanding
-
-AutomatonRegisterLanding:
-	wait				125
-	goto              	AutomatonRegisterLanding
-
-AutomatonRegisterDeath:
-	playsnd           	7 # Misc\ExploLrg.wav
-	imgol             	215 0 0 # Explosion (Large) (thingy\tBangX.grp)
-	wait              	3
-	lowsprul          	224 0 0 # Protoss Building Rubble (Large) (thingy\PRubbleL.grp)
-	wait              	1
-	end
-	
-AutomatonRegisterIsWorking:
-	playfram			1
-	wait				2
-	playfram			2
-	wait				2
-	playfram			1
-	wait				2
-	playfram			0
-	goto				AutomatonRegisterIsWorking
-
-AutomatonRegisterBuilt:
-	playfram          	0x00
-	goto              	AutomatonRegisterLanding
-	
-AutomatonRegisterWarpIn:
-	imgol             	1079 0 0 # Automaton Register Warp Flash (cm\protoss\automatonregister.grp)
-	goto              	AutomatonRegisterLanding
-
-AutomatonRegisterDisable:
-	playfram			3
-	wait				1
-	goto              	AutomatonRegisterLanding
-	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 1632 Pythean (cm\terran\pythean.grp)
@@ -25933,348 +25804,6 @@ PytheanWalking:
 	setvertpos        	0
 	imgol             	1734 0 0 # Pythean Engines (cm\terran\pythean-engine.grp)
 	goto              	InfestedTerranLocal00
-	
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 1083 Stellar Icon (cm\protoss\stellaricon.grp)
-.headerstart
-IsId          	447
-Type          	20
-Init          	StellarIconInit
-Death         	StellarIconDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
-Unused1       	[NONE]
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
-Walking       	[NONE]
-WalkingToIdle 	[NONE]
-SpecialState1 	[NONE]
-SpecialState2 	[NONE]
-AlmostBuilt   	[NONE]
-Built         	StellarIconBuilt
-Landing       	StellarIconLanding
-LiftOff       	StellarIconLanding
-IsWorking     	StellarIconIsWorking
-WorkingToIdle 	StellarIconBuilt
-WarpIn        	[NONE]
-.headerend
-# ----------------------------------------------------------------------------- #
-
-StellarIconInit:
-	playfram          	0
-	imgul             	1084 0 0 # Stellar Icon Shadow (cm\protoss\stellaricon-shad.grp)
-	goto              	StellarIconLanding
-
-StellarIconLanding:
-	wait				125
-	goto              	StellarIconLanding
-
-StellarIconDeath:
-	playsnd           	7 # Misc\ExploLrg.wav
-	imgol             	215 0 0 # Explosion (Large) (thingy\tBangX.grp)
-	wait              	3 
-	lowsprul          	224 0 0 # Protoss Building Rubble (Large) (thingy\PRubbleL.grp)
-	wait              	1 
-	end
-
-StellarIconBuilt:
-	playfram          	0x00
-	goto              	StellarIconLanding
-	
-StellarIconIsWorking:
-	playfram			1
-	wait				2
-	playfram			2
-	wait				2
-	playfram			3
-	wait				2
-	playfram			4
-	wait				2
-	playfram			5
-	wait				2
-	playfram			6
-	wait				2
-	playfram			7
-	wait				2
-	playfram			8
-	wait				2
-	playfram			9
-	wait				2
-	playfram			0
-	wait				2
-	goto				StellarIconIsWorking
-	
-StellarIconWarpIn:
-	imgol             	1085 0 0 # Stellar Icon Warp Flash (cm\protoss\stellaricon.grp)
-	goto              	StellarIconLanding
-	
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 1086 Astral Omen (cm\protoss\astralomen.grp)
-.headerstart
-IsId          	448
-Type          	20
-Init          	AstralOmenInit
-Death         	AstralOmenDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
-Unused1       	[NONE]
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
-Walking       	[NONE]
-WalkingToIdle 	[NONE]
-SpecialState1 	[NONE]
-SpecialState2 	[NONE]
-AlmostBuilt   	[NONE]
-Built         	AstralOmenBuilt
-Landing       	AstralOmenLanding
-LiftOff       	AstralOmenLanding
-IsWorking     	AstralOmenIsWorking
-WorkingToIdle 	AstralOmenBuilt
-WarpIn        	[NONE]
-.headerend
-# ----------------------------------------------------------------------------- #
-
-AstralOmenInit:
-	playfram          	0x00	# Frame set 0
-	imgul             	1087 0 0	# Astral Omen Shadow (cm\protoss\astralomen-shad.grp)
-	goto              	AstralOmenLanding
-
-AstralOmenLanding:
-	wait				125
-	goto              	AstralOmenLanding
-
-AstralOmenDeath:
-	playsnd           	7	# Misc\ExploLrg.wav
-	imgol             	215 0 0	# Explosion (Large) (thingy\tBangX.grp)
-	wait              	3 
-	lowsprul          	224 0 0	# Protoss Building Rubble (Large) (thingy\PRubbleL.grp)
-	wait              	1 
-	end
-	
-AstralOmenBuilt:
-	playfram          	0x00	# Frame set 0
-	goto              	AstralOmenLanding
-	
-AstralOmenIsWorking:
-	playfram			1
-	wait				1
-	playfram			2
-	wait				1
-	playfram			3
-	wait				1
-	playfram			4
-	wait				1
-	playfram			5
-	wait				1
-	playfram			6
-	wait				1
-	playfram			7
-	wait				1
-	playfram			8
-	wait				1
-	playfram			9
-	wait				1
-	playfram			10
-	wait				1
-	playfram			11
-	wait				1
-	playfram			12
-	wait				1
-	playfram			13
-	wait				1
-	playfram			14
-	wait				1
-	playfram			0x00
-	wait				1
-	goto				AstralOmenIsWorking
-	
-AstralOmenWarpIn:
-	imgol             	1088 0 0	# Astral Omen Warp Flash (cm\protoss\astralomen.grp)
-	goto              	AstralOmenLanding
-	
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 1089 Celestial Shrine (cm\protoss\celestialshrine.grp)
-.headerstart
-IsId          	449
-Type          	20
-Init          	CelestialShrineInit
-Death         	CelestialShrineDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
-Unused1       	[NONE]
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
-Walking       	[NONE]
-WalkingToIdle 	[NONE]
-SpecialState1 	[NONE]
-SpecialState2 	[NONE]
-AlmostBuilt   	[NONE]
-Built         	CelestialShrineBuilt
-Landing       	CelestialShrineLanding
-LiftOff       	CelestialShrineLanding
-IsWorking     	CelestialShrineLanding
-WorkingToIdle 	CelestialShrineBuilt
-WarpIn        	[NONE]
-.headerend
-# ----------------------------------------------------------------------------- #
-
-CelestialShrineInit:
-	playfram          	0x00
-	imgul             	1090 0 0 # Celestial Shrine Shadow (cm\protoss\celestialshrine-shad.grp)
-	goto              	CelestialShrineLanding
-
-CelestialShrineLanding:
-	wait				125
-	goto              	CelestialShrineLanding
-
-CelestialShrineDeath:
-	playsnd           	7 # Misc\ExploLrg.wav
-	imgol             	215 0 0	# Explosion (Large) (thingy\tBangX.grp)
-	wait              	3 
-	lowsprul          	223 0 0	# Protoss Building Rubble (Small) (thingy\PRubbleS.grp)
-	wait              	1 
-	end
-	
-CelestialShrineBuilt:
-	playfram          	0x00
-	goto              	CelestialShrineLanding
-	
-CelestialShrineWarpIn:
-	imgol             	1091 0 0 # Celestial Shrine Warp Flash (cm\protoss\CelestialShrine.grp)
-	goto              	CelestialShrineLanding
-	
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 1092 Parthenon (cm\terran\parthenon.grp)
-.headerstart
-IsId          	450
-Type          	20
-Init          	ParthenonInit
-Death         	InfestedMinistryDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
-Unused1       	[NONE]
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
-Walking       	InfestedTerranLocal00
-WalkingToIdle 	InfestedTerranLocal00
-SpecialState1 	ParthenonSpecialState1
-SpecialState2 	[NONE]
-AlmostBuilt   	ParthenonAlmostBuilt
-Built         	ParthenonBuilt
-Landing       	ParthenonLanding
-LiftOff       	ParthenonLiftOff
-IsWorking     	ParthenonIsWorking
-WorkingToIdle 	ParthenonBuilt
-WarpIn        	[NONE]
-.headerend
-# ----------------------------------------------------------------------------- #
-
-ParthenonInit:
-	imgul             	1093 0 0 # Parthenon Shadow (cm\terran\parthenon-shadow.grp)
-ParthenonBuilt:
-	playfram          	0x00
-	goto              	InfestedTerranLocal00
-
-ParthenonSpecialState1:
-	playfram          	0
-	goto              	InfestedTerranLocal00
-
-ParthenonAlmostBuilt:
-	playfram          	20
-	goto              	InfestedTerranLocal00
-
-ParthenonLanding:
-	nobrkcodestart
-	wait              	20
-	playsnd           	472 # Misc\Land.WAV
-#	playfram          	3
-	wait              	5
-#	playfram          	2
-	wait              	5
-#	playfram          	1
-	wait              	5
-#	playfram          	4
-	wait              	5
-	playfram          	0x00
-	sigorder          	16
-	nobrkcodeend
-	goto              	InfestedTerranLocal00
-
-ParthenonLiftOff:
-	nobrkcodestart
-	playsnd           	471 # Misc\LiftOff.WAV
-#	playfram          	4
-	wait              	5
-#	playfram          	1
-	wait              	5
-#	playfram          	2
-	wait              	5
-#	playfram          	3
-	sigorder          	16
-	nobrkcodeend
-	goto              	InfestedTerranLocal00
-
-ParthenonIsWorking:
-	playfram			1
-	wait				1
-	playfram			2
-	wait				1
-	playfram			3
-	wait				1
-	playfram			4
-	wait				1
-	playfram			5
-	wait				1
-	playfram			6
-	wait				1
-	playfram			7
-	wait				1
-	playfram			8
-	wait				1
-	playfram			9
-	wait				1
-	playfram			10
-	wait				1
-	playfram			11
-	wait				1
-	playfram			12
-	wait				1
-	playfram			13
-	wait				1
-	playfram			14
-	wait				1
-	playfram			15
-	wait				1
-	playfram			16
-	wait				1
-	playfram			17
-	wait				1
-	playfram			18
-	wait				1
-	playfram			19
-	wait				1
-	playfram			0
-	goto              	ParthenonIsWorking
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -27623,7 +27152,7 @@ ExemplarTorpedoLocal01:
 	goto              	ExemplarTorpedoLocal01
 	
 ExemplarTorpedoDeath:
-	imgol             	1105 0 0
+	imgol             	1105 0 0 # Exemplar weapon impact
 	domissiledmg
 	wait              	1 
 	end
@@ -27666,7 +27195,7 @@ Burrow        	[NONE]
 FutureStationInit:
 	imgul             	1121 0 0 # Future Station Shadow (cm\terran\future-station-shadow.grp)
 FutureStationBuilt:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	goto              	InfestedTerranLocal00
 
 FutureStationAlmostBuilt:
@@ -27760,18 +27289,18 @@ Enable        	ArgosyEnable
 # ----------------------------------------------------------------------------- #
 
 ArgosyInit:
-	imgul             	1123 0 0	# Argosy Shadow (cm\protoss\argosy-shad.grp)
-	playfram          	0x00	# Frame set 0
-	wait              	2 
+	imgul             	1123 0 0 # Argosy Shadow (cm\protoss\argosy-shad.grp)
+	playfram          	0x00
+	wait              	2
 	goto              	ArgosyBuilt
 
 ArgosyBuilt:
-	wait              	125 
+	wait              	125
 	goto              	ArgosyBuilt
 
 ArgosyDeath:
-	playfram          	0x00	# Frame set 0
-	playsnd           	7	# Misc\ExploLrg.wav
+	playfram          	0x00
+	playsnd           	7 # Misc\ExploLrg.wav
 	imgol             	215 0 0	# Explosion (Large) (thingy\tBangX.grp)
 	wait              	3 
 	lowsprul          	224 0 0	# Protoss Building Rubble (Large) (thingy\PRubbleL.grp)
@@ -27780,23 +27309,23 @@ ArgosyDeath:
 
 ArgosySpecialState1:
 	playsnd           	528	# Protoss\SHUTTLE\pshBld00.wav
-	wait              	1 
+	wait              	1
 	goto              	ArgosyLocal00
 
 ArgosyLocal00:
-	wait              	255 
+	wait              	255
 	goto              	ArgosyLocal00
 
 ArgosySpecialState2:
-	wait              	1 
+	wait              	1
 	goto              	ArgosyWorkingToIdle
 
 ArgosyWorkingToIdle:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	goto              	ArgosyBuilt
 
 ArgosyAlmostBuilt:
-	imgol             	1124 0 0	# Argosy Warp Flash (cm\protoss\argosy.grp)
+	imgol             	1124 0 0 # Argosy Warp Flash (cm\protoss\argosy.grp)
 	goto              	ArgosyBuilt
 
 ArgosyIsWorking:
@@ -27823,13 +27352,13 @@ ArgosyIsWorking:
 	goto              	ArgosyIsWorking
 
 ArgosyDisable:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
+	playfram          	0x00
+	wait              	2
 	goto              	ArgosyBuilt
 
 ArgosyEnable:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
+	playfram          	0x00
+	wait              	2
 	goto              	ArgosyWorkingToIdle
 	
 # ----------------------------------------------------------------------------- #
@@ -27970,11 +27499,11 @@ NaniteAssemblyIsWorking:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1127 Particle Accelerator (cm\terran\particle-accelerator.grp)
+# 1127 Hadron (cm\terran\particle-accelerator.grp)
 .headerstart
 IsId          	469
 Type          	24
-Init          	ParticleAcceleratorInit
+Init          	HadronInit
 Death         	InfestedMinistryDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
@@ -27989,38 +27518,38 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	ParticleAcceleratorAlmostBuilt
-Built         	ParticleAcceleratorBuilt
-Landing       	ParticleAcceleratorLanding
+AlmostBuilt   	HadronAlmostBuilt
+Built         	HadronBuilt
+Landing       	HadronLanding
 LiftOff       	InfestedTerranLocal00
-IsWorking     	ParticleAcceleratorIsWorking
-WorkingToIdle 	ParticleAcceleratorBuilt
+IsWorking     	HadronIsWorking
+WorkingToIdle 	HadronBuilt
 WarpIn        	[NONE]
 Unused3       	[NONE]
 StarEditInit  	[NONE]
-Disable       	ParticleAcceleratorDisable
+Disable       	HadronDisable
 Burrow        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-ParticleAcceleratorInit:
+HadronInit:
 	playfram          	0x00
-	imgul             	1128 0 0 # Particle Accelerator Shadow (cm\terran\particle-accelerator-shadow.grp)
-	goto              	ParticleAcceleratorLanding
+	imgul             	1128 0 0 # Hadron Shadow (cm\terran\particle-accelerator-shadow.grp)
+	goto              	HadronLanding
 	
-ParticleAcceleratorLanding:
+HadronLanding:
 #	imgol             	294 0 0 # Machine Shop Connector (terran\machineC.grp)
 	goto              	InfestedTerranLocal00
 
-ParticleAcceleratorAlmostBuilt:
+HadronAlmostBuilt:
 	playfram          	5
 	goto              	InfestedTerranLocal00
 
-ParticleAcceleratorBuilt:
+HadronBuilt:
 	playfram          	0x00
-	goto              	ParticleAcceleratorLanding
+	goto              	HadronLanding
 
-ParticleAcceleratorIsWorking:
+HadronIsWorking:
 	playfram			1
 	wait				1
 	playfram			2
@@ -28061,9 +27590,9 @@ ParticleAcceleratorIsWorking:
 	wait				1
 	playfram			0x00
 	wait				1
-	goto              	ParticleAcceleratorIsWorking
+	goto              	HadronIsWorking
 	
-ParticleAcceleratorDisable:
+HadronDisable:
 	goto              	InfestedTerranLocal00
 	
 # ----------------------------------------------------------------------------- #
@@ -28105,100 +27634,14 @@ Enable        	CrucibleEnable
 
 CrucibleInit:
 	imgul             	1130 0 0 # Crucible Shadow (cm\protoss\crucible-shad.grp)
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	wait              	1
 	goto              	CrucibleBuilt
 
 CrucibleBuilt:
 	wait				1
-	goto				CrucibleLocal01
+	goto				CrucibleIsWorking
 	
-CrucibleLocal01:
-	playfram          	1
-	wait              	2
-	playfram          	2
-	wait              	2
-	playfram          	3
-	wait              	2
-	playfram          	4
-	wait              	2
-	playfram          	5
-	wait              	2
-	playfram          	6
-	wait              	2
-	playfram          	7
-	wait              	2
-	playfram          	8
-	wait              	2
-	playfram          	9
-	wait              	2
-	playfram          	10
-	wait              	2
-	playfram          	11
-	wait              	2
-	playfram          	12
-	wait              	2
-	playfram          	13
-	wait              	2
-	playfram          	12
-	wait              	2
-	playfram          	11
-	wait              	2
-	playfram          	10
-	wait              	2
-	playfram          	9
-	wait              	2
-	playfram          	8
-	wait              	2
-	playfram          	7
-	wait              	2
-	playfram          	6
-	wait              	2
-	playfram          	5
-	wait              	2
-	playfram          	4
-	wait              	2
-	playfram          	3
-	wait              	2
-	playfram          	2
-	wait              	2
-	playfram          	1
-	wait              	2
-	playfram          	0x00
-	wait              	2
-	goto				CrucibleLocal01
-
-CrucibleDeath:
-	playfram          	0x00	# Frame set 0
-	playsnd           	7	# Misc\ExploLrg.wav
-	imgol             	215 0 0	# Explosion (Large) (thingy\tBangX.grp)
-	wait              	3 
-	lowsprul          	224 0 0	# Protoss Building Rubble (Large) (thingy\PRubbleL.grp)
-	wait              	1 
-	end
-
-CrucibleSpecialState1:
-	playsnd           	528	# Protoss\SHUTTLE\pshBld00.wav
-	wait              	1 
-	goto              	CrucibleLocal00
-
-CrucibleLocal00:
-	wait              	255 
-	goto              	CrucibleLocal00
-
-CrucibleSpecialState2:
-	wait              	1 
-	goto              	CrucibleWorkingToIdle
-
-CrucibleWorkingToIdle:
-	playfram          	0x00	# Frame set 0
-	wait				1
-	goto              	CrucibleBuilt
-
-CrucibleAlmostBuilt:
-	imgol             	1131 0 0 # Crucible Warp Flash (cm\protoss\crucible.grp)
-	goto              	CrucibleBuilt
-
 CrucibleIsWorking:
 	playfram          	1
 	wait              	2
@@ -28252,11 +27695,42 @@ CrucibleIsWorking:
 	wait              	2
 	playfram          	0x00
 	wait              	2
-	goto              	CrucibleIsWorking
+	goto				CrucibleIsWorking
+
+CrucibleDeath:
+	playfram          	0x00
+	playsnd           	7 # Misc\ExploLrg.wav
+	imgol             	215 0 0 # Explosion (Large) (thingy\tBangX.grp)
+	wait              	3
+	lowsprul          	224 0 0 # Protoss Building Rubble (Large) (thingy\PRubbleL.grp)
+	wait              	1
+	end
+
+CrucibleSpecialState1:
+	playsnd           	528	# Protoss\SHUTTLE\pshBld00.wav
+	wait              	1 
+	goto              	CrucibleLocal00
+
+CrucibleLocal00:
+	wait              	255 
+	goto              	CrucibleLocal00
+
+CrucibleSpecialState2:
+	wait              	1
+	goto              	CrucibleWorkingToIdle
+
+CrucibleWorkingToIdle:
+	playfram          	0x00
+	wait				1
+	goto              	CrucibleBuilt
+
+CrucibleAlmostBuilt:
+	imgol             	1131 0 0 # Crucible Warp Flash (cm\protoss\crucible.grp)
+	goto              	CrucibleBuilt
 
 CrucibleDisable:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
+	playfram          	0x00
+	wait              	2
 	goto              	CrucibleLocal02
 	
 CrucibleLocal02:
@@ -28264,65 +27738,9 @@ CrucibleLocal02:
 	goto				CrucibleLocal02
 
 CrucibleEnable:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
+	playfram          	0x00
+	wait              	2
 	goto              	CrucibleWorkingToIdle
-	
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 1132 Principality (cm\protoss\principality.grp)
-.headerstart
-IsId          	471
-Type          	20
-Init          	PrincipalityInit
-Death         	PrincipalityDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
-Unused1       	[NONE]
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
-Walking       	[NONE]
-WalkingToIdle 	[NONE]
-SpecialState1 	[NONE]
-SpecialState2 	[NONE]
-AlmostBuilt   	[NONE]
-Built         	PrincipalityBuilt
-Landing       	PrincipalityLanding
-LiftOff       	PrincipalityLanding
-IsWorking     	PrincipalityLanding
-WorkingToIdle 	PrincipalityBuilt
-WarpIn        	[NONE]
-.headerend
-# ----------------------------------------------------------------------------- #
-
-PrincipalityInit:
-	playfram          	0x00
-	imgul             	1133 0 0 # Principality Shadow (cm\protoss\principality.grp)
-	goto              	PrincipalityLanding
-
-PrincipalityLanding:
-	wait				125
-	goto              	PrincipalityLanding
-
-PrincipalityDeath:
-	playsnd           	7 # Misc\ExploLrg.wav
-	imgol             	215 0 0 # Explosion (Large) (thingy\tBangX.grp)
-	wait              	3
-	lowsprul          	223 0 0 # Protoss Building Rubble (Small) (thingy\PRubbleS.grp)
-	wait              	1
-	end
-	
-PrincipalityBuilt:
-	playfram          	0x00
-	goto              	PrincipalityLanding
-	
-PrincipalityWarpIn:
-	imgol             	1134 0 0 # Principality Warp Flash (cm\protoss\Principality.grp)
-	goto              	PrincipalityLanding
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -30827,7 +30245,7 @@ PariahLocal01:
 # 1193 Talos (cm\terran\talos.grp)
 .headerstart
 IsId          	503
-Type          	12
+Type          	15
 Init          	TalosInit
 Death         	TalosDeath
 GndAttkInit   	TalosGndAttkInit
@@ -30842,6 +30260,7 @@ Unused2       	[NONE]
 Walking       	TalosWalking
 WalkingToIdle 	TalosGndAttkToIdle
 SpecialState1 	[NONE]
+SpecialState2 	[NONE]
 AlmostBuilt   	TalosAlmostBuilt
 .headerend
 # ----------------------------------------------------------------------------- #
@@ -37138,13 +36557,14 @@ Type          	2
 Init          	MagneticFieldInit
 Death         	MagneticFieldDeath
 GndAttkInit   	MagneticFieldDeath
+AirAttkInit   	MagneticFieldDeath
 .headerend
 # ----------------------------------------------------------------------------- #
 
 MagneticFieldInit:
 	wait              	1 
 MagneticFieldLocal01:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	wait				1
 	playfram			1
 	wait				1
@@ -39823,11 +39243,6 @@ AutocratWalking:
 	playfram          	0x88
 	goto              	AutocratWalking
 
-AutocratSpecialState1:
-	playfram          	0x00
-	wait              	1
-	goto              	AutocratLocal05
-
 AutocratLocal05:
 	wait              	125
 	goto              	AutocratLocal05
@@ -40088,11 +39503,6 @@ StrigaWalking:
 	playfram          	0x55
 	goto              	StrigaWalking
 
-StrigaSpecialState1:
-	playfram          	0x00
-	wait              	1 
-	goto              	StrigaLocal05
-
 StrigaLocal05:
 	wait              	125 
 	goto              	StrigaLocal05
@@ -40123,24 +39533,26 @@ SpecialState1 	[NONE]
 LuminaryInit:
 	imgul             	1412 0 42 # Luminary Shadow (cm\shared\luminary.grp)
 LuminaryLocal01:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	goto              	LuminaryGndAttkToIdle
 
 LuminaryGndAttkToIdle:
 	setvertpos        	1
 	wait 				8
-	setvertpos        	0 
+	setvertpos        	0
 	wait 				8
-	setvertpos        	-1 
+	setvertpos        	-1
 	wait 				8
-	setvertpos        	0 
+	setvertpos        	0
 	wait 				8
 	goto              	LuminaryGndAttkToIdle
 
 LuminaryDeath:
 	playsnd           	257	# Terran\PHOENIX\TPhDth00.WAV
 	imgol             	332 0 0	# Explosion2 (Small) (thingy\tBangS.grp)
-	wait              	3 
+	wait              	3
+	lowsprul			845 0 42 # Terran Unit Rubble Small
+	wait				1
 	end
 
 LuminaryGndAttkInit:
@@ -41015,83 +40427,6 @@ RogueGalleryWarpIn:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1430 Strident Stratum (cm\protoss\strident-stratum.grp)
-.headerstart
-IsId          	615
-Type          	27
-Init          	StridentStratumInit
-Death         	StridentStratumDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
-Unused1       	[NONE]
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
-Walking       	[NONE]
-WalkingToIdle 	[NONE]
-SpecialState1 	[NONE]
-SpecialState2 	[NONE]
-AlmostBuilt   	[NONE]
-Built         	StridentStratumBuilt
-Landing       	[NONE]
-LiftOff       	[NONE]
-IsWorking     	StridentStratumIsWorking
-WorkingToIdle 	StridentStratumBuilt
-WarpIn        	StridentStratumWarpIn
-Unused3       	[NONE]
-StarEditInit  	[NONE]
-Disable       	StridentStratumDisabled
-Burrow        	[NONE]
-UnBurrow      	[NONE]
-Enable        	StridentStratumBuilt
-.headerend
-# ----------------------------------------------------------------------------- #
-
-StridentStratumInit:
-	imgul             	1431 0 0 # Strident Stratum Shadow (cm\protoss\strident-stratum-shadow.grp)
-	playfram          	0
-	wait				10
-	goto              	StridentStratumLocal00
-
-StridentStratumLocal00:
-	wait				125
-	goto				StridentStratumLocal00
-
-StridentStratumDeath:
-	playsnd           	7 # Misc\ExploLrg.wav
-	imgol             	215 0 0 # Explosion (Large) (thingy\tBangX.grp)
-	wait              	3 
-	lowsprul          	223 0 0 # Protoss Building Rubble (Small) (thingy\PRubbleS.grp)
-	wait              	1 
-	end
-
-StridentStratumIsWorking:
-	playfram			1
-	wait				2
-	playfram			2
-	wait				2
-	playfram			1
-	wait				2
-	playfram			0
-	goto				StridentStratumIsWorking
-
-StridentStratumDisabled:
-	playfram			3
-	goto				StridentStratumLocal00
-
-StridentStratumBuilt:
-	playfram          	0x00
-	goto              	StridentStratumLocal00
-	
-StridentStratumWarpIn:
-	imgol             	1432 0 0 # Strident Stratum Warp Flash (cm\protoss\strident-stratum.grp)
-	goto              	StridentStratumLocal00
-	
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
 # 1433 Monument of Sin (cm\protoss\monumentofsin.grp)
 .headerstart
 IsId          	616
@@ -41358,7 +40693,9 @@ TarasqueDeath:
 	playsnd           	317	# Terran\TANK\TTaDth00.WAV
 	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
 	sprol             	156 0 0	# Matraleth Death (zerg\zquDeath.grp)
-	wait              	3 
+	wait              	3
+	lowsprul			273 0 0 # Terran Building Rubble Small
+	wait				1
 	end
 
 TarasqueUnused1:
@@ -43025,6 +42362,7 @@ TarasqueMuzzleFlashDeath:
 # 1645 Cyclops Remains (cm\terran\cyclops-remains.grp)
 # 1647 Goliath Remains (cm\terran\goliath-remains.grp)
 # 1648 Ecclesiast Remains (cm\protoss\ecclesiast-remains.grp)
+# 1648 Lanifect Remains (cm\protoss\lanifect-death.grp)
 .headerstart
 IsId          	650
 Type          	0
@@ -46401,6 +45739,7 @@ StarEditInit  	[NONE]
 Disable       	[NONE]
 Burrow        	TethzorokorBurrow
 UnBurrow      	TethzorokorUnBurrow
+Enable        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -47959,6 +47298,8 @@ WendigoDeath:
 	playsnd           	257 # Terran\PHOENIX\TPhDth00.WAV
 	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
 	wait              	3
+	lowsprul			845 0 42 # Terran Unit Rubble Small
+	wait				1
 	end
 
 WendigoGndAttkInit:
@@ -48032,6 +47373,8 @@ SouthpawDeath:
 	playsnd           	257 # Terran\PHOENIX\TPhDth00.WAV
 	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
 	wait              	3
+	lowsprul			845 0 0 # Terran Unit Rubble Small
+	wait				1
 	end
 
 SouthpawGndAttkInit:
@@ -49135,88 +48478,6 @@ ApothecaryIsWorking:
 	playfram			0
 	wait				1
 	goto              	ApothecaryIsWorking
-
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 1621 Sequestered Icon (cm\protoss\sequestered-icon.grp)
-.headerstart
-IsId          	712
-Type          	27
-Init          	SequesteredIconInit
-Death         	SequesteredIconDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
-Unused1       	[NONE]
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
-Walking       	[NONE]
-WalkingToIdle 	[NONE]
-SpecialState1 	[NONE]
-SpecialState2 	[NONE]
-AlmostBuilt   	[NONE]
-Built         	SequesteredIconBuilt
-Landing       	SequesteredIconLanding
-LiftOff       	SequesteredIconLanding
-IsWorking     	SequesteredIconIsWorking
-WorkingToIdle 	SequesteredIconBuilt
-WarpIn        	SequesteredIconWarpIn
-Unused3       	[NONE]
-StarEditInit  	[NONE]
-Disable       	SequesteredIconDisable
-Burrow        	[NONE]
-UnBurrow      	[NONE]
-Enable        	SequesteredIconEnable
-.headerend
-# ----------------------------------------------------------------------------- #
-
-SequesteredIconInit:
-	playfram          	0x00
-	imgul             	1622 0 0 # Sequestered Icon Shadow (cm\protoss\sequestered-icon-shadow.grp)
-	goto              	SequesteredIconLanding
-
-SequesteredIconLanding:
-	wait				125
-	goto              	SequesteredIconLanding
-
-SequesteredIconDeath:
-	playsnd           	7 # Misc\ExploLrg.wav
-	imgol             	215 0 0 # Explosion (Large) (thingy\tBangX.grp)
-	wait              	3 
-	lowsprul          	223 0 0 # Protoss Building Rubble (Small) (thingy\PRubbleS.grp)
-	wait              	1 
-	end
-	
-SequesteredIconBuilt:
-	playfram          	0x00
-	goto              	SequesteredIconLanding
-	
-SequesteredIconIsWorking:
-	playfram			1
-	wait				2
-	playfram			2
-	wait				2
-	playfram			1
-	wait				2
-	playfram			0
-	goto				SequesteredIconIsWorking
-	
-SequesteredIconWarpIn:
-	imgol             	1623 0 0 # Sequestered Icon Warp Flash (cm\protoss\sequestered-icon.grp)
-	goto              	SequesteredIconLanding
-
-SequesteredIconDisable:
-	playfram			3
-	wait				1
-	goto              	SequesteredIconBuilt
-
-SequesteredIconEnable:
-	playfram          	0x00
-	wait              	1
-	goto              	SequesteredIconBuilt
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -50695,7 +49956,7 @@ AlmostBuilt   	ScourgeExplosionDeath
 Engines_MultiGlowHeader_OmniInit:
 	engframe			0
 	wait              	1
-	engframe			0x20
+	engframe			32
 	wait              	1
 	goto              	Engines_MultiGlowHeader_OmniInit
 	
@@ -51780,6 +51041,8 @@ Unused3       	[NONE]
 StarEditInit  	[NONE]
 Disable       	[NONE]
 Burrow        	[NONE]
+UnBurrow        [NONE]
+Enable        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -51801,6 +51064,58 @@ EngramGndAttkToIdle:
 EngramWarpIn:
 	imgol             	1748 0 0 # Engram Warp Flash (cm\protoss\engram.grp)
 	goto				ScourgeLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1745 Philoc (cm\faction\philoc.grp)
+.headerstart
+IsId          	751
+Type          	12
+Init          	PhilocInit
+Death         	PhilocDeath
+GndAttkInit   	PhilocGndAttkInit
+AirAttkInit   	PhilocGndAttkInit
+Unused1       	[NONE]
+GndAttkRpt    	PhilocGndAttkInit
+AirAttkRpt    	PhilocGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	WraithGndAttkToIdle
+AirAttkToIdle 	WraithGndAttkToIdle
+Unused2       	[NONE]
+Walking       	PhilocWalking
+WalkingToIdle 	WraithGndAttkToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+PhilocInit:
+	imgulnextid         0 42 # Philoc Shadow (terran\philoc.grp)
+	playfram          	0x00
+	goto              	WraithGndAttkToIdle
+
+PhilocDeath:
+	playsnd           	257 # Terran\PHOENIX\TPhDth00.WAV
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			844 0 42 # Terran Unit Rubble Medium
+	end
+
+PhilocGndAttkInit:
+	nobrkcodestart
+	wait              	1
+	playfram			0x20
+	attackwith        	1
+	playsnd           	74 # Bullet\TPhFi100.wav
+	wait				1
+	playfram			0x00
+	gotorepeatattk
+	nobrkcodeend
+	goto              	WraithLocal00
+
+PhilocWalking:
+	setvertpos        	0
+	imgol             	1747 0 0 # Philoc Engines (terran\wraith-engine.grp)
+	goto              	WraithLocal00
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -52549,25 +51864,85 @@ HelixBoltInit:
 	playfram          	0x00
 	wait              	1
 	sigorder          	1
-	wait              	1
-HelixBoltGndAttkInit:
 	playfram          	0x11
 	wait              	1
 	playfram          	0x22
 	wait              	1
+HelixBoltGndAttkInit:
 	playfram          	0x33
 	wait              	1
 	playfram          	0x44
 	wait              	1
 	playfram          	0x55
 	wait              	1
-	playfram          	0x00
+	playfram          	0x66
+	wait              	1
+	playfram          	0x77
+	wait              	1
+	playfram          	0x88
 	wait              	1
 	goto              	HelixBoltGndAttkInit
 	
 HelixBoltDeath:
-	imgol             	1249 0 0 # Burst Lasers Blue Impact (thingy\elbHit.grp)
+	playfram          	0x99
+	domissiledmg
+	wait              	1
+	playfram          	0xAA
+	wait              	1
+	playfram          	0xBB
+	wait              	1
+	playfram          	0xCC
 	wait              	1
 	end
 	
-## Next free IsId: 764
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1141 Hotshot (cm\faction\hotshot.grp)
+.headerstart
+IsId          	764
+Type          	13
+Init          	HotshotInit
+Death         	MadcapDeath
+GndAttkInit   	HotshotGndAttkInit
+AirAttkInit   	HotshotGndAttkInit
+Unused1       	[NONE]
+GndAttkRpt    	HotshotGndAttkRpt
+AirAttkRpt    	HotshotGndAttkRpt
+CastSpell     	[NONE]
+GndAttkToIdle 	MadcapGndAttkToIdle
+AirAttkToIdle 	MadcapGndAttkToIdle
+Unused2       	[NONE]
+Walking       	MadcapWalking
+WalkingToIdle 	MadcapWalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+HotshotInit:
+	imgul             	1142 0 0 # Madcap Shadow (cm\terran\madcap-shad.grp)
+	goto				MadcapWalkingToIdle
+
+HotshotGndAttkInit:
+	playfram          	0x100
+	wait				1
+	playfram			0x120
+	wait				1
+	playfram			0x140
+HotshotGndAttkRpt:
+	wait				1
+	nobrkcodestart
+	playsndbtwn			2617 2618 # Hotshot weaponfire 01, 02
+	attack
+	playfram          	0x1A0
+	wait              	1
+	playfram          	0x180
+	wait				1
+	playfram          	0x1A0
+	wait              	1
+	playfram          	0x180
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto				MadcapGndAttkToIdle
+	
+## Next free IsId: 765

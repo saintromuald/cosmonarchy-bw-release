@@ -99,7 +99,7 @@ Astral Blaster (Ecclesiast)
 Dauntless Disruption Cannon (Atreus)
 Phase Cleaver (Amaranth)
 Neutron Flare (Lanifect)
-Sequencing Spore (Charlatan)
+Fervent Blaster (Charlatan)
 Acrid Barbs (Quazilisk)
 Halo Rockets (Valkyrie)
 Corrosive Spores (Vithrilisk)
@@ -206,7 +206,7 @@ Nathrok Claws (Nathrokor)
 Calcification (Gorgrokor)
 Talismanic Weaver (Potentate)
 Phase Saber (Potentate)
-Extended Weapon #79
+Dispatch Shotgun (Hotshot)
 Extended Weapon #80
 Extended Weapon #81
 Extended Weapon #82

@@ -22,6 +22,7 @@ script_id TMCx
 	var Set mining_count_var 1 13
 	var Add can_worker_var 1 13
 #	dth 13 Set 1 start_location blank
+	call faction_check
 	queue 1 mason ministry 255 Local Loc.63 200
 	multi core_runtime
 	wait 1
@@ -5919,5 +5920,37 @@ script_id TMCx
 	:custom_town_endworld_8
 	create_script expansion_init_area_town 255 Loc.5 0 31
 	create_script expansion_init_area_town 255 Loc.8 0 20
+	return
+	
+	:faction_check
+	dth 13 Ex 0 mineral_field1 blank_return
+	dth 13 Ex 1 mineral_field1 faction_hecaton
+	dth 13 Ex 2 mineral_field1 faction_futurist
+	dth 13 Ex 3 mineral_field1 faction_golden
+	dth 13 Ex 4 mineral_field1 faction_nydus
+	dth 13 Ex 5 mineral_field1 faction_upstart
+	return
+	
+	:faction_hecaton
+	replace_unit maverick hotshot
+	return
+	
+	:faction_futurist
+	replace_unit wraith philoc
+	return
+	
+	:faction_golden
+	replace_unit goliath aspirant
+	replace_unit seraph luminary
+	return
+	
+	:faction_nydus
+	replace_unit cyprian cohort
+	replace_unit phalanx tarasque
+	return
+	
+	:faction_upstart
+	replace_unit goliath southpaw
+	replace_unit ancile wendigo
 	return
 	

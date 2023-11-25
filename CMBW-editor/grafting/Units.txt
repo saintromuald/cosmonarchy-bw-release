@@ -87,7 +87,7 @@
  0xFF05      # Is not lifted off
  0xFFFF      # ==End of List==
 
-14:         # [14] Nuclear Missile
+14:         # [14] Morningstar
  0xFF02      # Current unit is...
  108         # [108] Nuclear Silo
  0xFF10      # Does not have loaded nuke
@@ -2210,4 +2210,11 @@
  215         # Treasury
  0xFF07      # Is not training or morphing
  0xFF0C      # Does not have add-on attached
+ 0xFFFF      # ==End of List==
+ 
+395:		# [395] Hotshot
+ 0xFF02      # Current unit is...
+ 111         # [111] Stockade
+ 0xFF08      # Is not constructing add-on
+ 0xFF05      # Is not lifted off
  0xFFFF      # ==End of List==

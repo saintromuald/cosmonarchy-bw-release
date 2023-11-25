@@ -184,9 +184,9 @@ Nexus Shadow
 Warden
 Warden Shadow
 Warden Warp Flash
-Celestial Tribune
-Celestial Tribune Warp Flash
-Celestial Tribune Shadow
+unused (was Arbiter Tribunal)
+unused (was Arbiter Tribunal warp)
+unused (was Arbiter Tribunal shadow)
 Pylon
 Pylon Warp Flash
 Pylon Shadow
@@ -206,11 +206,11 @@ Robotics Support Bay
 Robotics Support Bay Warp Flash
 Robotics Support Bay Shadow
 Protoss Temple
-Fleet Beacon
-Fleet Beacon Warp Flash
+unused (was Fleet Beacon)
+unused (was Fleet Beacon warp)
 Warp Texture
 Warp Anchor
-Fleet Beacon Shadow
+unused (was Fleet Beacon shadow)
 Explosion1 (Small)
 Explosion1 (Medium)
 Explosion (Large)
@@ -1071,27 +1071,27 @@ Malediction Overlay Large
 Rotary Shadow
 Simulacrum
 Simulacrum Shadow
-Automaton Register
+unused
 Savant Shadow
 Ancile
 Ancile Shadow
 Ancile Engines
-Automaton Register Shadow
-Automaton Register Warpin
-Auxiliary Oasis
-Auxiliary Oasis Shadow
-Auxiliary Oasis Warpin
-Quantum Institute
-Quantum Institute Shadow
+unused
+unused
+unused
+unused
+unused
+unused
+unused
 Wyvern
-Astral Omen
-Astral Omen Shadow
-Astral Omen Warpin
-Pegasus
-Pegasus Shadow
-Pegasus Engine
-Parthenon
-Parthenon Shadow
+unused
+unused
+unused
+unused
+unused
+unused
+unused
+unused
 unused
 Nathrokor
 Nathrokor Shadow
@@ -1607,8 +1607,8 @@ Heir Shadow
 Heir Remains
 Horseman
 Horseman Shadow
-Iron Council
-Iron Council Shadow
+unused (was Iron Council)
+unused (was Iron Council shadow)
 Amphitheater
 Amphitheater Shadow
 Thespian
@@ -1619,9 +1619,9 @@ Cabalist Shadow
 Starpad Overlay
 Apothecary
 Apothecary Shadow
-Sequestered Icon
-Sequestered Icon Shadow
-Sequestered Icon Warp Flash
+unused (was Sequestered Icon)
+unused (was Sequestered Icon shadow)
+unused (was Sequestered Icon warp)
 Optecton
 Optecton Shadow
 Patriarch
@@ -1771,11 +1771,11 @@ Helix Bolt Orange
 Helix Bolt Blue 1
 Helix Bolt Blue 2
 Vorvrokor Shadow
-Extended Image #771
-Extended Image #772
-Extended Image #773
-Extended Image #774
-Extended Image #775
+Burst Lasers Impact Blue Damageless
+Dracadin Death Explosion
+Lanifect Remains
+Hotshot
+Hotshot Shadow
 Extended Image #776
 Extended Image #777
 Extended Image #778

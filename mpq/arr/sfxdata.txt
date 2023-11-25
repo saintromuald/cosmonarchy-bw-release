@@ -2558,65 +2558,65 @@ Patriarch Weaponfire 03
 Lobby -- Player Join
 Cloak Terran On
 Cloak Terran Off
-Star Sovereign Weaponfire 2 01
-Star Sovereign Weaponfire 2 02
-Star Sovereign Weaponfire 2 03
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Star Sovereign Weapon 2 Fire 01
+Star Sovereign Weapon 2 Fire 02
+Star Sovereign Weapon 2 Fire 03
+Ancile Ready 01
+Ancile Ready 02
+Ancile Ready 03
+Ancile Selected 01
+Ancile Selected 02
+Ancile Selected 03
+Ancile Selected 04
+Ancile Order Passive 01
+Ancile Order Passive 02
+Ancile Order Passive 03
+Ancile Order Passive 04
+Ancile Under Attack 01
+Ancile Under Attack 02
+Ancile Under Attack 03
+Ancile Under Attack 04
+Vagrant Ready 01
+Vagrant Ready 02
+Vagrant Ready 03
+Vagrant Selected 01
+Vagrant Selected 02
+Vagrant Selected 03
+Vagrant Selected 04
+Vagrant Order Passive 01
+Vagrant Order Passive 02
+Vagrant Order Passive 03
+Vagrant Order Passive 04
+Vagrant Order Aggressive 01
+Vagrant Order Aggressive 02
+Vagrant Order Aggressive 03
+Vagrant Order Aggressive 04
+Vagrant Under Attack 01
+Vagrant Under Attack 02
+Vagrant Under Attack 03
+Vagrant Under Attack 04
+Vagrant Shade Ready 01
+Vagrant Shade Ready 02
+Vagrant Shade Ready 03
+Vagrant Shade Ready 04
+Vagrant Shade Selected 01
+Vagrant Shade Selected 02
+Vagrant Shade Selected 03
+Vagrant Shade Selected 04
+Vagrant Shade Order Passive 01
+Vagrant Shade Order Passive 02
+Vagrant Shade Order Passive 03
+Vagrant Shade Order Passive 04
+Vagrant Shade Order Aggressive 01
+Vagrant Shade Order Aggressive 02
+Vagrant Shade Order Aggressive 03
+Vagrant Shade Order Aggressive 04
+Vagrant Shade Under Attack 01
+Vagrant Shade Under Attack 02
+Vagrant Shade Under Attack 03
+Vagrant Shade Under Attack 04
+Hotshot Weaponfire 01
+Hotshot Weaponfire 02
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

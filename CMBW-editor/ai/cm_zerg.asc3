@@ -24,6 +24,7 @@ script_id ZMCx
 	var Add can_worker_var 1 13
 	var Add can_worker_all_var 1 13
 #	dth 13 Set 1 start_location blank
+	call faction_check
 	queue 1 droleth larva 255 Local Loc.63 200
 	multi core_runtime
 	wait 1
@@ -5844,5 +5845,25 @@ script_id ZMCx
 	:custom_town_endworld_8
 	create_script expansion_init_area_town 255 Loc.5 0 31
 	create_script expansion_init_area_town 255 Loc.8 0 20
+	return
+	
+	:faction_check
+	dth 13 Ex 0 mineral_field1 blank_return
+	dth 13 Ex 1 mineral_field1 faction_imicren
+	dth 13 Ex 2 mineral_field1 faction_goszirith
+	dth 13 Ex 3 mineral_field1 faction_orkoti
+	dth 13 Ex 4 mineral_field1 faction_zorthos
+	return
+	
+	:faction_imicren
+	return
+	
+	:faction_goszirith
+	return
+	
+	:faction_orkoti
+	return
+	
+	:faction_zorthos
 	return
 	

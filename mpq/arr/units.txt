@@ -148,7 +148,7 @@ Zerg Surkith Colony
 Terran Guildhall
 Terran Striga
 Zerg Excisant
-Rising Luminary (deprecated)
+Terran Luminary
 Terran Siren
 Zerg Othstol Oviform
 Zerg Gorgral Swamp
@@ -168,7 +168,7 @@ Protoss Embassy
 Protoss Stargate
 Protoss Argosy
 Protoss Fleet Beacon
-Zerg Izkag Iteth
+Zerg Alkag Iteth
 Protoss Synthetic Synod
 Protoss Vagrant
 Zerg Alaszileth
@@ -192,7 +192,7 @@ Terran Biotic Bastion
 Zerg Axitrilisk
 Town Center Marker (AI)
 Zerg Zorkiz Shroud
-Rising Aspirant
+Terran Aspirant
 Terran Blackjack
 Terran Claymore
 Zerg Vithrath Haunt
@@ -386,14 +386,14 @@ Terran Lodestone
 Floor Hatch
 Terran Treasury
 Terran Lodestone (Standalone)
-Extended Unit #161
-Extended Unit #162
-Extended Unit #163
-Extended Unit #164
-Extended Unit #165
-Extended Unit #166
-Extended Unit #167
-Extended Unit #168
+Faction Selection
+Select Faction 1
+Select Faction 2
+Select Faction 3
+Select Faction 4
+Select Faction 5
+Select Faction 6
+Terran Hotshot
 Extended Unit #169
 Extended Unit #170
 Extended Unit #171
