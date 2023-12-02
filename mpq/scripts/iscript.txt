@@ -2780,16 +2780,16 @@ Death         	[NONE]
 # ----------------------------------------------------------------------------- #
 
 EggSpawnInit:
-	playfram          	0x00	# Frame set 0
-	wait              	100 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	100 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	100 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	100 
-	playfram          	4	# Frame set 0, direction 4
-	wait              	100 
+	playfram          	0x00
+	wait              	100
+	playfram          	1
+	wait              	100
+	playfram          	2
+	wait              	100
+	playfram          	3
+	wait              	100
+	playfram          	4
+	wait              	100
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -28583,7 +28583,7 @@ CyclopsGndAttkRpt:
     wait                1
     nobrkcodestart
     playfram            0x220
-    playsndbtwn 		2085 2087 # Cyclops weapon fire 01, 02, 03
+    playsndbtwn 		2548 2549 # Cyclops weapon fire 01, 02, 03
     attack
     wait                1
     playfram            0x240
@@ -31240,7 +31240,12 @@ ArchitectLocal00:
 ArchitectWalking:
 	setvertpos        	0 
 	imgol				1221 0 0 # Architect Engines (cm\protoss\architect-engine.grp)
-	goto              	ArchitectLocal00
+	goto              	ArchitectWalking2
+	
+ArchitectWalking2:
+	move				4
+	wait				1
+	goto				ArchitectWalking2
 
 ArchitectWarpIn:
 	imgol             	143 0 0	# Architect Warp Flash (protoss\empyrean.grp)
@@ -38347,38 +38352,38 @@ SpecialState1 	VorvrokorBirthSpecialState1
 # ----------------------------------------------------------------------------- #
 
 VorvrokorBirthInit:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	goto              	VorvrokorBirthLocal00
 
 VorvrokorBirthLocal00:
-	wait              	125 
+	wait              	125
 	goto              	VorvrokorBirthLocal00
 
 VorvrokorBirthDeath:
-	wait              	1 
+	wait              	1
 	end
 
 VorvrokorBirthSpecialState1:
-	wait              	1 
+	wait              	1
 	nobrkcodestart
 	playfram          	0x00
-	wait              	2 
+	wait              	2
 	playfram          	1
-	wait              	2 
+	wait              	2
 	playfram          	2
-	wait              	2 
+	wait              	2
 	playfram          	3
-	wait              	2 
+	wait              	2
 	playfram          	4
-	wait              	2 
+	wait              	2
 	playfram          	5
-	wait              	2 
+	wait              	2
 	playfram          	6
-	wait              	2 
+	wait              	2
 	playfram          	7
-	wait              	2 
-	sigorder          	4 
-	lowsprul          	319 0 0	# Egg Spawn (zerg\zegspawn.grp)
+	wait              	2
+	sigorder          	4
+	lowsprul          	319 0 0 # Egg Spawn (zerg\zegspawn.grp)
 	nobrkcodeend
 	goto              	VorvrokorBirthLocal00
 	
@@ -50461,7 +50466,7 @@ MatadorCinderModeTurretInit:
 IsId          	740
 Type          	12
 Init          	WyvernTurretInit
-Death         	WyvernDeath
+Death         	ScourgeExplosionDeath
 GndAttkInit   	WyvernTurretGndAttkInit
 AirAttkInit   	WyvernTurretGndAttkInit
 Unused1       	[NONE]

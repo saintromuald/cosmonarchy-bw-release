@@ -1477,7 +1477,7 @@ Izirokor Birth
 Izirokor Spore
 Cuirass Stonewall Protocol Overlay
 Cyclops Passive Hit
-Creep Morph Overlay
+Decaying Overlay
 Salvage Periodic Zap
 Salvage Disable Small
 Salvage Disable Medium
@@ -1776,8 +1776,8 @@ Dracadin Death Explosion
 Lanifect Remains
 Hotshot
 Hotshot Shadow
-Extended Image #776
-Extended Image #777
+Ocsal Regression Overlay
+Tyranny Overlay
 Extended Image #778
 Extended Image #779
 Extended Image #780
