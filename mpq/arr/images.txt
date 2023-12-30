@@ -62,12 +62,12 @@ Zerg Building Explosion
 Cerebrate
 Cerebrate Shadow
 Infested Ministry
-Spawning Pool
-Spawning Pool Shadow
+Quazeth Pool
+Quazeth Pool Shadow
 Evolution Chamber
 Evolution Chamber Shadow
-Cagrant Colony
-Cagrant Colony Shadow
+Cagrant Cesiant
+Cagrant Cesiant Shadow
 Hachirosk
 Hachirosk Shadow
 Gathtelosk
@@ -93,8 +93,8 @@ Ultrok Cavern
 Ultrok Cavern Shadow
 Excisant
 Excisant Shadow
-Hydrok Den
-Hydrok Den Shadow
+Hydrith Den
+Hydrith Den Shadow
 Muthrok Spire
 Muthrok Spire Shadow
 Spraith Colony
@@ -1778,10 +1778,10 @@ Hotshot
 Hotshot Shadow
 Ocsal Regression Overlay
 Tyranny Overlay
-Extended Image #778
-Extended Image #779
-Extended Image #780
-Extended Image #781
+Nathrok Lake
+Mortothrokor Birth
+Skithrok Scab
+Mortothrokor Passive Overlay
 Extended Image #782
 Extended Image #783
 Extended Image #784

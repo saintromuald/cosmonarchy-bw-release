@@ -5212,7 +5212,7 @@ SpecialState1 	[NONE]
 HarakanInit:
 	imgul             	227 0 0 # Harakan Shadow (terran\tfbShad.grp)
 HarakanWalkingToIdle:
-	playfram          	0x22
+	playfram          	0x40
 HarakanLocal00:
 	wait				63
 	randcondjmp       	25 HarakanLocal01
@@ -5258,36 +5258,37 @@ HarakanLocal03:
 	goto              	HarakanWalkingToIdle
 
 HarakanLocal02:
-	playfram          	0x33
+	playfram          	0x60
 	wait              	1
-	playfram          	0x44
+	playfram          	0x80
 	wait              	1
 	turnrand          	3
 	wait              	1
-	playfram          	0x33
+	playfram          	0x60
 	wait              	1
 	goto              	HarakanWalkingToIdle
 
 HarakanDeath:
 	playsndbtwn       	296 298 # Terran\Firebat\TFBDth00.WAV | Terran\Firebat\TFBDth02.WAV
+	imgol             	3 0 0 # Scourge Death (zerg\zavDeath.grp)
 	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
 	setfldirect       	0
-	playfram          	170
+#	playfram          	170
 	wait              	2
-	playfram          	171
+#	playfram          	171
 	wait              	2
-	playfram          	172
+#	playfram          	172
 	wait              	2
-	playfram          	173
+#	playfram          	173
 	wait              	2
-	playfram          	174
-	wait              	2
-	playfram          	175
-	wait              	2
-	playfram          	176
-	wait              	2
-	playfram          	177
-	wait              	2
+#	playfram          	174
+#	wait              	2
+#	playfram          	175
+#	wait              	2
+#	playfram          	176
+#	wait              	2
+#	playfram          	177
+#	wait              	2
 	lowsprul          	615 0 0 # Harakan Remnants (cm\terran\harakan-remnants.grp)
 	wait              	1
 	end
@@ -5297,20 +5298,20 @@ HarakanUnused1:
 	nobrkcodestart
 	setfldirect       	0
 	playsndbtwn			1163 1165
-	sprol				742 0 0
-	playfram			176
+	sprol				742 0 0 # Explosion Small Reversed
+#	playfram			176
 	wait				2
-	playfram			175
+#	playfram			175
 	wait				2
-	playfram			174
+#	playfram			174
 	wait				2
-	playfram			173
+#	playfram			173
 	wait				2
-	playfram			172
+#	playfram			172
 	wait				2
-	playfram			171
+#	playfram			171
 	wait				2
-	playfram			170
+#	playfram			170
 	wait              	2
 	setfldirect       	12
 	nobrkcodeend
@@ -5322,13 +5323,15 @@ HarakanGndAttkRpt:
 	wait              	1
 	nobrkcodestart
 	imgol             	421 0 0 # FlameThrower (thingy\flamer.grp)
-	playfram          	0x11
-	sigorder			32
+	playfram          	0x20
 	attkshiftproj     	24
+	sigorder			32
 	wait              	1
 	attkshiftproj     	52
+	sigorder			32
 	wait              	1
 	attkshiftproj     	80
+	sigorder			32
 	wait              	5
 	playfram          	0x00
 	wait              	2
@@ -5339,28 +5342,28 @@ HarakanGndAttkToIdle:
 HarakanWalking:
 	move              	4
 	wait              	1
-	playfram          	0x33
+	playfram          	0x60
 	move              	4
 	wait              	1
-	playfram          	0x44
+	playfram          	0x80
 	move              	4
 	wait              	1
-	playfram          	0x55
+	playfram          	0xA0
 	move              	4
 	wait              	1
-	playfram          	0x66
+	playfram          	0xC0
 	move              	4
 	wait              	1
-	playfram          	0x77
+	playfram          	0xE0
 	move              	4
 	wait              	1
-	playfram          	0x88
+	playfram          	0x100
 	move              	4
 	wait              	1
-	playfram          	0x99
+	playfram          	0x120
 	move              	4
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 	goto              	HarakanWalking
 
 # ----------------------------------------------------------------------------- #
@@ -10821,48 +10824,48 @@ WarpIn        	DracadinWarpIn
 # ----------------------------------------------------------------------------- #
 
 DracadinInit:
-	imgul             	123 0 0	# Dracadin Shadow (protoss\pdrShad.grp)
+	imgul             	123 0 0 # Dracadin Shadow (protoss\pdrShad.grp)
 DracadinWalkingToIdle:
 	playfram          	0x00
 	wait				1
 DracadinLocal00:
-	playfram          	0x11
+	playfram          	0x20
 	wait              	2
-	playfram          	0x22
+	playfram          	0x40
 	wait              	2
-	playfram          	0x33
+	playfram          	0x60
 	wait              	2
-	playfram          	0x44
+	playfram          	0x80
 	wait              	2
-	playfram          	0x55
+	playfram          	0xA0
 	wait              	2
-	playfram          	0x66
+	playfram          	0xC0
 	wait              	2
-	playfram          	0x77
+	playfram          	0xE0
 	wait              	2
 	playfram          	0x00
 	wait              	2
 	goto              	DracadinLocal00
 
 DracadinDeath:
-	playsnd           	493	# Protoss\DRAGOON\PDrDth00.WAV
+	playsnd           	493 # Protoss\DRAGOON\PDrDth00.WAV
 	imgol             	1774 0 0 # Dracadin death explosion (cm\protoss\dracadin-explosion.grp)
 	setfldirect       	0
-	playfram          	0x198
+	playfram          	768
 	wait              	2
-	playfram          	409
-	wait              	2
-	playfram          	410
-	wait              	2
-	playfram          	411
-	wait              	2
-	playfram          	412
-	wait              	2
-	playfram          	413
-	wait              	2
-	playfram          	414
-	wait              	2
-	lowsprul          	192 0 0	# Dracadin Remnants (protoss\pdrDeath.grp)
+	playfram			769
+	wait				2
+	playfram			770
+	wait				2
+	playfram			771
+	wait				2
+	playfram			772
+	wait				2
+	playfram			773
+	wait				2
+	playfram			774
+	wait				2
+	lowsprul          	192 0 0 # Dracadin Remnants (protoss\pdrDeath.grp)
 	wait              	1
 	end
 
@@ -10871,78 +10874,79 @@ DracadinUnused1:
 	nobrkcodestart
 	playsnd				1902 # Dracadin revive 01
 	setfldirect			0
-	playfram			413
+	playfram			773
 	wait				2
-	playfram			412
+	playfram			772
 	wait				2
-	playfram			411
+	playfram			771
 	wait				2
-	playfram			410
+	playfram			770
 	wait				2
-	playfram			409
+	playfram			769
 	wait				2
-	playfram			0x198
+	playfram			768
+	wait				2
 	setfldirect			12
 	nobrkcodeend
 	goto				DracadinWalkingToIdle
 
 DracadinGndAttkInit:
-	playfram          	0x110
+	playfram          	0x200
 	wait              	1
-	playfram          	0x132
+	playfram          	0x240
 	wait              	1
-	playfram          	0x154
+	playfram          	0x280
 	wait              	1
 DracadinGndAttkRpt:
-	playfram          	0x176
+	playfram          	0x2C0
 	wait              	1
 	attackwith        	1
 	playsnd           	99 # Bullet\DragBull.wav
-	playfram          	0x187
+	playfram          	0x2E0
 	wait              	1
-	playfram          	0x176
+	playfram          	0x2C0
 	wait              	1
-	playfram          	0x165
+	playfram          	0x2A0
 	gotorepeatattk
 	ignorerest
 DracadinGndAttkToIdle:
 	wait              	1 
-	playfram          	0x154
+	playfram          	0x280
 	wait              	1
-	playfram          	0x143
+	playfram          	0x260
 	wait              	1
-	playfram          	0x132
+	playfram          	0x240
 	wait              	1
-	playfram          	0x121
+	playfram          	0x220
 	wait              	1
-	playfram          	0x110
+	playfram          	0x200
 	goto              	DracadinWalkingToIdle
 
 DracadinWalking:
 	move              	5
 	wait              	1
-	playfram          	0x88
+	playfram          	0x100
 	move              	5
 	wait              	1
-	playfram          	0x99
+	playfram          	0x120
 	move              	5
 	wait              	1
-	playfram          	0xaa
+	playfram          	0x140
 	move              	5
 	wait              	1
-	playfram          	0xbb
+	playfram          	0x160
 	move              	5
 	wait              	1
-	playfram          	0xcc
+	playfram          	0x180
 	move              	5
 	wait              	1
-	playfram          	0xdd
+	playfram          	0x1A0
 	move              	5
 	wait              	1
-	playfram          	0xee
+	playfram          	0x1C0
 	move              	5
 	wait              	1
-	playfram          	0xff
+	playfram          	0x1E0
 	goto              	DracadinWalking
 
 DracadinWarpIn:
@@ -10955,39 +10959,39 @@ DracadinLocal01:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 116 Interceptor (protoss\Intercep.grp)
+# 116 Steward (protoss\Intercep.grp)
 .headerstart
 IsId          	155
 Type          	12
-Init          	InterceptorInit
-Death         	InterceptorDeath
-GndAttkInit   	InterceptorGndAttkInit
-AirAttkInit   	InterceptorGndAttkInit
+Init          	StewardInit
+Death         	StewardDeath
+GndAttkInit   	StewardGndAttkInit
+AirAttkInit   	StewardGndAttkInit
 Unused1       	[NONE]
-GndAttkRpt    	InterceptorGndAttkInit
-AirAttkRpt    	InterceptorGndAttkInit
+GndAttkRpt    	StewardGndAttkInit
+AirAttkRpt    	StewardGndAttkInit
 CastSpell     	[NONE]
 GndAttkToIdle 	InfestedTerranLocal00
 AirAttkToIdle 	InfestedTerranLocal00
 Unused2       	[NONE]
-Walking       	InterceptorWalking
+Walking       	StewardWalking
 WalkingToIdle 	OvilethLocal00
 SpecialState1 	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-InterceptorInit:
-	imgul             	117 0 42	# Interceptor Shadow (protoss\Intercep.grp)
-	playfram          	0x00	# Frame set 0
+StewardInit:
+	imgul             	117 0 42 # Steward Shadow (protoss\Intercep.grp)
+	playfram          	0x00
 	goto              	OvilethLocal00
 
-InterceptorDeath:
-	playsnd           	8	# Misc\ExploMed.wav
-	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
-	wait              	3 
+StewardDeath:
+	playsnd           	8 # Misc\ExploMed.wav
+	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
+	wait              	3
 	end
 
-InterceptorGndAttkInit:
+StewardGndAttkInit:
 	wait              	1
 	attackwith        	1
 	playfram          	0x11
@@ -10996,7 +11000,7 @@ InterceptorGndAttkInit:
 	gotorepeatattk
 	goto              	InfestedTerranLocal00
 
-InterceptorWalking:
+StewardWalking:
 	playfram          	0x00
 	setvertpos        	0
 	goto              	InfestedTerranLocal00
@@ -30073,10 +30077,10 @@ Type          	21
 Init          	PariahInit
 Death         	PariahDeath
 GndAttkInit   	PariahGndAttkInit
-AirAttkInit   	PariahAirAttkInit
+AirAttkInit   	PariahGndAttkInit
 Unused1       	[NONE]
 GndAttkRpt    	PariahGndAttkInit
-AirAttkRpt    	PariahAirAttkInit
+AirAttkRpt    	PariahGndAttkInit
 CastSpell     	[NONE]
 GndAttkToIdle 	PariahGndAttkToIdle
 AirAttkToIdle 	PariahGndAttkToIdle
@@ -30098,7 +30102,7 @@ WarpIn        	PariahWarpIn
 PariahInit:
 	imgul             	1192 0 2 # Pariah Shadow (cm\protoss\pariah-shadow.grp)
 PariahWalkingToIdle:
-	playfram          	0xdd # Frame set 13
+	playfram          	0xdd
 	wait				1
 PariahLocal00:
 	wait				125
@@ -30116,87 +30120,41 @@ PariahDeath:
 
 PariahGndAttkInit:
 	playfram          	0xdd
-	wait              	1 
+	wait              	1
 	nobrkcodestart
 	playfram			0xee
-	wait              	1 
+	wait              	1
 	playfram			0xff
-	wait              	1 
+	wait              	1
 	playfram			0x110
 	playsndbtwn			1447 1449 # Pariah weapon fire 01, 02, 03
-	imgoluselo			1195 0 0
-	attkshiftproj		16
-	wait              	1 
+	imgoluselo			1195 0 0 # Blue projection blade
+	attkshiftproj		24
+	wait              	1
 	attkshiftproj		48
-	sigorder			32
 	wait				1
 	playfram			0x121
-	attkshiftproj		80
+	attkshiftproj		72
 	sigorder			32
-	wait              	1 
+	wait              	1
 	playfram			0x132
-	attkshiftproj		112
-	wait              	1 
+	attkshiftproj		100
+	wait              	1
 	playfram			0x143
-	sigorder			32
 	wait				1
-	imgoluselo			1195 0 0
-	attkshiftproj		16
-	wait              	1 
+	imgoluselo			1195 0 0 # Blue projection blade
+	attkshiftproj		24
+	wait              	1
 	attkshiftproj		48
 	sigorder			32
 	wait				1
 	playfram			0x154
-	attkshiftproj		80
-	sigorder			32
+	attkshiftproj		72
 	wait				1
 	playfram			0xdd
-	attkshiftproj		112
-	wait				1
-	sigorder			32
-	nobrkcodeend
-	gotorepeatattk
-	goto				PariahGndAttkToIdle
-	
-PariahAirAttkInit:
-	playfram          	0xdd
-	wait              	1 
-	nobrkcodestart
-	playfram			0xee
-	wait              	1 
-	playfram			0xff
-	wait              	1 
-	playfram			0x110
-	playsndbtwn			1447 1449 # Pariah weapon fire 01, 02, 03
-	imgoluselo			1195 0 0
-	attkshiftproj		16
-	wait              	1 
-	attkshiftproj		48
+	attkshiftproj		100
 	sigorder			32
 	wait				1
-	playfram			0x121
-	attkshiftproj		80
-	sigorder			32
-	wait              	1 
-	playfram			0x132
-	attkshiftproj		112
-	wait              	1 
-	playfram			0x143
-	sigorder			32
-	wait				1
-	imgoluselo			1195 0 0
-	attkshiftproj		16
-	wait              	1 
-	attkshiftproj		48
-	wait				1
-	playfram			0x154
-	attkshiftproj		80
-	sigorder			32
-	wait				1
-	playfram			0xdd
-	attkshiftproj		112
-	wait				1
-	sigorder			32
 	nobrkcodeend
 	gotorepeatattk
 	goto				PariahGndAttkToIdle
@@ -39466,21 +39424,24 @@ StrigaGndAttkInit:
 	wait              	1
 	playfram			0x99
 	playsndbtwn			1615 1616 # Striga weapon fire 01, 02
-	imgoluselo			1768 0 0
+	imgoluselo			1768 0 0 # Orange projection blade
 	attkshiftproj		24
+	sigorder			32
 	wait              	1
 	playfram			0xaa
 	attkshiftproj		48
+	sigorder			32
 	wait				1
 	playfram			0xbb
 	attkshiftproj		72
+	sigorder			32
 	wait              	1
 	playfram			0xcc
 	attkshiftproj		100
+	sigorder			32
 	wait              	1
 	playfram			0xdd
 	wait				1
-	sigorder			32
 	nobrkcodeend
 	gotorepeatattk
 	goto				StrigaGndAttkToIdle
@@ -43832,7 +43793,7 @@ Sentinel_Turret_GndAttkInit:
 	nobrkcodestart
 	attack
 	playfram			0x33
-	playsndbtwn       	1903 1904 # Sentinel weaponfire 01, 02
+	playsndbtwn       	2619 2621 # Sentinel weaponfire 01, 02, 03
 	wait				1
 	playfram			0x22
 	wait				1
@@ -45724,7 +45685,7 @@ AirAttkInit   	TethzorokorGndAttkInit
 Unused1       	TethzorokorUnused1
 GndAttkRpt    	TethzorokorGndAttkInit
 AirAttkRpt    	TethzorokorGndAttkInit
-CastSpell     	TethzorokorCastSpell
+CastSpell     	[NONE]
 GndAttkToIdle 	TethzorokorGndAttkToIdle
 AirAttkToIdle 	TethzorokorGndAttkToIdle
 Unused2       	[NONE]
@@ -45824,19 +45785,14 @@ TethzorokorGndAttkInit:
 	playsndbtwn			894 895	# Zerg\Ultra\zulHit00.WAV | Zerg\Ultra\zulHit01.WAV
 	attackwith 			1
 	wait              	1
-	turncwise			6
 	playfram          	0x380
 	wait              	1
-	turncwise			6
 	playfram          	0x3A0
 	wait				1
-	turncwise			6
 	playfram          	0x3C0
 	wait				1
-	turncwise			6
 	playfram          	0x3E0
 	wait				1
-	turncwise			8
 	playfram          	0x400
 	wait				1
 	playfram          	0x420
@@ -45856,35 +45812,6 @@ TethzorokorGndAttkToIdle:
 	playfram 			0x00
 	wait 				1
 	goto              	TethzorokorLocal00
-
-TethzorokorCastSpell:
-	playfram          	0x00
-	wait              	1
-	nobrkcodestart
-	playfram          	0x360
-	castspell
-	wait              	1
-	playfram          	0x380
-	wait              	1
-	playfram          	0x3A0
-	wait				1
-	playfram          	0x3C0
-	wait				1
-	playfram          	0x3E0
-	wait				1
-	playfram          	0x400
-	wait				1
-	playfram          	0x420
-	wait				1
-	playfram          	0x440
-	wait				1
-	playfram          	0x460
-	wait				1
-	playfram          	0x480
-	wait				1
-	nobrkcodeend
-	gotorepeatattk
-	goto              	TethzorokorGndAttkToIdle
 
 TethzorokorWalking:
 	playfram			0x1A0
@@ -47575,7 +47502,7 @@ CataphractGndAttkInit:
 	nobrkcodestart
 	playfram			0x220
 	playsndbtwn			2347 2350 # Cataphract weapon fire 01, 02, 03, 04
-	attack
+	attackwith			1
 	wait				1
 	playfram			0x00
 	nobrkcodeend
@@ -47696,11 +47623,14 @@ DurendalGndAttkRpt:
 	playfram			0x260
 	imgol             	421 0 0 # FlameThrower (thingy\flamer.grp)
 	attkshiftproj     	24
+	sigorder			32
 	wait              	1
 	playfram			0x280
 	attkshiftproj     	52
+	sigorder			32
 	wait              	1
 	attkshiftproj     	80
+	sigorder			32
 	wait              	6
 	nobrkcodeend
 	gotorepeatattk
@@ -50289,8 +50219,8 @@ Death         	MatadorCinderModeDeath
 GndAttkInit   	MatadorCinderModeGndAttkInit
 AirAttkInit   	MatadorCinderModeGndAttkInit
 Unused1       	MatadorCinderModeUnused1
-GndAttkRpt    	MatadorCinderModeGndAttkInit
-AirAttkRpt    	MatadorCinderModeGndAttkInit
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
 GndAttkToIdle 	MatadorCinderModeGndAttkToIdle
 AirAttkToIdle 	MatadorCinderModeGndAttkToIdle
@@ -50361,12 +50291,15 @@ MatadorCinderModeGndAttkInit:
 	playsndbtwn			2161 2163 # Matador weaponfire 01, 02, 03
 	imgol             	421 0 0 # FlameThrower (thingy\flamer.grp)
 	attkshiftproj     	24
+	sigorder			32
 	wait              	1
 	playfram          	0x180
 	attkshiftproj     	52
+	sigorder			32
 	wait              	1
 	attkshiftproj     	80
-	wait              	1
+	sigorder			32
+	wait              	4
 	playfram          	0x180
 	nobrkcodeend
 	gotorepeatattk
@@ -50738,16 +50671,20 @@ MortothrokorLocal03:
 MortothrokorDeath:
 	playsnd           	878 # Zerg\Ultra\ZUlDth00.WAV
 	setfldirect       	0
-	playfram          	170
-	wait              	2
-	playfram          	171
-	wait              	2
-	playfram          	172
-	wait              	2
-	playfram          	173
-	wait              	2
-	playfram          	174
-	wait              	2
+	playfram          	595
+	wait              	1
+	playfram          	596
+	wait              	1
+	playfram          	597
+	wait              	1
+	playfram          	598
+	wait              	1
+	playfram          	599
+	wait              	1
+	playfram          	600
+	wait              	1
+	playfram          	601
+	wait              	1
 	lowsprul			868 0 0 # Mortothrokor Remnants (cm\zerg\mortothrokor-remnants.grp)
 	wait              	1
 	end
@@ -50770,29 +50707,33 @@ MortothrokorUnused1:
 	goto				MortothrokorGndAttkToIdle
 
 MortothrokorGndAttkInit:
-	playfram          	0x55
+	playfram          	0x00
 MortothrokorGndAttkRpt:
 	wait              	1
 	nobrkcodestart
 	playsndrand       	3 891 892 893 # Zerg\Ultra\zulAtt00.WAV | Zerg\Ultra\zulAtt01.WAV | Zerg\Ultra\zulAtt02.WAV
 	wait              	1
-	playfram          	0x66
+	playfram          	0xBB
 	wait              	1
-	playfram          	0x77
+	playfram          	0xCC
 	attackwith 			1
 	playsndbtwn			894 895	# Zerg\Ultra\zulHit00.WAV | Zerg\Ultra\zulHit01.WAV
-	wait              	2
-	playfram			0x66
-	wait				2
-	playfram			0x77
+	wait              	1
+	playfram			0xDD
+	wait				1
+	playfram			0xEE
 	attackwith 			1
 	playsndbtwn			894 895	# Zerg\Ultra\zulHit00.WAV | Zerg\Ultra\zulHit01.WAV
 	wait				1
-	playfram			0x66
+	playfram			0xFF
 	wait				1
-	playfram          	0x88
+	playfram          	0x110
 	wait              	1
-	playfram          	0x99
+	playfram          	0x121
+	wait              	1
+	playfram          	0x132
+	wait              	1
+	playfram          	0x143
 	wait              	1
 	nobrkcodeend
 	gotorepeatattk
@@ -50803,26 +50744,31 @@ MortothrokorWalking:
 	playfram          	0x11
 	wait				1
 	move              	4
-	wait				1
-	move              	4
 	playfram          	0x22
-	wait				1
-	move              	4
 	wait				1
 	move              	4
 	playfram          	0x33
 	wait				1
 	move              	4
-	wait				1
-	move              	4
 	playfram          	0x44
 	wait				1
 	move              	4
+	playfram          	0x55
 	wait				1
 	move              	4
-	playfram          	0x22
+	playfram          	0x66
 	wait				1
 	move              	4
+	playfram          	0x77
+	wait				1
+	move              	4
+	playfram          	0x88
+	wait				1
+	move              	4
+	playfram          	0x99
+	wait				1
+	move              	4
+	playfram          	0xAA
 	wait				1
 	goto              	MortothrokorWalking
 	
@@ -50831,44 +50777,57 @@ MortothrokorSpecialState2:
 	goto              	ZoryusthalethLocal07
 
 MortothrokorBurrow:
-	setfldirect			14
-	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
-	playfram			0x11
-	wait				1
-	playfram          	0x22
-	wait              	1
-	playfram          	0x33
-	wait              	1
-	playfram          	0x44
-	wait              	1
-	playfram          	0x22
-	wait              	1
-	playfram          	0x11
-	wait              	1
-	playfram          	0xAF
-	wait              	1
-	sigorder          	4
-	goto              	ZoryusthalethLocal07
+    setfldirect			14
+    imgol      			423 0 0 # Burrowing Dust (thingy\bDust.grp)
+    playfram   			0x165
+    wait       			1
+    playfram   			0x176
+    wait       			1
+    playfram   			0x187
+    wait       			1
+    playfram   			0x198
+    wait       			1
+    playfram   			0x1A9
+    wait       			1
+    imgol      			423 0 0 # Burrowing Dust (thingy\bDust.grp)
+    playfram   			0x1C0
+    wait       			1
+    playfram   			0x1DA
+    wait       			1
+    playfram   			0x1EB
+    wait       			1
+    playfram   			0x1FC
+    wait       			1
+    playfram   			0x20D
+    wait       			1
+    playfram   			0x21E
+    wait       			1
+    playfram   			0x22F
+    wait       			1
+    playfram   			0x240
+    wait       			1
+    sigorder   			4
+    goto       			ZoryusthalethLocal07
 
 MortothrokorUnBurrow:
-	wait 				1
-	waitrand          	1 2
-	setfldirect			14
-	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
-	playfram          	0x11
-	wait              	1
-	playfram          	0x22
-	wait              	1
-	playfram          	0x44
-	wait              	1
-	playfram          	0x33
-	wait              	1
-	playfram          	0x22
-	wait              	1
-	playfram			0x11
-	wait				1
-	sigorder          	4
-	goto              	MortothrokorGndAttkToIdle
+    wait                1
+    waitrand            1 2
+    setfldirect         14
+    imgul               423 0 0 # Burrowing Dust (thingy\bDust.grp)
+    playfram            0x22F
+    wait                1
+    playfram            0x20D
+    wait                1
+    playfram            0x1DA
+    wait                1
+    playfram            0x185
+    wait                1
+    playfram            0x176
+    wait                1
+    playfram            0x165
+    wait                1
+    sigorder            4
+    goto                MortothrokorGndAttkToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:

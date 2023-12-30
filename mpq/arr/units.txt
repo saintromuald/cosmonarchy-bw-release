@@ -394,8 +394,8 @@ Select Faction 4
 Select Faction 5
 Select Faction 6
 Terran Hotshot
-Extended Unit #169
-Extended Unit #170
+Zerg Nathrok Lake
+Zerg Skithrok Scab
 Extended Unit #171
 Extended Unit #172
 Extended Unit #173

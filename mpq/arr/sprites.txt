@@ -161,7 +161,7 @@ Zethrokor
 Zethrokor Remnants
 Cerebrate
 Infested Ministry
-Quazrok Pool
+Quazeth Pool
 Mature Chrysalis
 Almakis Antre
 Cagrant Colony
@@ -177,8 +177,8 @@ Overmind With Shell
 Overmind Without Shell
 Ultrok Cavern
 Excisant
-Hydrok Den
-Muthrok Spire
+Hydrith Den
+Mutath Spire
 Spraith Colony
 Zerg Building Spawn (Small)
 Zerg Building Spawn (Medium)
@@ -887,8 +887,8 @@ Cyclops Weapon Impact
 Sentinel Rail
 Lanifect Remains
 Hotshot
-Extended Sprite #1
-Extended Sprite #1
+Nathrok Lake
+Skithrok Scab
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1

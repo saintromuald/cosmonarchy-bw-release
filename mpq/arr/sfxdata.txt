@@ -1901,8 +1901,8 @@ Evigrilisk Weapon Fire 02
 Evigrilisk Weapon Fire 03
 Evigrilisk Ready 01
 Dracadin Revive 01
-Sentinel Weaponfire 01
-Sentinel Weaponfire 02
+unused
+unused
 Lazarus Agent Proc 01
 Zoryusthaleth Ready 01
 Zoryusthaleth Passive Proc 01
@@ -2617,48 +2617,48 @@ Vagrant Shade Under Attack 03
 Vagrant Shade Under Attack 04
 Hotshot Weaponfire 01
 Hotshot Weaponfire 02
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Sentinel Weaponfire 01
+Sentinel Weaponfire 02
+Sentinel Weaponfire 03
+Ackmed Advisor Addon 01
+Ackmed Advisor Addon 02
+Ackmed Advisor Protoss Under Attack 01
+Ackmed Advisor Protoss Under Attack 02
+Ackmed Advisor Protoss Under Attack 03
+Ackmed Advisor Terran Under Attack 01
+Ackmed Advisor Terran Under Attack 02
+Ackmed Advisor Terran Under Attack 03
+Ackmed Advisor Zerg Under Attack 01
+Ackmed Advisor Zerg Under Attack 02
+Ackmed Advisor Zerg Under Attack 03
+Ackmed Advisor Army Under Attack 01
+Ackmed Advisor Army Under Attack 02
+Ackmed Advisor Army Under Attack 03
+Ackmed Advisor Base Under Attack 01
+Ackmed Advisor Base Under Attack 02
+Ackmed Advisor Base Under Attack 03
+Ackmed Advisor No Energy 01
+Ackmed Advisor No Energy 02
+Ackmed Advisor No Energy 03
+Ackmed Advisor No Energy 04
+Ackmed Advisor Landing Interrupted 01
+Ackmed Advisor Landing Interrupted 02
+Ackmed Advisor No Minerals 01
+Ackmed Advisor No Minerals 02
+Ackmed Advisor No Minerals 03
+Ackmed Advisor No Minerals 04
+Ackmed Advisor Missile Armed 01
+Ackmed Advisor Missile Armed 02
+Ackmed Advisor Missile Launch 01
+Ackmed Advisor Missile Launch 02
+Ackmed Advisor No Build 01
+Ackmed Advisor No Build 02
+Ackmed Advisor No Vespene 01
+Ackmed Advisor No Vespene 02
+Ackmed Advisor No Vespene 03
+Ackmed Advisor No Vespene 04
+Ackmed Advisor Warp 01
+Ackmed Advisor Warp 02
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1
