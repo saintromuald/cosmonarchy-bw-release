@@ -13,7 +13,7 @@
  0xFF08      # Is not constructing add-on
  0xFF05      # Is not lifted off
  0xFF04      # Must have add-on
- 117         # Has Unit: [117] Covert Ops
+ 117         # Has Unit: [117] Covenant
  0xFFFF      # ==End of List==
 
 2:         # [2] Vulture
@@ -36,7 +36,7 @@
  0xFF05      # Is not lifted off
  0xFF08      # Is not constructing add-on
  0xFF04      # Must have add-on
- 120         # Has Unit: [120] Machine Shop
+ 120         # Has Unit: [120] Palladium
  0xFFFF      # ==End of List==
 
 7:         # [7] Mason
@@ -100,7 +100,7 @@
  0xFF05      # Is not lifted off
  0xFF08      # Is not constructing add-on
  0xFF04      # Must have add-on
- 119         # Has Unit: [119] Medbay
+ 119         # Has Unit: [119] Vestry
  0xFFFF      # ==End of List==
 
 16:         # [16] Manifold
@@ -132,11 +132,12 @@
  174         # [174] Quarry
  0xFF08      # Is not constructing add-on
  0xFF05      # Is not lifted off
+ 122         # Has Unit: [122] Atlas
  0xFFFF      # ==End of List==
 
 21:         # [21] Star Sovereign
  0xFF02      # Current unit is...
- 223        # [223] Monument of Sin
+ 223         # [223] Monument of Sin
  0xFFFF      # ==End of List==
 
 22:         # [22] Salamander
@@ -161,7 +162,7 @@
  0xFF05      # Is not lifted off
  0xFF08      # Is not constructing add-on
  0xFF04      # Must have add-on
- 189         # Has Unit: [189] Particle Accelerator
+ 189         # Has Unit: [189] Hadron
  0xFFFF      # ==End of List==
 
 25:         # [25] Gladius
@@ -180,7 +181,7 @@
  0xFF05      # Is not lifted off
  0xFF08      # Is not constructing add-on
  0xFF04      # Must have add-on
- 120         # Has Unit: [120] Machine Shop
+ 120         # Has Unit: [120] Palladium
  0xFFFF      # ==End of List==
 
 28:         # [28] Centaur
@@ -212,7 +213,7 @@
  0xFF05      # Is not lifted off
  0xFF08      # Is not constructing add-on
  0xFF04      # Must have add-on
- 119         # Has Unit: [119] Medbay
+ 119         # Has Unit: [119] Vestry
  0xFFFF      # ==End of List==
 
 37:         # [37] Zethrokor
@@ -221,16 +222,22 @@
  142         # Has Unit: [142] Quazeth Pool
  0xFF01      # Or
  0xFF03      # Must have...
- 204         # [204] Liivral Pond
+ 396         # [396] Vornath Pond
+ 0xFF01      # Or
+ 0xFF03      # Must have...
+ 204         # [204] Kalkiir Lake
  0xFFFF      # ==End of List==
 
 38:         # [38] Hydralisk
  0xFF02      # Current unit is...
  35          # [35] Larva
- 135         # Has Unit: [135] Hydrok Den
+ 135         # Has Unit: [135] Hydrith Den
  0xFF01      # Or
  0xFF03      # Must have...
- 153         # [153] Gorgral Swamp
+ 397         # [397] Skibact Scab
+ 0xFF01      # Or
+ 0xFF03      # Must have...
+ 153         # [153] Bactith Swamp
  0xFFFF      # ==End of List==
 
 39:         # [39] Ultrokor
@@ -239,15 +246,12 @@
  0xFF01      # Or
  0xFF02      # Current unit is...
  353         # [353] Ocsal Larva
- 140         # Has Unit: [140] Ultrok Cavern
+ 140         # Has Unit: [140] Ultrav Cavern
  0xFFFF      # ==End of List==
 
 41:         # [41] Droleth
  0xFF02      # Current unit is...
  35          # [35] Larva
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 383         # [383] Omnivale
  0xFFFF      # ==End of List==
 
 42:         # [42] Ovileth
@@ -329,7 +333,10 @@
  0xFF01      # Or
  0xFF02      # Current unit is...
  353         # [353] Ocsal Larva
- 204         # Has Unit: [204] Liivral Pond
+ 0xFF01      # Or
+ 0xFF02      # Current unit is...
+ 401         # [401] Nathrelisk
+ 204         # Has Unit: [204] Kalkiir Lake
  0xFFFF      # ==End of List==
 
 52:         # [52] Evigrilisk
@@ -353,10 +360,10 @@
 54:         # [54] Nathrokor
  0xFF02      # Current unit is...
  35          # [35] Larva
- 142         # Has Unit: [142] Quazeth Pool
+ 396         # Has Unit: [396] Vornath Pond
  0xFF01      # Or
  0xFF03      # Must have...
- 204         # [204] Liivral Pond
+ 204         # [204] Kalkiir Lake
  0xFFFF      # ==End of List==
 
 55:         # [55] Cyclops
@@ -372,7 +379,7 @@
  193         # Has Unit: [193] Zorkiz Shroud
  0xFF01      # Or
  0xFF03      # Must have...
- 140         # [140] Ultrok Cavern
+ 140         # [140] Ultrav Cavern
  0xFFFF      # ==End of List==
 
 57:         # [57] Othstoleth
@@ -388,7 +395,7 @@
  0xFF05      # Is not lifted off
  0xFFFF      # ==End of List==
 
-60:         # [60] Corsair
+60:         # [60] Lanifect
  0xFF02      # Current unit is...
  167         # [167] Stargate
  0xFFFF      # ==End of List==
@@ -404,7 +411,7 @@
  0xFF01      # Or
  0xFF02      # Current unit is...
  353         # [353] Ocsal Larva
- 153         # Has Unit: [153] Gorgral Swamp
+ 153         # Has Unit: [153] Bactith Swamp
  0xFFFF      # ==End of List==
 
 63:         # [63] Mind Tyrant
@@ -440,7 +447,7 @@
 
 68:         # [68] Archon
  0xFF02      # Current unit is...
- 165         # [165] Archon ArcGathtelosks
+ 165         # [165] Ancestral Archives
  0xFFFF      # ==End of List==
 
 69:         # [69] Envoy
@@ -582,7 +589,10 @@
  142         # Has Unit: [142] Quazeth Pool
  0xFF01      # Or
  0xFF03      # Must have...
- 204         # [204] Liivral Pond
+ 396         # [396] Vornath Pond
+ 0xFF01      # Or
+ 0xFF03      # Must have...
+ 204         # [204] Kalkiir Lake
  0xFFFF      # ==End of List==
 
 96:         # [96] Keskathalor
@@ -597,7 +607,7 @@
  193         # Has Unit: [193] Zorkiz Shroud
  0xFF01      # Or
  0xFF03      # Must have...
- 140         # [140] Ultrok Cavern
+ 140         # [140] Ultrav Cavern
  0xFFFF      # ==End of List==
 
 98:         # [98] Azazel
@@ -630,7 +640,7 @@
  193         # Has Unit: [193] Zorkiz Shroud
  0xFF01      # Or
  0xFF03      # Must have...
- 140         # [140] Ultrok Cavern
+ 140         # [140] Ultrav Cavern
  0xFFFF      # ==End of List==
 
 104:        # [104] Barghest
@@ -665,7 +675,6 @@
  215         # Treasury
  0xFF0C      # Does not have add-on attached
  0xFF07      # Is not training or morphing
- 122         # Has Unit: [122] Atlas
  0xFFFF      # ==End of List==
 
 109:        # [109] Supply Depot
@@ -702,7 +711,7 @@
  0xFF01      # Or
  0xFF02      # Current unit is...
  353         # [353] Ocsal Larva
- 204         # Has Unit: [204] Liivral Pond
+ 204         # Has Unit: [204] Kalkiir Lake
  0xFFFF      # ==End of List==
 
 113:        # [113] Fulcrum
@@ -733,43 +742,40 @@
 
 116:        # [116] Daedala
  0xFF02      # Current unit is...
- 7         # [7] Mason
+ 7           # [7] Mason
  0xFF01      # Or
  0xFF02      # Current unit is...
- 20        # [20] Talos
+ 20          # [20] Talos
  0xFF0B      # Is not constructing
- 122        # Has Unit: [122] Atlas
+ 122         # Has Unit: [122] Atlas
  0xFFFF      # ==End of List==
 
-117:        # [117] Covert Ops
+117:        # [117] Covenant
  0xFF02      # Current unit is...
- 111        # [111] Stockade
+ 111         # [111] Stockade
  0xFF0C      # Does not have add-on attached
  0xFF07      # Is not training or morphing
- 122        # Has Unit: [122] Atlas
  0xFFFF      # ==End of List==
 
 118:        # [118] Magnetar
  0xFF02      # Current unit is...
- 114        # [114] Starport
+ 114         # [114] Starport
  0xFF0C      # Does not have add-on attached
  0xFF07      # Is not training or morphing
- 116        # Has Unit: [116] Daedala
  0xFFFF      # ==End of List==
 
-119:        # [119] Medbay
+119:        # [119] Vestry
  0xFF02      # Current unit is...
  111        # [111] Stockade
  0xFF0C      # Does not have add-on attached
  0xFF07      # Is not training or morphing
  0xFFFF      # ==End of List==
 
-120:        # [120] Machine Shop
+120:        # [120] Palladium
  0xFF02      # Current unit is...
  113        # [113] Fulcrum
  0xFF0C      # Does not have add-on attached
  0xFF07      # Is not training or morphing
- 122        # Has Unit: [122] Atlas
  0xFFFF      # ==End of List==
 
 121:        # [121] Rotary
@@ -781,29 +787,28 @@
 
 122:        # [122] Atlas
  0xFF02      # Current unit is...
- 7         # [7] Mason
+ 7           # [7] Mason
  0xFF01      # Or
  0xFF02      # Current unit is...
- 20        # [20] Talos
+ 20          # [20] Talos
  0xFF0B      # Is not constructing
- 106        # Has Unit: [106] Ministry
  0xFFFF      # ==End of List==
 
 123:        # [123] Sovroleth
  0xFF02      # Current unit is...
- 268        # [268] Protathalor
+ 268         # [268] Protathalor
  0xFF01      # Or
  0xFF02      # Current unit is...
- 353        # [353] Ocsal Larva
- 197        # Has Unit: [197] Vithrath Haunt
+ 353         # [353] Ocsal Larva
+ 197         # Has Unit: [197] Vithrath Haunt
  0xFFFF      # ==End of List==
 
 124:        # [124] Watchdog
  0xFF02      # Current unit is...
- 7         # [7] Mason
+ 7           # [7] Mason
  0xFF01      # Or
  0xFF02      # Current unit is...
- 20        # [20] Talos
+ 20          # [20] Talos
  0xFF0B      # Is not constructing
  0xFFFF      # ==End of List==
 
@@ -818,29 +823,33 @@
 
 126:        # [126] Kagralisk
  0xFF02      # Current unit is...
- 35        # [35] Larva
- 170        # Has Unit: [170] Izkag Iteth
+ 35          # [35] Larva
+ 170         # Has Unit: [170] Izkag Iteth
  0xFF01      # Or
  0xFF03      # Must have...
- 330        # [330] Chokralgant Chazsal
+ 330         # [330] Chokralgant Chazsal
  0xFFFF      # ==End of List==
 
-127:        # [127] Ion Cannon
+127:        # [127] Diadem
  0xFF02      # Current unit is...
- 7         # [7] Mason
+ 7           # [7] Mason
  0xFF01      # Or
  0xFF02      # Current unit is...
- 20        # [20] Talos
+ 20          # [20] Talos
  0xFF0B      # Is not constructing
- 116        # Has Unit: [116] Daedala
+ 116         # Has Unit: [116] Daedala
  0xFFFF      # ==End of List==
 
 128:        # [128] Vorvrokor
  0xFF02      # Current unit is...
- 37        # [37] Zethrokor
+ 37          # [37] Zethrokor
  0xFF01      # Or
  0xFF02      # Current unit is...
- 353        # [353] Ocsal Larva
+ 353         # [353] Ocsal Larva
+ 396         # Has Unit: [396] Vornath Pond
+ 0xFF01      # Or
+ 0xFF03      # Must have...
+ 204         # [204] Kalkiir Lake
  0xFFFF      # ==End of List==
 
 129:        # [129] Bactalisk
@@ -849,7 +858,10 @@
  0xFF01      # Or
  0xFF02      # Current unit is...
  353         # [353] Ocsal Larva
- 153         # Has Unit: [153] Gorgral Swamp
+ 397         # Has Unit: [397] Skibact Scab
+ 0xFF01      # Or
+ 0xFF03      # Must have...
+ 153         # [153] Bactith Swamp
  0xFFFF      # ==End of List==
 
 130:        # [130] Orboth Omlia
@@ -893,7 +905,7 @@
  152        # [152] Othstol Oviform
  0xFFFF     # ==End of List==
 
-135:        # [135] Hydrok Den
+135:        # [135] Hydrith Den
  0xFF02      # Current unit is...
  41        # [41] Droleth
  0xFF01      # Or
@@ -914,106 +926,105 @@
 
 137:        # [137] Olympian
  0xFF02      # Current unit is...
- 199        # [199] Captaincy
+ 199         # [199] Captaincy
  0xFF05      # Is not lifted off
  0xFF08      # Is not constructing add-on
  0xFF04      # Must have add-on
- 147        # Has Unit: [147] Guildhall
+ 147         # Has Unit: [147] Guildhall
  0xFFFF      # ==End of List==
 
 138:        # [138] Matravil Nest
  0xFF02      # Current unit is...
- 41        # [41] Droleth
+ 41          # [41] Droleth
  0xFF01      # Or
  0xFF02      # Current unit is...
- 47        # [47] Gosvileth
+ 47          # [47] Gosvileth
  0xFF11      # Is not burrowed
- 224        # Has Unit: [224] Irol Iris
+ 224         # Has Unit: [224] Irol Iris
  0xFF01      # Or
  0xFF03      # Must have...
- 152        # [152] Othstol Oviform
+ 152         # [152] Othstol Oviform
  0xFFFF      # ==End of List==
 
 139:        # [139] Almakis Antre
  0xFF02      # Current unit is...
- 138        # [138] Matravil Nest
+ 138         # [138] Matravil Nest
  0xFF07      # Is not training or morphing
- 152        # Has Unit: [152] Othstol Oviform
+ 152         # Has Unit: [152] Othstol Oviform
  0xFFFF      # ==End of List==
 
-140:        # [140] Ultrok Cavern
+140:        # [140] Ultrav Cavern
  0xFF02      # Current unit is...
- 193        # [193] Zorkiz Shroud
+ 193         # [193] Zorkiz Shroud
  0xFF07      # Is not training or morphing
- 152        # Has Unit: [152] Othstol Oviform
+ 152         # Has Unit: [152] Othstol Oviform
  0xFFFF      # ==End of List==
 
 141:        # [141] Muthrok Spire
  0xFF02      # Current unit is...
- 41        # [41] Droleth
+ 41          # [41] Droleth
  0xFF01      # Or
  0xFF02      # Current unit is...
- 47        # [47] Gosvileth
+ 47          # [47] Gosvileth
  0xFF11      # Is not burrowed
- 224        # Has Unit: [224] Irol Iris
+ 224         # Has Unit: [224] Irol Iris
  0xFF01      # Or
  0xFF03      # Must have...
- 152        # [152] Othstol Oviform
+ 152         # [152] Othstol Oviform
  0xFFFF      # ==End of List==
 
 142:        # [142] Quazeth Pool
  0xFF02      # Current unit is...
- 41        # [41] Droleth
+ 41          # [41] Droleth
  0xFF01      # Or
  0xFF02      # Current unit is...
- 47        # [47] Gosvileth
+ 47          # [47] Gosvileth
  0xFF11      # Is not burrowed
  0xFFFF      # ==End of List==
 
 143:        # [143] Cagrant Cesiant
  0xFF02      # Current unit is...
- 41        # [41] Droleth
+ 41          # [41] Droleth
  0xFF01      # Or
  0xFF02      # Current unit is...
- 47        # [47] Gosvileth
+ 47          # [47] Gosvileth
  0xFF11      # Is not burrowed
  0xFFFF      # ==End of List==
 
 144:        # [144] Spraith Cesiant
  0xFF02      # Current unit is...
- 143        # [143] Cagrant Cesiant
+ 143         # [143] Cagrant Cesiant
  0xFFFF      # ==End of List==
 
 145:        # [145] Autocrat
  0xFF02      # Current unit is...
- 199        # [199] Captaincy
+ 199         # [199] Captaincy
  0xFF05      # Is not lifted off
  0xFF08      # Is not constructing add-on
  0xFF04      # Must have add-on
- 147        # Has Unit: [147] Guildhall
+ 147         # Has Unit: [147] Guildhall
  0xFFFF      # ==End of List==
 
 146:        # [146] Surkith Cesiant
  0xFF02      # Current unit is...
- 143        # [143] Cagrant Cesiant
+ 143         # [143] Cagrant Cesiant
  0xFF07      # Is not training or morphing
  0xFFFF      # ==End of List==
 
 147:        # [147] Guildhall
  0xFF02      # Current unit is...
- 199        # [199] Captaincy
+ 199         # [199] Captaincy
  0xFF0C      # Does not have add-on attached
  0xFF07      # Is not training or morphing
- 116        # Has Unit: [116] Daedala
  0xFFFF      # ==End of List==
 
 148:        # [148] Striga
  0xFF02      # Current unit is...
- 199        # [199] Captaincy
+ 199         # [199] Captaincy
  0xFF05      # Is not lifted off
  0xFF08      # Is not constructing add-on
  0xFF04      # Must have add-on
- 175        # Has Unit: [175] Tinkerer's Tower
+ 175         # Has Unit: [175] Tinkerer's Tower
  0xFFFF      # ==End of List==
 
 149:        # [149] Excisant
@@ -1053,145 +1064,148 @@
 
 152:        # [152] Othstol Oviform
  0xFF02      # Current unit is...
- 224        # [224] Irol Iris
+ 224         # [224] Irol Iris
  0xFF07      # Is not training or morphing
  0xFFFF      # ==End of List==
 
-153:        # [153] Gorgral Swamp
+153:        # [153] Bactith Swamp
  0xFF02      # Current unit is...
- 135        # [135] Hydrok Den
+ 135         # [135] Hydrith Den
+ 0xFF01      # Or
+ 0xFF02      # Current unit is...
+ 397         # [397] Skibact Scab
  0xFF07      # Is not training or morphing
- 224        # Has Unit: [224] Irol Iris
+ 224         # Has Unit: [224] Irol Iris
  0xFF01      # Or
  0xFF03      # Must have...
- 152        # [152] Othstol Oviform
+ 152         # [152] Othstol Oviform
  0xFFFF      # ==End of List==
 
 154:        # [154] Nexus
  0xFF02      # Current unit is...
- 64        # [64] Scribe
+ 64          # [64] Scribe
  0xFF01      # Or
  0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 155:        # [155] Lattice
  0xFF02      # Current unit is...
- 64        # [64] Scribe
+ 64          # [64] Scribe
  0xFF01      # Or
  0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 156:        # [156] Pylon
  0xFF02      # Current unit is...
- 64        # [64] Scribe
+ 64          # [64] Scribe
  0xFF01      # Or
  0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 157:        # [157] Assimilator
  0xFF02      # Current unit is...
- 64        # [64] Scribe
+ 64          # [64] Scribe
  0xFF01      # Or
  0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 158:        # [158] Automaton Register
  0xFF02      # Current unit is...
- 64        # [64] Scribe
+ 64          # [64] Scribe
  0xFF01      # Or
  0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 159:        # [159] Prostration Stage
  0xFF02      # Current unit is...
- 64        # [64] Scribe
+ 64          # [64] Scribe
  0xFF01      # Or
  0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 160:        # [160] Gateway
  0xFF02      # Current unit is...
- 64        # [64] Scribe
+ 64          # [64] Scribe
  0xFF01      # Or
  0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 161:        # [161] Rogue Gallery
  0xFF02      # Current unit is...
- 64        # [64] Scribe
+ 64          # [64] Scribe
  0xFF01      # Or
  0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 162:        # [162] Warden
  0xFF02      # Current unit is...
- 64        # [64] Scribe
+ 64          # [64] Scribe
  0xFF01      # Or
  0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 163:        # [163] Fountainhead
  0xFF02      # Current unit is...
- 122        # [122] Atlas
+ 122         # [122] Atlas
  0xFF07      # Is not training or morphing
  0xFF0C      # Does not have add-on attached
  0xFFFF      # ==End of List==
 
 164:        # [164] Cenotaph
  0xFF02      # Current unit is...
- 64        # [64] Scribe
+ 64          # [64] Scribe
  0xFF01      # Or
  0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
-165:        # [165] Archon ArcGathtelosks
+165:        # [165] Ancestral Archives
  0xFF02      # Current unit is...
- 64        # [64] Scribe
+ 64          # [64] Scribe
  0xFF01      # Or
  0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 166:        # [166] Embassy
  0xFF02      # Current unit is...
- 64        # [64] Scribe
+ 64          # [64] Scribe
  0xFF01      # Or
  0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 167:        # [167] Stargate
  0xFF02      # Current unit is...
- 64        # [64] Scribe
+ 64          # [64] Scribe
  0xFF01      # Or
  0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 168:        # [168] Argosy
  0xFF02      # Current unit is...
- 64        # [64] Scribe
+ 64          # [64] Scribe
  0xFF01      # Or
  0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 169:        # [169] Fleet Beacon
  0xFF02      # Current unit is...
- 64        # [64] Scribe
+ 64          # [64] Scribe
  0xFF01      # Or
  0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 170:        # [170] Izkag Iteth
@@ -1237,7 +1251,6 @@
  215        # Treasury
  0xFF07     # Is not training or morphing
  0xFF0C     # Does not have add-on attached
- 122        # Has Unit: [122] Atlas
  0xFFFF     # ==End of List==
 
 175:        # [175] Tinkerer's Tower
@@ -1255,10 +1268,13 @@
 180:        # [180] Izirokor
  0xFF02      # Current unit is...
  35          # [35] Larva
- 135         # Has Unit: [135] Hydrok Den
+ 135         # Has Unit: [135] Hydrith Den
  0xFF01      # Or
  0xFF03      # Must have...
- 153         # [153] Gorgral Swamp
+ 397         # [397] Skibact Scab
+ 0xFF01      # Or
+ 0xFF03      # Must have...
+ 153         # [153] Bactith Swamp
  0xFFFF      # ==End of List==
 
 181:        # [181] Irulent Ivoa
@@ -1288,10 +1304,10 @@
 185:        # [185] Skithrokor
  0xFF02      # Current unit is...
  35          # [35] Larva
- 135         # Has Unit: [135] Hydrok Den
+ 397         # Has Unit: [397] Skibact Scab
  0xFF01      # Or
  0xFF03      # Must have...
- 153         # [153] Gorgral Swamp
+ 153         # [153] Bactith Swamp
  0xFFFF      # ==End of List==
 
 186:        # [186] Paladin
@@ -1307,10 +1323,10 @@
  0xFF08      # Is not constructing add-on
  0xFF05      # Is not lifted off
  0xFF04      # Must have add-on
- 117         # Has Unit: [117] Covert Ops
+ 117         # Has Unit: [117] Covenant
  0xFFFF      # ==End of List==
 
-189:        # [189] Particle Accelerator
+189:        # [189] Hadron
  0xFF02      # Current unit is...
  203         # [203] Nanite Assembly
  0xFF0C      # Does not have add-on attached
@@ -1425,14 +1441,17 @@
  116         # Has Unit: [116] Daedala
  0xFFFF      # ==End of List==
 
-204:        # [204] Liivral Pond
+204:        # [204] Kalkiir Lake
  0xFF02      # Current unit is...
- 142        # [142] Quazeth Pool
+ 142         # [142] Quazeth Pool
+ 0xFF01      # Or
+ 0xFF02      # Current unit is...
+ 396         # [396] Vornath Pond
  0xFF07      # Is not training or morphing
- 224        # Has Unit: [224] Irol Iris
+ 224         # Has Unit: [224] Irol Iris
  0xFF01      # Or
  0xFF03      # Must have...
- 152        # [152] Othstol Oviform
+ 152         # [152] Othstol Oviform
  0xFFFF      # ==End of List==
 
 209:        # [209] Sentinel
@@ -1451,7 +1470,7 @@
  0xFF05     # Is not lifted off
  0xFF08     # Is not constructing add-on
  0xFF04     # Must have add-on
- 120        # Has Unit: [120] Machine Shop
+ 120        # Has Unit: [120] Palladium
  0xFFFF     # ==End of List==
 
 211:        # [211] Anticthon
@@ -1643,95 +1662,98 @@
  0xFF01      # Or
  0xFF02      # Current unit is...
  353         # [353] Ocsal Larva
- 140         # Has Unit: [140] Ultrok Cavern
+ 140         # Has Unit: [140] Ultrav Cavern
  0xFFFF      # ==End of List==
 
 259:        # [259] Quantum Institute
  0xFF02      # Current unit is...
- 7         # [7] Mason
+ 7           # [7] Mason
  0xFF01      # Or
  0xFF02      # Current unit is...
- 20        # [20] Talos
+ 20          # [20] Talos
  0xFF0B      # Is not constructing
- 116        # Has Unit: [116] Daedala
+ 116         # Has Unit: [116] Daedala
  0xFFFF      # ==End of List==
 
-260:  # [260] Aerie
+260:  		# [260] Aerie
  0xFF02      # Current unit is...
- 203        # [203] Nanite Assembly
+ 203         # [203] Nanite Assembly
  0xFF0C      # Does not have add-on attached
  0xFF07      # Is not training or morphing
  0xFFFF      # ==End of List==
 
 261:        # [261] Pegasus
  0xFF02      # Current unit is...
- 203        # [203] Nanite Assembly
+ 203         # [203] Nanite Assembly
  0xFF05      # Is not lifted off
  0xFF08      # Is not constructing add-on
  0xFF04      # Must have add-on
- 260        # Has Unit: [260] Aerie
+ 189         # Has Unit: [189] Hadron
  0xFFFF      # ==End of List==
 
 262:        # [262] Hippogriff
  0xFF02      # Current unit is...
- 203        # [203] Nanite Assembly
+ 203         # [203] Nanite Assembly
  0xFF05      # Is not lifted off
  0xFF08      # Is not constructing add-on
  0xFF04      # Must have add-on
- 260        # Has Unit: [260] Aerie
+ 189         # Has Unit: [189] Hadron
  0xFFFF      # ==End of List==
 
 263:        # [263] Oberon
  0xFF02      # Current unit is...
- 203        # [203] Nanite Assembly
+ 203         # [203] Nanite Assembly
  0xFF05      # Is not lifted off
  0xFF08      # Is not constructing add-on
  0xFF04      # Must have add-on
- 189        # Has Unit: [189] Particle Accelerator
+ 189         # Has Unit: [189] Hadron
  0xFFFF      # ==End of List==
 
 264:        # [264] Aion
  0xFF02      # Current unit is...
- 198        # [198] Iron Foundry
+ 198         # [198] Iron Foundry
  0xFF05      # Is not lifted off
  0xFF08      # Is not constructing add-on
  0xFF04      # Must have add-on
- 190        # Has Unit: [190] Biotic Bastion
+ 190         # Has Unit: [190] Biotic Bastion
  0xFFFF      # ==End of List==
 
 265:        # [265] Herald
  0xFF02      # Current unit is...
- 226        # [226] Grand Library
+ 226         # [226] Grand Library
  0xFFFF      # ==End of List==
 
 266:        # [266] Epigraph
  0xFF02      # Current unit is...
- 168        # [168] Argosy
+ 168         # [168] Argosy
  0xFFFF      # ==End of List==
 
 278:        # [278] Strident Stratum
  0xFF02      # Current unit is...
- 64        # [64] Scribe
+ 64          # [64] Scribe
  0xFF01      # Or
  0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 279:        # [279] Auxiliary Oasis
  0xFF02      # Current unit is...
- 64        # [64] Scribe
+ 64          # [64] Scribe
  0xFF01      # Or
  0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 267:        # [267] Tethzorokor
  0xFF02      # Current unit is...
- 180        # [180] Izirokor
+ 180         # [180] Izirokor
  0xFF01      # Or
  0xFF02      # Current unit is...
- 353        # [353] Ocsal Larva
- 153        # Has Unit: [153] Gorgral Swamp
+ 353         # [353] Ocsal Larva
+ 0xFF01      # Or
+ 0xFF02      # Current unit is...
+ 403         # [403] Iziralisk
+ 153         # Has Unit: [153] Bactith Swamp
  0xFFFF      # ==End of List==
 
 268:        # [268] Protathalor
@@ -1785,7 +1807,7 @@
  0xFF01      # Or
  0xFF02      # Current unit is...
  353         # [353] Ocsal Larva
- 140         # Has Unit: [140] Ultrok Cavern
+ 140         # Has Unit: [140] Ultrav Cavern
  0xFFFF      # ==End of List==
 
 274:        # [274] Tetcaerokor
@@ -2041,12 +2063,12 @@
 
 316:        # [316] Optecton
  0xFF02      # Current unit is...
- 165        # [165] Archon ArcGathtelosks
+ 165        # [165] Ancestral Archives
  0xFFFF      # ==End of List==
 
 317:        # [317] Patriarch
  0xFF02      # Current unit is...
- 165        # [165] Archon ArcGathtelosks
+ 165        # [165] Ancestral Archives
  0xFFFF      # ==End of List==
 
 318:        # [318] Apostate
@@ -2217,4 +2239,60 @@
  111         # [111] Stockade
  0xFF08      # Is not constructing add-on
  0xFF05      # Is not lifted off
+ 0xFFFF      # ==End of List==
+
+396:        # [396] Vornath Pond
+ 0xFF02      # Current unit is...
+ 142         # [142] Quazeth Pool
+ 0xFF07      # Is not training or morphing
+ 0xFFFF      # ==End of List==
+ 
+397:        # [397] Skibact Scab
+ 0xFF02      # Current unit is...
+ 135         # [135] Hydrith Den
+ 0xFF07      # Is not training or morphing
+ 0xFFFF      # ==End of List==
+
+398:        # [398] Qilin
+ 0xFF02      # Current unit is...
+ 254         # [254] Starpad
+ 0xFF05      # Is not lifted off
+ 0xFFFF      # ==End of List==
+
+399:        # [399] Auriel
+ 0xFF02      # Current unit is...
+ 199         # [199] Captaincy
+ 0xFF08      # Is not constructing add-on
+ 0xFF05      # Is not lifted off
+ 0xFFFF      # ==End of List==
+
+400:        # [400] Adherent
+ 0xFF02      # Current unit is...
+ 160         # [160] Gateway
+ 0xFFFF      # ==End of List==
+
+401:        # [401] Extatus
+ 0xFF02      # Current unit is...
+ 167         # [167] Stargate
+ 0xFFFF      # ==End of List==
+
+402:        # [402] Nathrelisk
+ 0xFF02      # Current unit is...
+ 35          # [35] Larva
+ 396         # Has Unit: [396] Vornath Pond
+ 0xFF01      # Or
+ 0xFF03      # Must have...
+ 204         # [204] Kalkiir Lake
+ 0xFFFF      # ==End of List==
+
+403:        # [403] Iziralisk
+ 0xFF02      # Current unit is...
+ 35          # [35] Larva
+ 135         # Has Unit: [135] Hydrith Den
+ 0xFF01      # Or
+ 0xFF03      # Must have...
+ 397         # [397] Skibact Scab
+ 0xFF01      # Or
+ 0xFF03      # Must have...
+ 153         # [153] Bactith Swamp
  0xFFFF      # ==End of List==
