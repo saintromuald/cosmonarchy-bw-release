@@ -10,9 +10,9 @@ Wraith
 Seraph
 Trojan
 Minotaur
-Silvertongue
-Penumbra
-Madrigal
+Sarah Kerrigan
+Jim Raynor
+Edmund Duke
 Blackjack
 Arcturus Mengsk
 Terran Advisor
@@ -48,10 +48,10 @@ Didact
 Solarion
 Steward
 Cabalist
-Amaranth
-Atreus
-Anthelion
-Vagrant
+Fenix Zealot
+Fenix Dracadin
+Zeratul
+Tassadar
 Gantrithor
 Witness
 Accantor
@@ -93,13 +93,13 @@ Valkyrie
 Dugalle
 Autocrat
 Duran
-Exemplar
-Empress
+Artanis
+Raszagal
 Vithrilisk
 Lakizilisk
 Mind Tyrant
 Lanifect
-Konvilisk
+Scantid
 Kakaru
 Ursadon
 Uraj Crystal
@@ -114,71 +114,71 @@ Cyprian
 Shaman
 Kagg
 Ecclesiast
-Extended Portrait #7
-Extended Portrait #8
-Extended Portrait #9
-Extended Portrait #10
-Extended Portrait #11
-Extended Portrait #12
-Extended Portrait #13
-Extended Portrait #14
-Extended Portrait #15
-Extended Portrait #16
-Extended Portrait #17
-Extended Portrait #18
-Extended Portrait #19
-Extended Portrait #20
-Extended Portrait #21
-Extended Portrait #22
-Extended Portrait #23
-Extended Portrait #24
-Extended Portrait #25
-Extended Portrait #26
-Extended Portrait #27
-Extended Portrait #28
-Extended Portrait #29
-Extended Portrait #30
-Extended Portrait #31
-Extended Portrait #32
-Extended Portrait #33
-Extended Portrait #34
-Extended Portrait #35
-Extended Portrait #36
-Extended Portrait #37
-Extended Portrait #38
-Extended Portrait #39
-Extended Portrait #40
-Extended Portrait #41
-Extended Portrait #42
-Extended Portrait #43
-Extended Portrait #44
-Extended Portrait #45
-Extended Portrait #46
-Extended Portrait #47
-Extended Portrait #48
-Extended Portrait #49
-Extended Portrait #50
-Extended Portrait #51
-Extended Portrait #52
-Extended Portrait #53
-Extended Portrait #54
-Extended Portrait #55
-Extended Portrait #56
-Extended Portrait #57
-Extended Portrait #58
-Extended Portrait #59
-Extended Portrait #60
-Extended Portrait #61
-Extended Portrait #62
-Extended Portrait #63
-Extended Portrait #64
-Extended Portrait #65
-Extended Portrait #66
-Extended Portrait #67
-Extended Portrait #68
-Extended Portrait #69
-Extended Portrait #70
-Extended Portrait #71
+Patriarch
+Legionnaire
+Protathalor
+Izirokor
+Amaranth
+Claymore
+Dilettante
+Wyvern
+Savant
+Potentate
+Evigrilisk
+Sycophant
+Positron
+Madrigal
+Cyclops
+Sevenstep
+Sundog
+Olympian
+Servitor
+HADRAL
+Anad Thyron
+Salamander
+Phobos
+Ackmed
+Skithrokor
+Vagrant
+Anthelion
+Advisor - Nydus Trinity
+Nekron
+Gladius
+Advisor - Golden Republic
+Herald
+Advisor - Upstart Terran
+Advisor - Starbound
+Optecton
+Cataphract
+Advisor - Inoa Scatterguard
+Striga
+Rililisk
+Pariah
+Tarasque
+Exemplar
+Advisor - Futurist Federation
+Matador
+Advisor - Imicren
+Atreus
+Architect
+Philoc
+Gorgon
+Zoryusthaleth
+Adherent
+Keskathalor
+Mortothrokor
+Madcap
+Hierophant
+Hotshot
+Hippogriff
+Star Sovereign
+Epigraph
+Empyrean
+Empress
+Cikralisk
+Kagralisk
+Hypnagogue
+Apostle
 Extended Portrait #72
 Extended Portrait #73
 Extended Portrait #74

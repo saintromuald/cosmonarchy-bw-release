@@ -335,7 +335,7 @@ Explosion2 (Medium)
 Building Explosion (Large)
 Terran Building Rubble (Small)
 Terran Building Rubble (Large)
-Dark Swarm
+Carapace Swarm
 Ragnasaur (Ash)
 Ragnasaur (Ash) Shadow
 Rhynadon (Badlands)
@@ -1782,33 +1782,33 @@ Nathrok Lake
 Mortothrokor Birth
 Skithrok Scab
 Mortothrokor Passive Overlay
-Extended Image #782
-Extended Image #783
-Extended Image #784
-Extended Image #785
-Extended Image #786
-Extended Image #787
-Extended Image #788
-Extended Image #789
-Extended Image #790
-Extended Image #791
-Extended Image #792
-Extended Image #793
-Extended Image #794
-Extended Image #795
-Extended Image #796
-Extended Image #797
-Extended Image #798
-Extended Image #799
-Extended Image #800
-Extended Image #801
-Extended Image #802
-Extended Image #803
-Extended Image #804
-Extended Image #805
-Extended Image #806
-Extended Image #807
-Extended Image #808
+Quarry Connector
+Qilin
+Qilin Shadow
+Qilin Engines
+Rotary Connector
+Auriel
+Auriel Shadow
+Spoke Shell
+Adherent
+Adherent Shadow
+Extatus
+Extatus Shadow
+Extatus Engines
+Nathrelisk
+Nathrelisk Shadow
+Nathrelisk Birth
+Iziralisk
+Iziralisk Shadow
+Iziralisk Birth
+Iziralisk Remains
+Anchor (Grounded)
+Anchor (Grounded) Shadow
+Carapace Swarm (Small)
+Addon Weld Overlay
+Repentant Chorus Small
+Repentant Chorus Medium
+Repentant Chorus Large
 Extended Image #809
 Extended Image #810
 Extended Image #811

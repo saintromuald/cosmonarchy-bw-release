@@ -1,6 +1,6 @@
-# Cosmonarchy BW
+# Cosmonarchy
 
-Cosmonarchy BW, a mod for Starcraft version 1.16.1, is the prototype of the definitive RTS experience. It is the most ambitious Starcraft mod to ever see play.
+Cosmonarchy, a comprehensive overhaul of Starcraft version 1.16.1, is the prototype of the definitive RTS experience. It is the most ambitious Starcraft mod to ever see play.
 
 **AS OF FEBRUARY 2023**, we now use mpq autogeneration, and have an updater, all courtesy of Veeq7! Get the updater [here](https://mega.nz/folder/r5QXXL6I#eXy7ptVhsa_wJd-AHuPyEg)!
 

@@ -123,7 +123,7 @@ Aerie
 Zerg Beacon
 Terran Beacon
 Protoss Beacon
-Dark Swarm
+Carapace Swarm
 Flag
 Young Chrysalis
 Psi Emitter
@@ -500,15 +500,15 @@ Sentinel Rail
 Hotshot
 Nathrok Lake
 Skithrok Scab
-Extended Flingy #294
-Extended Flingy #295
-Extended Flingy #296
-Extended Flingy #297
-Extended Flingy #298
-Extended Flingy #299
-Extended Flingy #300
-Extended Flingy #301
-Extended Flingy #302
+Qilin
+Auriel
+Spoke Shell
+Adherent
+Extatus
+Nathrelisk
+Iziralisk
+Anchor (Grounded)
+Carapace Swarm (Small)
 Extended Flingy #303
 Extended Flingy #304
 Extended Flingy #305

@@ -1856,7 +1856,7 @@ Magister Yes 01
 Magister Yes 02
 Magister Yes 03
 Magister Yes 04
-unused
+Duke Battlecruiser Ready 01
 Azazel What 01
 Azazel What 02
 Azazel What 03
@@ -2653,292 +2653,292 @@ Ackmed Advisor Missile Launch 01
 Ackmed Advisor Missile Launch 02
 Ackmed Advisor No Build 01
 Ackmed Advisor No Build 02
+Ackmed Advisor No Land 01
+Ackmed Advisor No Land 02
+Ackmed Advisor No Warp 01
+Ackmed Advisor No Warp 02
+Ackmed Advisor Tech 01
+Ackmed Advisor Tech 02
 Ackmed Advisor No Vespene 01
 Ackmed Advisor No Vespene 02
 Ackmed Advisor No Vespene 03
 Ackmed Advisor No Vespene 04
 Ackmed Advisor Warp 01
 Ackmed Advisor Warp 02
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Analogue Weaponfire 01
+Analogue Weaponfire 02
+Analogue Weaponfire 03
+Scribe Weaponfire 01
+Scribe Weaponfire 02
+Scribe Weaponfire 03
+Dracadin Weaponhit 01
+Dracadin Weaponhit 02
+Dracadin Weaponhit 03
+Ardent Authority Selected 01
+Argosy Selected 01
+Prostration Stage Selected 01
+Hadron Selected 01
+HADRAL Advisor Addon Complete 01
+HADRAL Advisor Ally Attack A 01
+HADRAL Advisor Ally Attack P 01
+HADRAL Advisor Ally Attack T 01
+HADRAL Advisor Ally Attack Z 01
+HADRAL Advisor Army Attack 01
+HADRAL Advisor Base Attack 01
+HADRAL Advisor No Energy 01
+HADRAL Advisor Landing Interrupt 01
+HADRAL Advisor No Minerals 01
+HADRAL Advisor Missile Armed 01
+HADRAL Advisor Missile Launched 01
+HADRAL Advisor No Build 01
+HADRAL Advisor No Land 01
+HADRAL Advisor No Warp 01
+HADRAL Advisor Tech Up 01
+HADRAL Advisor No Vespene 01
+HADRAL Advisor Warp 01
+Optecton Ready 01
+Optecton Ready 02
+Optecton Ready 03
+Optecton Selected 01
+Optecton Selected 02
+Optecton Selected 03
+Optecton Selected 04
+Optecton Order Passive 01
+Optecton Order Passive 02
+Optecton Order Passive 03
+Optecton Order Passive 04
+Optecton Order Aggressive 01
+Optecton Order Aggressive 02
+Optecton Order Aggressive 03
+Optecton Order Aggressive 04
+Optecton Under Attack 01
+Optecton Under Attack 02
+Optecton Under Attack 03
+Optecton Under Attack 04
+Dracadin Ready 01
+Dracadin Ready 02
+Dracadin Ready 03
+Dracadin Selected 01
+Dracadin Selected 02
+Dracadin Selected 03
+Dracadin Selected 04
+Dracadin Order Passive 01
+Dracadin Order Passive 02
+Dracadin Order Passive 03
+Dracadin Order Passive 04
+Dracadin Order Aggressive 01
+Dracadin Order Aggressive 02
+Dracadin Order Aggressive 03
+Dracadin Order Aggressive 04
+Dracadin Under Attack 01
+Dracadin Under Attack 02
+Dracadin Under Attack 03
+Dracadin Under Attack 04
+Matador Weaponfire 2 01
+Matador Weaponfire 2 02
+Matador Weaponfire 2 03
+Auriel Weaponfire 01
+Auriel Weaponfire 02
+Auriel Weaponfire 03
+Golem Ready 01
+Golem Ready 02
+Golem Selected 01
+Golem Selected 02
+Golem Order Passive 01
+Golem Order Passive 02
+Golem Order Aggressive 01
+Golem Order Aggressive 02
+Golem Under Attack 01
+Golem Under Attack 02
+Artisan Weaponfire 01
+Artisan Weaponfire 02
+Izirokor Ready 01
+Izirokor Selected 01
+Izirokor Selected 02
+Izirokor Order Passive 01
+Izirokor Order Passive 02
+Izirokor Order Passive 03
+Izirokor Order Passive 04
+Izirokor Order Aggressive 01
+Izirokor Order Aggressive 02
+Izirokor Under Attack 01
+Izirokor Under Attack 02
+Penumbra Weaponhit 01
+Penumbra Weaponhit 02
+Paladin Selected 01
+Paladin Selected 02
+Paladin Selected 03
+Paladin Selected 04
+Paladin Order Passive 01
+Paladin Order Passive 02
+Paladin Order Passive 03
+Paladin Order Passive 04
+Cuirass Weaponfire 01
+Cuirass Weaponfire 02
+Salamander Weaponfire 01
+Salamander Weaponfire 02
+Salamander Weaponfire 03
+Centaur Weaponfire A 01
+Centaur Weaponfire A 02
+Centaur Weaponfire A 03
+Apostle Weaponfire 01
+Apostle Weaponfire 02
+Apostle Weaponfire 03
+Apostle Weaponfire 04
+Apostle Weaponfire 05
+Savant Siphon 01
+Savant Siphon 02
+Savant Siphon 03
+Savant Siphon 04
+Savant Siphon 05
+Fenix Dracadin Ready 01
+Fenix Zealot Ready 01
+Tassadar Ready 01
+Stargate Selected 01
+Hierophant Selected 01
+Hierophant Selected 02
+Hierophant Selected 03
+Hierophant Selected 04
+Hierophant Order Passive 01
+Hierophant Order Passive 02
+Hierophant Order Passive 03
+Hierophant Order Passive 04
+Hierophant Under Attack 01
+Hierophant Under Attack 02
+Hierophant Under Attack 03
+Cyprian Selected 01
+Cyprian Selected 02
+Cyprian Selected 03
+Cyprian Selected 04
+Cyprian Order Passive 01
+Cyprian Order Passive 02
+Cyprian Order Passive 03
+Cyprian Order Passive 04
+Cyprian Easter Egg 01
+Cyprian Easter Egg 02
+Cyprian Easter Egg 03
+Cyprian Easter Egg 04
+Goliath Death 01
+Paladin Charge 01
+Shaman Selected 01
+Shaman Selected 02
+Shaman Selected 03
+Shaman Selected 04
+Shaman Order Passive 01
+Shaman Order Passive 02
+Shaman Order Passive 03
+Shaman Order Passive 04
+Shaman Easter Egg 01
+Shaman Easter Egg 02
+Shaman Easter Egg 03
+Shaman Easter Egg 04
+Shaman Death 01
+Shaman Death 02
+Wyvern Weaponfire 01
+Wyvern Weaponfire 02
+Wyvern Death 01
+Legionnaire Selected 01
+Legionnaire Selected 02
+Legionnaire Selected 03
+Legionnaire Selected 04
+Legionnaire Order Passive 01
+Legionnaire Order Passive 02
+Legionnaire Order Passive 03
+Legionnaire Order Passive 04
+Raynor Maverick Ready 01
+Panoptus Weaponhit 01
+Talos Salvage Loop 01
+Bactalisk Weaponfire 01
+Bactalisk Weaponfire 02
+Bactalisk Weaponfire 03
+Bactalisk Weaponhit 01
+Bactalisk Weaponhit 02
+Bactalisk Weaponhit 03
+Hierophant Weaponfire 01
+Hierophant Weaponfire 02
+Ministry Selected 01
+Phalanx Weaponhit B 01
+Exemplar Death 01
+Mesk Advisor Ally Attack P 01
+Mesk Advisor Ally Attack P 02
+Mesk Advisor Ally Attack P 03
+Mesk Advisor Ally Attack T 01
+Mesk Advisor Ally Attack T 02
+Mesk Advisor Ally Attack T 03
+Mesk Advisor Ally Attack Z 01
+Mesk Advisor Ally Attack Z 02
+Mesk Advisor Ally Attack Z 03
+Mesk Advisor Army Attack 01
+Mesk Advisor Army Attack 02
+Mesk Advisor Army Attack 03
+Mesk Advisor Base Attack 01
+Mesk Advisor Base Attack 02
+Mesk Advisor Base Attack 03
+Mesk Advisor Base Attack 04
+Mesk Advisor Base Attack 05
+Hotshot Ready 01
+Hotshot Ready 02
+Hotshot Ready 03
+Hotshot Selected 01
+Hotshot Selected 02
+Hotshot Selected 03
+Hotshot Selected 04
+Hotshot Order Passive 01
+Hotshot Order Passive 02
+Hotshot Order Passive 03
+Hotshot Order Passive 04
+Hotshot Order Aggressive 01
+Hotshot Order Aggressive 02
+Hotshot Order Aggressive 03
+Hotshot Order Aggressive 04
+Hotshot Under Attack 01
+Hotshot Under Attack 02
+Hotshot Under Attack 03
+Hotshot Under Attack 04
+Artemis Advisor Addon 01
+Artemis Advisor Ally Attack A 01
+Artemis Advisor Ally Attack T 01
+Artemis Advisor Ally Attack P 01
+Artemis Advisor Ally Attack Z 01
+Artemis Advisor Army Attack 01
+Artemis Advisor Base Attack 01
+Artemis Advisor No Energy 01
+Artemis Advisor No Energy 02
+Artemis Advisor Landing Interrupted 01
+Artemis Advisor No Minerals 01
+Artemis Advisor No Minerals 02
+Artemis Advisor Missile Armed 01
+Artemis Advisor Missile Launch 01
+Artemis Advisor No Build 01
+Artemis Advisor No Land 01
+Artemis Advisor No Warp 01
+Artemis Advisor Tech 01
+Artemis Advisor No Vespene 01
+Artemis Advisor No Vespene 02
+Artemis Advisor Warp 01
+Stimpack Inject 01
+Terran Liftoff Start
+Artisan Radiant Channel 01
+Artisan Radiant Return 01
+Talos Ready 01
+Talos Ready 02
+Talos Ready 03
+Talos Selected 01
+Talos Selected 02
+Talos Selected 03
+Talos Selected 04
+Talos Order Passive 01
+Talos Order Passive 02
+Talos Order Passive 03
+Talos Order Passive 04
+Talos Order Aggressive 01
+Talos Order Aggressive 02
+Talos Order Aggressive 03
+Talos Order Aggressive 04
+Talos Under Attack 01
+Talos Under Attack 02
+Talos Under Attack 03
+Talos Under Attack 04
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

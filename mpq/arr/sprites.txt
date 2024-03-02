@@ -284,7 +284,7 @@ Aerie
 Zerg Beacon
 Terran Beacon
 Protoss Beacon
-Dark Swarm
+Carapace Swarm
 Flag
 Young Chrysalis
 Psi Emitter
@@ -545,7 +545,7 @@ Irulent Ivoa
 Othstoleth
 Grand Library
 Irol Iris
-Sire
+Sibraelosk
 Treasury
 Madrigal Missile 2
 Simulacrum
@@ -889,17 +889,17 @@ Lanifect Remains
 Hotshot
 Nathrok Lake
 Skithrok Scab
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
+Qilin
+Auriel
+Legionnaire Teleport Effect
+Spoke Shell
+Adherent
+Extatus
+Nathrelisk
+Iziralisk
+Anchor (Grounded)
+Carapace Swarm (Small)
+Fusion Cutter Hit Damageless
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1

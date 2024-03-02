@@ -18,11 +18,23 @@ building right_upper_door = 206
 # Special
 building special_control_node = 192
 
-# Factional NGS units
+# Terran factional units
 military cohort = 50
 military luminary = 150
 military aspirant = 194
 military tarasque = 210
+military philoc = 328
+military hotshot = 395
+military qilin = 398
+military auriel = 399
+
+# Protoss factional units
+military adherent = 400
+military extatus = 401
+
+# Zerg factional units
+military nathrelisk = 402
+military iziralisk = 403
 
 # Terran military units
 military maverick = 0
@@ -335,12 +347,12 @@ building gosvileth = 47
 building axtoth_axis = 130
 building almakis_antre = 139
 building othstol_oviform = 152
-building bactith_swamp = 153
+building tethvith_swamp = 153
 building alkag_iteth = 170
 building irulent_ivoa = 181
 building zorkiz_shroud = 193
 building tosvrol_haunt = 197
-building kalkiir_pond = 204
+building kalkiir_lake = 204
 building alkaj_chasm = 212
 building larvosk_cesiant = 216
 building geszkath_grotto = 219
@@ -354,8 +366,8 @@ building chokralgant_chazsal = 330
 building nephrilosk = 350
 building ocsal_cesiant = 354
 building ezigrisant = 364
-building nathrok_lake = 396
-building skithrok_scab = 397
+building vornath_pond = 396
+building skibact_scab = 397
 
 # Misc units
 military goliath_turret = 4

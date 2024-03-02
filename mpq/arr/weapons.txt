@@ -207,9 +207,9 @@ Calcification (Gorgrokor)
 Talismanic Weaver (Potentate)
 Phase Saber (Potentate)
 Dispatch Shotgun (Hotshot)
-Extended Weapon #80
-Extended Weapon #81
-Extended Weapon #82
+Quarternary Rifle (Auriel)
+Phase Blade (Adherent)
+Signaling Spores (Nathrelisk)
 Extended Weapon #83
 Extended Weapon #84
 Extended Weapon #85

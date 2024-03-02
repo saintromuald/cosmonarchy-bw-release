@@ -103,7 +103,7 @@ Map Revealer
 Protoss Augur
 Zerg Lakizilisk
 Protoss Barghest
-Disruption Field
+Carapace Swarm (Small)
 Terran Ministry
 Terran Comsat Station
 Terran Anvil
@@ -115,7 +115,7 @@ Terran Fulcrum
 Terran Starport
 Terran Commandment
 Terran Daedala
-Terran Covert Ops
+Terran Covenant
 Terran Magnetar
 Terran Vestry
 Terran Palladium
@@ -131,27 +131,27 @@ Zerg Bactalisk
 Zerg Axtoth Axis
 Zerg Hachirosk
 Zerg Caphrolosk
-Zerg Gathstelosk
+Zerg Gathtelosk
 Zerg Nydus Cesiant
 Zerg Hydrith Den
 Zerg Elthisth Mound
 Terran Olympian
 Zerg Matravil Nest
 Zerg Almakis Antre
-Zerg Ultrok Cavern
+Zerg Ultrav Cavern
 Zerg Muthrok Spire
 Zerg Quazeth Pool
-Zerg Cagrant Colony
-Zerg Spraith Colony
+Zerg Cagrant Cesiant
+Zerg Spraith Cesiant
 Terran Autocrat
-Zerg Surkith Colony
+Zerg Surkith Cesiant
 Terran Guildhall
 Terran Striga
 Zerg Excisant
 Terran Luminary
 Terran Siren
 Zerg Othstol Oviform
-Zerg Gorgral Swamp
+Zerg Tethvith Swamp
 Protoss Nexus
 Protoss Lattice
 Protoss Pylon
@@ -200,9 +200,9 @@ Terran Iron Foundry
 Terran Captaincy
 Terran Scrapyard
 Protoss Crucible
-Dark Swarm
+Carapace Swarm
 Terran Nanite Assembly
-Zerg Liivral Pond
+Zerg Kalkiir Lake
 Left Upper Level Door
 Right Upper Level Door
 Left Pit Door
@@ -290,8 +290,8 @@ Terran Parthenon
 Terran Armistice
 Terran Pythean
 Zerg Ogroszaleth
-Zerg Spirtith Colony
-Zerg Skortrith Colony
+Zerg Spirtith Cesiant
+Zerg Skortrith Cesiant
 Protoss Engram
 Terran Iron Council
 Terran Amphitheater
@@ -386,7 +386,7 @@ Terran Lodestone
 Floor Hatch
 Terran Treasury
 Terran Lodestone (Standalone)
-Faction Selection
+Faction Selection Terran
 Select Faction 1
 Select Faction 2
 Select Faction 3
@@ -394,17 +394,17 @@ Select Faction 4
 Select Faction 5
 Select Faction 6
 Terran Hotshot
-Zerg Nathrok Lake
-Zerg Skithrok Scab
-Extended Unit #171
-Extended Unit #172
-Extended Unit #173
-Extended Unit #174
-Extended Unit #175
-Extended Unit #176
-Extended Unit #177
-Extended Unit #178
-Extended Unit #179
+Zerg Vornath Pond
+Zerg Skibact Scab
+Terran Qilin
+Terran Auriel
+Protoss Adherent
+Protoss Extatus
+Zerg Nathrelisk
+Zerg Iziralisk
+Faction Selection Protoss
+Faction Selection Zerg
+Terran Anchor (Grounded)
 Extended Unit #180
 Extended Unit #181
 Extended Unit #182
