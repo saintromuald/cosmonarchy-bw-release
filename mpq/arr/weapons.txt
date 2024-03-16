@@ -210,10 +210,10 @@ Dispatch Shotgun (Hotshot)
 Quarternary Rifle (Auriel)
 Phase Blade (Adherent)
 Signaling Spores (Nathrelisk)
-Extended Weapon #83
-Extended Weapon #84
-Extended Weapon #85
-Extended Weapon #86
+Bottomless Spinestacks (Algoztalisk)
+Relentless Tendrils (Okrimnilisk)
+Omnispores (Okrimnilisk)
+Venemous Bursts (Cherbrathalor)
 Extended Weapon #87
 Extended Weapon #88
 Extended Weapon #89

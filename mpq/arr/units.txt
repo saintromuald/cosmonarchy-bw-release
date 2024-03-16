@@ -328,13 +328,13 @@ Zerg Kethrostalor
 Zerg Rakzilisk
 Terran Philoc
 Zerg Begrozith Barrow
-Zerg Chokralgant Chazsal
+Zerg Chokral Chazsal
 Protoss Bulwark
 Terran Civilian
 Sarah Kerrigan
 Infested Kerrigan
 Crashed Minotaur
-Terran Psi Disrupter
+Terran Psi Disruptor
 Terran Power Generator
 Zerg Overmind
 Zerg Overmind (Shell)

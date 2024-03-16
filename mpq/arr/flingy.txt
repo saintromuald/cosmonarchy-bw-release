@@ -414,7 +414,7 @@ Future Station
 Keskathalor Spores
 Seeker Spores Double Silent
 Kagralisk
-Izkag Iteth
+Alkag Iteth
 Kagralisk Venom
 Neutron Flare Impact Silent
 Evigrilisk
@@ -509,10 +509,10 @@ Nathrelisk
 Iziralisk
 Anchor (Grounded)
 Carapace Swarm (Small)
-Extended Flingy #303
-Extended Flingy #304
-Extended Flingy #305
-Extended Flingy #306
+Chokralgant Chazsal
+Algoztalisk
+Okrimnilisk
+Cherbrathalor
 Extended Flingy #307
 Extended Flingy #308
 Extended Flingy #309

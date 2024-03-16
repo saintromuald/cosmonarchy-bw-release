@@ -2939,66 +2939,66 @@ Talos Under Attack 01
 Talos Under Attack 02
 Talos Under Attack 03
 Talos Under Attack 04
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+ISN Advisor Addon 01
+ISN Advisor Addon 02
+ISN Advisor Addon Abandon 01
+ISN Advisor Addon Abandon 02
+ISN Advisor Ally Under Attack P 01
+ISN Advisor Ally Under Attack P 02
+ISN Advisor Ally Under Attack P 03
+ISN Advisor Ally Under Attack T 01
+ISN Advisor Ally Under Attack T 02
+ISN Advisor Ally Under Attack T 03
+ISN Advisor Ally Under Attack Z 01
+ISN Advisor Ally Under Attack Z 02
+ISN Advisor Ally Under Attack Z 03
+ISN Advisor Army Attack 01
+ISN Advisor Army Attack 02
+ISN Advisor Army Attack 03
+ISN Advisor Army Attack 04
+ISN Advisor Base Attack 01
+ISN Advisor Base Attack 02
+ISN Advisor Base Attack 03
+ISN Advisor Base Attack 04
+ISN Advisor Energy 01
+ISN Advisor Energy 02
+ISN Advisor Energy 03
+ISN Advisor Energy 04
+ISN Advisor Landing Interrupted 01
+ISN Advisor Landing Interrupted 02
+ISN Advisor Minerals 01
+ISN Advisor Minerals 02
+ISN Advisor Minerals 03
+ISN Advisor Minerals 04
+ISN Advisor Missile Armed 01
+ISN Advisor Missile Armed 02
+ISN Advisor Missile Launch 01
+ISN Advisor Missile Launch 02
+ISN Advisor No Build 01
+ISN Advisor No Build 02
+ISN Advisor No Land 01
+ISN Advisor No Land 02
+ISN Advisor No Warp 01
+ISN Advisor No Warp 02
+ISN Advisor Tech 01
+ISN Advisor Tech 02
+ISN Advisor Vespene 01
+ISN Advisor Vespene 02
+ISN Advisor Vespene 03
+ISN Advisor Vespene 04
+ISN Advisor Warp 01
+ISN Advisor Warp 02
+Ezigrisant Selected 01
+Skortrith Cesiant Selected 01
+Vornath Pond Selected 01
+Spirtith Cesiant Selected 01
+Skibact Scab Selected 01
+Algoztalisk Weaponfire 01
+Algoztalisk Weaponfire 02
+Algoztalisk Weaponfire 03
+Cherbrathalor Weaponfire 01
+Cherbrathalor Weaponfire 02
+Cherbrathalor Weaponfire 03
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

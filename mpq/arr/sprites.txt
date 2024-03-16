@@ -779,7 +779,7 @@ Keskathalor Spores
 Seeker Spores Double Silent
 Kagralisk
 Kagralisk Remnants
-Izkag Iteth
+Alkag Iteth
 Kagralisk Venom
 Neutron Flare Blue Damageless
 Evigrilisk
@@ -900,10 +900,10 @@ Iziralisk
 Anchor (Grounded)
 Carapace Swarm (Small)
 Fusion Cutter Hit Damageless
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
+Chokralgant Chaszal
+Algoztalisk
+Okrimnilisk
+Cherbrathalor
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1

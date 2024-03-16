@@ -178,7 +178,7 @@ Use Ability (Heal)
 Move (Medic)
 Hold Position&Heal (Medic)
 Return To Idle After Heal
-Use Ability (Tertiary Eyes)
+Use Ability (Through the Looking Glass)
 Use Ability (Disruption Web)
 Use Ability (Tyranny)
 Dark Archon Meld
@@ -187,7 +187,7 @@ Use Ability (Optical Flare)
 Use Ability (Maelstrom)
 Move (Junk Yard Dog)
 Fatal
-Cast Through the Looking Glass
+Extended Order #1
 Extended Order #2
 Extended Order #3
 Extended Order #4

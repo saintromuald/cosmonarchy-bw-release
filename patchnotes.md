@@ -1,551 +1,89 @@
-# 2 March 2024
+# 16 March 2024
 
-## Designer's Notes
-
-**Welcome to the Scarscape update!**
-
-Now officially known as **Cosmonarchy**, this immense overhaul of Starcraft 1 is better than ever. The **Scarscape** update brings increased army scale to the picture, and refocuses balance around compositional supremacy, with ground units edging out air units more consistently than before, and a far richer diaspora of well-paced choices in the early-game.
-
-The **Scarscape** update coincides with the return of competitive tournaments; two invitationals will be hosted in the month of March (on the 2nd and on the 16th), and the freshly-titled **Acropolis** tournament kicks off in the Gauntlet stage on the 30th.
-
-**Fixated on scale. Sworn to skill.**
-
-Be glorious, Cosmonarchs.
-
-\- [Pr0nogo & Veeq7](https://ko-fi.com/pr0nogoandveeq7)
-
-## Patch goals include:
-- Revising early-game pacing to promote increased scale
-- Adjusting mid-game options for more distinct combat roles
-- Reducing the strength of early air in direct combat
-- Improving tech pacing to encourage more time spent in each tier
-- Deploying more audiovisual improvements
-
-## Latest content
-- [Casts return!](https://www.youtube.com/playlist?list=PLACFHAM2MlxMmsRhct3d-fwUtJ0k7vB2n)
-- Crow's Nests:
-	- [010 - Planning for 2024!](https://youtu.be/BWvkcPTc38I)
-	- [011 - The Fourth Race](https://youtu.be/uabpstn8QBk)
-- Pr0totypes:
-	- [#39 - Feathering This Nest](https://youtu.be/0CWT_Qhtmhs)
-	- [#40 - Mapcrap: The Revenge](https://youtu.be/yD-VC45-4r0)
-	- [#41 - Factitious](https://youtu.be/7p2BUJU8Vck)
-	- [#42 - Finding a Voice...](https://youtu.be/v7ecZs_SkdE)
-	- [#43 - The Reconstruction](https://youtu.be/ufd-GcSr7Hk)
-	- [#44 - Use Man Settings](https://youtu.be/lXmeFz41hQU)
-	- [#45 - Sworn to Scale](https://youtu.be/b-xSyx6ZMdc)
-
-## Patch summary
-- Removed an internal order timer, making unit handling more responsive
-- Reduced time costs of many rank-and-file units to promote increased army scale
-- Adjusted resource costs and availabilities of many powerhouse units to allow for heavier early-game gas spending
-- Revised Terran addons to no require tech, but now be more expensive on average (and have some orders still issuable while detached)
-- Increased resource costs of tier 3 tech to incentivize more time spent on tier 2
-- Adjusted resource costs of air units, anti-air units, and air unit production to sideline early air into harassment and support roles, while keeping mid and late air 
+This patch includes bug and stability fixes, audiovisual improvements, some mild balance changes, and the implementation of Chokral (evolved Alkag) strains.
 
 ## General
-- The title music has been replaced (c. Enozlliks)
-- **Resources:**
-	- Depleted Mineral Fields now provide 3 resources per return, from 2
-	- Worker wandering has had its range expanded, but still respects discrete orders by not wandering if another worker is about to finish a harvest (c. Veeq7)
-- **Name changes:**
-	- Vornath Pond (formerly Nathrok Lake)
-	- Kalkiir Lake (formerly Kalkiir Pond)
-	- Skibact Scab (formerly Skithrok Scab)
-	- Tethvith Swamp (formerly Bactith Swamp)
 - **Internals:**
-	- Removed implicit order timer, making order handling more responsive (c. Veeq7)
-		- Small stops during harvest and return orders are no longer present, slightly improving harvest efficiency
-		- Changing orders is now more responsive, improving stutter-stepping behaviors
-		- Queued orders and patrol paths are now processed instantly
-		- Lobotomy Mines now start moving twice as fast after unburrowing
-		- **Caveat:** Doesn't currently apply to Diadems
-	- Updated hotloading to fix some cases where file updates didn't prompt mpq regeneration (c. Veeq7)
-	- Tilde and ESC are now always used as shortcuts for closing the console
-	- Pings from witnesses now only show for other witnesses
-	- Briefing screens are now skipped in multiplayer competitive matches (c. DF)
-	- Quitting in singleplayer now always shows the score screen, even in scenarios (c. DF)
-	- Custom trigger recolor accuracy has been improved (c. Veeq7)
-	- Reinstated unit responses and other SFX for heroes/neutrals/critters
+	- Unloading a unit now gives it a 4-frame order cooldown (c. Veeq7)
+	- Tyranny code has been revised (c. Veeq7)
+- **Game modes:**
+	- Debug has been reinstated for desync testing
 - **Config:**
-	- Added a new grid-exclusive option for enabling extended control groups on R, F, V, T, G, and B (c. Veeq7)
-	- Added an option to move console toggle to F12, freeing up tilde for another control group (c. Veeq7)
-	- Added a config option to only show selection lines and circles while ALT is held
-	- Added error handling to prevent option mismatches (c. Veeq7)
-- **[Custom triggers](https://www.fraudsclub.com/cosmonarchy-bw/sites/scenario-setup/#trigger-comments):**
-	- **New conditions:**
-		- "unit_color"
-		- "exit_if", "exit_preserve_if", "wait_if", "wait_until" (control flow actions; c. Veeq7)
-		- "wait" (c. Veeq7)
-		- "print" (c. Veeq7)
-	- **New gameplay actions:**
-		- "kill"
-		- "move_unit"
-	- **New game state actions:**
-		- "set_mineral_yields" (c. Veeq7)
-		- "set_gas_yields" (c. Veeq7)
-		- "set_unit_stat"
-		- "set_unit_behavior"
-	- **New UI actions:**
-		- "set_player_team_ui"
-- **Advisors:**
-	- Added support for the following events:
-		- Army under attack
-		- Base under attack
-		- Ally under attack
-		- Failed to build / warp
-		- Landing interrupted
 	- Added the following custom advisors:
-		- HADRAL
-		- Artemis
+		- ISN (c. IskatuMesk)
+- **Custom triggers:**
+	- New actions:
+		- blissful_embrace (c. Veeq7)
 
-## Game modes
-- **Faction Wars:**
-	- Protoss and Zerg faction selection has been made available
-	- **NEW:** Protoss faction: [Order of the Sacred Saber](https://www.fraudsclub.com/cosmonarchy-bw/protoss.php?faction=order-of-the-sacred-saber#fix-scroll)
-	- **NEW:** Zerg faction: [Zorthos Tendril](https://www.fraudsclub.com/cosmonarchy-bw/zerg.php?faction=zorthos-tendril#fix-scroll)
-
-## Maps
-- A draft of the Terran tutorial, Further Notice, is now available in the campaigns directory
-- HYDRA refurbished -> vz02 is now available in the co-op directory
-- [Mapcrap Returns #1](https://mega.nz/folder/7t4THKwK#2vawVyYrst5-tcQUJmgFWg) submissions are now available as a separate download
+## UI
+- CTRL+Q is no longer used to open the 'Quit' menu (ALT+Q can still be used for this)
+- Aggressive unit responses are now used when issuing attack move orders
+- Players starting or completing tech tier structures will emit a minimap ping for spectators
+- Players taking damage will emit a minimap ping for spectators
 
 ## Bugfixes
-- **Stability:**
-	- Safeguarded against an AI-related nullsprite crash
-	- Fixed a crash when Deconstruction procced on Phase Linked units (r. Pokill99)
-	- Safeguarded against a rare nullsprite crash (r. lolrsk8s)
-	- Prospectively achieved replay support in Massacre mode
-- **Gameplay:**
-	- Correctly set Larva spawn timer to 12 seconds, from 11.33 (c. Veeq7)
-	- Fixed Mason slow-mo movement when its repair target died before the Mason arrived (c. DF)
-	- Fixed Masons repairing targets for one frame regardless of distance (c. DF)
-	- Reclaimed Ocsal units no longer regress (r. Neblime)
-	- Fixed a rare case where Apostles could continue reclaiming after death (r. TheBeaver99)
-	- Revised Vilgorokor Autophagy to spawn a Vilgoleth instead of transforming into one, allowing for corpse effects to impact it (r. The Shambler)
-	- Fixed Lobotomy Mines not targeting units that had previously burrowed (c. DF)
-	- Fixed logic for Stewards returning to Solarions upon taking any damage, instead of the intended 50% HP threshold
-	- Fixed Cantavis Hallucination looping its cast order
-	- Improved decollision behaviors for iscript units (c. DF)
-	- Fixed Dilettante corpses not being consumable (r. GreenEggs'NSpam)
-	- Lardfix: the fading of music no longer slows down navigation between certain menus (c. DF)
-	- Prospectively resolved errant unit interactions when restarting maps (r. lolrsk8s, c. DF & Veeq7)
-	- Carapace Swarm expiry no longer procs Mortothrokor Whetted Appetite (r. lolrsk8s)
-- **AI:**
-	- Fixed request handling for Artisan, Vornath Pond, and Skibact Scab
-- **Audiovisuals:**
-	- Fixed Matraleth Ensnaring Brood overlay showing while burrowed (r. Hamster)
-	- Fixed Mortothrokor Whetted Appetite overlay showing while burrowed (r. Neblime)
-	- Added missing Adrenal Frenzy (Nathrokor) armor tooltip
-	- Fixed Wyvern overlays appearing beneath the unit (r. Neblime)
-	- Lobotomy Mine tooltip no longer displays the Spider Mines tooltip (r. 3crow)
-	- Corrected Star Sovereign Intervention tooltip (r. TheBeaver99)
-	- Corrected Shaman Visionary Mode tooltip (r. Neblime)
-	- Corrected production icons for Hotshot, Vornath Pond, Skibact Scab, Mortothrokor
-	- Fixed addon construction overlay freezing during frame changes (c. DF)
-	- Fixed colors on Pariah walk cycle (c. lolrsk8s)
-	- Fixed Anchor shadow alignment (c. DF)
-	- Fixed "set_player_unit_name" custom trigger action (c. DF)
-	- Fixed Artisan harvest SFX not playing
-	- Filled in missing unit responses for Protathalor (r. jakulangski)
-	- Corrected Shaman Visionary Mode death SFX
-	- Corrected Luminary Aural Assault tooltip (r. GreenEggs'NSpam)
-	- Corrected Lanifect ability deactivation tooltip
-	- Fixed an order limit error string (r. Pokill99)
-	- Adjusted unit ranks to weed out unwanted unit sorting
-	- Lardfix: Cagra tile variants are now synced between players (c. DF)
+- Stability:
+	- Resolved numerous selection-related issues likely contributing to desyncs (c. Veeq7 & DF)
+	- Resolved a rare crash when issuing minimap orders (r. Hamster)
+	- Correctly clear player globals (witness mode, faction selection, etc), resolving desyncs on game start (r. The Shambler, c. Veeq7)
+- Gameplay:
+	- Fixed workers not always wandering when high worker counts were on individual nodes (c. Veeq7)
+	- Konvilisks and Tetcaerokors can no longer incubate allied targets (r. Hamster)
+	- Fixed incorrect percentage increases from Crucibles (r. Londier)
+	- It is no longer possible to queue a unit from a Terran structure during its liftoff delay (r. Newt)
+	- Control groups and certain keyboard inputs are no longer disfunctional during lobby countdown or after clicking "continue playing" (r. GreenEggs'NSpam & DeadInfested)
+	- Seraphs can now be trained from Starports which border the top of the map (r. faktheking)
+	- Cloned Simulacra now inherit the original unit's control groups (c. Veeq7)
+	- An out-of-scope feature involving dominated units restoring energy to their master has been removed (c. Veeq7)
+	- Cancelling an Excisant now properly reinstates worker HP from the morph time
+	- Khaydarin Crystal Formation is no longer invincible by default
+- Audiovisuals:
+	- Fixed wrong return graphic when Akistrokors attack Analogues (r. Veeq7)
+	- Fixed flipped coordinates in right-click minimap markers
+	- Fixed wrong sound file for Terran worker errors when advisors were default (r. The Shambler)
+	- Corrected Crucible Khaydarin Charge tooltip (r. Aqo)
+	- Reimplemented animation and shadow for Power Generator
+	- Corrected death animations for Power Generator, Overmind Cocoon, Overmind (with Shell), and Khaydarin Crystal Formation
 
 ## Audiovisuals
-- **New sprites:**
-	- Quarry, Rotary (c. Solstice)
-	- Vornath Pond, Skibact Scab (shadows / wireframes NYI)
-- **Visual adjustments:**
-	- Improved Mortothrokor selection circle, death animation timing
-	- Improved Legionnaire shadow, walk and attack animations
-	- Marginally increased Goliath scale; adjusted a few minor details
-- **Auditory adjustments:**
-	- Changed sound flags for Zealot death SFX to allow it to overlap
-	- Improved under attack responses for Scribe, Cabalist, Mind Tyrant, Archon, Panoptus
-	- Improved Goliath death SFX
-	- Removed extra Eidolon revive SFX (r. GreenEggs'NSpam)
-- **New weapon SFX:** (some c. lolrsk8s & IskatuMesk)
-	- Weaponfire: Matador (Cinder), Scribe, Artisan, Analogue
-	- Weaponhit: Penumbra, Dracadin
-- **New unit responses for:**
-	- Talos (c. Mynameislol)
-	- Hadron, Prostration Stage, Ardent Authority, Argosy, Izirokor (c. IskatuMesk)
-	- Hotshot, Dracadin, Optecton
-	- Golem (c. lolrsk8s)
-- **New** *(placeholder)* **portraits for:** (many c. jun3hong)
-	- Savant, Madcap, Olympian, Dilettante, Sevenstep, Hypnagogue, Cyclops, Madrigal, Cataphract, Claymore, Gorgon, Wyvern, Salamander, Sundog, Phobos, Hippogriff
-	- Legionnaire, Hierophant, Amaranth, Herald, Atreus, Vagrant, Pariah, Potentate, Sycophant, Optecton, Patriarch, Servitor, Positron, Empress, Aurora, Gladius, Exemplar, Epigraph, Empyrean, Star Sovereign, Anthelion
-	- Cikralisk, Protathalor, Mortothrokor, Izirokor/Tethzorokor, Skithrokor, Kagralisk, Evigrilisk, Keskathalor, Zoryusthaleth, Rililisk
-
-## AI
-- **Terran:**
-	- Removed old tech checks delaying Commandment requests
-	- Improved support for custom layouts which request Treasuries instead of Ministries
-- **Zerg:**
-	- Increased Hachirosk request count within most Zerg build orders
+- Added reads for:
+	- Artisan resource return (channel & proc)
+	- Architect weapon charge
+	- Demiurge Worship
+	- Zoryusthaleth Swarming Omen
+- Added selection responses for:
+	- Skortrith Cesiant, Spirtith Cesiant, Ezigrisant, Vornath Pond, Skibact Scab (c. jun3hong)
+- Updated wireframes for:
+	- Vornath Pond, Skibact Scab (c. jun3hong)
+- Updated icons for:
+	- Ecclesiast, Charlatan, Potentate, and Monument of Sin
 
 ## Terran
-- **Cornerstones:**
-	- **Reclamation:**
-		- Reclaimed units no longer leave behind corpses
-		- Units owned by the reclaimer no longer decay
-		- Units not owned by the reclaimer now always decay
-- **Structures:**
-	- Liftoff is now delayed by 0.5 seconds
-- **Addons:**
-	- No longer become disabled when lifted off
-	- Cannot train units or arm missiles when detached
-- [Morningstar](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/morningstar):
-	- Time cost now 40, from 30
-- [Talos](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/talos):
-	- Now requires Atlas
-- [Maverick](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/maverick):
-	- Time cost now 11, from 12
-	- Inject Stimpack:
-		- Now grants 75% increased movespeed and 100% increased attack speed
-		- Now grants the buff 1.5 seconds after activation
-		- Still damages immediately on use
+- Reclamation:
+	- Decay rate now 3 per second, from 5 per second
 - [Harakan](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/harakan):
-	- Time cost now 16, from 18
-- [Cleric](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cleric):
-	- Time cost now 14, from 15
-	- HP now 75, from 80
-- [Olympian](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/olympian):
-	- Now moves 10% faster
-- [Autocrat](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/autocrat):
-	- Mineral and gas costs now 150/150, from 200/100
-	- Weapon range now 6, from 7
-- [Vulture](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/vulture):
-	- Time cost now 18, from 20
-- [Lobotomy Mine](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/lobotomy-mine):
-	- Now only collides with tiny units (itself and Rilirokors)
-	- Can now be manually detonated (will still apply its slow effect to nearby units)
-	- Effect range now 2, from ~1.6
-- [Cyclops](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cyclops):
-	- Time cost now 18, from 20
-- [Goliath](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/goliath):
-	- Mineral cost now 175, from 200
-- [Blackjack](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/blackjack):
-	- Time cost now 16, from 18
-	- HP now 85, from 95
-- [Madrigal](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/madrigal):
-	- Mineral and gas costs now 100/125, from 125/100
-	- Now moves ~16% faster
-	- Weapon ranges now 7, from 8
-	- Imperioso Missile:
-		- Weapon damage now 14, from 20
-		- Armor penetration now 2, from 4
-		- No longer targets ground units or travels to max range
-		- Now homes in on its target, dealing area damage
-	- *Now that the Madrigal is available far sooner, conceptualizing it as a mobile anti-air unit which transforms into an omnitarget machine gives it a more defined purpose alongside the powerhouse that is the Phalanx. Reducing its weapon range makes the unit more reliant on a frontline while deployed.*
-- [Paladin](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/paladin):
-	- Gas cost now 150, from 200
-	- Weapon range now 13, from 12
-- [Cuirass](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cuirass):
-	- Mineral cost now 350, from 300
-- [Aion](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/aion):
-	- HP now 325, from 400
-	- Weapon cooldown now 1.33, from 1.17
-	- Weapon range now 7, from 8
-	- Sight range now 9, from 10
-- [Trojan](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/trojan):
-	- Increased turn rate to improve responsivity of load/unload commands
-- [Valkyrie](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/valkyrie):
-	- Mineral cost now 175, from 200
-	- Now moves ~15% faster
-- [Pythean](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/pythean):
-	- Mineral, gas, and time costs now 350/125/40, from 400/150/45
-- [Hippogriff](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/hippogriff):
-	- Now moves ~14% slower
-- [Ministry](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/ministry):
-	- Time cost now 75, from 80
-- [Treasury](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/treasury):
-	- Time cost now 45, from 50
-- [Quarry](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/quarry):
-	- Mineral and gas costs now 125/100, from 75/75
-	- No longer requires Atlas
-- [Anvil](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/anvil):
-	- No longer requires Atlas
-- [Sentinel](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/sentinel):
-	- Mineral, gas, and time costs now 200/50/35, from 250/0/25
-- [Daedala](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/daedala):
-	- Mineral, gas, and time costs now 1800/1800/120, from 1400/1400/150
-- [Diadem](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/diadem):
-	- Time cost now 65, from 60
-	- HP now 750, from 800
-- [Covenant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/covenant):
-	- Mineral, gas, and time costs now 100/100/25, from 75/75/15
-	- No longer requires Atlas
-- [Guildhall](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/guildhall):
-	- Mineral, gas, and time costs now 200/200/30, from 150/150/25
-	- No longer requires Daedala
-- [Apothecary](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/apothecary):
-	- HP now 900, from 1000
-- [Palladium](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/palladium):
-	- Mineral, gas, and time costs now 150/100/30, from 100/50/20
-	- No longer requires Atlas
-- [Mantle](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/mantle):
-	- Mineral and gas costs now 200/150, from 250/100
-- [Iron Foundry](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/iron-foundry):
-	- Mineral and gas costs now 500/200, from 450/150
-- [Starpad](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/starpad):
-	- Mineral cost now 125, from 100
-	- HP now 500, from 600
-- [Starport](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/starport):
-	- Mineral and gas costs now 150/225, from 200/150
-	- HP now 1000, from 1100
-- [Nanite Assembly](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/nanite-assembly):
-	- Mineral, gas, and time costs now 650/650/70, from 600/400/75
-- [Hadron](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/hadron):
-	- Mineral, gas, and time costs now 250/500/45, from 300/300/60
+	- Now moves ~9% faster
 
 ## Protoss
-- **Cornerstones:**
-	- **Flash Shielding:**
-		- Shields no longer regenerate for disabled units and structures
-- [Envoy](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/envoy):
-	- Increased turn rate to improve responsivity of load/unload commands
-	- Transport capacity now 10, from 8
 - [Artisan](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/artisan):
-	- Mineral, gas, and time costs now 50/50/25, from 75/75/30
-	- HP now 40, from 30
-	- Shields now 40, from 50
-	- Armor now 1, from 2
-	- No longer warps in structures
-	- **New: Radiant Rifts:**
-		- Now channels for 2 seconds to return resources with no need for a town center
-- [Witness](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/witness):
-	- Time cost now 30, from 35
-- [Zealot](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/zealot):
-	- Time cost now 22, from 25
-- [Dracadin](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/dracadin):
-	- Mineral and time costs now 125/28, from 150/30
-- [Ecclesiast](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/ecclesiast):
-	- Mineral and time costs now 50/22, from 75/25
-	- HP now 75, from 70
-	- Shields now 40, from 50
-	- *A net nerf to durability in line with the unit's mineral cost reduction.*
-- [Legionnaire](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/legionnaire):
-	- Time cost now 16, from 20
-	- Shields now 45, from 50
-	- Weapon damage now 1x10, from 2x6
-	- Weapon cooldown now 0.79, from 0.83
-	- *Now better versus armor, while reducing its previous DPS ceiling.*
-- [Amaranth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/amaranth):
-	- Mineral and time costs now 150/22, from 200/25
-	- HP now 140, from 120
-	- Shields now 20, from 40
-	- Armor now 2, from 3
-- [Herald](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/herald):
-	- Mineral and time costs now 125/25, from 150/30
-	- Significantly sped up attack animation
-- [Atreus](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/atreus):
-	- Mineral cost now 200, from 250
-	- Shields now 60, from 70
-	- Armor now 2, from 3
-- [Vagrant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/vagrant):
-	- Time cost now 22, from 25
-- [Charlatan](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/charlatan):
-	- Mineral, gas, and time costs now 75/150/28, from 100/125/30
-	- Shields now 80, from 60
+	- Now moves ~28.5% slower
+- [Cantavis](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/cantavis):
+	- Psionic Storm cast range now 10, from 8
 - [Barghest](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/barghest):
-	- Multi-Attack III removed
-	- **New: Repentant Chorus:**
-		- While decloaked, this combatant grants +1 armor penetration to all allies within 5 range.
-- [Archon](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/archon):
-	- Gas cost now 75, from 100
-- [Simulacrum](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/simulacrum):
-	- Time cost now 16, from 18
-- [Manifold](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/manifold):
-	- Time cost now 20, from 25
-- [Idol](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/idol):
-	- Mineral cost now 75, from 100
-	- HP now 75, from 90
-	- Shields now 40, from 45
-	- *Reducing durability in line with the unit's mineral cost reduction.*
-- [Servitor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/servitor):
-	- Time cost now 18, from 20
-- [Architect](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/architect):
-	- Mineral and gas costs now 250/200, from 300/150
-- [Clarion](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/clarion):
-	- Gas cost now 175, from 150
-	- HP now 60, from 50
-	- Shields now 60, from 50
-	- Phase Link:
-		- Range now 5, from 3
-- [Lanifect](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/lanifect):
-	- Mineral cost now 125, from 150
-	- Armor penetration now 2, from 1
-- [Epigraph](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/epigraph):
-	- Now moves ~11% faster
-- [Empyrean](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/empyrean):
-	- Now moves 5% slower
-- [Solarion](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/solarion):
-	- Now moves 5% slower
-- [Star Sovereign](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/star-sovereign):
-	- Now moves 10% slower
-- [Nexus](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/nexus):
-	- Time cost now 75, from 80
-- [Embassy](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/embassy):
-	- Mineral and gas costs now 125/125, from 200/75
-- [Crucible](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/crucible):
-	- Mineral and gas costs now 200/350, from 450/450
-	- Khaydarin Charge efficiency boost now 50%, from 100%
-- [Matrix](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/matrix):
-	- Mineral cost now 150, from 200
-- [Grand Library](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/grand-library):
-	- Mineral cost now 350, from 400
-- [Prostration Stage](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/prostration-stage):
-	- Mineral and gas costs now 400/200, from 350/250
-	- HP now 650, from 700
-- [Ancestral Archives](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/ancestral-archives):
-	- Mineral and gas costs now 600/400, from 400/500
-- [Synthetic Synod](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/synthetic-synod):
-	- Mineral and gas costs now 500/500, from 600/400
-- [Stargate](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/stargate):
-	- HP now 450, from 500
-- [Argosy](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/argosy):
-	- Mineral, gas, and time costs now 450/550/65, from 500/400/60
-- [Monument of Sin](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/monument-of-sin):
-	- Mineral and gas costs now 900/1100, from 1000/1000
+	- Mineral, gas, and time costs now 100/75/28, from 125/25/25
+	- HP now 50, from 40
+	- Armor now 1, from 0
 
 ## Zerg
-- **Cornerstones:**
-	- **Infestation:**
-		- Can now apply to units
-		- Now debuffs movement speed by 25% and vision range by 50%
-		- Now grants HP regeneration and buffs armor by 1
-		- Factories no longer spawn Larvae and now pass on the Infestation status
-- [Ovileth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/ovileth):
-	- Time cost now 22, from 20
-	- Armor now 2, from 1
-- [Iroleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/iroleth):
-	- Mineral, gas, and time costs now 75/75/28, from 125/50/30
-	- Increased turn rate to improve responsivity of load/unload commands
-- [Liiralisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/liiralisk):
-	- Mineral cost now 75, from 100
-	- Weapon range now 6, from 5
-	- Now moves ~20% faster
-- [Kalkalisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/kalkalisk):
-	- Mineral and gas costs now 75/75, from 100/50
-- [Cikralisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/cikralisk):
-	- Mineral, gas, and time costs now 75/75/22, from 125/50/25
-	- HP now 70, from 60
-	- Armor now 1, from 0
-- [Protathalor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/protathalor):
-	- Mineral and gas costs now 100/75, from 125/50
-	- HP now 85, from 80
-- [Mutalisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/mutalisk):
-	- Mineral and gas costs now 125/125, from 200/75
-- [Sovroleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/sovroleth):
-	- Mineral and gas costs now 75/125, from 100/100
-	- Corpse Cocoon incubation time now 4 seconds, from 2
-- [Tosgrilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/tosgrilisk):	
-	- HP now 160, from 140
-	- Now moves ~10% slower
 - [Axitrilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/axitrilisk):
-	- Mineral and gas costs now 200/50, from 150/75
-- [Mortothrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/mortothrokor):
-	- Gas cost now 75, from 50
-	- HP now 180, from 150
-	- Now moves ~7% faster
-- [Izirokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/izirokor):
-	- Mineral cost now 100, from 125
-	- HP now 105, from 120
-	- Weapon damage now 7, from 8
-	- Weapon cooldown now 0.92, from 0.83
-- [Tethzorokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/tethzorokor):
-	- Mineral and gas costs now 150/50, from 200/0
-- [Vithrilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/vithrilisk):
-	- Sight range now 8, from 9
-	- Now moves ~15% faster
-- [Kagralisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/kagralisk):
-	- Mineral cost now 100, from 125
-	- Weapon range now 6, from 7
-- [Evigrilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/evigrilisk):
-	- Mineral and gas costs now 175/75, from 200/50
-	- HP now 280, from 250
-	- Now moves ~10% slower
+	- Weapon cooldown now 1, from 0.83
 - [Almaksalisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/almaksalisk):
-	- Mineral and gas costs now 150/125, from 200/75
-	- Now moves ~5% slower
-	- Weapon cooldown now 0.83, from 0.75
-- [Geszithalor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/geszithalor):
-	- Mineral, gas, and time costs now 200/200/45, from 250/175/40
-- [Alkajelisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/alkajelisk):
-	- Armor penetration now 3, from 4
-	- Now moves ~22% slower
-- [Zoryusthaleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/zoryusthaleth):
-	- Mineral cost now 175, from 200
-	- HP now 200, from 220
-	- Transport space cost now 4, from 2
-- [Gorgrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/gorgrokor):
-	- Mineral and gas costs now 125/100, from 150/75
-- [Konvilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/konvilisk):
-	- Mineral and gas costs now 100/175, from 200/125
-- [Vilgorokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/vilgorokor):
-	- Mineral and gas costs now 200/75, from 250/50
-	- **NEW: Reconstitution:**
-		- 2 seconds after taking direct damage, the Vilgorokor emits a small Carapace Swarm field that lasts for 5 seconds and absorbs up to 100 damage.
-	- Now mutates into the Isthrathaleth
-- [Vilgoleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/vilgoleth):
-	- Now takes 1 second before spawning its first pair of Rilirokors
-- [Matraleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/matraleth):
-	- Gas cost now 150, from 100
-	- HP now 140, from 120
-	- Now moves ~20% slower
-	- **NEW: Blissful Embrace:**
-		- Now also casts this ability
-- [Zarcavrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/zarcavrokor):
-	- Now moves ~7% slower
-- [Tetcaerokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/tetcaerokor):
-	- Gas cost now 150, from 125
-	- Now moves ~16% slower
-- [Isthrathaleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/isthrathaleth):
-	- Mineral, gas, and time costs now 50/200/30, from 75/150/25
-	- HP now 140, from 120
-	- Armor now 3, from 4
-	- Now mutates from the Vilgorokor and Ocsal Larva
-	- Now requires Almakis Antre, from Elthisth Mound
-- [Akistrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/akistrokor):
-	- Gas and time costs now 175/35, from 200/40
-	- Blissful Embrace:
-		- Channel time now 3 seconds, from 1 second
-- [Larvosk Cesiant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/larvosk-cesiant):
-	- Gas and time costs now 125/30, from 75/25
-	- HP now 240, from 250
-	- No longer requires Irol Iris
-- [Ocsal Cesiant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/ocsal-cesiant):
-	- Gas cost now 225, from 200
-	- HP now 280, from 300
-	- Now requires Irol Iris, from Othstol Oviform
-- [Skortrith Cesiant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/skortrith-cesiant):
-	- Mineral, gas, and time costs now 50/50/20, from 100/0/12
-	- Weapon damage now 32, from 40
-- [Spirtith Cesiant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/spirtith-cesiant):
-	- Gas and time costs now 25/18, from 0/20
-- [Othstol Oviform](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/othstol-oviform):
-	- Gas cost now 2100, from 1800
-
-## Factions
-- [Hotshot](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/hotshot):
-	- Time cost now 12, from 14
-	- HP now 65, from 60
-	- Now moves 10% faster
-	- Weapon range now 4, from 3
-- **New:** [Qilin](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/qilin):
-	- Hecaton (replaces Trojan at Starpad)
-	- Nimble transport. Heals loaded units.
-- **New:** [Auriel](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/auriel):
-	- Hecaton (replaces Apostle at Captaincy)
-	- Mid-range infantry with a powerful damage over time effect. Incinerates corpses to create Apollyoid fields.
-- **New:** [Adherent](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/adherent):
-	- Sacred (replaces Legionnaire at Gateway)
-	- Durable melee brawler with increased movement speed 
-- **New:** [Nathrelisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/nathrelisk):
-	- Zorthos (replaces Nathrokor)
-	- Sustaining fighter strain that releases a short-lived healing field on attack
+	- Sight range now 8, from 9
+- **NEW: [Cherbrathalor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/cherbrathalor)**:
+	- Crowd-controlling burst strain; mutated from Kagralisk; requires Chokral Chazsal
+- **NEW: [Okrimnilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/okrimnilisk)**:
+	- Indomitable platform strain; mutated from Evigrilisk; requires Chokral Chazsal
+- **NEW: [Algoztalisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/algoztalisk)**:
+	- Relentless corvette strain; mutated from Almaksalisk; requires Chokral Chazsal
+- **NEW: [Chokral Chaszal](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/chokral-chazsal)**:
+	- Overwhelming assault node; mutated from Alkag Iteth

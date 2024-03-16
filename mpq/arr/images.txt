@@ -1533,8 +1533,8 @@ Kagralisk Shadow
 Kagralisk Remains
 Matador (Tank Mode) Shadow
 Kagralisk Weaponhit
-Izkag Iteth
-Izkag Iteth Shadow
+Alkag Iteth
+Alkag Iteth Shadow
 Kagralisk Venom
 Kagralisk Birth
 Neutron Flare Blue Damageless
@@ -1809,22 +1809,22 @@ Addon Weld Overlay
 Repentant Chorus Small
 Repentant Chorus Medium
 Repentant Chorus Large
-Extended Image #809
-Extended Image #810
-Extended Image #811
-Extended Image #812
-Extended Image #813
-Extended Image #814
-Extended Image #815
-Extended Image #816
-Extended Image #817
-Extended Image #818
-Extended Image #819
-Extended Image #820
-Extended Image #821
-Extended Image #822
-Extended Image #823
-Extended Image #824
+Chokralgant Chaszal
+Chokralgant Chaszal Shadow
+Algoztalisk
+Algoztalisk Shadow
+Okrimnilisk
+Okrimnilisk Shadow
+Cherbrathalor
+Cherbrathalor Shadow
+Okrimnilisk Omnispores Fire
+Architect Weaponfire Channel
+Artisan Resource Return Channel
+Artisan Resource Return Proc
+Swarming Omen Overlay (Small)
+Swarming Omen Overlay (Medium)
+Swarming Omen Overlay (Large)
+Swarming Omen Overlay (XLarge)
 Extended Image #825
 Extended Image #826
 Extended Image #827

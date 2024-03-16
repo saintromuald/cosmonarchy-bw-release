@@ -17,6 +17,19 @@ building right_upper_door = 206
 
 # Special
 building special_control_node = 192
+building crashed_minotaur = 335
+building psi_disruptor = 336
+building power_generator = 337
+building overmind = 338
+building overmind_shell = 339
+building mature_chrysalis = 340
+building cerebrate = 341
+building overmind_cocoon = 342
+building khaydarin_formation = 343
+building protoss_temple = 344
+building xelnaga_temple = 345
+building warp_gate = 346
+building stasis_cell = 347
 
 # Terran factional units
 military cohort = 50
@@ -362,7 +375,7 @@ building spirtith_cesiant = 292
 building skortrith_cesiant = 293
 building rakzogth_roost = 303
 building begrozith_barrow = 329
-building chokralgant_chazsal = 330
+building chokral_chazsal = 330
 building nephrilosk = 350
 building ocsal_cesiant = 354
 building ezigrisant = 364
