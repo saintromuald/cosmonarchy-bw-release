@@ -856,12 +856,17 @@
   34                # [34] Cleric
   0xFFFF            # ==End of List==
 
+180:                # [180] Cast Through the Looking Glass
+  0xFF02            # Current unit is...
+  287               # [287] Hypnagogue
+  0xFFFF            # ==End of List==
+
 182:                # [182] Cast Mind Control
   0xFF02            # Current unit is...
   63                # [63] Mind Tyrant
   0xFFFF            # ==End of List==
 
-189:                # [182] Cast Through the Looking Glass
+189:                # [189] Cast Through the Looking Glass
   0xFF02            # Current unit is...
   287               # [287] Hypnagogue
   0xFFFF            # ==End of List==

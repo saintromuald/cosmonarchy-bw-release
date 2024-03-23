@@ -194,10 +194,10 @@
 29:         # [29] Almaksalisk
  0xFF02      # Current unit is...
  35          # [35] Larva
- 170         # Has Unit: [170] Izkag Iteth
+ 170         # Has Unit: [170] Alkag Iteth
  0xFF01      # Or
  0xFF03      # Must have...
- 330         # [330] Chokralgant Chazsal
+ 330         # [330] Chokral Chazsal
  0xFFFF      # ==End of List==
 
 32:         # [32] Harakan
@@ -285,11 +285,11 @@
 
 46:         # [46] Isthrathaleth
  0xFF02      # Current unit is...
- 35        	 # [35] Larva
- 136         # Has Unit: [136] Elthisth Mound
+ 269         # [269] Vilgorokor
  0xFF01      # Or
- 0xFF03      # Must have...
- 303         # [303] Rakzogth Roost
+ 0xFF02      # Current unit is...
+ 353         # [353] Ocsal Larva
+ 139         # Has Unit: [139] Almakis Antre
  0xFFFF      # ==End of List==
 
 47:         # [47] Gosvileth
@@ -342,10 +342,10 @@
 52:         # [52] Evigrilisk
  0xFF02      # Current unit is...
  35          # [35] Larva
- 170         # Has Unit: [170] Izkag Iteth
+ 170         # Has Unit: [170] Alkag Iteth
  0xFF01      # Or
  0xFF03      # Must have...
- 330         # [330] Chokralgant Chazsal
+ 330         # [330] Chokral Chazsal
  0xFFFF      # ==End of List==
 
 53:         # [53] Penumbra
@@ -824,10 +824,10 @@
 126:        # [126] Kagralisk
  0xFF02      # Current unit is...
  35          # [35] Larva
- 170         # Has Unit: [170] Izkag Iteth
+ 170         # Has Unit: [170] Alkag Iteth
  0xFF01      # Or
  0xFF03      # Must have...
- 330         # [330] Chokralgant Chazsal
+ 330         # [330] Chokral Chazsal
  0xFFFF      # ==End of List==
 
 127:        # [127] Diadem
@@ -1084,73 +1084,46 @@
 154:        # [154] Nexus
  0xFF02      # Current unit is...
  64          # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 155:        # [155] Lattice
  0xFF02      # Current unit is...
  64          # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 156:        # [156] Pylon
  0xFF02      # Current unit is...
  64          # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 157:        # [157] Assimilator
  0xFF02      # Current unit is...
  64          # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 158:        # [158] Automaton Register
  0xFF02      # Current unit is...
  64          # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 159:        # [159] Prostration Stage
  0xFF02      # Current unit is...
  64          # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 160:        # [160] Gateway
  0xFF02      # Current unit is...
  64          # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 161:        # [161] Rogue Gallery
  0xFF02      # Current unit is...
  64          # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 162:        # [162] Warden
  0xFF02      # Current unit is...
  64          # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 163:        # [163] Fountainhead
@@ -1163,52 +1136,34 @@
 164:        # [164] Cenotaph
  0xFF02      # Current unit is...
  64          # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 165:        # [165] Ancestral Archives
  0xFF02      # Current unit is...
  64          # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 166:        # [166] Embassy
  0xFF02      # Current unit is...
  64          # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 167:        # [167] Stargate
  0xFF02      # Current unit is...
  64          # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 168:        # [168] Argosy
  0xFF02      # Current unit is...
  64          # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 169:        # [169] Fleet Beacon
  0xFF02      # Current unit is...
  64          # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
-170:        # [170] Izkag Iteth
+170:        # [170] Alkag Iteth
  0xFF02      # Current unit is...
  41          # [41] Droleth
  0xFF01      # Or
@@ -1224,9 +1179,6 @@
 171:        # [171] Synthetic Synod
  0xFF02      # Current unit is...
  64          # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 172:        # [172] Vagrant
@@ -1285,7 +1237,7 @@
 
 182:        # [182] Artisan
  0xFF02      # Current unit is...
- 278         # [278] Strident Stratum
+ 166         # [166] Embassy
  0xFFFF      # ==End of List==
 
 183:        # [183] Empress
@@ -1296,9 +1248,6 @@
 184:        # [184] Astral Omen
  0xFF02      # Current unit is...
  64          # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 185:        # [185] Skithrokor
@@ -1426,9 +1375,6 @@
 201:        # [201] Crucible
  0xFF02      # Current unit is...
  64        # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182        # [182] Artisan
  0xFFFF      # ==End of List==
 
 203:        # [203] Nanite Assembly
@@ -1507,10 +1453,6 @@
 216:        # [216] Larvosk Cesiant
  0xFF02     # Current unit is...
  143        # [143] Cagrant Cesiant
- 224        # Has Unit: [224] Irol Iris
- 0xFF01     # Or
- 0xFF03     # Must have...
- 152        # [152] Othstol Oviform
  0xFFFF     # ==End of List==
 
 217:        # [217] Konvilisk
@@ -1523,38 +1465,32 @@
  0xFFFF     # ==End of List==
 
 218:        # [218] Akistrokor
- 0xFF02     # Current unit is...
- 45        	# [45] Matraleth
- 0xFF01     # Or
- 0xFF02     # Current unit is...
- 353        # [353] Ocsal Larva
- 139        # Has Unit: [139] Almakis Antre
- 0xFFFF     # ==End of List==
+ 0xFF02      # Current unit is...
+ 45          # [45] Matraleth
+ 0xFF01      # Or
+ 0xFF02      # Current unit is...
+ 353         # [353] Ocsal Larva
+ 139         # Has Unit: [139] Almakis Antre
+ 0xFFFF      # ==End of List==
 
 219:        # [219] Geszkath Grotto
  0xFF02      # Current unit is...
- 41        # [41] Droleth
+ 41          # [41] Droleth
  0xFF01      # Or
  0xFF02      # Current unit is...
- 47        # [47] Gosvileth
+ 47          # [47] Gosvileth
  0xFF11      # Is not burrowed
- 152        # Has Unit: [152] Othstol Oviform
+ 152         # Has Unit: [152] Othstol Oviform
  0xFFFF      # ==End of List==
 
-220:        # [220] Robotics Authority
+220:        # [220] Ardent Authority
  0xFF02      # Current unit is...
- 64        # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 64          # [64] Scribe
  0xFFFF      # ==End of List==
 
 221:        # [221] Vespene Ridge
  0xFF02      # Current unit is...
- 64        # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 64          # [64] Scribe
  0xFFFF      # ==End of List==
 
 222:        # [222] Iroleth
@@ -1571,35 +1507,26 @@
 
 223:        # [223] Monument of Sin
  0xFF02      # Current unit is...
- 64        # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 64          # [64] Scribe
  0xFFFF      # ==End of List==
 
 224:        # [224] Irol Iris
  0xFF02      # Current unit is...
- 41        # [41] Droleth
+ 41          # [41] Droleth
  0xFF01      # Or
  0xFF02      # Current unit is...
- 47        # [47] Gosvileth
+ 47          # [47] Gosvileth
  0xFF11      # Is not burrowed
  0xFFFF      # ==End of List==
 
 225:        # [225] Sanctum of Sorrow
  0xFF02      # Current unit is...
- 64        # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 64          # [64] Scribe
  0xFFFF      # ==End of List==
 
 226:        # [226] Grand Library
  0xFF02      # Current unit is...
- 64        # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 64          # [64] Scribe
  0xFFFF      # ==End of List==
 
 227:        # [227] Sibraelosk
@@ -1610,27 +1537,24 @@
 
 252:        # [252] Matrix
  0xFF02      # Current unit is...
- 64        # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 64          # [64] Scribe
  0xFFFF      # ==End of List==
 
 253:        # [253] Sundog
  0xFF02      # Current unit is...
- 114        # [114] Starport
+ 114         # [114] Starport
  0xFF08      # Is not constructing add-on
  0xFF05      # Is not lifted off
  0xFF04      # Must have add-on
- 121        # Has Unit: [121] Rotary
+ 121         # Has Unit: [121] Rotary
  0xFFFF      # ==End of List==
 
 254:        # [254] Starpad
  0xFF02      # Current unit is...
- 7         # [7] Mason
+ 7           # [7] Mason
  0xFF01      # Or
  0xFF02      # Current unit is...
- 20        # [20] Talos
+ 20          # [20] Talos
  0xFF0B      # Is not constructing
  0xFFFF      # ==End of List==
 
@@ -1731,17 +1655,11 @@
 278:        # [278] Strident Stratum
  0xFF02      # Current unit is...
  64          # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 279:        # [279] Auxiliary Oasis
  0xFF02      # Current unit is...
  64          # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 267:        # [267] Tethzorokor
@@ -1948,10 +1866,7 @@
 
 294:        # [294] Engram
  0xFF02      # Current unit is...
- 64        # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 64          # [64] Scribe
  0xFFFF      # ==End of List==
 
 295:        # [295] Iron Council
@@ -1997,18 +1912,12 @@
 
 304:        # [304] Sequestered Icon
  0xFF02      # Current unit is...
- 64        # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 64          # [64] Scribe
  0xFFFF      # ==End of List==
 
 305:        # [305] Unitary Union
  0xFF02      # Current unit is...
- 64        # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182        # [182] Artisan
+ 64          # [64] Scribe
  0xFFFF      # ==End of List==
 
 306:        # [306] Servitor
@@ -2089,19 +1998,28 @@
 320:        # [320] Cherbrathalor
  0xFF02      # Current unit is...
  126         # [126] Kagralisk
- 330         # Has Unit: [330] Chokralgant Chazsal
+ 0xFF01      # Or
+ 0xFF02      # Current unit is...
+ 353         # [353] Ocsal Larva
+ 330         # Has Unit: [330] Chokral Chazsal
  0xFFFF      # ==End of List==
 
 321:        # [321] Okrimnilisk
  0xFF02      # Current unit is...
  52          # [52] Evigrilisk
- 330         # Has Unit: [330] Chokralgant Chazsal
+ 0xFF01      # Or
+ 0xFF02      # Current unit is...
+ 353         # [353] Ocsal Larva
+ 330         # Has Unit: [330] Chokral Chazsal
  0xFFFF      # ==End of List==
 
 322:        # [322] Algoztalisk
  0xFF02      # Current unit is...
  29          # [29] Almaksalisk
- 330         # Has Unit: [330] Chokralgant Chazsal
+ 0xFF01      # Or
+ 0xFF02      # Current unit is...
+ 353         # [353] Ocsal Larva
+ 330         # Has Unit: [330] Chokral Chazsal
  0xFFFF      # ==End of List==
 
 323:        # [323] Elthrazalisk
@@ -2140,9 +2058,9 @@
  0xFF07      # Is not training or morphing
  0xFFFF      # ==End of List==
 
-330:        # [330] Chokralgant Chazsal
+330:        # [330] Chokral Chazsal
  0xFF02      # Current unit is...
- 170         # [170] Izkag Iteth
+ 170         # [170] Alkag Iteth
  0xFF07      # Is not training or morphing
  152         # Has Unit: [152] Othstol Oviform
  0xFFFF      # ==End of List==
@@ -2160,9 +2078,6 @@
 349:        # [349] Hall of Heretics
  0xFF02      # Current unit is...
  64          # [64] Scribe
- 0xFF01      # Or
- 0xFF02      # Current unit is...
- 182         # [182] Artisan
  0xFFFF      # ==End of List==
 
 350:        # [350] Nephrilosk
@@ -2173,13 +2088,17 @@
 
 352:        # [352] Accantor
  0xFF02      # Current unit is...
- 220        # [220] Ardent Authority
+ 220         # [220] Ardent Authority
  0xFFFF      # ==End of List==
  
 354:		# [354] Ocsal Cesiant
- 0xFF02     # Current unit is...
- 216        # [216] Larvosk Cesiant
- 152        # Has Unit: [152] Othstol Oviform
+ 0xFF02      # Current unit is...
+ 216         # [216] Larvosk Cesiant
+ 224         # Has Unit: [224] Irol Iris
+ 0xFF01      # Or
+ 0xFF03      # Must have...
+ 152         # [152] Othstol Oviform
+ 0xFFFF      # ==End of List==
 
 360:        # [360] Vassal
  0xFF02      # Current unit is...

@@ -20970,7 +20970,7 @@ VithriliskBirthLocal00:
 	goto              	VithriliskBirthLocal00
 
 VithriliskBirthDeath:
-	wait              	1 
+	wait              	1
 	end
 
 VithriliskBirthSpecialState1:
@@ -30772,8 +30772,10 @@ KalkaliskGndAttkToIdle:
 	playfram          	0x40
 	wait				2
 	playfram          	0x60
-	wait              	2 
+	wait              	2
 	playfram          	0x80
+	wait				2
+	playfram          	0xA0
 	wait				2
 	playfram			0x00
 	wait				2
@@ -30788,10 +30790,10 @@ KalkaliskDeath:
 	end
 
 KalkaliskGndAttkInit:
-	playfram			0xA0
+	playfram			0xC0
 	wait				1
 	nobrkcodestart
-	playfram			0xC0
+	playfram			0xE0
 	wait				1
 	playfram			0x100
 	playsndbtwn			1316 1318 # Kalkalisk attack 01, 02, 03
@@ -30799,11 +30801,9 @@ KalkaliskGndAttkInit:
 	wait              	1
 	playfram			0x120
 	wait				1
-	playfram			0x100
+	playfram			0x140
 	wait				1
-	playfram			0xC0
-	wait				1
-	playfram			0xA0
+	playfram			0x160
 	nobrkcodeend
 	gotorepeatattk
 	goto              	KalkaliskGndAttkToIdle
@@ -30814,8 +30814,10 @@ KalkaliskWalking:
 	playfram          	0x40
 	wait				1
 	playfram          	0x60
-	wait              	1 
+	wait              	1
 	playfram          	0x80
+	wait				1
+	playfram          	0xA0
 	wait				1
 	playfram			0x00
 	wait				1
@@ -39420,22 +39422,8 @@ AxitriliskInit:
 	imgul             	1414 0 -5 # Axitrilisk Shadow (cm\zerg\axitrilisk-shadow.grp)
 AxitriliskWalkingToIdle:
 	playfram          	0x00
-	wait				62
-	randcondjmp       	64 AxitriliskLocal00
+	wait				125
 	goto				AxitriliskWalkingToIdle
-AxitriliskLocal00:
-	wait				1
-	playfram          	0x20
-	wait              	1
-	playfram          	0x40
-	wait              	1
-	playfram          	0x60
-	wait              	1
-	playfram          	0x40
-	wait              	1
-	playfram          	0x20
-	wait              	1
-	goto              	AxitriliskWalkingToIdle
 
 AxitriliskDeath:
 	playsnd           	1536 # Skithrokor death 01
@@ -42574,6 +42562,8 @@ AirAttkInit   	[NONE]
 FusionCutterHitDamagelessInit:
 	playfram          	0x00
 	playsndbtwn       	35 39 # terran\SCV\EDrRep00.wav | terran\SCV\EDrRep04.wav
+	goto				FusionCutterHitDamagelessCont
+FusionCutterHitDamagelessCont:
 	wait              	1
 	playfram          	1
 	wait              	1
@@ -46280,12 +46270,12 @@ AirAttkInit   	CikraliskGndAttkInit
 Unused1       	CikraliskUnused1
 GndAttkRpt    	CikraliskGndAttkInit
 AirAttkRpt    	CikraliskGndAttkInit
-CastSpell     	CikraliskCastSpell
+CastSpell     	[NONE]
 GndAttkToIdle 	CikraliskGndAttkToIdle
 AirAttkToIdle 	CikraliskGndAttkToIdle
 Unused2       	[NONE]
 Walking       	CikraliskWalking
-WalkingToIdle 	CikraliskWalkingToIdle
+WalkingToIdle 	CikraliskGndAttkToIdle
 SpecialState1 	[NONE]
 SpecialState2 	CikraliskSpecialState2
 AlmostBuilt   	[NONE]
@@ -46306,77 +46296,11 @@ Enable        	[NONE]
 
 CikraliskInit:
 	imgul             	1394 0 0 # Cikralisk Shadow (cm\zerg\cikralisk-shadow.grp)
-	goto				CikraliskLocal42
-CikraliskLocal42:
-	playfram          	0x00
-	wait				1
-	goto              	CikraliskLocal00
-
-CikraliskLocal00:
-	wait              	62
-	randcondjmp       	25 CikraliskLocal01
-	randcondjmp       	128 CikraliskLocal02
-	goto              	CikraliskLocal00
-
-CikraliskLocal01:
-	playfram          	0x120
-	wait              	1
-	playfram          	0x140
-	wait              	1
-	playfram          	0x160
-	wait              	1
-	playfram          	0x180
-	wait              	12
-	playfram          	0x160
-	wait              	1
-	playfram          	0x140
-	wait              	1
-	playfram          	0x120
-	wait              	1
-	goto              	CikraliskLocal42
-
-CikraliskLocal02:
-	randcondjmp       	128 CikraliskLocal03
-	playfram          	0x20
-	wait              	1
-	turnccwise        	1
-	playfram          	0x40
-	wait              	1
-	turnccwise        	1
-	playfram          	0x60
-	wait              	1
-	turnccwise        	1
-	playfram          	0x40
-	wait              	1
-	turnccwise        	1
-	playfram          	0x20
-	wait              	1
-	turnccwise        	1
-	playfram          	0x00
-	wait              	1
-	turnccwise        	1
-	goto              	CikraliskLocal42
-
-CikraliskLocal03:
-	playfram          	0x20
-	wait              	1
-	turncwise         	1
-	playfram          	0x40
-	wait              	1
-	turncwise         	1
-	playfram          	0x60
-	wait              	1
-	turncwise         	1
-	playfram          	0x40
-	wait              	1
-	turncwise         	1
-	playfram          	0x20
-	wait              	1
-	turncwise         	1
-	playfram          	0x00
-	wait              	1
-	turncwise         	1
-	goto              	CikraliskLocal42
+	goto				CikraliskGndAttkToIdle
+CikraliskGndAttkToIdle:
+	playfram 			0x00
+	wait 				1
+	goto              	CikraliskGndAttkToIdle
 
 CikraliskDeath:
 	playsnd           	867 # Zerg\Hydra\ZHyDth00.WAV
@@ -46404,7 +46328,7 @@ CikraliskUnused1:
 	wait				2
 	setfldirect       	12
 	nobrkcodeend
-	goto				CikraliskLocal42
+	goto				CikraliskGndAttkToIdle
 
 CikraliskGndAttkInit:
 	playfram          	0x120
@@ -46416,7 +46340,7 @@ CikraliskGndAttkInit:
 	attackwith			1
 	wait              	1
 	playfram          	0x180
-	playsnd           	1894 # Kagralisk weaponfire 01
+	playsndbtwn			3027 3029 # Cikralisk weaponfire 01, 02, 03
 	attackwith			1
 	wait				1
 	nobrkcodeend
@@ -46429,36 +46353,6 @@ CikraliskGndAttkInit:
 	gotorepeatattk
 	ignorerest
 	goto				CikraliskGndAttkToIdle
-	
-CikraliskGndAttkToIdle:
-	playfram 			0x00
-	wait 				1
-	goto              	CikraliskLocal00
-
-CikraliskCastSpell:
-	playfram          	0x120
-	wait              	1
-	nobrkcodestart
-	playfram          	0x140
-	wait              	1
-	playfram          	0x160
-	attackwith			1
-	wait              	1
-	playfram          	0x180
-	playsnd           	1894 # Kagralisk weaponfire 01
-	castspell
-	sigorder			2
-	wait				1
-	nobrkcodeend
-	playfram			0x160
-	wait				1
-	playfram			0x140
-	wait				1
-	playfram			0x120
-	wait				1
-	gotorepeatattk
-	ignorerest
-	goto              	CikraliskGndAttkToIdle
 
 CikraliskWalking:
 	move              	5
@@ -46487,10 +46381,6 @@ CikraliskWalking:
 	move              	5
 	wait              	1
 	goto				CikraliskWalking
-	
-CikraliskWalkingToIdle:
-	playfram			0x00
-	goto				CikraliskLocal00
 
 CikraliskSpecialState2:
 	playfram          	0x1A0
@@ -46528,7 +46418,7 @@ CikraliskUnBurrow:
 	playfram          	0x20
 	wait              	1
 	sigorder          	4
-	goto              	CikraliskWalkingToIdle
+	goto              	CikraliskGndAttkToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -50610,7 +50500,7 @@ MortothrokorBurrow:
     playfram   			0x240
     wait       			1
     sigorder   			4
-    goto       			ZoryusthalethLocal07
+    goto       			MortothrokorSpecialState2
 
 MortothrokorUnBurrow:
     wait                1
@@ -52064,7 +51954,7 @@ Unused2       	[NONE]
 Walking       	CherbrathalorWalking
 WalkingToIdle 	CherbrathalorGndAttkToIdle
 SpecialState1 	[NONE]
-SpecialState2 	ZoryusthalethSpecialState2
+SpecialState2 	CherbrathalorSpecialState2
 AlmostBuilt   	[NONE]
 Built         	[NONE]
 Landing       	[NONE]
@@ -52075,8 +51965,8 @@ WarpIn        	[NONE]
 Unused3       	[NONE]
 StarEditInit  	[NONE]
 Disable       	[NONE]
-Burrow        	ZoryusthalethBurrow
-UnBurrow      	ZoryusthalethUnBurrow
+Burrow        	CherbrathalorBurrow
+UnBurrow      	CherbrathalorUnBurrow
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -52179,6 +52069,55 @@ CherbrathalorWalking:
 	move				3
 	playfram			0x00
 	goto              	CherbrathalorWalking
+	
+CherbrathalorBurrow:
+	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
+	playfram          	0x20
+	wait              	1
+	playfram          	0x40
+	wait              	1
+	playfram          	0x60
+	wait              	1
+	playfram          	0x80
+	wait              	1
+	playfram          	0xA0
+	imgol             	423 15 12 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 12 -15 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 -12 -3 # Burrowing Dust (thingy\bDust.grp)
+	wait              	1
+	playfram          	0xC0
+	wait              	1
+	playfram          	0xE0
+	wait              	1
+	sigorder          	4
+	goto              	CherbrathalorSpecialState2
+
+CherbrathalorUnBurrow:
+	wait 				1
+	waitrand          	1 2
+	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
+	playfram          	0xC0
+	wait              	1
+	playfram          	0xA0
+	wait              	1
+	playfram          	0x80
+	wait              	1
+	playfram          	0x60
+	imgol             	423 12 -15 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 -12 -12 # Burrowing Dust (thingy\bDust.grp)
+	wait              	1
+	playfram          	0x40
+	wait              	1
+	playfram          	0x20
+	wait              	1
+	sigorder          	4
+	goto              	CherbrathalorGndAttkToIdle
+	
+CherbrathalorSpecialState2:
+	playfram			0x280
+	goto				ZoryusthalethLocal07
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -52200,7 +52139,7 @@ Unused2       	[NONE]
 Walking       	CherbrathalorWalking
 WalkingToIdle 	OkrimniliskGndAttkToIdle
 SpecialState1 	[NONE]
-SpecialState2 	ZoryusthalethSpecialState2
+SpecialState2 	OkrimniliskSpecialState2
 AlmostBuilt   	[NONE]
 Built         	[NONE]
 Landing       	[NONE]
@@ -52211,8 +52150,8 @@ WarpIn        	[NONE]
 Unused3       	[NONE]
 StarEditInit  	[NONE]
 Disable       	[NONE]
-Burrow        	ZoryusthalethBurrow
-UnBurrow      	ZoryusthalethUnBurrow
+Burrow        	OkrimniliskBurrow
+UnBurrow      	OkrimniliskUnBurrow
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -52304,5 +52243,128 @@ OkrimniliskGndAttkInit:
 	gotorepeatattk
 	ignorerest
 	goto				OkrimniliskGndAttkToIdle
+
+OkrimniliskBurrow:
+	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
+	playfram          	0x20
+	wait              	1
+	playfram          	0x40
+	wait              	1
+	playfram          	0x60
+	wait              	1
+	playfram          	0x80
+	wait              	1
+	playfram          	0xA0
+	imgol             	423 15 12 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 12 -15 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 -12 -3 # Burrowing Dust (thingy\bDust.grp)
+	wait              	1
+	playfram          	0xC0
+	wait              	1
+	playfram          	0xE0
+	wait              	1
+	sigorder          	4
+	goto              	OkrimniliskSpecialState2
+
+OkrimniliskUnBurrow:
+	wait 				1
+	waitrand          	1 2
+	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
+	playfram          	0xC0
+	wait              	1
+	playfram          	0xA0
+	wait              	1
+	playfram          	0x80
+	wait              	1
+	playfram          	0x60
+	imgol             	423 12 -15 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 -12 -12 # Burrowing Dust (thingy\bDust.grp)
+	wait              	1
+	playfram          	0x40
+	wait              	1
+	playfram          	0x20
+	wait              	1
+	sigorder          	4
+	goto              	OkrimniliskGndAttkToIdle
 	
-## Next free IsId: 774
+OkrimniliskSpecialState2:
+	playfram			0x140
+	goto				ZoryusthalethLocal07
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1222 Kalkalisk Birth (Cocoon) (cm\zerg\kalkalisk-mutate.grp)
+.headerstart
+IsId          	774
+Type          	13
+Init          	KalkaliskBirthTempInit
+Death         	Generic_Wait1End
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	KalkaliskBirthTempSpecialState1
+.headerend
+# ----------------------------------------------------------------------------- #
+
+KalkaliskBirthTempInit:
+	playfram          	5
+	wait              	1
+	waitrand          	10 15
+KalkaliskBirthTempLocal00:
+	playfram          	2
+	wait              	1
+	playfram          	1
+	wait              	1
+	playfram          	0
+	wait              	1
+	goto              	KalkaliskBirthTempLocal00
+
+KalkaliskBirthTempSpecialState1:
+	wait              	1
+	nobrkcodestart
+	playfram          	4
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	0
+	wait              	2
+	sigorder          	4
+	nobrkcodeend
+	goto              	InfestedTerranLocal00
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1807 Addon Weld Overlay (bullet\scvspark.grp)
+.headerstart
+IsId          	775
+Type          	2
+Init          	FusionCutterHitDamagelessSilentInit
+Death         	FusionCutterHitDamagelessDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+FusionCutterHitDamagelessSilentInit:
+	playfram          	0x00
+	goto				FusionCutterHitDamagelessCont
+	
+## Next free IsId: 776

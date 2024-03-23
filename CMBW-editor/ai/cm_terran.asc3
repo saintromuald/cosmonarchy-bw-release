@@ -574,34 +574,33 @@ script_id TMCx
 	return
 	
 	:prefUPaladin
-	var Set prefPaladin 1 13
-	var Set prefCuirass 0 13
-	var Set prefPazuzu 0 13
+	var Set pref_paladin 1 13
+	var Set pref_cuirass 0 13
+	var Set pref_pazuzu 0 13
 	var Set pref_armor_iron 1 13
 	dth 13 Ex 0 start_location blank_return
-	print prefPaladin
+	print pref_paladin
 	return
 	
 	:prefUCuirass
-	var Set prefPaladin 0 13
-	var Set prefCuirass 1 13
-	var Set prefPazuzu 0 13
+	var Set pref_paladin 0 13
+	var Set pref_cuirass 1 13
+	var Set pref_pazuzu 0 13
 	var Set pref_armor_iron 1 13
 	dth 13 Ex 0 start_location blank_return
-	print prefCuirass
+	print pref_cuirass
 	return
 	
 	:prefUPazuzu
-	var Set prefPaladin 0 13
-	var Set prefCuirass 0 13
-	var Set prefPazuzu 1 13
+	var Set pref_paladin 0 13
+	var Set pref_cuirass 0 13
+	var Set pref_pazuzu 1 13
 	var Set pref_armor_iron 1 13
 	dth 13 Ex 0 start_location blank_return
-	print prefPazuzu
+	print pref_pazuzu
 	return
 	
 	:prefUClaymore
-	var Set prefPazuzu 0 13
 	var Set prefClaymore 1 13
 	var Set prefPenumbra 0 13
 	var Set pref_armor_future 1 13
@@ -610,7 +609,6 @@ script_id TMCx
 	return
 	
 	:prefUPenumbra
-	var Set prefPazuzu 0 13
 	var Set prefClaymore 0 13
 	var Set prefPenumbra 1 13
 	var Set pref_armor_future 1 13
@@ -680,7 +678,7 @@ script_id TMCx
 	:prefUSalamander
 	var Set prefSalamander 1 13
 	var Set prefSundog 0 13
-	var Set pref_orbital_munitions 1 13
+	var Set pref_orbital_rotary 1 13
 	dth 13 Ex 0 start_location blank_return
 	print prefSalamander
 	return
@@ -688,7 +686,7 @@ script_id TMCx
 	:prefUSundog
 	var Set prefSalamander 0 13
 	var Set prefSundog 1 13
-	var Set pref_orbital_munitions 1 13
+	var Set pref_orbital_rotary 1 13
 	dth 13 Ex 0 start_location blank_return
 	print prefSundog
 	return
@@ -696,7 +694,7 @@ script_id TMCx
 	:prefUAzazel
 	var Set prefAzazel 1 13
 	var Set prefSeraph 0 13
-	var Set pref_orbital_control 1 13
+	var Set pref_orbital_commandment 1 13
 	dth 13 Ex 0 start_location blank_return
 	print prefAzazel
 	return
@@ -704,7 +702,7 @@ script_id TMCx
 	:prefUSeraph
 	var Set prefAzazel 0 13
 	var Set prefSeraph 1 13
-	var Set pref_orbital_control 1 13
+	var Set pref_orbital_commandment 1 13
 	dth 13 Ex 0 start_location blank_return
 	print prefSeraph
 	return
@@ -739,7 +737,7 @@ script_id TMCx
 	:prefUHippogriff
 	var Set prefHippogriff 1 13
 	var Set prefPhobos 0 13
-	var Set pref_orbital_particleaccelerator 1 13
+	var Set pref_orbital_hadron 1 13
 	dth 13 Ex 0 start_location blank_return
 	print prefHippogriff
 	return
@@ -747,7 +745,7 @@ script_id TMCx
 	:prefUPhobos
 	var Set prefHippogriff 0 13
 	var Set prefPhobos 1 13
-	var Set pref_orbital_particleaccelerator 1 13
+	var Set pref_orbital_hadron 1 13
 	dth 13 Ex 0 start_location blank_return
 	print prefPhobos
 	return
@@ -914,11 +912,11 @@ script_id TMCx
 	var Set prefApostle 1 13
 	return
 	
-	:buildpref_raider_covertops_eidolon
+	:buildpref_raider_covenant_eidolon
 	var Set prefEidolon 1 13
 	return
 	
-	:buildpref_raider_covertops_savant
+	:buildpref_raider_covenant_savant
 	var Set prefSavant 1 13
 	return
 	
@@ -958,24 +956,24 @@ script_id TMCx
 	var Set prefMatador 1 13
 	return
 	
-	:buildpref_armor_machineshop_phalanx
+	:buildpref_armor_palladium_phalanx
 	var Set prefPhalanx 1 13
 	return
 	
-	:buildpref_armor_machineshop_madrigal
+	:buildpref_armor_palladium_madrigal
 	var Set prefMadrigal 1 13
 	return
 	
 	:buildpref_armor_ironfoundry_paladin
-	var Set prefPaladin 1 13
+	var Set pref_paladin 1 13
 	return
 	
 	:buildpref_armor_ironfoundry_cuirass
-	var Set prefCuirass 1 13
+	var Set pref_cuirass 1 13
 	return
 	
 	:buildpref_armor_ironfoundry_pazuzu
-	var Set prefPazuzu 1 13
+	var Set pref_pazuzu 1 13
 	return
 	
 	:buildpref_armor_futurestation_claymore
@@ -1010,11 +1008,11 @@ script_id TMCx
 	var Set prefValkyrie 1 13
 	return
 	
-	:buildpref_orbital_munitionsbay_salamander
+	:buildpref_orbital_rotary_salamander
 	var Set prefSalamander 1 13
 	return
 	
-	:buildpref_orbital_munitionsbay_sundog
+	:buildpref_orbital_rotary_sundog
 	var Set prefSundog 1 13
 	return
 	
@@ -1038,11 +1036,11 @@ script_id TMCx
 	var Set prefMagnetar 1 13
 	return
 	
-	:buildpref_orbital_particleaccelerator_phobos
+	:buildpref_orbital_hadron_phobos
 	var Set prefPhobos 1 13
 	return
 	
-	:buildpref_orbital_particleaccelerator_oberon
+	:buildpref_orbital_hadron_oberon
 	var Set prefOberon 1 13
 	return
 	
@@ -1058,7 +1056,7 @@ script_id TMCx
 	var Set pref_vestry 1 13
 	return
 	
-	:buildpref_raider_covertops
+	:buildpref_raider_covenant
 	var Set pref_covenant 1 13
 	return
 	
@@ -1078,7 +1076,7 @@ script_id TMCx
 	var Set pref_iron_foundry 1 13
 	return
 	
-	:buildpref_armor_machineshop
+	:buildpref_armor_palladium
 	var Set pref_palladium 1 13
 	return
 	
@@ -1102,7 +1100,7 @@ script_id TMCx
 	var Set pref_nanite_assembly 1 13
 	return
 	
-	:buildpref_orbital_munitionsbay
+	:buildpref_orbital_rotary
 	var Set pref_rotary 1 13
 	return
 	
@@ -1110,7 +1108,7 @@ script_id TMCx
 	var Set pref_commandment 1 13
 	return
 	
-	:buildpref_orbital_particleaccelerator
+	:buildpref_orbital_hadron
 	var Set pref_hadron 1 13
 	return
 	
@@ -1417,7 +1415,7 @@ script_id TMCx
 	call def_armor_biotic
 	call def_armor_iron
 	call def_armor_mantle
-	call def_armor_machineshop
+	call def_armor_palladium
 	call def_armor_scrapyard
 	call def_armor_fulcrum
 	return
@@ -1428,13 +1426,13 @@ script_id TMCx
 	call def_raider_tinkerer
 	call def_raider_captaincy
 	call def_raider_stockade
-	call def_raider_covertops
+	call def_raider_covenant
 	return
 	
 	:defense_wave_orbital
 	call def_orbital_particle
 	call def_orbital_nanite
-	call def_orbital_munitionsbay
+	call def_orbital_rotary
 	call def_orbital_starport
 	call def_orbital_starpad
 	return
@@ -1448,7 +1446,7 @@ script_id TMCx
 	call def_harakan
 	return
 	
-	:def_raider_covertops
+	:def_raider_covenant
 	var AtL|Call prefEidolon 1 def_eidolon 13
 	var AtL|Call prefSavant 1 def_savant 13
 	call def_eidolon
@@ -1502,7 +1500,7 @@ script_id TMCx
 	call def_matador
 	return
 	
-	:def_armor_machineshop
+	:def_armor_palladium
 	var AtL|Call prefPhalanx 1 def_phalanx 13
 	var AtL|Call prefMadrigal 1 def_madrigal 13
 	call def_phalanx
@@ -1519,9 +1517,9 @@ script_id TMCx
 	return
 	
 	:def_armor_iron
-	var AtL|Call prefPaladin 1 def_paladin 13
-	var AtL|Call prefCuirass 1 def_cuirass 13
-	var AtL|Call prefPazuzu 1 def_pazuzu 13
+	var AtL|Call pref_paladin 1 def_paladin 13
+	var AtL|Call pref_cuirass 1 def_cuirass 13
+	var AtL|Call pref_pazuzu 1 def_pazuzu 13
 	call def_paladin
 	call def_cuirass
 	call def_pazuzu
@@ -1556,7 +1554,7 @@ script_id TMCx
 	call def_valkyrie
 	return
 	
-	:def_orbital_munitionsbay
+	:def_orbital_rotary
 	var AtL|Call prefSalamander 1 def_salamander 13
 	var AtL|Call prefSundog 1 def_sundog 13
 	call def_salamander
@@ -2019,6 +2017,7 @@ script_id TMCx
 	
 	:worker_request_advanced
 	notowns quarry blank_return
+	notowns atlas blank_return
 	local 255 AtL 10 talos blank_return
 	queue 1 talos quarry 255 Local Loc.63 100
 	wait 150
@@ -2035,8 +2034,10 @@ script_id TMCx
 	c_queues train mason|talos 13
 	res 13 AtL_C Any 100 worker_request_advanced
 	local 255 AtL 28 mason|talos main_worker_loop
+	notowns ministry main_worker_loop_quarry
 	queue 1 mason ministry 255 Local Loc.63 200
 	wait 150
+	:main_worker_loop_quarry
 	local 255 Ex 0 quarry main_worker_loop
 	queue 1 mason quarry 255 Local Loc.63 200
 	goto main_worker_loop
@@ -2197,6 +2198,7 @@ script_id TMCx
 	return
 	
 	:expansion_request_reset
+	var Ex|Jump build_done_var 0 blank_return 13
 	var Set can_queue_early_military_var 1 13
 	var Set can_build_static_defense_var 1 13
 	var Set can_build_production_var 1 13
@@ -2264,14 +2266,19 @@ script_id TMCx
 	goto expansion_main
 	
 	:expansion_body_quarry
-	wait 12
-	notowns atlas expansion_body_quarry
+	call wait_build_towncenter
 	bld 1 quarry 179
+	stop
+	
+	:expansion_worker_treasury_special
+	call wait_build_towncenter
+	maynard 4
 	stop
 	
 	:expansion_body_treasury
 	bld 1 treasury 180
 	multi expansion_body_quarry
+	multi expansion_worker_treasury_special
 	
 	:expansion_main
 	multi expansion_worker_start
@@ -2285,8 +2292,7 @@ script_id TMCx
 	:expansion_normal
 	multi request_watchdog
 	call main_wait_450
-	resarea 255 AtL 255 Ore 1 production_cycle
-	multi production_cycle
+	resarea 255 AtL_M 255 Ore 1 production_cycle
 	call main_wait_600
 	multi request_anchor
 	var Ex|Wait build_done_var 1 13
@@ -2325,13 +2331,12 @@ script_id TMCx
 	
 	:expansion_worker_start
 	wait 24
-	local 255 Ex 0 ministry expansion_worker_start
+	local 255 Ex 0 ministry|treasury expansion_worker_start
 	bld 1 mason 98
-	w_bldstart 1 ministry
+	call wait_buildstart_towncenter
 	bld 2 mason 98
-	w_bld 1 ministry
+	call wait_build_towncenter
 	bld 4 mason 98
-#	maynard 4
 	multi worker_track
 	
 	:expansion_worker_loop
@@ -2342,8 +2347,10 @@ script_id TMCx
 	c_queues train mason|talos 13
 	res 13 AtL_C Any 100 worker_request_advanced
 	local 255 AtL 28 mason|talos expansion_worker_loop
+	notowns ministry expansion_worker_loop_quarry
 	queue 1 mason ministry 255 Local Loc.63 200
 	wait 150
+	:expansion_worker_loop_quarry
 	local 255 Ex 0 quarry expansion_worker_loop
 	queue 1 mason quarry 255 Local Loc.63 200
 	goto expansion_worker_loop
@@ -2577,28 +2584,28 @@ script_id TMCx
 	goto build_order_gen_select
 	
 	:build_order_gen_select
-	dth 13 Ex 1 dark_swarm_unit build_general_2FulcMech
+	dth 13 Ex 1 dark_swarm_unit build_general_2FulcrumMech
 	dth 13 Ex 2 dark_swarm_unit build_general_EarlyRiser
 	dth 13 Ex 3 dark_swarm_unit build_general_TheCube
 	dth 13 Ex 4 dark_swarm_unit build_general_DoublingUp
 	dth 13 Ex 5 dark_swarm_unit build_general_MechIntoAir
 	dth 13 Ex 6 dark_swarm_unit build_general_Observant
 	
-	:build_general_2FulcMech
-	dth 13 Ex 0 start_location build_general_2FulcMech_Main
+	:build_general_2FulcrumMech
+	dth 13 Ex 0 start_location build_general_2FulcrumMech_Main
 	print Terran<32>General<32>timing<32>1:<32>2Fulc<32>Mech
 	
-	:build_general_2FulcMech_Main
+	:build_general_2FulcrumMech_Main
 	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_heracles 13
 	var Ex|Call pref_raider_vestry 0 buildpref_raider_vestry_shaman 13
-	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_palladium_phalanx 13
 	var Ex|Call pref_armor_iron 0 buildpref_armor_ironfoundry_pazuzu 13
-	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_salamander 13
-	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_azazel 13
+	var Ex|Call pref_orbital_rotary 0 buildpref_orbital_rotary_salamander 13
+	var Ex|Call pref_orbital_commandment 0 buildpref_orbital_commandment_azazel 13
 	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
 	var Ex|Call pref_addon_stockade 0 buildpref_raider_vestry 13
 	var Ex|Call pref_armor_production 0 buildpref_armor_fulcrum 13
-	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_machineshop 13
+	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_palladium 13
 	var Ex|Call pref_orbital_production 0 buildpref_orbital_naniteassembly 13
 	var Ex|Call pref_addon_starport 0 buildpref_orbital_commandment 13
 	call main_wait_300
@@ -2619,7 +2626,7 @@ script_id TMCx
 	call main_wait_600
 	multi need_atlas
 	call main_wait_600
-	multi build_general_2FulcMech_Addon
+	multi build_general_2FulcrumMech_Addon
 	call main_wait_900
 	var Set can_attack_var 1 13
 	call main_wait_900
@@ -2627,8 +2634,7 @@ script_id TMCx
 	multi production_cycle
 	goto build_general_fin
 	
-	:build_general_2FulcMech_Addon
-	call wait_for_atlas
+	:build_general_2FulcrumMech_Addon
 	w_bld 1 fulcrum
 	bld 1 scrapyard 120
 	w_bld 2 fulcrum
@@ -2649,8 +2655,8 @@ script_id TMCx
 	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_madcap 13
 	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_cyclops 13
 	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starport_gorgon 13
-	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_sundog 13
-	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_seraph 13
+	var Ex|Call pref_orbital_rotary 0 buildpref_orbital_rotary_sundog 13
+	var Ex|Call pref_orbital_commandment 0 buildpref_orbital_commandment_seraph 13
 	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
 	var Ex|Call pref_addon_stockade 0 buildpref_raider_vestry 13
 	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_scrapyard 13
@@ -2681,7 +2687,6 @@ script_id TMCx
 	:build_general_EarlyRiser_Addon
 	w_bld 1 stockade
 	bld 1 vestry 120
-	call wait_for_atlas
 	w_bld 1 fulcrum
 	bld 1 palladium 120
 	stop
@@ -2694,12 +2699,12 @@ script_id TMCx
 	var Ex|Call pref_raider_stockade 0 buildpref_raider_stockade_maverick 13
 	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_apostle 13
 	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_vulture 13
-	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
-	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_salamander 13
-	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_azazel 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_palladium_phalanx 13
+	var Ex|Call pref_orbital_rotary 0 buildpref_orbital_rotary_salamander 13
+	var Ex|Call pref_orbital_commandment 0 buildpref_orbital_commandment_azazel 13
 	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
 	var Ex|Call pref_armor_production 0 buildpref_armor_ironfoundry 13
-	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_machineshop 13
+	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_palladium 13
 	var Ex|Call pref_orbital_production 0 buildpref_orbital_naniteassembly 13
 	call main_wait_600
 	bld 1 fulcrum 121
@@ -2728,9 +2733,9 @@ script_id TMCx
 	:build_general_TheCube_Addon
 	w_bld 1 stockade
 	bld 1 vestry 120
-	call wait_for_atlas
 	w_bld 1 fulcrum
 	bld 1 palladium 120
+	call wait_for_atlas
 	wait 24
 	bld 1 starport 121
 	w_bld 1 starport
@@ -2789,7 +2794,6 @@ script_id TMCx
 	bld 1 scrapyard 120
 	w_bld 2 fulcrum
 	bld 2 scrapyard 120
-	call wait_for_atlas
 	w_bld 2 stockade
 	bld 1 covenant 120
 	call main_wait_150
@@ -2804,11 +2808,11 @@ script_id TMCx
 	:build_general_MechIntoAir_Main
 	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
 	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_matador 13
-	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
-	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_machineshop 13
-	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_salamander 13
-	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_seraph 13
-	var Ex|Call pref_addon_starport 0 buildpref_orbital_munitionsbay 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_palladium_phalanx 13
+	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_palladium 13
+	var Ex|Call pref_orbital_rotary 0 buildpref_orbital_rotary_salamander 13
+	var Ex|Call pref_orbital_commandment 0 buildpref_orbital_commandment_seraph 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_rotary 13
 	var Ex|Call pref_orbital_nanite 0 buildpref_orbital_naniteassembly_minotaur 13
 	call main_wait_600
 	call main_wait_300
@@ -2853,13 +2857,13 @@ script_id TMCx
 	bld 1 scrapyard 120
 	w_bld 2 fulcrum
 	bld 2 scrapyard 120
-	call wait_for_atlas
 	bld 1 quarry 120
 	w_bld 3 fulcrum
 	bld 1 palladium 120
 	w_bld 4 fulcrum
 	bld 2 palladium 120
 	wait 24
+	call wait_for_atlas
 	bld 2 starport 121
 	w_bld 1 starport
 	bld 1 rotary 120
@@ -2891,7 +2895,7 @@ script_id TMCx
 	
 	:build_general_Observant_Main
 	var Ex|Call pref_raider_stockade 0 buildpref_raider_stockade_cyprian 13
-	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_seraph 13
+	var Ex|Call pref_orbital_commandment 0 buildpref_orbital_commandment_seraph 13
 	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
 	var Ex|Call pref_addon_starport 0 buildpref_orbital_commandment 13
 	call main_wait_600
@@ -2931,14 +2935,13 @@ script_id TMCx
 	bld 1 vestry 120
 	w_bld 1 fulcrum
 	bld 1 scrapyard 120
-	call wait_for_atlas
 	w_bld 2 fulcrum
 	bld 1 palladium 120
 	w_bld 3 fulcrum
 	bld 2 palladium 120
 	wait 24
+	call wait_for_atlas
 	bld 2 starport 121
-	call wait_for_daedala
 	w_bld 2 starport
 	bld 2 commandment 120
 	w_bld 1 commandment
@@ -2954,16 +2957,16 @@ script_id TMCx
 	:build_general_fin2
 	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
 	call main_wait_450
-	call add_starpad_simple2
+	p_need 1 starpad
 	call main_wait_300
 	multi need_atlas
 	call main_wait_300
-	call add_stockade_simple
+	p_need 1 stockade
 	call main_wait_150
-	bld 1 covenant 120
+	p_need 1 covenant
 	call main_wait_600
 	call main_wait_900
-	call add_starport_simple
+	p_need 1 starport
 	call main_wait_1200
 	call main_wait_600
 	multi need_daedala
@@ -3015,80 +3018,93 @@ script_id TMCx
 	goto build_order_armor_select
 	
 	:build_order_armor_select
-	dth 13 Ex 1 dark_swarm_unit build_armor_PhalanxTiming
+	dth 13 Ex 1 dark_swarm_unit build_armor_TankPush
 	dth 13 Ex 2 dark_swarm_unit build_armor_FE5Fulc
 	dth 13 Ex 3 dark_swarm_unit build_armor_2FulcVulture
 	dth 13 Ex 4 dark_swarm_unit build_armor_WalkerPower
 	dth 13 Ex 5 dark_swarm_unit build_armor_IronCrusade
 	dth 13 Ex 6 dark_swarm_unit build_armor_DavidAndGoliath
 	
-	:build_armor_PhalanxTiming
-	dth 13 Ex 0 start_location build_armor_PhalanxTiming_Main
-	print Terran<32>Armor<32>timing<32>1:<32>Phalanx<32>Timing
+	:build_armor_TankPush
+	dth 13 Ex 0 start_location build_armor_TankPush_Main
+	print Terran<32>Armor<32>timing<32>1:<32>Tank<32>Push
 	
-	:build_armor_PhalanxTiming_Main
+	:build_armor_TankPush_Main
 	var Ex|Call pref_raider_stockade 0 buildpref_raider_stockade_cyprian 13
 	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_madcap 13
 	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
 	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_cyclops 13
-	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
-	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_machineshop 13
+	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_matador 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_palladium_phalanx 13
+	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_palladium 13
 	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starport_gorgon 13
 	var Ex|Call pref_orbital_production 0 buildpref_orbital_naniteassembly 13
 	call main_wait_600
 	call main_wait_600
 	bld 1 fulcrum 121
 	call main_wait_150
-	bld 2 fulcrum 121
+	multi build_armor_TankPush_Queue
 	w_bld 1 fulcrum
-	queue 1 vulture fulcrum 255 Local Loc.63 100
-	wait 24
-	queue 1 vulture fulcrum 255 Local Loc.63 100
 	call main_wait_150
+	bld 1 scrapyard 121
+	multi build_armor_TankPush_Addon
+	w_bldstart 1 scrapyard
+	bld 2 fulcrum 121
 	w_bldstart 2 fulcrum
 	multi expansion_toggle
 	call main_wait_900
 	bld 3 fulcrum 121
-	call main_wait_150
-	queue 1 cyclops fulcrum 255 Local Loc.63 100
-	wait 24
-	queue 1 cyclops fulcrum 255 Local Loc.63 100
-	call main_wait_450
+	call main_wait_600
 	bld 4 fulcrum 121
 	call main_wait_600
+	var Set can_attack_var 1 13
 	var Set build_gas_var 1 13
 	call main_wait_600
 	multi need_atlas
-	multi build_armor_PhalanxTiming_Addon
 	call main_wait_600
 	var Set can_build_static_defense_var 1 13
 	call main_wait_900
-	var Set can_attack_var 1 13
 	wait 24
 	bld 1 stockade 121
 	call main_wait_600
 	multi production_cycle
 	goto build_armor_fin
 	
-	:build_armor_PhalanxTiming_Addon
-	call wait_for_atlas
+	:build_armor_TankPush_Queue
+	w_bld 1 fulcrum
+	queue 1 vulture fulcrum 255 Local Loc.63 125
+	wait 480
+	queue 1 vulture fulcrum 255 Local Loc.63 125
+	w_bld 1 scrapyard
+	queue 1 matador fulcrum 255 Local Loc.63 125
+	wait 432
+	queue 1 matador fulcrum 255 Local Loc.63 125
+	wait 432
+	queue 1 matador fulcrum 255 Local Loc.63 125
+	w_bld 2 fulcrum
+	queue 1 cyclops fulcrum 255 Local Loc.63 125
+	wait 24
+	queue 1 cyclops fulcrum 255 Local Loc.63 125
+	w_bld 1 palladium
+	queue 1 phalanx fulcrum 255 Local Loc.63 125
+	w_bld 2 palladium
+	queue 1 madrigal fulcrum 255 Local Loc.63 125
+	w_bld 3 palladium
+	queue 1 phalanx fulcrum 255 Local Loc.63 125
+	wait 720
+	queue 1 madrigal fulcrum 255 Local Loc.63 125
+	stop
+	
+	:build_armor_TankPush_Addon
+	wait 432
 	w_bld 1 fulcrum
 	bld 1 palladium 120
 	w_bld 2 fulcrum
 	bld 2 palladium 120
-	w_bld 1 palladium
-	queue 1 phalanx fulcrum 255 Local Loc.63 100
-	w_bld 2 palladium
-	queue 1 madrigal fulcrum 255 Local Loc.63 100
 	w_bld 3 fulcrum
 	bld 3 palladium 120
 	w_bld 1 stockade
-	call main_wait_450
 	bld 1 vestry 120
-	w_bld 2 palladium
-	queue 2 phalanx fulcrum 255 Local Loc.63 100
-	call main_wait_150
-	queue 2 madrigal fulcrum 255 Local Loc.63 100
 	stop
 	
 	:build_armor_FE5Fulc
@@ -3098,7 +3114,7 @@ script_id TMCx
 	:build_armor_FE5Fulc_Main
 	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
 	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_vulture 13
-	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_palladium_phalanx 13
 	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_blackjack 13
 	var Ex|Call pref_armor_iron 0 buildpref_armor_futurestation_penumbra 13
 	var Ex|Call pref_armor_production 0 buildpref_armor_fulcrum 13
@@ -3183,14 +3199,13 @@ script_id TMCx
 	:build_armor_FE5Fulc_Addon
 	w_bld 1 fulcrum
 	bld 1 scrapyard 120
-	call wait_for_atlas
 	w_bld 2 fulcrum
 	bld 1 palladium 120
 	w_bld 3 fulcrum
 	bld 2 palladium 120
 	wait 24
+	call wait_for_atlas
 	bld 1 starport 121
-	call wait_for_daedala
 	w_bld 1 starport
 	bld 1 commandment 120
 	stop
@@ -3202,10 +3217,10 @@ script_id TMCx
 	:build_armor_2FulcVulture_Main
 	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_vulture 13
 	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_matador 13
-	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_madrigal 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_palladium_madrigal 13
 	var Ex|Call pref_armor_iron 0 buildpref_armor_ironfoundry_pazuzu 13
-	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_machineshop 13
-	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_azazel 13
+	var Ex|Call pref_addon_fulcrum 0 buildpref_armor_palladium 13
+	var Ex|Call pref_orbital_commandment 0 buildpref_orbital_commandment_azazel 13
 	call main_wait_750
 	bld 1 fulcrum 121
 	call main_wait_300
@@ -3231,7 +3246,7 @@ script_id TMCx
 	:build_armor_WalkerPower_Main
 	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_goliath 13
 	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_blackjack 13
-	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_palladium_phalanx 13
 	var Ex|Call pref_armor_iron 0 buildpref_armor_ironfoundry_paladin 13
 	var Ex|Call pref_armor_future 0 buildpref_armor_futurestation_penumbra 13
 	call main_wait_300
@@ -3265,7 +3280,6 @@ script_id TMCx
 	w_bld 1 fulcrum
 	bld 1 scrapyard 120
 	call main_wait_300
-	call wait_for_atlas
 	w_bld 2 fulcrum
 	bld 1 palladium 120
 	stop
@@ -3275,12 +3289,12 @@ script_id TMCx
 	print Terran<32>Armor<32>greed<32>1:<32>Iron<32>Crusade
 	
 	:build_armor_IronCrusade_Main
-	var Ex|Call pref_raider_covert 0 buildpref_raider_covertops_eidolon 13
-	var Ex|Call pref_addon_stockade 0 buildpref_raider_covertops 13
+	var Ex|Call pref_raider_covert 0 buildpref_raider_covenant_eidolon 13
+	var Ex|Call pref_addon_stockade 0 buildpref_raider_covenant 13
 	var Ex|Call pref_raider_production 0 buildpref_raider_stockade 13
-	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_palladium_phalanx 13
 	var Ex|Call pref_armor_production 0 buildpref_armor_ironfoundry 13
-	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_seraph 13
+	var Ex|Call pref_orbital_commandment 0 buildpref_orbital_commandment_seraph 13
 	var Ex|Call pref_addon_starport 0 buildpref_orbital_commandment 13
 	call main_wait_900
 	multi expansion_toggle
@@ -3333,7 +3347,7 @@ script_id TMCx
 	var Ex|Call pref_raider_production 0 buildpref_raider_stockade 13
 	var Ex|Call pref_armor_fulcrum 0 buildpref_armor_fulcrum_goliath 13
 	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_matador 13
-	var Ex|Call pref_armor_machine 0 buildpref_armor_machineshop_phalanx 13
+	var Ex|Call pref_armor_machine 0 buildpref_armor_palladium_phalanx 13
 	var Ex|Call pref_armor_production 0 buildpref_armor_fulcrum 13
 	call main_wait_600
 	bld 1 fulcrum 121
@@ -3378,7 +3392,6 @@ script_id TMCx
 	:build_armor_DavidAndGoliath_Addon
 	w_bld 2 fulcrum
 	bld 1 scrapyard 120
-	call wait_for_atlas
 	w_bld 2 fulcrum
 	bld 1 palladium 120
 	call main_wait_150
@@ -3401,7 +3414,7 @@ script_id TMCx
 	call main_wait_3600
 	multi need_daedala
 	call main_wait_900
-	call add_starport_simple
+	p_need 1 starport
 	stop
 	
 	:build_order_raider
@@ -3451,8 +3464,8 @@ script_id TMCx
 	
 	:build_order_raider_select
 	dth 13 Ex 1 dark_swarm_unit build_raider_8Rax
-	dth 13 Ex 2 dark_swarm_unit build_raider_3RaxBiotic
-	dth 13 Ex 3 dark_swarm_unit build_raider_FastNuke
+	dth 13 Ex 2 dark_swarm_unit build_raider_3RaxBio
+	dth 13 Ex 3 dark_swarm_unit build_raider_FastAnvil
 	dth 13 Ex 4 dark_swarm_unit build_raider_4RaxPressure
 	dth 13 Ex 5 dark_swarm_unit build_raider_Uprising
 	dth 13 Ex 6 dark_swarm_unit build_raider_HolyAckmeds
@@ -3484,7 +3497,7 @@ script_id TMCx
 	call main_wait_300
 	w_bldstart 6 stockade
 	var Set build_gas_var 1 13
-	call main_wait_600
+	call main_wait_1800
 	multi expansion_toggle
 	call main_wait_900
 	bld 8 stockade 121
@@ -3503,21 +3516,20 @@ script_id TMCx
 	bld 1 vestry 120
 	w_bld 2 stockade
 	bld 2 vestry 120
-	call wait_for_atlas
 	w_bld 3 stockade
 	bld 1 covenant 120
 	w_bld 4 stockade
 	bld 2 covenant 120
 	stop
 	
-	:build_raider_3RaxBiotic
-	dth 13 Ex 0 start_location build_raider_3RaxBiotic_Main
+	:build_raider_3RaxBio
+	dth 13 Ex 0 start_location build_raider_3RaxBio_Main
 	print Terran<32>Raider<32>timing<32>2:<32>3Rax<32>Biotic
 	
-	:build_raider_3RaxBiotic_Main
+	:build_raider_3RaxBio_Main
 	var Ex|Call pref_raider_stockade 0 buildpref_raider_stockade_maverick 13
 	var Ex|Call pref_raider_vestry 0 buildpref_raider_vestry_cleric 13
-	var Ex|Call pref_raider_covert 0 buildpref_raider_covertops_eidolon 13
+	var Ex|Call pref_raider_covert 0 buildpref_raider_covenant_eidolon 13
 	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_heracles 13
 	var Ex|Call pref_raider_production 0 buildpref_raider_stockade 13
 	call main_wait_600
@@ -3537,7 +3549,7 @@ script_id TMCx
 	queue 1 maverick stockade 255 Local Loc.63 100
 	wait 24
 	call main_wait_300
-	multi build_raider_3RaxBiotic_Addon
+	multi build_raider_3RaxBio_Addon
 	call main_wait_450
 	var Sub can_worker_var 1 13
 	bld 3 stockade 121
@@ -3566,23 +3578,23 @@ script_id TMCx
 	call main_wait_300
 	goto build_raider_fin
 	
-	:build_raider_3RaxBiotic_Addon
+	:build_raider_3RaxBio_Addon
 	w_bld 1 stockade
 	bld 1 vestry 120
 	w_bld 2 stockade
 	bld 2 vestry 120
 	stop
 	
-	:build_raider_FastNuke
-	dth 13 Ex 0 start_location build_raider_FastNuke_Main
+	:build_raider_FastAnvil
+	dth 13 Ex 0 start_location build_raider_FastAnvil_Main
 	print Terran<32>Raider<32>greed<32>1:<32>Fast<32>Nuke
 	
-	:build_raider_FastNuke_Main
+	:build_raider_FastAnvil_Main
 	var Ex|Call pref_infrastructure_addon 0 buildpref_commandcenter_missilesilo 13
 	var Ex|Call pref_raider_stockade 0 buildpref_raider_stockade_cyprian 13
-	var Ex|Call pref_raider_covert 0 buildpref_raider_covertops_eidolon 13
+	var Ex|Call pref_raider_covert 0 buildpref_raider_covenant_eidolon 13
 	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_madcap 13
-	var Ex|Call pref_addon_stockade 0 buildpref_raider_covertops 13
+	var Ex|Call pref_addon_stockade 0 buildpref_raider_covenant 13
 	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
 	call main_wait_600
 	bld 1 stockade 121
@@ -3598,7 +3610,7 @@ script_id TMCx
 	call main_wait_600
 	multi need_atlas
 	call main_wait_600
-	multi build_raider_FastNuke_Addon
+	multi build_raider_FastAnvil_Addon
 	call main_wait_300
 	bld 4 stockade 121
 	call main_wait_900
@@ -3607,10 +3619,9 @@ script_id TMCx
 	multi production_cycle
 	goto build_raider_fin
 	
-	:build_raider_FastNuke_Addon
+	:build_raider_FastAnvil_Addon
 	w_bld 1 stockade
 	bld 1 vestry 120
-	call wait_for_atlas
 	w_bld 2 stockade
 	bld 1 covenant 120
 	w_bldstart 1 covenant
@@ -3628,11 +3639,11 @@ script_id TMCx
 	
 	:build_raider_4RaxPressure_Main
 	var Ex|Call pref_raider_vestry 0 buildpref_raider_vestry_shaman 13
-	var Ex|Call pref_raider_covert 0 buildpref_raider_covertops_savant 13
+	var Ex|Call pref_raider_covert 0 buildpref_raider_covenant_savant 13
 	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_heracles 13
 	var Ex|Call pref_raider_production 0 buildpref_raider_stockade 13
-	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_sundog 13
-	var Ex|Call pref_addon_starport 0 buildpref_orbital_munitionsbay 13
+	var Ex|Call pref_orbital_rotary 0 buildpref_orbital_rotary_sundog 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_rotary 13
 	call main_wait_900
 	bld 1 stockade 121
 	call main_wait_900
@@ -3669,7 +3680,6 @@ script_id TMCx
 	bld 1 vestry 120
 	w_bld 2 stockade
 	bld 2 vestry 120
-	call wait_for_atlas
 	w_bld 3 stockade
 	bld 1 covenant 120
 	w_bld 4 stockade
@@ -3688,34 +3698,15 @@ script_id TMCx
 	bld 1 stockade 121
 	call main_wait_450
 	bld 2 stockade 121
-	wait 24
-	queue 1 maverick stockade 255 Local Loc.63 100
-	wait 24
-	queue 1 maverick stockade 255 Local Loc.63 100
+	multi build_raider_Uprising_Queue
 	call main_wait_450
 	bld 3 stockade 121
-	wait 24
-	queue 1 maverick stockade 255 Local Loc.63 100
-	wait 24
-	queue 1 maverick stockade 255 Local Loc.63 100
-	call main_wait_300
-	call main_wait_150
-	wait 24
-	queue 1 maverick stockade 255 Local Loc.63 100
-	wait 24
-	queue 1 maverick stockade 255 Local Loc.63 100
-	call main_wait_300
+	call main_wait_750
 	multi build_raider_Uprising_Addon
 	call main_wait_300
 	bld 4 stockade 121
 	wait 24
-	queue 2 shaman stockade 255 Local Loc.63 100
-	wait 24
-	queue 2 cyprian stockade 255 Local Loc.63 100
 	call main_wait_450
-	queue 2 shaman stockade 255 Local Loc.63 100
-	wait 24
-	queue 2 cyprian stockade 255 Local Loc.63 100
 	call main_wait_300
 	w_bld 4 stockade
 	w_bld 2 vestry
@@ -3728,14 +3719,69 @@ script_id TMCx
 	call main_wait_600
 	var Add can_worker_var 1 13
 	call main_wait_600
-	queue 2 cyprian stockade 255 Local Loc.63 100
 	call main_wait_450
-	queue 2 cyprian stockade 255 Local Loc.63 100
-	wait 24
-	queue 2 cyprian stockade 255 Local Loc.63 100
 	call main_wait_300
 	multi production_cycle
 	goto build_raider_fin
+	
+	:build_raider_Uprising_Queue
+	multi build_raider_Uprising_Queue2
+	w_bld 1 stockade
+	queue 1 maverick stockade 255 Local Loc.63 125
+	wait 336
+	queue 1 maverick stockade 255 Local Loc.63 125
+	wait 336
+	queue 1 maverick stockade 255 Local Loc.63 125
+	wait 336
+	queue 1 maverick stockade 255 Local Loc.63 125
+	wait 336
+	queue 1 maverick stockade 255 Local Loc.63 125
+	wait 336
+	queue 1 maverick stockade 255 Local Loc.63 125
+	w_bld 3 stockade
+	queue 1 cyprian stockade 255 Local Loc.63 125
+	wait 528
+	queue 1 cyprian stockade 255 Local Loc.63 125
+	wait 528
+	queue 1 cyprian stockade 255 Local Loc.63 125
+	wait 528
+	queue 1 cyprian stockade 255 Local Loc.63 125
+	wait 528
+	queue 1 cyprian stockade 255 Local Loc.63 125
+	wait 528
+	queue 1 cyprian stockade 255 Local Loc.63 125
+	wait 528
+	stop
+	
+	:build_raider_Uprising_Queue2
+	w_bld 2 stockade
+	queue 1 maverick stockade 255 Local Loc.63 125
+	wait 336
+	queue 1 maverick stockade 255 Local Loc.63 125
+	wait 336
+	queue 1 maverick stockade 255 Local Loc.63 125
+	wait 336
+	queue 1 maverick stockade 255 Local Loc.63 125
+	wait 336
+	queue 1 maverick stockade 255 Local Loc.63 125
+	wait 336
+	queue 1 maverick stockade 255 Local Loc.63 125
+	w_bld 3 stockade
+	queue 1 cyprian stockade 255 Local Loc.63 125
+	wait 528
+	queue 1 cyprian stockade 255 Local Loc.63 125
+	wait 528
+	queue 1 cyprian stockade 255 Local Loc.63 125
+	wait 528
+	queue 1 cyprian stockade 255 Local Loc.63 125
+	wait 528
+	w_bld 1 vestry
+	queue 1 shaman stockade 255 Local Loc.63 125
+	wait 720
+	queue 1 cleric stockade 255 Local Loc.63 125
+	wait 360
+	queue 1 cleric stockade 255 Local Loc.63 125
+	stop
 	
 	:build_raider_Uprising_Addon
 	w_bld 1 stockade
@@ -3750,7 +3796,7 @@ script_id TMCx
 	
 	:build_raider_HolyAckmeds_Main
 	var Ex|Call pref_raider_stockade 0 buildpref_raider_stockade_harakan 13
-	var Ex|Call pref_addon_stockade 0 buildpref_raider_covertops 13
+	var Ex|Call pref_addon_stockade 0 buildpref_raider_covenant 13
 	var Ex|Call pref_raider_production 0 buildpref_raider_stockade 13
 	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
 	call main_wait_900
@@ -3804,7 +3850,6 @@ script_id TMCx
 	bld 1 vestry 120
 	call main_wait_300
 	multi need_atlas
-	call wait_for_atlas
 	bld 1 covenant 120
 	call main_wait_3600
 	multi need_daedala
@@ -3856,54 +3901,51 @@ script_id TMCx
 	goto build_order_orbital_select
 	
 	:build_order_orbital_select
-	dth 13 Ex 1 dark_swarm_unit build_orbital_2PortWraith
+	dth 13 Ex 1 dark_swarm_unit build_orbital_RapidStarpads
 	dth 13 Ex 2 dark_swarm_unit build_orbital_TheDon
 	dth 13 Ex 3 dark_swarm_unit build_orbital_WraithBio
 	dth 13 Ex 4 dark_swarm_unit build_orbital_Hotdrop
 	dth 13 Ex 5 dark_swarm_unit build_orbital_SuddenStarport
 	dth 13 Ex 6 dark_swarm_unit build_orbital_AcesHigh
 	
-	:build_orbital_2PortWraith
-	dth 13 Ex 0 start_location build_orbital_2PortWraith_Main
-	print Terran<32>Orbital<32>rush<32>1:<32>2Port<32>Wraith
+	:build_orbital_RapidStarpads
+	dth 13 Ex 0 start_location build_orbital_RapidStarpads_Main
+	print Terran<32>Orbital<32>rush<32>1:<32>Rapid<32>Starpads
 	
-	:build_orbital_2PortWraith_Main
-	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starpad_wraith 13
-	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_salamander 13
-	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_azazel 13
-	var Ex|Call pref_addon_starport 0 buildpref_orbital_munitionsbay 13
+	:build_orbital_RapidStarpads_Main
+	var Ex|Call pref_orbital_starpad 0 buildpref_orbital_starpad_wraith 13
+	var Ex|Call pref_orbital_rotary 0 buildpref_orbital_rotary_salamander 13
+	var Ex|Call pref_orbital_commandment 0 buildpref_orbital_commandment_azazel 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_rotary 13
 	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
-	call main_wait_600
-	call main_wait_1200
-	bld 1 starpad 121
-	call main_wait_600
-	bld 2 starpad 121
 	call main_wait_300
+	bld 1 starpad 121
+	call main_wait_1500
+	bld 2 starpad 121
+	call main_wait_1200
 	do_morph 1 wraith
 	call main_wait_300
 	var Set build_gas_var 1 13
-	call main_wait_300
-	bld 1 stockade 121
-	call main_wait_300
 	var Set can_attack_var 1 13
-	call main_wait_1200
+	call main_wait_1800
 	multi expansion_toggle
 	var Sub can_worker_var 1 13
 	call main_wait_600
 	var Add can_worker_var 1 13
 	w_bld 2 starpad
-	call main_wait_300
+	bld 2 stockade 121
+	call main_wait_450
 	bld 3 starpad 121
 	call main_wait_1200
 	var Add can_expand_var 1 13
 	call main_wait_1200
 	multi need_atlas
-	multi build_orbital_2PortWraith_Addon
+	multi build_orbital_RapidStarpads_Addon
 	call main_wait_900
 	multi production_cycle
 	goto build_orbital_fin
 	
-	:build_orbital_2PortWraith_Addon
+	:build_orbital_RapidStarpads_Addon
 	call wait_for_atlas
 	bld 1 starport 121
 	w_bld 1 starport
@@ -3912,7 +3954,6 @@ script_id TMCx
 	w_bld 2 starport
 	bld 2 rotary 120
 	bld 3 starport 121
-	call wait_for_daedala
 	w_bld 3 starport
 	bld 1 commandment 120
 	stop
@@ -3923,8 +3964,8 @@ script_id TMCx
 	
 	:build_orbital_TheDon_Main
 	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starport_gorgon 13
-	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_salamander 13
-	var Ex|Call pref_orbital_control 0 buildpref_orbital_commandment_azazel 13
+	var Ex|Call pref_orbital_rotary 0 buildpref_orbital_rotary_salamander 13
+	var Ex|Call pref_orbital_commandment 0 buildpref_orbital_commandment_azazel 13
 	var Ex|Call pref_orbital_nanite 0 buildpref_orbital_naniteassembly_minotaur 13
 	var Ex|Call pref_orbital_production 0 buildpref_orbital_naniteassembly 13
 	call main_wait_1500
@@ -3966,23 +4007,14 @@ script_id TMCx
 	var Ex|Call pref_raider_captaincy 0 buildpref_raider_captaincy_madcap 13
 	var Ex|Call pref_raider_production 0 buildpref_raider_captaincy 13
 	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starpad_wraith 13
-	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_sundog 13
+	var Ex|Call pref_orbital_rotary 0 buildpref_orbital_rotary_sundog 13
 	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
 	call main_wait_300
 	call main_wait_150
 	bld 1 stockade 121
-	call main_wait_750
+	call main_wait_600
 	bld 1 starpad 121
-	wait 24
-	queue 1 maverick stockade 255 Local Loc.63 100
-	call main_wait_300
-	queue 1 maverick stockade 255 Local Loc.63 100
-	call main_wait_300
-	queue 1 maverick stockade 255 Local Loc.63 100
-	wait 24
-	queue 1 wraith starpad 255 Local Loc.63 100
-	call main_wait_300
-	queue 1 wraith starpad 255 Local Loc.63 100
+	multi build_orbital_WraithBio_Queue
 	call main_wait_150
 	var Sub can_worker_var 1 13
 	multi expansion_toggle
@@ -3994,31 +4026,41 @@ script_id TMCx
 	bld 2 starpad 121
 	call main_wait_150
 	bld 2 stockade 121
-	call main_wait_300
-	queue 1 maverick stockade 255 Local Loc.63 100
-	wait 24
-	queue 1 maverick stockade 255 Local Loc.63 100
-	call main_wait_150
-	queue 1 wraith starpad 255 Local Loc.63 100
-	wait 24
-	queue 1 wraith starpad 255 Local Loc.63 100
-	call main_wait_300
+	call main_wait_600
 	bld 3 stockade 121
-	wait 24
-	queue 1 maverick stockade 255 Local Loc.63 100
 	call main_wait_150
-	w_bld 2 starpad
-	var Add can_expand_var 1 13
+	var Add can_attack_var 1 13
 	call main_wait_900
 	w_bldstart 3 stockade
 	bld 1 vestry 120
 	call main_wait_300
 	var Set build_gas_var 1 13
+	var Add can_expand_var 1 13
 	call main_wait_600
 	multi need_atlas
 	wait 24
 	multi production_cycle
 	goto build_orbital_fin
+	
+	:build_orbital_WraithBio_Queue
+	w_bld 1 stockade
+	queue 1 maverick stockade 255 Local Loc.63 125
+	wait 336
+	queue 1 maverick stockade 255 Local Loc.63 125
+	wait 336
+	queue 1 maverick stockade 255 Local Loc.63 125
+	w_bld 1 starpad
+	queue 1 wraith starpad 255 Local Loc.63 125
+	wait 672
+	queue 1 wraith starpad 255 Local Loc.63 125
+	w_bld 2 stockade
+	queue 2 maverick stockade 255 Local Loc.63 125
+	wait 336
+	queue 1 wraith starpad 255 Local Loc.63 125
+	queue 2 maverick stockade 255 Local Loc.63 125
+	wait 672
+	queue 1 wraith starpad 255 Local Loc.63 125
+	stop
 	
 	:build_orbital_Hotdrop
 	dth 13 Ex 0 start_location build_orbital_Hotdrop_Main
@@ -4080,11 +4122,11 @@ script_id TMCx
 	goto build_orbital_fin
 	
 	:build_orbital_Hotdrop_Addon
-	call wait_for_atlas
 	bld 1 covenant 120
 	w_bld 1 covenant
 	bld 1 anvil 120
 	wait 24
+	call wait_for_atlas
 	bld 1 starport 121
 	w_bld 1 starport
 	bld 1 rotary 120
@@ -4110,8 +4152,8 @@ script_id TMCx
 	var Ex|Call pref_raider_vestry 0 buildpref_raider_vestry_cleric 13
 	var Ex|Call pref_raider_production 0 buildpref_raider_stockade 13
 	var Ex|Call pref_orbital_starport 0 buildpref_orbital_starport_gorgon 13
-	var Ex|Call pref_orbital_munitions 0 buildpref_orbital_munitionsbay_sundog 13
-	var Ex|Call pref_addon_starport 0 buildpref_orbital_munitionsbay 13
+	var Ex|Call pref_orbital_rotary 0 buildpref_orbital_rotary_sundog 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_rotary 13
 	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
     call main_wait_300
     call main_wait_300
@@ -4171,7 +4213,7 @@ script_id TMCx
 	var Ex|Call pref_armor_scrapyard 0 buildpref_armor_scrapyard_blackjack 13
 	var Ex|Call pref_armor_production 0 buildpref_armor_fulcrum 13
 	var Ex|Call pref_orbital_starpad 0 buildpref_orbital_starpad_wraith 13
-	var Ex|Call pref_addon_starport 0 buildpref_orbital_munitionsbay 13
+	var Ex|Call pref_addon_starport 0 buildpref_orbital_rotary 13
 	var Ex|Call pref_orbital_production 0 buildpref_orbital_starport 13
     call main_wait_300
     call main_wait_300
@@ -4225,88 +4267,12 @@ script_id TMCx
 	stop
 	
 	:build_order_expansion
-	bring 13 AtL_W 1 stockade|captaincy|apothecary|fulcrum|mantle|iron_foundry|starpad|starport|nanite_assembly Loc.63 blank
+	wait 24
+	notowns ministry build_order_expansion
 	var Ex|Jump pref_armor 1 build_armor_fin2 13
 	var Ex|Jump pref_raider 1 build_raider_fin2 13
 	var Ex|Jump pref_orbital 1 build_orbital_fin2 13
 	goto build_general_fin2
-	
-	:add_stockade_simple
-	wait 12
-	notowns ministry add_stockade_simple
-	add_bld 255 stockade 1 99 97
-	return
-	
-	:add_stockade_simple2
-	p_need 1 stockade
-	return
-	
-	:add_captaincy_simple
-	wait 12
-	notowns atlas add_captaincy_simple
-	add_bld 255 captaincy 1 99 98
-	return
-	
-	:add_captaincy_simple2
-	p_need 1 captaincy
-	return
-	
-	:add_fulcrum_simple
-	wait 12
-	notowns ministry add_fulcrum_simple
-	add_bld 255 fulcrum 1 99 97
-	return
-	
-	:add_fulcrum_simple2
-	p_need 1 fulcrum
-	return
-	
-	:add_iron_foundry_simple
-	wait 12
-	notowns daedala add_iron_foundry_simple
-	add_bld 255 iron_foundry 1 99 98
-	return
-	
-	:add_iron_foundry_simple2
-	p_need 1 iron_foundry
-	return
-	
-	:add_starpad_simple
-	wait 12
-	notowns ministry add_starpad_simple
-	add_bld 255 starpad 1 99 97
-	return
-	
-	:add_starpad_simple2
-	p_need 1 starpad
-	return
-	
-	:add_starport_simple
-	wait 12
-	notowns ministry add_starport_simple
-	notowns atlas add_starport_simple
-	add_bld 255 starport 1 99 97
-	return
-	
-	:add_starport_simple2
-	p_need 1 starport
-	return
-	
-	:add_nanite_assembly_simple
-	wait 12
-	notowns daedala add_nanite_assembly_simple
-	add_bld 255 nanite_assembly 1 99 98
-	return
-	
-	:add_nanite_assembly_simple2
-	p_need 1 nanite_assembly
-	return
-	
-	:add_atlas_simple
-	wait 12
-	notowns ministry add_atlas_simple
-	multi need_atlas
-	return
 	
 	:need_atlas
 	wait 24
@@ -4321,12 +4287,6 @@ script_id TMCx
 	:wait_for_atlas
 	wait 12
 	notowns atlas wait_for_atlas
-	return
-	
-	:add_daedala_simple
-	wait 12
-	notowns daedala add_daedala_simple
-	multi need_daedala
 	return
 	
 	:need_daedala
@@ -4571,6 +4531,7 @@ script_id TMCx
 	var AtL|Jump production_cycle_var 1 blank_return 13
 	var AtL|Call pref_starport 1 production_cycle_starport_check 13
 	var AtL|Jump production_cycle_var 1 blank_return 13
+	
 	call production_cycle_stockade_check
 	var AtL|Jump production_cycle_var 1 blank_return 13
 	call production_cycle_fulcrum_check
@@ -4592,6 +4553,7 @@ script_id TMCx
 	var AtL|Jump production_cycle_var 1 blank_return 13
 	var AtL|Call pref_captaincy 1 production_cycle_captaincy_check 13
 	var AtL|Jump production_cycle_var 1 blank_return 13
+	
 	call production_cycle_nanite_assembly_check
 	var AtL|Jump production_cycle_var 1 blank_return 13
 	call production_cycle_iron_foundry_check
@@ -4607,6 +4569,7 @@ script_id TMCx
 	var AtL|Jump production_cycle_var 1 blank_return 13
 	var AtL|Call pref_iron_foundry 1 production_cycle_iron_foundry_check 13
 	var AtL|Jump production_cycle_var 1 blank_return 13
+	
 	call production_cycle_fulcrum_check
 	var AtL|Jump production_cycle_var 1 blank_return 13
 	call production_cycle_mantle_check
@@ -4620,6 +4583,7 @@ script_id TMCx
 	var AtL|Jump production_cycle_var 1 blank_return 13
 	var AtL|Call pref_captaincy 1 production_cycle_captaincy_check 13
 	var AtL|Jump production_cycle_var 1 blank_return 13
+	
 	call production_cycle_stockade_check
 	var AtL|Jump production_cycle_var 1 blank_return 13
 	call production_cycle_captaincy_check
@@ -4635,6 +4599,7 @@ script_id TMCx
 	var AtL|Jump production_cycle_var 1 blank_return 13
 	var AtL|Call pref_nanite_assembly 1 production_cycle_nanite_assembly_check 13
 	var AtL|Jump production_cycle_var 1 blank_return 13
+	
 	call production_cycle_starpad_check
 	var AtL|Jump production_cycle_var 1 blank_return 13
 	call production_cycle_starport_check
@@ -4671,14 +4636,13 @@ script_id TMCx
 	
 	:production_cycle_covenant
 	notowns stockade blank_return
-	notowns atlas blank_return
 	local 255 AtL 8 covenant blank_return
 	add_bld 255 covenant 1 3 96
 	call main_wait_300
 	return
 	
 	:production_cycle_captaincy_check
-	bring 13 AtM 14 captaincy Loc.63 production_cycle_captaincy
+	bring 13 AtM 7 captaincy Loc.63 production_cycle_captaincy
 	notowns daedala production_cycle_captaincy
 	bring 13 AtL 5 apothecary Loc.63 production_cycle_captaincy
 	return
@@ -4703,7 +4667,6 @@ script_id TMCx
 	
 	:production_cycle_guildhall
 	notowns captaincy blank_return
-	notowns daedala blank_return
 	local 255 AtL 8 guildhall blank_return
 	add_bld 255 guildhall 1 3 97
 	call main_wait_300
@@ -4723,7 +4686,6 @@ script_id TMCx
 	:production_cycle_fulcrum_check
 	bring 13 AtM 1 fulcrum Loc.63 production_cycle_fulcrum
 	var AtM|Jump mining_count_var 2 production_cycle_fulcrum 13
-	notowns atlas production_cycle_fulcrum
 	bring 13 AtM 4 palladium Loc.63 production_cycle_fulcrum
 	return
 	
@@ -4749,7 +4711,6 @@ script_id TMCx
 	
 	:production_cycle_palladium
 	notowns fulcrum blank_return
-	notowns atlas blank_return
 	local 255 AtL 8 palladium blank_return
 	add_bld 255 palladium 1 3 96
 	call main_wait_300
@@ -4841,7 +4802,6 @@ script_id TMCx
 	
 	:production_cycle_commandment
 	notowns starport blank_return
-	notowns daedala blank_return
 	local 255 AtL 8 commandment blank_return
 	add_bld 255 commandment 1 3 97
 	call main_wait_300
@@ -4878,7 +4838,9 @@ script_id TMCx
 	
 	:add_return
 	wait 24
-	return
+	res 13 AtL Any 1200 blank_return
+	res 13 AtL Any 800 add_return_wait_480
+	goto add_return_wait_960
 	
 	:add_return_wait_480
 	wait 30
@@ -5041,7 +5003,7 @@ script_id TMCx
 	call atk_armor_ironfoundry
 	call atk_armor_bioticbase
 	call atk_armor_mantle
-	call atk_armor_machineshop
+	call atk_armor_palladium
 	call atk_armor_fulcrum
 	call atk_armor_scrapyard
 	return
@@ -5052,14 +5014,14 @@ script_id TMCx
 	call atk_raider_captaincy
 	call atk_raider_tinkererstower
 	call atk_raider_vestry
+	call atk_raider_covenant
 	call atk_raider_stockade
-	call atk_raider_covertops
 	return
 	
 	:atk_wave_orbital
-	call atk_orbital_particleaccelerator
+	call atk_orbital_hadron
 	call atk_orbital_naniteassembly
-	call atk_orbital_munitionsbay
+	call atk_orbital_rotary
 	call atk_orbital_commandment
 	call atk_orbital_starport
 	call atk_orbital_starpad
@@ -5081,7 +5043,7 @@ script_id TMCx
 	call atk_shaman
 	return
 	
-	:atk_raider_covertops
+	:atk_raider_covenant
 	var AtL|Call prefEidolon 1 atk_eidolon2 13
 	var AtL|Call prefSavant 1 atk_savant2 13
 	call atk_eidolon
@@ -5136,7 +5098,7 @@ script_id TMCx
 	call atk_matador
 	return
 	
-	:atk_armor_machineshop
+	:atk_armor_palladium
 	var AtL|Call prefPhalanx 1 atk_phalanx2 13
 	var AtL|Call prefMadrigal 1 atk_madrigal2 13
 	call atk_phalanx
@@ -5153,9 +5115,9 @@ script_id TMCx
 	return
 	
 	:atk_armor_ironfoundry
-	var AtL|Call prefPaladin 1 atk_paladin2 13
-	var AtL|Call prefCuirass 1 atk_cuirass2 13
-	var AtL|Call prefPazuzu 1 atk_pazuzu2 13
+	var AtL|Call pref_paladin 1 atk_paladin2 13
+	var AtL|Call pref_cuirass 1 atk_cuirass2 13
+	var AtL|Call pref_pazuzu 1 atk_pazuzu2 13
 	call atk_paladin
 	call atk_cuirass
 	call atk_pazuzu
@@ -5189,7 +5151,7 @@ script_id TMCx
 	call atk_valkyrie
 	return
 	
-	:atk_orbital_munitionsbay
+	:atk_orbital_rotary
 	var AtL|Call prefSalamander 1 atk_salamander2 13
 	var AtL|Call prefSundog 1 atk_sundog2 13
 	call atk_salamander
@@ -5212,7 +5174,7 @@ script_id TMCx
 	call atk_magnetar
 	return
 	
-	:atk_orbital_particleaccelerator
+	:atk_orbital_hadron
 	var AtL|Call prefHippogriff 1 atk_hippogriff2 13
 	var AtL|Call prefPhobos 1 atk_phobos2 13
 	call atk_hippogriff
@@ -5227,6 +5189,7 @@ script_id TMCx
 	:atk_maverick2
 	notowns stockade blank_return
 	atk_rel maverick stockade 3
+	wait 80
 	return
 	
 	:atk_harakan
@@ -5237,6 +5200,7 @@ script_id TMCx
 	:atk_harakan2
 	notowns stockade blank_return
 	atk_rel harakan stockade 1.5
+	wait 80
 	return
 	
 	:atk_cyprian
@@ -5247,6 +5211,7 @@ script_id TMCx
 	:atk_cyprian2
 	notowns stockade blank_return
 	atk_rel cyprian stockade 1.75
+	wait 80
 	return
 	
 	:atk_cleric
@@ -5259,6 +5224,7 @@ script_id TMCx
 	notowns vestry blank_return
 	notowns stockade blank_return
 	atk_rel cleric vestry 2
+	wait 80
 	return
 	
 	:atk_shaman
@@ -5271,6 +5237,7 @@ script_id TMCx
 	notowns vestry blank_return
 	notowns stockade blank_return
 	atk_rel shaman vestry 1
+	wait 80
 	return
 	
 	:atk_eidolon
@@ -5283,6 +5250,7 @@ script_id TMCx
 	notowns covenant blank_return
 	notowns stockade blank_return
 	atk_rel eidolon covenant 1.5
+	wait 80
 	return
 	
 	:atk_savant
@@ -5295,6 +5263,7 @@ script_id TMCx
 	notowns covenant blank_return
 	notowns stockade blank_return
 	atk_rel savant covenant 1.25
+	wait 80
 	return
 	
 	:atk_madcap
@@ -5305,6 +5274,7 @@ script_id TMCx
 	:atk_madcap2
 	notowns captaincy blank_return
 	atk_rel madcap captaincy 3.5
+	wait 80
 	return
 	
 	:atk_heracles
@@ -5315,6 +5285,7 @@ script_id TMCx
 	:atk_heracles2
 	notowns captaincy blank_return
 	atk_rel heracles captaincy 2.25
+	wait 80
 	return
 	
 	:atk_apostle
@@ -5325,6 +5296,7 @@ script_id TMCx
 	:atk_apostle2
 	notowns captaincy blank_return
 	atk_rel apostle captaincy 1.25
+	wait 80
 	return
 	
 	:atk_siren
@@ -5337,6 +5309,7 @@ script_id TMCx
 	notowns tinkerers_tower blank_return
 	notowns captaincy blank_return
 	atk_rel siren tinkerers_tower 2
+	wait 80
 	return
 	
 	:atk_striga
@@ -5349,6 +5322,7 @@ script_id TMCx
 	notowns tinkerers_tower blank_return
 	notowns captaincy blank_return
 	atk_rel striga tinkerers_tower 2
+	wait 80
 	return
 	
 	:atk_olympian 
@@ -5361,6 +5335,7 @@ script_id TMCx
 	notowns guildhall blank_return
 	notowns captaincy blank_return
 	atk_rel olympian guildhall 2.25
+	wait 80
 	return
 	
 	:atk_autocrat
@@ -5373,6 +5348,7 @@ script_id TMCx
 	notowns guildhall blank_return
 	notowns captaincy blank_return
 	atk_rel autocrat guildhall 1
+	wait 80
 	return
 	
 	:atk_dilettante
@@ -5383,6 +5359,7 @@ script_id TMCx
 	:atk_dilettante2
 	notowns apothecary blank_return
 	atk_rel dilettante apothecary 2.25
+	wait 80
 	return
 	
 	:atk_sevenstep
@@ -5393,6 +5370,7 @@ script_id TMCx
 	:atk_sevenstep2
 	notowns apothecary blank_return
 	atk_rel sevenstep apothecary 2.25
+	wait 80
 	return
 	
 	:atk_silvertongue
@@ -5403,6 +5381,7 @@ script_id TMCx
 	:atk_silvertongue2
 	notowns apothecary blank_return
 	atk_rel silvertongue apothecary 2.25
+	wait 80
 	return
 	
 	:atk_vulture
@@ -5413,6 +5392,7 @@ script_id TMCx
 	:atk_vulture2
 	notowns fulcrum blank_return
 	atk_rel vulture fulcrum 2
+	wait 80
 	return
 	
 	:atk_cyclops
@@ -5423,6 +5403,7 @@ script_id TMCx
 	:atk_cyclops2
 	notowns fulcrum blank_return
 	atk_rel cyclops fulcrum 2
+	wait 80
 	return
 	
 	:atk_goliath
@@ -5433,6 +5414,7 @@ script_id TMCx
 	:atk_goliath2
 	notowns fulcrum blank_return
 	atk_rel goliath fulcrum 3
+	wait 80
 	return
 	
 	:atk_blackjack
@@ -5445,6 +5427,7 @@ script_id TMCx
 	notowns scrapyard blank_return
 	notowns fulcrum blank_return
 	atk_rel blackjack scrapyard 2
+	wait 80
 	return
 	
 	:atk_matador
@@ -5457,6 +5440,7 @@ script_id TMCx
 	notowns scrapyard blank_return
 	notowns fulcrum blank_return
 	atk_rel matador scrapyard 2
+	wait 80
 	return
 	
 	:atk_phalanx
@@ -5469,6 +5453,7 @@ script_id TMCx
 	notowns palladium blank_return
 	notowns fulcrum blank_return
 	atk_rel phalanx palladium 2
+	wait 80
 	return
 	
 	:atk_madrigal
@@ -5481,6 +5466,7 @@ script_id TMCx
 	notowns palladium blank_return
 	notowns fulcrum blank_return
 	atk_rel madrigal palladium 2
+	wait 80
 	return
 	
 	:atk_ramesses
@@ -5491,6 +5477,7 @@ script_id TMCx
 	:atk_ramesses2
 	notowns mantle blank_return
 	atk_rel ramesses mantle 2
+	wait 80
 	return
 	
 	:atk_durendal
@@ -5501,6 +5488,7 @@ script_id TMCx
 	:atk_durendal2
 	notowns mantle blank_return
 	atk_rel durendal mantle 2
+	wait 80
 	return
 	
 	:atk_cataphract
@@ -5511,6 +5499,7 @@ script_id TMCx
 	:atk_cataphract2
 	notowns mantle blank_return
 	atk_rel cataphract mantle 2
+	wait 80
 	return
 	
 	:atk_paladin
@@ -5521,6 +5510,7 @@ script_id TMCx
 	:atk_paladin2
 	notowns iron_foundry blank_return
 	atk_rel paladin iron_foundry 1.25
+	wait 80
 	return
 	
 	:atk_cuirass
@@ -5531,6 +5521,7 @@ script_id TMCx
 	:atk_cuirass2
 	notowns iron_foundry blank_return
 	atk_rel cuirass iron_foundry 2
+	wait 80
 	return
 	
 	:atk_pazuzu
@@ -5541,6 +5532,7 @@ script_id TMCx
 	:atk_pazuzu2
 	notowns iron_foundry blank_return
 	atk_rel pazuzu iron_foundry 2
+	wait 80
 	return
 	
 	:atk_claymore
@@ -5553,6 +5545,7 @@ script_id TMCx
 	notowns future_station blank_return
 	notowns iron_foundry blank_return
 	atk_rel claymore future_station 2
+	wait 80
 	return
 	
 	:atk_penumbra
@@ -5565,6 +5558,7 @@ script_id TMCx
 	notowns future_station blank_return
 	notowns iron_foundry blank_return
 	atk_rel penumbra future_station 1
+	wait 80
 	return
 	
 	:atk_aion
@@ -5577,6 +5571,7 @@ script_id TMCx
 	notowns biotic_bastion blank_return
 	notowns iron_foundry blank_return
 	atk_rel aion biotic_bastion 2
+	wait 80
 	return
 	
 	:atk_anticthon
@@ -5589,6 +5584,7 @@ script_id TMCx
 	notowns biotic_bastion blank_return
 	notowns iron_foundry blank_return
 	atk_rel anticthon biotic_bastion 2
+	wait 80
 	return
 	
 	:atk_wraith
@@ -5599,6 +5595,7 @@ script_id TMCx
 	:atk_wraith2
 	notowns starpad blank_return
 	atk_rel wraith starpad 2
+	wait 80
 	return
 	
 	:atk_gorgon
@@ -5609,6 +5606,7 @@ script_id TMCx
 	:atk_gorgon2
 	notowns starport blank_return
 	atk_rel gorgon starport 1.5
+	wait 80
 	return
 	
 	:atk_wyvern
@@ -5619,6 +5617,7 @@ script_id TMCx
 	:atk_wyvern2
 	notowns starport blank_return
 	atk_rel wyvern starport 1.5
+	wait 80
 	return
 	
 	:atk_valkyrie
@@ -5628,6 +5627,7 @@ script_id TMCx
 	:atk_valkyrie2
 	notowns starport blank_return
 	atk_rel valkyrie starport 1
+	wait 80
 	return
 	
 	:atk_salamander
@@ -5640,6 +5640,7 @@ script_id TMCx
 	notowns rotary blank_return
 	notowns starport blank_return
 	atk_rel salamander rotary 1.5
+	wait 80
 	return
 	
 	:atk_sundog
@@ -5652,6 +5653,7 @@ script_id TMCx
 	notowns rotary blank_return
 	notowns starport blank_return
 	atk_rel sundog rotary 1.5
+	wait 80
 	return
 	
 	:atk_seraph
@@ -5663,6 +5665,7 @@ script_id TMCx
 	notowns commandment blank_return
 	notowns starport blank_return
 	atk_rel seraph commandment 0.75
+	wait 80
 	return
 	
 	:atk_azazel
@@ -5674,6 +5677,7 @@ script_id TMCx
 	notowns commandment blank_return
 	notowns starport blank_return
 	atk_rel azazel commandment 1
+	wait 80
 	return
 	
 	:atk_centaur
@@ -5684,6 +5688,7 @@ script_id TMCx
 	:atk_centaur2
 	notowns nanite_assembly blank_return
 	atk_rel centaur nanite_assembly 1.5
+	wait 80
 	return
 	
 	:atk_minotaur
@@ -5694,6 +5699,7 @@ script_id TMCx
 	:atk_minotaur2
 	notowns nanite_assembly blank_return
 	atk_rel minotaur nanite_assembly 1.25
+	wait 80
 	return
 	
 	:atk_magnetar
@@ -5704,6 +5710,7 @@ script_id TMCx
 	:atk_magnetar2
 	notowns nanite_assembly blank_return
 	atk_rel magnetar nanite_assembly 1.25
+	wait 80
 	return
 	
 	:atk_hippogriff
@@ -5716,6 +5723,7 @@ script_id TMCx
 	notowns hadron blank_return
 	notowns nanite_assembly blank_return
 	atk_rel hippogriff hadron 1
+	wait 80
 	return
 	
 	:atk_phobos
@@ -5728,6 +5736,7 @@ script_id TMCx
 	notowns hadron blank_return
 	notowns nanite_assembly blank_return
 	atk_rel phobos hadron 1
+	wait 80
 	return
 	
 	:early_military
@@ -5933,6 +5942,8 @@ script_id TMCx
 	
 	:faction_hecaton
 	replace_unit maverick hotshot
+	replace_unit trojan qilin
+	replace_unit apostle auriel
 	return
 	
 	:faction_futurist

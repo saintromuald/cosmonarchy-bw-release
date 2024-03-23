@@ -183,10 +183,8 @@ script_id ZMCx
 	dth 13 Ex_C 1 zobriolisk prefUZobriolisk
 	dth 13 Ex_C 1 zarcavrokor prefUZarcavrokor
 	dth 13 Ex_C 1 tetcaerokor prefUTetcaerokor
-#	dth 13 Ex_C 1 selkerilisk prefUSelkerilisk
-	dth 13 Ex_C 1 akistrokor prefUAkistrokor
 	dth 13 Ex_C 1 isthrathaleth prefUIsthrathaleth
-#	dth 13 Ex_C 1 elthrazalisk prefUElthrazalisk
+	dth 13 Ex_C 1 akistrokor prefUAkistrokor
 	# production
 	dth 13 Ex_C 1 ovileth prefBOvileth
 	dth 13 Ex_C 1 iroleth prefBIroleth
@@ -406,7 +404,7 @@ script_id ZMCx
 	var Set prefHydralisk 1 13
 	var Set prefIzirokor 0 13
 	var Set prefSkithrokor 0 13
-	var Set pref_hydrok 1 13
+	var Set pref_hydrith 1 13
 	dth 13 Ex 0 start_location blank_return
 	print prefHydralisk
 	return
@@ -415,7 +413,7 @@ script_id ZMCx
 	var Set prefHydralisk 0 13
 	var Set prefIzirokor 1 13
 	var Set prefSkithrokor 0 13
-	var Set pref_hydrok 1 13
+	var Set pref_hydrith 1 13
 	dth 13 Ex 0 start_location blank_return
 	print prefIzirokor
 	return
@@ -424,7 +422,7 @@ script_id ZMCx
 	var Set prefHydralisk 0 13
 	var Set prefIzirokor 0 13
 	var Set prefSkithrokor 1 13
-	var Set pref_hydrok 1 13
+	var Set pref_hydrith 1 13
 	dth 13 Ex 0 start_location blank_return
 	print prefSkithrokor
 	return
@@ -598,37 +596,29 @@ script_id ZMCx
 	
 	:prefUTetcaerokor
 	var Set prefTetcaerokor 1 13
-	var Set prefSelkerilisk 0 13
+	var Set prefIsthrathaleth 0 13
 	var Set prefAkistrokor 0 13
 	var Set pref_almakis 1 13
 	dth 13 Ex 0 start_location blank_return
 	print prefTetcaerokor
 	return
 	
-	:prefUSelkerilisk
+	:prefUIsthrathaleth
 	var Set prefTetcaerokor 0 13
-	var Set prefSelkerilisk 1 13
+	var Set prefIsthrathaleth 1 13
 	var Set prefAkistrokor 0 13
 	var Set pref_almakis 1 13
 	dth 13 Ex 0 start_location blank_return
-	print prefSelkerilisk
+	print prefIsthrathaleth
 	return
 	
 	:prefUAkistrokor
 	var Set prefTetcaerokor 0 13
-	var Set prefSelkerilisk 0 13
+	var Set prefIsthrathaleth 0 13
 	var Set prefAkistrokor 1 13
 	var Set pref_almakis 1 13
 	dth 13 Ex 0 start_location blank_return
 	print prefAkistrokor
-	return
-	
-	:prefUIsthrathaleth
-	var Set prefIsthrathaleth 1 13
-	var Set prefElthrazalisk 0 13
-	var Set pref_elthisth 1 13
-	dth 13 Ex 0 start_location blank_return
-	print prefIsthrathaleth
 	return
 	
 	:prefUElthrazalisk
@@ -774,15 +764,15 @@ script_id ZMCx
 	var Set prefVithrilisk 1 13
 	return
 	
-	:buildpref_izkag_kagralisk
+	:buildpref_alkag_kagralisk
 	var Set prefKagralisk 1 13
 	return
 	
-	:buildpref_izkag_evigrilisk
+	:buildpref_alkag_evigrilisk
 	var Set prefEvigrilisk 1 13
 	return
 	
-	:buildpref_izkag_almaksalisk
+	:buildpref_alkag_almaksalisk
 	var Set prefAlmaksalisk 1 13
 	return
 	
@@ -838,20 +828,12 @@ script_id ZMCx
 	var Set prefTetcaerokor 1 13
 	return
 	
-	:buildpref_almakis_selkerilisk
-	var Set prefSelkerilisk 1 13
+	:buildpref_almakis_isthrathaleth
+	var Set prefIsthrathaleth 1 13
 	return
 	
 	:buildpref_almakis_akistrokor
 	var Set prefAkistrokor 1 13
-	return
-	
-	:buildpref_elthisth_isthrathaleth
-	var Set prefIsthrathaleth 1 13
-	return
-	
-	:buildpref_elthisth_elthrazalisk
-	var Set prefElthrazalisk 1 13
 	return
 	
 	:buildpref_transport_ovileth
@@ -1116,7 +1098,6 @@ script_id ZMCx
 	call def_zorkiz
 	call def_axtoth
 	call def_quazeth
-	call def_elthisth
 	call def_almakis
 	call def_geszkath_mutation
 	call def_kalkiir
@@ -1140,7 +1121,6 @@ script_id ZMCx
 	call def_hydrith
 	call def_ultrav
 	call def_geszkath
-	call def_elthisth
 	return
 	
 	:defense_handling_sunblot
@@ -1153,7 +1133,6 @@ script_id ZMCx
 	call def_geszkath_mutation
 	call def_zorkiz
 	call def_alkag
-	call def_elthisth
 	call def_kalkiir
 	call def_almakis
 	call def_geszkath
@@ -1278,20 +1257,14 @@ script_id ZMCx
 	call def_akistrokor
 	return
 	
-	:def_elthisth
-	# No isthrathaleth defense requests as they are weaponless
-#	var AtL|Call prefElthrazalisk 1 defElthrazalisk 13
-#	call defElthrazalisk
-	return
-	
 	:def_zethrokor
-	bring 13 Ex 0 quazeth_pool|kalkiir_pond Loc.63 blank_return
+	bring 13 Ex 0 quazeth_pool|vornath_pond|kalkiir_lake Loc.63 blank_return
 	defb_gg 1 zethrokor
 	defu_gg 1 zethrokor
 	return
 	
 	:def_quazilisk
-	bring 13 Ex 0 quazeth_pool|kalkiir_pond Loc.63 blank_return
+	bring 13 Ex 0 quazeth_pool|vornath_pond|kalkiir_lake Loc.63 blank_return
 	defb_gg 1 quazilisk
 	defb_ag 1 quazilisk
 	defu_gg 1 quazilisk
@@ -1299,7 +1272,7 @@ script_id ZMCx
 	return
 	
 	:def_nathrokor
-	bring 13 Ex 0 quazeth_pool|kalkiir_pond Loc.63 blank_return
+	bring 13 Ex 0 vornath_pond|kalkiir_lake Loc.63 blank_return
 	defb_gg 1 nathrokor
 	defb_ga 1 nathrokor
 	defb_ag 1 nathrokor
@@ -1311,13 +1284,13 @@ script_id ZMCx
 	return
 	
 	:def_vorvrokor
-	bring 13 Ex 0 quazeth_pool|kalkiir_pond Loc.63 blank_return
+	bring 13 Ex 0 vornath_pond|kalkiir_lake Loc.63 blank_return
 	defb_gg 1 vorvrokor
 	defu_gg 1 vorvrokor
 	return
 	
 	:def_liiralisk
-	notowns kalkiir_pond blank_return
+	notowns kalkiir_lake blank_return
 	defb_gg 1 liiralisk
 	defb_ag 1 liiralisk
 	defu_gg 1 liiralisk
@@ -1325,7 +1298,7 @@ script_id ZMCx
 	return
 	
 	:def_kalkalisk
-	notowns kalkiir_pond blank_return
+	notowns kalkiir_lake blank_return
 	defb_gg 1 kalkalisk
 	defb_ga 1 kalkalisk
 	defb_ag 1 kalkalisk
@@ -1415,7 +1388,7 @@ script_id ZMCx
 	return
 	
 	:def_izirokor
-	bring 13 Ex 0 hydrith_den|bactith_swamp Loc.63 blank_return
+	bring 13 Ex 0 hydrith_den|skibact_scab|tethvith_swamp Loc.63 blank_return
 	defb_gg 1 hydralisk
 	defb_ag 1 hydralisk
 	defu_gg 1 hydralisk
@@ -1423,7 +1396,7 @@ script_id ZMCx
 	return
 	
 	:defIzirokor
-	bring 13 Ex 0 hydrith_den|bactith_swamp Loc.63 blank_return
+	bring 13 Ex 0 hydrith_den|skibact_scab|tethvith_swamp Loc.63 blank_return
 	defb_gg 1 izirokor
 	# don't build close-range attackers to deal with air threats, but use them if you have them
 	defu_gg 1 izirokor
@@ -1431,7 +1404,7 @@ script_id ZMCx
 	return
 	
 	:def_skithrokor
-	bring 13 Ex 0 hydrith_den|bactith_swamp Loc.63 blank_return
+	bring 13 Ex 0 skibact_scab|tethvith_swamp Loc.63 blank_return
 	defb_gg 1 skithrokor
 	defb_ga 1 skithrokor
 	defb_ag 1 skithrokor
@@ -1443,7 +1416,7 @@ script_id ZMCx
 	return
 	
 	:def_bactalisk
-	notowns bactith_swamp blank_return
+	bring 13 Ex 0 skibact_scab|tethvith_swamp Loc.63 blank_return
 	defb_gg 1 bactalisk
 	defb_ag 1 bactalisk
 	defu_gg 1 bactalisk
@@ -1451,13 +1424,13 @@ script_id ZMCx
 	return
 	
 	:def_tethzorokor
-	notowns bactith_swamp blank_return
+	notowns tethvith_swamp blank_return
 	defb_gg 1 tethzorokor
 	defu_gg 1 tethzorokor
 	return
 	
 	:def_vithrilisk
-	notowns bactith_swamp blank_return
+	notowns tethvith_swamp blank_return
 	defb_ag 1 vithrilisk
 	defu_ag 1 vithrilisk
 	defu_aa 1 vithrilisk
@@ -1637,22 +1610,23 @@ script_id ZMCx
 	wait 24
 	multi build_order
 	var Ex|Jump skip_building_var 1 idle 13
-	call main_wait_1200
-	call main_wait_150
-	bring 13 AtL_W 1 quazeth_pool|kalkiir_pond|hydrith_den|bactith_swamp|zorkiz_shroud|ultrav_cavern Loc.63 blank
-	multi add_larvosk_generic
+	call main_wait_1500
+	var Ex|Wait can_build_static_defense_var 1 13
 	multi request_surkith
-	call main_wait_300
+	call main_wait_750
 	wait 60
 	multi request_spraith
 	call main_wait_1200
+	bring 13 AtL_W 1 irol_iris Loc.63 blank
 	multi add_larvosk_generic
-	bring 13 AtL_W 1 othstol_oviform Loc.63 blank
-	add_bld 255 cagrant_cesiant 1 20 98
+	call main_wait_750
+	multi add_larvosk_generic
+	call main_wait_2400
+	add_bld 255 cagrant_cesiant 1 9 98
 	add_bld 255 nydus_cesiant 1 3 98
 	call main_wait_3600
 	call main_wait_3600
-	add_bld 255 cagrant_cesiant 1 20 98
+	add_bld 255 cagrant_cesiant 1 9 98
 	add_bld 255 nydus_cesiant 1 3 98
 	goto idle
 	
@@ -1888,6 +1862,7 @@ script_id ZMCx
 	return
 	
 	:expansion_request_reset
+	var Ex|Jump build_done_var 0 blank_return 13
 	var Set can_queue_early_military_var 1 13
 	var Set can_attack_var 1 13
 	var Set can_build_static_defense_var 1 13
@@ -1964,17 +1939,17 @@ script_id ZMCx
 	call main_wait_750
 	multi add_larvosk_generic
 	call main_wait_600
-	resarea 255 AtL 255 Ore 1 production_cycle
+	resarea 255 AtL_M 255 Ore 1 production_cycle
 	var Ex|Wait build_done_var 1 13
 	call main_wait_300
 	multi build_order_expansion
 	call main_wait_300
 	call main_wait_300
 	bring 13 AtL_W 1 othstol_oviform Loc.63 blank
-	add_bld 255 cagrant_cesiant 1 20 98
+	add_bld 255 cagrant_cesiant 1 9 98
 	add_bld 255 nydus_cesiant 1 3 98
 	wait 7200
-	add_bld 255 cagrant_cesiant 1 20 98
+	add_bld 255 cagrant_cesiant 1 9 98
 	add_bld 255 nydus_cesiant 1 3 98
 	goto idle
 	
@@ -2041,7 +2016,6 @@ script_id ZMCx
 	goto expansion_worker_standard_loop
 	
 	:add_larvosk_generic
-	call wait_for_IrolIris
 	add_bld 255 larvosk_cesiant 1 30 95
 	stop
 	
@@ -2053,11 +2027,12 @@ script_id ZMCx
 #	tier one
 	var Ex|Call pref_swarm 1 tech_to_quazeth 13
 	var Ex|Call prefQuazilisk 1 tech_to_quazeth 13
-	var Ex|Call prefNathrokor 1 tech_to_quazeth 13
-	var Ex|Call prefVorvrokor 1 tech_to_quazeth 13
-	var Ex|Call prefHydralisk 1 tech_to_hydrok 13
-	var Ex|Call prefIzirokor 1 tech_to_hydrok 13
-	var Ex|Call prefSkithrokor 1 tech_to_hydrok 13
+	var Ex|Call prefNathrokor 1 tech_to_nathrok 13
+	var Ex|Call prefVorvrokor 1 tech_to_nathrok 13
+	var Ex|Call prefHydralisk 1 tech_to_hydrith 13
+	var Ex|Call prefIzirokor 1 tech_to_hydrith 13
+	var Ex|Call prefSkithrokor 1 tech_to_skithrok 13
+	var Ex|Call prefBactalisk 1 tech_to_skithrok 13
 	var Ex|Call prefZoryusthaleth 1 tech_to_zorkiz 13
 	var Ex|Call prefLakizilisk 1 tech_to_zorkiz 13
 	var Ex|Call prefGorgrokor 1 tech_to_zorkiz 13
@@ -2068,7 +2043,6 @@ script_id ZMCx
 	var Ex|Call prefLiiralisk 1 tech_to_kalkiir 13
 	var Ex|Call prefKalkalisk 1 tech_to_kalkiir 13
 	var Ex|Call pref_assault 1 tech_to_bactith 13
-	var Ex|Call prefBactalisk 1 tech_to_bactith 13
 	var Ex|Call prefTethzorokor 1 tech_to_bactith 13
 	var Ex|Call prefVithrilisk 1 tech_to_bactith 13
 	var Ex|Call build_type_is_greed_var 0 tech_handling_branch 13 # TODO: Replace with a more robust (and user-configurable) set of checks
@@ -2099,7 +2073,7 @@ script_id ZMCx
 	var Ex|Call pref_assault 1 tech_to_geszkath 13
 	var Ex|Call prefGeszithalor 1 tech_to_geszkath 13
 	var Ex|Call prefKeskathalor 1 tech_to_geszkath 13
-	var Ex|Call prefIsthrathaleth 1 tech_to_elthisth 13
+	var Ex|Call prefIsthrathaleth 1 tech_to_almakis 13
 	var Ex|Call prefElthrazalisk 1 tech_to_elthisth 13
 	stop
 	
@@ -2175,20 +2149,28 @@ script_id ZMCx
 	return
 	
 	:tech_to_quazeth
-	bring 13 AtL 1 quazeth_pool|kalkiir_pond Loc.63 blank_return
+	bring 13 AtL 1 quazeth_pool|vornath_pond|kalkiir_lake Loc.63 blank_return
 	call tech_check
 	p_need 1 quazeth_pool
 	bring 13 AtL_W 1 quazeth_pool Loc.63 blank
 	call tech_wait
 	return
 	
-	:tech_to_kalkiir
-	bring 13 AtL 1 kalkiir_pond Loc.63 blank_return
+	:tech_to_nathrok
+	bring 13 AtL 1 quazeth_pool|vornath_pond|kalkiir_lake Loc.63 blank_return
 	call tech_check
-	bring 13 Ex_C 0 quazeth_pool Loc.63 tech_to_quazeth
+	p_need 1 vornath_pond
+	bring 13 AtL_W 1 vornath_pond Loc.63 blank
+	call tech_wait
+	return
+	
+	:tech_to_kalkiir
+	bring 13 AtL 1 kalkiir_lake Loc.63 blank_return
+	call tech_check
+	bring 13 Ex_C 0 quazeth_pool|vornath_pond Loc.63 tech_to_quazeth
 	bring 13 Ex_C 0 irol_iris|othstol_oviform Loc.63 tech_to_irol
-	p_need 1 kalkiir_pond
-	bring 13 AtL_W 1 kalkiir_pond Loc.63 blank
+	p_need 1 kalkiir_lake
+	bring 13 AtL_W 1 kalkiir_lake Loc.63 blank
 	call tech_wait
 	return
 	
@@ -2220,21 +2202,29 @@ script_id ZMCx
 	call tech_wait
 	return
 	
-	:tech_to_hydrok
-	bring 13 AtL 1 hydrith_den|bactith_swamp Loc.63 blank_return
+	:tech_to_hydrith
+	bring 13 AtL 1 hydrith_den|skibact_scab|tethvith_swamp Loc.63 blank_return
 	call tech_check
 	p_need 1 hydrith_den
 	bring 13 AtL_W 1 hydrith_den Loc.63 blank
 	call tech_wait
 	return
 	
-	:tech_to_bactith
-	bring 13 AtL 1 bactith_swamp Loc.63 blank_return
+	:tech_to_skithrok
+	bring 13 AtL 1 hydrith_den|skibact_scab|tethvith_swamp Loc.63 blank_return
 	call tech_check
-	bring 13 Ex_C 0 hydrith_den Loc.63 tech_to_hydrok
+	p_need 1 skibact_scab
+	bring 13 AtL_W 1 skibact_scab Loc.63 blank
+	call tech_wait
+	return
+	
+	:tech_to_bactith
+	bring 13 AtL 1 tethvith_swamp Loc.63 blank_return
+	call tech_check
+	bring 13 Ex_C 0 hydrith_den Loc.63 tech_to_hydrith
 	bring 13 Ex_C 0 irol_iris|othstol_oviform Loc.63 tech_to_irol
-	p_need 1 bactith_swamp
-	bring 13 AtL_W 1 bactith_swamp Loc.63 blank
+	p_need 1 tethvith_swamp
+	bring 13 AtL_W 1 tethvith_swamp Loc.63 blank
 	call tech_wait
 	return
 	
@@ -2531,7 +2521,7 @@ script_id ZMCx
 	:build_general_SleepingGiant_Main
 	var Ex|Call pref_quazeth 0 buildpref_quazeth_zethrokor 13
 	var Ex|Call pref_geszkath 0 buildpref_ultrav_ultrokor 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_hydralisk 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_hydralisk 13
 	var Ex|Call pref_liivral 0 buildpref_kalkiir_kalkalisk 13
 	var Ex|Call pref_vithrath 0 buildpref_zorkiz_zoryusthaleth 13
 	var Ex|Call pref_muthrok 0 buildpref_mutath_mutalisk 13
@@ -2553,15 +2543,17 @@ script_id ZMCx
     bring 13 AtL_W 15 droleth Loc.63 blank
 	call main_wait_300
 	var Set build_gas_var 1 13
-	call main_wait_300
+	p_need 1 vornath_pond
+	bld 2 hachirosk 104
+	call main_wait_600
     multi need_irol
     call main_wait_300
     var Set can_attack_var 1 13
     call main_wait_150
 	call wait_for_IrolIris
-	bld 1 caphrolosk 98
+	bld 1 caphrolosk 104
 	call main_wait_750
-    bld 2 hachirosk 98
+    bld 3 hachirosk 104
     call main_wait_750
 	p_need 1 zorkiz_shroud
 	call main_wait_600
@@ -2577,7 +2569,7 @@ script_id ZMCx
 	:build_general_SleepingGiant_Morph
 	call wait_for_IrolIris
 	call wait_for_QuazethPool
-	p_need 1 kalkiir_pond
+	p_need 1 kalkiir_lake
 	p_need 1 matravil_nest
 	call main_wait_900
 	p_need 1 mutath_spire
@@ -2592,9 +2584,9 @@ script_id ZMCx
 	:build_general_ShriekingSwarm_Main
 	var Ex|Call pref_quazeth 0 buildpref_kalkiir_vorvrokor 13
 	var Ex|Call pref_zorkiz 0 buildpref_ultrav_ultrokor 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_hydralisk 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_hydralisk 13
 	var Ex|Call prefControlOrphan 0 buildpref_zorkiz_lakizilisk 13
-	var Ex|Call pref_matravil 0 buildpref_izkag_almaksalisk 13
+	var Ex|Call pref_matravil 0 buildpref_alkag_almaksalisk 13
 	var Ex|Call pref_vithrath 0 buildpref_vithrath_sovroleth 13
 	var Ex|Call pref_muthrok 0 buildpref_mutath_mutalisk 13
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
@@ -2609,12 +2601,13 @@ script_id ZMCx
 	call main_wait_900
 	var Set can_attack_var 1 13
 	call main_wait_300
+	bld 2 hachirosk 104
 	var Set can_build_static_defense_var 1 13
 	call main_wait_300
     var Set build_gas_var 1 13
 	call main_wait_300
-	var Set build_gas_var 1 13
-	call main_wait_300
+	p_need 1 vornath_pond
+	call main_wait_900
 	multi need_irol
 	multi build_general_ShriekingSwarm_Morph
 	var Sub can_worker_var 1 13
@@ -2624,18 +2617,18 @@ script_id ZMCx
 	call main_wait_900
 	p_need 1 zorkiz_shroud
 	call main_wait_450
-	bld 1 caphrolosk 98
+	bld 1 caphrolosk 104
 	call main_wait_600
 	multi production_cycle
 	call main_wait_150
-	bld 2 hachirosk 98
+	bld 3 hachirosk 104
 	call main_wait_300
 	goto build_general_fin
 	
 	:build_general_ShriekingSwarm_Morph
 	w_bld 1 quazeth_pool
 	call wait_for_IrolIris
-	p_need 1 kalkiir_pond
+	p_need 1 kalkiir_lake
 	stop
 	
 	:build_general_Subjugation
@@ -2645,8 +2638,8 @@ script_id ZMCx
 	:build_general_Subjugation_Main
 	var Ex|Call pref_quazeth 0 buildpref_quazeth_zethrokor 13
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_keskathalor 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_hydralisk 13
-	var Ex|Call pref_matravil 0 buildpref_izkag_almaksalisk 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_hydralisk 13
+	var Ex|Call pref_matravil 0 buildpref_alkag_almaksalisk 13
 	var Ex|Call pref_zorkiz 0 buildpref_zorkiz_zoryusthaleth 13
 	var Ex|Call pref_muthrok 0 buildpref_bactith_vithrilisk 13
 	var Ex|Call pref_almakis 0 buildpref_matravil_matraleth 13
@@ -2662,7 +2655,7 @@ script_id ZMCx
 	p_need 1 hydrith_den
 	call main_wait_300
 	var Add can_worker_var 1 13
-	multi add_larvosk_generic
+	bld 2 hachirosk 104
 	call main_wait_300
 	bring 13 AtL_W 1 larva Loc.63 blank
 	queue 1 hydralisk larva 255 Global Loc.63 88
@@ -2674,6 +2667,7 @@ script_id ZMCx
 	queue 1 hydralisk larva 255 Global Loc.63 88
 	wait 24
 	var Set build_supply 1 13
+	p_need 1 skibact_scab
 	call main_wait_900
 	var Set can_build_static_defense_var 1 13
 	call main_wait_150
@@ -2700,7 +2694,8 @@ script_id ZMCx
 	call main_wait_600
 	multi build_general_Subjugation_Morph
 	call main_wait_300
-	bld 1 caphrolosk 98
+	bld 1 caphrolosk 104
+	bld 3 hachirosk 104
 	call main_wait_1050
 	p_need 1 zorkiz_shroud
 	goto build_general_fin
@@ -2708,7 +2703,7 @@ script_id ZMCx
 	:build_general_Subjugation_Morph
 	w_bld 1 hydrith_den
 	call wait_for_IrolIris
-	p_need 1 bactith_swamp
+	p_need 1 tethvith_swamp
 	p_need 1 matravil_nest
 	stop
 	
@@ -2737,25 +2732,26 @@ script_id ZMCx
 	call main_wait_150
 	var Add can_worker_var 1 13
 	var Set build_supply 1 13
-	call main_wait_450
+	call main_wait_900
 	p_need 1 zorkiz_shroud
 	call main_wait_300
+	bld 2 hachirosk 104
 	var Set can_build_static_defense_var 1 13
 	call main_wait_300
 	var Sub can_worker_var 1 13
 	var Set can_attack_var 1 13
-	call main_wait_900
-	var Add can_worker_var 1 13
 	call main_wait_1200
+	var Add can_worker_var 1 13
+	call main_wait_600
 	call expansion_loop_normal
-	call main_wait_300
+	call main_wait_1200
 	var Set build_gas_var 1 13
-	call main_wait_300
+	call main_wait_600
 	multi need_irol
 	call main_wait_300
-	bld 2 hachirosk 98
+	bld 3 hachirosk 104
 	call main_wait_300
-	bld 3 hachirosk 98
+	bld 4 hachirosk 104
 	call main_wait_300
 	multi build_general_BeforeTheStorm_Morph
 	call main_wait_150
@@ -2769,7 +2765,7 @@ script_id ZMCx
 	:build_general_BeforeTheStorm_Morph
 	w_bld 1 quazeth_pool
 	call wait_for_IrolIris
-	p_need 1 kalkiir_pond
+	p_need 1 kalkiir_lake
 	stop
 	
 	:build_general_TimeAfterTime
@@ -2778,7 +2774,7 @@ script_id ZMCx
 	
 	:build_general_TimeAfterTime_Main
 	var Ex|Call pref_quazeth 0 buildpref_quazeth_zethrokor 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_skithrokor 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_skithrokor 13
 	var Ex|Call pref_zorkiz 0 buildpref_zorkiz_lakizilisk 13
 	var Ex|Call pref_liivral 0 buildpref_kalkiir_liiralisk 13
 	var Ex|Call pref_muthrok 0 buildpref_mutath_cikralisk 13
@@ -2812,10 +2808,12 @@ script_id ZMCx
 	multi expansion_loop_toggle
 	call main_wait_600
 	var Add can_worker_var 1 13
-	call main_wait_150
-	var Set build_gas_var 1 13
 	call main_wait_450
+	p_need 1 skibact_scab
+	var Set build_gas_var 1 13
+	call main_wait_600
 	p_need 1 zorkiz_shroud
+	bld 2 hachirosk 104
 	call main_wait_1200
 	multi need_irol
 	call main_wait_300
@@ -2831,7 +2829,7 @@ script_id ZMCx
 	:build_general_TimeAfterTime_Morph
 	w_bld 1 quazeth_pool
 	call wait_for_IrolIris
-	p_need 1 kalkiir_pond
+	p_need 1 kalkiir_lake
 	stop
 	
 	:build_general_ConstrainedCoil
@@ -2864,9 +2862,10 @@ script_id ZMCx
 	var Set can_build_static_defense_var 1 13
 	call main_wait_900
 	p_need 1 hydrith_den
-	call main_wait_300
+	call main_wait_450
 	var Set build_gas_var 1 13
-	call main_wait_600
+	p_need 1 vornath_pond
+	call main_wait_450
 	multi expansion_loop_toggle
 	call main_wait_900
 	multi need_irol
@@ -2876,6 +2875,7 @@ script_id ZMCx
 	var Sub can_worker_var 1 13
 	call expansion_loop_normal
 	call main_wait_600
+	bld 2 hachirosk 104
 	var Add can_worker_var 1 13
 	multi production_cycle
 	goto build_general_fin
@@ -2886,7 +2886,7 @@ script_id ZMCx
 	
 	:build_general_fin2
 	placeholder_count Local AtL|Jump 2 Group_Buildings blank 13
-	call wHydrok
+	call wHydrith
 	call main_wait_450
 	call wQuazeth
 	call wLiivral
@@ -2903,7 +2903,7 @@ script_id ZMCx
 	call main_wait_300
 	call wGathtelosk
 	call main_wait_300
-	call wUltrok
+	call wUltrav
 	call main_wait_300
 	call wElthisth
 	call main_wait_600
@@ -2917,65 +2917,66 @@ script_id ZMCx
 	
 	:build_order_assault
 	dth 13 AtL 1 dark_swarm_unit build_order_assault_select
-	var Ex|Jump build_type_is_timing_var 1 build_order_assaultTypeTiming 13
-	var Ex|Jump build_type_is_rush_var 1 build_order_assaultTypeRush 13
-	var Ex|Jump build_type_is_greed_var 1 build_order_assaultTypeGreed 13
+	var Ex|Jump build_type_is_timing_var 1 build_order_assault_type_Timing 13
+	var Ex|Jump build_type_is_rush_var 1 build_order_assault_type_Rush 13
+	var Ex|Jump build_type_is_greed_var 1 build_order_assault_type_Greed 13
 	
-	:build_order_assaultTypeTiming
+	:build_order_assault_type_Timing
 	# 3 timings
-	rand_j 85 build_order_assaultTypeTiming_1
-	rand_j 128 build_order_assaultTypeTiming_2
-	goto build_order_assaultTypeTiming_3
+	rand_j 85 build_order_assault_type_Timing_1
+	rand_j 128 build_order_assault_type_Timing_2
+	goto build_order_assault_type_Timing_3
 	
-	:build_order_assaultTypeTiming_1
+	:build_order_assault_type_Timing_1
 	dth 13 Set 1 dark_swarm_unit blank
 	goto build_order_assault_select
 	
-	:build_order_assaultTypeTiming_2
+	:build_order_assault_type_Timing_2
 	dth 13 Set 5 dark_swarm_unit blank
 	goto build_order_assault_select
 	
-	:build_order_assaultTypeTiming_3
+	:build_order_assault_type_Timing_3
 	dth 13 Set 6 dark_swarm_unit blank
 	goto build_order_assault_select
 	
-	:build_order_assaultTypeRush
+	:build_order_assault_type_Rush
 	# 2 rushes
-	rand_j 128 build_order_assaultTypeRush_1
-	goto build_order_assaultTypeRush_2
+	rand_j 128 build_order_assault_type_Rush_1
+	goto build_order_assault_type_Rush_2
 	
-	:build_order_assaultTypeRush_1
+	:build_order_assault_type_Rush_1
 	dth 13 Set 2 dark_swarm_unit blank
 	goto build_order_assault_select
 	
-	:build_order_assaultTypeRush_2
+	:build_order_assault_type_Rush_2
 	dth 13 Set 3 dark_swarm_unit blank
 	goto build_order_assault_select
 	
-	:build_order_assaultTypeGreed
+	:build_order_assault_type_Greed
 	# 1 greed
-	goto build_order_assaultTypeGreed_1
+	goto build_order_assault_type_Greed_1
 	
-	:build_order_assaultTypeGreed_1
+	:build_order_assault_type_Greed_1
 	dth 13 Set 4 dark_swarm_unit blank
 	goto build_order_assault_select
 	
 	:build_order_assault_select
-	dth 13 Ex 1 dark_swarm_unit buildAssault3HatchHydrok
-	dth 13 Ex 2 dark_swarm_unit buildAssault2HatchZorkiz
-	dth 13 Ex 3 dark_swarm_unit buildAssault2HatchHydrokQuazeth
-	dth 13 Ex 4 dark_swarm_unit build_assault_2BaseGeszkath
+	dth 13 Ex 1 dark_swarm_unit build_assault_3BaseHydrith
+	dth 13 Ex 2 dark_swarm_unit build_assault_2BaseZorkiz
+	dth 13 Ex 3 dark_swarm_unit build_assault_2BaseHydrithQuazeth
+	dth 13 Ex 4 dark_swarm_unit build_assault_2BaseAlkag
 	dth 13 Ex 5 dark_swarm_unit build_assault_Potency
+	dth 13 Ex 6 dark_swarm_unit build_assault_EarthenTides
 	
-	:buildAssault3HatchHydrok
-	dth 13 Ex 0 start_location buildAssault3Hatchhydrith_Main
-	print Zerg<32>Assault<32>timing<32>1:<32>3Hatch<32>Hydrok
+	:build_assault_3BaseHydrith
+	dth 13 Ex 0 start_location build_assault_3BaseHydrith_Main
+	print Zerg<32>Assault<32>timing<32>1:<32>3<32>Base<32>Hydrith
 	
-	:buildAssault3Hatchhydrith_Main
+	:build_assault_3BaseHydrith_Main
 	var Ex|Call pref_quazeth 0 buildpref_quazeth_zethrokor 13
 	var Ex|Call pref_geszkath 0 buildpref_ultrav_ultrokor 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_hydralisk 13
-	var Ex|Call pref_izkag 0 buildpref_izkag_kagralisk 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_hydralisk 13
+	var Ex|Call pref_izkag 0 buildpref_alkag_kagralisk 13
 	var Ex|Call pref_liivral 0 buildpref_kalkiir_kalkalisk 13
 	var Ex|Call pref_vithrath 0 buildpref_vithrath_sovroleth 13
 	var Ex|Call pref_muthrok 0 buildpref_mutath_mutalisk 13
@@ -2983,12 +2984,9 @@ script_id ZMCx
 	var Ex|Call pref_matravil 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
-	call main_wait_1050
-	var Sub can_worker_var 1 13
-	multi expansion_loop_toggle
 	call main_wait_600
-	var Add can_worker_var 1 13
-	call main_wait_900
+	call build_order_component_expand
+	call main_wait_150
 	p_need 1 hydrith_den
 	call main_wait_600
 	var Set can_build_static_defense_var 1 13
@@ -3008,8 +3006,11 @@ script_id ZMCx
 	call expansion_loop_normal
 	call main_wait_600
 	var Add can_worker_var 1 13
-	call main_wait_600
+	bld 2 hachirosk 104
+	call main_wait_450
 	p_need 1 quazeth_pool
+	call main_wait_600
+	p_need 1 skibact_scab
 	call main_wait_600
 	var Set build_gas_var 1 13
 	call main_wait_300
@@ -3019,24 +3020,24 @@ script_id ZMCx
 	call main_wait_600
 	call expansion_loop_normal
 	call main_wait_300
-	bld 2 hachirosk 98
+	bld 3 hachirosk 104
 	call main_wait_600
 	p_need 1 zorkiz_shroud
 	call main_wait_600
 	multi need_othstol
 	call main_wait_600
-	bld 3 hachirosk 98
+	bld 4 hachirosk 104
 	call main_wait_600
 	goto build_assault_fin
 	
-	:buildAssault2HatchZorkiz
-	dth 13 Ex 0 start_location buildAssault2HatchZorkiz_Main
-	print Zerg<32>Assault<32>rush<32>1:<32>2Hatch<32>Zorkiz
+	:build_assault_2BaseZorkiz
+	dth 13 Ex 0 start_location build_assault_2BaseZorkiz_Main
+	print Zerg<32>Assault<32>rush<32>1:<32>2<32>Base<32>Zorkiz
 	
-	:buildAssault2HatchZorkiz_Main
+	:build_assault_2BaseZorkiz_Main
 	var Ex|Call pref_quazeth 0 buildpref_quazeth_nathrokor 13
 	var Ex|Call pref_geszkath 0 buildpref_ultrav_ultrokor 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_hydralisk 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_hydralisk 13
 	var Ex|Call pref_izkag 0 buildpref_hydrith_izirokor 13
 	var Ex|Call pref_liivral 0 buildpref_kalkiir_kalkalisk 13
 	var Ex|Call pref_vithrath 0 buildpref_vithrath_sovroleth 13
@@ -3044,9 +3045,9 @@ script_id ZMCx
 	var Ex|Call pref_matravil 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
-	call main_wait_1050
-    multi expansion_loop_toggle
-	call main_wait_1050
+	call main_wait_600
+	call build_order_component_expand
+	call main_wait_150
 	p_need 1 hydrith_den
 	call main_wait_900
 	do_morph 4 hydralisk
@@ -3059,6 +3060,7 @@ script_id ZMCx
 	wait 75
 	call main_wait_150
 	var Set build_gas_var 1 13
+	bld 2 hachirosk 104
 	call main_wait_300
 	multi need_irol
 	call main_wait_450
@@ -3066,7 +3068,7 @@ script_id ZMCx
 	call main_wait_300
 	p_need 1 zorkiz_shroud
 	call main_wait_300
-	p_need 1 bactith_swamp
+	p_need 1 tethvith_swamp
 	bld 1 caphrolosk 104
 	call main_wait_300
 	call expansion_loop_normal
@@ -3075,30 +3077,25 @@ script_id ZMCx
 	call main_wait_150
 	goto build_assault_fin
 	
-	:buildAssault2HatchHydrokQuazeth
-	dth 13 Ex 0 start_location buildAssault2HatchHydrokQuazeth_Main
-	print Zerg<32>Assault<32>rush<32>2:<32>2Hatch<32>Hydrok<32>Quazeth
+	:build_assault_2BaseHydrithQuazeth
+	dth 13 Ex 0 start_location build_assault_2BaseHydrithQuazeth_Main
+	print Zerg<32>Assault<32>rush<32>2:<32>2<32>Base<32>Hydrith<32>Quazeth
 	
-	:buildAssault2HatchHydrokQuazeth_Main
+	:build_assault_2BaseHydrithQuazeth_Main
 	var Ex|Call pref_quazeth 0 buildpref_quazeth_zethrokor 13
 	var Ex|Call pref_geszkath 0 buildpref_ultrav_ultrokor 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_hydralisk 13
-	var Ex|Call pref_izkag 0 buildpref_izkag_kagralisk 13
-	var Ex|Call pref_matravil 0 buildpref_izkag_almaksalisk 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_hydralisk 13
+	var Ex|Call pref_izkag 0 buildpref_alkag_kagralisk 13
+	var Ex|Call pref_matravil 0 buildpref_alkag_almaksalisk 13
 	var Ex|Call pref_vithrath 0 buildpref_zorkiz_zoryusthaleth 13
 	var Ex|Call pref_muthrok 0 buildpref_mutath_mutalisk 13
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
 	var Ex|Call pref_matravil 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_hachirosk 13
-	call main_wait_1050
-	var Sub can_worker_var 1 13
-    multi expansion_loop_toggle
-	call main_wait_300
-	queue 1 droleth larva 255 Local Loc.63 200
 	call main_wait_600
-	var Add can_worker_var 1 13
-	call main_wait_600
+	call build_order_component_expand
+	call main_wait_150
 	p_need 1 hydrith_den
 	call main_wait_750
 	var Sub can_worker_var 1 13
@@ -3114,31 +3111,30 @@ script_id ZMCx
 	call main_wait_300
 	multi need_irol
 	call main_wait_300
+	multi build_assault_2BaseHydrithQuazeth_Morph
+	call main_wait_300
 	multi production_cycle
 	var Add can_worker_var 1 13
 	goto build_assault_fin
 	
-	:buildAssault2HatchHydrokQuazeth_Morph
+	:build_assault_2BaseHydrithQuazeth_Morph
 	w_bld 1 quazeth_pool
 	call wait_for_IrolIris
-	p_need 1 kalkiir_pond
+	p_need 1 kalkiir_lake
 	stop
 	
-	:build_assault_2BaseGeszkath
-	dth 13 Ex 0 start_location build_assault_2BaseGeszkath_Main
-	print Zerg<32>Assault<32>greed<32>1:<32>2Base<32>Geszkath
+	:build_assault_2BaseAlkag
+	dth 13 Ex 0 start_location build_assault_2BaseAlkag_Main
+	print Zerg<32>Assault<32>greed<32>1:<32>2<32>Base<32>Alkag
 	
-	:build_assault_2BaseGeszkath_Main
+	:build_assault_2BaseAlkag_Main
 	var Ex|Call pref_bactith 0 buildpref_hydrith_skithrokor 13
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_mutation_alkajelisk 13
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
-	call main_wait_750
 	call main_wait_600
-	bld 1 cagrant_cesiant 101
-	multi build_assault_2BaseGeszkath_Morph
-	call main_wait_600
+	multi build_assault_2BaseAlkag_Morph
 	p_need 1 hydrith_den
-	call main_wait_300
+	call main_wait_750
     multi expansion_loop_toggle
 	call main_wait_750
 	do_morph 2 hydralisk
@@ -3151,21 +3147,17 @@ script_id ZMCx
 	var Set can_build_static_defense_var 1 13
 	call main_wait_300
 	var Set build_supply 1 13
-	call main_wait_600
-	call main_wait_600
-	bld 2 hachirosk 98
+	call main_wait_1200
+	bld 2 hachirosk 104
 	call main_wait_900
 	call expansion_loop_normal
 	call main_wait_600
 	multi production_cycle
 	goto build_assault_fin
 	
-	:build_assault_2BaseGeszkath_Morph
-	w_bld 1 cagrant_cesiant
+	:build_assault_2BaseAlkag_Morph
 	call wait_for_IrolIris
-	bld 1 larvosk_cesiant 105
-	w_bldstart 2 hachirosk
-	p_need 1 bactith_swamp
+	p_need 1 tethvith_swamp
 	call main_wait_300
 	p_need 1 alkag_iteth
 	multi need_othstol
@@ -3177,50 +3169,43 @@ script_id ZMCx
 	
 	:build_assault_Potency_Main
 	var Ex|Call pref_zorkiz 0 buildpref_zorkiz_zoryusthaleth 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_hydralisk 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_hydralisk 13
 	var Ex|Call pref_liivral 0 buildpref_kalkiir_kalkalisk 13
 	var Ex|Call pref_muthrok 0 buildpref_mutath_mutalisk 13
-	var Ex|Call pref_izkag 0 buildpref_izkag_kagralisk 13
+	var Ex|Call pref_izkag 0 buildpref_alkag_kagralisk 13
 	var Ex|Call pref_vithrath 0 buildpref_vithrath_sovroleth 13
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
 	var Ex|Call pref_matravil 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
-	call main_wait_1050
-	var Sub can_worker_var 1 13
-	call main_wait_150
-	multi expansion_loop_toggle
 	call main_wait_600
-	var Add can_worker_var 1 13
-	call main_wait_450
+	call build_order_component_expand
+	call main_wait_150
 	p_need 1 hydrith_den
 	call main_wait_1200
-	var Set can_build_static_defense_var 1 13
-	call main_wait_600
 	p_need 1 quazeth_pool
 	call main_wait_600
 	var Set build_gas_var 1 13
 	call main_wait_600
 	var Set can_attack_var 1 13
-	call main_wait_900
+	call main_wait_450
 	p_need 1 zorkiz_shroud
-	var Sub can_worker_var 1 13
-	call expansion_loop_normal
-	call main_wait_600
-	var Add can_worker_var 1 13
-	call main_wait_300
-	var Set build_gas_var 1 13
+	bld 2 hachirosk 104
+	call main_wait_450
+	var Set can_build_static_defense_var 1 13
+	call main_wait_150
+	call build_order_component_expand
 	call main_wait_300
 	multi need_irol
-	call main_wait_900
+	call main_wait_1500
 	multi production_cycle
 	call main_wait_600
 	call expansion_loop_normal
 	call main_wait_300
-	bld 2 hachirosk 98
+	bld 3 hachirosk 104
 	multi build_assault_Potency_Morph
 	call main_wait_600
-	bld 3 hachirosk 98
+	bld 4 hachirosk 104
 	call main_wait_3600
 	multi need_othstol
 	call main_wait_600
@@ -3229,7 +3214,7 @@ script_id ZMCx
 	:build_assault_Potency_Morph
 	call wait_for_IrolIris
 	call main_wait_300
-	p_need 1 bactith_swamp
+	p_need 1 tethvith_swamp
 	call main_wait_750
 	p_need 1 alkag_iteth
 	stop
@@ -3239,10 +3224,10 @@ script_id ZMCx
 	print Zerg<32>Assault<32>timing<32>3:<32>Earthen<32>Tides
 	
 	:build_assault_EarthenTides_Main
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_izirokor 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_izirokor 13
 	var Ex|Call pref_zorkiz 0 buildpref_zorkiz_lakizilisk 13
 	var Ex|Call pref_muthrok 0 buildpref_mutath_protathalor 13
-	var Ex|Call pref_izkag 0 buildpref_izkag_almaksalisk 13
+	var Ex|Call pref_izkag 0 buildpref_alkag_almaksalisk 13
 	var Ex|Call pref_vithrath 0 buildpref_vithrath_sovroleth 13
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_keskathalor 13
 	var Ex|Call pref_matravil 0 buildpref_matravil_konvilisk 13
@@ -3259,18 +3244,21 @@ script_id ZMCx
 	var Add can_worker_var 1 13
 	call main_wait_150
 	var Set build_gas_var 1 13
+	bld 2 hachirosk 104
 	call main_wait_900
 	p_need 1 zorkiz_shroud
 	call main_wait_1200
 	var Set can_build_static_defense_var 1 13
-	call main_wait_1200
+	call main_wait_900
+	p_need 1 skibact_scab
+	call main_wait_900
 	p_need 1 quazeth_pool
 	call main_wait_600
 	var Add can_expand_var 1 13
 	call main_wait_600
 	multi need_irol
 	call main_wait_900
-	bld 2 hachirosk 98
+	bld 3 hachirosk 104
 	call main_wait_600
 	multi build_assault_EarthenTides_Morph
 	call main_wait_1200
@@ -3281,7 +3269,7 @@ script_id ZMCx
 	
 	:build_assault_EarthenTides_Morph
 	call wait_for_IrolIris
-	p_need 1 kalkiir_pond
+	p_need 1 kalkiir_lake
 	p_need 1 mutath_spire
 	call main_wait_900
 	p_need 1 matravil_nest
@@ -3301,7 +3289,7 @@ script_id ZMCx
 	call main_wait_300
 	call wHachirosk
 	call main_wait_150
-	call wHydrok
+	call wHydrith
 	call wBactith
 	call main_wait_150
 	call main_wait_300
@@ -3318,7 +3306,7 @@ script_id ZMCx
 	call main_wait_300
 	call wElthisth
 	call main_wait_300
-	call wUltrok
+	call wUltrav
 	call main_wait_900
 	call wVithrath
 	call main_wait_1200
@@ -3372,7 +3360,7 @@ script_id ZMCx
 	
 	:build_order_swarm_select
 	dth 13 Ex 1 dark_swarm_unit build_swarm_3BaseFlood
-	dth 13 Ex 2 dark_swarm_unit build_swarm_3BaseUltrok
+	dth 13 Ex 2 dark_swarm_unit build_swarm_3BaseUltrav
 	dth 13 Ex 3 dark_swarm_unit build_swarm_InstantQuazeth
 	dth 13 Ex 4 dark_swarm_unit build_swarm_3BaseOthstol
 	dth 13 Ex 5 dark_swarm_unit build_swarm_GatesOfHell
@@ -3380,12 +3368,12 @@ script_id ZMCx
 	
 	:build_swarm_3BaseFlood
 	dth 13 Ex 0 start_location build_swarm_3BaseFlood_Main
-	print Zerg<32>Swarm<32>timing<32>1:<32>3Hatch<32>Flood
+	print Zerg<32>Swarm<32>timing<32>1:<32>3<32>Base<32>Flood
 	
 	:build_swarm_3BaseFlood_Main
 	var Ex|Call pref_quazeth 0 buildpref_quazeth_zethrokor 13
 	var Ex|Call pref_geszkath 0 buildpref_ultrav_ultrokor 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_hydralisk 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_hydralisk 13
 	var Ex|Call pref_liivral 0 buildpref_kalkiir_kalkalisk 13
 	var Ex|Call pref_vithrath 0 buildpref_zorkiz_zoryusthaleth 13
 	var Ex|Call pref_muthrok 0 buildpref_mutath_mutalisk 13
@@ -3412,6 +3400,7 @@ script_id ZMCx
 	call main_wait_600
 	var Add can_worker_var 1 13
 	call main_wait_300
+	bld 2 hachirosk 104
 	var Set can_build_static_defense_var 1 13
 	call main_wait_300
 	multi build_swarm_3BaseFlood_Morph
@@ -3430,11 +3419,9 @@ script_id ZMCx
 	wait 24
 	queue 1 zethrokor larva 255 Global Loc.63 88
 	call main_wait_300
-	bld 1 caphrolosk 98
+	bld 1 caphrolosk 104
 	wait 24
 	call main_wait_450
-	bld 2 hachirosk 98
-	call main_wait_150
 	var Set can_attack_var 1 13
 	call main_wait_150
 	bring 13 AtL_W 1 larva Loc.63 blank
@@ -3445,12 +3432,11 @@ script_id ZMCx
 	wait 24
 	bring 13 AtL_W 1 larva Loc.63 blank
 	queue 1 zethrokor larva 255 Global Loc.63 88
-	call main_wait_300
-	call main_wait_300
+	call main_wait_600
 	var Sub can_worker_var 1 13
 	call expansion_loop_normal
 	call main_wait_600
-	bld 3 hachirosk 98
+	bld 3 hachirosk 104
 	call main_wait_600
 	multi production_cycle
 	var Add can_worker_var 1 13
@@ -3458,8 +3444,9 @@ script_id ZMCx
 	
 	:build_swarm_3BaseFlood_Morph
 	w_bld 1 quazeth_pool
+	p_need 1 vornath_pond
 	call wait_for_IrolIris
-	p_need 1 kalkiir_pond
+	p_need 1 kalkiir_lake
 	w_bldstart 3 hachirosk
 	call main_wait_300
 	p_need 1 mutath_spire
@@ -3468,14 +3455,14 @@ script_id ZMCx
 	p_need 1 tosvrol_haunt
 	stop
 	
-	:build_swarm_3BaseUltrok
-	dth 13 Ex 0 start_location build_swarm_3Baseultrav_Main
-	print Zerg<32>Swarm<32>timing<32>2:<32>3Hatch<32>Ultrok
+	:build_swarm_3BaseUltrav
+	dth 13 Ex 0 start_location build_swarm_3BaseUltrav_Main
+	print Zerg<32>Swarm<32>timing<32>2:<32>3Hach<32>Ultrok
 	
-	:build_swarm_3Baseultrav_Main
+	:build_swarm_3BaseUltrav_Main
 	var Ex|Call pref_quazeth 0 buildpref_quazeth_zethrokor 13
 	var Ex|Call pref_geszkath 0 buildpref_ultrav_ultrokor 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_hydralisk 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_hydralisk 13
 	var Ex|Call pref_liivral 0 buildpref_kalkiir_kalkalisk 13
 	var Ex|Call pref_vithrath 0 buildpref_zorkiz_zoryusthaleth 13
 	var Ex|Call pref_muthrok 0 buildpref_mutath_mutalisk 13
@@ -3485,13 +3472,11 @@ script_id ZMCx
 	var Ex|Call pref_production 0 buildpref_production_hachirosk 13
 	call main_wait_1050
 	var Sub can_worker_var 1 13
-	wait 24
     multi expansion_loop_toggle
 	call main_wait_600
 	var Add can_worker_var 1 13
 	call main_wait_600
 	p_need 1 quazeth_pool
-	wait 24
 	call main_wait_1500
 	bring 13 AtL_W 1 larva Loc.63 blank
 	queue 1 zethrokor larva 255 Global Loc.63 88
@@ -3502,16 +3487,17 @@ script_id ZMCx
 	bring 13 AtL_W 1 larva Loc.63 blank
 	queue 1 zethrokor larva 255 Global Loc.63 88
 	call main_wait_300
+	bld 2 hachirosk 104
 	var Set build_gas_var 1 13
-	call main_wait_300
-	multi need_irol
-	call main_wait_450
-	wait 24
-	var Set can_build_static_defense_var 1 13
+	p_need 1 vornath_pond
+	call main_wait_1200
 	var Set can_attack_var 1 13
 	call main_wait_900
-	bld 1 caphrolosk 98
-	wait 24
+	multi need_irol
+	call main_wait_450
+	var Set can_build_static_defense_var 1 13
+	call main_wait_900
+	bld 1 caphrolosk 104
 	call main_wait_300
 	var Sub can_worker_var 1 13
 	call expansion_loop_normal
@@ -3520,7 +3506,7 @@ script_id ZMCx
 	call main_wait_300
 	var Set build_supply 1 13
 	call main_wait_600
-	multi build_swarm_3Baseultrav_Morph
+	multi build_swarm_3BaseUltrav_Morph
 	call main_wait_450
 	wait 24
 	bring 13 AtL_W 1 larva Loc.63 blank
@@ -3533,8 +3519,7 @@ script_id ZMCx
 	queue 1 zethrokor larva 255 Global Loc.63 88
 	call main_wait_150
 	p_need 1 zorkiz_shroud
-	call main_wait_600
-	call main_wait_300
+	call main_wait_900
 	bring 13 AtL_W 1 larva Loc.63 blank
 	queue 1 zethrokor larva 255 Global Loc.63 88
 	wait 24
@@ -3553,8 +3538,7 @@ script_id ZMCx
 	bring 13 AtL_W 1 larva Loc.63 blank
 	queue 1 zethrokor larva 255 Global Loc.63 88
 	call main_wait_1500
-	call main_wait_300
-	bld 2 hachirosk 98
+	bld 3 hachirosk 104
 	call main_wait_900
 	p_need 1 hydrith_den
 	call main_wait_600
@@ -3562,10 +3546,10 @@ script_id ZMCx
 	call main_wait_600
 	goto build_swarm_fin
 	
-	:build_swarm_3Baseultrav_Morph
+	:build_swarm_3BaseUltrav_Morph
 	w_bld 1 quazeth_pool
 	call wait_for_IrolIris
-	p_need 1 kalkiir_pond
+	p_need 1 kalkiir_lake
 	w_bld 1 zorkiz_shroud
 	w_bldstart 2 hachirosk
 	call main_wait_900
@@ -3577,7 +3561,7 @@ script_id ZMCx
 	bld 1 gathtelosk 99
 	w_bld 1 hydrith_den
 	call wait_for_IrolIris
-	p_need 1 bactith_swamp
+	p_need 1 tethvith_swamp
 	stop
 	
 	:build_swarm_InstantQuazeth
@@ -3587,7 +3571,7 @@ script_id ZMCx
 	:build_swarm_InstantQuazeth_Main
 	var Ex|Call pref_quazeth 0 buildpref_quazeth_zethrokor 13
 	var Ex|Call pref_geszkath 0 buildpref_ultrav_ultrokor 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_hydralisk 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_hydralisk 13
 	var Ex|Call pref_liivral 0 buildpref_kalkiir_kalkalisk 13
 	var Ex|Call pref_vithrath 0 buildpref_zorkiz_zoryusthaleth 13
 	var Ex|Call pref_muthrok 0 buildpref_mutath_mutalisk 13
@@ -3595,26 +3579,38 @@ script_id ZMCx
 	var Ex|Call pref_matravil 0 buildpref_matravil_matraleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_hachirosk 13
-	var Set can_worker_var 0 13
-	call main_wait_600
+	var Set can_queue_early_military_var 0 13
+	call main_wait_300
 	p_need 1 quazeth_pool
-	call main_wait_1200
-	do_morph 2 zethrokor
-	wait 75
-	do_morph 2 zethrokor
-	wait 75
+	call main_wait_150
+	var Set can_worker_var 0 13
+	w_bld 1 quazeth_pool
+	bring 13 AtL_W 1 larva Loc.63 blank
 	var Set can_attack_var 1 13
+	do_morph 2 zethrokor
+	wait 12
+	bring 13 AtL_W 1 larva Loc.63 blank
+	do_morph 2 zethrokor
+	wait 12
+	bring 13 AtL_W 1 larva Loc.63 blank
+	do_morph 2 zethrokor
+	wait 12
+	bring 13 AtL_W 1 larva Loc.63 blank
+	do_morph 2 zethrokor
+	wait 12
 	call main_wait_1500
+	bld 2 hachirosk 104
+	call main_wait_150
 	var Add can_worker_var 1 13
-	call main_wait_300
-	var Set build_supply 1 13
-	call main_wait_300
-	var Add can_expand_var 1 13
+	call main_wait_1500
+	call build_order_component_expand
+	call main_wait_600
+	p_need 1 vornath_pond
 	call main_wait_600
 	var Set can_build_static_defense_var 1 13
-	call main_wait_300
+	call main_wait_1200
 	multi need_irol
-	call main_wait_300
+	call main_wait_600
 	multi build_swarm_InstantQuazeth_Morph
 	multi production_cycle
 	goto build_swarm_fin
@@ -3622,17 +3618,17 @@ script_id ZMCx
 	:build_swarm_InstantQuazeth_Morph
 	w_bld 1 quazeth_pool
 	call wait_for_IrolIris
-	p_need 1 kalkiir_pond
+	p_need 1 kalkiir_lake
 	stop
 	
 	:build_swarm_3BaseOthstol
 	dth 13 Ex 0 start_location build_swarm_3BaseOthstol_Main
-	print Zerg<32>Swarm<32>timing<32>3:<32>3Hatch<32>Othstol
+	print Zerg<32>Swarm<32>timing<32>3:<32>3Hach<32>Othstol
 	
 	:build_swarm_3BaseOthstol_Main
 	var Ex|Call pref_quazeth 0 buildpref_hydrith_izirokor 13
 	var Ex|Call pref_geszkath 0 buildpref_ultrav_ultrokor 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_hydralisk 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_hydralisk 13
 	var Ex|Call pref_liivral 0 buildpref_kalkiir_kalkalisk 13
 	var Ex|Call pref_vithrath 0 buildpref_zorkiz_zoryusthaleth 13
 	var Ex|Call pref_zorkiz 0 buildpref_zorkiz_gorgrokor 13
@@ -3642,13 +3638,11 @@ script_id ZMCx
 	var Ex|Call pref_production 0 buildpref_production_hachirosk 13
 	call main_wait_1050
 	var Sub can_worker_var 1 13
-	wait 24
     multi expansion_loop_toggle
 	call main_wait_600
 	var Add can_worker_var 1 13
 	call main_wait_600
 	p_need 1 quazeth_pool
-	wait 24
 	call main_wait_1500
 	bring 13 AtL_W 1 larva Loc.63 blank
 	queue 1 zethrokor larva 255 Global Loc.63 88
@@ -3658,17 +3652,18 @@ script_id ZMCx
 	wait 24
 	bring 13 AtL_W 1 larva Loc.63 blank
 	queue 1 zethrokor larva 255 Global Loc.63 88
-	wait 24
 	call main_wait_300
+	bld 2 hachirosk 104
+	call main_wait_600
 	var Set build_gas_var 1 13
+	p_need 1 vornath_pond
 	call main_wait_300
 	multi need_irol
 	call main_wait_450
-	wait 24
 	var Set can_build_static_defense_var 1 13
 	var Set can_attack_var 1 13
 	call main_wait_1500
-	bld 1 caphrolosk 98
+	bld 1 caphrolosk 104
 	call main_wait_450
 	var Sub can_worker_var 1 13
 	call expansion_loop_normal
@@ -3676,9 +3671,7 @@ script_id ZMCx
 	var Add can_worker_var 1 13
 	call main_wait_1200
 	multi build_swarm_3BaseOthstol_Morph
-	wait 24
 	p_need 1 zorkiz_shroud
-	wait 24
 	bring 13 AtL_W 1 larva Loc.63 blank
 	queue 1 zethrokor larva 255 Global Loc.63 88
 	wait 24
@@ -3687,12 +3680,10 @@ script_id ZMCx
 	wait 24
 	bring 13 AtL_W 1 larva Loc.63 blank
 	queue 1 zethrokor larva 255 Global Loc.63 88
-	wait 24
 	call main_wait_900
 	p_need 1 hydrith_den
 	call main_wait_300
-	wait 24
-	bld 2 hachirosk 98
+	bld 3 hachirosk 104
 	bring 13 AtL_W 1 larva Loc.63 blank
 	queue 1 zethrokor larva 255 Global Loc.63 88
 	wait 24
@@ -3708,7 +3699,7 @@ script_id ZMCx
 	:build_swarm_3BaseOthstol_Morph
 	w_bld 1 quazeth_pool
 	call wait_for_IrolIris
-	p_need 1 kalkiir_pond
+	p_need 1 kalkiir_lake
 	p_need 1 matravil_nest
 	call wait_for_OthstolOviform
 	bld 1 gathtelosk 99
@@ -3719,7 +3710,7 @@ script_id ZMCx
 	w_bldstart 2 hachirosk
 	w_bld 1 hydrith_den
 	call wait_for_IrolIris
-	p_need 1 bactith_swamp
+	p_need 1 tethvith_swamp
 	stop
 	
 	:build_swarm_GatesOfHell
@@ -3729,7 +3720,7 @@ script_id ZMCx
 	:build_swarm_GatesOfHell_Main
 	var Ex|Call pref_quazeth 0 buildpref_quazeth_zethrokor 13
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_keskathalor 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_hydralisk 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_hydralisk 13
 	var Ex|Call pref_liivral 0 buildpref_kalkiir_kalkalisk 13
 	var Ex|Call pref_vithrath 0 buildpref_vithrath_sovroleth 13
 	var Ex|Call pref_zorkiz 0 buildpref_zorkiz_gorgrokor 13
@@ -3752,14 +3743,16 @@ script_id ZMCx
 	p_need 1 zorkiz_shroud
 	call main_wait_600
 	var Set can_attack_var 1 13
-	call main_wait_450
+	call main_wait_900
 	var Add can_expand_var 1 13
 	call main_wait_450
 	p_need 1 hydrith_den
 	call main_wait_450
 	multi build_swarm_GatesOfHell_Morph
+	p_need 1 vornath_pond
 	call main_wait_600
 	var Set build_gas_var 1 13
+	bld 2 hachirosk 104
 	call main_wait_300
 	multi need_irol
 	call main_wait_750
@@ -3769,9 +3762,9 @@ script_id ZMCx
 	
 	:build_swarm_GatesOfHell_Morph
 	call wait_for_IrolIris
-	p_need 1 kalkiir_pond
+	p_need 1 kalkiir_lake
 	call main_wait_600
-	p_need 1 bactith_swamp
+	p_need 1 tethvith_swamp
 	call main_wait_2400
 	multi need_othstol
 	stop
@@ -3782,7 +3775,7 @@ script_id ZMCx
 	
 	:build_swarm_PrimitivePressure_Main
 	var Ex|Call pref_quazeth 0 buildpref_quazeth_zethrokor 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_hydralisk 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_hydralisk 13
 	var Ex|Call pref_zorkiz 0 buildpref_zorkiz_zoryusthaleth 13
 	var Ex|Call pref_liivral 0 buildpref_kalkiir_liiralisk 13
 	var Ex|Call pref_muthrok 0 buildpref_mutath_protathalor 13
@@ -3803,10 +3796,13 @@ script_id ZMCx
 	call main_wait_900
 	var Set can_attack_var 1 13
 	call main_wait_750
+	bld 2 hachirosk 104
 	var Set build_gas_var 1 13
 	call main_wait_300
 	var Set can_build_static_defense_var 1 13
-	call main_wait_1500
+	call main_wait_300
+	p_need 1 vornath_pond
+	call main_wait_1200
 	multi expansion_loop_toggle
 	call main_wait_900
 	p_need 1 zorkiz_shroud
@@ -3820,10 +3816,10 @@ script_id ZMCx
 	:build_swarm_PrimitivePressure_Morph
 	call wait_for_IrolIris
 	call wait_for_QuazethPool
-	p_need 1 kalkiir_pond
+	p_need 1 kalkiir_lake
 	call main_wait_600
-	call wait_for_HydrokDen
-	p_need 1 bactith_swamp
+	call wait_for_HydrithDen
+	p_need 1 tethvith_swamp
 	stop
 	
 	:build_swarm_fin
@@ -3838,7 +3834,7 @@ script_id ZMCx
 	call main_wait_1200
 	call wMatravil
 	call main_wait_300
-	call wHydrok
+	call wHydrith
 	call wBactith
 	call main_wait_600
 	call wZorkiz
@@ -3851,7 +3847,7 @@ script_id ZMCx
 	call main_wait_600
 	call wElthisth
 	wait 24
-	call wUltrok
+	call wUltrav
 	call main_wait_600
 	call wGeszkath
 	stop
@@ -3916,10 +3912,10 @@ script_id ZMCx
 	:build_sunblot_BigAndLittle_Main
 	var Ex|Call pref_quazeth 0 buildpref_quazeth_nathrokor 13
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_skithrokor 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_skithrokor 13
 	var Ex|Call pref_matravil 0 buildpref_matravil_vilgorokor 13
 	var Ex|Call pref_muthrok 0 buildpref_mutath_mutalisk 13
-	var Ex|Call pref_izkag 0 buildpref_izkag_almaksalisk 13
+	var Ex|Call pref_izkag 0 buildpref_alkag_almaksalisk 13
 	var Ex|Call pref_vithrath 0 buildpref_vithrath_sovroleth 13
 	var Ex|Call pref_zorkiz 0 buildpref_zorkiz_gorgrokor 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
@@ -3935,8 +3931,11 @@ script_id ZMCx
 	p_need 1 quazeth_pool
 	call main_wait_300
 	var Add can_worker_var 1 13
+	bld 2 hachirosk 104
 	call main_wait_900
 	var Sub can_worker_var 1 13
+	p_need 1 vornath_pond
+	call main_wait_900
 	bring 13 AtL_W 1 larva Loc.63 blank
 	queue 1 nathrokor larva 255 Global Loc.63 88
 	wait 24
@@ -3969,7 +3968,7 @@ script_id ZMCx
 	bring 13 AtL_W 1 larva Loc.63 blank
 	queue 1 droleth larva 255 Local Loc.63 200
 	call main_wait_300
-	bld 1 caphrolosk 98
+	bld 1 caphrolosk 104
 	call main_wait_1200
 	call main_wait_450
 	bring 13 AtL_W 1 larva Loc.63 blank
@@ -3991,7 +3990,7 @@ script_id ZMCx
 	queue 1 mutalisk larva 255 Global Loc.63 88
 	wait 24
 	call main_wait_150
-	bld 2 hachirosk 98
+	bld 3 hachirosk 104
 	call main_wait_300
 	queue 1 mutalisk larva 255 Global Loc.63 88
 	wait 24
@@ -4006,7 +4005,7 @@ script_id ZMCx
 	wait 24
 	call wait_for_IrolIris
 	call wait_for_QuazethPool
-	p_need 1 kalkiir_pond
+	p_need 1 kalkiir_lake
 	call main_wait_300
 	p_need 1 mutath_spire
 	call wait_for_OthstolOviform
@@ -4022,13 +4021,13 @@ script_id ZMCx
 	
 	:build_sunblot_TheTriad_Main
 	var Ex|Call pref_quazeth 0 buildpref_quazeth_nathrokor 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_skithrokor 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_skithrokor 13
 	var Ex|Call pref_zorkiz 0 buildpref_zorkiz_gorgrokor 13
 	var Ex|Call pref_liivral 0 buildpref_kalkiir_kalkalisk 13
 	var Ex|Call pref_muthrok 0 buildpref_mutath_mutalisk 13
-	var Ex|Call pref_izkag 0 buildpref_izkag_almaksalisk 13
+	var Ex|Call pref_izkag 0 buildpref_alkag_almaksalisk 13
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
-	var Ex|Call pref_elthisth 0 buildpref_elthisth_isthrathaleth 13
+	var Ex|Call pref_elthisth 0 buildpref_almakis_isthrathaleth 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_larvoskcesiant 13
 	call main_wait_600
@@ -4042,18 +4041,20 @@ script_id ZMCx
 	call main_wait_1200
 	var Set can_build_static_defense_var 1 13
 	call main_wait_450
+	bld 2 hachirosk 104
 	var Sub can_worker_var 1 13
-	call main_wait_150
+	call main_wait_600
 	multi expansion_loop_toggle
 	call main_wait_300
 	var Add can_worker_var 1 13
 	call main_wait_150
 	var Set build_gas_var 1 13
-	call main_wait_300
+	p_need 1 vornath_pond
+	call main_wait_600
 	p_need 1 hydrith_den
-	call main_wait_1200
-	p_need 1 zorkiz_shroud
 	call main_wait_900
+	p_need 1 zorkiz_shroud
+	call main_wait_450
 	var Set can_attack_var 1 13
 	call main_wait_900
 	multi production_cycle
@@ -4071,34 +4072,36 @@ script_id ZMCx
 	
 	:build_sunblot_SkitteringDuo_Main
 	var Ex|Call pref_quazeth 0 buildpref_quazeth_nathrokor 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_skithrokor 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_skithrokor 13
 	var Ex|Call pref_zorkiz 0 buildpref_zorkiz_gorgrokor 13
 	var Ex|Call pref_muthrok 0 buildpref_mutath_mutalisk 13
-	var Ex|Call pref_izkag 0 buildpref_izkag_almaksalisk 13
+	var Ex|Call pref_izkag 0 buildpref_alkag_almaksalisk 13
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_hachirosk 13
 	call main_wait_600
-	var Sub can_worker_var 1 13
+	call build_order_component_expand
 	call main_wait_150
-    multi expansion_loop_toggle
-	call main_wait_450
-	var Add can_worker_var 1 13
-	call main_wait_900
 	p_need 1 hydrith_den
-	call main_wait_900
-	var Sub can_worker_var 1 13
+	call main_wait_1500
 	p_need 1 quazeth_pool
-	call main_wait_900
+	call main_wait_1200
+	var Sub can_worker_var 1 13
 	var Set can_attack_var 1 13
-	call main_wait_450
+	call main_wait_1200
 	var Add can_worker_var 1 13
-	call main_wait_300
+	call main_wait_600
+	bld 2 hachirosk 104
+	call main_wait_600
+	p_need 1 vornath_pond
+	call main_wait_600
+	p_need 1 skibact_scab
 	var Set build_gas_var 1 13
-	call main_wait_300
+	call main_wait_1200
 	call expansion_loop_normal
 	call main_wait_900
 	multi production_cycle
+	call main_wait_1200
 	goto build_sunblot_fin
 	
 	:build_sunblot_EarlyBirds
@@ -4107,10 +4110,10 @@ script_id ZMCx
 	
 	:build_sunblot_EarlyBirds_Main
 	var Ex|Call pref_quazeth 0 buildpref_quazeth_zethrokor 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_skithrokor 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_skithrokor 13
 	var Ex|Call pref_zorkiz 0 buildpref_zorkiz_gorgrokor 13
 	var Ex|Call pref_muthrok 0 buildpref_mutath_mutalisk 13
-	var Ex|Call pref_izkag 0 buildpref_izkag_almaksalisk 13
+	var Ex|Call pref_izkag 0 buildpref_alkag_almaksalisk 13
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_hachirosk 13
@@ -4130,13 +4133,16 @@ script_id ZMCx
 	p_need 1 quazeth_pool
 	call main_wait_900
 	var Set build_gas_var 1 13
-	call main_wait_900
+	call main_wait_450
+	p_need 1 vornath_pond
+	call main_wait_600
 	multi need_irol
 	multi build_sunblot_EarlyBirds_Morph
 	call main_wait_600
 	var Ex|Call pref_quazeth 0 buildpref_quazeth_nathrokor 13
 	call main_wait_1500
 	var Set can_attack_var 1 13
+	bld 2 hachirosk 104
 	call main_wait_600
 	multi production_cycle
 	call main_wait_900
@@ -4146,7 +4152,7 @@ script_id ZMCx
 	:build_sunblot_EarlyBirds_Morph
 	call wait_for_QuazethPool
 	call wait_for_IrolIris
-	p_need 1 kalkiir_pond
+	p_need 1 kalkiir_lake
 	p_need 1 mutath_spire
 	call main_wait_900
 	p_need 1 alkag_iteth
@@ -4158,10 +4164,10 @@ script_id ZMCx
 	
 	:build_sunblot_FlyingFeint_Main
 	var Ex|Call pref_quazeth 0 buildpref_quazeth_zethrokor 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_hydralisk 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_hydralisk 13
 	var Ex|Call pref_zorkiz 0 buildpref_zorkiz_gorgrokor 13
 	var Ex|Call pref_muthrok 0 buildpref_mutath_mutalisk 13
-	var Ex|Call pref_izkag 0 buildpref_izkag_almaksalisk 13
+	var Ex|Call pref_izkag 0 buildpref_alkag_almaksalisk 13
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_hachirosk 13
@@ -4177,26 +4183,29 @@ script_id ZMCx
 	var Set can_build_static_defense_var 1 13
 	call main_wait_900
 	var Set build_gas_var 1 13
+	bld 2 hachirosk 104
 	call main_wait_900
 	multi need_irol
 	multi build_sunblot_FlyingFeint_Morph
 	call main_wait_600
 	var Ex|Call pref_quazeth 0 buildpref_quazeth_nathrokor 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_skithrokor 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_skithrokor 13
+	p_need 1 vornath_pond
 	call main_wait_1200
 	p_need 1 hydrith_den
 	call main_wait_300
 	multi production_cycle
 	call main_wait_900
+	p_need 1 skibact_scab
 	goto build_sunblot_fin
 	
 	:build_sunblot_FlyingFeint_Morph
 	call wait_for_IrolIris
 	call wait_for_QuazethPool
-	p_need 1 kalkiir_pond
+	p_need 1 kalkiir_lake
 	call main_wait_600
-	call wait_for_HydrokDen
-	p_need 1 bactith_swamp
+	call wait_for_HydrithDen
+	p_need 1 tethvith_swamp
 	call main_wait_450
 	p_need 1 mutath_spire
 	stop
@@ -4207,10 +4216,10 @@ script_id ZMCx
 	
 	:build_sunblot_DescendingHorizon_Main
 	var Ex|Call pref_quazeth 0 buildpref_quazeth_zethrokor 13
-	var Ex|Call pref_hydrok 0 buildpref_hydrith_hydralisk 13
+	var Ex|Call pref_hydrith 0 buildpref_hydrith_hydralisk 13
 	var Ex|Call pref_zorkiz 0 buildpref_zorkiz_gorgrokor 13
 	var Ex|Call pref_muthrok 0 buildpref_mutath_mutalisk 13
-	var Ex|Call pref_izkag 0 buildpref_izkag_almaksalisk 13
+	var Ex|Call pref_izkag 0 buildpref_alkag_almaksalisk 13
 	var Ex|Call pref_geszkath 0 buildpref_geszkath_geszithalor 13
 	var Ex|Call pref_transport 0 buildpref_transport_ovileth 13
 	var Ex|Call pref_production 0 buildpref_production_hachirosk 13
@@ -4227,7 +4236,10 @@ script_id ZMCx
 	call main_wait_900
 	multi expansion_loop_toggle
 	call main_wait_900
+	bld 2 hachirosk 104
+	call main_wait_450
 	var Set build_gas_var 1 13
+	p_need 1 vornath_pond
 	call main_wait_600
 	p_need 1 hydrith_den
 	call main_wait_600
@@ -4248,11 +4260,11 @@ script_id ZMCx
 	
 	:build_sunblot_DescendingHorizon_Morph
 	call wait_for_IrolIris
-	call wait_for_HydrokDen
-	p_need 1 bactith_swamp
+	call wait_for_HydrithDen
+	p_need 1 tethvith_swamp
 	call main_wait_600
 	call wait_for_QuazethPool
-	p_need 1 kalkiir_pond
+	p_need 1 kalkiir_lake
 	call main_wait_600
 	p_need 1 mutath_spire
 	call wait_for_OthstolOviform
@@ -4272,7 +4284,7 @@ script_id ZMCx
 	call wQuazeth
 	call wMuthrok
 	call main_wait_300
-	call wHydrok
+	call wHydrith
 	call wBactith
 	call main_wait_300
 	call wVithrath
@@ -4290,7 +4302,7 @@ script_id ZMCx
 	call main_wait_450
 	call wZorkiz
 	call main_wait_900
-	call wUltrok
+	call wUltrav
 	call main_wait_600
 	call wElthisth
 	stop
@@ -4300,11 +4312,20 @@ script_id ZMCx
 	goto build_order_general
 	
 	:build_order_expansion
-	bring 13 AtL_W 1 hachirosk|caphrolosk|gathtelosk|larvosk_cesiant Loc.63 blank
+	wait 24
+	bring 13 AtL 1 hachirosk|caphrolosk|gathtelosk|larvosk_cesiant Loc.63 build_order_expansion
 	var Ex|Jump pref_assault 1 build_assault_fin2 13
 	var Ex|Jump pref_swarm 1 build_swarm_fin2 13
 	var Ex|Jump pref_sunblot 1 build_sunblot_fin2 13
 	goto build_general_fin2
+	
+	:build_order_component_expand
+	var Sub can_worker_var 1 13
+	call main_wait_150
+    multi expansion_loop_toggle
+	call main_wait_300
+	var Add can_worker_var 1 13
+	return
 	
 	:wIrol
 	wait 12
@@ -4316,7 +4337,7 @@ script_id ZMCx
 	wait 24
 	bring 13 AtL 1 irol_iris|othstol_oviform Loc.63 blank
 	bring 13 AtM 3 larvosk_cesiant|hachirosk|caphrolosk|gathtelosk Loc.63 need_irol
-	bring 13 Ex 0 quazeth_pool|kalkiir_pond|hydrith_den|bactith_swamp|mutath_spire|tosvrol_haunt|zorkiz_shroud|ultrav_cavern|matravil_nest|almakis_antre|elthisth_mound|geszkath_grotto Loc.63 need_irol
+	bring 13 Ex 0 quazeth_pool|vornath_pond|kalkiir_lake|hydrith_den|skibact_scab|tethvith_swamp|mutath_spire|tosvrol_haunt|zorkiz_shroud|ultrav_cavern|matravil_nest|almakis_antre|elthisth_mound|geszkath_grotto Loc.63 need_irol
 	var AtL|Jump under_attack_var 1 need_irol 13
 	call main_wait_450
 	
@@ -4342,7 +4363,7 @@ script_id ZMCx
 	bring 13 AtL 1 othstol_oviform Loc.63 blank
 	bring 13 Ex 0 irol_iris Loc.63 need_othstol
 	bring 13 AtM 5 larvosk_cesiant|hachirosk|caphrolosk|gathtelosk Loc.63 need_othstol
-	bring 13 Ex 2 quazeth_pool|kalkiir_pond|hydrith_den|bactith_swamp|mutath_spire|tosvrol_haunt|zorkiz_shroud|ultrav_cavern|matravil_nest|almakis_antre|elthisth_mound|geszkath_grotto Loc.63 need_othstol
+	bring 13 Ex 2 quazeth_pool|vornath_pond|kalkiir_lake|hydrith_den|skibact_scab|tethvith_swamp|mutath_spire|tosvrol_haunt|zorkiz_shroud|ultrav_cavern|matravil_nest|almakis_antre|elthisth_mound|geszkath_grotto Loc.63 need_othstol
 	bring 13 AtM 3 excisant Loc.63 need_othstol
 	var AtL|Jump under_attack_var 1 need_othstol 13
 	call main_wait_450
@@ -4359,14 +4380,14 @@ script_id ZMCx
 	
 	:wait_for_QuazethPool
 	wait 12
-	bring 13 AtL 1 kalkiir_pond Loc.63 blank_return
+	bring 13 AtL 1 kalkiir_lake Loc.63 blank_return
 	notowns quazeth_pool wait_for_QuazethPool
 	return
 	
-	:wait_for_HydrokDen
+	:wait_for_HydrithDen
 	wait 12
-	bring 13 AtL 1 bactith_swamp Loc.63 blank_return
-	notowns hydrith_den wait_for_HydrokDen
+	bring 13 AtL 1 tethvith_swamp Loc.63 blank_return
+	notowns hydrith_den wait_for_HydrithDen
 	return
 	
 	:wait_for_ZorkizShroud
@@ -4405,7 +4426,7 @@ script_id ZMCx
 	
 	:wQuazeth
 	wait 12
-	bring 13 AtL 1 quazeth_pool|kalkiir_pond Loc.63 blank_return
+	bring 13 AtL 1 quazeth_pool|vornath_pond|kalkiir_lake Loc.63 blank_return
 	p_need 1 quazeth_pool
 	return
 	
@@ -4413,13 +4434,13 @@ script_id ZMCx
 	wait 12
 	notowns quazeth_pool wLiivral
 	bring 13 Ex 0 irol_iris|othstol_oviform Loc.63 wLiivral
-	bring 13 AtL 1 kalkiir_pond Loc.63 blank_return
-	p_need 1 kalkiir_pond
+	bring 13 AtL 1 kalkiir_lake Loc.63 blank_return
+	p_need 1 kalkiir_lake
 	return
 	
-	:wHydrok
+	:wHydrith
 	wait 12
-	bring 13 AtL 1 hydrith_den|bactith_swamp Loc.63 blank_return
+	bring 13 AtL 1 hydrith_den|skibact_scab|tethvith_swamp Loc.63 blank_return
 	p_need 1 hydrith_den
 	return
 	
@@ -4427,8 +4448,8 @@ script_id ZMCx
 	wait 12
 	notowns hydrith_den wBactith
 	bring 13 Ex 0 irol_iris|othstol_oviform Loc.63 wBactith
-	bring 13 AtL 1 bactith_swamp Loc.63 blank_return
-	p_need 1 bactith_swamp
+	bring 13 AtL 1 tethvith_swamp Loc.63 blank_return
+	p_need 1 tethvith_swamp
 	return
 	
 	:wMuthrok
@@ -4474,10 +4495,10 @@ script_id ZMCx
 	p_need 1 zorkiz_shroud
 	return
 	
-	:wUltrok
+	:wUltrav
 	wait 12
-	notowns zorkiz_shroud wUltrok
-	bring 13 Ex 0 othstol_oviform Loc.63 wUltrok
+	notowns zorkiz_shroud wUltrav
+	bring 13 Ex 0 othstol_oviform Loc.63 wUltrav
 	bring 13 AtL 1 ultrav_cavern Loc.63 blank_return
 	p_need 1 ultrav_cavern
 	return
@@ -4657,7 +4678,6 @@ script_id ZMCx
 	wait 12
 	var AtL|Jump prod_cycle_var 1 blank_return 13
 	bring 13 Ex 0 droleth|gosvileth Loc.63 blank_return
-	bring 13 AtL 1 cagrant_cesiant Loc.63 blank_return
 	local 255 AtL 30 larvosk_cesiant blank_return
 	add_bld 255 larvosk_cesiant 1 5 100
 	call add_return_wait_960
@@ -4813,42 +4833,6 @@ script_id ZMCx
 	wait 120
 	goto zLoopA
 	
-	:attack_generic_worker_check
-	bring 13 AtL 12 hachirosk|caphrolosk|gathtelosk|larvosk_cesiant Loc.63 blank_return
-	call attack_conditions_zerg
-	var Set can_worker_all_var 0 13
-	return
-	
-	:attack_conditions_zerg
-	var Ex|Jump has_tier_1_tech_node_var 1 blank_return 13
-	multi attack_conditions_zerg_quazeth
-	multi attack_conditions_zerg_hydrith
-	multi attack_conditions_zerg_zorkiz
-	var Ex|Wait has_tier_1_tech_node_var 1 13
-	return
-	
-	:attack_conditions_zerg_quazeth
-	wait 12
-	bring 13 AtL 1 kalkiir_pond Loc.63 attack_conditions_zerg_success
-	notowns quazeth_pool attack_conditions_zerg_quazeth
-	goto attack_conditions_zerg_success
-	
-	:attack_conditions_zerg_hydrith
-	wait 12
-	bring 13 AtL 1 bactith_swamp Loc.63 attack_conditions_zerg_success
-	notowns hydrith_den attack_conditions_zerg_hydrith
-	goto attack_conditions_zerg_success
-	
-	:attack_conditions_zerg_zorkiz
-	wait 12
-	bring 13 AtL 1 ultrav_cavern Loc.63 attack_conditions_zerg_success
-	notowns zorkiz_shroud attack_conditions_zerg_zorkiz
-	goto attack_conditions_zerg_success
-	
-	:attack_conditions_zerg_success
-	var Set has_tier_1_tech_node_var 1 13
-	stop
-	
 	:attack_cycle_start
 	var Ex|Wait can_attack_var 1 13
 	time AtM 5760 Frames attack_cycle_cont
@@ -4859,12 +4843,18 @@ script_id ZMCx
 	atk_c
 	
 	:attack_generic
-	call attack_generic_worker_check
 	call add_attack_wave
+	time AtM 5760 Frames attack_cycle_early
 	atk_prep
 	atk_do
 	wait 500
 	bring 13 AtL 60 zethrokor|vorvrokor|quazilisk|liiralisk|hydralisk|bactalisk|skithrokor|gorgrokor|kagralisk|izirokor|evigrilisk|mutalisk|vithrilisk|nathrokor|kalkalisk|zoryusthaleth|ultrokor|lakizilisk|matraleth|akistrokor|konvilisk|almaksalisk|keskathalor|alkajelisk|geszithalor|isthrathaleth|sovroleth|cohort|charlatan|axitrilisk|tarasque|empress|anticthon Loc.63 attack_expansion_check
+	goto attack_cycle_fin
+	
+	:attack_cycle_early
+	atk_prep
+	wait 240
+	atk_now
 	goto attack_cycle_fin
 	
 	:attack_expansion_check
@@ -4878,15 +4868,54 @@ script_id ZMCx
 	var Set can_worker_all_var 1 13
 	return
 	
+	:attack_worker_check
+	bring 13 AtL 6 hachirosk|caphrolosk|gathtelosk|larvosk_cesiant Loc.63 blank_return
+	var Set can_worker_all_var 0 13
+	return
+	
 	:attack_conditions
+	call attack_worker_check
+	call attack_conditions_zerg
+	
+	:attack_conditions_body
 	wait 24
-	bring 13 Ex 0 quazeth_pool|kalkiir_pond|hydrith_den|bactith_swamp|mutath_spire|tosvrol_haunt|zorkiz_shroud|ultrav_cavern|matravil_nest|almakis_antre|elthisth_mound|geszkath_grotto Loc.63 attack_conditions
 	time AtM 5760 Frames blank_return
-	bring 13 AtM 10 droleth Loc.63 attack_conditions
-	bring 13 AtM 1 larvosk_cesiant|hachirosk|caphrolosk|gathtelosk Loc.63 attack_conditions
+	bring 13 AtM 10 droleth Loc.63 attack_conditions_body
+	bring 13 AtM 1 larvosk_cesiant|hachirosk|caphrolosk|gathtelosk Loc.63 attack_conditions_body
 	res 13 AtL Any 500 blank_return
 	var Ex|WF(360) under_attack_var 0 13
 	return
+	
+	:attack_conditions_zerg
+	time AtL 11520 Frames blank_return
+	var Ex|Jump has_tier_1_tech_node_var 1 blank_return 13
+	multi attack_conditions_zerg_quazeth
+	multi attack_conditions_zerg_hydrith
+	multi attack_conditions_zerg_zorkiz
+	var Ex|Wait has_tier_1_tech_node_var 1 13
+	return
+	
+	:attack_conditions_zerg_quazeth
+	wait 12
+	bring 13 AtL 1 kalkiir_lake|vornath_pond Loc.63 attack_conditions_zerg_success
+	notowns quazeth_pool attack_conditions_zerg_quazeth
+	goto attack_conditions_zerg_success
+	
+	:attack_conditions_zerg_hydrith
+	wait 12
+	bring 13 AtL 1 tethvith_swamp|skibact_scab Loc.63 attack_conditions_zerg_success
+	notowns hydrith_den attack_conditions_zerg_hydrith
+	goto attack_conditions_zerg_success
+	
+	:attack_conditions_zerg_zorkiz
+	wait 12
+	bring 13 AtL 1 ultrav_cavern Loc.63 attack_conditions_zerg_success
+	notowns zorkiz_shroud attack_conditions_zerg_zorkiz
+	goto attack_conditions_zerg_success
+	
+	:attack_conditions_zerg_success
+	var Set has_tier_1_tech_node_var 1 13
+	stop
 	
 	:add_attack_wave
 	call attack_conditions
@@ -4900,15 +4929,15 @@ script_id ZMCx
 	goto add_attack_wave_sunblot
 	
 	:add_attack_wave_assault
+	rand_j 51 add_attack_wave_air_only
 	call atk_hydrith_ranged
-	call atk_izkag_ranged
+	call atk_alkag_ranged
 	call atk_hydrith_air
 	call atk_zorkiz_ranged
 	call atk_axtoth_melee
 	call atk_geszkath_siege
 	call atk_zorkiz_melee
 	call atk_quazeth_melee
-	call atk_elthisth_siege
 	call atk_matravil_ranged
 	call atk_geszkath_air
 	call atk_axtoth_ranged
@@ -4919,6 +4948,7 @@ script_id ZMCx
 	return
 	
 	:add_attack_wave_swarm
+	rand_j 51 add_attack_wave_air_only
 	call atk_axtoth_ranged
 	call atk_axtoth_melee
 	call atk_quazeth_ranged
@@ -4926,7 +4956,7 @@ script_id ZMCx
 	call atk_quazeth_ranged
 	call atk_zorkiz_melee
 	call atk_quazeth_air
-	call atk_izkag_ranged
+	call atk_alkag_ranged
 	call atk_hydrith_air
 	call atk_matravil_ranged
 	call atk_mutath_air
@@ -4935,26 +4965,41 @@ script_id ZMCx
 	call atk_hydrith_ranged
 	call atk_zorkiz_ranged
 	call atk_geszkath_siege
-	call atk_elthisth_siege
 	return
 	
 	:add_attack_wave_sunblot
+	rand_j 128 add_attack_wave_air_only
 	call atk_mutath_air
 	call atk_quazeth_air
 	call atk_quazeth_melee
 	call atk_hydrith_air
+	call atk_zorkiz_air
+	call atk_alkag_air
 	call atk_matravil_special
 	call atk_geszkath_air
 	call atk_zorkiz_melee
-	call atk_elthisth_siege
 	call atk_quazeth_ranged
 	call atk_axtoth_melee
-	call atk_izkag_ranged
+	call atk_alkag_ranged
 	call atk_matravil_ranged
 	call atk_geszkath_siege
 	call atk_hydrith_ranged
 	call atk_zorkiz_ranged
 	call atk_axtoth_ranged
+	return
+	
+	:add_attack_wave_air_only
+	bring 13 Ex 0 vornath_pond|kalkiir_lake|skibact_scab|tethvith_swamp|zorkiz_shroud|ultrav_cavern|mutath_spire|tosvrol_haunt|alkag_iteth|geszkath_grotto|almakis_antre Loc.63 add_attack_wave
+	var Set air_attack_var 1 13
+	call atk_mutath_air
+	call atk_quazeth_air
+	call atk_hydrith_air
+	call atk_zorkiz_air
+	call atk_alkag_air
+	call atk_matravil_ranged
+	call atk_matravil_special
+	call atk_geszkath_air
+	var Set air_attack_var 0 13
 	return
 	
 	:atk_quazeth_melee
@@ -5006,21 +5051,21 @@ script_id ZMCx
 	call atk_vithrilisk
 	return
 	
-	:atk_izkag_ranged
+	:atk_alkag_ranged
 	var AtL|Call prefKagralisk 1 atk_kagralisk2 13
 #	var AtL|Call prefCherbrathalor 1 atk_cherbrathalor2 13
 	call atk_kagralisk
 #	call atk_cherbrathalor
 	return
 	
-	:atk_izkag_siege
+	:atk_alkag_siege
 	var AtL|Call prefEvigrilisk 1 atk_evigrilisk2 13
-	var AtL|Call prefOkrimnilisk 1 atk_okrimnilisk2 13
+#	var AtL|Call prefOkrimnilisk 1 atk_okrimnilisk2 13
 	call atk_evigrilisk
-	call atk_okrimnilisk
+#	call atk_okrimnilisk
 	return
 	
-	:atk_izkag_air
+	:atk_alkag_air
 	var AtL|Call prefAlmaksalisk 1 atk_almaksalisk2 13
 #	var AtL|Call prefAlgoztalisk 1 atk_algoztalisk2 13
 	call atk_almaksalisk
@@ -5030,8 +5075,10 @@ script_id ZMCx
 	:atk_mutath_air
 	var AtL|Call prefMutalisk 1 atk_mutalisk2 13
 	var AtL|Call prefTosgrilisk 1 atk_tosgrilisk2 13
+	var AtL|Call prefSovroleth 1 atk_sovroleth2 13
 	call atk_mutalisk
 	call atk_tosgrilisk
+	call atk_sovroleth
 	return
 	
 	:atk_quazeth_air
@@ -5062,25 +5109,22 @@ script_id ZMCx
 	call atk_zarcavrokor
 	return
 	
-	:atk_elthisth_siege
-	var AtL|Call prefIsthrathaleth 1 atk_isthrathaleth2 13
-	var AtL|Call prefSovroleth 1 atk_sovroleth2 13
-	call atk_isthrathaleth
-	call atk_sovroleth
-	return
-	
 	:atk_matravil_special
+	var AtL|Call prefVilgorokor 1 atk_vilgorokor2 13
+	var AtL|Call prefIsthrathaleth 1 atk_isthrathaleth2 13
 	var AtL|Call prefMatraleth 1 atk_matraleth2 13
 	var AtL|Call prefAkistrokor 1 atk_akistrokor2 13	
+	call atk_vilgorokor
+	call atk_isthrathaleth
 	call atk_matraleth
 	call atk_akistrokor
 	return
 	
 	:atk_matravil_ranged
-	var AtL|Call prefAlmaksalisk 1 atk_almaksalisk2 13
+	var AtL|Call prefTetcaerokor 1 atk_tetcaerokor2 13
 	var AtL|Call prefKonvilisk 1 atk_konvilisk2 13
 	call atk_konvilisk
-	call atk_almaksalisk
+	call atk_tetcaerokor
 	return
 	
 	:atk_geszkath_siege
@@ -5098,55 +5142,60 @@ script_id ZMCx
 	return
 	
 	:atk_zethrokor
-	bring 13 Ex 0 quazeth_pool|kalkiir_pond Loc.63 blank_return
+	bring 13 Ex 0 quazeth_pool|vornath_pond|kalkiir_lake Loc.63 blank_return
 	queue_rel zethrokor larva 0.55 larva 255 Global 63 100
 	atk_rel zethrokor zethrokor 0.8
 	
 	:atk_zethrokor2
-	bring 13 Ex 0 quazeth_pool|kalkiir_pond Loc.63 blank_return
+	bring 13 Ex 0 quazeth_pool|vornath_pond|kalkiir_lake Loc.63 blank_return
 	atk_rel zethrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.55
+	wait 24
 	return
 	
 	:atk_quazilisk
-	bring 13 Ex 0 quazeth_pool|kalkiir_pond Loc.63 blank_return
+	bring 13 Ex 0 quazeth_pool|vornath_pond|kalkiir_lake Loc.63 blank_return
 	queue_rel quazilisk larva 0.4 larva 255 Global 63 100
 	atk_rel quazilisk quazilisk 0.8
 	
 	:atk_quazilisk2
-	bring 13 Ex 0 quazeth_pool|kalkiir_pond Loc.63 blank_return
+	bring 13 Ex 0 quazeth_pool|vornath_pond|kalkiir_lake Loc.63 blank_return
 	atk_rel quazilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.4
+	wait 24
 	return
 	
 	:atk_nathrokor
-	bring 13 Ex 0 quazeth_pool|kalkiir_pond Loc.63 blank_return
+	bring 13 Ex 0 vornath_pond|kalkiir_lake Loc.63 blank_return
 	queue_rel nathrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.66 larva 255 Global 63 100
 	atk_rel nathrokor nathrokor 0.8
 	
 	:atk_nathrokor2
-	bring 13 Ex 0 quazeth_pool|kalkiir_pond Loc.63 blank_return
+	bring 13 Ex 0 vornath_pond|kalkiir_lake Loc.63 blank_return
 	atk_rel nathrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.25
+	wait 24
 	return
 	
 	:atk_vorvrokor
-	bring 13 Ex 0 quazeth_pool|kalkiir_pond Loc.63 blank_return
+	bring 13 Ex 0 vornath_pond|kalkiir_lake Loc.63 blank_return
 	queue_rel zethrokor larva 0.4 larva 255 Global 63 100
 	queue_rel vorvrokor zethrokor 0.4 larva 255 Global 63 100
 	atk_rel vorvrokor vorvrokor 0.8
 	
 	:atk_vorvrokor2
-	bring 13 Ex 0 quazeth_pool|kalkiir_pond Loc.63 blank_return
+	bring 13 Ex 0 vornath_pond|kalkiir_lake Loc.63 blank_return
 	atk_rel vorvrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.4
+	wait 24
 	return
 	
 	:atk_liiralisk
-	bring 13 Ex 0 kalkiir_pond Loc.63 blank_return
+	bring 13 Ex 0 kalkiir_lake Loc.63 blank_return
 	queue_rel quazilisk larva 0.4 larva 255 Global 63 100
 	queue_rel liiralisk quazilisk 0.4 larva 255 Global 63 101
 	atk_rel liiralisk liiralisk 0.8
 	
 	:atk_liiralisk2
-	bring 13 Ex 0 kalkiir_pond Loc.63 blank_return
+	bring 13 Ex 0 kalkiir_lake Loc.63 blank_return
 	atk_rel liiralisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.4
+	wait 24
 	return
 	
 	:atk_kalkalisk
@@ -5158,6 +5207,7 @@ script_id ZMCx
 	:atk_kalkalisk2
 	notowns tosvrol_haunt blank_return
 	atk_rel kalkalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:atk_cikralisk
@@ -5168,6 +5218,7 @@ script_id ZMCx
 	:atk_cikralisk2
 	bring 13 Ex 0 mutath_spire|tosvrol_haunt Loc.63 blank_return
 	atk_rel cikralisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.5
+	wait 24
 	return
 	
 	:atk_protathalor
@@ -5178,6 +5229,7 @@ script_id ZMCx
 	:atk_protathalor2
 	bring 13 Ex 0 mutath_spire|tosvrol_haunt Loc.63 blank_return
 	atk_rel protathalor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.25
+	wait 24
 	return
 	
 	:atk_mutalisk
@@ -5188,6 +5240,7 @@ script_id ZMCx
 	:atk_mutalisk2
 	bring 13 Ex 0 mutath_spire|tosvrol_haunt Loc.63 blank_return
 	atk_rel mutalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.5
+	wait 24
 	return
 	
 	:atk_ghitorokor
@@ -5199,6 +5252,7 @@ script_id ZMCx
 	:atk_ghitorokor2
 	notowns tosvrol_haunt blank_return
 	atk_rel ghitorokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.5
+	wait 24
 	return
 	
 	:atk_sovroleth
@@ -5210,6 +5264,7 @@ script_id ZMCx
 	:atk_sovroleth2
 	notowns tosvrol_haunt blank_return
 	atk_rel sovroleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:atk_tosgrilisk
@@ -5221,6 +5276,7 @@ script_id ZMCx
 	:atk_tosgrilisk2
 	notowns tosvrol_haunt blank_return
 	atk_rel tosgrilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:atk_axitrilisk
@@ -5231,6 +5287,7 @@ script_id ZMCx
 	:atk_axitrilisk2
 	bring 13 Ex 0 axtoth_axis|begrozith_barrow Loc.63 blank_return
 	atk_rel axitrilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 2
+	wait 24
 	return
 	
 	:atk_mortothrokor
@@ -5241,6 +5298,7 @@ script_id ZMCx
 	:atk_mortothrokor2
 	bring 13 Ex 0 axtoth_axis|begrozith_barrow Loc.63 blank_return
 	atk_rel mortothrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.5
+	wait 24
 	return
 	
 	:atk_begrothilisk
@@ -5252,6 +5310,7 @@ script_id ZMCx
 	:atk_begrothilisk2
 	notowns begrozith_barrow blank_return
 	atk_rel begrothilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:atk_oztukrokor
@@ -5263,68 +5322,75 @@ script_id ZMCx
 	:atk_oztukrokor2
 	notowns begrozith_barrow blank_return
 	atk_rel oztukrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:atk_hydralisk
-	bring 13 Ex 0 hydrith_den|bactith_swamp Loc.63 blank_return
+	bring 13 Ex 0 hydrith_den|skibact_scab|tethvith_swamp Loc.63 blank_return
 	queue_rel hydralisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.68 larva 255 Global 63 100
 	atk_rel hydralisk hydralisk 0.8
 	
 	:atk_hydralisk2
-	bring 13 Ex 0 hydrith_den|bactith_swamp Loc.63 blank_return
+	bring 13 Ex 0 hydrith_den|skibact_scab|tethvith_swamp Loc.63 blank_return
 	atk_rel hydralisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.25
+	wait 24
 	return
 	
 	:atk_izirokor
-	bring 13 Ex 0 hydrith_den|bactith_swamp Loc.63 blank_return
+	bring 13 Ex 0 hydrith_den|skibact_scab|tethvith_swamp Loc.63 blank_return
 	queue_rel izirokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
 	atk_rel izirokor izirokor 0.8
 	
 	:atk_izirokor2
-	bring 13 Ex 0 hydrith_den|bactith_swamp Loc.63 blank_return
+	bring 13 Ex 0 hydrith_den|skibact_scab|tethvith_swamp Loc.63 blank_return
 	atk_rel izirokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:atk_skithrokor
-	bring 13 Ex 0 hydrith_den|bactith_swamp Loc.63 blank_return
+	bring 13 Ex 0 skibact_scab|tethvith_swamp Loc.63 blank_return
 	queue_rel skithrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.55 larva 255 Global 63 100
 	atk_rel skithrokor skithrokor 0.8
 	
 	:atk_skithrokor2
-	bring 13 Ex 0 hydrith_den|bactith_swamp Loc.63 blank_return
+	bring 13 Ex 0 skibact_scab|tethvith_swamp Loc.63 blank_return
 	atk_rel skithrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.1
+	wait 24
 	return
 	
 	:atk_bactalisk
-	notowns bactith_swamp blank_return
+	bring 13 Ex 0 skibact_scab|tethvith_swamp Loc.63 blank_return
 	queue_rel hydralisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
 	queue_rel bactalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 hydralisk 255 Global 63 101
 	atk_rel bactalisk bactalisk 0.8
 	
 	:atk_bactalisk2
-	notowns bactith_swamp blank_return
+	bring 13 Ex 0 skibact_scab|tethvith_swamp Loc.63 blank_return
 	atk_rel bactalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:atk_tethzorokor
-	notowns bactith_swamp blank_return
+	notowns tethvith_swamp blank_return
 	queue_rel izirokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
 	queue_rel tethzorokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 izirokor 255 Global 63 101
 	atk_rel tethzorokor tethzorokor 0.8
 	
 	:atk_tethzorokor2
-	notowns bactith_swamp blank_return
+	notowns tethvith_swamp blank_return
 	atk_rel tethzorokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:atk_vithrilisk
-	notowns bactith_swamp blank_return
+	notowns tethvith_swamp blank_return
 	queue_rel skithrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.2 larva 255 Global 63 101
 	atk_rel vithrilisk vithrilisk 0.8
 	
 	:atk_vithrilisk2
-	notowns bactith_swamp blank_return
+	notowns tethvith_swamp blank_return
 	atk_rel vithrilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.4
+	wait 24
 	return
 	
 	:atk_kagralisk
@@ -5335,6 +5401,7 @@ script_id ZMCx
 	:atk_kagralisk2
 	bring 13 Ex 0 alkag_iteth|chokralgant_chazsal Loc.63 blank_return
 	atk_rel kagralisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.25
+	wait 24
 	return
 	
 	:atk_evigrilisk
@@ -5345,6 +5412,7 @@ script_id ZMCx
 	:atk_evigrilisk2
 	bring 13 Ex 0 alkag_iteth|chokralgant_chazsal Loc.63 blank_return
 	atk_rel evigrilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:atk_almaksalisk
@@ -5355,6 +5423,7 @@ script_id ZMCx
 	:atk_almaksalisk2
 	bring 13 Ex 0 alkag_iteth|chokralgant_chazsal Loc.63 blank_return
 	atk_rel almaksalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.5
+	wait 24
 	return
 	
 	:atk_cherbrathalor
@@ -5366,6 +5435,7 @@ script_id ZMCx
 	:atk_cherbrathalor2
 	notowns chokralgant_chazsal blank_return
 	atk_rel cherbrathalor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:atk_okrimnilisk
@@ -5377,6 +5447,7 @@ script_id ZMCx
 	:atk_okrimnilisk2
 	notowns chokralgant_chazsal blank_return
 	atk_rel okrimnilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:atk_algoztalisk
@@ -5388,6 +5459,7 @@ script_id ZMCx
 	:atk_algoztalisk2
 	notowns chokralgant_chazsal blank_return
 	atk_rel algoztalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:atk_keskathalor
@@ -5398,6 +5470,7 @@ script_id ZMCx
 	:atk_keskathalor2
 	bring 13 Ex 0 geszkath_grotto Loc.63 blank_return
 	atk_rel keskathalor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:atk_geszithalor
@@ -5408,6 +5481,7 @@ script_id ZMCx
 	:atk_geszithalor2
 	bring 13 Ex 0 geszkath_grotto Loc.63 blank_return
 	atk_rel geszithalor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:atk_kethrostalor
@@ -5419,6 +5493,7 @@ script_id ZMCx
 	:atk_kethrostalor2
 	notowns geszkath_grotto blank_return
 	atk_rel kethrostalor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:atk_alkajelisk
@@ -5430,6 +5505,7 @@ script_id ZMCx
 	:atk_alkajelisk2
 	notowns geszkath_grotto blank_return
 	atk_rel alkajelisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:atk_zoryusthaleth
@@ -5440,6 +5516,7 @@ script_id ZMCx
 	bring 13 Ex 0 zorkiz_shroud|ultrav_cavern Loc.63 blank_return
 	atk_rel zoryusthaleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75
 	atk_rel zoryusthaleth zoryusthaleth 0.8
+	wait 24
 	return
 	
 	:atk_lakizilisk
@@ -5450,6 +5527,7 @@ script_id ZMCx
 	:atk_lakizilisk2
 	bring 13 Ex 0 zorkiz_shroud|ultrav_cavern Loc.63 blank_return
 	atk_rel lakizilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:atk_gorgrokor
@@ -5458,18 +5536,22 @@ script_id ZMCx
 	atk_rel gorgrokor gorgrokor 0.8
 	
 	:atk_gorgrokor2
-	notowns bactith_swamp blank_return
+	notowns tethvith_swamp blank_return
 	atk_rel gorgrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.5
+	wait 24
 	return
 	
 	:atk_konvilisk
+	var Ex|Jump air_attack_var 1 blank_return 13
 	bring 13 Ex 0 matravil_nest|almakis_antre Loc.63 blank_return
 	queue_rel konvilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.75 larva 255 Global 63 101
 	atk_rel konvilisk konvilisk 0.8
 	
 	:atk_konvilisk2
+	var Ex|Jump air_attack_var 1 blank_return 13
 	bring 13 Ex 0 matravil_nest|almakis_antre Loc.63 blank_return
 	atk_rel konvilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.5
+	wait 24
 	return
 	
 	:atk_vilgorokor
@@ -5480,6 +5562,7 @@ script_id ZMCx
 	:atk_vilgorokor2
 	bring 13 Ex 0 matravil_nest|almakis_antre Loc.63 blank_return
 	atk_rel vilgorokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1.5
+	wait 24
 	return
 	
 	:atk_matraleth
@@ -5490,6 +5573,7 @@ script_id ZMCx
 	:atk_matraleth2
 	bring 13 Ex 0 matravil_nest|almakis_antre Loc.63 blank_return
 	atk_rel matraleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5
+	wait 24
 	return
 	
 	:atk_ultrokor
@@ -5501,6 +5585,7 @@ script_id ZMCx
 	:atk_ultrokor2
 	bring 13 Ex 0 ultrav_cavern Loc.63 blank_return
 	atk_rel ultrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:atk_zobriolisk
@@ -5512,6 +5597,7 @@ script_id ZMCx
 	:atk_zobriolisk2
 	bring 13 Ex 0 ultrav_cavern Loc.63 blank_return
 	atk_rel zobriolisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:atk_zarcavrokor
@@ -5523,6 +5609,7 @@ script_id ZMCx
 	:atk_zarcavrokor2
 	bring 13 Ex 0 ultrav_cavern Loc.63 blank_return
 	atk_rel zarcavrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:atk_tetcaerokor
@@ -5534,17 +5621,18 @@ script_id ZMCx
 	:atk_tetcaerokor2
 	notowns almakis_antre blank_return
 	atk_rel tetcaerokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
-	:atkSelkerilisk
+	:atk_isthrathaleth
 	notowns almakis_antre blank_return
 	queue_rel vilgorokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
-	queue_rel selkerilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 vilgorokor 255 Global 63 102
-	atk_rel selkerilisk selkerilisk 0.8
+	queue_rel isthrathaleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.4 vilgorokor 255 Global 63 100
 	
-	:atkSelkerilisk2
+	:atk_isthrathaleth2
 	notowns almakis_antre blank_return
-	atk_rel selkerilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	atk_rel isthrathaleth isthrathaleth 1
+	wait 24
 	return
 	
 	:atk_akistrokor
@@ -5556,48 +5644,7 @@ script_id ZMCx
 	:atk_akistrokor2
 	notowns almakis_antre blank_return
 	atk_rel akistrokor larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5
-	return
-	
-	:atk_isthrathaleth
-	bring 13 Ex 0 elthisth_mound|rakzogth_roost Loc.63 blank_return
-	queue_rel isthrathaleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.2 larva 255 Global 63 103
-	atk_rel isthrathaleth isthrathaleth 0.8
-	
-	:atk_isthrathaleth2
-	notowns elthisth_mound blank_return
-	atk_rel isthrathaleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.33
-	return
-	
-	:atk_elthrazalisk
-	bring 13 Ex 0 elthisth_mound|rakzogth_roost Loc.63 blank_return
-	queue_rel elthrazalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.2 larva 255 Global 63 103
-	atk_rel elthrazalisk elthrazalisk 0.8
-	
-	:atk_elthrazalisk2
-	notowns elthisth_mound blank_return
-	atk_rel elthrazalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.33
-	return
-	
-	:atk_ogroszaleth
-	notowns almakis_antre blank_return
-	queue_rel isthrathaleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.4 larva 255 Global 63 100
-	queue_rel ogroszaleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.4 isthrathaleth 255 Global 63 104
-	atk_rel ogroszaleth ogroszaleth 0.8
-	
-	:atk_ogroszaleth2
-	notowns almakis_antre blank_return
-	atk_rel ogroszaleth larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5
-	return
-	
-	:atk_rakzilisk
-	notowns almakis_antre blank_return
-	queue_rel elthrazalisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 larva 255 Global 63 100
-	queue_rel rakzilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 0.5 elthrazalisk 255 Global 63 104
-	atk_rel rakzilisk rakzilisk 0.8
-	
-	:atk_rakzilisk2
-	notowns almakis_antre blank_return
-	atk_rel rakzilisk larvosk_cesiant|hachirosk|caphrolosk|gathtelosk 1
+	wait 24
 	return
 	
 	:early_military
@@ -5609,9 +5656,9 @@ script_id ZMCx
 	:early_military_general
 	time AtL 7200 Frames blank
 	var Ex|Wait can_queue_early_military_var 1 13
-	bring 13 AtL_M 1 quazeth_pool|kalkiir_pond Loc.63 early_zethrokor
-	bring 13 AtL_M 1 kalkiir_pond Loc.63 early_vorvrokor
-	bring 13 AtL_M 1 hydrith_den|bactith_swamp Loc.63 early_hydralisk
+	bring 13 AtL_M 1 quazeth_pool|vornath_pond|kalkiir_lake Loc.63 early_zethrokor
+	bring 13 AtL_M 1 kalkiir_lake Loc.63 early_vorvrokor
+	bring 13 AtL_M 1 hydrith_den|skibact_scab|tethvith_swamp Loc.63 early_hydralisk
 	bring 13 AtL_M 1 zorkiz_shroud|ultrav_cavern Loc.63 early_lakizilisk
 	bring 13 AtL_M 1 mutath_spire|tosvrol_haunt Loc.63 early_mutalisk
 	bring 13 AtL_M 1 mutath_spire|tosvrol_haunt Loc.63 early_nathrokor
@@ -5622,12 +5669,12 @@ script_id ZMCx
 	:early_military_assault
 	time AtL 7200 Frames blank
 	var Ex|Wait can_queue_early_military_var 1 13
-	bring 13 AtL_M 1 hydrith_den|bactith_swamp Loc.63 early_hydralisk
-	bring 13 AtL_M 1 quazeth_pool|kalkiir_pond Loc.63 early_zethrokor
-	bring 13 AtL_M 1 bactith_swamp Loc.63 early_bactalisk
+	bring 13 AtL_M 1 hydrith_den|skibact_scab|tethvith_swamp Loc.63 early_hydralisk
+	bring 13 AtL_M 1 quazeth_pool|vornath_pond|kalkiir_lake Loc.63 early_zethrokor
+	bring 13 AtL_M 1 tethvith_swamp Loc.63 early_bactalisk
 	bring 13 AtL_M 1 zorkiz_shroud|ultrav_cavern Loc.63 early_lakizilisk
 	bring 13 AtL_M 1 zorkiz_shroud|ultrav_cavern Loc.63 early_zoryusthaleth
-	bring 13 AtL_M 1 kalkiir_pond Loc.63 early_vorvrokor
+	bring 13 AtL_M 1 kalkiir_lake Loc.63 early_vorvrokor
 	bring 13 AtL_M 1 mutath_spire|tosvrol_haunt Loc.63 early_nathrokor
 	bring 13 AtL_M 1 almakis_antre Loc.63 early_almaksalisk
 	wait 480
@@ -5637,14 +5684,14 @@ script_id ZMCx
 	:early_military_swarm
 	time AtL 7200 Frames blank
 	var Ex|Wait can_queue_early_military_var 1 13
-	bring 13 AtL_M 1 quazeth_pool|kalkiir_pond Loc.63 early_zethrokor
-	bring 13 AtL_M 1 kalkiir_pond Loc.63 early_vorvrokor
+	bring 13 AtL_M 1 quazeth_pool|vornath_pond|kalkiir_lake Loc.63 early_zethrokor
+	bring 13 AtL_M 1 kalkiir_lake Loc.63 early_vorvrokor
 	bring 13 AtL_M 1 mutath_spire|tosvrol_haunt Loc.63 early_nathrokor
 	bring 13 AtL_M 1 ultrav_cavern Loc.63 early_ultrokor
-	bring 13 AtL_M 1 hydrith_den|bactith_swamp Loc.63 early_hydralisk
+	bring 13 AtL_M 1 hydrith_den|skibact_scab|tethvith_swamp Loc.63 early_hydralisk
 	bring 13 AtL_M 1 zorkiz_shroud|ultrav_cavern Loc.63 early_lakizilisk
 	bring 13 AtL_M 1 mutath_spire|tosvrol_haunt Loc.63 early_mutalisk
-	bring 13 AtL_M 1 quazeth_pool|kalkiir_pond Loc.63 early_quazilisk
+	bring 13 AtL_M 1 quazeth_pool|vornath_pond|kalkiir_lake Loc.63 early_quazilisk
 	bring 13 AtL_M 1 zorkiz_shroud|ultrav_cavern Loc.63 early_zoryusthaleth
 	wait 480
 	c_queues train zethrokor|vorvrokor|nathrokor|ultrokor|hydralisk|lakizilisk|mutalisk|quazilisk|zoryusthaleth 13
@@ -5654,16 +5701,16 @@ script_id ZMCx
 	time AtL 7200 Frames blank
 	var Ex|Wait can_queue_early_military_var 1 13
 	bring 13 AtL_M 1 mutath_spire|tosvrol_haunt Loc.63 early_mutalisk
-	bring 13 AtL_M 1 quazeth_pool|kalkiir_pond Loc.63 early_zethrokor
+	bring 13 AtL_M 1 quazeth_pool|vornath_pond|kalkiir_lake Loc.63 early_zethrokor
 	bring 13 AtL_M 1 mutath_spire|tosvrol_haunt Loc.63 early_nathrokor
 	bring 13 AtL_M 1 almakis_antre Loc.63 early_almaksalisk
-	bring 13 AtL_M 1 kalkiir_pond Loc.63 early_vorvrokor
+	bring 13 AtL_M 1 kalkiir_lake Loc.63 early_vorvrokor
 	wait 480
 	c_queues train mutalisk|zethrokor|nathrokor|almaksalisk|vorvrokor 13
 	goto early_military_sunblot
 	
 	:early_zethrokor
-	bring 13 Ex 0 quazeth_pool|kalkiir_pond Loc.63 blank
+	bring 13 Ex 0 quazeth_pool|vornath_pond|kalkiir_lake Loc.63 blank
 	bring 13 AtL 24 zethrokor Loc.63 blank
 	bring 13 AtM_C 2 larva Loc.63 wait_for_larva
 	res 13 AtM Ore 49 blank
@@ -5671,7 +5718,7 @@ script_id ZMCx
 	stop
 	
 	:early_vorvrokor
-	bring 13 Ex 0 quazeth_pool|kalkiir_pond Loc.63 blank
+	bring 13 Ex 0 quazeth_pool|vornath_pond|kalkiir_lake Loc.63 blank
 	bring 13 AtL 12 vorvrokor Loc.63 blank
 	bring 13 AtM_C 2 larva Loc.63 wait_for_larva
 	res 13 AtM Ore 74 blank
@@ -5688,7 +5735,7 @@ script_id ZMCx
 	stop
 	
 	:early_hydralisk
-	bring 13 Ex 0 hydrith_den|bactith_swamp Loc.63 blank
+	bring 13 Ex 0 hydrith_den|skibact_scab|tethvith_swamp Loc.63 blank
 	bring 13 AtL 10 hydralisk Loc.63 blank
 	bring 13 AtM_C 2 larva Loc.63 wait_for_larva
 	res 13 AtM Ore 74 blank
@@ -5697,7 +5744,7 @@ script_id ZMCx
 	stop
 	
 	:early_bactalisk
-	notowns bactith_swamp blank
+	notowns tethvith_swamp blank
 	bring 13 AtL 6 bactalisk Loc.63 blank
 	bring 13 AtM_C 2 larva Loc.63 wait_for_larva
 	res 13 AtM Ore 124 blank
@@ -5707,7 +5754,7 @@ script_id ZMCx
 	stop
 	
 	:early_quazilisk
-	bring 13 Ex 0 quazeth_pool|kalkiir_pond Loc.63 blank
+	bring 13 Ex 0 quazeth_pool|vornath_pond|kalkiir_lake Loc.63 blank
 	bring 13 AtL 12 quazilisk Loc.63 blank
 	bring 13 AtM_C 2 larva Loc.63 wait_for_larva
 	res 13 AtM Ore 124 blank
@@ -5789,7 +5836,7 @@ script_id ZMCx
 	
 	:anti_grief_air_assault
 	add_bld 255 spraith_cesiant 2 50 140
-	call tech_to_hydrok
+	call tech_to_hydrith
 	train 6 hydralisk
 	stop
 	
@@ -5807,7 +5854,7 @@ script_id ZMCx
 	
 	:anti_grief_air_general
 	add_bld 255 spraith_cesiant 3 50 140
-	call tech_to_hydrok
+	call tech_to_hydrith
 	train 4 skithrokor
 	stop
 	
@@ -5865,5 +5912,7 @@ script_id ZMCx
 	return
 	
 	:faction_zorthos
+	replace_unit nathrokor nathrelisk
+#	replace_unit izirokor iziralisk
 	return
 	

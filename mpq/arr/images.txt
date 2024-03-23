@@ -1220,7 +1220,7 @@ Manifold Shadow
 Architect
 Architect Shadow
 Architect Engines
-Kalkalisk Birth
+Kalkalisk Birth (Cocoon)
 Iroleth Birth
 Nathrokor Birth
 Alkajelisk Birth
@@ -1825,11 +1825,11 @@ Swarming Omen Overlay (Small)
 Swarming Omen Overlay (Medium)
 Swarming Omen Overlay (Large)
 Swarming Omen Overlay (XLarge)
-Extended Image #825
-Extended Image #826
-Extended Image #827
-Extended Image #828
-Extended Image #829
+Kalkalisk Birth (Egg)
+Tethzorokor Birth
+Vilgorokor Birth
+Protathalor Birth
+Cikralisk Birth
 Extended Image #830
 Extended Image #831
 Extended Image #832

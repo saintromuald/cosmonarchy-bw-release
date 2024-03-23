@@ -305,7 +305,7 @@ script_id PMCx
 	:prefUZealot
 	var Set pref_zealot 1 13
 	var Set pref_dracadin 0 13
-	var Set pref_ecclesiast 1 13
+	var Set pref_ecclesiast 0 13
 	var Set pref_gateway_units 1 13
 	var Ex|Jump debug_ai_messages_var 0 blank_return 13
 	print pref_zealot
@@ -313,8 +313,8 @@ script_id PMCx
 	
 	:prefUDracadin
 	var Set pref_zealot 0 13
-	var Set pref_dracadin 0 13
-	var Set pref_ecclesiast 1 13
+	var Set pref_dracadin 1 13
+	var Set pref_ecclesiast 0 13
 	var Set pref_gateway_units 1 13
 	var Ex|Jump debug_ai_messages_var 0 blank_return 13
 	print pref_dracadin
@@ -557,7 +557,6 @@ script_id PMCx
 	:prefUAccantor
 	var Set pref_accantor 1 13
 	var Set pref_architect 0 13
-	var Set pref_demiurge 0 13
 	var Set pref_ardentauthority_secondary_units 1 13
 	var Ex|Jump debug_ai_messages_var 0 blank_return 13
 	print pref_accantor
@@ -1830,7 +1829,7 @@ script_id PMCx
 	wait 24
 	multi build_order
 	call main_wait_1500
-	bld 1 pylon 100
+	bld 1 pylon 103
 	w_bld 1 pylon
 	var Ex|Jump skip_building_var 1 idle 13
 	wait 300
@@ -2021,6 +2020,7 @@ script_id PMCx
 	return
 	
 	:expansion_request_reset
+	var Ex|Jump build_done_var 0 blank_return 13
 	var Set can_queue_early_military_var 1 13
 	var Set can_attack_var 1 13
 	var Set can_build_static_defense_var 1 13
@@ -2077,7 +2077,7 @@ script_id PMCx
 	var Set try_expand_var 0 13
 	w_bld 1 nexus
 	multi count_expansion
-	bld 1 pylon 98
+	bld 1 pylon 103
 	var Ex|Jump skip_building_var 1 idle 13
 	placeholder_count Local AtL|Jump 2 Group_Buildings idle 13
 	
@@ -2086,15 +2086,15 @@ script_id PMCx
 	w_bld 1 pylon
 	multi request_static_defense
 	call main_wait_1200
-	resarea 255 AtL 255 Ore 1 production_cycle
+	resarea 255 AtL_M 255 Ore 1 production_cycle
 	call main_wait_1800
 	var Ex|Wait build_done_var 1 13
 	call main_wait_1200
-	multi request_embassy
-	call main_wait_600
-	multi request_crucible
-	call main_wait_600
 	multi build_order_expansion
+	call main_wait_2400
+	multi request_crucible
+	call main_wait_2400
+	multi request_embassy
 	goto idle
 	
 	:count_expansion
@@ -2361,7 +2361,7 @@ script_id PMCx
 	dth 13 Ex 1 dark_swarm_unit build_general_LunaticLegion
 	dth 13 Ex 2 dark_swarm_unit build_general_StridentStriders
 	dth 13 Ex 3 dark_swarm_unit build_general_Worship
-	dth 13 Ex 4 dark_swarm_unit build_general_RoboFE
+	dth 13 Ex 4 dark_swarm_unit build_general_RoboticsFE
 	dth 13 Ex 5 dark_swarm_unit build_general_TheSwordsmiths
 	dth 13 Ex 6 dark_swarm_unit build_general_Matriarchy
 	
@@ -2379,7 +2379,7 @@ script_id PMCx
 	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
 	var Ex|Call pref_skylord_production 0 buildpref_skylord_production_stargate 13
 	call main_wait_300
-	bld 1 pylon 99
+	bld 1 pylon 103
 	call main_wait_300
 	w_bld 1 pylon
 	bld 1 gateway 98
@@ -2427,7 +2427,7 @@ script_id PMCx
 	var Ex|Call pref_templar_production 0 buildpref_templar_production_grandlibrary 13
 	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_ardentauthority 13
 	call main_wait_600
-	bld 1 pylon 99
+	bld 1 pylon 103
 	call main_wait_600
 	w_bld 1 pylon
 	bld 1 gateway 98
@@ -2461,7 +2461,7 @@ script_id PMCx
 	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
 	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_lattice 13
 	call main_wait_600
-	bld 1 pylon 99
+	bld 1 pylon 103
 	call main_wait_600
 	w_bld 1 pylon
 	bld 1 gateway 98
@@ -2490,11 +2490,11 @@ script_id PMCx
 	call main_wait_300
 	goto build_general_fin
 	
-	:build_general_RoboFE
-	var Ex|Jump debug_ai_messages_var 0 build_general_RoboFE_Main 13
+	:build_general_RoboticsFE
+	var Ex|Jump debug_ai_messages_var 0 build_general_RoboticsFE_Main 13
 	print Protoss<32>General<32>greed<32>1:<32>Robo<32>FE
 	
-	:build_general_RoboFE_Main
+	:build_general_RoboticsFE_Main
 	var Ex|Call pref_gateway_units 0 buildpref_gateway_zealot 13
 	var Ex|Call pref_gateway_secondary_units 0 buildpref_gateway_secondary_hierophant 13
 	var Ex|Call pref_lattice_units 0 buildpref_lattice_vassal 13
@@ -2503,7 +2503,7 @@ script_id PMCx
 	call main_wait_750
 	var Add can_expand_var 1 13
 	call main_wait_300
-	bld 1 pylon 99
+	bld 1 pylon 103
 	call main_wait_300
 	w_bld 1 pylon
 	bld 1 lattice 98
@@ -2537,27 +2537,29 @@ script_id PMCx
 	var Ex|Call buildpref_stargate_secondary_units 0 buildpref_stargate_secondary_gladius 13
 	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
 	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_ardentauthority 13
-	call main_wait_600
-	bld 1 pylon 99
+	call main_wait_300
+	bld 1 pylon 103
 	w_bld 1 pylon
 	bld 1 gateway 99
 	call main_wait_300
 	bld 1 lattice 99
+	w_bld 1 gateway
+	w_bld 1 lattice
+	multi build_general_TheSwordsmiths_Queue
 	call main_wait_600
+	var Set can_attack_var 1 13
+	call main_wait_900
 	multi expansion_toggle
 	call main_wait_300
 	bld 2 pylon 99
-	call main_wait_600
-	var Set can_attack_var 1 13
-	call main_wait_600
+	call main_wait_900
 	var Set build_gas_var 1 13
-	call main_wait_150
 	bld 1 ardent_authority 101
-	call main_wait_300
+	call main_wait_1200
 	bld 1 stargate 100
-	call main_wait_600
-	var Set can_build_static_defense_var 1 13
 	call main_wait_300
+	var Set can_build_static_defense_var 1 13
+	call main_wait_600
 	bld 2 stargate 100
 	call main_wait_900
 	bld 2 ardent_authority 101
@@ -2565,6 +2567,30 @@ script_id PMCx
 	multi production_cycle
 	call main_wait_300
 	goto build_general_fin
+	
+	:build_general_TheSwordsmiths_Queue
+	multi build_general_TheSwordsmiths_Queue2
+	w_bld 1 gateway
+	queue 1 zealot gateway 255 Local Loc.63 125
+	wait 600
+	queue 1 ecclesiast gateway 255 Local Loc.63 125
+	wait 600
+	queue 1 ecclesiast gateway 255 Local Loc.63 125
+	wait 600
+	queue 1 zealot gateway 255 Local Loc.63 125
+	wait 600
+	queue 1 dracadin gateway 255 Local Loc.63 125
+	
+	:build_general_TheSwordsmiths_Queue2
+	w_bld 1 lattice
+	queue 1 vassal lattice 255 Local Loc.63 125
+	wait 336
+	queue 1 vassal lattice 255 Local Loc.63 125
+	wait 336
+	queue 1 golem lattice 255 Local Loc.63 125
+	wait 672
+	queue 1 golem lattice 255 Local Loc.63 125
+	stop
 	
 	:build_general_Matriarchy
 	var Ex|Jump debug_ai_messages_var 0 build_general_Matriarchy_Main 13
@@ -2582,7 +2608,7 @@ script_id PMCx
 	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_syntheticsynod 13
 	var Ex|Call pref_skylord_production 0 buildpref_skylord_production_argosy 13
 	call main_wait_600
-	bld 1 pylon 99
+	bld 1 pylon 103
 	w_bld 1 pylon
 	bld 1 gateway 99
 	call main_wait_300
@@ -2678,7 +2704,7 @@ script_id PMCx
 	:build_order_ranger_select
 	dth 13 Ex 1 dark_swarm_unit build_ranger_2GateStrider
 	dth 13 Ex 2 dark_swarm_unit build_ranger_EmissarySquared
-	dth 13 Ex 3 dark_swarm_unit build_ranger_1GateRobo
+	dth 13 Ex 3 dark_swarm_unit build_ranger_1GateAuthority
 	dth 13 Ex 4 dark_swarm_unit build_ranger_LatticeExpo
 	dth 13 Ex 5 dark_swarm_unit build_ranger_SimulantSwarm
 	dth 13 Ex 6 dark_swarm_unit build_ranger_TheRegistry
@@ -2696,7 +2722,7 @@ script_id PMCx
 	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_ardentauthority 13
 	var Ex|Call pref_skylord_production 0 buildpref_skylord_production_argosy 13
 	call main_wait_300
-	bld 1 pylon 99
+	bld 1 pylon 103
 	call main_wait_300
 	w_bld 1 pylon
 	bld 1 gateway 98
@@ -2741,7 +2767,7 @@ script_id PMCx
 	call main_wait_900
 	multi expansion_toggle
 	call main_wait_600
-	bld 1 pylon 99
+	bld 1 pylon 103
 	w_bld 1 pylon
 	bld 1 gateway 98
 	call main_wait_300
@@ -2771,11 +2797,11 @@ script_id PMCx
 	multi production_cycle
 	goto build_ranger_fin
 	
-	:build_ranger_1GateRobo
-	var Ex|Jump debug_ai_messages_var 0 build_ranger_1GateRobo_Main 13
+	:build_ranger_1GateAuthority
+	var Ex|Jump debug_ai_messages_var 0 build_ranger_1GateAuthority_Main 13
 	print Protoss<32>Ranger<32>rush<32>1:<32>1Gate<32>Robo
 	
-	:build_ranger_1GateRobo_Main
+	:build_ranger_1GateAuthority_Main
 	var Ex|Call pref_gateway_secondary_units 0 buildpref_gateway_ecclesiast 13
 	var Ex|Call pref_lattice_units 0 buildpref_lattice_manifold 13
 	var Ex|Call pref_lattice_secondary_units 0 buildpref_lattice_secondary_idol 13
@@ -2783,7 +2809,7 @@ script_id PMCx
 	var Ex|Call pref_roguegallery_units 0 buildpref_roguegallery_barghest 13
 	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_ardentauthority 13
 	call main_wait_600
-	bld 1 pylon 99
+	bld 1 pylon 103
 	call main_wait_600
 	w_bld 1 pylon
 	bld 1 gateway 98
@@ -2840,7 +2866,7 @@ script_id PMCx
 	var Ex|Call pref_roguegallery_units 0 buildpref_roguegallery_barghest 13
 	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_lattice 13
 	call main_wait_600
-	bld 1 pylon 99
+	bld 1 pylon 103
 	call main_wait_600
 	call main_wait_600
 	bld 2 pylon 99
@@ -2882,7 +2908,7 @@ script_id PMCx
 	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
 	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_ardentauthority 13
 	call main_wait_600
-	bld 1 pylon 97
+	bld 1 pylon 103
 	call main_wait_900
 	w_bld 1 pylon
 	bld 1 lattice 98
@@ -2928,7 +2954,7 @@ script_id PMCx
 	var Ex|Call pref_templar_production 0 buildpref_templar_production_roguegallery 13
 	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_ardentauthority 13
 	call main_wait_300
-	bld 1 pylon 99
+	bld 1 pylon 103
 	call main_wait_600
 	w_bld 1 pylon
 	bld 1 lattice 98
@@ -3040,7 +3066,7 @@ script_id PMCx
 	var Ex|Call pref_ardentauthority_secondary_units 0 buildpref_ardentauthority_secondary_accantor 13
 	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
 	call main_wait_300
-	bld 1 pylon 99
+	bld 1 pylon 103
 	call main_wait_300
 	w_bld 1 pylon
 	bld 1 gateway 98
@@ -3087,7 +3113,7 @@ script_id PMCx
 	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
 	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_ardentauthority 13
 	call main_wait_300
-	bld 1 pylon 99
+	bld 1 pylon 103
 	call main_wait_300
 	w_bld 1 pylon
 	bld 1 gateway 98
@@ -3126,7 +3152,7 @@ script_id PMCx
 	var Ex|Call pref_grandlibrary_assault 0 build_pref_ancestralarchives_archon 13
 	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
 	call main_wait_300
-	bld 1 pylon 99
+	bld 1 pylon 103
 	call main_wait_300
 	w_bld 1 pylon
 	bld 1 gateway 98
@@ -3178,16 +3204,16 @@ script_id PMCx
 	var Ex|Call pref_grandlibrary_assault 0 build_pref_ancestralarchives_archon 13
 	var Ex|Call pref_ardentauthority_secondary_units 0 buildpref_ardentauthority_secondary_accantor 13
 	var Ex|Call pref_templar_production 0 buildpref_templar_production_gateway 13
-	call main_wait_600
-	bld 1 pylon 99
-	call main_wait_600
+	call main_wait_300
+	bld 1 pylon 103
 	w_bld 1 pylon
 	bld 1 gateway 98
+	multi build_templar_Initiates_Queue
 	call main_wait_600
-	bld 2 pylon 99
-	call main_wait_300
 	bld 2 gateway 98
 	call main_wait_300
+	bld 2 pylon 99
+	w_bld 2 gateway
 	var Sub can_worker_var 1 13
 	do_morph 2 zealot
 	call main_wait_150
@@ -3195,16 +3221,32 @@ script_id PMCx
 	call main_wait_150
 	bld 3 gateway 98
 	call main_wait_600
-	var Add can_worker_var 1 13
-	call main_wait_900
 	var set can_attack_var 1 13
-	call main_wait_300
+	call main_wait_450
+	var Add can_worker_var 1 13
+	call main_wait_450
+	var Add can_expand_var 1 13
+	call main_wait_450
 	bld 4 gateway 98
 	call main_wait_600
-	var Add can_expand_var 1 13
-	call main_wait_300
 	multi production_cycle
 	goto build_templar_fin
+	
+	:build_templar_Initiates_Queue
+	w_bld 1 gateway
+	queue 1 zealot gateway 255 Local Loc.63 125
+	wait 600
+	queue 1 zealot gateway 255 Local Loc.63 125
+	wait 600
+	queue 1 zealot gateway 255 Local Loc.63 125
+	wait 600
+	queue 1 zealot gateway 255 Local Loc.63 125
+	w_bld 2 gateway
+	queue 1 zealot gateway 255 Local Loc.63 125
+	wait 600
+	queue 1 zealot gateway 255 Local Loc.63 125
+	wait 600
+	stop
 	
 	:build_templar_Martyrdom
 	var Ex|Jump debug_ai_messages_var 0 build_templar_Martyrdom_Main 13
@@ -3220,7 +3262,7 @@ script_id PMCx
 	call main_wait_600
 	multi expansion_toggle
 	call main_wait_300
-	bld 1 pylon 99
+	bld 1 pylon 103
 	call main_wait_300
 	w_bld 1 pylon
 	bld 1 gateway 98
@@ -3263,7 +3305,7 @@ script_id PMCx
 	var Ex|Call pref_ancestralarchives_units 0 build_pref_ancestralarchives_patriarch 13
 	var Ex|Call pref_templar_production 0 buildpref_templar_production_grandlibrary 13
 	call main_wait_600
-	bld 1 pylon 99
+	bld 1 pylon 103
 	w_bld 1 pylon
 	bld 1 gateway 98
 	call main_wait_600
@@ -3389,7 +3431,7 @@ script_id PMCx
 	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_lattice 13
 	var Ex|Call pref_skylord_production 0 buildpref_skylord_production_argosy 13
 	call main_wait_300
-	bld 1 pylon 99
+	bld 1 pylon 103
 	call main_wait_300
 	var Sub can_worker_var 1 13
 	multi expansion_toggle
@@ -3443,7 +3485,7 @@ script_id PMCx
 	call main_wait_150
 	var Set build_gas_var 1 13
 	call main_wait_450
-	bld 1 pylon 99
+	bld 1 pylon 103
 	w_bld 1 pylon
 	bld 1 gateway 98
 	call main_wait_150
@@ -3483,7 +3525,7 @@ script_id PMCx
 	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_lattice 13
 	var Ex|Call pref_skylord_production 0 buildpref_skylord_production_stargate 13
 	call main_wait_600
-	bld 1 pylon 99
+	bld 1 pylon 103
 	call main_wait_600
 	call main_wait_600
 	w_bld 1 pylon
@@ -3518,77 +3560,65 @@ script_id PMCx
 	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_lattice 13
 	var Ex|Call pref_skylord_production 0 buildpref_skylord_production_stargate 13
 	call main_wait_300
-	bld 1 pylon 99
-	call main_wait_300
+	bld 1 pylon 103
 	w_bld 1 pylon
 	bld 1 gateway 98
-	wait 24
 	call main_wait_600
-	wait 24
 	bld 1 stargate 98
-	wait 24
-	queue 1 zealot gateway 255 Local Loc.63 100
-	wait 24
-    bld 1 warden 94
+	multi build_skylord_Exalted_Queue
+    bld 1 warden 96
 	call main_wait_300
 	bld 2 gateway 98
 	call main_wait_600
-	bld 2 stargate 98
-	call main_wait_150
-	bld 2 warden 94
-	call main_wait_300
-	bld 3 stargate 98
-	call main_wait_300
-	queue 2 dracadin gateway 255 Local Loc.63 100
-	wait 24
-	bld 4 warden 94
-	call main_wait_300
-	bld 1 argosy 101
-	wait 24
-	queue 1 panoptus stargate 255 Local Loc.63 100
-	call main_wait_150
+	bld 2 warden 96
+	call main_wait_900
+	var Add can_attack_var 1 13
+	call main_wait_600
 	var Sub can_worker_var 1 13
 	multi expansion_toggle
 	call main_wait_600
 	var Add can_worker_var 1 13
-	wait 24
+	call main_wait_900
+	bld 3 gateway 98
+	call main_wait_1500
+	bld 3 stargate 98
+	call main_wait_900
+	bld 1 argosy 101
 	w_bldstart 1 argosy
 	call main_wait_450
 	var Set can_build_static_defense_var 1 13
-	call main_wait_150
-	bld 2 argosy 99
-	call main_wait_150
-	bld 3 gateway 98
-	call main_wait_150
-	bld 6 warden 94
-	call main_wait_300
-	multi production_cycle
-	call main_wait_150
-	queue 1 didact argosy 255 Local Loc.63 100
-	call main_wait_150
-	bld 7 warden 94
-	call main_wait_150
-	bld 4 stargate 98
-	call main_wait_150
-	bld 8 warden 94
-	call main_wait_300
-	bld 9 warden 94
-	call main_wait_300
-	bld 1 monument_of_sin 101
-	wait 24
-	bld 10 warden 94
-	call main_wait_300
-	bld 5 stargate 98
 	call main_wait_900
-	queue 1 star_sovereign monument_of_sin 255 Local Loc.63 100
-	wait 24
-	bld 3 argosy 99
-	call main_wait_600
-	bld 4 argosy 100
-	call main_wait_150
-	bld 11 warden 94
-	wait 24
+	bld 2 argosy 101
+	call main_wait_1500
+	bld 1 monument_of_sin 101
+	call main_wait_1200
+	multi production_cycle
 	goto build_skylord_fin
+	
+	:build_skylord_Exalted_Queue
+	w_bld 1 gateway
+	queue 1 zealot gateway 255 Local Loc.63 125
+	wait 600
+	queue 1 dracadin gateway 255 Local Loc.63 125
+	wait 720
+	queue 1 dracadin gateway 255 Local Loc.63 125
+	wait 720
+	w_bld 1 stargate
+	multi build_skylord_Exalted_Queue2
+	stop
+	
+	:build_skylord_Exalted_Queue2
+	w_bld 1 stargate
+	queue 1 panoptus stargate 255 Local Loc.63 125
+	wait 840
+	queue 1 panoptus stargate 255 Local Loc.63 125
+	wait 840
+	queue 1 panoptus stargate 255 Local Loc.63 125
+	w_bld 1 argosy
+	queue 1 didact argosy 255 Local Loc.63 125
+	w_bld 1 monument_of_sin
+	queue 1 star_sovereign monument_of_sin 255 Local Loc.63 100
+	stop
 	
 	:build_skylord_SorrowFleet
 	var Ex|Jump debug_ai_messages_var 0 build_skylord_SorrowFleet_Main 13
@@ -3603,7 +3633,7 @@ script_id PMCx
 	var Ex|Call pref_ranger_production 0 buildpref_ranger_production_lattice 13
 	var Ex|Call pref_skylord_production 0 buildpref_skylord_production_stargate 13
 	call main_wait_600
-	bld 1 pylon 99
+	bld 1 pylon 103
 	call main_wait_600
 	bld 2 pylon 99
 	call main_wait_300
@@ -3644,7 +3674,7 @@ script_id PMCx
 	call main_wait_750
 	multi expansion_toggle
 	call main_wait_300
-	bld 1 pylon 99
+	bld 1 pylon 103
 	call main_wait_600
 	bld 1 gateway 98
 	call main_wait_300
@@ -3718,7 +3748,9 @@ script_id PMCx
 	goto build_order_gen
 	
 	:build_order_expansion
-	bring 13 AtL_W 1 gateway|grand_library|rogue_gallery|prostration_stage|ancestral_archives|lattice|ardent_authority|synthetic_synod|stargate|argosy|monument_of_sin Loc.63 blank
+	wait 24
+	notowns nexus build_order_expansion
+	notowns pylon build_order_expansion
 	var Ex|Jump pref_ranger 1 build_ranger_fin2 13
 	var Ex|Jump pref_templar 1 build_templar_fin2 13
 	var Ex|Jump pref_skylord 1 build_skylord_fin2 13
@@ -3828,15 +3860,66 @@ script_id PMCx
 	
 	:request_pylon
 	local 255 AtL 3 pylon request_pylon_loop
-	add_bld 255 pylon 1 30 99
-	wait 600
+	add_bld 255 pylon 1 30 103
+	wait 1200
 	goto request_pylon
 	
 	:request_pylon_loop
-	unit_check 13 13 63 Greater|Wait 0 3 embassy|crucible|gateway|grand_library|rogue_gallery|prostration_stage|ancestral_archives|lattice|ardent_authority|auxiliary_oasis|synthetic_synod|stargate|argosy|monument_of_sin pylon
-	add_bld 255 pylon 1 30 99
-	wait 720
-	goto request_pylon
+	w_bld 3 pylon
+	local 255 AtM 3 pylon request_pylon_check_4
+	w_bld 4 pylon
+	local 255 AtM 4 pylon request_pylon_check_5
+	w_bld 5 pylon
+	local 255 AtM 5 pylon request_pylon_check_6
+	w_bld 6 pylon
+	local 255 AtM 6 pylon request_pylon_check_7
+	w_bld 7 pylon
+	local 255 AtM 7 pylon request_pylon_check_8
+	w_bld 8 pylon
+	local 255 AtM 8 pylon request_pylon_check_9
+	w_bld 9 pylon
+	local 255 AtM 9 pylon request_pylon_check_10
+	stop
+	
+	:request_pylon_check_10
+	local 255 AtL 14 embassy|crucible|gateway|grand_library|rogue_gallery|prostration_stage|ancestral_archives|lattice|ardent_authority|unitary_union|synthetic_synod|stargate|argosy|monument_of_sin request_pylon_final
+	wait 1200
+	goto request_pylon_loop
+	
+	:request_pylon_check_9
+	local 255 AtL 12 embassy|crucible|gateway|grand_library|rogue_gallery|prostration_stage|ancestral_archives|lattice|ardent_authority|unitary_union|synthetic_synod|stargate|argosy|monument_of_sin request_pylon_final
+	wait 1200
+	goto request_pylon_loop
+	
+	:request_pylon_check_8
+	local 255 AtL 10 embassy|crucible|gateway|grand_library|rogue_gallery|prostration_stage|ancestral_archives|lattice|ardent_authority|unitary_union|synthetic_synod|stargate|argosy|monument_of_sin request_pylon_final
+	wait 1200
+	goto request_pylon_loop
+	
+	:request_pylon_check_7
+	local 255 AtL 8 embassy|crucible|gateway|grand_library|rogue_gallery|prostration_stage|ancestral_archives|lattice|ardent_authority|unitary_union|synthetic_synod|stargate|argosy|monument_of_sin request_pylon_final
+	wait 1200
+	goto request_pylon_loop
+	
+	:request_pylon_check_6
+	local 255 AtL 6 embassy|crucible|gateway|grand_library|rogue_gallery|prostration_stage|ancestral_archives|lattice|ardent_authority|unitary_union|synthetic_synod|stargate|argosy|monument_of_sin request_pylon_final
+	wait 1200
+	goto request_pylon_loop
+	
+	:request_pylon_check_5
+	local 255 AtL 4 embassy|crucible|gateway|grand_library|rogue_gallery|prostration_stage|ancestral_archives|lattice|ardent_authority|unitary_union|synthetic_synod|stargate|argosy|monument_of_sin request_pylon_final
+	wait 1200
+	goto request_pylon_loop
+	
+	:request_pylon_check_4
+	local 255 AtL 2 embassy|crucible|gateway|grand_library|rogue_gallery|prostration_stage|ancestral_archives|lattice|ardent_authority|unitary_union|synthetic_synod|stargate|argosy|monument_of_sin request_pylon_final
+	wait 1200
+	goto request_pylon_loop
+	
+	:request_pylon_final
+	add_bld 255 pylon 1 30 103
+	wait 1200
+	goto request_pylon_loop
 	
 	:request_static_defense
 	var Ex|Wait can_build_static_defense_var 1 13
@@ -4466,6 +4549,7 @@ script_id PMCx
 	:attack_wave_clarion2
 	notowns synthetic_synod blank_return
 	atk_rel clarion synthetic_synod 1
+	wait 80
 	return
 	
 	:attack_wave_simulacrum
@@ -4477,6 +4561,7 @@ script_id PMCx
 	:attack_wave_simulacrum2
 	notowns lattice blank_return
 	atk_rel simulacrum lattice 3
+	wait 80
 	return
 	
 	:attack_wave_manifold
@@ -4487,6 +4572,7 @@ script_id PMCx
 	:attack_wave_manifold2
 	notowns lattice blank_return
 	atk_rel manifold lattice 2
+	wait 80
 	return
 	
 	:attack_wave_vassal
@@ -4498,6 +4584,7 @@ script_id PMCx
 	notowns lattice blank_return
 	queue_rel vassal lattice 1 lattice 255 Global 63 100
 	atk_rel vassal lattice 3
+	wait 80
 	return
 	
 	:attack_wave_idol
@@ -4508,6 +4595,7 @@ script_id PMCx
 	:attack_wave_idol2
 	notowns lattice blank_return
 	atk_rel idol lattice 1.5
+	wait 80
 	return
 	
 	:attack_wave_golem
@@ -4518,6 +4606,7 @@ script_id PMCx
 	:attack_wave_golem2
 	notowns lattice blank_return
 	atk_rel golem lattice 1
+	wait 80
 	return
 	
 	:attack_wave_servitor
@@ -4529,6 +4618,7 @@ script_id PMCx
 	:attack_wave_servitor2
 	notowns ardent_authority blank_return
 	atk_rel servitor ardent_authority 3
+	wait 80
 	return
 	
 	:attack_wave_positron
@@ -4539,6 +4629,7 @@ script_id PMCx
 	:attack_wave_positron2
 	notowns ardent_authority blank_return
 	atk_rel positron ardent_authority 2
+	wait 80
 	return
 	
 	:attack_wave_analogue
@@ -4549,6 +4640,7 @@ script_id PMCx
 	:attack_wave_analogue2
 	notowns ardent_authority blank_return
 	atk_rel analogue ardent_authority 1.2
+	wait 80
 	return
 	
 	:attack_wave_accantor
@@ -4559,6 +4651,7 @@ script_id PMCx
 	:attack_wave_accantor2
 	notowns ardent_authority blank_return
 	atk_rel accantor ardent_authority 1
+	wait 80
 	return
 	
 	:attack_wave_architect
@@ -4569,6 +4662,7 @@ script_id PMCx
 	:attack_wave_architect2
 	notowns ardent_authority blank_return
 	atk_rel architect ardent_authority 1
+	wait 80
 	return
 	
 	:attack_wave_demiurge
@@ -4580,6 +4674,7 @@ script_id PMCx
 	notowns synthetic_synod blank_return
 	atk_add 1 demiurge
 	atk_rel demiurge synthetic_synod 0.5
+	wait 80
 	return
 	
 	:attack_wave_empress
@@ -4590,6 +4685,7 @@ script_id PMCx
 	:attack_wave_empress2
 	notowns synthetic_synod blank_return
 	atk_rel empress synthetic_synod 1.2
+	wait 80
 	return
 	
 	:attack_wave_zealot
@@ -4600,6 +4696,7 @@ script_id PMCx
 	:attack_wave_zealot2
 	notowns gateway blank_return
 	atk_rel zealot gateway 2.5
+	wait 80
 	return
 	
 	:attack_wave_dracadin
@@ -4610,6 +4707,7 @@ script_id PMCx
 	:attack_wave_dracadin2
 	notowns gateway blank_return
 	atk_rel dracadin gateway 2
+	wait 80
 	return
 	
 	:attack_wave_ecclesiast
@@ -4620,6 +4718,7 @@ script_id PMCx
 	:attack_wave_ecclesiast2
 	notowns gateway blank_return
 	atk_rel ecclesiast gateway 1.5
+	wait 80
 	return
 	
 	:attack_wave_legionnaire
@@ -4630,6 +4729,7 @@ script_id PMCx
 	:attack_wave_legionnaire2
 	notowns gateway blank_return
 	atk_rel legionnaire gateway 3
+	wait 80
 	return
 	
 	:attack_wave_hierophant
@@ -4640,6 +4740,7 @@ script_id PMCx
 	:attack_wave_hierophant2
 	notowns gateway blank_return
 	atk_rel hierophant gateway 1
+	wait 80
 	return
 	
 	:attack_wave_amaranth
@@ -4650,6 +4751,7 @@ script_id PMCx
 	:attack_wave_amaranth2
 	notowns grand_library blank_return
 	atk_rel amaranth grand_library 3
+	wait 80
 	return
 	
 	:attack_wave_atreus
@@ -4660,6 +4762,7 @@ script_id PMCx
 	:attack_wave_atreus2
 	notowns grand_library blank_return
 	atk_rel atreus grand_library 2
+	wait 80
 	return
 	
 	:attack_wave_herald
@@ -4670,6 +4773,7 @@ script_id PMCx
 	:attack_wave_herald2
 	notowns grand_library blank_return
 	atk_rel herald grand_library 1.25
+	wait 80
 	return
 	
 	:attack_wave_cantavis
@@ -4680,6 +4784,7 @@ script_id PMCx
 	:attack_wave_cantavis2
 	notowns grand_library blank_return
 	atk_rel cantavis grand_library 1.25
+	wait 80
 	return
 	
 	:attack_wave_vagrant
@@ -4690,6 +4795,7 @@ script_id PMCx
 	:attack_wave_vagrant2
 	notowns rogue_gallery blank_return
 	atk_rel vagrant rogue_gallery 1.2
+	wait 80
 	return
 	
 	:attack_wave_cabalist
@@ -4700,6 +4806,7 @@ script_id PMCx
 	:attack_wave_cabalist2
 	notowns rogue_gallery blank_return
 	atk_rel cabalist rogue_gallery 1.2
+	wait 80
 	return
 	
 	:attack_wave_charlatan
@@ -4710,6 +4817,7 @@ script_id PMCx
 	:attack_wave_charlatan2
 	notowns rogue_gallery blank_return
 	atk_rel charlatan rogue_gallery 1.15
+	wait 80
 	return
 	
 	:attack_wave_barghest
@@ -4720,6 +4828,7 @@ script_id PMCx
 	:attack_wave_barghest2
 	notowns rogue_gallery blank_return
 	atk_rel barghest rogue_gallery 2
+	wait 80
 	return
 	
 	:attack_wave_pariah
@@ -4730,6 +4839,7 @@ script_id PMCx
 	:attack_wave_pariah2
 	notowns prostration_stage blank_return
 	atk_rel pariah prostration_stage 1.5
+	wait 80
 	return
 	
 	:attack_wave_potentate
@@ -4740,6 +4850,7 @@ script_id PMCx
 	:attack_wave_potentate2
 	notowns prostration_stage blank_return
 	atk_rel potentate prostration_stage 2
+	wait 80
 	return
 	
 	:attack_wave_sycophant
@@ -4750,6 +4861,7 @@ script_id PMCx
 	:attack_wave_sycophant2
 	notowns prostration_stage blank_return
 	atk_rel sycophant prostration_stage 3
+	wait 80
 	return
 	
 	:attack_wave_mindtyrant
@@ -4760,6 +4872,7 @@ script_id PMCx
 	notowns prostration_stage blank_return
 	atk_add 1 mind_tyrant
 	atk_rel mind_tyrant prostration_stage 1
+	wait 80
 	return
 	
 	:attack_wave_archon
@@ -4770,6 +4883,7 @@ script_id PMCx
 	:attack_wave_archon2
 	notowns ancestral_archives blank_return
 	atk_rel archon ancestral_archives 1.5
+	wait 80
 	return
 	
 	:attack_wave_optecton
@@ -4780,6 +4894,7 @@ script_id PMCx
 	:attack_wave_optecton2
 	notowns ancestral_archives blank_return
 	atk_rel optecton ancestral_archives 1.5
+	wait 80
 	return
 	
 	:attack_wave_patriarch
@@ -4790,6 +4905,7 @@ script_id PMCx
 	:attack_wave_patriarch2
 	notowns ancestral_archives blank_return
 	atk_rel patriarch ancestral_archives 1.5
+	wait 80
 	return
 	
 	:attack_wave_aurora
@@ -4800,6 +4916,7 @@ script_id PMCx
 	:attack_wave_aurora2
 	notowns stargate blank_return
 	atk_rel aurora stargate 2.25
+	wait 80
 	return
 	
 	:attack_wave_panoptus
@@ -4810,6 +4927,7 @@ script_id PMCx
 	:attack_wave_panoptus2
 	notowns stargate blank_return
 	atk_rel panoptus stargate 1.35
+	wait 80
 	return
 	
 	:attack_wave_lanifect
@@ -4821,6 +4939,7 @@ script_id PMCx
 	notowns stargate blank_return
 	atk_add 1 lanifect
 	atk_rel lanifect stargate 0.75
+	wait 80
 	return
 	
 	:attack_wave_exemplar
@@ -4831,6 +4950,7 @@ script_id PMCx
 	:attack_wave_exemplar2
 	notowns stargate blank_return
 	atk_rel exemplar stargate 1.2
+	wait 80
 	return
 	
 	:attack_wave_gladius
@@ -4841,6 +4961,7 @@ script_id PMCx
 	:attack_wave_gladius2
 	notowns stargate blank_return
 	atk_rel gladius stargate 1.2
+	wait 80
 	return
 	
 	:attack_wave_magister
@@ -4851,6 +4972,7 @@ script_id PMCx
 	:attack_wave_magister2
 	notowns argosy blank_return
 	atk_rel magister argosy 1.5
+	wait 80
 	return
 	
 	:attack_wave_epigraph
@@ -4861,6 +4983,7 @@ script_id PMCx
 	:attack_wave_epigraph2
 	notowns argosy blank_return
 	atk_rel epigraph argosy 1.25
+	wait 80
 	return
 	
 	:attack_wave_didact
@@ -4872,6 +4995,7 @@ script_id PMCx
 	notowns argosy blank_return
 	atk_add 1 didact
 	atk_rel didact argosy 0.5
+	wait 80
 	return
 	
 	:attack_wave_empyrean
@@ -4882,6 +5006,7 @@ script_id PMCx
 	:attack_wave_empyrean2
 	notowns argosy blank_return
 	atk_rel empyrean argosy 1.25
+	wait 80
 	return
 	
 	:attack_wave_solarion
@@ -4892,6 +5017,7 @@ script_id PMCx
 	:attack_wave_solarion2
 	notowns argosy blank_return
 	atk_rel solarion argosy 1
+	wait 80
 	return
 	
 	:attack_wave_starsovereign
@@ -4902,6 +5028,7 @@ script_id PMCx
 	:attack_wave_starsovereign2
 	notowns monument_of_sin blank_return
 	atk_rel star_sovereign monument_of_sin 1
+	wait 80
 	return
 	
 	:attack_wave_anthelion
@@ -4912,6 +5039,7 @@ script_id PMCx
 	notowns monument_of_sin blank_return
 	atk_add 1 anthelion
 	atk_rel anthelion monument_of_sin 0.4
+	wait 80
 	return
 	
 	:early_military
@@ -5141,6 +5269,8 @@ script_id PMCx
 	return
 	
 	:faction_order
+	replace_unit legionnaire adherent
+#	replace_unit aurora extatus
 	return
 	
 	:faction_khalendric

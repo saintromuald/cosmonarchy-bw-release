@@ -17,12 +17,37 @@ building right_upper_door = 206
 
 # Special
 building special_control_node = 192
+building crashed_minotaur = 335
+building psi_disruptor = 336
+building power_generator = 337
+building overmind = 338
+building overmind_shell = 339
+building mature_chrysalis = 340
+building cerebrate = 341
+building overmind_cocoon = 342
+building khaydarin_formation = 343
+building protoss_temple = 344
+building xelnaga_temple = 345
+building warp_gate = 346
+building stasis_cell = 347
 
-# Factional NGS units
+# Terran factional units
 military cohort = 50
 military luminary = 150
 military aspirant = 194
 military tarasque = 210
+military philoc = 328
+military hotshot = 395
+military qilin = 398
+military auriel = 399
+
+# Protoss factional units
+military adherent = 400
+military extatus = 401
+
+# Zerg factional units
+military nathrelisk = 402
+military iziralisk = 403
 
 # Terran military units
 military maverick = 0
@@ -318,12 +343,12 @@ building hachirosk = 131
 building caphrolosk = 132
 building gathtelosk = 133
 building nydus_cesiant = 134
-building hydrok_den = 135
+building hydrith_den = 135
 building elthisth_mound = 136
 building matravil_nest = 138
-building ultrok_cavern = 140
-building muthrok_spire = 141
-building quazrok_pool = 142
+building ultrav_cavern = 140
+building mutath_spire = 141
+building quazeth_pool = 142
 building cagrant_cesiant = 143
 building spraith_cesiant = 144
 building surkith_cesiant = 146
@@ -332,27 +357,30 @@ building excisant = 149
 # Zerg NGS buildings
 building gosvileth = 47
 #
-building orboth_omlia = 130
+building axtoth_axis = 130
 building almakis_antre = 139
 building othstol_oviform = 152
-building gorgral_swamp = 153
-building izkag_iteth = 170
+building tethvith_swamp = 153
+building alkag_iteth = 170
 building irulent_ivoa = 181
 building zorkiz_shroud = 193
-building vithrath_haunt = 197
-building liivral_pond = 204
+building tosvrol_haunt = 197
+building kalkiir_lake = 204
 building alkaj_chasm = 212
 building larvosk_cesiant = 216
 building geszkath_grotto = 219
 building irol_iris = 224
 building sibraelosk = 227
 building spirtith_cesiant = 292
+building skortrith_cesiant = 293
 building rakzogth_roost = 303
-building axtoth_axis = 328
 building begrozith_barrow = 329
-building chokralgant_chazsal = 330
+building chokral_chazsal = 330
 building nephrilosk = 350
 building ocsal_cesiant = 354
+building ezigrisant = 364
+building vornath_pond = 396
+building skibact_scab = 397
 
 # Misc units
 military goliath_turret = 4

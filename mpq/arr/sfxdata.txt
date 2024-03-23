@@ -2999,35 +2999,35 @@ Algoztalisk Weaponfire 03
 Cherbrathalor Weaponfire 01
 Cherbrathalor Weaponfire 02
 Cherbrathalor Weaponfire 03
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Empress Ready 01
+Empress Ready 02
+Empress Ready 03
+Empress Selected 01
+Empress Selected 02
+Empress Selected 03
+Empress Selected 04
+Empress Order Passive 01
+Empress Order Passive 02
+Empress Order Passive 03
+Empress Order Passive 04
+Empress Order Aggressive 01
+Empress Order Aggressive 02
+Empress Order Aggressive 03
+Empress Order Aggressive 04
+Empress Under Attack 01
+Empress Under Attack 02
+Empress Under Attack 03
+Empress Under Attack 04
+Madcap Passive Charge 01
+Madcap Passive Charge 02
+Madcap Passive Charge 03
+Addon Construction 01
+Addon Construction 02
+Addon Construction 03
+Addon Construction 04
+Cikralisk Weaponfire 01
+Cikralisk Weaponfire 02
+Cikralisk Weaponfire 03
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

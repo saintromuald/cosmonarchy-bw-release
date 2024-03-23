@@ -61,18 +61,17 @@
  1, 131, 4, 33, 131, 131, 613, 0 # Hachirosk, Can Create Unit\Building ([131] Hachirosk), Create Building - Zerg ([131] Hachirosk)
  2, 143, 4, 33, 143, 143, 614, 0 # Cagrant Cesiant, Can Create Unit\Building ([143] Cagrant Cesiant), Create Building - Zerg ([143] Cagrant Cesiant)
  4, 142, 4, 33, 142, 142, 616, 0 # Quazeth Pool, Can Create Unit\Building ([142] Quazeth Pool), Create Building - Zerg ([142] Quazeth Pool)
- 5, 135, 4, 33, 135, 135, 618, 0 # Hydrok Den, Can Create Unit\Building ([135] Hydrok Den), Create Building - Zerg ([135] Hydrok Den)
- 6, 193, 4, 33, 193, 193, 387, 389 # Zoryus Shroud, Can Create Unit\Building ([193] Zoryus Shroud), Create Building - Zerg ([193] Zoryus Shroud)
+ 5, 135, 4, 33, 135, 135, 618, 0 # Hydrith Den, Can Create Unit\Building ([135] Hydrith Den), Create Building - Zerg ([135] Hydrith Den)
+ 6, 193, 4, 33, 193, 193, 387, 389 # Zorkiz Shroud, Can Create Unit\Building ([193] Zorkiz Shroud), Create Building - Zerg ([193] Zorkiz Shroud)
  7, 224, 4, 33, 224, 224, 1366, 1365 # Irol Iris, Can Create Unit\Building ([224] Irol Iris), Create Building - Zerg ([224] Irol Iris)
 
 20: # Advanced Zerg Buildings
  3, 149, 4, 33, 149, 149, 615, 1467 # Excisant, Can Create Unit\Building ([149] Excisant), Create Building - Zerg ([149] Excisant)
- 4, 141, 4, 33, 141, 141, 620, 1098 # Muthrok Spire, Can Create Unit\Building ([141] Muthrok Spire), Create Building - Zerg ([141] Muthrok Spire)
- 5, 170, 4, 33, 170, 170, 1386, 1103 # Izkag Iteth, Can Create Unit\Building ([170] Izkag Iteth), Create Building - Zerg ([170] Izkag Iteth)
+ 4, 141, 4, 33, 141, 141, 620, 1098 # Mutath Spire, Can Create Unit\Building ([141] Mutath Spire), Create Building - Zerg ([141] Mutath Spire)
+ 5, 170, 4, 33, 170, 170, 1386, 1103 # Alkag Iteth, Can Create Unit\Building ([170] Alkag Iteth), Create Building - Zerg ([170] Alkag Iteth)
  6, 138, 4, 33, 138, 138, 621, 752 # Matravil Nest, Can Create Unit\Building ([138] Matravil Nest), Create Building - Zerg ([138] Matravil Nest)
  7, 130, 4, 33, 130, 130, 447, 429 # Axtoth Axis, Can Create Unit\Building ([130] Axtoth Axis), Create Building - Zerg ([130] Axtoth Axis)
  8, 219, 4, 33, 219, 219, 1399, 1398 # Geszkath Grotto, Can Create Unit\Building ([219] Geszkath Grotto), Create Building - Zerg ([219] Geszkath Grotto)
- 9, 136, 4, 33, 136, 136, 623, 755 # Sovthrath Mound, Can Create Unit\Building ([136] Sovthrath Mound), Create Building - Zerg ([136] Sovthrath Mound)
 #9, 236, 3, 59, 0, 228, 688, 0 # Cancel, Always (0), Change Displayed Buttons ([228] Blank)
 
 21: Basic Burrower
@@ -121,15 +120,16 @@
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  6, 218, 4, 38, 218, 218, 1368, 1431 # Akistrokor, Can Create Unit\Building ([218] Akistrokor), Unit Morph ([218] Akistrokor)
- 7, 271, 23, 24, 18, 18, 377, 0 # Parasite, Spell Researched ([18] Parasite - Matraleth), Use Technology ([18] Parasite - Matraleth)
- 8, 267, 23, 57, 34, 0, 381, 0 # Ensnaring Brood, Spell Researched ([34] Passive), Cancel (0)
+ 7, 377, 23, 24, 35, 35, 1443, 1443 # Blissful Embrace, Spell Researched ([35] Blissful Embrace), Use Technology ([35] Blissful Embrace)
+ 8, 271, 23, 24, 18, 18, 377, 0 # Parasite, Spell Researched ([18] Parasite - Matraleth), Use Technology ([18] Parasite - Matraleth)
+ 9, 267, 23, 57, 34, 0, 381, 0 # Ensnaring Brood, Spell Researched ([34] Passive), Cancel (0)
 
 26: # Isthrathaleth
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
- 7, 270, 23, 24, 14, 14, 376, 385 # Dark Swarm, Spell Researched ([14] Dark Swarm - Isthrathaleth), Use Technology ([14] Dark Swarm - Isthrathaleth)
+ 7, 270, 23, 24, 14, 14, 376, 385 # Carapace Swarm, Spell Researched ([14] Carapace Swarm - Isthrathaleth), Use Technology ([14] Carapace Swarm - Isthrathaleth)
  8, 265, 23, 24, 15, 15, 380, 387 # Plague, Spell Researched ([15] Plague - Isthrathaleth), Use Technology ([15] Plague - Isthrathaleth)
  9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
@@ -186,7 +186,7 @@
 37: # Cagrant Cesiant
  1, 146, 4, 35, 146, 146, 628, 758 # Surkith Cesiant, Can Create Unit\Building ([146] Surkith Cesiant), Building Morph ([146] Surkith Cesiant)
  2, 144, 4, 35, 144, 144, 627, 757 # Spraith Cesiant, Can Create Unit\Building ([144] Spraith Cesiant), Building Morph ([144] Spraith Cesiant)
- 4, 216, 4, 35, 216, 216, 534, 585 # Larvosk Cesiant, Can Create Unit\Building ([216] Larvosk Cesiant), Building Morph ([216] Larvosk Cesiant)
+ 4, 216, 4, 35, 216, 216, 534, 0 # Larvosk Cesiant, Can Create Unit\Building ([216] Larvosk Cesiant), Building Morph ([216] Larvosk Cesiant)
  5, 134, 4, 35, 134, 134, 619, 748 # Nydus Cesiant, Can Create Unit\Building ([134] Nydus Cesiant), Create Building - Zerg ([134] Nydus Cesiant)
 
 38: # Hydrith Den
@@ -206,7 +206,7 @@
 42: # Geszkath Grotto
 #7, 212, 4, 35, 212, 212, 1397, 1396 # Alkaj Chasm, Can Create Unit\Building ([212] Alkaj Chasm), Building Morph ([212] Alkaj Chasm)
 
-44: # Scribe, Artisan
+44: # Scribe
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
@@ -338,7 +338,7 @@
 
 64: # Synthetic Synod
  1, 86, 4, 3, 86, 86, 853, 723 # Demiurge, Can Create Unit\Building ([86] Demiurge), Create Unit ([86] Demiurge)
- 2, 183, 4, 3, 183, 183, 452, 453 # Empress, Can Create Unit\Building ([183] Empress), Create Unit ([183] Empress)
+ 2, 183, 4, 3, 183, 183, 452, 0 # Empress, Can Create Unit\Building ([183] Empress), Create Unit ([183] Empress)
  3, 81, 4, 3, 81, 81, 522, 526 # Clarion, Can Create Unit\Building ([81] Clarion), Create Unit ([81] Clarion)
  6, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
@@ -836,7 +836,7 @@
 134: # Rogue Gallery
  1, 172, 4, 3, 172, 172, 562, 0 # Vagrant, Can Create Unit\Building ([172] Vagrant), Create Unit ([172] Vagrant)
  2, 61, 4, 3, 61, 61, 1293, 1296 # Cabalist, Can Create Unit\Building ([61] Cabalist), Create Unit ([61] Cabalist)
- 3, 79, 4, 3, 90, 90, 512, 512 # Charlatan, Can Create Unit\Building ([90] Charlatan), Create Unit ([90] Charlatan)
+ 3, 90, 4, 3, 90, 90, 512, 512 # Charlatan, Can Create Unit\Building ([90] Charlatan), Create Unit ([90] Charlatan)
  4, 104, 4, 3, 104, 104, 1282, 0 # Barghest, Can Create Unit\Building ([104] Barghest), Create Unit ([104] Barghest)
  6, 286, 13, 1, 0, 0, 672, 0 # Set Rally Point, Rally Point (0), Rally Point (0)
  9, 236, 10, 4, 0, 254, 693, 0 # Cancel, Cancel Last (0), Cancel Last (254)
@@ -1180,7 +1180,7 @@
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 395, 23, 57, 34, 0, 717, 717 # Steady Shroud, Spell Researched ([34] Passive), Cancel (0)
- 8, 319, 23, 57, 34, 0, 540, 540 # Multi-Attack III, Spell Researched ([34] Passive), Cancel (0)
+ 8, 319, 23, 57, 34, 0, 585, 585 # Repentant Chorus, Spell Researched ([34] Passive), Cancel (0)
 
 181: # Magister
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
@@ -1341,7 +1341,7 @@
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
-#6, 472, 4, 38, 322, 322, 1801, 1800 # Algoztalisk, Can Create Unit\Building ([322] Algoztalisk), Unit Morph ([322] Algoztalisk)
+ 6, 472, 4, 38, 322, 322, 1800, 1801 # Algoztalisk, Can Create Unit\Building ([322] Algoztalisk), Unit Morph ([322] Algoztalisk)
 
 202: # Zoryusthaleth
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
@@ -1442,7 +1442,7 @@
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
- 7, 377, 23, 24, 35, 35, 1443, 1443 # Lurker Burrow, Spell Researched ([35] Blissful Embrace - Akistrokor), Use Technology ([35] Blissful Embrace - Akistrokor)
+ 7, 350, 23, 57, 34, 0, 1483, 1483 # Devouring Instinct, Spell Researched ([34] Passive), Cancel (0)
  8, 267, 23, 57, 34, 0, 1059, 1059 # Captivating Claws, Spell Researched ([34] Passive), Cancel (0)
  9, 236, 23, 24, 26, 26, 1444, 1444 # Cancel, Spell Researched ([26] Cancel New Ability), Use Technology ([26] Cancel New Ability)
 
@@ -1588,7 +1588,6 @@
  4, 217, 4, 38, 217, 217, 1356, 1409 # Konvilisk, Can Create Unit\Building ([217] Konvilisk), Unit Morph ([217] Konvilisk)
  5, 419, 4, 38, 269, 269, 751, 750 # Vilgorokor, Can Create Unit\Building ([269] Vilgorokor), Unit Morph ([269] Vilgorokor)
  6, 45, 4, 38, 45, 45, 582, 743 # Matraleth, Can Create Unit\Building ([45] Matraleth), Unit Morph ([45] Matraleth)
- 7, 46, 4, 38, 46, 46, 583, 744 # Isthrathaleth, Can Create Unit\Building ([46] Isthrathaleth), Unit Morph ([46] Isthrathaleth)
 
 228: # Liiralisk
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
@@ -1719,7 +1718,7 @@
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
  7, 256, 23, 57, 34, 0, 1138, 1138 # Stonewall Protocol, Spell Researched ([34] Passive), Cancel (0)
 
-243: # [243] Watchdog
+243: # Watchdog
  1, 228, 35, 9, 0, 0, 664, 0 # Move, Building Can Move And Has Lifted Off (0), Move (0)
  2, 229, 9, 10, 0, 0, 665, 0 # Stop, Attacking Building (0), Stop (0)
  2, 229, 35, 10, 0, 0, 665, 0 # Stop, Building Can Move And Has Lifted Off (0), Stop (0)
@@ -1733,7 +1732,7 @@
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
-#6, 417, 4, 38, 321, 321, 612, 638 # Okrimnilisk, Can Create Unit\Building ([321] Okrimnilisk), Unit Morph ([321] Okrimnilisk)
+ 5, 471, 4, 38, 321, 321, 623, 496 # Okrimnilisk, Can Create Unit\Building ([321] Okrimnilisk), Unit Morph ([321] Okrimnilisk)
  7, 341, 23, 57, 34, 0, 515, 515 # Lashing Limbs, Spell Researched ([34] Passive), Cancel (0)
  9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
@@ -1923,8 +1922,9 @@
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
-#6, 427, 4, 38, 277, 277, 577, 740 # Selkerilisk, Can Create Unit\Building ([277] Selkerilisk), Unit Morph ([277] Selkerilisk)
- 7, 36, 23, 57, 34, 0, 328, 328 # Autophagy, Spell Researched ([34] Passive), Cancel (0)
+ 6, 46, 4, 38, 46, 46, 583, 744 # Isthrathaleth, Can Create Unit\Building ([46] Isthrathaleth), Unit Morph ([46] Isthrathaleth)
+ 7, 270, 23, 57, 34, 0, 427, 427 # Reconstitution, Spell Researched ([34] Passive), Cancel (0)
+ 8, 36, 23, 57, 34, 0, 328, 328 # Autophagy, Spell Researched ([34] Passive), Cancel (0)
  9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
  9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
 
@@ -1976,28 +1976,29 @@
  1, 129, 4, 38, 129, 129, 1063, 1057 # Bactalisk, Can Create Unit\Building ([129] Bactalisk), Unit Morph ([129] Bactalisk)
  2, 417, 4, 38, 267, 267, 612, 638 # Tethzorokor, Can Create Unit\Building ([267] Tethzorokor), Unit Morph ([267] Tethzorokor)
  3, 62, 4, 38, 62, 62, 1288, 1297 # Vithrilisk, Can Create Unit\Building ([62] Vithrilisk), Unit Morph ([62] Vithrilisk)
-# 4, 126, 4, 38, 126, 126, 1362, 1374 # Cherbrathalor, Can Create Unit\Building ([126] Kagralisk), Unit Morph ([126] Kagralisk)
-# 5, 52, 4, 38, 52, 52, 517, 518 # Okrimnilisk, Can Create Unit\Building ([52] Evigrilisk), Unit Morph ([52] Evigrilisk)
-# 6, 29, 4, 38, 29, 29, 367, 366 # Algoztalisk, Can Create Unit\Building ([29] Almaksalisk), Unit Morph ([29] Almaksalisk)
-# 7, 96, 4, 38, 96, 96, 1346, 1347 # Keskathalor, Can Create Unit\Building ([96] Keskathalor), Unit Morph ([96] Keskathalor)
+ 4, 470, 4, 38, 320, 320, 1806, 1805 # Cherbrathalor, Can Create Unit\Building ([320] Cherbrathalor), Unit Morph ([320] Cherbrathalor)
+ 5, 471, 4, 38, 321, 321, 623, 496 # Okrimnilisk, Can Create Unit\Building ([321] Okrimnilisk), Unit Morph ([321] Okrimnilisk)
+ 6, 472, 4, 38, 322, 322, 1800, 1801 # Algoztalisk, Can Create Unit\Building ([322] Algoztalisk), Unit Morph ([322] Algoztalisk)
+#7, 96, 4, 38, 96, 96, 1346, 1347 # Kethrostalor, Can Create Unit\Building ([96] Kethrostalor), Unit Morph ([96] Kethrostalor)
  8, 48, 4, 38, 48, 48, 1348, 1349 # Alkajelisk, Can Create Unit\Building ([48] Alkajelisk), Unit Morph ([48] Alkajelisk)
 
 273: # Ocsal Larva - Control
  1, 39, 4, 38, 39, 39, 577, 740 # Ultralisk, Can Create Unit\Building ([39] Ultrokor), Unit Morph ([39] Ultrokor)
-# 2, 423, 4, 38, 273, 273, 1061, 1064 # Zobriolisk, Can Create Unit\Building ([273] Zobriolisk), Unit Morph ([273] Zobriolisk)
+#2, 423, 4, 38, 273, 273, 1061, 1064 # Zobriolisk, Can Create Unit\Building ([273] Zobriolisk), Unit Morph ([273] Zobriolisk)
  3, 408, 4, 38, 258, 258, 1549, 1550 # Zarcavrokor, Can Create Unit\Building ([258] Zarcavrokor), Unit Morph ([258] Zarcavrokor)
  4, 424, 4, 38, 274, 274, 1551, 1553 # Tetcaerokor, Can Create Unit\Building ([274] Tetcaerokor), Unit Morph ([274] Tetcaerokor)
-# 5, 427, 4, 38, 277, 277, 577, 740 # Selkerilisk, Can Create Unit\Building ([277] Selkerilisk), Unit Morph ([277] Selkerilisk)
+ 5, 46, 4, 38, 46, 46, 583, 744 # Isthrathaleth, Can Create Unit\Building ([46] Isthrathaleth), Unit Morph ([46] Isthrathaleth)
  6, 218, 4, 38, 218, 218, 1368, 1431 # Data Disc, Can Create Unit\Building ([218] Akistrokor), Unit Morph ([218] Akistrokor)
-# 7, 46, 4, 38, 46, 46, 583, 744 # Isthrathaleth, Can Create Unit\Building ([46] Isthrathaleth), Unit Morph ([46] Isthrathaleth)
 
-274: # Tosgrilisk
+274: # Basic Burrower + Crushing Tide
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
  2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
  3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
  4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
  5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
- 7, 344, 23, 57, 34, 0, 564, 564 # Crushing Tide, Spell Researched ([34] Passive), Cancel (0)
+ 7, 344, 23, 57, 34, 0, 503, 503 # Crushing Tide, Spell Researched ([34] Passive), Cancel (0)
+ 9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
+ 9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
 275: # Ardent Authority
  1, 456, 4, 3, 306, 306, 1369, 0 # Servitor, Can Create Unit\Building ([306] Servitor), Create Unit ([306] Servitor)
@@ -2192,7 +2193,8 @@
  7, 360, 23, 57, 34, 0, 545, 545 # Empathy Core, Spell Researched ([34] Passive), Cancel (0)
  
 302: # Lobotomy Mine
- 7, 243, 23, 57, 34, 0, 476, 476 # Dazing Detonation, Spell Researched ([34] Passive), Cancel (0)
+ 7, 314, 23, 24, 2, 2, 498, 498 # Lobotomize, Spell Researched ([2] Controlled Demolition - Terran Structure), Use Technology ([2] Controlled Demolition - Terran Structure)
+ 9, 243, 23, 57, 34, 0, 476, 476 # Dazing Detonation, Spell Researched ([34] Passive), Cancel (0)
 
 303: # Axitrilisk (Weaponless)
  1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
@@ -2415,6 +2417,45 @@
 #6, 322, 47, 59, 0, 391, 645, 0 # Faction 3, Select Faction 3 (0), Change Displayed Buttons ([391] Select Faction 3)
 #7, 383, 47, 59, 0, 392, 646, 0 # Faction 4, Select Faction 4 (0), Change Displayed Buttons ([392] Select Faction 4)
  8, 542, 47, 59, 0, 393, 652, 0 # Faction 5, Select Faction 5 (0), Change Displayed Buttons ([393] Select Faction 5)
+ 
+336: # Artisan
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 231, 18, 39, 0, 0, 675, 0 # Gather, Unit Is Carrying Nothing (Gather - Probe) (0), Gather (0)
+ 4, 233, 19, 40, 0, 0, 676, 0 # Return Resources, Unit Is Carrying Something(Return Cargo - Probe) (0), Return Cargo (0)
+ 7, 322, 23, 57, 34, 0, 463, 463 # Radiant Rifts, Spell Researched ([34] Passive), Cancel (0)
+
+337: # Alkag Iteth
+ 7, 480, 4, 35, 330, 330, 446, 1795 # Chokral Chazsal, Can Create Unit\Building ([330] Chokral Chazsal), Building Morph ([330] Chokral Chazsal)
+
+338: # Algoztalisk
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
+ 7, 379, 23, 57, 34, 0, 453, 453 # Escape Velocity, Spell Researched ([34] Passive), Cancel (0)
+
+339: # Kagralisk
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
+ 6, 470, 4, 38, 320, 320, 1806, 1805 # Cherbrathalor, Can Create Unit\Building ([320] Cherbrathalor), Unit Morph ([320] Cherbrathalor)
+ 9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
+ 9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
+
+340: # Okrimnilisk
+ 1, 228, 3, 9, 0, 0, 664, 0 # Move, Always (0), Move (0)
+ 2, 229, 3, 10, 0, 0, 665, 0 # Stop, Always (0), Stop (0)
+ 3, 230, 8, 11, 0, 0, 666, 0 # Attack, Unit Has A Weapon (0), Attack (0)
+ 4, 254, 3, 20, 0, 0, 667, 0 # Patrol, Always (0), Patrol (0)
+ 5, 255, 3, 21, 0, 0, 668, 0 # Hold Position, Always (0), Hold Position (0)
+ 7, 262, 23, 57, 34, 0, 341, 341 # Endless Limbs, Spell Researched ([34] Passive), Cancel (0)
+ 9, 259, 38, 41, 11, 11, 372, 382 # Burrow, Ability Is Researched ([11] Burrowing - Zerg Ground), Burrow ([11] Burrowing - Zerg Ground)
+ 9, 260, 39, 42, 11, 0, 373, 0 # Unburrow, Is Using Ability ([11] Burrowing - Zerg Ground), Unburrow (0)
 
 #### Buttonsets END ####
 #### Unit Settings START ####
@@ -2879,7 +2920,7 @@ Unit 125: # [125] Anchor
           # Stat Preset: Transport
 
 Unit 126: # [126] Kagralisk
- 21, 65535, 1, 0 # Button Set: [21] Basic Burrower
+ 339, 65535, 1, 0 # Button Set: [339] Kagralisk
           # Stat Preset: Normal Unit
 
 Unit 127: # [127] Diadem
@@ -2909,8 +2950,8 @@ Unit 133: # [133] Zerg Gathtelosk
  32, 65535, 2, 1 # Button Set: [32] Gathtelosk
           # Stat Preset: Building
 
-Unit 135: # [135] Zerg Hydrok Den
- 38, 65535, 2, 1 # Button Set: [38] Hydrok Den
+Unit 135: # [135] Zerg Hydrith Den
+ 38, 65535, 2, 1 # Button Set: [38] Hydrith Den
           # Stat Preset: Building
 
 Unit 136: # [136] Zerg Sovthrath Mound
@@ -2930,8 +2971,8 @@ Unit 139: # [139] Zerg Almakis Antre
 Unit 140: # [140] Zerg Ultrok Cavern
  -1, 65535, 2, 1 # Stat Preset: Building
 
-Unit 141: # [141] Zerg Muthrok Spire
- 34, 65535, 2, 1 # Button Set: [34] Mutal Spire
+Unit 141: # [141] Zerg Mutath Spire
+ 34, 65535, 2, 1 # Button Set: [34] Mutath Spire
           # Stat Preset: Building
 
 Unit 142: # [142] Zerg Quazeth Pool
@@ -3029,8 +3070,9 @@ Unit 169: # [169] Fleet Beacon
  62, 65535, 2, 1 # Button Set: [62] Fleet Beacon
           # Stat Preset: Building
 
-Unit 170: # [170] Izkag Iteth
- -1, 65535, 2, 1 # Stat Preset: Building
+Unit 170: # [170] Alkag Iteth
+ 337, 65535, 2, 1 # Button Set: [337] Alkag Iteth
+          # Stat Preset: Building
 
 Unit 171: # [171] Synthetic Synod
  64, 65535, 2, 1 # Button Set: [64] Synthetic Synod
@@ -3065,7 +3107,7 @@ Unit 181: # [181] Irulent Ivoa
           # Stat Preset: Building
 
 Unit 182: # [182] Artisan
- 44, 65535, 1, 0 # Button Set: [44] Scribe, Artisan
+ 336, 65535, 1, 0 # Button Set: [336] Artisan
           # Stat Preset: Normal Unit
 
 Unit 183: # [183] Empress
@@ -3104,7 +3146,7 @@ Unit 192: # [192] Future Station
  235, 65535, 2, 1 # Button Set: [235] Reservoir, addons
           # Stat Preset: Building
 
-Unit 193: # [193] Zoryus Shroud
+Unit 193: # [193] Zorkiz Shroud
  203, 65535, 2, 1 # Button Set: [203] Zorkiz Shroud
           # Stat Preset: Building
 
@@ -3491,6 +3533,18 @@ Unit 317: # [317] Protoss Patriarch
 
 Unit 319: # [319] Zerg Mortothrokor
  287, 65535, 1, 0 # Button Set: Mortothrokor
+          # Stat Preset: Normal Unit
+
+Unit 320: # [320] Zerg Cherbrathalor
+ 274, 65535, 1, 0 # Button Set: Basic Burrower + Crushing Tide
+          # Stat Preset: Normal Unit
+
+Unit 321: # [322] Zerg Okrimnilisk
+ 340, 65535, 1, 0 # Button Set: Okrimnilisk
+          # Stat Preset: Normal Unit
+
+Unit 322: # [322] Zerg Algoztalisk
+ 338, 65535, 1, 0 # Button Set: Algoztalisk
           # Stat Preset: Normal Unit
 
 Unit 328: # [238] Terran Philoc

@@ -207,6 +207,12 @@
   319               # [319] Mortothrokor
   0xFF01            # Or
   0xFF02            # Current unit is...
+  319               # [320] Cherbrathalor
+  0xFF01            # Or
+  0xFF02            # Current unit is...
+  319               # [321] Okrimnilisk
+  0xFF01            # Or
+  0xFF02            # Current unit is...
   377               # [377] Axitrilisk (Weaponless)
   0xFFFF            # ==End of List==
 
@@ -367,12 +373,9 @@
   34                # [34] Cleric
   0xFFFF            # ==End of List==
 
-35:                 # [35] Blissful Embrace - Akistrokor
+35:                 # [35] Blissful Embrace - Zerg
   0xFF02            # Current unit is...
-  218               # [218] Akistrokor
-  0xFF01            # Or
-  0xFF02            # Current unit is...
-  123               # [123] Sovroleth
+  45                # [45] Matraleth
   0xFFFF            # ==End of List==
 
 36:                 # [36] Tempo Change - Madrigal

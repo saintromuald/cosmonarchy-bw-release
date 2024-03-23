@@ -9,12 +9,30 @@ This document logs changes to Empire-class maps. The current map pool is always 
 - (2)Axiom 1.1 by Btyb
 - (2)Derelict 1.2 by Btyb
 - (2)Fata Morgana 1.1 by Veeq7
+- (2)Germination 1.0 by Btyb
 - (2)Impetus 2.0 by Veeq7
-- (2)Infinite Velocity 2.0 by TheBeaver99
 - (2)Sideshow 1.2 by Pr0nogo
 - (2)The Purgatory 1.0 by Veeq7
 - (2)Titan Forge 1.1 by The Shambler
-- (4)Highwater 1.2 by Pr0nogo
+
+## (2)Titan Forge 1.2 -- 21 March 2024
+- Expanded map eastwards by 16 tiles
+- Corrected various asymmetries and resarea assignments
+- Tided resource layouts throughout the map to improve harvesting
+- Merged ramps into center-left low ground
+- Significantly opened up pathability of central pathway
+- Added more ramps into central bases, and slightly improved pathability
+- Added 8 Mineral Fields to central bases, and removed 1 Geyser (now 2 total)
+- Added unit-only highrise for defending central attacks into 2 / 4 o'clock bases
+
+## (2)Fata Morgana 1.2 -- 21 March 2024
+- Expanded map southwards by 16 tiles
+- Added more pathability to center, facing 3 / 9 o'clock ramps
+- Expanded all north-facing central ramps by 2 tiles
+- Fused south-facing central ramps
+- Added cover to help split armies in southern pathway
+- Moved 6 o'clock base to new south border
+- Shifted 5 and 7 o'clock bases closer to compound
 
 ## (2)Impetus 2.0 -- 11 March 2024
 - Significantly reworked main & natural layout
