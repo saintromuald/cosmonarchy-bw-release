@@ -15,6 +15,10 @@ This document logs changes to Empire-class maps. The current map pool is always 
 - (2)The Purgatory 1.0 by Veeq7
 - (2)Titan Forge 1.1 by The Shambler
 
+## (2)Germination 1.1 -- 28 March 2024
+- Fixed south spawn being able to harvest the flyer expo resources from the low ground
+- Fixed a few height issues througout the map
+
 ## (2)Titan Forge 1.2 -- 21 March 2024
 - Expanded map eastwards by 16 tiles
 - Corrected various asymmetries and resarea assignments
