@@ -1,1 +1,0 @@
-This file now lives at https://www.fraudsclub.com/cosmonarchy-bw/sites/scenario-setup/
