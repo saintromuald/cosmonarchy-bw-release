@@ -1118,7 +1118,7 @@ Star Sovereign Shadow
 Apostle
 Apostle Shadow
 Apostle Remains
-Exemplar Weapon
+Exemplar Torpedo
 Future Station Shadow
 Argosy
 Argosy Shadow
@@ -1221,7 +1221,7 @@ Architect
 Architect Shadow
 Architect Engines
 Kalkalisk Birth (Cocoon)
-Iroleth Birth
+Iroleth Birth (Cocoon)
 Nathrokor Birth
 Alkajelisk Birth
 Shaman (Support Mode)
@@ -1830,13 +1830,13 @@ Tethzorokor Birth
 Vilgorokor Birth
 Protathalor Birth
 Cikralisk Birth
-Extended Image #830
-Extended Image #831
-Extended Image #832
-Extended Image #833
-Extended Image #834
-Extended Image #835
-Extended Image #836
+Cherbrathalor Birth
+Okrimnilisk Birth
+Axitrilisk Birth
+Tosgrilisk Birth (Egg)
+Tosgrilisk Birth (Cocoon)
+Iroleth Birth (Egg)
+Tetcaerokor Birth (Egg)
 Extended Image #837
 Extended Image #838
 Extended Image #839

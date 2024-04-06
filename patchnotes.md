@@ -1,84 +1,67 @@
-# 23 March 2024
+# 6 April 2024
 
-This patch includes bugfixes, audiovisual improvements, and mild balance adjustments.
+This patch includes bugfixes, audiovisual improvements, and balance adjustments.
 
-Download [Fraud Launcher 2](https://fraudsclub.com/files/Fraud Launcher 2.zip) for easier setup and maintenance!
+Download [Fraud Launcher 2](https://fraudsclub.com/files/Fraud%20Launcher%202.zip) for easier setup and maintenance!
 
 We are still hunting for desyncs! Please submit your critical logs to cm-issues on [our Discord server](https://discord.com/invite/s5SKBmY).
 
 ## General
 - **Internals:**
-	- CPU throttling is now disabled, as it offers no benefit to modern CPUs (c. Veeq7)
+	- Upgraded Discord support to include replay / witness status, game mode, and race (c. Veeq7)
+	- Cases where a unit's sprite is unexpectedly nonexistant will now print debug info to the screen -- **please screenshot this** and [submit it to us on discord!](https://discord.com/invite/s5SKBmY)
+	- Added "Prudence", a clone of the Artisan that can warp in structures, for use in UMS
 - **Config:**
-	- Changed default map path to better suit the new default installation environment
+	- Renamed 'config.yml' to 'cosmonarchy.yml' and migrated it to the user's Starcraft folder, centralizing configs for both prerelease and release (c. Veeq7)
+	- Added 'ingame' and 'witness' options for selection and minimap UI (c. Veeq7)
+	- Autosaved replays are now stored in a unique folder per date played (c. Veeq7)
+	- Added Furen advisor
 
-## Game modes:
-- **Omnipresence:**
-	- Now limited to two races, from three, based on player selection
-	- Terran adds Protoss, Protoss adds Zerg, Zerg adds Terran
-	- Can be overridden in scenarios using new crig action `set_omnipresence_state`
-- **The Turning:**
-	- Fixed order limit being reached by zombies
-
-## Bugfixes
-- Stability:
-	- Prospectively fixed a rare nullsprite crash (r. The Shambler)
-- Gameplay:
-	- Analogue Empathy Core now properly takes into account actual damage dealt (e.g. splash, Clarion Phase Link) when reflecting projectiles
-	- Removed detector flag from Axtoth Axis (r. TheBeaver99)
-- Audiovisual:
-	- Savants now correctly play their weaponfire SFX when attacking while garrisoned
-	- Losing a structure with an addon still attached no longer plays the "abandon addon" advisor event (r. TheBeaver99)
-	- Fixed advisor events not playing for structure warp completion if your race was not Protoss, and addon completion if your race was not Terran (r. TheBeaver99)
-	- Corrected Vagrant Shade portrait (r. TheBeaver99)
+## Bugfixes:
+- **Stability:**
+	- Resolved a common desync case (with help from DF and Veeq7)
+		- **Caveat:** At least one other desync case still exists; please keep the reports coming!
+	- Protected against another nullsprite crash (r. Faktheking)
+- **Gameplay:**
+	- Fixed an issue where unit turrets would be stunned even after certain stun effects wore off (r. TheBeaver99)
+	- Fixed tile walkability for Iceworld -> Higher Outpost
+- **Audiovisuals:**
+	- Fixed repair animations not playing when repairing a unit suffering from HP drains (r. neblime)
+	- Fixed flipped weapon fire SFX for Savant modes (r. lolrsk8s)
+	- Fixed Kalkalisk birth animation playing the wrong frame sequence
+	- Discord activity now updates on first launch (c. Veeq7)
 
 ## Audiovisuals
-- Revised graphics for:
-	- Kalkalisk (c. Solstice; cocoon birth animation not yet implemented)
-- Added unit responses for:
-	- Empress (c. [M](https://twitter.com/TheUnluckyM) & Chumbeque)
+- Added reads for:
+	- Vilgoleth (corpse consumption proc)
 - Added birth animations for:
-	- Protathalor, Tethzorokor, Gorgrokor, Vilgorokor
-- Added SFX for:
-	- Terran addon self-construction
-	- Madcaps reaching full stacks of Cabeirus Feeders
-	- Cikralisk weaponfire
-- Updated icons for:
-	- Terran supreme construction; All Protoss constructions (c. TheBeaver99)
-
-## Terran
-- [Eidolon](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/eidolon):
-	- Time cost now 25, from 30
-	- Weapon range now 9, from 8
-- [Apostle](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/apostle):
-	- Time cost now 30, from 35
-- [Siren](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/siren):
-	- Time cost now 25, from 30
-- [Striga](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/striga):
-	- Time cost now 25, from 30
-- [Madrigal](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/madrigal):
-	- Imperioso Missiles:
-		- Weapon range now 8, from 7
+	- Iroleth (from egg), Tosgrilisk, Ghitorokor, Axitrilisk (WIP), Cherbrathalor, Okrimnilisk, Tetcaerokor
+- Updated visuals for:
+	- Amaranth attack sequence
+	- Golem, Idol death animations
+- Updated SFX for:
+	- Terran addon construction
+	- Golem death
+- Added new SFX for:
+	- Ancile, Cataphract, Vassal, Idol, Empyrean death
+	- Amaranth, Exemplar weaponhit
 
 ## Protoss
-- [Zealot](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/zealot):
-	- Transport space cost now 3, from 2
-- [Amaranth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/amaranth):
-	- Transport space cost now 3, from 2
-- [Herald](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/herald):
-	- Transport space cost now 3, from 4
-- [Mind Tyrant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/mind-tyrant):
-	- Transport space cost now 6, from 4
-- [Idol](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/idol):
-	- Transport space cost now 3, from 2
-- [Positron](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/positron):
-	- Transport space cost now 3, from 4
+- [Ecclesiast](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/ecclesiast):
+	- Astral Blessing proc range now 3, from 2
 - [Architect](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/architect):
-	- Transport space cost now 8, from 6
-- [Demiurge](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/demiurge):
-	- Transport space cost now 10, from 6
+	- No longer attacks air targets
+- [Matrix](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/matrix):
+	- Astral Tether proc range now 3, from 2
 
 ## Zerg
-- [Hachirosk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/hachirosk), [Caphrolosk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/caphrolosk), and [Gathtelosk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/gathtelosk):
-	- Collision size normalized with other town centers
-	- *This is primarily to avoid poor resource returns that only impact some races, but also allows Zerg to potentially create walls where they couldn't previously.*
+- [Hydralisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/hydralisk):
+	- Armor penetration now 2, from 3
+- [Okrimnilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/okrimnilisk):
+	- Collision size now significantly larger
+	- Omnispores:
+		- Weapon damage now 1x4, from 1x8
+- [Surkith Cesiant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/surkith-cesiant):
+	- Armor now 2, from 3
+- [Spraith Cesiant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/spraith-cesiant):
+	- Armor now 3, from 2

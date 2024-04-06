@@ -25923,7 +25923,7 @@ EmpyreanGndAttkToIdle:
 	goto              	MinotaurGndAttkToIdle
 
 EmpyreanDeath:
-	playsnd           	533
+	playsndbtwn			3050 3052 # Empyrean death 01, 02, 03
 	imgol             	214 0 0	# Explosion1 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			223 0 42 # Protoss Building Rubble Small
@@ -27067,6 +27067,7 @@ ExemplarTorpedoLocal01:
 	
 ExemplarTorpedoDeath:
 	imgol             	1105 0 0 # Exemplar weapon impact
+	playsndbtwn			3057 3059 # Exemplar weaponhit 01, 02, 03
 	domissiledmg
 	wait              	1 
 	end
@@ -27875,7 +27876,7 @@ VassalWalkingToIdle:
 	goto              	VassalWalkingToIdle
 
 VassalDeath:
-	playsnd           	8 # Misc\ExploMed.wav
+	playsndbtwn			3060 3062 # Vassal death 01, 02, 03
 	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			847 0 42 # Protoss Unit Rubble Small
@@ -29223,12 +29224,12 @@ AmaranthGndAttkRpt:
 	wait 				1
 	playfram 			0x55
 	playsndbtwn			1231 1234 # Amaranth weaponfire 01, 02, 03, 04
-	attackmelee       	1 664 # Protoss\ZEALOT\pzeHit00.WAV
+	attackmelee       	4 3063 3064 3065 3066 # Amaranth weaponhit 01, 02, 03, 04
 	wait 				1
 	playfram 			0x66
 	wait 				1
 	playfram 			0x77
-	attackmelee       	1 664 # Protoss\ZEALOT\pzeHit00.WAV
+	attackmelee       	4 3063 3064 3065 3066 # Amaranth weaponhit 01, 02, 03, 04
 	wait 				1
 	playfram			0x88
 	nobrkcodeend
@@ -29606,8 +29607,8 @@ IdolLocal00:
 	goto				IdolLocal00
 
 IdolDeath:
-	playsnd           	638	# Protoss\TRILOBYTE\PTrDth00.WAV
-	imgol             	214 0 0	# Explosion1 (Medium) (thingy\tBangL.grp)
+	playsndbtwn			3053 3056 # Idol death 01, 02, 03, 04
+	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			847 0 0 # Protoss Unit Rubble Small
 	wait              	1
@@ -29701,8 +29702,8 @@ GolemLocal00:
 	goto              	GolemLocal00
 
 GolemDeath:
-	playsnd           	638	# Protoss\TRILOBYTE\PTrDth00.WAV
-	imgol             	214 0 0	# Explosion1 (Medium) (thingy\tBangL.grp)
+	playsnd           	533	# Protoss\Scout\PScDth00.WAV
+	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			847 0 0 # Protoss Unit Rubble Small
 	wait              	1
@@ -44638,7 +44639,7 @@ AncileGndAttkToIdle:
 	goto              	AncileGndAttkToIdle
 
 AncileDeath:
-	playsnd           	257 # Terran\PHOENIX\TPhDth00.WAV
+	playsndbtwn			3074 3076 # Ancile death 01, 02, 03
 	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
 	wait              	3
 	lowsprul			845 0 42 # Terran Unit Rubble Small
@@ -47173,7 +47174,7 @@ CataphractLocal00:
 	goto				CataphractLocal00
 
 CataphractDeath:
-	playsnd           	2820 # Goliath death 01
+	playsndbtwn			3067 3073 # Cataphract death 01, 02, 03, 04, 05, 06, 07
 	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
 	wait              	3
 	lowsprul			273 0 0 # Terran Building Rubble Small
@@ -47548,11 +47549,9 @@ SpecialState1 	[NONE]
 
 TetcaerokorInit:
 	imgul             	1594 0 42 # Tetcaerokor Shadow (cm\zerg\tetcaerokor.grp)
-	playfram          	0x00
+	playfram          	0x20
 	wait				2
 TetcaerokorWalkingToIdle:
-	playfram          	0x20
-	wait              	2
 	playfram          	0x40
 	wait              	2
 	playfram          	0x60
@@ -47569,9 +47568,9 @@ TetcaerokorWalkingToIdle:
 	wait              	2
 	playfram          	0x120
 	wait              	2
-	playfram          	0x140
-	wait              	2
 	playfram          	0x00
+	wait              	2
+	playfram          	0x20
 	wait              	2
 	goto              	TetcaerokorWalkingToIdle
 
@@ -47649,8 +47648,6 @@ TetcaerokorWalking:
 	playfram          	0x100
 	wait              	1
 	playfram          	0x120
-	wait              	1
-	playfram          	0x140
 	wait              	1
 	playfram          	0x00
 	wait              	1
@@ -52317,14 +52314,10 @@ SpecialState1 	KalkaliskBirthTempSpecialState1
 # ----------------------------------------------------------------------------- #
 
 KalkaliskBirthTempInit:
-	playfram          	5
+	playfram          	0
 	wait              	1
 	waitrand          	10 15
 KalkaliskBirthTempLocal00:
-	playfram          	2
-	wait              	1
-	playfram          	1
-	wait              	1
 	playfram          	0
 	wait              	1
 	goto              	KalkaliskBirthTempLocal00
@@ -52332,19 +52325,19 @@ KalkaliskBirthTempLocal00:
 KalkaliskBirthTempSpecialState1:
 	wait              	1
 	nobrkcodestart
-	playfram          	4
-	wait              	2
-	playfram          	3
-	wait              	2
-	playfram          	4
-	wait              	2
-	playfram          	3
-	wait              	2
-	playfram          	2
+	playfram          	0
 	wait              	2
 	playfram          	1
 	wait              	2
-	playfram          	0
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
 	wait              	2
 	sigorder          	4
 	nobrkcodeend

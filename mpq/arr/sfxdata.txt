@@ -3028,53 +3028,53 @@ Addon Construction 04
 Cikralisk Weaponfire 01
 Cikralisk Weaponfire 02
 Cikralisk Weaponfire 03
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Furen Advisor Addon 01
+Furen Advisor Addon Abandon 01
+Furen Advisor Ally Attack P 01
+Furen Advisor Ally Attack T 01
+Furen Advisor Ally Attack Z 01
+Furen Advisor Ally Attack A 01
+Furen Advisor Ally Attack B 01
+Furen Advisor Army Attack 01
+Furen Advisor Base Attack 01
+Furen Advisor No Energy 01
+Furen Advisor Landing Interrupted 01
+Furen Advisor No Minerals 01
+Furen Advisor Missile Armed 01
+Furen Advisor Missile Launched 01
+Furen Advisor No Build 01
+Furen Advisor No Land 01
+Furen Advisor No Warp 01
+Furen Advisor Tech Up 01
+Furen Advisor No Vespene 01
+Furen Advisor Warp Complete 01
+Empyrean Death 01
+Empyrean Death 02
+Empyrean Death 03
+Idol Death 01
+Idol Death 02
+Idol Death 03
+Idol Death 04
+Exemplar Weaponhit 01
+Exemplar Weaponhit 02
+Exemplar Weaponhit 03
+Vassal Death 01
+Vassal Death 02
+Vassal Death 03
+Amaranth Weaponhit 01
+Amaranth Weaponhit 02
+Amaranth Weaponhit 03
+Amaranth Weaponhit 04
+Cataphract Death 01
+Cataphract Death 02
+Cataphract Death 03
+Cataphract Death 04
+Cataphract Death 05
+Cataphract Death 06
+Cataphract Death 07
+Ancile Death 01
+Ancile Death 02
+Ancile Death 03
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1
