@@ -1223,7 +1223,7 @@ Architect Engines
 Kalkalisk Birth (Cocoon)
 Iroleth Birth (Cocoon)
 Nathrokor Birth
-Alkajelisk Birth
+Alkajelisk Birth (Egg)
 Shaman (Support Mode)
 Shaman Shadow
 Protoss Temple Shadow
@@ -1837,9 +1837,9 @@ Tosgrilisk Birth (Egg)
 Tosgrilisk Birth (Cocoon)
 Iroleth Birth (Egg)
 Tetcaerokor Birth (Egg)
-Extended Image #837
-Extended Image #838
-Extended Image #839
+Alkajelisk Birth (Cocoon)
+Zarcavrokor Birth (Egg)
+Zarcavrokor Birth (Cocoon)
 Extended Image #840
 Extended Image #841
 Extended Image #842
