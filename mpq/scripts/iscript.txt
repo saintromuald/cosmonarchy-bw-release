@@ -529,6 +529,7 @@ IsthrathalethCastSpell:
 IsthrathalethUnused2:
 	playfram          	0x00
 	nobrkcodestart
+	sigorder			32
 	playsnd				820 # Isthrathaleth pissed 02
 	wait              	1
 	playfram          	0x11
@@ -1974,6 +1975,7 @@ MatralethUnused2:
 	setvertpos        	0 
 	playfram          	0x55
 	nobrkcodestart
+	sigorder			32
 	wait              	1
 	playfram          	0x66
 	wait              	1
@@ -10073,6 +10075,7 @@ DidactUnused2:
 	nobrkcodestart
 	wait				1
 	playsnd				2309 # Didact Stasis Field channel 01
+	sigorder			32
 	wait				3
 	imgul				364 0 0 # Stasis Field Hit
 	wait				7
@@ -10997,6 +11000,7 @@ CantavisUnused1:
 CantavisCastSpell:
 	playfram          	0x00
 	nobrkcodestart
+	sigorder			64
 	playsnd				2547 # Psionic Storm cast 01
 	wait              	1
 	playfram          	0x11
@@ -23372,7 +23376,7 @@ SpecialState1 	[NONE]
 CentaurInit:
 	imgul             	1026 0 42 # Centaur Shadow (cm\terran\centaur.grp)
 CentaurGndAttkToIdle:
-	playfram          	0x00 # Frame set 0
+	playfram          	0x00
 	goto              	ScourgeLocal00
 
 CentaurDeath:
@@ -23429,7 +23433,7 @@ CentaurWalking:
 CentaurUnused2:
 	wait 				1
 	nobrkcodestart
-	playsndbtwn			1204 1207
+	playsndbtwn			1204 1207 # 
 	fireweapon			24
 	wait 				4
 	fireweapon			24
@@ -38839,11 +38843,11 @@ WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
-Built         	ScourgeLocal00
+Built         	InfestedTerranWalkingToIdle
 Landing       	ScourgeLocal00
 LiftOff       	ScourgeLocal00
 IsWorking     	ProstrationStageIsWorking
-WorkingToIdle 	ScourgeLocal00
+WorkingToIdle 	InfestedTerranWalkingToIdle
 WarpIn        	ProstrationStageWarpIn
 Unused3       	[NONE]
 StarEditInit  	[NONE]
@@ -38917,7 +38921,7 @@ ProstrationStageDisable:
 	wait				2
 	playfram			19
 	wait				2
-	goto              	ScourgeLocal00
+	goto              	InfestedTerranWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -39860,6 +39864,7 @@ MagnetarLocal00:
 	
 MagnetarCastSpell:
 	imgolorig         	543 # Yamato Gun Overlay (thingy\eycBlast.grp)
+	sigorder			32
 	goto				MagnetarLocal00
 
 MagnetarWalking:
@@ -50920,5 +50925,57 @@ Death         	FusionCutterHitDamagelessDeath
 FusionCutterHitDamagelessSilentInit:
 	playfram          	0x00
 	goto				FusionCutterHitDamagelessCont
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1844 Gorgon Petrification (cm\terran\gorgon-petrification.grp)
+.headerstart
+IsId          	776
+Type          	1
+Init          	GorgonPetrificationInit
+Death         	Generic_Wait1End
+.headerend
+# ----------------------------------------------------------------------------- #
+
+GorgonPetrificationInit:
+	playfram          	0x00
+	wait				1
+	playfram			1
+	wait				1
+	playfram			2
+	wait				1
+	playfram			3
+	wait				1
+	playfram			4
+	wait				1
+	playfram			5
+	wait				1
+	playfram			6
+	wait				1
+	playfram			7
+	wait				1
+	playfram			8
+	wait				1
+	playfram			9
+	wait				1
+	playfram			10
+	wait				1
+	playfram			11
+	wait				1
+	playfram			12
+	wait				1
+	playfram			13
+	wait				1
+	playfram			14
+	wait				1
+	playfram			15
+	wait				1
+	playfram			16
+	wait				1
+	playfram			17
+	wait				1
+	playfram			18
+	wait				1
+	end
 	
-## Next free IsId: 776
+## Next free IsId: 777
