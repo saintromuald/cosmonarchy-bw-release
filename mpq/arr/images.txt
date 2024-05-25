@@ -153,9 +153,9 @@ Zealot
 Zealot Shadow
 Zealot Death
 Zealot Warp Flash
-Ancestral Archives
-Ancestral Archives Warp Flash
-Ancestral Archives Shadow
+Templar Archives
+Templar Archives Warp Flash
+Templar Archives Shadow
 Aquifer
 Aquifer Warp Flash
 Aquifer Shadow
@@ -1048,9 +1048,9 @@ Irulent Ivoa
 Irulent Ivoa Shadow
 Othstoleth
 Othstoleth Shadow
-Grand Library
-Grand Library Shadow
-Grand Library Warpin
+Ancestral Archives
+Ancestral Archives Shadow
+Ancestral Archives Warp Flash
 Irol Iris
 Irol Iris Shadow
 Starpad Shadow
@@ -1108,7 +1108,7 @@ Augur Death Explosion
 Energy Decay Small
 Energy Decay Medium
 Energy Decay Large
-Magic Sylon
+Savant Form Switch - Power
 Alkajelisk
 Alkajelisk Shadow
 Keskathalor
@@ -1490,9 +1490,9 @@ Infested Overlay Medium
 Infested Overlay Large
 Gas Raw
 Gas Raw Depleted
-Worship Small
-Worship Medium
-Worship Large
+Demiurge Worship Overlay Small
+Demiurge Worship Overlay Medium
+Demiurge Worship Overlay Large
 Controlled Demolition
 Emergency Detonation
 Madrigal Death Explosion
@@ -1644,7 +1644,7 @@ Vulture Remains
 Quazilisk Remains
 Zealot Remains
 Cyclops Remains
-Cyclops Passive Arming
+Cyclops Fragmentary Shells Overlay
 Goliath Remains
 Ecclesiast Remains
 Legionnaire Remains
@@ -1844,46 +1844,46 @@ Algoztalisk Birth (Egg)
 Algoztalisk Birth (Cocoon)
 Gorgon Petrification
 Autocrat Controlled Opposition
-Extended Image #844
-Extended Image #845
-Extended Image #846
-Extended Image #847
-Extended Image #848
-Extended Image #849
-Extended Image #850
-Extended Image #851
-Extended Image #852
-Extended Image #853
-Extended Image #854
-Extended Image #855
-Extended Image #856
-Extended Image #857
-Extended Image #858
-Extended Image #859
-Extended Image #860
-Extended Image #861
-Extended Image #862
-Extended Image #863
-Extended Image #864
-Extended Image #865
-Extended Image #866
-Extended Image #867
-Extended Image #868
-Extended Image #869
-Extended Image #870
-Extended Image #871
-Extended Image #872
-Extended Image #873
-Extended Image #874
-Extended Image #875
-Extended Image #876
-Extended Image #877
-Extended Image #878
-Extended Image #879
-Extended Image #880
-Extended Image #881
-Extended Image #882
-Extended Image #883
+Savant Form Switch - Entropy
+Maverick Stimpack Inject
+Maverick Stimpack Proc
+Maverick Stimpack Expire
+Sevenstep Mind Matter Overlay
+Grand Library
+Grand Library Shadow
+Grand Library Warp Flash
+Gladius Charge
+Optecton Muzzle Flash
+Avenge - Small
+Avenge - Medium
+Avenge - Large
+Avenge - XLarge
+Ascension - Small
+Ascension - Medium
+Ascension - Large
+Ascension - XLarge
+Astral Rule - Small
+Astral Rule - Medium
+Astral Rule - Large
+Astral Rule - XLarge
+Magister Weapon Impact
+Olympian Dishonorable Discharge 1
+Olympian Dishonorable Discharge 2
+Olympian Dishonorable Discharge 3
+Magnetar Law of Attraction 1
+Magnetar Law of Attraction 2
+Magnetar Law of Attraction 3
+Salamander Weaponhit
+Positron Projectile
+Demiurge Worship Proc Small
+Demiurge Worship Proc Medium
+Demiurge Worship Proc Large
+Demiurge Worship Proc XLarge
+Demiurge Worship Overlay XLarge
+Mind Tyrant Tyranny Cast Overlay
+Sasyrvoleth
+Sasyrvoleth Shadow
+Through the Looking Glass Cast
 Extended Image #884
 Extended Image #885
 Extended Image #886

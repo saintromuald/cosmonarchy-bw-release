@@ -49,7 +49,7 @@ Accantor
 Plasma Shell
 Zealot
 Witness
-Ancestral Archives
+Templar Archives
 Aquifer
 Machinist Hall
 Citadel of Adun
@@ -220,7 +220,7 @@ Scrapyard
 Rotary
 Sundog
 Azazel
-Matador
+Matador (Tank Mode)
 Gorgrokor
 Starpad
 Aurora
@@ -235,7 +235,7 @@ Othstol Oviform
 Quantum Institute
 Irulent Ivoa
 Othstoleth
-Grand Library
+Ancestral Archives
 Irol Iris
 Treasury
 Sibraelosk
@@ -513,10 +513,10 @@ Chokralgant Chazsal
 Algoztalisk
 Okrimnilisk
 Cherbrathalor
-Extended Flingy #307
-Extended Flingy #308
-Extended Flingy #309
-Extended Flingy #310
+Grand Library
+Magister Weapon Impact
+Positron Projectile
+Sasyrvoleth
 Extended Flingy #311
 Extended Flingy #312
 Extended Flingy #313

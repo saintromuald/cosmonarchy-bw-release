@@ -1954,7 +1954,6 @@ MatralethUnused1:
 MatralethCastSpell:
 	setvertpos        	0 
 	playfram          	0x55
-	nobrkcodestart
 	wait              	1
 	playfram          	0x66
 	wait              	1
@@ -1967,7 +1966,6 @@ MatralethCastSpell:
 	wait              	1
 	playfram          	0x66
 	wait              	1
-	nobrkcodeend
 	gotorepeatattk
 	goto              	MatralethGndAttkToIdle
 
@@ -10598,6 +10596,8 @@ DracadinDeath:
 	playsnd           	493 # Protoss\DRAGOON\PDrDth00.WAV
 	imgol             	1774 0 0 # Dracadin death explosion (cm\protoss\dracadin-explosion.grp)
 	setfldirect       	0
+	goto				DracadinDeathFrames
+DracadinDeathFrames:
 	playfram          	768
 	wait              	2
 	playfram			769
@@ -11301,7 +11301,6 @@ ZealotWalkingToIdle:
 ZealotLocal00:
 	wait              	62
 	randcondjmp       	64 ZealotLocal01
-	randcondjmp       	85 ZealotLocal02
 	goto              	ZealotLocal00
 
 ZealotLocal01:
@@ -11332,39 +11331,6 @@ ZealotLocal04:
 	randcondjmp       	236 ZealotLocal04
 	randcondjmp       	160 ZealotLocal03
 	waitrand          	22 45
-	playfram          	0x00
-	wait              	1
-	goto              	ZealotWalkingToIdle
-
-ZealotLocal02:
-	playfram          	0x00
-ZealotLocal07:
-	playfram          	0x11
-	wait              	1
-	playfram          	0x33
-	wait              	1
-	playfram          	0x44
-	wait              	1
-	playfram          	0x00
-	waitrand          	1 4
-	randcondjmp       	115 ZealotLocal07
-	randcondjmp       	46 ZealotLocal08
-ZealotLocal09:
-	playfram          	0x33
-	wait              	1
-	playfram          	0x22
-	wait              	1
-	waitrand          	1 4 
-	randcondjmp       	115 ZealotLocal07
-	randcondjmp       	209 ZealotLocal09
-	waitrand          	14 44
-	playfram          	0x00
-	wait              	1
-	goto              	ZealotWalkingToIdle
-
-ZealotLocal08:
-	wait              	1
-	waitrand          	14 44
 	playfram          	0x00
 	wait              	1
 	goto              	ZealotWalkingToIdle
@@ -12308,7 +12274,7 @@ NexusInit:
 NexusDeath:
 	playsnd           	7 # Misc\ExploLrg.wav
 	imgol             	215 0 0 # Explosion (Large) (thingy\tBangX.grp)
-	wait              	3 
+	wait              	3
 	lowsprul          	224 0 0 # Protoss Building Rubble (Large) (thingy\PRubbleL.grp)
 	wait              	1 
 	end
@@ -14633,8 +14599,7 @@ ParticleBeamHitDeath:
 	playfram          	10
 	wait              	1
 	playfram          	11
-	wait              	1
-	end
+	goto				Generic_Wait1End
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -14670,8 +14635,7 @@ DualPhotonBlasterHitDeath:
 	playfram          	6
 	wait              	1
 	playfram          	7
-	wait              	1
-	end
+	goto				Generic_Wait1End
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -14706,8 +14670,7 @@ AntiMatterMissileDeath:
 AntiMatterMissileEmpyrean:
 	playsndbtwn			2016 2019 # Empyrean weaponhit 01, 02, 03, 04
 	domissiledmg
-	wait              	1
-	end
+	goto				Generic_Wait1End
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -24403,12 +24366,12 @@ OthstolethWalkingToIdle:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1050 Grand Library (cm\protoss\grandlibrary.grp)
+# 1050 Ancestral Archives (cm\protoss\ancestral-archives.grp)
 .headerstart
 IsId          	435
 Type          	27
-Init          	GrandLibraryInit
-Death         	GrandLibraryDeath
+Init          	AncestralArchivesInit
+Death         	AncestralArchivesDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -24423,28 +24386,28 @@ WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
-Built         	GrandLibraryBuilt
+Built         	AncestralArchivesBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	GrandLibraryIsWorking
-WorkingToIdle 	GrandLibraryLocal00
-WarpIn        	GrandLibraryWarpIn
+IsWorking     	AncestralArchivesIsWorking
+WorkingToIdle 	AncestralArchivesLocal00
+WarpIn        	AncestralArchivesWarpIn
 Unused3       	[NONE]
 StarEditInit  	[NONE]
-Disable       	GrandLibraryDisabled
+Disable       	AncestralArchivesDisabled
 Burrow        	[NONE]
 UnBurrow      	[NONE]
-Enable        	GrandLibraryLocal00
+Enable        	AncestralArchivesLocal00
 .headerend
 # ----------------------------------------------------------------------------- #
 
-GrandLibraryInit:
-	imgul             	1051 0 0 # Grand Library Shadow (cm\protoss\grandlibrary-shad.grp)
-GrandLibraryLocal00:
+AncestralArchivesInit:
+	imgul             	1051 0 0 # Ancestral Archives Shadow (cm\protoss\ancestral-archives-shadow.grp)
+AncestralArchivesLocal00:
 	playfram          	0x00
 	goto              	ScourgeLocal00
 
-GrandLibraryDeath:
+AncestralArchivesDeath:
 	playsnd           	7 # Misc\ExploLrg.wav
 	imgol             	215 0 0	# Explosion (Large) (thingy\tBangX.grp)
 	wait              	3
@@ -24452,15 +24415,15 @@ GrandLibraryDeath:
 	wait              	1
 	end
 
-GrandLibraryBuilt:
+AncestralArchivesBuilt:
 	playfram			0x00
 	goto              	ScourgeLocal00
 
-GrandLibraryWarpIn:
-	imgol             	1052 0 0 # Grand Library Warp Flash (cm\protoss\grandlibrary.grp)
+AncestralArchivesWarpIn:
+	imgol             	1052 0 0 # Ancestral Archives Warp Flash (cm\protoss\ancestral-archives.grp)
 	goto              	ScourgeLocal00
 	
-GrandLibraryIsWorking:
+AncestralArchivesIsWorking:
 	playfram			1
 	wait				2
 	playfram			2
@@ -24468,9 +24431,9 @@ GrandLibraryIsWorking:
 	playfram			1
 	wait				2
 	playfram			0
-	goto				GrandLibraryIsWorking
+	goto				AncestralArchivesIsWorking
 	
-GrandLibraryDisabled:
+AncestralArchivesDisabled:
 	playfram			3
 	goto				ScourgeLocal00
 	
@@ -24615,10 +24578,8 @@ TreasuryDeath:
 	playsnd           	7 # Misc\ExploLrg.wav
 	imgol             	334 0 0	# Building Explosion (Large) (thingy\tBangX.grp)
 	wait              	3
-	liftoffcondjmp    	TreasuryLocal00
 	lowsprul          	274 0 0 # Terran Building Rubble (Large) (thingy\RubbleL.grp)
-TreasuryLocal00:
-	wait              	1
+	wait				1
 	end
 
 TreasuryAlmostBuilt:
@@ -25616,19 +25577,19 @@ EnergyDecayDeath:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1110 Magic Sylon 	(cm\effect\magicsylon.grp)
+# 1110 Savant Form Switch - Power (cm\terran\savant-form-switch.grp)
+# 1846 Savant Form Switch - Entropy (cm\terran\savant-form-switch.grp)
 .headerstart
 IsId          	459
 Type          	1
-Init          	MagicSylonInit
-Death         	MagicSylonDeath
+Init          	SavantFormSwitchInit
+Death         	SavantFormSwitchDeath
 .headerend
 # ----------------------------------------------------------------------------- #
 
-MagicSylonInit:
+SavantFormSwitchInit:
 	playfram          	0x00
 	wait              	1
-MagicSylonLocal00:
 	playfram          	1
 	wait              	1
 	playfram          	2
@@ -25661,41 +25622,7 @@ MagicSylonLocal00:
 	wait              	1
 	playfram          	16
 	wait              	1
-	playfram          	0x11
-	wait              	1
-	playfram          	18
-	wait              	1
-	playfram          	19
-	wait              	1
-	playfram          	20
-	wait              	1
-	playfram          	21
-	wait              	1
-	playfram          	22
-	wait              	1
-	playfram          	23
-	wait              	1
-	playfram          	24
-	wait              	1
-	playfram          	25
-	wait              	1
-	playfram          	26
-	wait              	1
-	playfram          	27
-	wait              	1
-	playfram          	28
-	wait              	1
-	playfram          	29
-	wait              	1
-	playfram          	30
-	wait              	1
-	playfram          	31
-	wait              	1
-	playfram          	32
-	wait              	1
-	playfram          	33
-	wait              	1
-	playfram          	0x22
+	playfram          	34
 	wait              	1
 	playfram          	35
 	wait              	1
@@ -25714,7 +25641,7 @@ MagicSylonLocal00:
 	playfram          	42
 	wait              	1
 	playfram          	43
-MagicSylonDeath:
+SavantFormSwitchDeath:
 	wait              	1
 	end
 	
@@ -27306,7 +27233,8 @@ SalamanderMissileGndAttkInit:
 	goto              	SalamanderMissileGndAttkInit
 
 SalamanderMissileDeath:
-	playsnd           	9	# Misc\ExploSm.wav
+	imgol				1875 0 0 # Salamander weaponhit
+	playsnd           	9 # Misc\ExploSm.wav
 	domissiledmg
 	wait              	1 
 	end
@@ -28234,7 +28162,7 @@ AtreusDeath:
 	playsnd           	533	# Protoss\Scout\PScDth00.WAV
 	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
 	wait 				2
-	lowsprul          	192 0 0	# Dracadin Remnants (protoss\pdrDeath.grp)
+	lowsprul			846 0 42 # Protoss Unit Rubble Medium
 	wait              	1
 	end
 
@@ -34369,47 +34297,29 @@ WarpIn        	HierophantWarpIn
 # ----------------------------------------------------------------------------- #
 
 HierophantInit:
-	imgul             	1337 -2 -1 # Hierophant Shadow (cm\protoss\hierophant-shad.grp)
+	imgul             	1337 0 0 # Hierophant Shadow (cm\protoss\hierophant-shad.grp)
 HierophantWalkingToIdle:
 	playfram          	0x00
-	wait				2
-HierophantLocal00:
-	playfram          	0x11
-	wait              	2
-	playfram          	0x33
-	wait              	2
-	playfram          	0x44
-	wait              	2
-	playfram          	0x55
-	wait              	2
-	playfram          	0x66
-	wait              	2
-	playfram          	0x77
-	wait              	2
-	playfram          	0x00
-	wait				2
-	goto              	HierophantLocal00
+	wait				1
+	goto				DracadinLocal00
 
 HierophantDeath:
-	setfldirect       	0
 	playsnd           	1335 # Hierophant death 01
+	imgol             	1774 0 0 # Dracadin death explosion (cm\protoss\dracadin-explosion.grp)
 	imgol             	153 0 0 # Zealot Death (protoss\zealot.grp)
-	playfram          	0x198
-	wait              	2
-	playfram          	409
-	wait              	2
-	playfram          	410
-	wait              	2
-	playfram          	411
-	wait              	2
-	playfram          	412
-	wait              	2
-	playfram          	413
-	wait              	2
-	playfram          	414
-	wait              	2
-	lowsprul          	192 0 0 # Dracadin Remnants (protoss\pdrDeath.grp)
-	wait              	1 
+	setfldirect       	0
+	playfram			832
+	wait				2
+	playfram			833
+	wait				2
+	playfram			834
+	wait				2
+	playfram			835
+	wait				2
+	playfram			836
+	wait				2
+	lowsprul			846 0 42 # Protoss Unit Rubble Medium
+	wait              	1
 	end
 	
 HierophantUnused1:
@@ -34419,78 +34329,79 @@ HierophantUnused1:
 	playsnd           	1704 # Hierophant Revive 01
 	sprol				746 0 0 # Zealot Death Reversed (protoss\zealot.grp)
 	wait				2
-	playfram			414
+	playfram			773
 	wait				2
-	playfram			413
+	playfram			772
 	wait				2
-	playfram			412
+	playfram			771
 	wait				2
-	playfram			410
+	playfram			770
 	wait				2
-	playfram			409
+	playfram			769
 	wait				2
-	playfram			0x198
-	setfldirect			13
+	playfram			768
+	wait				2
+	setfldirect			12
 	nobrkcodeend
 	goto				HierophantWalkingToIdle
 
 HierophantGndAttkInit:
-	playfram          	0x110
+	playfram          	0x220
 	wait              	1
-	playfram          	0x132
+	playfram          	0x260
 	wait              	1
-	playfram          	0x154
+	playfram          	0x280
 	wait              	1
 HierophantGndAttkRpt:
-	playfram          	0x176
+	playfram          	0x2A0
 	wait              	1
-	playfram          	0x187
+	playfram          	0x2C0
 	wait              	1
 	playsndbtwn       	2856 2857 # Hierophant weaponfire 01, 02
 	attackwith        	1
-	playfram          	0x176
+	playfram          	0x2E0
 	wait              	1
-	playfram          	0x165
+	playfram          	0x2C0
 	gotorepeatattk
 	ignorerest
 HierophantGndAttkToIdle:
 	wait              	1
-	playfram          	0x154
+	playfram          	0x2A0
 	wait              	1
-	playfram          	0x143
+	playfram          	0x280
 	wait              	1
-	playfram          	0x132
+	playfram          	0x260
 	wait              	1
-	playfram          	0x121
+	playfram          	0x240
 	wait              	1
-	playfram          	0x110
+	playfram          	0x220
 	goto              	HierophantWalkingToIdle
 
 HierophantWalking:
 	move              	6
 	wait              	1
-	playfram          	0x88
+	playfram          	0x100
 	move              	6
 	wait              	1
-	playfram          	0x99
+	playfram          	0x120
 	move              	6
 	wait              	1
-	playfram          	0xaa
+	playfram          	0x140
 	move              	6
 	wait              	1
-	playfram          	0xbb
+	playfram          	0x160
 	move              	6
 	wait              	1
-	playfram          	0xcc
+	playfram          	0x180
 	move              	6
 	wait              	1
-	playfram          	0xdd
+	playfram          	0x1A0
 	move              	6
 	wait              	1
-	playfram          	0xee
+	playfram          	0x1C0
 	move              	6
 	wait              	1
-	playfram          	0xff
+	playfram          	0x1E0
 	goto              	HierophantWalking
 
 HierophantWarpIn:
@@ -39003,7 +38914,7 @@ RogueGalleryWarpIn:
 IsId          	616
 Type          	21
 Init          	MonumentOfSinInit
-Death         	MonumentOfSinDeath
+Death         	NexusDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -39031,14 +38942,6 @@ MonumentOfSinInit:
 	imgul             	1434 0 0 # Monument of Sin Shadow (cm\protoss\monumentofsin-shad.grp)
 	playfram          	0x00
 	goto              	ScourgeLocal00
-
-MonumentOfSinDeath:
-	playsnd           	7 # Misc\ExploLrg.wav
-	imgol             	215 0 0 # Explosion (Large) (thingy\tBangX.grp)
-	wait              	3 
-	lowsprul          	223 0 0 # Protoss Building Rubble (Small) (thingy\PRubbleS.grp)
-	wait              	1 
-	end
 
 MonumentOfSinIsWorking:
 	playfram			1
@@ -39796,6 +39699,85 @@ ArcliteShockCannonHitDamagelessSilentDeath:
 	playfram          	13
 	wait              	1
 	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1462 Dermal Accelerant (Small)  (cm\zerg\dermalaccelerant-small.grp)
+# 1463 Dermal Accelerant (Medium) (cm\zerg\dermalaccelerant-medium.grp)
+# 1464 Dermal Accelerant (Large)  (cm\zerg\dermalaccelerant-large.grp)
+# 1465 Dermal Accelerant (XLarge) (cm\zerg\dermalaccelerant-xlarge.grp)
+.headerstart
+IsId          	634
+Type          	1
+Init          	DermalAccelerantInit
+Death         	Generic_Wait1End
+.headerend
+# ----------------------------------------------------------------------------- #
+
+DermalAccelerantInit:
+	playfram			0x00
+	wait              	1
+	playfram			1
+	wait              	1
+	playfram			2
+	wait              	1
+	playfram			3
+	wait              	1
+	playfram			3
+	wait              	1
+	playfram			4
+	wait              	1
+	playfram			5
+	wait              	1
+	playfram			6
+	wait              	1
+	playfram			7
+	wait              	1
+	playfram			8
+	wait              	1
+	playfram			9
+	wait              	1
+	playfram			10
+	wait              	1
+	playfram			11
+	wait              	1
+	playfram			12
+	wait              	1
+	playfram			13
+	wait              	1
+	playfram			14
+	wait              	1
+	playfram			15
+	wait              	1
+	playfram			16
+	wait              	1
+	playfram			17
+	wait              	1
+	playfram			18
+	wait              	1
+	playfram			19
+	wait              	1
+	playfram			20
+	wait              	1
+	playfram			21
+	wait              	1
+	playfram			22
+	wait              	1
+	playfram			23
+	wait              	1
+	playfram			24
+	wait              	1
+	playfram			25
+	wait              	1
+	playfram			26
+	wait              	1
+	playfram			27
+	wait              	1
+	playfram			28
+	wait              	1
+	playfram			29
+	wait              	1
+	goto				DermalAccelerantInit
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -40499,14 +40481,15 @@ GasRaw2Death:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1492 Worship (Small)  (cm\protoss\worship-small.grp)
-# 1493 Worship (Medium) (cm\protoss\worship-medium.grp)
-# 1494 Worship (Large)  (cm\protoss\worship-large.grp)
+# 1492 Demiurge Worship Proc (Small)  (cm\protoss\demiurge-worship-proc-small.grp)
+# 1493 Demiurge Worship Proc (Medium) (cm\protoss\demiurge-worship-proc-medium.grp)
+# 1494 Demiurge Worship Proc (Large)  (cm\protoss\demiurge-worship-proc-large.grp)
+# 1881 Demiurge Worship Proc (XLarge) (cm\protoss\demiurge-worship-proc-xlarge.grp)
 .headerstart
 IsId          	645
 Type          	1
 Init          	WorshipOverlayInit
-Death         	WorshipOverlayDeath
+Death         	Generic_Wait1End
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -40596,7 +40579,6 @@ WorshipOverlayInit:
 	playfram			42
 	wait				1
 	playfram			43
-WorshipOverlayDeath:
 	wait              	1
 	end
 
@@ -46785,6 +46767,71 @@ ApothecaryIsWorking:
 	playfram			0
 	wait				1
 	goto              	ApothecaryIsWorking
+		
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1639 Unitary Union (cm\protoss\unitary-union.grp)
+.headerstart
+IsId          	712
+Type          	21
+Init          	UnitaryUnionInit
+Death         	GatewayDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	InfestedTerranWalkingToIdle
+Landing       	ScourgeLocal00
+LiftOff       	ScourgeLocal00
+IsWorking     	UnitaryUnionIsWorking
+WorkingToIdle 	InfestedTerranWalkingToIdle
+WarpIn        	UnitaryUnionWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+UnitaryUnionInit:
+	imgul             	1640 0 0 # Unitary Union Shadow (cm\protoss\unitary-union-shadow.grp)
+	playfram          	0x00
+	goto              	ScourgeLocal00
+
+UnitaryUnionIsWorking:
+	playfram			1
+	wait				1
+	playfram			2
+	wait				1
+	playfram			3
+	wait				1
+	playfram			4
+	wait				1
+	playfram			5
+	wait				1
+	playfram			6
+	wait				1
+	playfram			7
+	wait				1
+	playfram			8
+	wait				1
+	playfram			9
+	wait				1
+	playfram			10
+	wait				1
+	playfram			0
+	wait				1
+	goto 				UnitaryUnionIsWorking
+	
+UnitaryUnionWarpIn:
+	imgol             	1641 0 0 # Unitary Union Warp Flash (cm\protoss\unitary-union.grp)
+	goto              	ScourgeLocal00
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -47865,7 +47912,7 @@ SpirtithCesiantBuilt:
 IsId          	728
 Type          	21
 Init          	OptectonInit
-Death         	OptectonDeath
+Death         	StarSovereignDeath
 GndAttkInit   	OptectonGndAttkInit
 AirAttkInit   	OptectonGndAttkInit
 Unused1       	[NONE]
@@ -47893,79 +47940,62 @@ OptectonInit:
 	imgul             	1625 0 0 # Optecton Shadow (cm\protoss\optecton-shad.grp)
 	playfram          	0x00
 	wait				2
-OptectonLocal00:
-	wait				62
-	randcondjmp       	25 OptectonLocal01
-	randcondjmp       	13 OptectonLocal02
-	goto              	OptectonLocal00
-
-OptectonLocal01:
-	playfram			0x11
-	wait				1
-	playfram			0x22
-	wait				1
-	playfram			0x33
-	wait				1
-	playfram			0x44
-	waitrand			8 15
-	playfram			0x33
-	wait				1
-	playfram			0x22
-	wait				1
-	randcondjmp			43 OptectonLocal01
-	playfram			0x11
-	wait				1
-	playfram			0x00
-	wait				1
-	randcondjmp			13 OptectonLocal02
-	goto				OptectonLocal00
-
-OptectonLocal02:
-	playfram			0x55
-	wait				1
-	playfram			0x66
-	wait				1
-	playfram			0x77
-	wait				1
-	playfram			0x88
-	waitrand			8 15
-	playfram			0x77
-	wait				1
-	playfram			0x66
-	wait				1
-	randcondjmp			43 OptectonLocal02
-	playfram			0x55
-	wait				1
-	playfram			0x00
-	wait				1
-	randcondjmp			13 OptectonLocal01
-	goto				OptectonLocal00
+	goto				ScourgeLocal00
 	
 OptectonGndAttkToIdle:
 	playfram          	0x00
 	wait				2
-	goto              	OptectonLocal00
-
-OptectonDeath:
-	playsnd           	533	# Protoss\Scout\PScDth00.WAV
-	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
-	wait 2
-	lowsprul			846 0 0 # Protoss Unit Rubble Medium
-	wait              	1
-	end
+	goto              	ScourgeLocal00
 
 OptectonGndAttkInit:
 	playfram          	0x00
 OptectonGndAttkRpt:
 	wait				1
 	nobrkcodestart
-	playfram			0x1A9
+	wait				1
+	playsnd				1557 # Architect charge 01
+	imgol				1820 0 0 # Architect charge overlay
+	wait				7
+	imgol				1820 0 0 # Architect charge overlay
+	wait				7
+	imgol				1820 0 0 # Architect charge overlay
+	wait				8
+	playfram			0x220
+	imgoluselo			1855 0 0 # Optecton muzzle flash
 	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
 	attackwith        	1
 	wait				1
-	playfram			0x1BA
+	playfram			0x240
 	wait				1
-	playfram			0x1CB
+	playfram			0x220
+	imgoluselo			1855 0 0 # Optecton muzzle flash
+	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
+	attackwith        	1
+	wait				1
+	playfram			0x240
+	wait				1
+	playfram			0x220
+	imgoluselo			1855 0 0 # Optecton muzzle flash
+	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
+	attackwith        	1
+	wait				1
+	playfram			0x240
+	wait				1
+	playfram			0x220
+	imgoluselo			1855 0 0 # Optecton muzzle flash
+	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
+	attackwith        	1
+	wait				1
+	playfram			0x240
+	wait				1
+	playfram			0x220
+	imgoluselo			1855 0 0 # Optecton muzzle flash
+	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
+	attackwith        	1
+	wait				1
+	playfram			0x240
+	wait				1
+	playfram			0x260
 	wait				1
 	playfram			0x00
 	wait				1
@@ -47977,61 +48007,61 @@ OptectonGndAttkRpt:
 OptectonWalking:
 	move				4
 	wait				1
-	playfram          	0xcc
+	playfram          	0x20
 	move				4
 	wait				1
-	playfram          	0xdd
+	playfram          	0x40
 	move				4
 	wait				1
-	playfram          	0xee
+	playfram          	0x60
 	move				4
 	wait				1
-	playfram          	0xff
+	playfram          	0x80
 	move				4
 	wait				1
-	playfram          	0x110
+	playfram          	0xA0
 	move				4
 	wait				1
-	playfram          	0x121
+	playfram          	0xC0
 	move				4
 	wait				1
-	playfram          	0x132
+	playfram          	0xE0
 	move				4
 	wait				1
-	playfram          	0x143
+	playfram          	0x100
 	move				4
 	wait				1
-	playfram          	0x154
+	playfram          	0x120
 	move				4
 	wait				1
-	playfram          	0x165
+	playfram          	0x140
 	move				4
 	wait				1
-	playfram          	0x176
+	playfram          	0x160
 	move				4
 	wait				1
-	playfram          	0x187
+	playfram          	0x180
 	move				4
 	wait				1
-	playfram          	0x198
+	playfram          	0x1A0
 	move				4
 	wait				1
-	playfram          	0x99
+	playfram          	0x1C0
 	move				4
 	wait				1
-	playfram          	0xaa
+	playfram          	0x1E0
 	move				4
 	wait				1
-	playfram          	0xbb
+	playfram          	0x200
 	goto				OptectonWalking
 
 OptectonWalkingToIdle:
 	playfram          	0x00
-	goto              	OptectonLocal00
+	goto              	ScourgeLocal00
 
 OptectonWarpIn:
 	imgol             	125 0 0	# Cantavis Warp Flash (protoss\templar.grp)
-	goto              	OptectonLocal00
+	goto              	ScourgeLocal00
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -50929,6 +50959,7 @@ FusionCutterHitDamagelessSilentInit:
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 1844 Gorgon Petrification (cm\terran\gorgon-petrification.grp)
+# 1845 Autocrat Controlled Opposition (cm\terran\autocrat-controlled-opposition.grp)
 .headerstart
 IsId          	776
 Type          	1
@@ -50978,4 +51009,749 @@ GorgonPetrificationInit:
 	wait				1
 	end
 	
-## Next free IsId: 777
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1847 Maverick Stimpack (cm\terran\maverick-stimpack.grp)
+.headerstart
+IsId          	777
+Type          	1
+Init          	MaverickStimpackInit
+Death         	MaverickStimpackDeath
+.headerend
+# ----------------------------------------------------------------------------- #
+
+MaverickStimpackInit:
+	playfram          	1
+	wait              	1
+	playfram          	2
+	wait              	1
+	playfram          	4
+	wait              	1
+	playfram          	5
+MaverickStimpackDeath:
+	wait              	1
+	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1851 Grand Library (cm\protoss\grand-library.grp)
+.headerstart
+IsId          	778
+Type          	27
+Init          	GrandLibraryInit
+Death         	AncestralArchivesDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	GrandLibrarySpecialState1
+SpecialState2 	GrandLibrarySpecialState2
+AlmostBuilt   	GrandLibraryAlmostBuilt
+Built         	ScourgeLocal00
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	GrandLibraryIsWorking
+WorkingToIdle 	GrandLibraryWorkingToIdle
+WarpIn        	GrandLibraryAlmostBuilt
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	GrandLibraryDisable
+Burrow        	[NONE]
+UnBurrow      	[NONE]
+Enable        	GrandLibraryEnable
+.headerend
+# ----------------------------------------------------------------------------- #
+
+GrandLibraryInit:
+	imgul             	1852 0 0 # GrandLibrary Shadow (cm\protoss\grand-library-shadow.grp)
+	playfram          	0x00
+	wait              	2
+	goto              	ScourgeLocal00
+
+GrandLibrarySpecialState1:
+	playsnd           	528 # Protoss\SHUTTLE\pshBld00.wav
+	wait              	1 
+	goto              	GrandLibraryLocal00
+
+GrandLibraryLocal00:
+	wait              	255 
+	goto              	GrandLibraryLocal00
+
+GrandLibrarySpecialState2:
+	wait              	1 
+	goto              	GrandLibraryWorkingToIdle
+
+GrandLibraryWorkingToIdle:
+	playfram          	12
+	wait              	2
+	playfram          	13
+	wait              	2
+	playfram          	14
+	wait              	2
+	playfram			0
+	goto              	ScourgeLocal00
+
+GrandLibraryAlmostBuilt:
+	imgol             	1853 0 0 # Grand Library Warp Flash (cm\protoss\grand-library.grp)
+	goto              	ScourgeLocal00
+
+GrandLibraryIsWorking:
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	goto				GrandLibraryLoop
+
+GrandLibraryLoop:
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	10
+	wait              	2
+	playfram          	11
+	wait              	2
+	playfram			10
+	wait              	2
+	playfram          	9
+	wait              	2
+	goto              	GrandLibraryLoop
+
+GrandLibraryDisable:
+	playfram          	0x00
+	wait              	1
+	playfram          	15
+	wait              	2
+	playfram          	16
+	wait              	1
+	goto              	ScourgeLocal00
+
+GrandLibraryEnable:
+	playfram          	15
+	wait              	2
+	playfram			0
+	wait              	1
+	goto              	ScourgeLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1854 Gladius Charge (cm\protoss\gladius-charge.grp)
+.headerstart
+IsId          	779
+Type          	1
+Init          	GladiusChargeInit
+Death         	GladiusChargeDeath
+.headerend
+# ----------------------------------------------------------------------------- #
+
+GladiusChargeInit:
+	playfram          	6
+	wait              	1
+	playfram          	7
+	wait              	1
+	playfram          	8
+	wait              	1
+	playfram          	9
+	wait				1
+	playfram			10
+	wait				1
+	playfram			4
+	wait				1
+	playfram			5
+	wait				1
+	goto				GladiusChargeInit
+GladiusChargeDeath:
+	playfram			0
+	wait				1
+	playfram			1
+	wait				1
+	playfram			2
+	wait				1
+	playfram			3
+	wait				1
+	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1855 Optecton Muzzle Flash (cm\protoss\optecton-muzzle.grp)
+.headerstart
+IsId          	780
+Type          	1
+Init          	MuzzleFlashSingleInit
+Death         	Generic_Wait1End
+.headerend
+# ----------------------------------------------------------------------------- #
+
+MuzzleFlashSingleInit:
+	playfram          	0x00
+	wait              	1
+	end
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1856 Avenge Small  (cm\protoss\avenge-small.grp)
+# 1857 Avenge Medium (cm\protoss\avenge-medium.grp)
+# 1858 Avenge Large  (cm\protoss\avenge-large.grp)
+# 1859 Avenge XLarge (cm\protoss\avenge-xlarge.grp)
+# 1860 Ascension Small  (cm\protoss\ascension-small.grp)
+# 1861 Ascension Medium (cm\protoss\ascension-medium.grp)
+# 1862 Ascension Large  (cm\protoss\ascension-large.grp)
+# 1863 Ascension XLarge (cm\protoss\ascension-xlarge.grp)
+.headerstart
+IsId          	781
+Type          	1
+Init          	AscensionProcInit
+Death         	Generic_Wait1End
+.headerend
+# ----------------------------------------------------------------------------- #
+
+AscensionProcInit:
+	playfram          	0x00
+	wait				1
+	playfram          	1
+	wait				1
+	playfram          	2
+	wait				1
+	playfram          	3
+	wait				1
+	playfram          	4
+	wait				1
+	playfram          	5
+	wait				1
+	playfram          	6
+	wait				1
+	playfram          	7
+	wait				1
+	playfram          	8
+	wait				1
+	playfram          	9
+	wait				1
+	playfram          	10
+	wait				1
+	playfram          	11
+	wait				1
+	playfram          	12
+	wait				1
+	playfram          	13
+	goto				Generic_Wait1End
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1864 Astral Rule Small  (cm\protoss\astral-rule-small.grp)
+# 1865 Astral Rule Medium (cm\protoss\astral-rule-medium.grp)
+# 1866 Astral Rule Large  (cm\protoss\astral-rule-large.grp)
+# 1867 Astral Rule XLarge (cm\protoss\astral-rule-xlarge.grp)
+.headerstart
+IsId          	782
+Type          	1
+Init          	AstralRuleInit
+Death         	AstralRuleDeath
+.headerend
+# ----------------------------------------------------------------------------- #
+
+AstralRuleInit:
+	playfram          	0x00
+	wait				1
+	playfram          	1
+	wait				1
+	playfram          	2
+	wait				1
+	playfram          	3
+	wait				1
+	playfram          	4
+	wait				1
+	playfram          	5
+	wait				1
+	playfram          	6
+	wait				1
+	playfram          	7
+	wait				1
+	playfram          	8
+	wait				1
+	playfram          	9
+AstralRuleLocal00:
+	wait				1
+	playfram          	10
+	wait				1
+	playfram          	11
+	wait				1
+	playfram          	12
+	wait				1
+	playfram          	13
+	wait				1
+	playfram          	14
+	wait				1
+	playfram          	15
+	wait				1
+	playfram          	16
+	wait				1
+	playfram          	17
+	wait				1
+	playfram          	18
+	wait				1
+	playfram          	19
+	goto				AstralRuleLocal00
+	
+AstralRuleDeath:
+	playfram			20
+	wait				1
+	playfram			21
+	wait				1
+	playfram			22
+	wait				1
+	playfram			23
+	wait				1
+	playfram			24
+	wait				1
+	playfram			25
+	wait				1
+	playfram			26
+	wait				1
+	playfram			27
+	wait				1
+	playfram			28
+	wait				1
+	playfram			29
+	goto				Generic_Wait1End
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1868 Magister Weapon Impact (cm\protoss\magister-weaponhit.grp)
+.headerstart
+IsId          	783
+Type          	2
+Init          	MagisterWeaponhitInit
+Death         	MagisterWeaponhitDeath
+GndAttkInit   	MagisterWeaponhitDeath
+AirAttkInit   	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+MagisterWeaponhitInit:
+	wait              	1
+	sigorder          	1
+	wait              	1
+MagisterWeaponhitDeath:
+	playfram          	0x00
+	domissiledmg
+	wait              	1
+	playfram          	2
+	wait              	1
+	playfram          	4
+	wait              	1
+	playfram          	6
+	wait              	1
+	playfram          	7
+	wait              	1
+	playfram          	8
+	wait              	1
+	playfram          	9
+	wait              	1
+	playfram          	10
+	wait              	1
+	playfram          	11
+	goto				Generic_Wait1End
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1869 Olympian Dishonorable Discharge 1 (cm\terran\olympian-dishonorable-discharge-1.grp)
+# 1870 Olympian Dishonorable Discharge 2 (cm\terran\olympian-dishonorable-discharge-2.grp)
+# 1871 Olympian Dishonorable Discharge 3 (cm\terran\olympian-dishonorable-discharge-3.grp)
+.headerstart
+IsId          	784
+Type          	1
+Init          	OlympianDishonorableDischargeInit
+Death         	Generic_Wait1End
+.headerend
+# ----------------------------------------------------------------------------- #
+
+OlympianDishonorableDischargeInit:
+	playfram          	0x00
+	wait              	1
+	playfram			2
+	wait              	1
+	playfram			4
+	wait              	1
+	playfram			6
+	wait              	1
+	playfram			7
+	wait              	1
+	playfram			8
+	wait              	1
+	playfram			9
+	wait              	1
+	playfram			10
+	wait              	1
+	playfram			11
+	wait              	1
+	playfram			12
+	wait              	1
+	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1872 Magnetar Law of Attraction 1 (cm\terran\magnetar-law-of-attraction-1.grp)
+# 1873 Magnetar Law of Attraction 2 (cm\terran\magnetar-law-of-attraction-2.grp)
+# 1874 Magnetar Law of Attraction 3 (cm\terran\magnetar-law-of-attraction-3.grp)
+# 1875 Salamander Weaponhit (cm\terran\salamander-weaponhit.grp)
+.headerstart
+IsId          	785
+Type          	1
+Init          	MagnetarLawOfAttractionInit
+Death         	Generic_Wait1End
+.headerend
+# ----------------------------------------------------------------------------- #
+
+MagnetarLawOfAttractionInit:
+	playfram          	0x00
+	wait              	1
+	playfram			1
+	wait              	1
+	playfram			2
+	wait              	1
+	playfram			3
+	wait              	1
+	playfram			4
+	wait              	1
+	playfram			5
+	wait              	1
+	playfram			6
+	wait              	1
+	playfram			7
+	wait              	1
+	playfram			8
+	wait              	1
+	playfram			9
+	wait              	1
+	playfram			10
+	wait              	1
+	playfram			11
+	wait              	1
+	playfram			12
+	wait              	1
+	playfram			13
+	wait              	1
+	playfram			14
+	wait              	1
+	playfram			15
+	wait              	1
+	playfram			16
+	wait              	1
+	playfram			17
+	wait              	1
+	playfram			18
+	wait				1
+	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1876 Positron Projectile (cm\protoss\positron-projectile.grp)
+.headerstart
+IsId          	786
+Type          	2
+Init          	PositronProjectileInit
+Death         	PositronProjectileDeath
+GndAttkInit   	PositronProjectileLoop
+AirAttkInit   	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+PositronProjectileInit:
+	playfram          	25
+	wait              	1
+	sigorder          	1
+	wait              	1
+	playfram			26
+	wait              	1
+	playfram			27
+PositronProjectileLoop:
+	wait              	1
+	playfram			10
+	wait              	1
+	playfram			11
+	wait              	1
+	playfram			12
+	wait              	1
+	playfram			13
+	wait              	1
+	playfram			14
+	wait              	1
+	playfram			15
+	wait              	1
+	playfram			16
+	wait              	1
+	playfram			17
+	wait              	1
+	playfram			18
+	wait              	1
+	playfram			19
+	wait              	1
+	playfram			20
+	wait              	1
+	playfram			21
+	wait              	1
+	playfram			22
+	wait              	1
+	playfram			23
+	wait              	1
+	playfram			24
+	wait              	1
+	playfram			25
+	wait              	1
+	playfram			26
+	wait              	1
+	playfram			27
+	goto				PositronProjectileLoop
+	
+PositronProjectileDeath:
+	playsnd           	2848 # Panoptus weaponhit 01
+	domissiledmg
+	wait				1
+	playfram			28
+	wait				1
+	playfram			29
+	wait				1
+	playfram			30
+	wait				1
+	playfram			31
+	wait				1
+	playfram			32
+	wait				1
+	playfram			33
+	wait				1
+	playfram			34
+	wait				1
+	playfram			35
+	wait				1
+	playfram			36
+	wait				1
+	playfram			37
+	wait				1
+	playfram			38
+	wait				1
+	playfram			39
+	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1877 Demiurge Worship Overlay Small  (cm\protoss\demiurge-worship-overlay-small.grp)
+# 1878 Demiurge Worship Overlay Medium (cm\protoss\demiurge-worship-overlay-medium.grp)
+# 1879 Demiurge Worship Overlay Large  (cm\protoss\demiurge-worship-overlay-large.grp)
+# 1880 Demiurge Worship Overlay XLarge (cm\protoss\demiurge-worship-overlay-xlarge.grp)
+.headerstart
+IsId          	787
+Type          	1
+Init          	DemiurgeWorshipProcInit
+Death         	Generic_Wait1End
+.headerend
+# ----------------------------------------------------------------------------- #
+
+DemiurgeWorshipProcInit:
+	playfram          	0x00
+	wait              	1
+	playfram			1
+	wait              	1
+	playfram			2
+	wait              	1
+	playfram			3
+	wait              	1
+	playfram			4
+	wait              	1
+	playfram			5
+	wait              	1
+	playfram			6
+	wait              	1
+	playfram			7
+	wait              	1
+	playfram			8
+	wait              	1
+	playfram			9
+	wait              	1
+	playfram			10
+	wait              	1
+	playfram			11
+	wait              	1
+	playfram			12
+	wait              	1
+	playfram			13
+	wait              	1
+	playfram			14
+	wait              	1
+	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1882 Mind Tyrant Tyranny Cast Overlay (cm\protoss\mind-tyrant-tyranny-cast-overlay.grp)
+.headerstart
+IsId          	788
+Type          	1
+Init          	MindTyrantTyrannyCastOverlayInit
+Death         	Generic_Wait1End
+.headerend
+# ----------------------------------------------------------------------------- #
+
+MindTyrantTyrannyCastOverlayInit:
+	playfram			0x00
+	wait              	1
+	playfram			1
+	wait              	1
+	playfram			2
+	wait              	1
+	playfram			3
+	wait              	1
+	playfram			3
+	wait              	1
+	playfram			4
+	wait              	1
+	playfram			5
+	wait              	1
+	playfram			6
+	wait              	1
+	playfram			7
+	wait              	1
+	playfram			8
+	wait              	1
+	playfram			9
+	wait              	1
+	playfram			10
+	wait              	1
+	playfram			11
+	wait              	1
+	playfram			12
+	wait              	1
+	playfram			13
+	wait              	1
+	playfram			14
+	wait              	1
+	playfram			15
+	wait              	1
+	playfram			16
+	wait              	1
+	playfram			17
+	wait              	1
+	playfram			18
+	wait              	1
+	playfram			19
+	wait              	1
+	playfram			20
+	wait              	1
+	playfram			21
+	wait              	1
+	playfram			22
+	wait              	1
+	playfram			23
+	wait              	1
+	playfram			24
+	wait              	1
+	playfram			25
+	wait              	1
+	playfram			26
+	wait              	1
+	playfram			27
+	wait              	1
+	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1883 Sasyrvoleth (cm\zerg\sasyrvoleth.grp)
+.headerstart
+IsId          	789
+Type          	12
+Init          	SasyrvolethInit
+Death         	SasyrvolethDeath
+GndAttkInit   	SasyrvolethGndAttkInit
+AirAttkInit   	SasyrvolethGndAttkInit
+Unused1       	[NONE]
+GndAttkRpt    	SasyrvolethGndAttkInit
+AirAttkRpt    	SasyrvolethGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	SasyrvolethWalkingToIdle
+AirAttkToIdle 	SasyrvolethWalkingToIdle
+Unused2       	[NONE]
+Walking       	SasyrvolethWalking
+WalkingToIdle 	SasyrvolethWalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+SasyrvolethInit:
+	imgul             	1884 0 42 # Sasyrvoleth Shadow (cm\zerg\sasyrvoleth.grp)
+	playfram          	0x00
+	wait				2
+SasyrvolethWalkingToIdle:
+	playfram          	0x20
+	wait              	2
+	playfram          	0x40
+	wait              	2
+	playfram          	0x60
+	wait              	2
+	playfram          	0x80
+	wait              	2
+	playfram          	0xA0
+	wait              	2
+	playfram          	0xC0
+	wait              	2
+	playfram          	0xE0
+	wait              	2
+	goto              	SasyrvolethWalkingToIdle
+
+SasyrvolethDeath:
+	playsnd           	852	# Zerg\Guardian\ZGuDth00.WAV
+	imgol             	28 0 0 # Geszithalor Death (zerg\zguDeath.grp)
+	wait              	1
+	lowsprul			848 0 42 # Zerg Unit Rubble Medium
+	wait              	1
+	end
+
+SasyrvolethGndAttkInit:
+	nobrkcodestart
+	playsndbtwn			1295 1296 # Sasyrvoleth weapon fire 01, 02
+	playfram 			0x100
+	wait 				1
+	playfram 			0x120
+	wait 				1
+	playfram 			0x140
+	attackwith 			1
+	playsndbtwn			894 895	# Zerg\Ultra\zulHit00.WAV | Zerg\Ultra\zulHit01.WAV
+	wait 				1
+	playfram 			0x160
+	wait				1
+	playfram 			0x180
+	wait 				1
+	playfram 			0x1A0
+	wait 				1
+	playfram 			0x1C0
+	wait 				1
+	nobrkcodeend
+	gotorepeatattk
+	goto              	SasyrvolethWalkingToIdle
+
+SasyrvolethWalking:
+	playfram          	0x20
+	wait              	1
+	playfram          	0x40
+	wait              	1
+	playfram          	0x60
+	wait              	1
+	playfram          	0x80
+	wait              	1
+	playfram          	0xA0
+	wait              	1
+	playfram          	0xC0
+	wait              	1
+	playfram          	0xE0
+	wait              	1
+	goto              	SasyrvolethWalking
+	
+## Next free IsId: 790

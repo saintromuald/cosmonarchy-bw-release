@@ -201,7 +201,7 @@ Accantor
 Plasma Shell
 Zealot
 Witness
-Ancestral Archives
+Templar Archives
 Aquifer
 Machinist Hall
 Citadel of Adun
@@ -543,7 +543,7 @@ Othstol Oviform
 Quantum Institute
 Irulent Ivoa
 Othstoleth
-Grand Library
+Ancestral Archives
 Irol Iris
 Sibraelosk
 Treasury
@@ -875,7 +875,7 @@ Madrigal (Furia Mode)
 Madrigal Turret (Furia)
 Philoc
 Quazilisk Attack Overlay
-Cyclops Passive Arming Overlay
+Cyclops Fragmentary Shells Overlay
 Sevenstep Rail
 Quazilisk (April Fools)
 Omnivale
@@ -904,19 +904,19 @@ Chokralgant Chaszal
 Algoztalisk
 Okrimnilisk
 Cherbrathalor
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
+Sevenstep Mind Matter Overlay
+Grand Library
+Magister Weapon Impact
+Olympian Dishonorable Discharge 1
+Olympian Dishonorable Discharge 2
+Olympian Dishonorable Discharge 3
+Magnetar Law of Attraction 1
+Magnetar Law of Attraction 2
+Magnetar Law of Attraction 3
+Positron Projectile
+Binding Plasma Overlay
+Sasyrvoleth
+Through The Looking Glass Cast
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1

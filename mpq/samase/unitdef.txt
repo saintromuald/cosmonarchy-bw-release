@@ -2,7 +2,7 @@
 # This is a PyAI version of UNITDEF.INI made by Gold Dragon, used by ScAIEdit III
 
 # Initially modified to include all unit, upgrade, and tech entries.
-# Further modified by Veeq7 & Pr0nogo for Cosmonarchy BW
+# Further modified by Veeq7 & Pr0nogo for Cosmonarchy
 # https://www.fraudsclub.com/cosmonarchy-bw/
 
 # AI IDs
@@ -248,12 +248,12 @@ building synthetic_synod = 171
 
 # Protoss NGS buildings
 building artisan = 182
+building prudence = 184
 #
 building automaton_register = 158
 building prostration_stage = 159
 building rogue_gallery = 161
 building argosy = 168
-building astral_omen = 184
 building crucible = 201
 building ardent_authority = 220
 building pennant = 221
@@ -328,6 +328,7 @@ military begrothilisk = 324
 military oztukrokor = 325
 military kethrostalor = 326
 military rakzilisk = 327
+military sasyrvoleth = 407
 
 # Zerg misc
 military larva = 35

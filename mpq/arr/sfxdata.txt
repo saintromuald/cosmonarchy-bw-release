@@ -81,8 +81,8 @@ Bullet\ZLuHit00.wav
 Bullet\HKMISSLE.wav
 Bullet\TGoFi200.wav
 Bullet\TPhFi200.wav
-Bullet\TNsFir00.wav (1)
-Bullet\TNsFir00.wav (2)
+Bullet\TPhFi200.wav (2)
+Bullet\TNsFir00.wav
 Bullet\TNsHit00.wav
 Bullet\PhoAtt00.wav
 Bullet\PhoHit00.wav
@@ -3075,59 +3075,59 @@ Cataphract Death 07
 Ancile Death 01
 Ancile Death 02
 Ancile Death 03
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Savant Switch A 01
+Savant Switch B 01
+Stimpack Expire 01
+Ataltreth Advisor Addon 01
+Ataltreth Advisor Addon Abandoned 01
+Ataltreth Advisor Ally Attack P 01
+Ataltreth Advisor Ally Attack T 01
+Ataltreth Advisor Ally Attack Z 01
+Ataltreth Advisor Ally Attack A 01
+Ataltreth Advisor Ally Attack B 01
+Ataltreth Advisor Army Attack 01
+Ataltreth Advisor Base Attack 01
+Ataltreth Advisor No Energy 01
+Ataltreth Advisor Landing Interrupted 01
+Ataltreth Advisor No Minerals 01
+Ataltreth Advisor Missile Armed 01
+Ataltreth Advisor Missile Launch 01
+Ataltreth Advisor No Build 01
+Ataltreth Advisor No Land 01
+Ataltreth Advisor No Warp 01
+Ataltreth Advisor Tech Up 01
+Ataltreth Advisor No Vespene 01
+Ataltreth Advisor Warp Complete 01
+Gladius Passive Fire 01
+Gladius Passive Fire 02
+Gladius Passive Fire 03
+Hierophant Banter B 01
+Hierophant Banter B 02
+Hierophant Banter B 03
+Patriarch Ready 01
+Patriarch Ready 02
+Patriarch Ready 03
+Patriarch Ready 04
+Patriarch Selected 01
+Patriarch Selected 02
+Patriarch Selected 03
+Patriarch Selected 04
+Patriarch Order Passive 01
+Patriarch Order Passive 02
+Patriarch Order Passive 03
+Patriarch Order Passive 04
+Patriarch Order Aggressive 01
+Patriarch Order Aggressive 02
+Patriarch Order Aggressive 03
+Patriarch Order Aggressive 04
+Patriarch Under Attack 01
+Patriarch Under Attack 02
+Patriarch Under Attack 03
+Patriarch Under Attack 04
+Patriarch Banter 01
+Patriarch Banter 02
+Patriarch Banter 03
+Patriarch Banter 04
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1
