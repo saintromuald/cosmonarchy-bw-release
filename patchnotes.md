@@ -99,6 +99,7 @@ Cosmonarchy is firmly in the best spot it's ever been, and we intend to keep pus
 - **Tilesets:**
 	- Fixed height and pathing flags on Jungle World -> dirt cliff south ramps (r. The Shambler)
 - **Audiovisuals**:
+	- Many overlays no longer show on cloaked units (r. GreenEggs'NSpam)
 	- Irradiate overlay is now properly inherited by regressing Zerg (r. TheBeaver99)
 	- Olympian Mythical Might SFX no longer plays more often than intended (r. lolrsk8s)
 	- Improved player color contrast when picking random player colors (c. Veeq7)
