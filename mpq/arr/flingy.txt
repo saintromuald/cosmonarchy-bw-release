@@ -424,7 +424,7 @@ Zobriolisk
 Idol Weaponhit
 Wendigo
 Southpaw
-Photon Cannon Projectile
+Warden Projectile
 Cyprian
 Cataphract
 Durendal
@@ -517,14 +517,14 @@ Grand Library
 Magister Weapon Impact
 Positron Projectile
 Sasyrvoleth
-Extended Flingy #311
-Extended Flingy #312
-Extended Flingy #313
-Extended Flingy #314
-Extended Flingy #315
-Extended Flingy #316
-Extended Flingy #317
-Extended Flingy #318
+Autocrat Laser
+Angeltear Rockets
+Ackmed
+Venom (White)
+Skithrokor Spore
+Photon Blasters White
+Photon Blasters Green
+Liiralisk Glave
 Extended Flingy #319
 Extended Flingy #320
 Extended Flingy #321
@@ -598,8 +598,8 @@ Extended Flingy #388
 Extended Flingy #389
 Extended Flingy #390
 Extended Flingy #391
-Extended Flingy #392
-Extended Flingy #393
+Francisco Goska
+Stroluum
 Extended Flingy #394
 Extended Flingy #395
 Extended Flingy #396

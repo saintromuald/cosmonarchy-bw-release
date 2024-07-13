@@ -1227,21 +1227,21 @@ HydraliskLocal03:
 HydraliskDeath:
 	playsnd           	867 # Zerg\Hydra\ZHyDth00.WAV
 	setfldirect       	0
-	playfram          	204
+	playfram          	0x121
 	wait              	2
-	playfram          	205
+	playfram          	290
 	wait              	2
-	playfram          	206
+	playfram          	291
 	wait              	2
-	playfram          	207
+	playfram          	292
 	wait              	2
-	playfram          	208
+	playfram          	293
 	wait              	2
-	playfram          	209
+	playfram          	294
 	wait              	2
-	playfram          	210
+	playfram          	295
 	wait              	2
-	playfram          	211
+	playfram          	296
 	wait              	2
 	lowsprul          	147 0 0 # Hydralisk Remnants (zerg\zhyDeath.grp)
 	wait              	1
@@ -1252,21 +1252,21 @@ HydraliskUnused1:
 	nobrkcodestart
 	setfldirect			0
 	playsnd				1172 # Hydralisk Revive 01
-	playfram			211
+	playfram			296
 	wait				2
-	playfram			210
+	playfram			295
 	wait				2
-	playfram			209
+	playfram			294
 	wait				2
-	playfram			208
+	playfram			293
 	wait				2
-	playfram			207
+	playfram			292
 	wait				2
-	playfram			206
+	playfram			291
 	wait				2
-	playfram			205
+	playfram			290
 	wait				2
-	playfram			204
+	playfram			0x121
 	wait				2
 	setfldirect			12
 	nobrkcodeend
@@ -1359,20 +1359,20 @@ HydraliskWalking:
 	goto              	HydraliskWalking
 
 HydraliskSpecialState2:
-	playfram          	280
+	playfram          	0x110
 	goto              	ScourgeLocal00
 
 HydraliskBurrow:
 	imgol             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
-	playfram          	212
+	playfram          	0xcc
 	wait              	1
-	playfram          	229
+	playfram          	0xdd
 	wait              	1
-	playfram          	246
+	playfram          	0xee
 	wait              	1
-	playfram          	263
+	playfram          	0xff
 	wait              	1
-	playfram          	280
+	playfram          	0x110
 	wait              	1
 	sigorder          	4
 	goto              	ScourgeLocal00
@@ -1381,13 +1381,13 @@ HydraliskUnBurrow:
 	wait 				1
 	waitrand          	1 2
 	imgul             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
-	playfram          	263
+	playfram          	0xff
 	wait              	1
-	playfram          	246
+	playfram          	0xee
 	wait              	1
-	playfram          	229
+	playfram          	0xdd
 	wait              	1
-	playfram          	212
+	playfram          	0xcc
 	wait              	1
 	sigorder          	4
 	goto              	HydraliskWalkingToIdle
@@ -1830,7 +1830,7 @@ OvilethDeath:
 	playsnd           	910 # Zerg\OVERLORD\ZOvDth00.WAV
 	imgol             	45 0 0 # Ovileth Death (zerg\zovDeath.grp)
 	wait              	1
-	lowsprul			848 0 42 # Zerg Unit Rubble Medium
+	lowsprul			922 0 42 # Ovileth remains
 	wait              	1
 	end
 
@@ -5117,7 +5117,7 @@ TrojanDeath:
 	playsnd           	210 # Terran\DROPSHIP\TDrDth00.wav
 	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
 	wait              	3
-	lowsprul			844 0 42 # Terran Unit Rubble Medium
+	lowsprul			920 0 42 # Trojan remains
 	wait              	1
 	end
 
@@ -6802,7 +6802,7 @@ Phalanx_Tank_BaseDeath:
 	playsnd           	317	# Terran\TANK\TTaDth00.WAV
 	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
 	wait              	3
-	lowsprul			273 0 0 # Terran Building Rubble Small
+	lowsprul			923 0 0 # Phalanx (Tank) remains
 	wait				1
 	end
 
@@ -6863,7 +6863,7 @@ Phalanx_Tank_TurretGndAttkInit:
 IsId          	92
 Type          	14
 Init          	Phalanx_Siege_BaseInit
-Death         	Phalanx_Tank_BaseDeath
+Death         	Phalanx_Siege_BaseDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -6912,6 +6912,14 @@ Phalanx_Siege_BaseInit:
 	wait              	28
 	sigorder          	1
 	goto              	ScourgeLocal00
+
+Phalanx_Siege_BaseDeath:
+	playsnd           	317	# Terran\TANK\TTaDth00.WAV
+	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
+	wait              	3
+	lowsprul			924 0 0 # Phalanx (Siege) remains
+	wait				1
+	end
 
 Phalanx_Siege_BaseSpecialState2:
 	wait              	28
@@ -10887,7 +10895,7 @@ EnvoyDeath:
 	playsnd           	514	# Protoss\SHUTTLE\PShDth00.WAV
 	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	3
-	lowsprul			846 0 42 # Protoss Unit Rubble Medium
+	lowsprul			921 0 42 # Envoy remains
 	wait              	1
 	end
 
@@ -14164,73 +14172,7 @@ VorvrokorInit:
 	imgul             	1772 -1 -5 # Vorvrokor Shadow (cm\zerg\vorvrokor-shadow.grp)
 VorvrokorGndAttkToIdle:
 	playfram          	0x55
-	goto              	VorvrokorLocal00
-
-VorvrokorLocal00:
-	wait 				62
-	randcondjmp       	25 VorvrokorLocal01
-	randcondjmp       	128 VorvrokorLocal02
-	goto              	VorvrokorLocal00
-
-VorvrokorLocal01:
-	playfram          	0x00
-	wait              	1
-	playfram          	0x11
-	wait              	1
-	playfram          	0x22
-	wait              	1
-	playfram          	0x33
-	wait              	12
-	playfram          	0x22
-	wait              	1
-	playfram          	0x11
-	wait              	1
-	playfram          	0x00
-	wait              	1
-	goto              	VorvrokorGndAttkToIdle
-
-VorvrokorLocal02:
-	randcondjmp       	128 VorvrokorLocal03
-	playfram          	0x66
-	wait              	1
-	turnccwise        	1
-	playfram          	0x77
-	wait              	1
-	turnccwise        	1
-	playfram          	0x88
-	wait              	1
-	turnccwise        	1
-	playfram          	0x99
-	wait              	1
-	turnccwise        	1
-	playfram          	0xaa
-	wait              	1
-	turnccwise        	1
-	playfram          	0xbb
-	wait              	1
-	turnccwise        	1
-	goto              	VorvrokorGndAttkToIdle
-
-VorvrokorLocal03:
-	playfram          	0x66
-	wait              	1
-	turncwise         	1
-	playfram          	0x77
-	wait              	1
-	turncwise         	1
-	playfram          	0x88
-	wait              	1
-	turncwise         	1
-	playfram          	0x99
-	wait              	1
-	turncwise         	1
-	playfram          	0xaa
-	wait              	1
-	turncwise         	1
-	playfram          	0xbb
-	wait              	1
-	turncwise         	1
-	goto              	VorvrokorGndAttkToIdle
+	goto              	ZethrokorLocal00
 
 VorvrokorDeath:
 	playsnd           	1160 # Vorvrokor death 01
@@ -14249,7 +14191,7 @@ VorvrokorDeath:
 	wait              	2
 	playfram          	295
 	wait              	2
-	lowsprul          	160 0 0 # Zethrokor Remnants (zerg\zzeDeath.grp)
+	lowsprul          	942 0 0 # Vorvrokor Remnants (cm\zerg\vorvrokor-death.grp)
 	wait              	1 
 	end
 
@@ -14289,6 +14231,9 @@ VorvrokorWalking:
 	move              	7
 	wait              	1
 	playfram          	0xbb
+	move              	7
+	wait              	1
+	playfram          	0x55
 	goto              	VorvrokorWalking
 
 VorvrokorSpecialState2:
@@ -15891,25 +15836,25 @@ Death         	Generic_Wait1End
 
 GlaveWurmHitInit:
 	playfram          	0x00
-	wait              	2
+	wait              	1
 	playfram          	1
-	wait              	2
+	wait              	1
 	playfram          	2
-	wait              	2
+	wait              	1
 	playfram          	3
-	wait              	2
+	wait              	1
 	playfram          	4
-	wait              	2
+	wait              	1
 	playfram          	5
-	wait              	2
+	wait              	1
 	playfram          	6
-	wait              	2
+	wait              	1
 	playfram          	7
-	wait              	2
+	wait              	1
 	playfram          	8
-	wait              	2
+	wait              	1
 	playfram          	9
-	wait              	2
+	wait              	1
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -20660,7 +20605,8 @@ ClericLocal04:
 # This header is used by images.dat entries:
 # 946 Cleric Remnants (terran\tmeDeath.grp)
 # 1362 Scribe Remnants (cm\protoss\scribe-death.grp)
-# 1542 Evigrilisk Remains
+# 1542 Evigrilisk Remains (cm\zerg\evigrilisk-remains.grp)
+# 1899 Ancile Remains (cm\terran\ancile-death.grp)
 .headerstart
 IsId          	361
 Type          	1
@@ -20725,9 +20671,10 @@ ValkyrieAirAttkInit:
 	wait              	2
 	nobrkcodestart
 	attackwith        	2
-	wait				4
+	wait				8
 	attackwith        	2
-	wait				1
+	wait				8
+	attackwith        	2
 	nobrkcodeend
 	gotorepeatattk
 	goto              	OvilethLocal00
@@ -27134,10 +27081,10 @@ Type          	12
 Init          	SalamanderInit
 Death         	SalamanderDeath
 GndAttkInit   	SalamanderGndAttkInit
-AirAttkInit   	SalamanderGndAttkInit
+AirAttkInit   	SalamanderAirAttkInit
 Unused1       	[NONE]
 GndAttkRpt    	SalamanderGndAttkInit
-AirAttkRpt    	SalamanderGndAttkInit
+AirAttkRpt    	SalamanderAirAttkInit
 CastSpell     	[NONE]
 GndAttkToIdle 	SalamanderGndAttkToIdle
 AirAttkToIdle 	SalamanderGndAttkToIdle
@@ -27183,6 +27130,17 @@ SalamanderGndAttkInit:
 	attackwith			1
 	wait				3
 	attackwith			1
+	wait				1
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto              	SalamanderWalkingToIdle
+
+SalamanderAirAttkInit:
+	wait              	1
+	nobrkcodestart
+	playsndbtwn	       	3129 3132 # Salamander weapon 2 fire 01, 02, 03
+	attackwith			2
 	wait				1
 	nobrkcodeend
 	gotorepeatattk
@@ -28088,7 +28046,7 @@ GndAttkToIdle 	AtreusGndAttkToIdle
 AirAttkToIdle 	AtreusGndAttkToIdle
 Unused2       	[NONE]
 Walking       	AtreusWalking
-WalkingToIdle 	AtreusWalkingToIdle
+WalkingToIdle 	AtreusGndAttkToIdle
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
@@ -28103,60 +28061,11 @@ WarpIn        	AtreusWarpIn
 
 AtreusInit:
 	imgul             	1173 0 0 # Atreus Shadow (cm\protoss\atreus-shad.grp)
-	playfram          	0x00
-	wait				2
-AtreusLocal00:
-	wait				62
-	randcondjmp       	25 AtreusLocal01
-	randcondjmp       	13 AtreusLocal02
-	goto              	AtreusLocal00
-
-AtreusLocal01:
-	playfram			0x11
-	wait				1
-	playfram			0x22
-	wait				1
-	playfram			0x33
-	wait				1
-	playfram			0x44
-	waitrand			8 15
-	playfram			0x33
-	wait				1
-	playfram			0x22
-	wait				1
-	randcondjmp			43 AtreusLocal01
-	playfram			0x11
-	wait				1
-	playfram			0x00
-	wait				1
-	randcondjmp			13 AtreusLocal02
-	goto				AtreusLocal00
-
-AtreusLocal02:
-	playfram			0x55
-	wait				1
-	playfram			0x66
-	wait				1
-	playfram			0x77
-	wait				1
-	playfram			0x88
-	waitrand			8 15
-	playfram			0x77
-	wait				1
-	playfram			0x66
-	wait				1
-	randcondjmp			43 AtreusLocal02
-	playfram			0x55
-	wait				1
-	playfram			0x00
-	wait				1
-	randcondjmp			13 AtreusLocal01
-	goto				AtreusLocal00
+	goto				AtreusGndAttkToIdle
 	
 AtreusGndAttkToIdle:
 	playfram          	0x00
-	wait				2
-	goto              	AtreusLocal00
+	goto              	ScourgeLocal00
 
 AtreusDeath:
 	playsnd           	533	# Protoss\Scout\PScDth00.WAV
@@ -28171,13 +28080,9 @@ AtreusGndAttkInit:
 AtreusGndAttkRpt:
 	wait				1
 	nobrkcodestart
-	playfram			0x1A9
+	playfram			0x220
 	playsndbtwn			1788 1790 # Atreus weapon fire 01, 02, 03
 	attackwith        	1
-	wait				1
-	playfram			0x1BA
-	wait				1
-	playfram			0x1CB
 	wait				1
 	playfram			0x00
 	wait				1
@@ -28189,61 +28094,57 @@ AtreusGndAttkRpt:
 AtreusWalking:
 	move				4
 	wait				1
-	playfram          	0xcc
+	playfram          	0x20
 	move				4
 	wait				1
-	playfram          	0xdd
+	playfram          	0x40
 	move				4
 	wait				1
-	playfram          	0xee
+	playfram          	0x60
 	move				4
 	wait				1
-	playfram          	0xff
+	playfram          	0x80
 	move				4
 	wait				1
-	playfram          	0x110
+	playfram          	0xA0
 	move				4
 	wait				1
-	playfram          	0x121
+	playfram          	0xC0
 	move				4
 	wait				1
-	playfram          	0x132
+	playfram          	0xE0
 	move				4
 	wait				1
-	playfram          	0x143
+	playfram          	0x100
 	move				4
 	wait				1
-	playfram          	0x154
+	playfram          	0x120
 	move				4
 	wait				1
-	playfram          	0x165
+	playfram          	0x140
 	move				4
 	wait				1
-	playfram          	0x176
+	playfram          	0x160
 	move				4
 	wait				1
-	playfram          	0x187
+	playfram          	0x180
 	move				4
 	wait				1
-	playfram          	0x198
+	playfram          	0x1A0
 	move				4
 	wait				1
-	playfram          	0x99
+	playfram          	0x1C0
 	move				4
 	wait				1
-	playfram          	0xaa
+	playfram          	0x1E0
 	move				4
 	wait				1
-	playfram          	0xbb
+	playfram          	0x200
 	goto				AtreusWalking
-
-AtreusWalkingToIdle:
-	playfram          	0x00
-	goto              	AtreusLocal00
 
 AtreusWarpIn:
 	imgol             	125 0 0	# Cantavis Warp Flash (protoss\templar.grp)
-	goto              	AtreusLocal00
+	goto              	ScourgeLocal00
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -30531,24 +30432,24 @@ KalkaliskSporesInit:
 	sigorder          	1
 	wait              	1
 KalkaliskSporesGndAttkInit:
-	sprol             	368 0 0 # Seeker Spores Overlay (thingy\gSmoke.grp)
+	sprol             	936 0 0 # Spores Overlay Yellow (cm\zerg\spore-overlay-yellow.grp)
 	playfram          	0x00
 	wait              	1
-	sprol             	368 0 0 # Seeker Spores Overlay (thingy\gSmoke.grp)
+	sprol             	936 0 0 # Spores Overlay Yellow
 	playfram          	1
 	wait              	1
-	sprol             	368 0 0 # Seeker Spores Overlay (thingy\gSmoke.grp)
+	sprol             	936 0 0 # Spores Overlay Yellow
 	playfram          	2
 	wait              	1
-	sprol             	368 0 0 # Seeker Spores Overlay (thingy\gSmoke.grp)
+	sprol             	936 0 0 # Spores Overlay Yellow
 	playfram          	3
 	wait              	1
-	sprol             	368 0 0 # Seeker Spores Overlay (thingy\gSmoke.grp)
+	sprol             	936 0 0 # Spores Overlay Yellow
 	goto              	KalkaliskSporesGndAttkInit
 
 KalkaliskSporesDeath:
 	playsndbtwn			2396 2398 # Kalkalisk weaponhit 01, 02, 03
-	sprol             	365 0 0 # Glave Wurm/Seeker Spores Hit (thingy\SporeHit.grp)
+	sprol             	939 0 0 # Glave Wurm/Seeker Spores Hit (thingy\SporeHit.grp)
 	#domissiledmg
 	sigorder 			128
 	wait 				2
@@ -30556,7 +30457,7 @@ KalkaliskSporesDeath:
 	
 KalkaliskSporesAirAttkInit:
 	playsndbtwn			2396 2398 # Kalkalisk weaponhit 01, 02, 03
-	sprol             	365 0 0	# Glave Wurm/Seeker Spores Hit (thingy\SporeHit.grp)
+	sprol             	939 0 0 # Glave Wurm/Seeker Spores Hit (thingy\SporeHit.grp)
 	domissiledmg
 	goto				KalkaliskSporesGndAttkInit
 	
@@ -31853,7 +31754,7 @@ LazarusAgentCastDeath:
 IsId          	536
 Type          	1
 Init          	LazarusAgentReviveInit
-Death         	LazarusAgentReviveDeath
+Death         	Generic_Wait1End
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -31861,45 +31762,25 @@ LazarusAgentReviveInit:
 	playfram          	0x00
 	wait              	1
 LazarusAgentReviveLocal00:
-	playfram			1
-	wait 				1
-	playfram			3
+	playfram			2
 	wait 				1
 	playfram			4
 	wait 				1
-	playfram			5
-	wait 				1
 	playfram			6
-	wait 				1
-	playfram			7
 	wait 				1
 	playfram			8
 	wait 				1
-	playfram			9
-	wait 				1
 	playfram			10
 	wait 				1
-	playfram			11
-	wait				1
 	playfram			12
-	wait				1
-	playfram			13
-	wait				1
+	wait 				1
 	playfram			14
-	wait				1
-	playfram			15
 	wait				1
 	playfram			16
 	wait				1
-	playfram			17
-	wait				1
 	playfram			18
 	wait				1
-	goto				LazarusAgentReviveDeath
-
-LazarusAgentReviveDeath:
-	wait              	1 
-	end
+	goto				Generic_Wait1End
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -32095,7 +31976,7 @@ IonOverlayInit:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1279 Seeker Spores (silent) (bullet\Spore2.grp)
+# 1279 Seeker Spores Silent (bullet\Spore2.grp)
 .headerstart
 IsId          	542
 Type          	2
@@ -32111,6 +31992,7 @@ SeekerSporesSilentInit:
 	wait              	1
 	sigorder          	1
 	wait              	1
+	if bullet.weapon_id == 54 goto SeekerSporesSilentGndAttkInitSkithrokor
 SeekerSporesSilentGndAttkInit:
 	sprol             	368 0 0	# Seeker Spores Overlay (thingy\gSmoke.grp)
 	playfram          	0x00
@@ -32127,6 +32009,22 @@ SeekerSporesSilentGndAttkInit:
 	sprol             	368 0 0	# Seeker Spores Overlay
 	goto              	SeekerSporesSilentGndAttkInit
 
+SeekerSporesSilentGndAttkInitSkithrokor:
+	sprol             	935 0 0 # Spores Overlay Orange Small (cm\zerg\spore-overlay-orange-small.grp)
+	playfram          	0x00
+	wait              	1
+	sprol             	935 0 0 # Spores Overlay Orange Small
+	playfram          	1
+	wait              	1
+	sprol             	935 0 0 # Spores Overlay Orange Small
+	playfram          	2
+	wait              	1
+	sprol             	935 0 0 # Spores Overlay Orange Small
+	playfram          	3
+	wait              	1
+	sprol             	935 0 0 # Spores Overlay Orange Small
+	goto              	SeekerSporesSilentGndAttkInitSkithrokor
+
 SeekerSporesSilentDeathGen:
 	if bullet.weapon_id == 52 goto SeekerSporesSilentDeathSpraith
 	playsnd           	79 # Bullet\ZLuHit00.wav
@@ -32135,13 +32033,17 @@ SeekerSporesSilentDeathGen:
 SeekerSporesSilentDeathSpraith:
 	playsndbtwn			1194 1195 # Spraith Cesiant weaponhit 01, 02
 SeekerSporesSilentDeath:
-	sprol             	365 0 0 # Glave Wurm/Seeker Spores Hit (thingy\SporeHit.grp)
 	if bullet.weapon_id == 54 goto SeekerSporesSilentDeathSkithrokor
+	sprol             	365 0 0 # Glave Wurm/Seeker Spores Hit (thingy\SporeHit.grp)
 	domissiledmg
-SeekerSporesSilentDeathSkithrokor:
 	wait              	1
 	end
-	
+
+SeekerSporesSilentDeathSkithrokor:
+	sprol             	938 0 0 # Spore Hit Orange Small (cm\zerg\spore-hit-orange-small.grp)
+	wait              	1
+	end
+
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 1280 Ion Field (cm\effect\ioncannon-ionfield.grp)
@@ -34318,7 +34220,7 @@ HierophantDeath:
 	wait				2
 	playfram			836
 	wait				2
-	lowsprul			846 0 42 # Protoss Unit Rubble Medium
+	lowsprul			925 0 0 # Hierophant remains
 	wait              	1
 	end
 	
@@ -36423,17 +36325,17 @@ SirenWalking:
 IsId          	587
 Type          	21
 Init          	CharlatanInit
-Death         	CharlatanDeath
+Death         	EcclesiastDeath
 GndAttkInit   	CharlatanGndAttkInit
 AirAttkInit   	CharlatanGndAttkInit
-Unused1       	CharlatanUnused1
+Unused1       	EcclesiastUnused1
 GndAttkRpt    	CharlatanGndAttkRpt
 AirAttkRpt    	CharlatanGndAttkRpt
-CastSpell     	CharlatanCastSpell
-GndAttkToIdle 	CharlatanGndAttkToIdle
-AirAttkToIdle 	CharlatanGndAttkToIdle
+CastSpell     	[NONE]
+GndAttkToIdle 	EcclesiastGndAttkToIdle
+AirAttkToIdle 	EcclesiastGndAttkToIdle
 Unused2       	[NONE]
-Walking       	CharlatanWalking
+Walking       	EcclesiastWalking
 WalkingToIdle 	InfestedTerranWalkingToIdle
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
@@ -36443,7 +36345,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	CharlatanWarpIn
+WarpIn        	EcclesiastWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -36451,139 +36353,28 @@ CharlatanInit:
 	imgul             	1172 0 0 # Charlatan Shadow (cm\protoss\charlatan-shad.grp)
 	goto				InfestedTerranWalkingToIdle
 	
-CharlatanGndAttkToIdle:
-	playfram          	0xcc
-	wait              	1 
-	playfram          	0xbb
-	wait              	1 
-	playfram          	0xaa
-	wait              	1 
-	playfram          	0x99
-	wait              	1
-	playfram 			0x00
-	wait 				1
-	goto              	ScourgeLocal00
-
-CharlatanDeath:
-	playsnd           	635	# Protoss\TEMPLAR\PTeDth00.WAV
-	setfldirect			0
-	imgol             	153 0 0	# Zealot Death (protoss\zealot.grp)
-	playfram			238
-	wait				2
-	playfram			239
-	wait				2
-	playfram			240
-	wait				2
-	playfram			241
-	wait				2
-	playfram			242
-	wait				2
-	playfram			243
-	wait				2
-	playfram			244
-	wait              	2
-	lowsprul			847 0 0 # Protoss Unit Rubble Small
-	wait              	1
-	end
-	
-CharlatanUnused1:
-	wait				1
-	nobrkcodestart
-	setfldirect       	0 
-	playsnd				1186
-	playfram			244
-	wait				2
-	playfram			243
-	wait				2
-	playfram			242
-	wait				2
-	playfram			241
-	wait				2
-	playfram			240
-	wait				2
-	setfldirect       	12
-	nobrkcodeend
-	goto				InfestedTerranWalkingToIdle
-
 CharlatanGndAttkInit:
-	playfram          	0x99
-	wait              	1 
-	playfram          	0xaa
-	wait              	1 
-	playfram          	0xbb
-	wait              	1 
-	playfram          	0xcc
+	playfram          	0x120
+	wait              	1
+	playfram          	0x140
+	wait              	1
+	playfram          	0x160
+	wait              	1
+	playfram          	0x180
 	goto              	CharlatanGndAttkRpt
 CharlatanGndAttkRpt:
 	wait				1
 	nobrkcodestart
 	playsndbtwn			1603 1605 # Charlatan weapon fire 01, 02, 03
-	attackwith        	1 
-	playfram          	0xdd
+	attackwith        	1
+	playfram          	0x1A0
 	wait				1
-	playfram          	0xcc
+	playfram          	0x180
 	wait				1
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
-	goto				CharlatanGndAttkToIdle
-
-CharlatanCastSpell:
-	playfram          	0x99
-	nobrkcodestart
-	wait				1
-	playfram          	0xaa
-	wait              	1 
-	playfram          	0xbb
-	wait              	1 
-	playfram          	0xcc
-	wait              	1 
-	castspell
-	sigorder          	2 
-	playfram          	0xdd
-	wait				1
-	playfram          	0xcc
-	wait				1
-	nobrkcodeend
-	playfram			0xbb
-	wait				1
-	playfram			0xaa
-	wait              	1
-	playfram			0x99
-	wait              	1
-	gotorepeatattk
-	goto              	CharlatanGndAttkToIdle
-
-CharlatanWalking:
-	move              	5 
-	wait              	1 
-	playfram          	0x88
-	move              	5 
-	wait              	1 
-	playfram          	0x11
-	move              	5 
-	wait              	1 
-	playfram          	0x22
-	move              	5 
-	wait              	1 
-	playfram          	0x33
-	move              	5 
-	wait              	1 
-	playfram          	0x44
-	move              	5 
-	wait              	1 
-	playfram          	0x55
-	move              	5 
-	wait              	1 
-	playfram          	0x66
-	move              	5 
-	wait              	1 
-	playfram          	0x77
-	goto				CharlatanWalking
-
-CharlatanWarpIn:
-	imgol             	128 0 0	# Cantavis Warp Flash (protoss\templar.grp)
-	goto              	ScourgeLocal00
+	goto				EcclesiastGndAttkToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -37735,7 +37526,7 @@ AutocratDeath:
 AutocratGndAttkInit:
 	playfram          	0xaa
 AutocratGndAttkRpt:
-	wait              	1
+	wait              	2
 	nobrkcodestart
 	playsndbtwn			1474 1478
 	attack
@@ -40872,6 +40663,15 @@ TarasqueMuzzleFlashDeath:
 # 1647 Goliath Remains (cm\terran\goliath-remains.grp)
 # 1648 Ecclesiast Remains (cm\protoss\ecclesiast-remains.grp)
 # 1648 Lanifect Remains (cm\protoss\lanifect-death.grp)
+# 1904 Trojan Remains (cm\terran\trojan-death.grp)
+# 1905 Envoy Remains (cm\protoss\envoy-death.grp)
+# 1906 Ovileth Remains (cm\zerg\ovileth-death.grp)
+# 1907 Phalanx (Tank) Remains (cm\terran\phalanx-tank-death.grp)
+# 1908 Phalanx (Siege) Remains (cm\terran\phalanx-siege-death.grp)
+# 1909 Hierophant Remains (cm\protoss\hierophant-death.grp)
+# 1914 Simulacrum Remains (cm\protoss\simulacrum-death.grp)
+# 1915 Vassal Remains (cm\protoss\vassal-death.grp)
+# 1916 Nathrokor Remains (cm\zerg\nathrokor-death.grp)
 .headerstart
 IsId          	650
 Type          	1
@@ -40886,16 +40686,16 @@ GenericRemnantsFiveInit:
 GenericRemnantsFiveDeath:
 	wait				1
 	playfram          	1
-	wait              	255 
+	wait              	255
 	wait				24
 	playfram          	2
-	wait              	255 
+	wait              	255
 	wait				24
 	playfram          	3
-	wait              	255 
+	wait              	255
 	wait				24
 	playfram          	4
-	wait              	255 
+	wait              	255
 	wait				24
 	end
 
@@ -43350,7 +43150,7 @@ AncileDeath:
 	playsndbtwn			3074 3076 # Ancile death 01, 02, 03
 	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
 	wait              	3
-	lowsprul			845 0 42 # Terran Unit Rubble Small
+	lowsprul			919 0 42 # Ancile Remains
 	wait              	1
 	end
 
@@ -43510,6 +43310,8 @@ WyvernDeath:
 
 WyvernGndAttkInit:
 	playfram			0x00
+	playsndbtwn			3135 3137 # Wyvern weapon charge 01, 02, 03
+	wait				12
 	gotorepeatattk
 	ignorerest
 	goto              	WyvernGndAttkToIdle
@@ -47941,7 +47743,7 @@ OptectonInit:
 	playfram          	0x00
 	wait				2
 	goto				ScourgeLocal00
-	
+
 OptectonGndAttkToIdle:
 	playfram          	0x00
 	wait				2
@@ -47966,35 +47768,70 @@ OptectonGndAttkRpt:
 	attackwith        	1
 	wait				1
 	playfram			0x240
-	wait				1
+	wait				3
 	playfram			0x220
 	imgoluselo			1855 0 0 # Optecton muzzle flash
 	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
 	attackwith        	1
 	wait				1
 	playfram			0x240
-	wait				1
+	wait				3
 	playfram			0x220
 	imgoluselo			1855 0 0 # Optecton muzzle flash
 	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
 	attackwith        	1
 	wait				1
 	playfram			0x240
-	wait				1
+	wait				3
 	playfram			0x220
 	imgoluselo			1855 0 0 # Optecton muzzle flash
 	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
 	attackwith        	1
 	wait				1
 	playfram			0x240
-	wait				1
+	wait				3
 	playfram			0x220
 	imgoluselo			1855 0 0 # Optecton muzzle flash
 	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
 	attackwith        	1
 	wait				1
 	playfram			0x240
+	wait				3
+	playfram			0x220
+	imgoluselo			1855 0 0 # Optecton muzzle flash
+	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
+	attackwith        	1
 	wait				1
+	playfram			0x240
+	wait				3
+	playfram			0x220
+	imgoluselo			1855 0 0 # Optecton muzzle flash
+	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
+	attackwith        	1
+	wait				1
+	playfram			0x240
+	wait				3
+	playfram			0x220
+	imgoluselo			1855 0 0 # Optecton muzzle flash
+	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
+	attackwith        	1
+	wait				1
+	playfram			0x240
+	wait				3
+	playfram			0x220
+	imgoluselo			1855 0 0 # Optecton muzzle flash
+	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
+	attackwith        	1
+	wait				1
+	playfram			0x240
+	wait				3
+	playfram			0x220
+	imgoluselo			1855 0 0 # Optecton muzzle flash
+	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
+	attackwith        	1
+	wait				1
+	playfram			0x240
+	wait				3
 	playfram			0x260
 	wait				1
 	playfram			0x00
@@ -48361,7 +48198,7 @@ ZarcavrokorBoneLocal00:
 
 ZarcavrokorBoneDeath:
 	playsnd           	79	# Bullet\ZLuHit00.wav
-	sprol             	365 0 0	# Glave Wurm/Seeker Spores Hit (thingy\SporeHit.grp)
+	imgol             	1097 0 0 # Nathrokor Attack Overlay (cm\effect\nathrokor-breath.grp)
 	domissiledmg
 	wait              	1
 	end
@@ -48769,6 +48606,7 @@ WyvernTurretGndAttkInit:
 	playfram			0x00
 	wait				1
 	nobrkcodestart
+	wait				12
 #	playfram			0x20
 	attackwith        	1
 	nobrkcodeend
@@ -48914,7 +48752,7 @@ Unused2       	[NONE]
 Walking       	MortothrokorWalking
 WalkingToIdle 	MortothrokorGndAttkToIdle
 SpecialState1 	[NONE]
-SpecialState2 	MortothrokorSpecialState2
+SpecialState2 	ScourgeLocal00
 AlmostBuilt   	[NONE]
 Built         	[NONE]
 Landing       	[NONE]
@@ -49106,10 +48944,6 @@ MortothrokorWalking:
 	playfram          	0xAA
 	wait				1
 	goto              	MortothrokorWalking
-	
-MortothrokorSpecialState2:
- 	playfram          	0xAF
-	goto              	ScourgeLocal00
 
 MortothrokorBurrow:
     setfldirect			14
@@ -49137,19 +48971,17 @@ MortothrokorBurrow:
     wait       			1
     playfram   			0x21E
     wait       			1
-    playfram   			0x22F
-    wait       			1
-    playfram   			0x240
+    playfram   			0x231
     wait       			1
     sigorder   			4
-    goto       			MortothrokorSpecialState2
+    goto       			ScourgeLocal00
 
 MortothrokorUnBurrow:
     wait                1
     waitrand            1 2
     setfldirect         14
     imgul               423 0 0 # Burrowing Dust (thingy\bDust.grp)
-    playfram            0x22F
+    playfram            0x21E
     wait                1
     playfram            0x20D
     wait                1
@@ -49451,6 +49283,7 @@ TerranHeavyMissileExplosionDeath:
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 1751 Quazilisk Mutate (cm\zerg\quazilisk-mutate.grp)
+# 1887 Protathalor Mutate (cm\zerg\protathalor-mutate.grp)
 .headerstart
 IsId          	754
 Type          	13
@@ -51197,13 +51030,7 @@ MuzzleFlashSingleInit:
 	playfram          	0x00
 	wait              	1
 	end
-	
 # ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 1856 Avenge Small  (cm\protoss\avenge-small.grp)
-# 1857 Avenge Medium (cm\protoss\avenge-medium.grp)
-# 1858 Avenge Large  (cm\protoss\avenge-large.grp)
-# 1859 Avenge XLarge (cm\protoss\avenge-xlarge.grp)
 # 1860 Ascension Small  (cm\protoss\ascension-small.grp)
 # 1861 Ascension Medium (cm\protoss\ascension-medium.grp)
 # 1862 Ascension Large  (cm\protoss\ascension-large.grp)
@@ -51212,7 +51039,7 @@ MuzzleFlashSingleInit:
 IsId          	781
 Type          	1
 Init          	AscensionProcInit
-Death         	Generic_Wait1End
+Death         	AscensionProcDeath
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -51233,6 +51060,7 @@ AscensionProcInit:
 	wait				1
 	playfram          	7
 	wait				1
+AscensionProcLoop:
 	playfram          	8
 	wait				1
 	playfram          	9
@@ -51244,7 +51072,58 @@ AscensionProcInit:
 	playfram          	12
 	wait				1
 	playfram          	13
-	goto				Generic_Wait1End
+	wait				1
+	playfram          	14
+	wait				1
+	playfram          	15
+	wait				1
+	playfram          	16
+	wait				1
+	playfram          	17
+	wait				1
+	playfram          	18
+	wait				1
+	playfram          	19
+	wait				1
+	playfram          	20
+	wait				1
+	playfram          	21
+	wait				1
+	playfram          	22
+	wait				1
+	playfram          	23
+	wait				1
+	playfram          	24
+	wait				1
+	playfram          	25
+	wait				1
+	playfram          	26
+	wait				1
+	goto				AscensionProcLoop
+AscensionProcDeath:
+	playfram          	40
+	wait				1
+	playfram          	41
+	wait				1
+	playfram          	42
+	wait				1
+	playfram          	43
+	wait				1
+	playfram          	44
+	wait				1
+	playfram          	45
+	wait				1
+	playfram          	46
+	wait				1
+	playfram          	47
+	wait				1
+	playfram          	48
+	wait				1
+	playfram          	49
+	wait				1
+	playfram          	50
+	wait				1
+	end
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -51754,4 +51633,350 @@ SasyrvolethWalking:
 	wait              	1
 	goto              	SasyrvolethWalking
 	
-## Next free IsId: 790
+
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1856 Avenge Small  (cm\protoss\avenge-small.grp)
+# 1857 Avenge Medium (cm\protoss\avenge-medium.grp)
+# 1858 Avenge Large  (cm\protoss\avenge-large.grp)
+# 1859 Avenge XLarge (cm\protoss\avenge-xlarge.grp)
+.headerstart
+IsId          	790
+Type          	1
+Init          	AvengeProcInit
+Death         	AvengeProcDeath
+.headerend
+# ----------------------------------------------------------------------------- #
+
+AvengeProcInit:
+	playfram          	0x00
+	wait				1
+	playfram          	1
+	wait				1
+	playfram          	2
+	wait				1
+	playfram          	3
+	wait				1
+	playfram          	4
+	wait				1
+	playfram          	5
+	wait				1
+	playfram          	6
+	wait				1
+	playfram          	7
+	wait				1
+	playfram          	8
+	wait				1
+	playfram          	9
+	wait				1
+	playfram          	10
+	wait				1
+	playfram          	11
+	wait				1
+	playfram          	12
+	wait				1
+	playfram          	13
+	wait				1
+AvengeProcLoop:
+	playfram			34
+	wait				1
+	playfram          	35
+	wait				1
+	playfram          	36
+	wait				1
+	playfram          	37
+	wait				1
+	playfram          	38
+	wait				1
+	playfram          	39
+	wait				1
+	playfram          	40
+	wait				1
+	playfram          	41
+	wait				1
+	playfram          	42
+	wait				1
+	playfram          	43
+	wait				1
+	playfram          	44
+	wait				1
+	playfram          	45
+	wait				1
+	playfram          	46
+	wait				1
+	playfram          	47
+	wait				1
+	playfram          	48
+	wait				1
+	playfram          	49
+	wait				1
+	playfram          	50
+	wait				1
+	playfram          	51
+	wait				1
+	playfram          	52
+	wait				1
+	playfram          	53
+	wait				1
+	playfram          	54
+	wait				1
+	playfram          	55
+	wait				1
+	playfram          	56
+	wait				1
+	playfram          	57
+	wait				1
+	playfram          	58
+	wait				1
+	playfram          	59
+	wait				1
+	playfram          	60
+	wait				1
+	playfram          	61
+	wait				1
+	playfram          	62
+	wait				1
+	playfram          	63
+	wait				1
+	playfram          	64
+	wait				1
+	playfram          	65
+	wait				1
+	playfram          	66
+	wait				1
+	playfram          	67
+	wait				1
+	playfram          	68
+	wait				1
+	playfram          	69
+	wait				1
+	playfram          	70
+	wait				1
+	playfram          	71
+	wait				1
+	playfram          	72
+	wait				1
+	playfram          	73
+	wait				1
+	playfram          	74
+	wait				1
+	playfram          	75
+	wait				1
+	playfram          	76
+	wait				1
+	playfram          	77
+	wait				1
+	playfram          	78
+	wait				1
+	playfram          	79
+	wait				1
+	playfram          	80
+	wait				1
+	playfram          	81
+	wait				1
+	playfram          	82
+	wait				1
+	playfram          	83
+	wait				1
+	playfram          	84
+	wait				1
+	playfram          	85
+	wait				1
+	playfram          	86
+	wait				1
+	playfram          	87
+	wait				1
+	playfram          	88
+	wait				1
+	playfram          	89
+	wait				1
+	playfram          	90
+	wait				1
+	playfram          	91
+	wait				1
+	playfram          	92
+	wait				1
+	playfram          	93
+	wait				1
+	playfram          	94
+	goto				AvengeProcLoop
+
+AvengeProcDeath:
+	playfram			95
+	wait				1
+	playfram			97
+	wait				1
+	playfram			99
+	wait				1
+	playfram			101
+	wait				1
+	playfram			102
+	wait				1
+	playfram			103
+	wait				1
+	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1900 Goska (terran\ghost.grp)
+.headerstart
+IsId          	791
+Type          	13
+Init          	GoskaInit
+Death         	EidolonDeath
+GndAttkInit   	GoskaGndAttkInit
+AirAttkInit   	GoskaGndAttkInit
+Unused1       	EidolonUnused1
+GndAttkRpt    	GoskaGndAttkRpt
+AirAttkRpt    	GoskaGndAttkRpt
+CastSpell     	EidolonCastSpell
+GndAttkToIdle 	EidolonGndAttkToIdle
+AirAttkToIdle 	EidolonGndAttkToIdle
+Unused2       	[NONE]
+Walking       	EidolonWalking
+WalkingToIdle 	EidolonWalkingToIdle
+SpecialState1 	EidolonSpecialState1
+.headerend
+# ----------------------------------------------------------------------------- #
+
+GoskaInit:
+	imgul             	1901 0 0 # Goska Shadow (terran\tghShad.grp)
+	goto				EidolonWalkingToIdle
+
+GoskaGndAttkInit:
+	playfram          	0x00
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+GoskaGndAttkRpt:
+	wait              	1
+	nobrkcodestart
+	playsndbtwn			4008 4010 # Goska Weaponfire 01, 02, 03
+	attack
+	playfram          	0xcc
+	wait              	1
+	playfram          	0x22
+	wait				1
+	attack
+	playfram          	0xcc
+	wait              	1
+	playfram          	0x22
+	wait				1
+	attack
+	playfram          	0xcc
+	wait              	1
+	playfram          	0x22
+	wait				1
+	attack
+	playfram          	0xcc
+	wait              	1
+	playfram          	0x22
+	wait				1
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto				EidolonGndAttkToIdle
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1910 Angeltear Rockets (bullet\SMmissle.grp)
+.headerstart
+IsId          	792
+Type          	2
+Init          	AngeltearRocketInit
+Death         	AngeltearRocketDeath
+GndAttkInit   	AngeltearRocketGndAttkInit
+AirAttkInit   	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+AngeltearRocketInit:
+	playfram          	0x00
+	wait              	1
+	sigorder          	1
+	wait              	1
+AngeltearRocketGndAttkInit:
+	sprol             	927 0 0 # Angeltear Rockets Trail (cm\terran\salamander-rocket-trail.grp)
+	wait              	2
+	goto              	AngeltearRocketGndAttkInit
+
+AngeltearRocketDeath:
+	playsndbtwn			3133 3134 # Salamander weapon 2 hit 01, 02
+	imgol             	530 0 0 # Gemini Missiles Explosion (thingy\ecaHit.grp)
+	domissiledmg
+	wait              	1
+	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1912 Ackmed (cm\heroes\ackmed.grp)
+.headerstart
+IsId          	793
+Type          	12
+Init          	AckmedInit
+Death         	HarakanDeath
+GndAttkInit   	HarakanGndAttkInit
+AirAttkInit   	HarakanGndAttkInit
+Unused1       	HarakanUnused1
+GndAttkRpt    	HarakanGndAttkRpt
+AirAttkRpt    	HarakanGndAttkRpt
+CastSpell     	[NONE]
+GndAttkToIdle 	HarakanGndAttkToIdle
+AirAttkToIdle 	HarakanGndAttkToIdle
+Unused2       	[NONE]
+Walking       	HarakanWalking
+WalkingToIdle 	HarakanWalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+AckmedInit:
+	imgul             	1913 0 0 # Ackmed Shadow (cm\heroes\ackmed-shadow.grp)
+	goto				HarakanWalkingToIdle
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1931 Liiralisk Glave (cm\zerg\liiralisk-glave.grp)
+.headerstart
+IsId          	795
+Type          	13
+Init          	LiiraliskGlaveInit
+Death         	LiiraliskGlaveDeath
+GndAttkInit   	GlaveWurmGndAttkInit
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	LiiraliskGlaveSpecialState1
+.headerend
+# ----------------------------------------------------------------------------- #
+
+LiiraliskGlaveInit:
+	playfram          	0x00
+	wait              	1
+	sigorder          	1
+	wait              	1
+	goto				GlaveWurmGndAttkInit
+
+LiiraliskGlaveDeath:
+	playsnd           	93 # Bullet\ZQuHit02.wav
+	sprol             	944 0 0 # Spore Hit Green Small (cm\zerg\spore-hit-green-small.grp)
+	domissiledmg
+	wait              	1
+	end
+
+LiiraliskGlaveSpecialState1:
+	playsndbtwn       	91 92 # Bullet\ZQuHit00.wav | Bullet\ZQuHit01.wav
+	sprol             	944 0 0 # Spore Hit Green Small (cm\zerg\spore-hit-green-small.grp)
+	domissiledmg
+	goto              	GlaveWurmGndAttkInit
+	
+## Next free IsId: 795

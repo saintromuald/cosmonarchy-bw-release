@@ -1,5 +1,5 @@
 Stim Packs (Maverick)
-Lobotomy Mine (unused)
+Lobotomy Grenade (Francisco Goska)
 Controlled Demolition (Terran)
 Spider Mines (Vulture)
 Scanner Sweep (Comsat Station)
@@ -48,8 +48,8 @@ Adaptation (Kazitrith Colony)
 Extended Tech #4
 Extended Tech #5
 Extended Tech #6
-Extended Tech #7
-Extended Tech #8
+Lobotomy Grenade (Goska dupe)
+Skryspawn (Stroluum)
 Extended Tech #9
 Extended Tech #10
 Extended Tech #11

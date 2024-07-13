@@ -3107,7 +3107,6 @@ Hierophant Banter B 03
 Patriarch Ready 01
 Patriarch Ready 02
 Patriarch Ready 03
-Patriarch Ready 04
 Patriarch Selected 01
 Patriarch Selected 02
 Patriarch Selected 03
@@ -3128,6 +3127,15 @@ Patriarch Banter 01
 Patriarch Banter 02
 Patriarch Banter 03
 Patriarch Banter 04
+Salamander Weapon 2 Fire 01
+Salamander Weapon 2 Fire 02
+Salamander Weapon 2 Fire 03
+Salamander Weapon 2 Fire 04
+Salamander Weapon 2 Hit 01
+Salamander Weapon 2 Hit 02
+Wyvern Weapon Charge 01
+Wyvern Weapon Charge 02
+Wyvern Weapon Charge 03
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1
@@ -3990,38 +3998,30 @@ Extended Sound #1
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Goska (T) Selected 01
+Goska (T) Selected 02
+Goska (T) Selected 03
+Goska (T) Selected 04
+Goska (T) Order Passive 01
+Goska (T) Order Passive 02
+Goska (T) Order Passive 03
+Goska (T) Order Passive 04
+Goska Weaponfire 01
+Goska Weaponfire 02
+Goska Weaponfire 03
+Goska Grenade Impact
+Stroluum Selected 01
+Stroluum Selected 02
+Stroluum Selected 03
+Stroluum Selected 04
+Stroluum Order Passive 01
+Stroluum Order Passive 02
+Stroluum Order Passive 03
+Stroluum Order Passive 04
+Stroluum Under Attack 01
+Stroluum Under Attack 02
+Stroluum Under Attack 03
+Stroluum Under Attack 04
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

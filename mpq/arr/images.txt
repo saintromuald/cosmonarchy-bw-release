@@ -1263,7 +1263,7 @@ Keskathalor Spores
 Keskathalor Weaponhit
 Burst Lasers Explosive
 Burst Lasers Impact Damageless
-Lazarus Agent Cast
+Lazarus Agent Cast (unused)
 Lazarus Agent Revive
 Sublime Shepherd Overlay
 Clarion
@@ -1884,53 +1884,53 @@ Mind Tyrant Tyranny Cast Overlay
 Sasyrvoleth
 Sasyrvoleth Shadow
 Through the Looking Glass Cast
-Extended Image #884
-Extended Image #885
-Extended Image #886
-Extended Image #887
-Extended Image #888
-Extended Image #889
-Extended Image #890
-Extended Image #891
-Extended Image #892
-Extended Image #893
-Extended Image #894
-Extended Image #895
-Extended Image #896
-Extended Image #897
-Extended Image #898
-Extended Image #899
-Extended Image #900
-Extended Image #901
-Extended Image #902
-Extended Image #903
-Extended Image #904
-Extended Image #905
-Extended Image #906
-Extended Image #907
-Extended Image #908
-Extended Image #909
-Extended Image #910
-Extended Image #911
-Extended Image #912
-Extended Image #913
-Extended Image #914
-Extended Image #915
-Extended Image #916
-Extended Image #917
-Extended Image #918
-Extended Image #919
-Extended Image #920
-Extended Image #921
-Extended Image #922
-Extended Image #923
-Extended Image #924
-Extended Image #925
-Extended Image #926
-Extended Image #927
-Extended Image #928
-Extended Image #929
-Extended Image #930
+Sasyrvoleth Birth
+Protathalor Mutate
+Izirokor Mutate
+Skithrokor Mutate
+Blade Vortex Debuff XLarge
+Lazarus Agent Proc Small
+Lazarus Agent Proc Medium
+Lazarus Agent Proc Large
+Lazarus Agent Proc XLarge
+Geszithalor Mutate
+Evigrilisk Mutate
+Vilgorokor Mutate
+Gorgrokor Mutate
+Ancile Remains
+Francisco Goska
+Francisco Goska shadow
+Stroluum
+Stroluum shadow
+Trojan Remains
+Envoy Remains
+Ovileth Remains
+Phalanx (Tank) Remains
+Phalanx (Siege) Remains
+Hierophant Remains
+Angeltear Rockets
+Angeltear Rockets Trail
+Ackmed
+Ackmed Shadow
+Simulacrum Remains
+Vassal Remains
+Nathrokor Remains
+Venom (White)
+Skithrokor Spore
+Yellow Spore Overlay
+Orange Spore Overlay
+Orange Spore Overlay Small
+Seeker Spores Hit Yellow
+Seeker Spores Hit Orange
+Seeker Spores Hit Orange Small
+Photon Blasters White
+Photon Blasters Green
+Kagralisk Mutate
+Almaksalisk Mutate
+Cikralisk Mutate
+Vorvrokor Remains
+Liiralisk Glave
+Seeker Spores Hit Green Small
 Extended Image #931
 Extended Image #932
 Extended Image #933

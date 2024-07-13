@@ -621,7 +621,7 @@ Alkajelisk Spore
 Terran Heavy Missile
 Optecton
 Madrigal Missile 1
-Kalkalisk Missile
+Kalkalisk Spore
 Recall Field (Shorter)
 Shock Cannon Explosion (Silent)
 Longbolt Missile (Silent)
@@ -917,6 +917,32 @@ Positron Projectile
 Binding Plasma Overlay
 Sasyrvoleth
 Through The Looking Glass Cast
+Ancile Remains
+Trojan Remains
+Envoy Remains
+Ovileth Remains
+Phalanx (Tank) Remains
+Phalanx (Siege) Remains
+Hierophant Remains
+Angeltear Rockets
+Angeltear Rockets Trail
+Ackmed
+Simulacrum Remains
+Vassal Remains
+Nathrokor Remains
+Venom (White)
+Skithrokor Spore
+Spores Overlay Orange
+Spores Overlay Orange Small
+Spores Overlay Yellow
+Seeker Spores Hit Orange
+Seeker Spores Hit Orange Small
+Seeker Sporse Hit Yellow
+Photon Blasters White
+Photon Blasters Green
+Vorvrokor Remains
+Liiralisk Glave
+Seeker Spores Hit Green Small
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1
@@ -972,34 +998,8 @@ Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
+Francisco Goska
+Stroluum
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1

@@ -30,7 +30,7 @@ Monstrous Maw (Zoryusthaleth)
 Longbolt Missiles (Watchdog)
 Yamato Cannon (Magnetar ability)
 Nuclear Missile
-Lobotomy Mine (unused)
+Lobotomy Grenade (Francisco Goska)
 EMP Shockwave (unused)
 Irradiate (Seraph ability)
 Claws (Zethrokor)
@@ -83,7 +83,7 @@ Swarming Spores (Rililisk)
 Plasma Shell (Accantor) (deprecated)
 Stasis Field (Didact ability)
 Psionic Storm (Cantavis ability)
-Hollowed Spores (Liiralisk)
+Hollowed Glaves (Liiralisk)
 Phase Spear (Legionnaire)
 Harrying Talons (Akistrokor)
 Discoid Railgun (Savant)
@@ -214,7 +214,7 @@ Bottomless Spinestacks (Algoztalisk)
 Relentless Tendrils (Okrimnilisk)
 Omnispores (Okrimnilisk)
 Venemous Bursts (Cherbrathalor)
-Extended Weapon #87
+Angeltear Rockets (Salamander)
 Extended Weapon #88
 Extended Weapon #89
 Extended Weapon #90
@@ -246,10 +246,10 @@ Extended Weapon #115
 Extended Weapon #116
 Extended Weapon #117
 Extended Weapon #118
-Extended Weapon #119
-Extended Weapon #120
+Micken Melter (Ackmed)
+Medusa Rifle (Francisco Goska)
 Extended Weapon #121
-Extended Weapon #122
+Magnate's Maw (Stroluum)
 Extended Weapon #123
 C-10 Canister Rifle (Kerrigan)
 Claws (Kerrigan)

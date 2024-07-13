@@ -1,302 +1,249 @@
-# 25 May 2024
-## Post-Acropolis #1 // May Royal Invitational
+# 13 July 2024
+## The Fraud of July (underclass invitational)
 
-This patch will include bugfixes, audiovisual improvements, and balance changes.
+This patch includes bugfixes, audiovisual improvements, and balance adjustments.
 
 Download [Fraud Launcher 2](https://fraudsclub.com/files/Fraud%20Launcher%202.zip) for easier setup and maintenance!
 
-We are still hunting for desyncs! Please enable `log-randoms` in your config (Fraud Launcher 2 -> Configs -> Cosmonarchy), and submit your `Critical` and `Sync Randoms` text files from the `logs` folder to **cm-issues** on [our Discord server](https://discord.com/invite/s5SKBmY).
+Download [CrownLink](https://github.com/impromptu1583/CrownLink/releases) (and [this dependency](https://aka.ms/vs/17/release/vc_redist.x86.exe)) for smoother network play! (Place `CrownLink.snp` in your `Cosmonarchy\Starcraft\` directory!)
+
+We are still hunting for desyncs! Please submit your `Critical` and `Sync Randoms` text files from the `logs` folder to the **cm-issues** "Desync error megathread" on [our Discord server](https://discord.com/invite/s5SKBmY).
 
 ## Patch summary
-This massive update to Cosmonarchy brings with it many new features, including:
-- Much improved minimap scaling, c. DarkenedFantasies
-- Preferred colors config option, c. Veeq7
-- A new fledgling game mode, Uprising, commissioned by Btyb
 
-We are also bringing you a myriad of stability and bugfixes, with highlights including:
-- Fewer desyncs and crashes! Thanks for all the reports!
-- Improved AI handling for scenarios with custom layouts (e.g. tutorials), c. Veeq7
-- A fix for decolliding units still being able to process orders, like attack, c. DF
+We've made significant improvements to collision detection for projectiles, which impacts Kinetic Penetration (e.g. Cyprian) and Prolonged Arms (e.g. Siren). Units with these passives now perform more reliably than before.
 
-A menagerie of balance adjustments are coming in hot! Here are the big ones:
-- The time costs of **Fulcrum addons** have dropped, and some **tier 1 Terran units** have been given some love
-- Key lategame **Protoss production** is now markedly more expensive
-- The **Optecton**, **Demiurge**, and **Clarion** have received significant changes
-- The **Hydralisk** has lots its armor penetration, in exchange for the **Vorvrokor** and **Nathrokor** gaining 1 armor rend
+Unloading structures now respects the buildable grid. Its enforcement is over-aggressive, and will be dialed in with future updates, but it prevents players from unloading on ramps and other unbuildable terrain features.
 
-Two new endgame units, the Terran **Hypnagogue** and Zerg **Sasyrvoleth**, are ready to rock! Get them from the **Apothecary** and the **Axtoth Axis** respectively.
+Visual updates include a slew of new corpses and a full suite of burrow visuals that indicate the burrowed unit in question, including player color. Heroes and more trigger-related goodies have been added for Use Map Settings authors to play with.
 
-Lastly, we have **loads of improvements to our audiovisuals**! Among these are:
-- A whole host of new reads for passives and weapons
-- New models for the **ierophant** and **Optecton**
-- New unit responses for the **Patriarch**
-- The arrival of the **banter system** (currently used for **Eidolon**, **Hierophant**, and **Patriarch**)
+Many stability improvements have been made, and we've improved our internal code commit and bug report processes to deal with issues more elegantly and thoroughly in the future. Please keep reports coming via [our Discord server!](https://discord.gg/s5SKBmY)
 
-Cosmonarchy is firmly in the best spot it's ever been, and we intend to keep pushing that milestone further forward! Keep your feedback rolling in as we shift our sights onto team games and singleplayer content for the next little while. GG!
-
--**Pr0nogo**
+Enjoy the updates!
 
 ## Internals
-- Cleaned up sound randomization, resolving some desyncs
-- Fixed 'debug' being the default game mode on first run (c. DF)
-- Revised effect fields (c. Veeq7)
-- Overhauled trigger system for custom maps (c. Veeq7)
-
-## General
-- **Minimap**:
-	- Minimap sizes are now scaled more granularly (c. DF)
-	- Minimap camera now updates much more swiftly (c. DF)
-- **Config**:
-	- **New:** preferred colors! (c. Veeq7)
-		- Specify a list of preferred player colors, common or per race
-		- Set 'shuffle' to 'true' to randomly receive a color
-		- Colors are only selected if available on a given tileset
-		- In the event of preference conflicts between players, the lower player ID gets the color
-- **Game modes**:
-	- **NEW:** Uprising (commisioned by Btyb)
-		- Neutral hostile camps appear at unoccupied expansions on map start.
-		- **Very WIP!**
-- **Custom triggers:**
-	- **New action:** issue_order
-		- Currently only works with burrow / unburrow (immediate) and build / train orders
-	- **New action:** rescue_unit
 - **Console:**
-	- Added `unit cost` command for displaying the costs of selected units
-
-## Computer AI
-- **Priorities**:
-	- Slightly increase Zerg tech priorities
-	- Set addon priorities to be 1 less than factory priorities, prospectively resolving a Terran softlock
-- **Kiting logic**:
-	- No longer runs for Dilettantes
+	- Added "duplicate" command (`unit duplicate` or `u d`) (with help from benno)
+- **Logging:**
+	- Made random logging enabled by default
+	- Updated random logging to include:
+		- The previous value of the global random number
+		- The frame the randomizer function was called
+- **Triggers:**
+	- Added the following custom trigger actions:
+		- `give_unit <area> <source_players> <unit_ids> <count> <dest_player>`
+		- `set_player_build_multiplier <player> <multiplier>`
+	- Added `disable_passive` to `set_unit_behavior` (currently prevents Cleric/Shaman healing)
+	- Updated syntaxes for `move_unit` and `issue_order`
+	- Added Grief of All Gods (id 155) handling to `issue_order`
+- **Other:**
+	- Added Ackmed (id 409), Goska (id 500), and Stroluum (id 501) units for map authors to use
 
 ## Bugfixes
 - **Stability**:
-	- Fixed an issue where building placement and targeting states were not cleared when selection changed, causing bad UX and rare crashes (c. Veeq7)
-	- Resolved four rare nullsprite crashes (r. climois, lolrsk8s, Krankendau, and lukoan)
-	- Fixed a rare crash related to portrait overrides (r. Eud64)
-	- Fixed randomseed issues with certain ability casts
-	- Fixed randomseed issues with sound randomization
+	- Fixed Morningstar explosions not initializing correctly on first launch, causing misc instability (r. GreenEggs'NSpam, c. Veeq7)
+	- Fixed rare portrait crash (r. Shadowfury333 & Krankendau, c. Veeq7)
+	- Lard: fixed a crash due to AI Cleric code running for defeated human players (r. TheBeaver99)
+	- Fixed some freeze cases when a player left the game
+	- Fixed improper handling of cargo units when an Iroleth regresses to an Ovileth (r. jakulangski)
 - **Gameplay**:
-	- Units which need to decollide are now prohibited from processing orders (c. DF)
-	- Rally points attached to units are now cleared if the unit exits vision (r. Hupsaiya)
-	- Improved performance of Zoryusthaleth Swarming Omen (c. Veeq7)
-	- Restored functionality for Wyvern Land Grab (r. lolrsk8s and Eud64)
-	- Cancelling gas caps no longer prevents harvesting in certain circumstances (r. Hamster)
-	- Konvilisk and Cherbrathalor attacks can no longer bounce more than once (r. lolrsk8s)
-	- Crushing Tide attacks are now properly capped at 3 targets, from 4 (r. lolrsk8s)
-	- Disconnecting from Quarries now cancels any units queued at the Quarry (r. The Shambler)
-	- Disconnecting from Lodestones no longer unloads their cargo (r. Londier)
-	- Strigas no longer try to use cliff advantage (r. Hamster)
-	- Successive Sevenstep attacks no longer reset Mind Matter handling (r. lolrsk8s)
-	- Zerg Larvae can no longer die by wandering over cagra-free terrain, as long as their parent structure remains alive (r. Krankendau, c. DF)
-	- Treasuries now leave behind rubble
-	- Ezigrisant regression can no longer break gas node harvestability (r. TheBeaver99)
-	- Isthrathaleth Carapace Swarm no longer blocks Ensnare application from melee attacks
-	- Slowed Diadems now turn properly (r. GreenEggs'NSpam)
-	- Ocsal Gosvileths no longer pass on Ocsal debuff to structures (r. TheBeaver99)
-	- Broodspawn, addons, and dual birth units now inherit debuffs like Infestation (r. GreenEggs'NSpam)
-- **Tilesets:**
-	- Fixed height and pathing flags on Jungle World -> dirt cliff south ramps (r. The Shambler)
-- **Audiovisuals**:
-	- Many overlays no longer show on cloaked units (r. GreenEggs'NSpam)
-	- Irradiate overlay is now properly inherited by regressing Zerg (r. TheBeaver99)
-	- Olympian Mythical Might SFX no longer plays more often than intended (r. lolrsk8s)
-	- Improved player color contrast when picking random player colors (c. Veeq7)
-	- Fixed Tyrannized and Worshiping statuses remaining on armor tooltips after expiry
-	- Correctly set shield impact overlay for Cikralisk (r. Eud64)
-	- Fixed rank string (used for player name and damage taken) not displaying on many structures (c. DF)
-- **Triggers**:
-	- Restored 'Set Next Scenario' trigger action functionality
-- **Computer AI**:
-	- Prospectively fixed Terran AI not repairing units and structures under some conditions
-	- Prospectively fixed general AI responses to cloaked and hidden threats
+	- Interception and piercing intersection tests now use a much more precise algorithm, fixing cases where bullets would overshoot or miss (c. Veeq7)
+	- Unloading structures now respects allied cagra, buildable tiles, and collision (c. Veeq7)
+	- Restored Clarion Phase Link functionality (r. Neblime, c. Veeq7)
+	- Restored Magnetar Yamato Cannon functionality (r. jakulangski)
+	- Anthelion Gravity Well can no longer stun victims (r. GreenEggs'NSpam)
+	- Cancelling Dimensional Recall can no longer be exploited to recall units from another location
+	- Fixed Skithrokor and Kalkalisk interactions with Analogue (r. TheBeaver99, c. Veeq7)
+	- Fixed addons being able to train units when disconnected (r. GreenEggs'NSpam)
+	- Fixed Controlled Demolition / Emergency Detonation exploit with non-demolishable structures (r. GreenEggs'NSpam)
+	- Fixed Madrigal Imperioso Mode button not working on mnemonic hotkey setups (r. Hamster)
+	- Phase Link no longer overcounts armor, miscounts damage, or spreads minimal damage incorrectly (c. Veeq7)
+	- Corrected lifesteal ratio for non-Mortothrokor attacks (r. GreenEggs'NSpam, c. Veeq7)
+	- Fixed splash bleeding through Ancile Providence (bountied by TheShambler; c. Veeq7)
+	- Fixed Ancile nullifying all damage with its last energy (r. Krankendau, c. Veeq7)
+	- Units with secondary weapons (Durendal, Okrimnilisk) no longer fire on transports or Nydus Cesiants (r. lolrsk8s)
+	- Sycophants no longer proc Idolatry while in transports (r. The Shambler)
+	- Fixed issues with building modifiers (e.g. Debug game mode and Crucible) (c. Veeq7)
+	- Kalkalisks now properly regress to Nathrokors, if applicable (r. jakulangski)
+	- Combat cloak is now correctly cancelled by Magnetar Law of Attraction
+	- Anthelions no longer attempt to flee cloaked targets
+	- Correctly applied Mortothrokor cost changes from previous update (r. jakulangski)
+	- Fixed misc sprite-related issues when transforming (c. DF)
+	- Corrected launch positions for Liiralisk projectiles
+	- Fixed location height parsing for UMS maps (c. DF)
+	- Resolved several mnemonic hotkey conflicts with Ocsal Larvae and Protathalor (r. jakulangski)
+	- Fixed Mortothrokor burrow animation (r. GreenEggs'NSpam)
+- **User Interface:**
+	- Completing a game on CrownLink now returns to game selection, instead of main menu (r. The Shambler, with some tips from X405)
+	- Selecting a unit during its birth ani	mation now updates buttonsets correctly (r. GreenEggs'NSpam)
+	- Banter events are now correctly localized (c. Veeq7)
+	- Fixed weapon tooltip for Rililisk not including air targets (r. Krankendau)
 
 ## Audiovisuals
-- **Replaced sprites for**:
-	- Hierophant (c. Baelethal)
-	- Optecton
-- **Added reads for**:
-	- Maverick Stimpack (inject, proc, expire)
-	- Savant Breathing Battery (form switch)
-	- Madcap Cabeirus Feeders achieving full stacks
-	- Olympian Dishonorable Discharge (proc)
-	- Magnetar Law of Attraction (proc)
-	- Gladius Binding Plasma charge (visuals) and proc (audio)
-	- Vengeful Ascension (buffs)
-	- Herald Triumphant Rise / Patriarch Astral Rule (debuffs)
-	- Mind Tyrant Tyranny (channel)
-	- Demiurge Worship (looping overlay on victims)
-- **Added unit responses for:**
-	- Patriarch
-- **Added new projectile for**:
-	- Positron
-- **Added weapon impacts for**:
-	- Salamander
-	- Magister
-- **Added portraits** (c. jun3hong) **for**:
-	- Striga
-	- Pythean
-	- Amaranth
-- **Added banter for**:
-	- Eidolon - successful missile strike
-	- Hierophant - a nearby enemy dies with full Signify stacks
-	- Patriarch - splashes 8 or more victims
-- **Advisors**:
-	- Replaced default Zerg advisor
-	- Achieved custom advisor support for:
-		- Missile arming
-		- Missile launching (c. DF)
+- New sprite for:
+	- Atreus (c. Baelethal; animations WIP)
+	- Charlatan
+- New corpses for:
+	- Phalanx (Tank & Siege), Ancile, Trojan, Envoy, Hierophant, Simulacrum, Vassal, Ovileth, Nathrokor
+- Added burrow idle frame for:
+	- Droleth, Zethrokor, Vorvrokor, Quazilisk, Liiralisk, Cikralisk, Protathalor, Axitrilisk, Mortothrokor, Hydralisk, Bactalisk, Izirokor, Tethzorokor, Kagralisk, Evigrilisk, Cherbrathalor, Okrimnilisk, Keskathalor, Zoryusthaleth, Lakizilisk, Vilgorokor, Konvilisk, Ultrokor, Isthrathaleth
+- Added birth animation for Sasyrvoleth
+- Added morph animations for:
+	- Protathalor, Izirokor, Skithrokor, Evigrilisk, Gorgrokor, Vilgorokor, Geszithalor
+- Changed visuals for:
+	- Vengeful Ascension
+	- Legionnaire Blade Vortex
+	- Liiralisk, Kalkalisk, Protathalor, Tosgrilisk, Skithrokor, Konvilisk projectiles
+	- Hierophant, Vassal, Protathalor, Algoztalisk, Gorgrokor air, Zarcavrokor passive weaponhits
+	- Eidolon, Droleth, Zethrokor, Vorvrokor, Hydralisk, Rilirokor corpses
+- Updated effects for:
+	- Reclamation proc & heal
+	- Zerg corpse consumption
 
 ## Terran
-- **Reclamation:**
-	- Reclaimed units:
-		- No longer decay
-		- Now leave corpses
-		- Now move 25% slower
-		- Now regenerate half of all damage taken after being out of combat for 2 seconds
+- **Reclamation**:
+	- HP heal is now delayed over time, instead of instant
+	- Stun duration on resurrect 2 seconds » 3 seconds
+- [Maverick](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/maverick):
+	- Armor penetration 0 » 1
 - [Cyprian](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cyprian):
-	- Time cost 22 » 20
-	- Weapon range 6 » 7
-- [Shaman](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/shaman):
-	- Mineral cost 150 » 125
-- [Eidolon](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/eidolon):
-	- Mineral cost 75 » 50
+	- **Twin Railguns:**
+		- Weapon cooldown 0.83 » 0.75 
+- [Heracles](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/heracles):
+	- Build time 25 » 22
+	- **NEW: Kelvin Munitions:**
+		- Attacks reduce movement speed by 33% for 3 seconds
 - [Apostle](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/apostle):
-	- Weapon range 5 » 6
-	- No longer has energy
-	- **Lazarus Agent**:
-		- No longer an active ability
-		- Now reclaims the closest active corpse within 3 range of the target hostile
+	- Resource costs 75/150 » 75/200
+	- Weapon range 6 » 5
+	- Lazarus Agent:
+		- Now reclaims corpses within 3 range of the Apostle
+		- No longer reclaims corpses within 3 range of the target
+- [Siren](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/siren):
+	- Weapon cooldown 1.17 » 1
 - [Autocrat](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/autocrat):
-	- Mineral and gas costs 150/150 » 125/175
-	- **Controlled Opposition**: removed
-	- **NEW: Lazarus Agent**:
-		- Now reclaims the closest active corpse within 3 range of the target hostile
-- [Cyclops](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cyclops):
-	- Mineral cost 100 » 75
-	- *Personally, I quite fear the Cyclops meta.*
-- [Blackjack](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/blackjack):
-	- Mineral cost 125 » 100
-	- HP 85 » 75
-- [Matador](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/matador):
-	- Mineral cost 100 » 125 
-	- Turn rate 24 » 16
-	- Now moves 25% faster
-- [Phalanx](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/phalanx):
-	- Turn rate 10 » 16
+	- Resource costs 125/175 » 125/250
+	- Weapon cooldown 1 » 1.33
+	- Weapon collision now 100% larger
+	- **Reclamation:**
+		- Now comes in the form of **Reclamation Fields**, reclaiming 1 corpse after 1.5 seconds
 - [Madrigal](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/madrigal):
-	- Mineral and gas costs 125/125 » 100/100
-	- HP 140 » 150
+	- **Furia Missile:**
+		- Damage 10 » 7
+		- Armor penetration 0 » 2
+	- *A nerf to the Madrigal's absolute power, with more impact in the TvZ matchup.*
+- [Durendal](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/durendal):
+	- HP 240 » 225
+	- Movement speed 4.5 » 5.75
+- [Aion](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/aion):
+	- **Reclamation Fields:**
+		- Effect time 5 » 1.5
+		- Now reclaims on expiry, from instant
+- [Ancile](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/ancile):
+	- Resource costs 75/100 » 100/100
+	- Energy 150 » 125
+- [Wyvern](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/wyvern):
+	- Time cost 30 » 35
+	- **Jackson Cannon:**
+		- Weapon cooldown 1.5 » 1.25
+		- Now has a 0.5 second firing delay
+		- Projectile collision now 50% larger
+		- Attack angle 360° » ~112° (c. Veeq7)
+- [Valkyrie](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/valkyrie):
+	- **Halo Rockets**:
+		- Weapon factor x damage 6 x 5 » 9 x 4
+		- Adjusted volley pattern (c. Veeq7)
+		- Increased delay between volleys
+		- Now fires an additional volley
 - [Salamander](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/salamander):
-	- Mineral cost 150 » 100
-	- HP 160 » 150
-	- Weapon range 5 » 6
-- [Seraph](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/seraph):
-	- Irradiate cast range 8 » 6
-- [Paladin](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/paladin):
-	- Splash radii 12/24/48 » 24/48/72
-	- Missiles now move notably faster
-- [Tinkerer's Tower](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/tinkerers-tower):
-	- Gas cost 100 » 75
-- [Scrapyard](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/scrapyard):
-	- Time cost 20 » 15
-- [Palladium](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/palladium):
-	- Time cost 30 » 25
-- **NEW:** [Hypnagogue](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/hypnagogue):
-	- Specialist infantry that can teleport nearby allies to new locations
-	- Trained from Apothecary
+	- **Perdition Barrage:**
+		- No longer targets air units
+	- **NEW: Angeltear Rockets:**
+		- 2x6 damage, 0AP, 1s cooldown, 6 range
+		- Single-target projectile attack (air only)
+		- Applies Apollyoid Adhesive
+- [Magnetar](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/magnetar):
+	- Resource costs 300/250 » 250/450
+- [Pythean](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/pythean):
+	- Resource costs 350/150 » 350/100
+- [Fulcrum](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/fulcrum):
+	- Build time 45 » 50
+
+### Hecaton Coalition
+- [Hotshot](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/hotshot):
+	- HP 60 » 65
+	- Improved weapon accuracy
+
+### Nydus Trinity
+- [Tarasque](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/tarasque):
+	- HP 225 » 180
+	- Armor 4 » 3
+	- **Hedon Cannon:**
+		- No longer targets air units
 
 ## Protoss
-- [Legionnaire](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/legionnaire):
-	- Time cost 16 » 17
-	- Sight range 7 » 6
-- [Amaranth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/amaranth):
-	- Shields 20 » 40
-- [Pariah](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/pariah):
-	- Now blocks titanic movement (e.g. Penumbra, Optecton)
+- **Tyranny of the Sun:**
+	- Tyrannized units take 50% increased damage, and move 33% faster when in the presence of hostiles
+- [Atreus](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/atreus):
+	- Movement speed 4 » 4.8
+- [Cabalist](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/cabalist):
+	- Time cost 25 » 30
+- [Charlatan](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/charlatan):
+	- Collision size ~17% larger
+	- Projectile speed ~15% slower
+- [Potentate](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/potentate):
+	- Resource costs 250/150 » 250/125
+- [Sycophant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/sycophant):
+	- Resource costs 150/25 » 150/0
 - [Mind Tyrant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/mind-tyrant):
-	- **Tyranny:**
-		- Energy cost 50 » 100
-		- Cast range 11 » 6
-		- Projectile movement speed now significantly faster
-		- Now debuffs victims with a ramping slow, culminating in a stun
-		- Victims must be killed during the stun effect to be seized
-		- Victims escape the slow / stun debuffs if the Mind Tyrant is farther than 8 range
-- [Archon](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/archon):
-	- Mineral cost 500 » 350
-	- Armor now 4 » 3
+	- Resource costs 150/200 » 50/200
 - [Optecton](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/optecton):
-	- Mineral cost 450 » 500
-	- Collision size now significantly larger
-	- Turn rate 40 » 10
-	- Now moves ~14% faster
-	- Transport space cost 8 » 20
-	- Sunsplit Beam:
-		- Weapon factor 1 » 5
-		- Weapon damage 50 » 12
-		- Armor penetration 5 » 0
-		- Weapon cooldown 2.5 » 2
-		- Weapon range 11 » 10
-		- Weapon splash radii 24/48/72 » 12/36/48
-		- Now has a short charge-up time
-	- **Skybond Ray** removed
-	- **NEW:** Titanic Stride (no longer collides with small units)
-- [Patriarch](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/patriarch):
-	- HP 200 » 180
-	- Armor 4 » 3
-	- Weapon splash radius 12/24/48 » 9/18/36
-	- **Astral Rule** no longer Ascends victims
+	- HP 240 » 300
+	- **Sunsplit Beam:**
+		- Weapon factor 5 » 10
+		- Weapon projectile now travels to max range
+		- Attack sequence no longer interrupts when original target dies
+- [Simulacrum](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/simulacrum):
+	- Movement speed 4.95 » 5.4
+- [Manifold](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/manifold):
+	- Armor penetration 1 » 0
+	- **NEW: Concurring Chorus:**
+		- For 1 second after attacking, allies within 2 range gain +1 stacking armor penetration
+- [Servitor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/servitor):
+	- Resource costs 100/0 » 75/0
+- [Accantor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/accantor):
+	- Resource costs 200/100 » 200/125
 - [Demiurge](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/demiurge):
-	- **Worship**:
-		- No longer seizes hostile units
-		- No longer expires without a nearby Demiurge
-		- No longer affects structures
-		- Now applies a debuff to all hostile units within 6 range of the Demiurge
-		- Units with this debuff are stunned and untargetable upon death, for 5 seconds
-		- After 5 seconds, if a Demiurge is still within 6 range, the unit is mind controlled and regains (100 + 33% of max life) hitpoints
+	- Armor 5 » 4
+	- **Galactic Weaver:**
+		- Armor penetration 5 » 0
+		- Weapon cooldown 0.5 » 0.67
 - [Clarion](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/clarion):
-	- **Phase Link** damage no longer procs onhits
-	- *This will be revisited later on.*
-- [Gladius](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/gladius):
-	- **Binding Plasma**:
-		- No longer procs immediately on unit death
-		- Now correctly creates an effect on impact, even if target is dead (c. Veeq7)
-- [Gateway](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/gateway):
-	- Armor 4 » 3
-- [Lattice](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/lattice):
-	- Build area 3x2 » 3x3
-- [Grand Library](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/grand-library):
-	- Mineral cost 350 » 300
-	- HP now 1000 » 800
-	- Shields 500 » 400
-	- Build area 5x4 » 4x4
+	- **Phase Link:**
+		- Damage spread 50% » 75%
+- [Aurora](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/aurora):
+	- **Last Orders** can now target air units
+- [Lanifect](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/lanifect):
+	- Weapon cooldown 0.33 » 0.42
+- [Anthelion](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/anthelion):
+	- **Gravity Well** now pulls victims inwards by a distance of 1 range on each weaponhit
 - [Ancestral Archives](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/ancestral-archives):
-	- Mineral and time costs 600/70 » 800/75
-	- HP 600 » 900
-	- Armor 4 » 5
-	- Build area 3x2 » 5x4
-- [Synthetic Synod](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/synthetic-synod):
-	- Mineral, gas, and time costs 500/500/70 » 600/600/75
+	- Resource costs 800/400 » 600/400
 
 ## Zerg
+- **Regression**:
+	- Flyer mutations with ground origins now attempt to regress if the terrain is valid (c. Veeq7)
+	- Dual-birth mutations now create one regressable unit and one non-regressable unit (c. Veeq7)
+- [Zethrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/zethrokor):
+	- Time cost 13 » 15
+	- Movement speed 7.5 » 8.03
 - [Vorvrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/vorvrokor):
-	- HP 70 » 75
-	- **New:** Hidebreaker
-		- Attacks now rend 1 armor for 3 seconds.
-- [Nathrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/vorvrokor):
-	- **New:** Hidebreaker
-		- Air attacks now rend 1 armor for 3 seconds.
-- [Hydralisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/hydralisk):
-	- Armor penetration 2 » 0
-- [Izirokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/izirokor):
-	- Time cost 25 » 20
-	- Weapon cooldown 0.92 » 0.83
-	- *This unit received an indirect nerf from the Crushing Tide bugfix, so these changes take that into account, while also improving their accessibility.*
-- [Mortothrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/mortothrokor):
-	- Gas and time costs 75/25 » 25/24
-- **NEW:** [Sasyrvoleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/sasyrvoleth):
-	- Sustaining support strain that gives nearby allies lifesteal
-	- Morphed from Larva; Requires Axtoth Axis
-- [Vornath Pond](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/vornath-pond):
-	- Mineral and gas costs 50/100 » 75/75
+	- Movement speed 8.75 » 9.1
+- [Nathrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/nathrokor):
+	- Now applies **Hidebreaker I** on all attacks
+- [Mutalisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/mutalisk):
+	- Resource costs 125/125 » 150/100
+- [Bactalisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/bactalisk):
+	- Resource costs 75/75 » 50/75
+- [Gorgrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/gorgrokor):
+	- **Calcification** (anti-air) weapon cooldown 0.63 » 0.58

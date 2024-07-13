@@ -406,8 +406,8 @@ Faction Selection Protoss
 Faction Selection Zerg
 Terran Anchor (Grounded)
 Zerg Sasyrvoleth
-Extended Unit #181
-Extended Unit #182
+Terran Tencendur
+Ackmed
 Extended Unit #183
 Extended Unit #184
 Extended Unit #185
@@ -498,10 +498,10 @@ Extended Unit #269
 Extended Unit #270
 Extended Unit #271
 Extended Unit #272
-Extended Unit #273
-Extended Unit #274
-Extended Unit #275
-Extended Unit #276
+Francisco Goska
+Stroluum
+Cerebrate Tuzor
+Zerg Skryrokor
 Extended Unit #277
 Extended Unit #278
 Extended Unit #279
