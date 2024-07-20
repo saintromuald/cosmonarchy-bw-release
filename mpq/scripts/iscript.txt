@@ -11513,7 +11513,7 @@ WitnessDeath:
 	playsndbtwn       	651 652 # Protoss\Witness\PWiDth00.WAV | Protoss\Witness\PWiDth01.WAV
 	imgol             	214 0 0 # Explosion1 (Medium) (thingy\tBangL.grp)
 	wait              	3
-	lowsprul			847 0 42 # Protoss Unit Rubble Small
+	lowsprul			949 0 42 # Witness remains
 	wait              	1
 	end
 
@@ -20245,35 +20245,6 @@ LakiziliskUnBurrow:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 920 Lakizilisk Remnants (zerg\zLurker.grp)
-.headerstart
-IsId          	356
-Type          	1
-Init          	LakiziliskRemnantsInit
-Death         	Generic_Wait1End
-.headerend
-# ----------------------------------------------------------------------------- #
-
-LakiziliskRemnantsInit:
-	playfram          	0x1fe
-	wait              	255
-	wait				24
-	playfram          	0x20f
-	wait              	255
-	wait				24
-	playfram          	0x220
-	wait              	255
-	wait				24
-	playfram          	0x231
-	wait              	255
-	wait				24
-	playfram          	0x242
-	wait              	255
-	wait				24
-	end
-
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
 # 915 Vithrilisk (zerg\devour.grp)
 .headerstart
 IsId          	357
@@ -24818,7 +24789,7 @@ SavantDeath:
 	playfram          	0x00
 	imgol             	3 0 0 # Scourge Death (zerg\zavDeath.grp)
 	wait              	2
-	lowsprul          	230 0 0 # Eidolon Remnants (terran\tghDeath.grp)
+	lowsprul          	950 0 0 # Savant remains
 	wait              	1
 	end
 
@@ -28578,7 +28549,7 @@ IdolDeath:
 	playsndbtwn			3053 3056 # Idol death 01, 02, 03, 04
 	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	3
-	lowsprul			847 0 0 # Protoss Unit Rubble Small
+	lowsprul			947 0 0 # Idol remains (cm\protoss\idol-death.grp)
 	wait              	1
 	end
 
@@ -28669,7 +28640,7 @@ GolemDeath:
 	playsnd           	533	# Protoss\Scout\PScDth00.WAV
 	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	3
-	lowsprul			847 0 0 # Protoss Unit Rubble Small
+	lowsprul			946 0 0 # Golem remains (cm\protoss\golem-death.grp)
 	wait              	1
 	end
 
@@ -29925,10 +29896,10 @@ ManifoldGndAttkToIdle:
 	goto              	DidactGndAttkToIdle
 
 ManifoldDeath:
-	playsnd           	533	# Protoss\Scout\PScDth00.WAV
+	playsndbtwn			3138 3140 # Manifold death 01, 02, 03
 	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
 	wait 				3
-	lowsprul			847 0 0 # Protoss Unit Rubble Small
+	lowsprul			945 0 0 # Manifold remains (cm\protoss\manifold-death.grp)
 	wait              	1
 	end
 
@@ -40964,7 +40935,7 @@ ArtisanDeath:
 	playsnd           	598	# Protoss\PROBE\PPrDth00.WAV
 	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
 	wait              	2
-	lowsprul			847 0 42 # Protoss Unit Rubble Small
+	lowsprul			948 0 42 # Artisan remains
 	wait              	1
 	end
 	
@@ -44065,7 +44036,7 @@ TethzorokorGndAttkInit:
 	wait              	1
 	nobrkcodestart
 	playfram          	0x360
-	playsndbtwn			894 895	# Zerg\Ultra\zulHit00.WAV | Zerg\Ultra\zulHit01.WAV
+	playsndbtwn			3141 3144 # Tethzorokor weaponfire 01, 02, 03, 04
 	attackwith 			1
 	wait              	1
 	playfram          	0x380
@@ -48887,16 +48858,16 @@ MortothrokorGndAttkRpt:
 	playsndrand       	3 891 892 893 # Zerg\Ultra\zulAtt00.WAV | Zerg\Ultra\zulAtt01.WAV | Zerg\Ultra\zulAtt02.WAV
 	wait              	1
 	playfram          	0xBB
+	attackwith 			1
+	playsndbtwn			3145 3146 # Zerg\Ultra\zulHit00.WAV | Zerg\Ultra\zulHit01.WAV
 	wait              	1
 	playfram          	0xCC
-	attackwith 			1
-	playsndbtwn			894 895	# Zerg\Ultra\zulHit00.WAV | Zerg\Ultra\zulHit01.WAV
 	wait              	1
 	playfram			0xDD
 	wait				1
 	playfram			0xEE
 	attackwith 			1
-	playsndbtwn			894 895	# Zerg\Ultra\zulHit00.WAV | Zerg\Ultra\zulHit01.WAV
+	playsndbtwn			3145 3146 # Zerg\Ultra\zulHit00.WAV | Zerg\Ultra\zulHit01.WAV
 	wait				1
 	playfram			0xFF
 	wait				1

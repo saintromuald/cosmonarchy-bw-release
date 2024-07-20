@@ -943,12 +943,12 @@ Photon Blasters Green
 Vorvrokor Remains
 Liiralisk Glave
 Seeker Spores Hit Green Small
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
+Manifold Remains
+Golem Remains
+Idol Remains
+Artisan Remains
+Witness Remains
+Savant Remains
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1

@@ -3136,15 +3136,15 @@ Salamander Weapon 2 Hit 02
 Wyvern Weapon Charge 01
 Wyvern Weapon Charge 02
 Wyvern Weapon Charge 03
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Manifold Death 01
+Manifold Death 02
+Manifold Death 03
+Tethzorokor Weaponfire 01
+Tethzorokor Weaponfire 02
+Tethzorokor Weaponfire 03
+Tethzorokor Weaponfire 04
+Mortothrokor Weaponfire 01
+Mortothrokor Weaponfire 02
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1
