@@ -1,5 +1,5 @@
-# 20 July 2024
-## Year 2, month 7, patch 2
+# 22 July 2024
+## Year 2, month 7, patch 2, hotfix 1
 ## Tyrant's Tale qualifier
 
 This patch includes bugfixes, audiovisual improvements, and balance tweaks.
@@ -12,7 +12,10 @@ We are still hunting for desyncs! Please submit your `Critical` and `Sync Random
 
 ## Patch summary
 
-Forthcoming.
+Stability and audiovisual improvements are the main additions in this update, while also tweaking the Madrigal anti-air splash radius as an experiment in improving the unit's performance vs air stacks. A more consequential update is in the works, so stay tuned!
+
+## Hotfix 22 July 2024
+- Fixed target caps for Cataphract, Okrimnilisk (r. TopRamen & jakulangski, c. Veeq7)
 
 ## Internals
 - **Config:**
