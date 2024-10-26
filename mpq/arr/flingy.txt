@@ -464,8 +464,8 @@ Ezigrisant
 Wellbore
 Police Deputy
 Cuirass (Trench Mode)
-Spirtith Colony
-Skortrith Colony
+Spirtith Cesiant
+Skortrith Cesiant
 Empress Plasma
 Engram
 Hammerfall Beacon
@@ -525,11 +525,11 @@ Skithrokor Spore
 Photon Blasters White
 Photon Blasters Green
 Liiralisk Glave
-Extended Flingy #319
-Extended Flingy #320
-Extended Flingy #321
-Extended Flingy #322
-Extended Flingy #323
+Evigrilisk Tentacle
+Cyclops (Futurist Federation)
+Zealot (Starbound)
+Ecclesiast (Khalendric Knights)
+Vibrance
 Extended Flingy #324
 Extended Flingy #325
 Extended Flingy #326

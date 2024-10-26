@@ -408,9 +408,9 @@ Terran Anchor (Grounded)
 Zerg Sasyrvoleth
 Terran Tencendur
 Ackmed
-Extended Unit #183
-Extended Unit #184
-Extended Unit #185
+Terran Cyclops (Futurist Federation)
+Protoss Zealot (Starbound)
+Protoss Ecclesiast (Khalendric Knights)
 Extended Unit #186
 Extended Unit #187
 Extended Unit #188

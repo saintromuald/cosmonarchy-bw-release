@@ -3145,100 +3145,101 @@ Tethzorokor Weaponfire 03
 Tethzorokor Weaponfire 04
 Mortothrokor Weaponfire 01
 Mortothrokor Weaponfire 02
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Cataphract Ready 01
+Cataphract Ready 02
+Cataphract Ready 03
+Cataphract Selected 01
+Cataphract Selected 02
+Cataphract Selected 03
+Cataphract Selected 04
+Cataphract Order Passive 01
+Cataphract Order Passive 02
+Cataphract Order Passive 03
+Cataphract Order Passive 04
+Cataphract Order Aggressive 01
+Cataphract Order Aggressive 02
+Cataphract Order Aggressive 03
+Cataphract Order Aggressive 04
+Cataphract Under Attack 01
+Cataphract Under Attack 02
+Cataphract Under Attack 03
+Cataphract Under Attack 04
+Evigrilisk Weaponhit 01
+Evigrilisk Weaponhit 02
+Evigrilisk Weaponhit 03
+Epigraph Weaponhit 01
+Epigraph Weaponhit 02
+Gorgrokor Weaponhit 01
+Gorgrokor Weaponhit 02
+Gorgrokor Weaponhit 03
+Gorgrokor Weaponhit 04
+Tosgrilisk Weaponhit 01
+Tosgrilisk Weaponhit 02
+Tosgrilisk Weaponhit 03
+Ramesses Weaponhit 01
+Durendal Ready 01
+Durendal Ready 02
+Durendal Ready 03
+Durendal Selected 01
+Durendal Selected 02
+Durendal Selected 03
+Durendal Selected 04
+Durendal Order Passive 01
+Durendal Order Passive 02
+Durendal Order Passive 03
+Durendal Order Passive 04
+Durendal Order Aggressive 01
+Durendal Order Aggressive 02
+Durendal Order Aggressive 03
+Durendal Order Aggressive 04
+Durendal Under Attack 01
+Durendal Under Attack 02
+Durendal Under Attack 03
+Durendal Under Attack 04
+Psionic Storm Start 01
+Psionic Storm Loop 01
+Psionic Storm End 01
+Goliath Windup 01
+Goliath Windup 02
+Goliath Windup 03
+Goska (T) Selected 01
+Goska (T) Selected 02
+Goska (T) Selected 03
+Goska (T) Selected 04
+Goska (T) Order Passive 01
+Goska (T) Order Passive 02
+Goska (T) Order Passive 03
+Goska (T) Order Passive 04
+Goska Weaponfire 01
+Goska Weaponfire 02
+Goska Weaponfire 03
+Goska Grenade Impact
+Stroluum Selected 01
+Stroluum Selected 02
+Stroluum Selected 03
+Stroluum Selected 04
+Stroluum Order Passive 01
+Stroluum Order Passive 02
+Stroluum Order Passive 03
+Stroluum Order Passive 04
+Stroluum Under Attack 01
+Stroluum Under Attack 02
+Stroluum Under Attack 03
+Stroluum Under Attack 04
+Zealot (Starbound) Weaponhit 01
+Terran Construction 01
+Terran Construction 02
+Terran Construction 03
+Terran Repair 01
+Terran Repair 02
+Terran Repair 03
+Zerg Construction 01
+Zerg Construction 02
+Zerg Construction 03
+Zerg Construction Start 01
+Broodspawn Overlay Proc
+Terran Construction End 01
+Terran Construction Start 01
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

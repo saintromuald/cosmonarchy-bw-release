@@ -33,8 +33,8 @@ Nuclear Missile
 Lobotomy Grenade (Francisco Goska)
 EMP Shockwave (unused)
 Irradiate (Seraph ability)
-Claws (Zethrokor)
-Claws (Vorvrokor)
+Zethrok Claws (Zethrokor)
+Vorvrok Claws (Vorvrokor)
 Vestigial Strike (Nathrokor)
 Needle Spines (Hydralisk)
 Erebol Shock Cannon (Penumbra)
@@ -215,9 +215,9 @@ Relentless Tendrils (Okrimnilisk)
 Omnispores (Okrimnilisk)
 Venemous Bursts (Cherbrathalor)
 Angeltear Rockets (Salamander)
-Extended Weapon #88
-Extended Weapon #89
-Extended Weapon #90
+Brontes Payload (Cyclops)
+Flak Cannons (Cyclops Futurist)
+Sensory Overload (Vibrance)
 Extended Weapon #91
 Extended Weapon #92
 Extended Weapon #93
