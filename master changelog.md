@@ -5,6 +5,7 @@ Since December 2022, this changelog shows only past changes.
 See patchnotes.md for info on the most recent patch!
 
 # Table of Contents
+- [25 October 2024](#25-october-2024)
 - [22 July 2024](#22-july-2024)
 - [13 July 2024](#13-july-2024)
 - [25 May 2024](#25-may-2024)
@@ -88,6 +89,416 @@ See patchnotes.md for info on the most recent patch!
 - [15 August 2020](#15-august-2020)
 - [13 August 2020](#13-august-2020)
 - [12 August 2020](#12-august-2020)
+
+# 25 October 2024
+## Year 2, month 10, patch 1
+## Acropolis #2 - Gauntlet Stages
+
+This patch will include bugfixes, audiovisual improvements, and balance adjustments.
+
+Download [Fraud Launcher 2](https://fraudsclub.com/files/Fraud%20Launcher%202.zip) for easier setup and maintenance! Version 2.2 and up now includes an automatic download of CrownLink, a networking alternative for Cosmonarchy!
+
+We are still hunting for desyncs! Please submit your `Critical` and `Sync Randoms` text files from the `logs` folder to the **cm-issues** "Desync error megathread" on [our Discord server](https://discord.com/invite/s5SKBmY).
+
+## Patch summary
+
+A video going over all changes is forthcoming. This section will be edited with a link and more text at that time.
+
+## Resources
+- Resource node saturation now 100/100/25, with numbers representing percentage efficiency of each worker
+- Mineral yields now 5 (normal) / 5 (depleted), with depleted Minerals taking twice as long to harvest
+- Vespene yields now 3 (Ridge) / 5 (Geyser) / 7 (tier 2 cap) / 9 (tier 3 cap)
+
+## Internals
+- **Order delays** have been further reduced (c. Veeq7)
+- **Pathfinding** calculation timer now instant, from 1.25 seconds (c. Veeq7)
+- **Fog of war reveal** for attackers in fog now 0.75 seconds, from ~0.42 seconds (c. DF)
+- Replays now include version hash in their filename (c. Veeq7)
+- Positional sound handling has been achieved, and especially applied to Cantavis, Star Sovereign, and Anthelion behaviors (c. Veeq7)
+- **Game Modes:**
+	- **The Turning:** (c. Veeq7)
+		- Zombies now attack units within their vision radius
+		- Fallen combatants return throughout the game, spawning at random points on the map
+	- **Uprising:** (c. Veeq7)
+		- Overhauled spawns, from locations to attack waves!
+	- **NEW: Embraced:** (c. Veeq7)
+		- All units and structures are Blissfully Embraced
+		- This gamemode will be iterated on later
+- **Config:**
+	- **New option:** `flip-attack-and-patrol` (c. Veeq7, commissioned by TheBeaver99)
+
+## Bugfixes
+- **Stability:**
+	- Fixed memory out-of-bounds accesses when players leave the game, resolving several common crashes at the end of games (with help from DF)
+	- Fixed uncommon instability with Deconstruction (r. shopkeeper dog)
+	- Fixed rare undefined behavior due to bad vector clears on Barghest, Crucible (c. Veeq7)
+	- In **Massacre** mode, fixed memory out-of-bounds P12 resource allocations (r. 3crow)
+- **Gameplay:**
+	- **Larva** can no longer be banked by cancelling Eggs after the spawn timer (r. JujiK)
+	- **Diadem**s no longer gain turn speed after lifting off and landing (r. jakulangski)
+	- **Hypnagogue** - **Through the Looking Glass**:
+		- No longer flips allied positions (r. GreenEggs'NSpam, c. Veeq7)
+		- No longer fails to teleport Hypnagogue when solo (r. GreenEggs'NSpam)
+	- Added attack buttons to weaponless units, to enable attack-move while multi-selected (r. SmrtyCakes)
+	- Lardfix: **Lakizilisks** can now attack while in a garrison
+	- Reclaimed Vultures now inherit previous Lobotomy Mine count
+	- In **Massacre** mode, cancelling a Zerg structure no longer gives vespene (r. Btyb)
+	- **Pazuzu**s now correctly respond to threats while on hold position (r. Kenoli)
+	- **Gosvileth**s can no longer be decollided out of construction attempts (r. Kenoli)
+	- **Isthrathaleth** - **Plague**:
+		- Now properly creates a 5-second field on victim death (r. Hamster)
+		- Now damages caster
+	- Secondary **Positron** projectiles no longer have a non-trivial chance to "miss" targets (c. Veeq7)
+	- On-kill and on-death events are now properly logged for regressing units (r. Kenoli)
+	- Fixed height flags on Iceworld -> ice doodads (r. TheBeaver99)
+	- Returning projectiles no longer fail to spawn when colliding with right and bottom map boundaries (r. jakulangski, c. DF)
+	- **Luminary** - **Aural Assault**
+		- Now properly casts on structures (r. Hamster)
+		- Now properly casts on terrain
+- **AI:**
+	- Fixed some Terran AI builds requesting too many addons, causing a softlock
+- **Audiovisuals:**
+	- **Vengeance** no longer creates overlyas on stationary structures
+	- Fixed bad cropping on **Zethrokor** and **Quazilisk** burrow graphics
+	- Fixed bad background color on **Ovileth** death graphic
+	- Fixed wrong overlay for Titanic victims of Worship (r. GreenEggs'NSpam)
+	- Fixed missing unit responses for Anthelion (r. jakulangski)
+	- Made Cyclops use small-sized overlays, from medium-sized
+- **User Interface:**
+	- Fixed wrong minimap color for P9-P11 units in active vision (c. Veeq7)
+	- Added missing **Sasyrvoleth** aura display (r. GreenEggs'NSpam)
+	- Pings showing player start locations no longer ping neutral hostile players
+	- Fixed Discord gamemode display for **Duopoly**
+
+## Audiovisuals
+- New ambient event SFX for:
+	- Terran worker-based construction
+	- Terran construction initiation & completion
+	- Terran repairs
+	- Protoss structure warp-in progression
+	- Protoss construction completion
+	- Zerg Egg hatch
+	- Zerg structure progression
+	- Zerg construction initiation & completion
+- New unit responses for:
+	- Durendal, Cataphract
+- New weaponhit SFX for:
+	- Ramesses, Epigraph, Tosgrilisk, Evigrilisk, Gorgrokor (c. lolrsk8s)
+
+## Terran
+- **Cornerstone: MASTERS OF NONE:**
+	- When unloaded from a transport, deployed units now perform their deployment animation before being able to operate (c. Veeq7)
+- [Talos](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/talos):
+	- HP 90 » 80
+	- Armor 2 » 1
+	- Build time 25 » 22
+	- Now accelerates much faster
+	- **Fusion Battery** weapon removed
+	- No longer requires **Atlas**
+- [Maverick](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/maverick):
+	- **Stimpack** buff duration 5 » 7.5
+- [Shaman](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/shaman):
+	- **Nanite Field:**
+		- Range in Support Mode 3 » 4
+		- Range in Visionary Mode 6 » 8
+	- Vision range 9 » 8
+- [Eidolon](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/eidolon):
+	- HP 60 » 65
+	- Buidl time 25 » 23
+	- **Coroner Rifle** weapon cooldown 1 » 1.2
+- [Savant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/savant):
+	- Build time 30 » 25
+- [Vulture](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/vulture):
+	- HP 85 » 90
+	- Movement speed 7.08 » 7.71
+	- **Lobotomy Mine** count 2 » 3
+- [Cyclops](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cyclops):
+	- **Flak Cannon:**
+		- Weapon cooldown 1.25 » 1
+		- Weapon range 5 » 6
+	- **Recursion Rounds:**
+		- Now deals unsafe splash, with falloff (24/48/64)
+- [Goliath](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/goliath):
+	- Build time 28 » 25
+	- Armor 2 » 3
+	- **Twin Autocannons:**
+		- Weapon damage 1x10 » 2x4
+		- Weapon cooldown 0.83 » 0.33
+		- Weapon range 7 » 5
+		- Now has an initial windup delay of 0.25 seconds
+	- **Contender Missiles** weapon range 7 » 8
+- [Blackjack](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/blackjack):
+	- Resource costs 100/0 » 75/0
+	- HP 75 » 85
+	- Armor 1 » 2
+	- **Wear and Tear:**
+		- Now drops movement and attack speeds by 33% when under half HP
+		- No longer scales with total damage dealt
+- [Matador](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/matador):
+	- HP 100 » 140
+- [Phalanx](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/phalanx):
+	- Resource costs 200/75 » 200/50
+	- Build time 30 » 28
+	- **Arclite Cannon:**
+		- Weapon damage 25 » 20
+		- Armor penetration 3 » 0
+	- Vision range 10 » 8
+	- Projectile top speed ~27% faster
+- [Madrigal](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/madrigal):
+	- HP 150 » 160
+	- Build time 30 » 28
+	- **Imperioso Missiles:**
+		- Weapon damage 1x14 » 3x8
+		- Weapon splash radius 12/24/48 » 12/24/36
+- [Ramesses](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/ramesses):
+	- Resource costs 200/0 » 150/25
+	- Build time 28 » 25
+- [Durendal](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/durendal):
+	- Resource costs 200/75 » 200/50
+	- Build time 30 » 28
+	- Transport space 2 » 4
+- [Cataphract](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cataphract):
+	- **Longinius Cannons:**
+		- Weapon damage 1x12 » 1x10
+		- Weapon range 8 » 9
+	- **Multi-Attack IV** removed
+	- **NEW: Offset: Cone:**
+		- Now fires all four projectiles to max range, in a cone pattern
+- [Pazuzu](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/pazuzu):
+	- **Jupiter Driver** splash radius 16/32/48 » 8/12/16
+- [Ancile](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/ancile):
+	- Build time 30 » 28
+	- Vision range 8 » 10
+- [Gorgon](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/gorgon):
+	- Build time 30 » 28
+- [Valkyrie](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/valkyrie):
+	- **Halo Rockets** weapon damage 6x7 » 10x4
+- [Minotaur](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/minotaur):
+	- Resource costs 450/200 » 400/200
+	- **Asterion Laser Battery:**
+		- Armor penetration 3 » 1
+		- Weapon range 9 » 7
+- [Quarry](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/quarry):
+	- Resource costs 125/100 » 125/75
+	- Build time 30 » 25
+	- No longer trains **Mason**s
+- [Treasury](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/treasury):
+	- Build time 45 » 40
+- [Watchdog](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/watchdog):
+	- Vision range 10 » 8
+- [Stockade](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/stockade):
+	- Build time 40 » 50
+- [Covenant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/covenant):
+	- Resource costs 100/100 » 50/150
+- [Fulcrum](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/fulcrum):
+	- Resource costs 150/50 » 200/50
+	- Build time 45 » 50
+- [Scrapyard](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/scrapyard):
+	- Resource costs 100/0 » 75/0
+- **NEW:** [Cyclops (Futurist Federation)](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cyclops-futurist):
+	- Factional variant of the Cyclops, available for the Futurist Federation
+
+## Protoss
+- **Cornerstone: DIVINE MANDATE:**
+	- Production structures past tier 1 now require at least one structure from the previous tier in order to be unlocked
+- **Cornerstone: FLASH SHIELDING:**
+	- Shield regeneration now decreases from 10 shields per second to 2 shields per second over a period of 5 seconds
+	- Shield restores (e.g. Astral Blessing) no longer activate Flash Shielding
+- **Cornerstone: VENGEFUL ASCENSION:**
+	- **Vengeance** movement speed boost 25% » 33%
+	- **Ascension** attack speed boost 25% » 33%
+- [Witness](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/witness):
+	- Vision range 8 » 9
+- [Artisan](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/artisan):
+	- Resource costs 50/50 » 50/25
+	- Now accelerates much faster
+	- Vision range 9 » 8
+	- **Neutron Saber** weapon damage 10 » 7
+- [Zealot](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/zealot):
+	- Build time 22 » 25
+- [Dracadin](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/dracadin):
+	- Build time 28 » 32
+	- HP 120 » 100
+	- Shields 40 » 80
+	- Movement speed 5 » 5.5
+- [Ecclesiast](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/ecclesiast):
+	- **Astral Blaster** weapon damage 10 » 8
+	- **Astral Blessing** shield heal 2 » 3
+- [Hierophant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/hierophant):
+	- Resource costs 125/50 » 100/75
+	- Build time 30 » 32
+- [Herald](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/herald):
+	- Build time 25 » 27
+	- **Triumphant Rise** shield heal 1 » 2
+	- **Transcendent Fall** passive ranges 2 » 4
+- [Cantavis](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/cantavis):
+	- Energy 150 » 250
+	- Build time 30 » 33
+	- **Psionic Storm:** (c. Veeq7)
+		- Cast cost 125 » 25
+		- Cast range 10 » 8
+		- Damage per second 18 » 25 (deals 50% vs structures)
+		- Max duration 10 seconds » 12 seconds
+		- Now drains 20 energy per second while active
+		- No longer has an initial channeling cast time
+		- Now persists as long as the caster is within cast range, and has energy
+		- Now moves to target location when recast (spending cast energy to do so)
+	- **Hallucination** energy cost 50 » 75
+- [Atreus](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/atreus):
+	- HP 140 » 150
+	- Resource costs 200/75 » 175/50
+	- Build time 30 » 35
+	- **Dauntless Disruption Cannon:**
+		- Weapon damage 2x5 » 1x20
+		- Armor penetration 2 » 0
+		- Weapon cooldown 0.75 » 1.25
+		- No longer deals splash damage
+- [Sycophant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/sycophant):
+	- Shields 40 » 60
+	- Build time 25 » 22
+- [Patriarch](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/patriarch):
+	- **Ironhand Weaver** weapon range 6 » 7
+- [Optecton](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/optecton):
+	- HP 300 » 400
+	- Splash radii 12/36/48 » 32/48/64
+	- Projectile collision area 16 » 48
+- [Simulacrum](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/simulacrum):
+	- HP 75 » 100
+	- **Phase Cannon** weapon cooldown 0.75 » 0.83
+- [Golem](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/golem):
+	- Resource costs 200/0 » 175/0
+	- Build time 28 » 30
+- [Idol](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/idol):
+	- Resource costs 75/75 » 100/50
+	- Build time 25 » 28
+	- HP 75 » 80
+- [Positron](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/positron):
+	- **Antimatter Missile:**
+		- No longer locks on targets
+		- Now travels to maximum range
+		- Splash radii 6/12/24 » 12/24/32
+- [Accantor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/accantor):
+	- Build time 35 » 38
+	- Vision range 9 » 7
+- [Architect](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/architect):
+	- Build time 45 » 50
+	- Vision range 10 » 7
+	- **Dispersive Salvo:**
+		- Weapon range 10 » 9
+		- Projectile speed reduced by 25%
+	- **Reactive Payloud:**
+		- No longer splits twice at 5 range
+		- Now splits once for every 4 range travelled
+- [Aurora](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/aurora):
+	- Build time 20 » 22
+	- Shields 50 » 35
+- [Gladius](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/gladius):
+	- Build time 35 » 40
+- [Epigraph](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/epigraph):
+	- **Litany Cannons:**
+		- Armor penetration 2 » 3
+		- Weapon range 8 » 6
+	- **NEW: Signify**
+		- Now applies Cowardice, and eventually Malice
+- [Didact](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/didact):
+	- **Stasis Field** energy cost 125 » 150
+- [Steward](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/steward):
+	- Build time 10 » 5
+- [Embassy](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/embassy):
+	- Resource costs 125/125 » 125/75
+	- No longer trains **Scribe**s
+- [Crucible](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/crucible):
+	- Resource costs 200/350 » 250/300
+	- Now a detector
+- [Gateway](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/gateway):
+	- Build time 45 » 50
+- [Grand Library](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/grand-library):
+	- Resource costs 300/0 » 250/50
+- [Rogue Gallery](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/rogue-gallery):
+	- Resource costs 150/75 » 150/100
+- [Prostration Stage](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/prostration-stage):
+	- Build time 60 » 65
+- [Lattice](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/lattice):
+	- Resource costs 200/0 » 150/50
+	- Build time 45 » 50
+- [Synthetic Synod](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/synthetic-synod):
+	- Build time 70 » 75
+- [Stargate](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/stargate):
+	- Build time 55 » 60
+- [Argosy](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/argosy):
+	- Build time 65 » 70
+- **NEW:** [Zealot (Starbound)](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/zealot-starbound):
+	- Factional variant of the Zealot, available for the Starbound
+
+## Zerg
+- [Larva](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/larva):
+	- Build time 12 » 14
+- [Gosvileth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/gosvileth):
+	- Now accelerates much faster
+- [Zethrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/zethrokor):
+	- Resource costs 50/0 » 25/0
+	- Movement speed 8.1 » 7.5
+	- **Zethrok Claws** weapon cooldown 0.25 » 0.21
+- [Quazilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/quazilisk):
+	- Resource costs 75/0 » 50/0
+- [Vorvrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/vorvrokor):
+	- HP 75 » 80
+	- Build time 15 » 12
+- [Cikralisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/cikralisk):
+	- HP 70 » 100
+- [Mutalisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/mutalisk):
+	- HP 120 » 140
+- [Sasyrvoleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/sasyrvoleth):
+	- **Lucilleri Pheremones** lifesteal bonus 100% » 50%
+- [Hydralisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/hydralisk):
+	- Movement speed 5.4 » 6.15
+	- **Needle Spines** weapon cooldown 0.71 » 0.63
+- [Izirokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/izirokor):
+	- HP 115 » 130
+	- Build time 25 » 26
+- [Skithrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/skithrokor):
+	- HP 120 » 140
+	- Movement speed 5.6 » 5.8
+	- **Skittering Spores** weapon cooldown 0.79 » 0.71
+- [Bactalisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/bactalisk):
+	- HP 110 » 120
+	- Resource costs 50/75 » 75/50
+	- Build time 28 » 25
+	- **Corrosive Acid:**
+		- Weapon damage 2x7 » 3x6
+		- Weapon cooldown 0.92 » 1
+- [Vithrilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/vithrilisk):
+	- HP 160 » 180
+- [Evigrilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/evigrilisk):
+	- **Brutish Tendrils** armor penetration 2 » 0
+- [Okrimnilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/okrimnilisk):
+	- HP 380 » 420
+	- **Relentless Tendrils** weapon removed
+- [Alkajelisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/alkajelisk):
+	- Resource costs 400/250 » 350/250
+	- **Plasmid Spores** weapon range 8 » 6
+- [Zoryusthaleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/zoryusthaleth):
+	- Build time 25 » 28
+- [Lakizilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/lakizilisk):
+	- HP 120 » 140
+	- Burrow time ~25% faster
+- [Gorgrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/gorgrokor):
+	- HP 200 » 220
+	- Vision range 9 » 8
+- [Vilgorokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/vilgorokor):
+	- **Reconstitution** Carapace Swarm HP 100 » 200
+- [Isthrathaleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/isthrathaleth):
+	- **Plague:**
+		- Now affects burrowed units
+- [Larvosk Cesiant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/larvosk-cesiant):
+	- HP 240 » 260
+	- Resource costs 25/125 » 50/125
+	- Build time 30 » 35
+- [Quazeth Pool](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/quazeth-pool):
+	- Build time 45 » 50
+- [Vornath Pond](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/vornath-pond):
+	- Resource costs 75/75 » 75/100
+	- Built time 30 » 40
 
 # 22 July 2024
 ## Year 2, month 7, patch 2, hotfix 1
