@@ -5,6 +5,7 @@ Since December 2022, this changelog shows only past changes.
 See patchnotes.md for info on the most recent patch!
 
 # Table of Contents
+- [22 November 2024](#22-november-2024)
 - [25 October 2024](#25-october-2024)
 - [22 July 2024](#22-july-2024)
 - [13 July 2024](#13-july-2024)
@@ -89,6 +90,30 @@ See patchnotes.md for info on the most recent patch!
 - [15 August 2020](#15-august-2020)
 - [13 August 2020](#13-august-2020)
 - [12 August 2020](#12-august-2020)
+
+# 22 November 2024
+## Year 2, month 11, patch 1
+## Acropolis #2 - Main Stages
+
+This patch includes bugfixes and audiovisual improvements. Balance adjustments will arrive following the conclusion of Acropolis #2's Throneroom Stage!
+
+Download [Fraud Launcher 2](https://fraudsclub.com/files/Fraud%20Launcher%202.zip) for easier setup and maintenance! Version 2.2 and up now includes an automatic download of CrownLink, a networking alternative for Cosmonarchy!
+
+We are still hunting for desyncs! Please submit your `Critical` and `Sync Randoms` text files from the `logs` folder to the **cm-issues** "Desync error megathread" on [our Discord server](https://discord.com/invite/s5SKBmY).
+
+## Bugfixes
+- **Gameplay:**
+	- Fixed an issue with Cataphract Longinius Cannons not travelling to max range (c. Veeq7)
+	- Okrimnilisks can no longer attack while burrowed
+	- Ultrokors are no longer briefly set to 3 HP in the middle of their birth sequence (r. jakulangski)
+- **Audiovisual:**
+	- Raised limit for selection circles to account for 8 players and a replay viewer (c. DarkenedFantasies)
+	- Fixed buttonset display for Epigraph (r. Londier)
+	- Lobotomy effects can no longer proc on Morningstars (r. jakulangski)
+	- Lobotomy Mine slow can no longer proc on Mineral Fields (r. Kenoli)
+
+## Audiovisuals
+- **Blackjacks** now switch to a damaged model when debuffed by their passive
 
 # 25 October 2024
 ## Year 2, month 10, patch 1

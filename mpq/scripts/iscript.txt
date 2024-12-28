@@ -1126,13 +1126,13 @@ Type          	26
 Init          	HydraliskInit
 Death         	HydraliskDeath
 GndAttkInit   	HydraliskGndAttkInit
-AirAttkInit   	HydraliskAirAttkInit
+AirAttkInit   	HydraliskGndAttkInit
 Unused1       	HydraliskUnused1
 GndAttkRpt    	HydraliskGndAttkRpt
-AirAttkRpt    	HydraliskAirAttkRpt
+AirAttkRpt    	HydraliskGndAttkRpt
 CastSpell     	[NONE]
 GndAttkToIdle 	HydraliskGndAttkToIdle
-AirAttkToIdle 	HydraliskAirAttkToIdle
+AirAttkToIdle 	HydraliskGndAttkToIdle
 Unused2       	[NONE]
 Walking       	HydraliskWalking
 WalkingToIdle 	HydraliskWalkingToIdle
@@ -1276,11 +1276,7 @@ HydraliskGndAttkInit:
 	playfram          	0x00
 	wait              	1
 	nobrkcodestart
-	playfram          	0x11
-	wait              	1
 	playfram          	0x22
-	wait              	1
-	playfram          	0x33
 	wait              	1
 HydraliskGndAttkRpt:
 	wait              	1
@@ -1295,37 +1291,6 @@ HydraliskGndAttkRpt:
 	gotorepeatattk
 	ignorerest
 HydraliskGndAttkToIdle:
-	playfram          	0x22
-	wait              	1
-	playfram          	0x11
-	wait              	1
-	playfram          	0x00
-	wait              	1
-	goto              	HydraliskWalkingToIdle
-
-HydraliskAirAttkInit:
-	playfram          	0x00
-	wait              	1
-	nobrkcodestart
-	playfram          	0x11
-	wait              	1
-	playfram          	0x22
-	wait              	1
-	playfram          	0x33
-	wait              	1
-HydraliskAirAttkRpt:
-	wait              	1
-	playfram          	0x44
-	playsnd           	64 # Bullet\SpoogHit.wav
-	sproluselo        	332 0 # Needle Spines (thingy\spooge.grp)
-	attack
-	wait              	1
-	playfram          	0x33
-	wait              	1
-	nobrkcodeend
-	gotorepeatattk
-	ignorerest
-HydraliskAirAttkToIdle:
 	playfram          	0x22
 	wait              	1
 	playfram          	0x11
@@ -28523,6 +28488,12 @@ IdolGndAttkRpt:
 	playsndbtwn			1268 1272 # Idol weaponfire 01, 02, 03, 04, 05
 	wait              	1
 	playfram			0x99
+	wait              	3
+	playfram          	0xbb
+	attack
+	playsndbtwn			1268 1272 # Idol weaponfire 01, 02, 03, 04, 05
+	wait              	1
+	playfram			0x99
 	wait				1
 	nobrkcodeend
 	gotorepeatattk
@@ -47712,6 +47683,20 @@ OptectonGndAttkRpt:
 	wait				7
 	imgol				1820 0 0 # Architect charge overlay
 	wait				8
+	playfram			0x220
+	imgoluselo			1855 0 0 # Optecton muzzle flash
+	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
+	attackwith        	1
+	wait				1
+	playfram			0x240
+	wait				3
+	playfram			0x220
+	imgoluselo			1855 0 0 # Optecton muzzle flash
+	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
+	attackwith        	1
+	wait				1
+	playfram			0x240
+	wait				3
 	playfram			0x220
 	imgoluselo			1855 0 0 # Optecton muzzle flash
 	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
