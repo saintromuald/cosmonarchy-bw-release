@@ -411,10 +411,10 @@ Ackmed
 Terran Cyclops (Futurist Federation)
 Protoss Zealot (Starbound)
 Protoss Ecclesiast (Khalendric Knights)
-Extended Unit #186
-Extended Unit #187
-Extended Unit #188
-Extended Unit #189
+Terran Harakan (Golden Republic)
+Protoss Cicatus (Starbound)
+Zerg Inzorthrokor (Imicren)
+Volatile Egg
 Extended Unit #190
 Extended Unit #191
 Extended Unit #192

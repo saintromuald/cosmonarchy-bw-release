@@ -761,7 +761,7 @@ Arclite Shock Cannon (Damageless, Silent)
 Magnetar
 Izirokor
 Izirokor Projectile
-Izirokor Remnants
+Izirokor Remains
 Entropy Gauntlets Overlay
 Cyclops Fragmentary Explosion
 Zerg Air Explosion (Large)
@@ -955,13 +955,13 @@ Zealot (Starbound)
 Ecclesiast (Khalendric Knights)
 Vibrance
 Blackjack (Damaged)
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
+Phase Disruptor Large
+Harakan (Golden)
+Iziralisk
+Iziralisk Remains
+Cicatus
+White Circle (Instant)
+Gorgrokor Remains
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1

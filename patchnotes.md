@@ -1,6 +1,5 @@
-# 28 December 2024
-## Year 2, month 12, patch 1
-## Acropolis #2 - End of Tournament
+# 11 January 2024
+## Year 3, month 1, patch 1
 
 This patch will include new features, balance adjustments, bugfixes, and audiovisual improvements.
 
@@ -8,184 +7,127 @@ Download [Fraud Launcher 2](https://fraudsclub.com/files/Fraud%20Launcher%202.zi
 
 We are still hunting for desyncs! Please submit your `Critical` and `Sync Randoms` text files from the `logs` folder to the **cm-issues** "[Desync error megathread](https://discord.com/channels/139276012058968064/1251318131671175198)" on [our Discord server](https://discord.com/invite/s5SKBmY).
 
-## Patch summary
-
-A video going over all changes is forthcoming. This section will be edited with a link and more text at that time.
-
-## Core Mechanics
-- **Height advantage:**
-	- Range bonus +2 per level » +1 per level
-
-## Mapmaking
-- **NEW: Collision brushes** (c. Veeq7)
-	- Neutral (P12) **Spider Mine**s:
-		- Makes pathfinder regions unpathable and disconnects it from walkable space
-		- You can preview pathfinder regions in SCMDraft 2, where each region is denoted by a bold yellow outline
-	- Neutral (P12) **Supply Depot**s:
-		- Sets the tile they are placed on to full collision (unwalkable)
-		- This is not as reliable as **Spider Mine**s
+## Mechanics
+- Energy regeneration is now interrupted while the specialist is stunned
 
 ## Game Modes
-- **Massacre:**
-	- Now gives 2x units per training / morphing
-- **NEW: Dark Ages** (c. Veeq7)
-	- -20% to base sight range and base weapon range
-	- Cliff advantage gives 0.5 weapon range, from 1
-	- Attacking flyers are forbidden
-		- **Caveat:** AI still train them currently
-- **Massacre:**
-	- Gas reward on kill/train 3 » 5
+- **Uprising:**
+	- Fixed ground spawners appearing on islands (c. Veeq7)
+	- Reduced training time of **Broodspawn**
+	- Tweaked the composition of some existing spawners
+	- Added many new spawner types in tiers 1 & 2
+
+## Console
+- **NEW:** `race` command, gets the player of the selected unit's race
+	- Note that this may not be the same race as the selected unit, e.g. in cases of mind control
+	- 0 is Zerg, 1 is Terran, 2 is Protoss
+
+## Editor
+- **Kill Units at Location** vanilla trigger action functionality has been restored (r. 3crow/Kenoli, c. DF)
+- **set_race** custom trigger action no longer fails to set Protoss or Terran races correctly
+- **NEW:** `player_is_race` custom trigger condition (may see changes later)
+- **NEW:** Volatile Egg unit (id 416)
+	- blocks construction, but not worker movement when harvesting, allowing for SC1-style barriers
+	- when placed for P1-P8 and cloaked, any preplaced units for that player will be created, allowing players to select their race without spawning melee units
+
+## AI
+- **Star Sovereign**s now activate Grief of All Gods more liberally
+- Fixed Terran AI having impossible requirements for training *Silvertongue**s and **Magnetar**s
 
 ## Bugfixes
-- **The Turning:**
-	- Fixed cancelled units being added to the dead unit pool (c. Veeq7)
-	- Improved performance during all stages of the game (c. Veeq7)
+- **Stability:**
+	- Slightly reduced selection limit (252 » 246) to prevent action buffer instability
+	- Fixed rare crashes at game end (r. TopRamen, c. DF)
 - **Gameplay:**
-	- Significantly improve melee air unit target tracking (c. DF)
-	- Lardfix: Resolve rare ownership jank with Morningstars (c. DF)
+	- Unloading structures is now more generous (still needs work; b. Londier, c. Veeq7)
+	- Units with **Interception** (e.g. **Siren** and **Cataphract**) no longer fail to damage **Larva**e and **Rilirokor**s (r. TheNightFox)
+	- Didact Shroud of Adun is no longer disabled after Recalling (r. GreenEggs'NSpam & Londier)
+	- Melee splash units (and the **Vilgorokor**) no longer deal damage out of sync with their animation (r. Kenoli & Krankendau, a. DF)
+	- When **Axitrilisk**s are reclaimed with no weapon, they now restart the **Perpetual Wind** timer (r. GreenEggs'NSpam & TheNightFox)
+	- Auras from **Azazel**, **Seraph**, **Crucible**, **Barghest**, **Sycophant**, **Manifold**, **Matraleth**, and **Sasyrvoleth** are now deactivated while the unit is stunned (r. Londier)
+	- **Hypnagogue** corpses can now be interacted with (r. GreenEggs'NSpam)
+	- Fixed bad interactions between Tyranny of the Sun and **Aurora** Last Orders
+	- Fixed being able to enter non-mutual ally transports (r. Londier & billy)
+	- Fixed being able to load neutral units into transports
+	- Fixed edge case turn rate issues with **Diadem**s (r. GreenEggs'NSpam)
+	- **Ultrokor**s no longer consume corpses while burrowed (r. Londier)
+	- **Qilin**s no longer fail to continue healing after a single unload (r. Londier)
 - **Audiovisual:**
-	- Fixed improper mineral chunk being used for non-depleted Mineral Field harvests (r. jakulangski)
-	- `celebrations-enabled` config option functionality restored (c. Veeq7)
-	- Added aura displays for **Barghest Repentent Chorus** and **Manifold Concurring Chorus** (r. shopkeeper dog)
-	- **Hypnagogue Through the Looking Glass** tooltip corrected (displayed incorrect range; r. GreenEggs'NSpam)
-	- **Cleric Nanorepair** tooltip corrected (displayed incorrect heal amount)
+	- **Broodspawn** spawning SFX no longer plays globally
+	- **Blackjack**s no longer change facing angle when their sprite changes
+	- Reviving **Centaur**s no longer create permanent explosion graphics (r. beriso)
+	- Preferred player colors now override racial player color bans (r. Wolfmaw)
+	- Resolved 'invalid shield overlay' error for **Tetcaerokor** (r. beriso)
+	- **Fore Castle** shield overlays no longer proc when hit by **Psionic Storm** (r. Londier)
+	- Corrected poor fire placements for the **Biotic Bastion**'s damage overlay
+	- Witness and replay UI is no longer drawn over ingame menus (c. DF)
+
+## Audiovisuals
+- **New unit responses:**
+	- **Ecclesiast**
+	- **Potentate** (script a. BladehollowRWL)
+- **Corpse updates:**
+	- **Phalanx**, tank & siege (a. ArbuzBudesh)
+	- **Gorgrokor** (c. ArbuzBudesh)
+- **Projectile updates:**
+	- **Atreus** (bigger projectile)
 
 ## Terran
-- [Maverick](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/maverick):
-	- HP 50 » 60
-- [Cleric](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cleric):
-	- HP 75 » 80
-	- **Nanorepair:**
-		- Now adds non-stacking +1 armor to affected units; expires after 1 second
-		- *Visual read not yet implemented*
-- [Shaman](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/shaman):
-	- **Nanite Field** ability range 4/8 » 4/6
-- [Savant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/savant):
-	- HP 95 » 110
-	- Armor penetration 2 » 3
-- [Madcap](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/madcap):
-	- Resource costs 125/0 » 100/0
-	- *While Madcaps seem very powerful statistically, it may be safe to make them more spammable. We shall see...*
-- [Heracles](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/heracles):
-	- HP 150 » 180
-- [Striga](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/striga):
-	- HP 120 » 160
-- [Olympian](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/olympian):
-	- HP 180 » 220
-- [Dilettante](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/dilettante):
-	- HP 90 » 110
-- [Vulture](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/vulture):
-	- HP 90 » 100
-	- Movement speed 7.71 » 8.33
-- [Goliath](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/goliath):
-	- HP 200 » 220
-- [Blackjack](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/blackjack):
-	- Armor 2 » 1
-	- **Monogun:**
-		- Weapon cooldown 0.49 » 0.54
-- [Matador](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/matador):
-	- HP 140 » 150
-- [Phalanx](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/phalanx):
-	- HP 200 » 240
-- [Durendal](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/durendal):
-	- HP 225 » 260
-- [Tarasque](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/tarasque):
-	- Build time 32 » 30
-	- Vision range 9 » 8
+- **Reclamation:**
+	- Initial heal for reclaimed units is now granted over 10 seconds, from 3 seconds
+	- Reclaimed specialists begin with 0 energy, from full
+- [Apostle](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/apostle):
+	- **Charon Rifle:**
+		- Weapon damage 1x10 » 1x15
+		- Weapon cooldown 1 » 1.5
+		- Weapon range 5 » 6
+- [Autocrat](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/autocrat):
+	- **Eminence Rifle:**
+		- Weapon cooldown 1.33 » 1.5
+		- Weapon range 6 » 5
+- [Valkyrie](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/valkyrie):
+	- **Halo Rockets:**
+		- Weapon cooldown 1.5 » 1.08
+		- No longer deal splash damage to units owned by an allied player
+- **NEW:** [Harakan (Golden)](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/harakan-golden)
+	- Fast-moving frontliner with plasma shields; trained from the Stockade
+	- Available for the **Golden Republic**
+- [Aspirant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/aspirant):
+	- Mineral cost 175 » 150 
+	- Armor 2 » 3
+	- **Criticality:**
+		- No longer procs on Aspirant death
+		- No longer heals enemies of the Aspirant
+		- Now applies a 2-second debuff to victims, and procs on their death if they die during this debuff
+- [Cohort](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cohort):
+	- **New: Servile Vigor:**
+		- Revives once after death, with a 10-second timed life; consumes a corpse to become permanent again
 
 ## Protoss
-- [Witness](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/witness):
-	- Shields 20 » 40
-	- Movement speed 4.58 » 5.41
-- [Zealot](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/zealot):
-	- HP 120 » 150
-- [Amaranth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/amaranth):
-	- Shields 40 » 60
-- [Herald](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/herald):
-	- HP 120 » 160
-- [Atreus](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/atreus):
-	- HP 150 » 160
-- [Cabalist](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/cabalist):
-	- **Silent Strides**:
-		- After decloaking, the first strike deals 150% damage
-- [Charlatan](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/charlatan):
-	- **Fervent Blaster:**
-		- Weapon range 5 » 6
-		- Splash radii 8/16/24 » 12/24/32
-		- Projectile speed 60 » 90
-		- Projectile acceleration ~300% faster
-- [Pariah](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/pariah):
-	- HP 300 » 400
-- [Sycophant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/sycophant):
-	- HP 100 » 200
-- [Archon](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/archon):
-	- Build time 45 » 30
-- [Optecton](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/optecton):
-	- **Sunsplit Beam:**
-		- Weapon damage 10x10 » 12x12
-		- Weapon range 10 » 12
-- [Manifold](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/manifold):
-	- **Concurring Chorus:**
-		- Effect range 2 » 3
-- [Golem](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/golem):
-	- Shields 60 » 120
-- [Idol](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/idol):
-	- **Prismatic Blaster:**
-		- Weapon damage 1x10 » 2x6
+- [Artisan](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/artisan):
+	- **Neutron Saber:**
 		- Armor penetration 2 » 0
-		- Weapon cooldown 0.92 » 0.71
-- [Servitor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/servitor):
-	- HP 80 » 100
-	- Build time 18 » 15
-- [Positron](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/positron):
-	- Movement speed 4.16 » 5.83
-- [Didact](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/didact):
-	- HP 150 » 200
-- [Steward](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/steward):
-	- HP 70 » 80
-- [Star Sovereign](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/star-sovereign):
-	- Shields 150 » 200
-- [Embassy](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/embassy):
-	- Resource costs 125/75 » 125/50
-- [Rogue Gallery](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/rogue-gallery):
-	- Resource costs 150/100 » 150/75
-	- Build time 50 » 55
-- [Lattice](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/lattice):
-	- Resource costs 150/50 » 150/25
+		- Weapon range 3 » 1
+		- Weapon cooldown 0.92 » 1.08
+- [Golem](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/golem):
+	- **Tranquility Array** now has a third-of-a-second internal cooldown
+- [Lanifect](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/lanifect):
+	- **Neutron Flare:**
+		- No longer deals splash damage to units owned by an allied player
+- [Gladius](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/gladius):
+	- Movement speed 5 » 4.38
+- **NEW:** [Cicatus](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/cicatus):
+	- Nihilistic frontline vandal; warped from the Gateway
+	- Available for the **Starbound**
 
 ## Zerg
-- **Broodspawn**
-	- Incubation procs now complete on unit death (c. Veeq7)
-- [Nathrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/nathrokor):
-	- **Vestigial Strike:**
-		- Weapon damage 1x8 » 1x4
-		- Weapon cooldown 0.83 » 0.75
-	- **Nathrok Claws:**
-		- Weapon damage 2x4 » 2x6
-- [Liiralisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/liiralisk):
-	- Weapon range 6 » 5
-- [Mortothrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/mortothrokor):
-	- HP 180 » 250
-- [Hydralisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/hydralisk):
-	- Movement speed 6.16 » 6.52
-	- Attack windup 4 frames » 2 frames
-- [Izirokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/izirokor):
-	- HP 130 » 160
-- [Skithrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/skithrokor):
-	- Armor 1 » 2
-	- **Skittering Spores:**
-		- Projectile speed 60 » 30
-		- Projectile acceleration now ~50% slower
-- [Tethzorokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/tethzorokor):
-	- HP 180 » 240
-- [Vithrilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/vithrilisk):
-	- HP 180 » 200
-- [Rilirokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/rilirokor) and [Rililisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/rililisk):
-	- **Death Cycle:**
-		- On death and expiry, now applies Ensnare to hostiles within 2 range; lasts 1 second.
-- [Gorgrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/gorgrokor):
-	- HP 220 » 250
-- [Vilgorokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/vilgorokor):
-	- HP 200 » 280
-- [Ultrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/ultrokor):
-	- HP 440 » 500
+- [Gosvileth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/gosvileth):
+	- **Gosvil Spines:**
+		- Armor penetration 2 » 0
+		- Weapon cooldown 0.92 » 1.08
+- [Bactalisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/bactalisk):
+	- **Corrosive Acid:**
+		- Weapon cooldown 1.08 » 1.17
+- **NEW:** [Iziralisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/iziralisk)
+	- Short-range rending assault strain; requires the Hydrith Den
+	- Available for the **Zorthos Tendril**

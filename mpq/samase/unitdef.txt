@@ -31,6 +31,12 @@ building xelnaga_temple = 345
 building warp_gate = 346
 building stasis_cell = 347
 
+# Heroes
+military ackmed = 408
+military goska = 500
+military stroluum = 501
+building tuzor = 502
+
 # Terran factional units
 military cohort = 50
 military luminary = 150
@@ -40,14 +46,20 @@ military philoc = 328
 military hotshot = 395
 military qilin = 398
 military auriel = 399
+military cyclops_futurist = 410
+military harakan_golden = 413
 
 # Protoss factional units
 military adherent = 400
 military extatus = 401
+military zealot_starbound = 411
+military ecclesiast_khalendric = 412
+military cicatus = 414
 
 # Zerg factional units
 military nathrelisk = 402
 military iziralisk = 403
+military iziralisk = 415
 
 # Terran military units
 military maverick = 0
@@ -166,6 +178,7 @@ building parthenon = 288
 building iron_council = 295
 building amphitheater = 296
 building throneroom = 299
+building tencendur = 408
 
 # Protoss military units
 military lanifect = 60
@@ -329,6 +342,7 @@ military oztukrokor = 325
 military kethrostalor = 326
 military rakzilisk = 327
 military sasyrvoleth = 407
+military skryrokor = 503
 
 # Zerg misc
 military larva = 35

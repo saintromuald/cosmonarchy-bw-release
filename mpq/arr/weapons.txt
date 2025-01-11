@@ -218,9 +218,9 @@ Angeltear Rockets (Salamander)
 Brontes Payload (Cyclops)
 Flak Cannons (Cyclops Futurist)
 Sensory Overload (Vibrance)
-Extended Weapon #91
-Extended Weapon #92
-Extended Weapon #93
+Flamethrower (Harakan, Golden)
+Corrosive Bioplasma (Iziralisk)
+Phase Claws (Cicatus)
 Extended Weapon #94
 Extended Weapon #95
 Extended Weapon #96

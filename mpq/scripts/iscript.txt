@@ -22707,7 +22707,7 @@ GorgrokorDeath:
 	playsnd           	852	# Zerg\Guardian\ZGuDth00.WAV
 	imgol             	28 0 0 # Geszithalor Death (zerg\zguDeath.grp)
 	wait              	1
-	lowsprul			186 0 42 # Zerg Building Rubble Small
+	lowsprul			963 0 42 # Zerg Building Rubble Small
 	wait              	1
 	end
 
@@ -23197,7 +23197,7 @@ CentaurUnused1:
 	wait				1
 	nobrkcodestart
 	playsndbtwn			2024 2026 # Centaur death 01, 02, 03
-	sprol				744 0 0
+	imgol				1443 0 0
 	wait				7
 	playsndbtwn			2024 2026 # Centaur death 01, 02, 03
 	imgol				334 5 5
@@ -29533,31 +29533,31 @@ AirAttkInit   	[NONE]
 
 MaelstromProjectileInit:
 	playsnd           	99	# Bullet\DragBull.wav
-	wait              	1 
-	sigorder          	1 
-	wait              	1 
+	wait              	1
+	sigorder          	1
+	wait              	1
 MaelstromProjectileGndAttkInit:
-	playfram          	0x00	# Frame set 0
-	wait              	1 
-	playfram          	1	# Frame set 0, direction 1
-	wait              	1 
-	playfram          	2	# Frame set 0, direction 2
-	wait              	1 
-	playfram          	3	# Frame set 0, direction 3
-	wait              	1 
+	playfram          	0x00
+	wait              	1
+	playfram          	1
+	wait              	1
+	playfram          	2
+	wait              	1
+	playfram          	3
+	wait              	1
 	playfram			4
-	wait              	1 
+	wait              	1
 	playfram			5
-	wait              	1 
+	wait              	1
 	playfram			6
-	wait              	1 
+	wait              	1
 	playfram			7
 	wait				1
 	goto              	MaelstromProjectileGndAttkInit
 
 MaelstromProjectileDeath:
 	domissiledmg
-	wait              	1 
+	wait              	1
 	end
 	
 # ----------------------------------------------------------------------------- #
@@ -33721,10 +33721,10 @@ Type          	12
 Init          	HeraclesInit
 Death         	HeraclesDeath
 GndAttkInit   	HeraclesGndAttkInit
-AirAttkInit   	HeraclesAirAttkInit
+AirAttkInit   	HeraclesGndAttkInit
 Unused1       	HeraclesUnused1
 GndAttkRpt    	HeraclesGndAttkInit
-AirAttkRpt    	HeraclesAirAttkInit
+AirAttkRpt    	HeraclesGndAttkInit
 CastSpell     	[NONE]
 GndAttkToIdle 	HeraclesGndAttkToIdle
 AirAttkToIdle 	HeraclesGndAttkToIdle
@@ -33778,47 +33778,31 @@ HeraclesGndAttkToIdle:
 	playfram			0xbb
 	goto              	HeraclesWalkingToIdle
 
-HeraclesAirAttkInit:
-	playfram          	0xbb
-	wait              	1
-	nobrkcodestart
-	playfram			0x99
-	playsndbtwn			1369 1371
-	attack
-	wait              	1
-	playfram			0xaa
-	wait				1
-	playfram			0xbb
-	nobrkcodeend
-	gotorepeatattk
-	ignorerest
-	goto              	HeraclesWalkingToIdle
-
 HeraclesWalking:
-	move              	4 
-	wait              	1 
-	playfram          	0x11	# Frame set 1
-	move              	4 
-	wait              	1 
-	playfram          	0x22	# Frame set 2
-	move              	4 
-	wait              	1 
-	playfram          	0x33	# Frame set 3
-	move              	4 
-	wait              	1 
-	playfram          	0x44	# Frame set 4
-	move              	4 
-	wait              	1 
-	playfram          	0x55	# Frame set 5
-	move              	4 
-	wait              	1 
-	playfram          	0x66	# Frame set 6
-	move              	4 
-	wait              	1 
-	playfram          	0x77	# Frame set 7
-	move              	4 
-	wait              	1 
-	playfram          	0x88	# Frame set 8
+	move              	4
+	wait              	1
+	playfram          	0x11
+	move              	4
+	wait              	1
+	playfram          	0x22
+	move              	4
+	wait              	1
+	playfram          	0x33
+	move              	4
+	wait              	1
+	playfram          	0x44
+	move              	4
+	wait              	1
+	playfram          	0x55
+	move              	4
+	wait              	1
+	playfram          	0x66
+	move              	4
+	wait              	1
+	playfram          	0x77
+	move              	4
+	wait              	1
+	playfram          	0x88
 	goto              	HeraclesWalking
 	
 # ----------------------------------------------------------------------------- #
@@ -34222,11 +34206,11 @@ IsId          	569
 Type          	21
 Init          	ClarionInit
 Death         	ClarionDeath
-GndAttkInit   	ClarionGndAttkInit
-AirAttkInit   	ClarionGndAttkInit
+GndAttkInit   	ClarionGndAttkToIdle
+AirAttkInit   	ClarionGndAttkToIdle
 Unused1       	[NONE]
-GndAttkRpt    	ClarionGndAttkRpt
-AirAttkRpt    	ClarionGndAttkRpt
+GndAttkRpt    	ClarionGndAttkToIdle
+AirAttkRpt    	ClarionGndAttkToIdle
 CastSpell     	[NONE]
 GndAttkToIdle 	ClarionGndAttkToIdle
 AirAttkToIdle 	ClarionGndAttkToIdle
@@ -34292,18 +34276,6 @@ ClarionDeath:
 	lowsprul			847 0 42 # Protoss Unit Rubble Small
 	wait              	1
 	end
-
-ClarionGndAttkInit:
-	playfram          	0x00
-ClarionGndAttkRpt:
-	wait              	1
-	nobrkcodestart
-	playsnd           	66 # Bullet\HKMISSLE.wav
-	attackwith        	1
-	wait              	1
-	nobrkcodeend
-	gotorepeatattk
-	goto              	ScourgeLocal00
 
 ClarionWalking:
 	playfram          	0x00
@@ -34599,13 +34571,13 @@ Type          	26
 Init          	CohortInit
 Death         	CohortDeath
 GndAttkInit   	CohortGndAttkInit
-AirAttkInit   	CohortAirAttkInit
+AirAttkInit   	CohortGndAttkInit
 Unused1       	CohortUnused1
 GndAttkRpt    	CohortGndAttkRpt
-AirAttkRpt    	CohortAirAttkRpt
+AirAttkRpt    	CohortGndAttkRpt
 CastSpell     	[NONE]
 GndAttkToIdle 	CohortGndAttkToIdle
-AirAttkToIdle 	CohortAirAttkToIdle
+AirAttkToIdle 	CohortGndAttkToIdle
 Unused2       	[NONE]
 Walking       	CohortWalking
 WalkingToIdle 	CohortWalkingToIdle
@@ -34770,36 +34742,6 @@ CohortGndAttkRpt:
 	gotorepeatattk
 	ignorerest
 CohortGndAttkToIdle:
-	playfram          	0x11
-	wait              	1
-	playfram          	0x00
-	wait              	1
-	goto              	CohortWalkingToIdle
-
-CohortAirAttkInit:
-	playfram          	0x00
-	wait              	1
-	playfram          	0x11
-	wait              	1
-	playfram          	0x22
-CohortAirAttkRpt:
-	wait              	1
-	nobrkcodestart
-	playsndbtwn       	1402 1404 # Cohort weapon fire 01, 02, 03
-	attackwith        	1
-	playfram          	0x33
-	wait              	1
-	playfram          	0x22
-	wait              	1
-	attackwith        	1
-	playfram          	0x33
-	wait              	1
-	playfram          	0x22
-	wait              	1
-	nobrkcodeend
-	gotorepeatattk
-	ignorerest
-CohortAirAttkToIdle:
 	playfram          	0x11
 	wait              	1
 	playfram          	0x00
@@ -37347,13 +37289,13 @@ Type          	12
 Init          	AutocratInit
 Death         	AutocratDeath
 GndAttkInit   	AutocratGndAttkInit
-AirAttkInit   	AutocratAirAttkInit
+AirAttkInit   	AutocratGndAttkInit
 Unused1       	[NONE]
 GndAttkRpt    	AutocratGndAttkRpt
-AirAttkRpt    	AutocratAirAttkRpt
+AirAttkRpt    	AutocratGndAttkRpt
 CastSpell     	[NONE]
 GndAttkToIdle 	AutocratGndAttkToIdle
-AirAttkToIdle 	AutocratAirAttkToIdle
+AirAttkToIdle 	AutocratGndAttkToIdle
 Unused2       	[NONE]
 Walking       	AutocratWalking
 WalkingToIdle 	AutocratWalkingToIdle
@@ -37449,24 +37391,6 @@ AutocratGndAttkRpt:
 AutocratGndAttkToIdle:
 	playfram          	0x00
 	wait              	1 
-	goto              	AutocratWalkingToIdle
-
-AutocratAirAttkInit:
-	playfram          	0xaa
-AutocratAirAttkRpt:
-	wait              	1
-	nobrkcodestart
-	playsndbtwn			1474 1478
-	attack
-	playfram          	0x99
-	wait              	1
-	playfram          	0xaa
-	nobrkcodeend
-	gotorepeatattk
-	ignorerest
-AutocratAirAttkToIdle:
-	playfram          	0x00
-	wait              	1
 	goto              	AutocratWalkingToIdle
 
 AutocratWalking:
@@ -38016,10 +37940,10 @@ Type          	21
 Init          	AnthelionInit
 Death         	AnthelionDeath
 GndAttkInit   	AnthelionGndAttkInit
-AirAttkInit   	AnthelionAirAttkInit
+AirAttkInit   	AnthelionGndAttkInit
 Unused1       	[NONE]
 GndAttkRpt    	AnthelionGndAttkInit
-AirAttkRpt    	AnthelionAirAttkInit
+AirAttkRpt    	AnthelionGndAttkInit
 CastSpell     	[NONE]
 GndAttkToIdle 	AnthelionGndAttkToIdle
 AirAttkToIdle 	AnthelionGndAttkToIdle
@@ -38109,7 +38033,6 @@ AnthelionDeath:
 	end
 
 AnthelionGndAttkInit:
-	#playsndbtwn       	1227 1230
 	attackwith        	1 
 	attackwith        	1 
 	wait              	2
@@ -38118,14 +38041,6 @@ AnthelionGndAttkInit:
 
 AnthelionLocal00:
 	wait              	125 
-	goto              	AnthelionGndAttkToIdle
-
-AnthelionAirAttkInit:
-	#playsndbtwn       	1227 1230
-	attackwith        	1 
-	attackwith        	1 
-	wait              	2
-	gotorepeatattk
 	goto              	AnthelionGndAttkToIdle
 
 AnthelionWalking:
@@ -38184,10 +38099,10 @@ Type          	12
 Init          	AnticthonInit
 Death         	AnticthonDeath
 GndAttkInit   	AnticthonGndAttkInit
-AirAttkInit   	AnticthonAirAttkInit
+AirAttkInit   	AnticthonGndAttkInit
 Unused1       	AnticthonUnused1
 GndAttkRpt    	AnticthonGndAttkInit
-AirAttkRpt    	AnticthonAirAttkInit
+AirAttkRpt    	AnticthonGndAttkInit
 CastSpell     	[NONE]
 GndAttkToIdle 	AnticthonGndAttkToIdle
 AirAttkToIdle 	AnticthonGndAttkToIdle
@@ -38249,14 +38164,6 @@ AnticthonUnused1:
 	goto				AnticthonGndAttkToIdle
 
 AnticthonGndAttkInit:
-	playsndbtwn       	1634 1636 # Anticthon weapon fire 01, 02, 03
-	attackwith        	1 
-	imgol				978 0 0 # Anticthon/Anthelion weaponfire
-	wait              	1
-	gotorepeatattk
-	goto              	AnticthonGndAttkToIdle
-	
-AnticthonAirAttkInit:
 	playsndbtwn       	1634 1636 # Anticthon weapon fire 01, 02, 03
 	attackwith        	1 
 	imgol				978 0 0 # Anticthon/Anthelion weaponfire
@@ -38692,10 +38599,10 @@ Type          	21
 Init          	EmpressInit
 Death         	EmpressDeath
 GndAttkInit   	EmpressGndAttkInit
-AirAttkInit   	EmpressAirAttkInit
+AirAttkInit   	EmpressGndAttkInit
 Unused1       	[NONE]
 GndAttkRpt    	EmpressGndAttkInit
-AirAttkRpt    	EmpressAirAttkInit
+AirAttkRpt    	EmpressGndAttkInit
 CastSpell     	[NONE]
 GndAttkToIdle 	EmpressGndAttkToIdle
 AirAttkToIdle 	EmpressGndAttkToIdle
@@ -38738,16 +38645,6 @@ EmpressDeath:
 	end
 
 EmpressGndAttkInit:
-	wait              	1 
-	nobrkcodestart
-	playsndbtwn       	1781 1783 # Empress weapon fire 01, 02, 03
-	attackwith        	1 
-	wait              	2
-	nobrkcodeend
-	gotorepeatattk
-	goto              	EmpressGndAttkToIdle
-
-EmpressAirAttkInit:
 	wait              	1 
 	nobrkcodestart
 	playsndbtwn       	1781 1783 # Empress weapon fire 01, 02, 03
@@ -45221,11 +45118,11 @@ IsId          	700
 Type          	12
 Init          	AzazelInit
 Death         	AzazelDeath
-GndAttkInit   	AzazelGndAttkInit
-AirAttkInit   	AzazelGndAttkInit
+GndAttkInit   	AzazelGndAttkToIdle
+AirAttkInit   	AzazelGndAttkToIdle
 Unused1       	[NONE]
-GndAttkRpt    	AzazelGndAttkInit
-AirAttkRpt    	AzazelGndAttkInit
+GndAttkRpt    	AzazelGndAttkToIdle
+AirAttkRpt    	AzazelGndAttkToIdle
 CastSpell     	AzazelCastSpell
 GndAttkToIdle 	AzazelGndAttkToIdle
 AirAttkToIdle 	AzazelGndAttkToIdle
@@ -45259,12 +45156,6 @@ AzazelDeath:
 	lowsprul			844 0 42 # Terran Unit Rubble Medium
 	wait              	1
 	end
-
-AzazelGndAttkInit:
-	wait              	1
-	attack
-	gotorepeatattk
-	goto              	AzazelLocal00
 
 AzazelLocal00:
 	wait              	125
@@ -51877,7 +51768,7 @@ AckmedInit:
 .headerstart
 IsId          	795
 Type          	13
-Init          	LiiraliskGlaveInit
+Init          	GlaveWurmInit
 Death         	LiiraliskGlaveDeath
 GndAttkInit   	GlaveWurmGndAttkInit
 AirAttkInit   	[NONE]
@@ -51893,13 +51784,6 @@ WalkingToIdle 	[NONE]
 SpecialState1 	LiiraliskGlaveSpecialState1
 .headerend
 # ----------------------------------------------------------------------------- #
-
-LiiraliskGlaveInit:
-	playfram          	0x00
-	wait              	1
-	sigorder          	1
-	wait              	1
-	goto				GlaveWurmGndAttkInit
 
 LiiraliskGlaveDeath:
 	playsnd           	93 # Bullet\ZQuHit02.wav
@@ -52021,5 +51905,86 @@ SpecialState1 	[NONE]
 #	playfram          	0x00
 #	wait				2
 #	goto				AnalogueGndAttkToIdle
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1960 White Circle Instant (bullet\circle14.grp)
+.headerstart
+IsId          	799
+Type          	2
+Init          	WhiteCircleInstantInit
+Death         	WhiteCircleInstantDeath
+GndAttkInit   	WhiteCircleInstantDeath
+AirAttkInit   	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+WhiteCircleInstantInit:
+	wait              	1
+	sigorder          	1
+	wait              	1
+WhiteCircleInstantDeath:
+	playfram          	0x00
+	wait              	1
+	domissiledmg
+	wait              	1
+	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1958 Cicatus (cm\faction-p\cicatus.grp)
+.headerstart
+IsId          	800
+Type          	21
+Init          	CicatusInit
+Death         	LegionnaireDeath
+GndAttkInit   	CicatusGndAttkInit
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	CicatusGndAttkRpt
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	LegionnaireGndAttkToIdle
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	LegionnaireWalking
+WalkingToIdle 	LegionnaireWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	LegionnaireWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+CicatusInit:
+	imgul             	1959 0 0 # Cicatus Shadow (cm\faction-p\cicatus-shadow.grp)
+	goto				HarakanWalkingToIdle
 	
-## Next free IsId: 799
+CicatusGndAttkInit:
+	playfram          	0x100
+CicatusGndAttkRpt:
+	playfram          	0x100
+	nobrkcodestart
+	wait              	1
+	playsnd				1896 # Legionnaire weapon fire 01
+	playfram          	0x120
+	attackmelee       	1 1897 # Legionnaire weapon hit 01
+	wait              	1
+	playfram          	0x140
+	attackmelee       	1 1897 # Legionnaire weapon hit 01
+	wait              	1
+	playfram          	0x160
+	wait              	1
+	nobrkcodeend
+	playfram          	0x120
+	wait              	1
+	gotorepeatattk
+	ignorerest
+	goto				LegionnaireGndAttkToIdle
+	
+## Next free IsId: 801

@@ -3240,30 +3240,30 @@ Zerg Construction Start 01
 Broodspawn Overlay Proc
 Terran Construction End 01
 Terran Construction Start 01
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Broodspawn Spawn Proc
+Potentate Ready 01
+Potentate Ready 02
+Potentate Ready 03
+Potentate Selected 01
+Potentate Selected 02
+Potentate Selected 03
+Potentate Selected 04
+Potentate Order Passive 01
+Potentate Order Passive 02
+Potentate Order Passive 03
+Potentate Order Passive 04
+Potentate Order Aggressive 01
+Potentate Order Aggressive 02
+Potentate Order Aggressive 03
+Potentate Order Aggressive 04
+Potentate Under Attack 01
+Potentate Under Attack 02
+Potentate Under Attack 03
+Potentate Under Attack 04
+Potentate Banter 01
+Potentate Banter 02
+Potentate Banter 03
+Potentate Banter 04
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1
