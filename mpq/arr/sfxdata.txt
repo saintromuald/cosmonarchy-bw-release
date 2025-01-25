@@ -614,7 +614,7 @@ Protoss\PROBE\PPrYes02.WAV
 Protoss\PROBE\PPrYes03.WAV
 Protoss\INTERCEP\PInLau00.WAV
 Protoss\PROBE\PPrPss00.WAV (2)
-Protoss\TEMPLAR\PTeSum00.WAV (1)
+Steward Launch 01
 Protoss\TEMPLAR\PTeSum00.WAV (2)
 Protoss\TEMPLAR\PTeHal00.WAV
 Protoss\TEMPLAR\PTeHal01.WAV

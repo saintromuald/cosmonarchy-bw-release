@@ -59,7 +59,7 @@ military cicatus = 414
 # Zerg factional units
 military nathrelisk = 402
 military iziralisk = 403
-military iziralisk = 415
+military inzorthrokor = 415
 
 # Terran military units
 military maverick = 0

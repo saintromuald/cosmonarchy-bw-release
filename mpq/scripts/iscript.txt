@@ -11318,12 +11318,12 @@ ZealotGndAttkRpt:
 	playfram          	0x33
 	wait              	1
 	playfram          	0x44
-	attackmelee       	1 664 # Protoss\ZEALOT\pzeHit00.WAV
+	attackmelee       	1 0
 	wait              	1
 	playfram          	0x33
 	wait              	1
 	playfram          	0x22
-	attackmelee       	1 664 # Protoss\ZEALOT\pzeHit00.WAV
+	attackmelee       	1 0
 	wait              	1
 	playfram          	0x11
 	wait              	1
@@ -25949,26 +25949,24 @@ IsId          	463
 Type          	12
 Init          	ApostleInit
 Death         	ApostleDeath
-GndAttkInit   	ApostleGndAttkInit
-AirAttkInit   	ApostleGndAttkInit
+GndAttkInit   	MadcapGndAttkInit
+AirAttkInit   	MadcapGndAttkInit
 Unused1       	[NONE]
-GndAttkRpt    	ApostleGndAttkRpt
-AirAttkRpt    	ApostleGndAttkRpt
+GndAttkRpt    	MadcapGndAttkRpt
+AirAttkRpt    	MadcapGndAttkRpt
 CastSpell     	[NONE]
-GndAttkToIdle 	ApostleGndAttkToIdle
-AirAttkToIdle 	ApostleGndAttkToIdle
+GndAttkToIdle 	MadcapGndAttkToIdle
+AirAttkToIdle 	MadcapGndAttkToIdle
 Unused2       	[NONE]
-Walking       	ApostleWalking
-WalkingToIdle 	ApostleWalkingToIdle
+Walking       	MadcapWalking
+WalkingToIdle 	MadcapWalkingToIdle
 SpecialState1 	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
 ApostleInit:
 	imgul             	1118 0 4 # Apostle Shadow (cm\terran\apostle-shad.grp)
-ApostleWalkingToIdle:
-	playfram          	0x00
-	goto              	ScourgeLocal00
+	goto				MadcapWalkingToIdle
 
 ApostleDeath:
 	playsnd           	1301 # Apostle death 01
@@ -25979,60 +25977,6 @@ ApostleDeath:
 	lowsprul          	565 0 0	# Apostle Remnants (cm\terran\apostle-death.grp)
 	wait              	1 
 	end
-
-ApostleGndAttkInit:
-	playfram          	0x100
-	wait				1
-	playfram			0x120
-	wait				1
-	playfram			0x140
-ApostleGndAttkRpt:
-	wait				1
-	nobrkcodestart
-	playsndbtwn			2783 2787 # Apostle weaponfire 01, 02, 03, 04, 05
-	attack
-	playfram          	0x1A0
-	wait              	1
-	playfram          	0x180
-	wait				1
-	playfram          	0x1A0
-	wait              	1
-	playfram          	0x180
-	nobrkcodeend
-	gotorepeatattk
-	ignorerest
-ApostleGndAttkToIdle:
-	playfram          	0x140
-	wait				1
-	playfram			0x120
-	wait				1
-	playfram			0x100
-	wait				1
-	goto              	ApostleWalkingToIdle
-
-ApostleWalking:
-	playfram          	0x40
-	move              	4
-	wait              	1
-	playfram          	0x60
-	move              	4
-	wait              	1
-	playfram          	0x80
-	move              	4
-	wait              	1
-	playfram          	0xA0
-	move              	4
-	wait              	1
-	playfram          	0xC0
-	move              	4
-	wait              	1
-	playfram          	0xE0
-	move              	4
-	wait              	1
-	playfram          	0x20
-	move              	4
-	wait              	1
-	goto              	ApostleWalking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -26854,7 +26798,7 @@ VassalGndAttkInit:
 	wait				1
 	nobrkcodestart
 	playfram			0x20
-	playsndbtwn			1217 1221
+	playsndbtwn			1217 1221 # Vassal weaponfire 01, 02, 03, 04, 05
 	attackwith        	1
 	wait				1
 	playfram			0x00
@@ -26921,7 +26865,6 @@ MadcapGndAttkInit:
 MadcapGndAttkRpt:
 	wait				1
 	nobrkcodestart
-	playsndbtwn			1212 1216 # Madcap weaponfire 01, 02, 03, 04, 05
 	attack
 	playfram          	0x1A0
 	wait              	1
@@ -28392,7 +28335,6 @@ EcclesiastGndAttkInit:
 EcclesiastGndAttkRpt:
 	wait				1
 	nobrkcodestart
-	playsndbtwn			1362 1366 # Ecclesiast attack 01, 02, 03, 04, 05
 	attackwith        	1
 	playfram          	0x1A0
 	wait				1
@@ -28541,11 +28483,11 @@ Unused1       	[NONE]
 GndAttkRpt    	GolemGndAttkInit
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
-GndAttkToIdle 	GolemGndAttkToIdle
+GndAttkToIdle 	LegionnaireGndAttkToIdle
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
-Walking       	GolemWalking
-WalkingToIdle 	GolemWalkingToIdle
+Walking       	LegionnaireWalking
+WalkingToIdle 	MadcapWalkingToIdle
 SpecialState1 	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
@@ -28554,16 +28496,6 @@ GolemInit:
 	imgul             	1185 0 0 # Golem Shadow (golem-shad.grp)
 	playfram          	0x00
 	goto				ScourgeLocal00
-	
-GolemGndAttkToIdle:
-	playfram			0x99
-	wait				1
-	playfram          	0x00
-	goto              	ScourgeLocal00
-
-GolemWalkingToIdle:
-	playfram			0x00
-	goto              	ScourgeLocal00
 
 GolemDeath:
 	playsnd           	533	# Protoss\Scout\PScDth00.WAV
@@ -28574,58 +28506,29 @@ GolemDeath:
 	end
 
 GolemGndAttkInit:
-	playfram          	0x99
+	playfram          	0x100
+GolemGndAttkRpt:
+	playfram          	0x100
 	wait              	1
 	nobrkcodestart
 	playsndbtwn			1937 1938 # Golem weaponfire 01, 02
 	attackwith 			1
-	playfram          	0xaa
+	playfram          	0x120
 	wait              	1
-	playfram          	0xbb
+	playfram          	0x140
 	attackwith 			1
 	playsnd				664 # Protoss\ZEALOT\pzeHit00.WAV
 	wait              	1
-	playfram          	0xcc
+	playfram          	0x160
 	wait              	1
-	playfram			0xdd
+	playfram			0x140
 	wait				1
-	playfram			0xee
+	playfram			0x120
 	playsnd				664 # Protoss\ZEALOT\pzeHit00.WAV
-	wait				1
-	playfram			0xff
-	wait				1
-	playfram			0x110
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
-	goto              	GolemGndAttkToIdle
-
-GolemWalking:
-	move              	5
-	wait              	1
-	playfram          	0x11
-	move              	5
-	wait              	1
-	playfram          	0x22
-	move              	5
-	wait              	1
-	playfram          	0x33
-	move              	5
-	wait              	1
-	playfram          	0x44
-	move              	5
-	wait              	1
-	playfram          	0x55
-	move              	5
-	wait              	1
-	playfram          	0x66
-	move              	5
-	wait              	1
-	playfram          	0x77
-	move              	5
-	wait              	1
-	playfram          	0x88
-	goto              	GolemWalking
+	goto              	LegionnaireGndAttkToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -33157,7 +33060,7 @@ LarvoskCesiantLocal00:
 	playfram          	2
 	wait              	2
 	playfram          	3
-	wait              	2
+	wait              	4
 	playfram			2
 	wait              	2
 	playfram			1
@@ -34334,7 +34237,7 @@ GndAttkToIdle 	LegionnaireGndAttkToIdle
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
 Walking       	LegionnaireWalking
-WalkingToIdle 	LegionnaireWalkingToIdle
+WalkingToIdle 	MadcapWalkingToIdle
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
@@ -34349,9 +34252,7 @@ WarpIn        	LegionnaireWarpIn
 
 LegionnaireInit:
 	imgul             	1339 0 0 # Legionnaire Shadow (cm\protoss\legionnaire-shad.grp)
-LegionnaireWalkingToIdle:
-	playfram          	0x00
-	goto				ScourgeLocal00
+	goto				MadcapWalkingToIdle
 
 LegionnaireDeath:
 	playsnd           	678	# Protoss\ZEALOT\PZeDth00.WAV
@@ -34383,7 +34284,7 @@ LegionnaireGndAttkRpt:
 LegionnaireGndAttkToIdle:
 	playfram			0x100
 	wait				1
-	goto              	LegionnaireWalkingToIdle
+	goto              	MadcapWalkingToIdle
 
 LegionnaireWalking:
 	move              	4
@@ -36172,11 +36073,11 @@ IsId          	587
 Type          	21
 Init          	CharlatanInit
 Death         	EcclesiastDeath
-GndAttkInit   	CharlatanGndAttkInit
-AirAttkInit   	CharlatanGndAttkInit
+GndAttkInit   	EcclesiastGndAttkInit
+AirAttkInit   	EcclesiastGndAttkInit
 Unused1       	EcclesiastUnused1
-GndAttkRpt    	CharlatanGndAttkRpt
-AirAttkRpt    	CharlatanGndAttkRpt
+GndAttkRpt    	EcclesiastGndAttkRpt
+AirAttkRpt    	EcclesiastGndAttkRpt
 CastSpell     	[NONE]
 GndAttkToIdle 	EcclesiastGndAttkToIdle
 AirAttkToIdle 	EcclesiastGndAttkToIdle
@@ -36198,29 +36099,6 @@ WarpIn        	EcclesiastWarpIn
 CharlatanInit:
 	imgul             	1172 0 0 # Charlatan Shadow (cm\protoss\charlatan-shad.grp)
 	goto				InfestedTerranWalkingToIdle
-	
-CharlatanGndAttkInit:
-	playfram          	0x120
-	wait              	1
-	playfram          	0x140
-	wait              	1
-	playfram          	0x160
-	wait              	1
-	playfram          	0x180
-	goto              	CharlatanGndAttkRpt
-CharlatanGndAttkRpt:
-	wait				1
-	nobrkcodestart
-	playsndbtwn			1603 1605 # Charlatan weapon fire 01, 02, 03
-	attackwith        	1
-	playfram          	0x1A0
-	wait				1
-	playfram          	0x180
-	wait				1
-	nobrkcodeend
-	gotorepeatattk
-	ignorerest
-	goto				EcclesiastGndAttkToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -43364,14 +43242,14 @@ Init          	VagrantInit
 Death         	VagrantDeath
 GndAttkInit   	VagrantGndAttkInit
 AirAttkInit   	VagrantGndAttkInit
-Unused1       	VagrantUnused1
+Unused1       	EcclesiastUnused1
 GndAttkRpt    	VagrantGndAttkRpt
 AirAttkRpt    	VagrantGndAttkRpt
 CastSpell     	[NONE]
-GndAttkToIdle 	VagrantGndAttkToIdle
-AirAttkToIdle 	VagrantGndAttkToIdle
+GndAttkToIdle 	EcclesiastGndAttkToIdle
+AirAttkToIdle 	EcclesiastGndAttkToIdle
 Unused2       	[NONE]
-Walking       	VagrantWalking
+Walking       	EcclesiastWalking
 WalkingToIdle 	InfestedTerranWalkingToIdle
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
@@ -43388,19 +43266,6 @@ WarpIn        	VagrantWarpIn
 VagrantInit:
 	imgul             	1277 0 -2 # Vagrant Shadow (cm\protoss\vagrant-shad.grp)
 	goto				InfestedTerranWalkingToIdle
-	
-VagrantGndAttkToIdle:
-	playfram          	0x180
-	wait              	1
-	playfram          	0x160
-	wait              	1
-	playfram          	0x140
-	wait              	1
-	playfram          	0x120
-	wait              	1
-	playfram 			0x00
-	wait 				1
-	goto              	ScourgeLocal00
 
 VagrantDeath:
 	playsnd           	635	# Protoss\TEMPLAR\PTeDth00.WAV
@@ -43409,17 +43274,6 @@ VagrantDeath:
 	lowsprul			847 0 0 # Protoss Unit Rubble Small
 	wait              	1
 	end
-	
-VagrantUnused1:
-	wait				1
-	nobrkcodestart
-	setfldirect       	0
-	playsnd				1186 # Cantavis revive 01
-	imgol             	1445 0 0 # Zealot death reversed
-	wait				12
-	setfldirect       	12
-	nobrkcodeend
-	goto				InfestedTerranWalkingToIdle
 
 VagrantGndAttkInit:
 	playfram          	0x120
@@ -43440,34 +43294,7 @@ VagrantGndAttkRpt:
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
-	goto				VagrantGndAttkToIdle
-
-VagrantWalking:
-	move              	5
-	wait              	1
-	playfram          	0x100
-	move              	5
-	wait              	1
-	playfram          	0x20
-	move              	5
-	wait              	1
-	playfram          	0x40
-	move              	5
-	wait              	1
-	playfram          	0x60
-	move              	5
-	wait              	1
-	playfram          	0x80
-	move              	5
-	wait              	1
-	playfram          	0xA0
-	move              	5
-	wait              	1
-	playfram          	0xC0
-	move              	5
-	wait              	1
-	playfram          	0xE0
-	goto				VagrantWalking
+	goto				EcclesiastGndAttkToIdle
 
 VagrantWarpIn:
 	imgol             	128 0 0	# Cantavis Warp Flash (protoss\templar.grp)
@@ -49384,14 +49211,14 @@ Init          	PotentateInit
 Death         	PotentateDeath
 GndAttkInit   	PotentateGndAttkInit
 AirAttkInit   	PotentateGndAttkInit
-Unused1       	PotentateUnused1
+Unused1       	EcclesiastUnused1
 GndAttkRpt    	PotentateGndAttkRpt
 AirAttkRpt    	PotentateGndAttkRpt
 CastSpell     	[NONE]
-GndAttkToIdle 	PotentateGndAttkToIdle
-AirAttkToIdle 	PotentateGndAttkToIdle
+GndAttkToIdle 	EcclesiastGndAttkToIdle
+AirAttkToIdle 	EcclesiastGndAttkToIdle
 Unused2       	[NONE]
-Walking       	PotentateWalking
+Walking       	EcclesiastWalking
 WalkingToIdle 	InfestedTerranWalkingToIdle
 SpecialState1 	PotentateMeleeAttkRpt
 SpecialState2 	[NONE]
@@ -49408,17 +49235,6 @@ WarpIn        	PotentateWarpIn
 PotentateInit:
 	imgul             	1172 0 0 # Potentate Shadow (cm\protoss\potentate-shad.grp)
 	goto				InfestedTerranWalkingToIdle
-	
-PotentateGndAttkToIdle:
-	playfram          	0x180
-	wait              	1
-	playfram          	0x160
-	wait              	1
-	playfram          	0x140
-	wait              	1
-	playfram          	0x120
-	wait              	1
-	goto				InfestedTerranWalkingToIdle
 
 PotentateDeath:
 	playsnd           	635 # Protoss\TEMPLAR\PTeDth00.WAV
@@ -49427,17 +49243,6 @@ PotentateDeath:
 	lowsprul			818 0 0 # Potentate Remains
 	wait				1
 	end
-	
-PotentateUnused1:
-	wait				1
-	nobrkcodestart
-	setfldirect       	0
-	playsnd				1186 # Cantavis revive 01
-	imgol             	1445 0 0 # Zealot death reversed
-	wait				12
-	setfldirect       	12
-	nobrkcodeend
-	goto				InfestedTerranWalkingToIdle
 
 PotentateGndAttkInit:
 	sigorder			32
@@ -49462,7 +49267,7 @@ PotentateGndAttkRpt:
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
-	goto				PotentateGndAttkToIdle
+	goto				EcclesiastGndAttkToIdle
 
 PotentateMeleeAttkRpt:
 	playfram			0x1C0
@@ -49483,33 +49288,6 @@ PotentateMeleeAttkRpt:
 	gotorepeatattk
 	ignorerest
 	goto				InfestedTerranWalkingToIdle
-
-PotentateWalking:
-	move              	5
-	wait              	1
-	playfram          	0x100
-	move              	5
-	wait              	1
-	playfram          	0x20
-	move              	5
-	wait              	1
-	playfram          	0x40
-	move              	5
-	wait              	1
-	playfram          	0x60
-	move              	5
-	wait              	1
-	playfram          	0x80
-	move              	5
-	wait              	1
-	playfram          	0xA0
-	move              	5
-	wait              	1
-	playfram          	0xC0
-	move              	5
-	wait              	1
-	playfram          	0xE0
-	goto				PotentateWalking
 
 PotentateWarpIn:
 	imgol             	128 0 0	# Cantavis Warp Flash (protoss\templar.grp)
@@ -49822,11 +49600,11 @@ IsId          	764
 Type          	12
 Init          	HotshotInit
 Death         	MadcapDeath
-GndAttkInit   	HotshotGndAttkInit
-AirAttkInit   	HotshotGndAttkInit
+GndAttkInit   	MadcapGndAttkInit
+AirAttkInit   	MadcapGndAttkInit
 Unused1       	[NONE]
-GndAttkRpt    	HotshotGndAttkRpt
-AirAttkRpt    	HotshotGndAttkRpt
+GndAttkRpt    	MadcapGndAttkRpt
+AirAttkRpt    	MadcapGndAttkRpt
 CastSpell     	[NONE]
 GndAttkToIdle 	MadcapGndAttkToIdle
 AirAttkToIdle 	MadcapGndAttkToIdle
@@ -49838,31 +49616,8 @@ SpecialState1 	[NONE]
 # ----------------------------------------------------------------------------- #
 
 HotshotInit:
-	imgul             	1142 0 0 # Madcap Shadow (cm\terran\madcap-shad.grp)
+	imgul             	1777 0 0 # Hotshot Shadow (cm\faction-t\hotshot-shadow.grp)
 	goto				MadcapWalkingToIdle
-
-HotshotGndAttkInit:
-	playfram          	0x100
-	wait				1
-	playfram			0x120
-	wait				1
-	playfram			0x140
-HotshotGndAttkRpt:
-	wait				1
-	nobrkcodestart
-	playsndbtwn			2617 2618 # Hotshot weaponfire 01, 02
-	attack
-	playfram          	0x1A0
-	wait              	1
-	playfram          	0x180
-	wait				1
-	playfram          	0x1A0
-	wait              	1
-	playfram          	0x180
-	nobrkcodeend
-	gotorepeatattk
-	ignorerest
-	goto				MadcapGndAttkToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -50000,7 +49755,7 @@ GndAttkToIdle 	LegionnaireGndAttkToIdle
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
 Walking       	LegionnaireWalking
-WalkingToIdle 	LegionnaireWalkingToIdle
+WalkingToIdle 	MadcapWalkingToIdle
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
@@ -50015,7 +49770,7 @@ WarpIn        	LegionnaireWarpIn
 
 AdherentInit:
 	imgul             	1793 0 0 # Adherent Shadow (cm\faction-p\adherent-shadow.grp)
-	goto				LegionnaireWalkingToIdle
+	goto				MadcapWalkingToIdle
 	
 AdherentGndAttkInit:
 	playfram          	0x100
@@ -51829,7 +51584,7 @@ Death         	ZealotDeath
 GndAttkInit   	ZealotGndAttkInit
 AirAttkInit   	[NONE]
 Unused1       	ZealotUnused1
-GndAttkRpt    	ZealotGndAttkInit
+GndAttkRpt    	ZealotGndAttkRpt
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
 GndAttkToIdle 	ZealotGndAttkToIdle
@@ -51849,33 +51604,10 @@ WarpIn        	ZealotWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 	
-#ZealotStarboundGndAttkInit:
-#	playfram          	0x00
-#	wait              	1
-#ZealotStarboundGndAttkRpt:
-#	playsndrand       	2 662 663 # Protoss\ZEALOT\pzeAtt00.WAV | Protoss\ZEALOT\pzeAtt01.WAV
-#	playfram          	0x11
-#	wait              	1
-#	nobrkcodestart
-#	playfram          	0x22
-#	wait              	1
-#	playfram          	0x33
-#	wait              	1
-#	playfram          	0x44
-#	attackmelee       	1 3228 # Zealot (Starbound) weaponhit 01
-#	wait              	1
-#	playfram          	0x33
-#	wait              	1
-#	playfram          	0x22
-#	attackmelee       	1 3228 # Zealot (Starbound) weaponhit 01
-#	wait              	1
-#	playfram          	0x11
-#	wait              	1
-#	playfram          	0x00
-#	nobrkcodeend
-#	gotorepeatattk
-#	ignorerest
-#	goto				ZealotGndAttkToIdle
+ZealotStarboundGndAttkInit:
+	playfram          	0x00
+	wait              	1
+	goto				ZealotWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -51938,17 +51670,17 @@ IsId          	800
 Type          	21
 Init          	CicatusInit
 Death         	LegionnaireDeath
-GndAttkInit   	CicatusGndAttkInit
+GndAttkInit   	LegionnaireGndAttkInit
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
-GndAttkRpt    	CicatusGndAttkRpt
+GndAttkRpt    	LegionnaireGndAttkRpt
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
 GndAttkToIdle 	LegionnaireGndAttkToIdle
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
 Walking       	LegionnaireWalking
-WalkingToIdle 	LegionnaireWalkingToIdle
+WalkingToIdle 	MadcapWalkingToIdle
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
@@ -51963,28 +51695,6 @@ WarpIn        	LegionnaireWarpIn
 
 CicatusInit:
 	imgul             	1959 0 0 # Cicatus Shadow (cm\faction-p\cicatus-shadow.grp)
-	goto				HarakanWalkingToIdle
-	
-CicatusGndAttkInit:
-	playfram          	0x100
-CicatusGndAttkRpt:
-	playfram          	0x100
-	nobrkcodestart
-	wait              	1
-	playsnd				1896 # Legionnaire weapon fire 01
-	playfram          	0x120
-	attackmelee       	1 1897 # Legionnaire weapon hit 01
-	wait              	1
-	playfram          	0x140
-	attackmelee       	1 1897 # Legionnaire weapon hit 01
-	wait              	1
-	playfram          	0x160
-	wait              	1
-	nobrkcodeend
-	playfram          	0x120
-	wait              	1
-	gotorepeatattk
-	ignorerest
-	goto				LegionnaireGndAttkToIdle
+	goto				MadcapWalkingToIdle
 	
 ## Next free IsId: 801
