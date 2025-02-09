@@ -3049,7 +3049,7 @@ WarpIn        	[NONE]
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 068 Cagrant Cesiant (zerg\fcolony.grp)
+# 068 Cagrant Cesiant (zerg\cagrant-cesiant.grp)
 .headerstart
 IsId          	42
 Type          	20
@@ -3079,7 +3079,7 @@ WarpIn        	[NONE]
 # ----------------------------------------------------------------------------- #
 
 CagrantCesiantInit:
-	imgul             	69 0 0 # Cagrant Cesiant Shadow (zerg\zfcShad.grp)
+	imgul             	69 0 0 # Cagrant Cesiant Shadow (zerg\cagrant-cesiant-shadow.grp)
 	playfram          	0x00
 	goto              	ScourgeLocal00
 
@@ -8926,7 +8926,7 @@ WarpIn        	[NONE]
 # ----------------------------------------------------------------------------- #
 
 ReservoirInit:
-	imgul             	308 0 0	# Reservoir Shadow (terran\treShad.grp)
+	imgul             	308 0 0 # Reservoir Shadow (terran\treShad.grp)
 	playfram          	1
 ReservoirLocal00:
 	wait              	5
@@ -11526,12 +11526,12 @@ TemplarArchivesWarpIn:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 158 Assimilator (protoss\assim.grp)
+# 158 Aquifer (protoss\assim.grp)
 .headerstart
 IsId          	167
 Type          	27
-Init          	AssimilatorInit
-Death         	AssimilatorDeath
+Init          	AquiferInit
+Death         	AquiferDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -11546,12 +11546,12 @@ WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
-Built         	AssimilatorBuilt
+Built         	AquiferBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	AssimilatorBuilt
-WorkingToIdle 	AssimilatorBuilt
-WarpIn        	AssimilatorWarpIn
+IsWorking     	AquiferBuilt
+WorkingToIdle 	AquiferBuilt
+WarpIn        	AquiferWarpIn
 Unused3       	[NONE]
 StarEditInit  	[NONE]
 Disable       	ScourgeLocal00
@@ -11561,49 +11561,36 @@ Enable        	ScourgeLocal00
 .headerend
 # ----------------------------------------------------------------------------- #
 
-AssimilatorInit:
-	imgul             	160 0 0	# Assimilator Shadow (protoss\pasShad.grp)
-	playfram          	0x00	# Frame set 0
+AquiferInit:
+	imgul             	160 0 0 # Aquifer Shadow (protoss\pasShad.grp)
+	playfram          	0x00
 	goto              	ScourgeLocal00
 
-AssimilatorDeath:
-	playsnd           	7	# Misc\ExploLrg.wav
+AquiferDeath:
+	playsnd           	7 # Misc\ExploLrg.wav
 	sprol             	222 0 0	# Explosion (Large) (thingy\tBangX.grp)
-	wait              	3 
+	wait              	3
 	end
 
-AssimilatorBuilt:
-	waitrand          	5 50 
-	creategasoverlays 	0 
-	waitrand          	5 50 
-	creategasoverlays 	3 
-	waitrand          	5 50 
-	creategasoverlays 	2 
-	waitrand          	5 50 
-	creategasoverlays 	3 
-	waitrand          	5 50 
-	creategasoverlays 	0 
-	waitrand          	5 50 
-	creategasoverlays 	2 
-	waitrand          	5 50 
-	goto              	AssimilatorBuilt
+AquiferBuilt:
+	waitrand          	5 50
+	creategasoverlays 	0
+	waitrand          	5 50
+	creategasoverlays 	3
+	waitrand          	5 50
+	creategasoverlays 	2
+	waitrand          	5 50
+	creategasoverlays 	3
+	waitrand          	5 50
+	creategasoverlays 	0
+	waitrand          	5 50
+	creategasoverlays 	2
+	waitrand          	5 50
+	goto              	AquiferBuilt
 
-AssimilatorWarpIn:
-	imgol             	159 0 0	# Assimilator Warp Flash (protoss\assim.grp)
-	waitrand          	5 50 
-	creategasoverlays 	0 
-	waitrand          	5 50 
-	creategasoverlays 	3 
-	waitrand          	5 50 
-	creategasoverlays 	2 
-	waitrand          	5 50 
-	creategasoverlays 	3 
-	waitrand          	5 50 
-	creategasoverlays 	0 
-	waitrand          	5 50 
-	creategasoverlays 	2 
-	waitrand          	5 50 
-	goto              	AssimilatorBuilt
+AquiferWarpIn:
+	imgol             	159 0 0 # Aquifer Warp Flash (protoss\assim.grp)
+	goto              	AquiferBuilt
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -13104,7 +13091,7 @@ WarpAnchorSpecialState1:
 # 150 Witness Warp Flash (protoss\witness.grp)
 # 154 Zealot Warp Flash (protoss\zealot.grp)
 # 156 Templar Archives Warp Flash (protoss\archives.grp)
-# 159 Assimilator Warp Flash (protoss\assim.grp)
+# 159 Aquifer Warp Flash (protoss\assim.grp)
 # 162 Observatory Warp Flash (protoss\beacon.grp)
 # 165 Citadel of Adun Warp Flash (protoss\citadel.grp)
 # 169 Forge Warp Flash (protoss\forge.grp)
@@ -13530,11 +13517,11 @@ VespeneGeyserDeath:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 345 Vespene Geyser2 (neutral\geyser.grp)
+# 345 Vespene Geyser Underlay (neutral\geyser.grp)
 .headerstart
 IsId          	202
 Type          	20
-Init          	VespeneGeyser2Init
+Init          	VespeneGeyserUnderlayInit
 Death         	VespeneGeyserDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
@@ -13559,7 +13546,7 @@ WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-VespeneGeyser2Init:
+VespeneGeyserUnderlayInit:
 	playframtile      	0x00
 	imgul             	346 0 0 # Vespene Geyser Shadow (neutral\geyShad.grp)
 	goto              	ScourgeLocal00
@@ -31719,14 +31706,44 @@ KhaydarinEclipseProtossAccelerantDeath:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1276 Lobotomy Mine (cm\terran\lobotomymine.grp)
+# 1968 Piety Ward (cm\faction-t\piety-ward.grp)
 .headerstart
 IsId          	539
-Type          	0
-Init          	[NONE]
-Death         	[NONE]
+Type          	26
+Init          	PietyWardInit
+Death         	SpiderMineDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	SpiderMineUnused2
+Walking       	SpiderMineWalking
+WalkingToIdle 	SpiderMineWalkingToIdle
+SpecialState1 	SpiderMineSpecialState1
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	SpiderMineBurrow
+UnBurrow      	SpiderMineUnBurrow
+Enable        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
+
+PietyWardInit:
+	imgul             	1969 0 0 # Piety Ward Shadow (cm\faction-t\piety-ward-shadow.grp)
+	goto 				SpiderMineWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -41840,7 +41857,7 @@ UnitBrightenEffectHeaderDeath:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1002 Vespene Ridge
+# 1002 Vespene Ridge (cm\neutral\vespene-ridge.grp)
 .headerstart
 IsId          	669
 Type          	20
@@ -51696,5 +51713,199 @@ WarpIn        	LegionnaireWarpIn
 CicatusInit:
 	imgul             	1959 0 0 # Cicatus Shadow (cm\faction-p\cicatus-shadow.grp)
 	goto				MadcapWalkingToIdle
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1963 Kazitrith Cesiant (cm\zerg\kazitrith-cesiant.grp)
+.headerstart
+IsId          	801
+Type          	20
+Init          	KazitrithCesiantInit
+Death         	CerebrateDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	CagrantCesiantAlmostBuilt
+Built         	CagrantCesiantBuilt
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	ScourgeLocal00
+WorkingToIdle 	ScourgeLocal00
+WarpIn        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+KazitrithCesiantInit:
+	imgul             	1964 0 0 # Kazitrith Cesiant Shadow (cm\zerg\kazitrith-cesiant-shadow.grp)
+	playfram          	0x00
+	goto              	ScourgeLocal00
 	
-## Next free IsId: 801
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1970 Sieve (cm\terran\sieve.grp)
+.headerstart
+IsId          	802
+Type          	20
+Init          	SieveInit
+Death         	ReservoirDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	ReservoirSpecialState1
+SpecialState2 	ReservoirSpecialState2
+AlmostBuilt   	ReservoirAlmostBuilt
+Built         	ReservoirBuilt
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	ScourgeLocal00
+WorkingToIdle 	ReservoirBuilt
+WarpIn        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+SieveInit:
+	imgul             	1971 0 0 # Sieve Shadow (cm\terran\sieve-shadow.grp)
+	playfram          	1
+	goto              	ReservoirLocal00
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1972 Vespene Ridge Underlay (cm\neutral\vespene-ridge.grp)
+.headerstart
+IsId          	803
+Type          	20
+Init          	VespeneRidgeUnderlayInit
+Death         	VespeneRidgeDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	ScourgeLocal00
+SpecialState2 	ScourgeLocal00
+AlmostBuilt   	ScourgeLocal00
+Built         	ScourgeLocal00
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	ScourgeLocal00
+WorkingToIdle 	ScourgeLocal00
+WarpIn        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+VespeneRidgeUnderlayInit:
+	playframtile      	0x00
+	imgul             	1209 0 0 # Vespene Ridge Shadow (cm\neutral\vespene-ridge-shadow.grp)
+	goto              	ScourgeLocal00
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1973 Cedent (cm\protoss\cedent.grp)
+.headerstart
+IsId          	804
+Type          	27
+Init          	CedentInit
+Death         	AquiferDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	AquiferBuilt
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	AquiferBuilt
+WorkingToIdle 	AquiferBuilt
+WarpIn        	CedentWarpIn
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	ScourgeLocal00
+Burrow        	[NONE]
+UnBurrow      	[NONE]
+Enable        	ScourgeLocal00
+.headerend
+# ----------------------------------------------------------------------------- #
+
+CedentInit:
+	imgul             	1974 0 0 # Cedent Shadow (cm\protoss\cedent-shadow.grp)
+	playfram          	0x00
+	goto              	ScourgeLocal00
+
+CedentWarpIn:
+	imgol             	1975 0 0 # Cedent Warp Flash (cm\protoss\cedent.grp)
+	goto              	VespeneRidgeSpecialState1
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1976 Eskigant (cm\zerg\eskigant.grp)
+.headerstart
+IsId          	805
+Type          	20
+Init          	EskigantInit
+Death         	ExcisantDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	EskigantAlmostBuilt
+Built         	ExcisantBuilt
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	ExcisantIsWorking
+WorkingToIdle 	ExcisantIsWorking
+WarpIn        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+EskigantInit:
+	imgul             	1977 0 0 # Eskigant Shadow (cm\zerg\eskigant.grp)
+	playfram          	0x00
+	goto              	ScourgeLocal00
+
+EskigantAlmostBuilt:
+	imgol             	108 0 0 # Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
+	goto				ExcisantBuilt
+	
+## Next free IsId: 806

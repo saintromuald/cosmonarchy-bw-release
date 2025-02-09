@@ -536,12 +536,12 @@ Harakan (Golden)
 Iziralisk
 Cicatus
 White Circle (Instant)
-Extended Flingy #330
-Extended Flingy #331
-Extended Flingy #332
-Extended Flingy #333
-Extended Flingy #334
-Extended Flingy #335
+Kazitrith Cesiant
+Cleric (Futurist)
+Piety Ward
+Sieve
+Cedent
+Eskigant
 Extended Flingy #336
 Extended Flingy #337
 Extended Flingy #338

@@ -3264,63 +3264,63 @@ Potentate Banter 01
 Potentate Banter 02
 Potentate Banter 03
 Potentate Banter 04
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Kortar Advisor Addon 01
+Kortar Advisor Addon Abandon 01
+Kortar Advisor Ally Attack P 01
+Kortar Advisor Ally Attack P 02
+Kortar Advisor Ally Attack P 03
+Kortar Advisor Ally Attack T 01
+Kortar Advisor Ally Attack T 02
+Kortar Advisor Ally Attack T 03
+Kortar Advisor Ally Attack Z 01
+Kortar Advisor Ally Attack Z 02
+Kortar Advisor Ally Attack Z 03
+Kortar Advisor Ally Attack A 01
+Kortar Advisor Ally Attack A 02
+Kortar Advisor Ally Attack A 03
+Kortar Advisor Ally Attack B 01
+Kortar Advisor Ally Attack B 02
+Kortar Advisor Ally Attack B 03
+Kortar Advisor Ally Attack K 01
+Kortar Advisor Ally Attack K 02
+Kortar Advisor Ally Attack K 03
+Kortar Advisor Arena 01
+Kortar Advisor Arena 02
+Kortar Advisor Army Attack 01
+Kortar Advisor Army Attack 02
+Kortar Advisor Army Attack 03
+Kortar Advisor Army Attack 04
+Kortar Advisor Base Attack 01
+Kortar Advisor Base Attack 02
+Kortar Advisor Base Attack 03
+Kortar Advisor Base Attack 04
+Kortar Advisor Build 01
+Kortar Advisor Build 02
+Kortar Advisor No Energy 01
+Kortar Advisor No Energy 02
+Kortar Advisor No Energy 03
+Kortar Advisor No Energy 04
+Kortar Advisor Landing Interrupted 01
+Kortar Advisor Landing Interrupted 02
+Kortar Advisor Minerals 01
+Kortar Advisor Minerals 02
+Kortar Advisor Minerals 03
+Kortar Advisor Minerals 04
+Kortar Advisor Missile Armed 01
+Kortar Advisor Missile Launched 01
+Kortar Advisor No Build 01
+Kortar Advisor No Build 02
+Kortar Advisor No Land 01
+Kortar Advisor No Warp 01
+Kortar Advisor Ritual 01
+Kortar Advisor Ritual 02
+Kortar Advisor Vespene 01
+Kortar Advisor Vespene 01
+Kortar Advisor Vespene 02
+Kortar Advisor Vespene 03
+Kortar Advisor Vespene 04
+Kortar Advisor Warp 01
+Kortar Advisor Warp 02
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

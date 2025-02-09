@@ -415,12 +415,12 @@ Terran Harakan (Golden Republic)
 Protoss Cicatus (Starbound)
 Zerg Inzorthrokor (Imicren)
 Volatile Egg
-Extended Unit #190
-Extended Unit #191
-Extended Unit #192
-Extended Unit #193
-Extended Unit #194
-Extended Unit #195
+Terran Piety Ward
+Terran Cleric (Futurist)
+Terran Sieve
+Protoss Cedent
+Zerg Eskigant
+Zerg Quazrokor
 Extended Unit #196
 Extended Unit #197
 Extended Unit #198

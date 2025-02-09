@@ -1,79 +1,77 @@
-# 25 January 2024
-## Year 3, month 1, patch 2
+# 9 February 2024
+## Year 3, month 2, patch 1
 
-This patch will include new features, balance adjustments, bugfixes, and audiovisual improvements.
+This patch includes new features, balance adjustments, bugfixes, and audiovisual improvements.
 
-Download [Fraud Launcher 2](https://fraudsclub.com/files/Fraud%20Launcher%202.zip) for easier setup and maintenance! Version 2.2 and up now includes an automatic download of CrownLink, a networking alternative for Cosmonarchy!
+Download [Fraud Launcher 2](https://fraudsclub.com/files/Fraud%20Launcher%202.zip) for easier setup and maintenance! It now includes automatic setup and updates for CrownLink, a networking alternative for Cosmonarchy!
 
-We are still hunting for desyncs! Please submit your `Critical` and `Sync Randoms` text files from the `logs` folder to the **cm-issues** "[Desync error megathread](https://discord.com/channels/139276012058968064/1251318131671175198)" on [our Discord server](https://discord.com/invite/s5SKBmY).
+## Game Flow
+- Added ridge refineries with no tech requirement for all races, boosting ridge yields from 3 vespene to 5 vespene
 
-## Resources
-- **Vespene Geyser**s and **Vespene Ridge**s now have smaller collision profiles, slightly increasing the value of oversaturation
-
-## AI
-- Updated aiscripts to properly use factional replacements in scenarios
-
-## Editor
-- **NEW:** Units preplaced for 'user select' players are now created at map start (use responsibly...)
-- **NEW:** Units preplaced with the 'lifted' unit property are now only created for players if the unit's race matches the player's race
-- **NEW:** Volatile Egg unit (id 416)
-	- when placed for P1-P8 and cloaked, any preplaced units for that player will be created, allowing players to select their race without spawning melee units
+## Config
+- Added Starscribe Kortar advisor
 
 ## Bugfixes
 - **Stability:**
-	- Fixed null unit crash related to **Patriarch** banter (r. Neblime & jakulangski)
-	- Attempt to fix a middle mouse button scroll crash (r. TopRamen & iliektoeatgrass; c. DF, Jesse, & Veeq7)
+	- Fixed numerous issues contributing to undefined behavior, resulting in desyncs, crashes, or aberrant results (a. DF)
+	- Lardfix: Corrected exceedingly-rare UMS crash cases (c. DF)
 - **Gameplay:**
-	- Units will now only target Solarions over Stewards if the Solarion is within weapon range (a. Veeq7)
-- **Audiovisuals:**
-	- Unit response randomization has been restored (c. DF)
-	- Unit portraits now animate when playing unit responses in-game (c. DF)
-	- **Hotshots** now use their shadows instead of the **Madcap**'s
-	- Player names (and damage taken) now display on completed structures (a. DF)
+	- **Sevenstep - Mind Matter:**
+		- Can no longer self-apply on large units (r. Kenoli)
+		- No longer fires if the source Sevenstep is in a transport (r. Kenoli)
+	- Resolved mnemonic hotkey conflict between Ultrokor and Akistrokor morphs (r. jakulangski)
+- **AI:**
+	- Fixed AI still being able to make Masons via Quarries (r. jakulangski)
 
 ## Audiovisuals
-- New sprites for:
-	- Golem
-	- Ocsal Cesiant
 - Updated sprite for:
-	- Madcap (a. Solstice)
-	- Zealot (Starbound)
-	- Legionnaire
-	- Cicatus
+	- Dracadin (c. Solstice)
+	- Rogue Gallery
+- Added visual effect for:
+	- Blackjack (passive state switch)
 
 ## Terran
-- [Morningstar](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/morningstar):
-	- Build time 40 » 25
-- [Goliath](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/goliath):
-	- **Twin Autocannons**:
-		- Weapon damage 1x4 » 1x5
-- [Matador](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/matador):
-	- HP 150 » 160
-- [Stockade](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/stockade):
-	- Resource costs 150/0 » 125/0
-- [Fulcrum](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/fulcrum):
-	- Resource costs 200/50 » 175/50
-- [Rotary](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/rotary):
-	- Resource costs 200/75 » 125/75
-	- Build time 35 » 25
-- [Hadron](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/hadron):
-	- Resource costs 250/500 » 250/350
+- **NEW:** [Sieve](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/sieve)
+	- Ridge-based vespene processor
+- **NEW:** [Cleric (Futurist)](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cleric-futurist):
+	- Protective infantry; can deploy [Piety Wards](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/piety-ward)
 
 ## Protoss
-- [Dracadin](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/dracadin):
-	- Resource costs 125/25 » 150/25
-- [Atreus](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/atreus):
-	- HP 160 » 180
-- [Barghest](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/barghest):
-	- HP 50 » 80
-- [Golem](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/golem):
-	- Collision size slightly adjusted to fit new model
-- [Servitor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/servitor):
-	- HP 100 » 120
+- [Hierophant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/hierophant):
+	- Shields 70 » 80
+- [Gladius](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/gladius):
+	- Armor 2 » 1
+	- **Plasma Flurry:**
+		- Weapon damage 15 » 12
 - [Steward](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/steward):
-	- Armor 3 » 2
+	- **Pulse Cannon:**
+		- Weapon damage 8 » 6
+- [Nexus](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/nexus):
+	- Now provides power
+- [Gateway](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/gateway):
+	- Time cost 50 » 55
+- [Rogue Gallery](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/rogue-gallery):
+	- Reduced collision size by ~10%
+- [Grand Library](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/grand-library):
+	- Reduced collision size by ~8%
+- [Lattice](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/lattice):
+	- Time cost 50 » 45
+- **NEW:** [Cedent](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/cedent)
+	- Ridge-based vespene processor
 
 ## Zerg
-- **Broodspawn**:
-	- **Death Cycle**:
-		- Ensnare timer 3 seconds » 1 second
+- **Regression:**
+	- Non-morphed structures will now regress into Droleths (but not Gosvileths)
+- [Protathalor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/protathalor):
+	- Build time 25 » 22
+- [Bactalisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/bactalisk):
+	- **Corrosive Acid:**
+		- Weapon cooldown 1.17 » 1.25
+- [Vithrilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/vithrilisk):
+	- Build time 30 » 25
+- [Okrimnilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/okrimnilisk):
+	- HP 380 » 600
+- **NEW:** [Eskigant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/eskigant)
+	- Ridge-based vespene processor
+- **NEW:** [Kazitrith Cesiant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/kazitrith-cesiant):
+	- Support cell to boost combat prowess of nearby allies; mutated from Cagrant Cesiant

@@ -393,6 +393,7 @@ building begrozith_barrow = 329
 building chokral_chazsal = 330
 building nephrilosk = 350
 building ocsal_cesiant = 354
+building kazitrith_cesiant = 355
 building ezigrisant = 364
 building vornath_pond = 396
 building skibact_scab = 397

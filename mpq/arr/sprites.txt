@@ -838,8 +838,8 @@ Wellbore
 Police Deputy
 Cuirass (Trench Mode)
 Cuirass Stonewall Protocol Overlay
-Spirtith Colony
-Skortrith Colony
+Spirtith Cesiant
+Skortrith Cesiant
 Anchor Attack Overlay (Green)
 Anchor Attack Overlay (Blue)
 Terran Unit Rubble (Medium)
@@ -962,12 +962,12 @@ Iziralisk Remains
 Cicatus
 White Circle (Instant)
 Gorgrokor Remains
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
+Kazitrith Cesiant
+Cleric (Futurist)
+Piety Ward
+Sieve
+Cedent
+Eskigant
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1

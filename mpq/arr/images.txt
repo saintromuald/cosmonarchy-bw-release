@@ -343,7 +343,7 @@ Rhynadon (Badlands) Shadow
 Bengalaas (Jungle)
 Bengalaas (Jungle) Shadow
 Vespene Geyser
-Vespene Geyser2
+Vespene Geyser Underlay
 Vespene Geyser Shadow
 Mineral Field Type1
 Mineral Field Type1 Shadow
@@ -1960,22 +1960,22 @@ Cicatus
 Cicatus Shadow
 White Circle (Instant)
 Gorgrokor Remains
-Extended Image #960
-Extended Image #961
-Extended Image #962
-Extended Image #963
-Extended Image #964
-Extended Image #965
-Extended Image #966
-Extended Image #967
-Extended Image #968
-Extended Image #969
-Extended Image #970
-Extended Image #971
-Extended Image #972
-Extended Image #973
-Extended Image #974
-Extended Image #975
+Kazitrith Cesiant
+Kazitrith Cesiant Shadow
+Tendril Amitosis Overlay
+Cleric (Futurist)
+Cleric (Futurist) Shadow
+Cleric (Futurist) Remains
+Piety Ward
+Piety Ward Shadow
+Sieve
+Sieve Shadow
+Vespene Ridge Underlay
+Cedent
+Cedent Shadow
+Cedent Warp Flash
+Eskigant
+Eskigant Shadow
 Extended Image #976
 Extended Image #977
 Extended Image #978
