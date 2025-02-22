@@ -222,13 +222,13 @@ Flamethrower (Harakan, Golden)
 Corrosive Bioplasma (Iziralisk)
 Phase Claws (Cicatus)
 Phase Blades (Zealot, Starbound)
-Astral Blaster (Ecclesiast, Khalendric)
-Extended Weapon #96
-Extended Weapon #97
-Extended Weapon #98
-Extended Weapon #99
-Extended Weapon #100
-Extended Weapon #101
+Avenging Blaster (Ecclesiast, Khalendric)
+Rotating Ray (Oscilliant)
+Rotating Blaster (Renesair)
+Repeating Blaster (Extatus)
+Autonomous Ray (Unar)
+Phase Cremator (Ashguard)
+Successive Spines (Lakizilisk, Zorthos)
 Extended Weapon #102
 Extended Weapon #103
 Extended Weapon #104

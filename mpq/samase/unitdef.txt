@@ -55,11 +55,15 @@ military extatus = 401
 military zealot_starbound = 411
 military ecclesiast_khalendric = 412
 military cicatus = 414
+military renesair = 423
+military ashguard = 424
 
 # Zerg factional units
 military nathrelisk = 402
 military iziralisk = 403
 military inzorthrokor = 415
+military quazrokor = 422
+military lakizilisk_zorthos = 425
 
 # Terran military units
 military maverick = 0
@@ -179,6 +183,7 @@ building iron_council = 295
 building amphitheater = 296
 building throneroom = 299
 building tencendur = 408
+building sieve = 419
 
 # Protoss military units
 military lanifect = 60
@@ -280,6 +285,7 @@ building engram = 294
 building sequestered_icon = 304
 building unitary_union = 305
 building hall_of_heretics = 349
+building cedent = 420
 
 # Zerg military units
 military zethrokor = 37
@@ -397,6 +403,7 @@ building kazitrith_cesiant = 355
 building ezigrisant = 364
 building vornath_pond = 396
 building skibact_scab = 397
+building eskigant = 421
 
 # Misc units
 military goliath_turret = 4

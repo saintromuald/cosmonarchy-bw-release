@@ -21290,7 +21290,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	ExemplarWarpIn
+WarpIn        	LanifectWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -21340,10 +21340,6 @@ ExemplarWalking:
 	playfram          	0x00
 	setvertpos        	0
 	imgol             	1202 0 0 # Exemplar Engines (cm\protoss\exemplar-engine.grp)
-	goto              	ScourgeLocal00
-
-ExemplarWarpIn:
-	imgol             	143 0 0 # Scout Warp Flash (protoss\scout.grp)
 	goto              	ScourgeLocal00
 
 # ----------------------------------------------------------------------------- #
@@ -22998,7 +22994,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	AuroraWarpIn
+WarpIn        	LanifectWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -23029,7 +23025,6 @@ AuroraDeath:
 
 AuroraGndAttkInit:
 	playfram			0x20
-	playsnd           	66 # Bullet\HKMISSLE.wav
 	attackwith        	1
 	wait				1
 	playfram			0x00
@@ -23048,10 +23043,6 @@ AuroraWalking:
 	playfram          	0x00
 	setvertpos        	0
 	imgol             	1199 0 0 # Aurora Engines (cm\protoss\aurora-engine.grp)
-	goto              	ScourgeLocal00
-
-AuroraWarpIn:
-	imgol             	143 0 0	# Aurora Warp Flash (cm\protoss\aurora.grp)
 	goto              	ScourgeLocal00
 	
 # ----------------------------------------------------------------------------- #
@@ -23081,7 +23072,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	PanoptusWarpIn
+WarpIn        	LanifectWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -23124,10 +23115,6 @@ PanoptusWalking:
 	playfram          	0x00
 	setvertpos        	0
 	imgol             	142 0 0 # Panoptus Engines (thingy\pscGlow.grp)
-	goto              	ScourgeLocal00
-
-PanoptusWarpIn:
-	imgol             	143 0 0 # Panoptus Warp Flash (cm\protoss\panoptus.grp)
 	goto              	ScourgeLocal00
 	
 # ----------------------------------------------------------------------------- #
@@ -23447,7 +23434,7 @@ MadrigalImperiosoBaseDeath:
 	playsnd           	317 # Terran\TANK\TTaDth00.WAV
 	imgol             	1497 0 0 # Madrigal Death
 	wait              	3
-	lowsprul			844 0 0 # Terran Unit Rubble Medium
+	lowsprul			971 0 0 # Madrigal Furia Remains
 	wait              	1
 	end
 
@@ -26590,7 +26577,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	GladiusWarpIn
+WarpIn        	LanifectWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -26635,10 +26622,6 @@ GladiusWalking:
 	imgol             	1204 0 0 # Gladius Engines (cm\protoss\gladius-engine.grp)
 	playfram          	0x00
 	goto              	ScourgeLocal00
-
-GladiusWarpIn:
-	imgol             	143 0 0 # Scout Warp Flash (protoss\scout.grp)
-	goto              	ScourgeLocal00
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -26667,7 +26650,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	MagisterWarpIn
+WarpIn        	LanifectWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -26720,10 +26703,6 @@ MagisterWalking:
 	playfram          	0x00
 	setvertpos        	0
 	goto              	ScourgeLocal00
-
-MagisterWarpIn:
-	imgol             	143 0 0 # Scout Warp Flash (protoss\scout.grp)
-	goto              	ScourgeLocal00
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -26752,7 +26731,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	VassalWarpIn
+WarpIn        	LanifectWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -26795,13 +26774,9 @@ VassalGndAttkInit:
 	goto              	ScourgeLocal00
 
 VassalWalking:
-	setvertpos        	0 
+	setvertpos        	0
 	playfram          	0x00
 	imgol				1206 0 0 # Vassal Engines (cm\protoss\vassal-engine.grp)
-	goto              	ScourgeLocal00
-
-VassalWarpIn:
-	imgol             	143 0 0	# Scout Warp Flash (protoss\scout.grp)
 	goto              	ScourgeLocal00
 	
 # ----------------------------------------------------------------------------- #
@@ -28365,7 +28340,7 @@ EcclesiastWarpIn:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1182 Idol (idol.grp)
+# 1182 Idol (cm\protoss\idol.grp)
 .headerstart
 IsId          	498
 Type          	12
@@ -28387,7 +28362,7 @@ SpecialState1 	[NONE]
 # ----------------------------------------------------------------------------- #
 
 IdolInit:
-	imgul             	1183 0 0 # Idol Shadow (idol-shad.grp)
+	imgul             	1183 0 0 # Idol Shadow (cm\protoss\idol-shad.grp)
 	playfram          	0x77
 	goto				ScourgeLocal00
 	
@@ -29777,7 +29752,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	ArchitectWarpIn
+WarpIn        	LanifectWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -29816,7 +29791,7 @@ ArchitectGndAttkInit:
 	goto              	ScourgeLocal00
 
 ArchitectWalking:
-	setvertpos        	0 
+	setvertpos        	0
 	imgol				1221 0 0 # Architect Engines (cm\protoss\architect-engine.grp)
 	goto              	ArchitectWalking2
 	
@@ -29824,10 +29799,6 @@ ArchitectWalking2:
 	move				4
 	wait				1
 	goto				ArchitectWalking2
-
-ArchitectWarpIn:
-	imgol             	143 0 0	# Architect Warp Flash (protoss\empyrean.grp)
-	goto              	ScourgeLocal00
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -34067,7 +34038,6 @@ HierophantGndAttkRpt:
 	wait              	1
 	playfram          	0x2C0
 	wait              	1
-	playsndbtwn       	2856 2857 # Hierophant weaponfire 01, 02
 	attackwith        	1
 	playfram          	0x2E0
 	wait              	1
@@ -34285,7 +34255,6 @@ LegionnaireGndAttkRpt:
 	playfram          	0x100
 	nobrkcodestart
 	wait              	1
-	playsnd				1896 # Legionnaire weapon fire 01
 	playfram          	0x120
 	wait              	1
 	playfram          	0x140
@@ -43543,7 +43512,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	EpigraphWarpIn
+WarpIn        	LanifectWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -43611,10 +43580,6 @@ EpigraphWalking:
 	setvertpos        	0
 	imgol             	1301 0 0 # Epigraph Engines (cm\protoss\epigraph-engine.grp)
 	playfram          	0x00
-	goto              	EpigraphLocal00
-
-EpigraphWarpIn:
-	imgol             	143 0 0 # Scout Warp Flash (protoss\scout.grp)
 	goto              	EpigraphLocal00
 	
 # ----------------------------------------------------------------------------- #
@@ -48341,7 +48306,6 @@ AnalogueDeath:
 	end
 
 AnalogueGndAttkInit:
-	playsndbtwn			2667 2669 # Analogue weaponfire 01, 02, 03
 	attack
 	gotorepeatattk
 	goto				AnalogueGndAttkToIdle
@@ -51632,28 +51596,34 @@ ZealotStarboundGndAttkInit:
 .headerstart
 IsId          	798
 Type          	12
-Init          	AnalogueInit
+Init          	VibranceInit
 Death         	AnalogueDeath
-GndAttkInit   	AnalogueGndAttkInit
-AirAttkInit   	AnalogueGndAttkInit
+GndAttkInit   	VibranceGndAttkInit
+AirAttkInit   	VibranceGndAttkInit
 Unused1       	[NONE]
-GndAttkRpt    	AnalogueGndAttkInit
-AirAttkRpt    	AnalogueGndAttkInit
+GndAttkRpt    	VibranceGndAttkInit
+AirAttkRpt    	VibranceGndAttkInit
 CastSpell     	[NONE]
-GndAttkToIdle 	AnalogueGndAttkToIdle
-AirAttkToIdle 	AnalogueGndAttkToIdle
+GndAttkToIdle 	VibranceGndAttkToIdle
+AirAttkToIdle 	VibranceGndAttkToIdle
 Unused2       	[NONE]
-Walking       	AnalogueWalking
-WalkingToIdle 	AnalogueGndAttkToIdle
+Walking       	ScourgeLocal00
+WalkingToIdle 	VibranceGndAttkToIdle
 SpecialState1 	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-#VibranceInit:
-#	imgul             	1947 0 7 # Vibrance Shadow (cm\protoss\vibrance.grp)
-#	playfram          	0x00
-#	wait				2
-#	goto				AnalogueGndAttkToIdle
+VibranceInit:
+	imgul             	1947 0 7 # Vibrance Shadow (cm\protoss\vibrance.grp)
+VibranceGndAttkToIdle:
+	playfram          	0x00
+	wait				1
+	goto				ScourgeLocal00
+
+VibranceGndAttkInit:
+	attack
+	gotorepeatattk
+	goto				VibranceGndAttkToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -51908,4 +51878,278 @@ EskigantAlmostBuilt:
 	imgol             	108 0 0 # Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
 	goto				ExcisantBuilt
 	
-## Next free IsId: 806
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1978 Oscilliant (cm\protoss\oscilliant.grp)
+.headerstart
+IsId          	806
+Type          	12
+Init          	OscilliantInit
+Death         	AtreusDeath
+GndAttkInit   	OscilliantGndAttkInit
+AirAttkInit   	OscilliantGndAttkInit
+Unused1       	[NONE]
+GndAttkRpt    	OscilliantGndAttkRpt
+AirAttkRpt    	OscilliantGndAttkRpt
+CastSpell     	[NONE]
+GndAttkToIdle 	OscilliantGndAttkToIdle
+AirAttkToIdle 	OscilliantGndAttkToIdle
+Unused2       	[NONE]
+Walking       	OscilliantWalking
+WalkingToIdle 	OscilliantGndAttkToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+OscilliantInit:
+	imgul             	1979 0 0 # Oscilliant Shadow (cm\protoss\oscilliant-shad.grp)
+OscilliantGndAttkToIdle:
+	playfram          	0x00
+	goto				ScourgeLocal00
+
+OscilliantGndAttkInit:
+	playfram			0xdd
+	wait				1
+OscilliantGndAttkRpt:
+	wait				1
+	nobrkcodestart
+	playfram          	0xff
+	attack
+	wait              	1
+	playfram			0x110
+	wait              	6
+	playfram          	0xff
+	attack
+	wait              	1
+	playfram			0x110
+	wait              	6
+	playfram          	0xff
+	attack
+	wait              	1
+	playfram			0x110
+	wait              	6
+	playfram          	0xff
+	attack
+	wait              	1
+	playfram			0x110
+	wait              	6
+	playfram          	0xff
+	attack
+	wait              	1
+	playfram			0x110
+	wait              	1
+	playfram          	0xff
+	wait              	1
+	playfram			0xee
+	wait				1
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto              	OscilliantGndAttkToIdle
+
+OscilliantWalking:
+	move              	5
+	wait              	1
+	playfram          	0x55
+	move              	5
+	wait              	1
+	playfram          	0x66
+	move              	5
+	wait              	1
+	playfram          	0x77
+	move              	5
+	wait              	1
+	playfram          	0x88
+	move              	5
+	wait              	1
+	playfram          	0x99
+	move              	5
+	wait              	1
+	playfram          	0xaa
+	move              	5
+	wait              	1
+	playfram          	0xbb
+	move              	5
+	wait              	1
+	playfram          	0xcc
+	goto              	OscilliantWalking
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1981 Renesair (cm\faction-p\renesair.grp)
+.headerstart
+IsId          	807
+Type          	21
+Init          	RenesairInit
+Death         	RenesairDeath
+GndAttkInit   	VassalGndAttkInit
+AirAttkInit   	VassalGndAttkInit
+Unused1       	[NONE]
+GndAttkRpt    	VassalGndAttkInit
+AirAttkRpt    	VassalGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	VassalGndAttkToIdle
+AirAttkToIdle 	VassalGndAttkToIdle
+Unused2       	[NONE]
+Walking       	RenesairWalking
+WalkingToIdle 	VassalWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	LanifectWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+RenesairInit:
+	imgul             	1982 0 42 # Renesair Shadow (cm\faction-p\renesair.grp)
+	goto				VassalGndAttkToIdle
+
+RenesairDeath:
+	playsndbtwn			3060 3062 # Vassal death 01, 02, 03
+	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			973 0 42 # Renesair remains
+	wait              	1
+	end
+	
+RenesairWalking:
+	setvertpos        	0
+	playfram          	0x00
+	imgol				1983 0 0 # Renesair Engines (cm\faction-p\renesair-engine.grp)
+	goto              	ScourgeLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1794 Extatus (cm\faction-p\extatus.grp)
+.headerstart
+IsId          	808
+Type          	21
+Init          	ExtatusInit
+Death         	AuroraDeath
+GndAttkInit   	AuroraGndAttkInit
+AirAttkInit   	AuroraGndAttkInit
+Unused1       	[NONE]
+GndAttkRpt    	AuroraGndAttkInit
+AirAttkRpt    	AuroraGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	AuroraGndAttkToIdle
+AirAttkToIdle 	AuroraGndAttkToIdle
+Unused2       	[NONE]
+Walking       	ExtatusWalking
+WalkingToIdle 	AuroraWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	LanifectWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ExtatusInit:
+	imgul             	1795 0 42 # Extatus Shadow (cm\faction-p\extatus.grp)
+	goto				AuroraGndAttkToIdle
+
+ExtatusWalking:
+	playfram          	0x00
+	setvertpos        	0
+	imgol             	1199 0 0 # Extatus Engines (cm\faction-p\extatus-engine.grp)
+	goto              	ScourgeLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1985 Unar (cm\protoss\unar.grp)
+.headerstart
+IsId          	809
+Type          	21
+Init          	UnarInit
+Death         	ExemplarDeath
+GndAttkInit   	UnarGndAttkInit
+AirAttkInit   	UnarGndAttkInit
+Unused1       	[NONE]
+GndAttkRpt    	UnarGndAttkInit
+AirAttkRpt    	UnarGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	UnarGndAttkToIdle
+AirAttkToIdle 	UnarGndAttkToIdle
+Unused2       	[NONE]
+Walking       	UnarWalking
+WalkingToIdle 	ArchitectWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	LanifectWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+UnarInit:
+	imgul             	1986 0 0 # Unar Shadow (cm\protoss\unar-shadow.grp)
+UnarGndAttkToIdle:
+	playfram			0x00
+	goto				ArchitectWalkingToIdle
+
+UnarGndAttkInit:
+	nobrkcodestart
+	playsndbtwn			3338 3340 # Unar weapon charge 01, 02, 03
+	imgol				1820 0 0 # Architect charge overlay
+	wait				7
+	imgol				1820 0 0 # Architect charge overlay
+	wait				7
+	imgol				1820 0 0 # Architect charge overlay
+	wait				8
+	attackwith        	1
+	wait              	3
+	attackwith        	1
+	wait              	3
+	attackwith        	1
+	wait              	3
+	attackwith        	1
+	wait              	3
+	attackwith        	1
+	wait              	3
+	attackwith        	1
+	wait              	3
+	attackwith        	1
+	wait              	1
+	sigorder			32
+	nobrkcodeend
+	gotorepeatattk
+	goto              	ScourgeLocal00
+
+UnarWalking:
+	playfram          	0x00
+	setvertpos        	0
+	goto              	ScourgeLocal00
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1987 Unar Orbital (cm\protoss\unar-orbital.grp)
+.headerstart
+IsId          	810
+Type          	2
+Init          	PhaseDisruptorInit
+Death         	UnarOrbitalDeath
+GndAttkInit   	PhaseDisruptorGndAttkInit
+AirAttkInit   	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+UnarOrbitalDeath:
+	imgol             	427 0 0 # Phase Disruptor Hit (thingy\HKexplod.grp)
+	wait				1
+	end
+	
+## Next free IsId: 811

@@ -307,7 +307,7 @@ Protoss Unitary Union
 Protoss Servitor
 Protoss Positron
 Protoss Analogue
-Protoss Mainstay
+Protoss Unar
 Protoss Maven
 Protoss Cloudform
 Protoss Vibrance
@@ -421,9 +421,9 @@ Terran Sieve
 Protoss Cedent
 Zerg Eskigant
 Zerg Quazrokor
-Extended Unit #196
-Extended Unit #197
-Extended Unit #198
+Protoss Renesair
+Protoss Ashguard
+Zerg Lakizilisk (Zorthos)
 Extended Unit #199
 Extended Unit #200
 Extended Unit #201

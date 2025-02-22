@@ -1416,7 +1416,7 @@ Architect Weapon Fire 02
 Architect Weapon Fire 03
 Architect Weapon Split 01
 Demiurge Worship 01
-Aspirant Ready 01
+unused
 Aspirant What 01
 Aspirant What 02
 Aspirant What 03
@@ -3321,129 +3321,129 @@ Kortar Advisor Vespene 03
 Kortar Advisor Vespene 04
 Kortar Advisor Warp 01
 Kortar Advisor Warp 02
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Player Defeat -- Zerg
+Player Defeat -- Terran
+Player Defeat -- Protoss
+Player Defeat -- Askosi
+Player Defeat -- Bloodsummon
+Player Defeat -- Kogri
+Sieve Selected 01
+Cedent Selected 01
+Unitary Union Selected 01
+Eskigant Selected 01
+Kazitrith Cesiant Selected 01
+Ocsal Cesiant Selected 01
+Extatus Weaponfire 01
+Extatus Weaponfire 02
+Extatus Weaponfire 03
+Unar Weapon Charge 01
+Unar Weapon Charge 02
+Unar Weapon Charge 03
+Unar Passive Loss 01
+Unar Passive Loss 02
+Unar Passive Loss 03
+Unar Passive Gain 01
+Unar Passive Gain 02
+Unar Passive Gain 03
+Ecclesiast Khalendric Weaponfire 01
+Ecclesiast Khalendric Weaponfire 02
+Ecclesiast Khalendric Weaponfire 03
+Ashguard Weaponfire 01
+Ashguard Weaponfire 02
+Ashguard Weaponfire 03
+Ashguard Weaponfire 04
+Ashguard Weaponfire 05
+Cicatus Weaponfire 01
+Cicatus Weaponfire 02
+Cicatus Weaponfire 03
+Oscilliant Weaponhit 01
+Oscilliant Weaponhit 02
+Oscilliant Weaponhit 03
+Oscilliant Weaponhit 04
+Oscilliant Weaponhit 05
+Vibrance Weaponfire 01
+Vibrance Weaponfire 02
+Vibrance Weaponfire 03
+Vibrance Weaponfire 04
+Vibrance Weaponfire 05
+Unar Weaponfire 01
+Unar Weaponfire 02
+Unar Weaponfire 03
+Unar Weaponfire 04
+Unar Weaponfire 05
+Golden Republic Advisor Addon 01
+Golden Republic Advisor Addon Abandon 01
+Golden Republic Advisor Ally Attack P 01
+Golden Republic Advisor Ally Attack P 02
+Golden Republic Advisor Ally Attack P 03
+Golden Republic Advisor Ally Attack T 01
+Golden Republic Advisor Ally Attack T 02
+Golden Republic Advisor Ally Attack T 03
+Golden Republic Advisor Ally Attack Z 01
+Golden Republic Advisor Ally Attack Z 02
+Golden Republic Advisor Ally Attack Z 03
+Golden Republic Advisor Ally Attack A 01
+Golden Republic Advisor Ally Attack A 02
+Golden Republic Advisor Ally Attack A 03
+Golden Republic Advisor Ally Attack B 01
+Golden Republic Advisor Ally Attack B 02
+Golden Republic Advisor Ally Attack B 03
+Golden Republic Advisor Ally Attack K 01
+Golden Republic Advisor Ally Attack K 02
+Golden Republic Advisor Ally Attack K 03
+Golden Republic Advisor Arena 01
+Golden Republic Advisor Army Attack 01
+Golden Republic Advisor Army Attack 02
+Golden Republic Advisor Army Attack 03
+Golden Republic Advisor Army Attack 04
+Golden Republic Advisor Assembly 01
+Golden Republic Advisor Base Attack 01
+Golden Republic Advisor Base Attack 02
+Golden Republic Advisor Base Attack 03
+Golden Republic Advisor Base Attack 04
+Golden Republic Advisor Build 01
+Golden Republic Advisor Build Zerg 01
+Golden Republic Advisor Energy 01
+Golden Republic Advisor Energy 02
+Golden Republic Advisor Energy 03
+Golden Republic Advisor Energy 04
+Golden Republic Advisor Landing Interrupted 01
+Golden Republic Advisor Landing Interrupted 02
+Golden Republic Advisor Minerals 01
+Golden Republic Advisor Minerals 02
+Golden Republic Advisor Minerals 03
+Golden Republic Advisor Minerals 04
+Golden Republic Advisor Missile 01
+Golden Republic Advisor Missile Launch 01
+Golden Republic Advisor No Build 01
+Golden Republic Advisor No Build 02
+Golden Republic Advisor No Land 01
+Golden Republic Advisor No Land 02
+Golden Republic Advisor No Warp 02
+Golden Republic Advisor No Warp 02
+Golden Republic Advisor Ritual 01
+Golden Republic Advisor Tech 01
+Golden Republic Advisor Vespene 01
+Golden Republic Advisor Vespene 02
+Golden Republic Advisor Vespene 03
+Golden Republic Advisor Vespene 04
+Golden Republic Advisor Warp 01
+Oscilliant Weaponfire 01
+Oscilliant Weaponfire 02
+Oscilliant Weaponfire 03
+Oscilliant Weaponfire 04
+Oscilliant Weaponfire 05
+Aspirant Ready 01
+Aspirant Ready 02
+Aspirant Ready 03
+Aspirant Order Aggressive 01
+Aspirant Order Aggressive 02
+Aspirant Order Aggressive 03
+Aspirant Order Aggressive 04
+Aspirant Under Attack 01
+Aspirant Under Attack 02
+Aspirant Under Attack 03
+Aspirant Under Attack 04
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1
