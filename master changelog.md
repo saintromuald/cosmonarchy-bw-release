@@ -95,7 +95,7 @@ See patchnotes.md for info on the most recent patch!
 - [13 August 2020](#13-august-2020)
 - [12 August 2020](#12-august-2020)
 
-# 9 February 2024
+# 9 February 2025
 ## Year 3, month 2, patch 1
 
 This patch includes new features, balance adjustments, bugfixes, and audiovisual improvements.
@@ -173,7 +173,7 @@ Download [Fraud Launcher 2](https://fraudsclub.com/files/Fraud%20Launcher%202.zi
 - **NEW:** [Kazitrith Cesiant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/kazitrith-cesiant):
 	- Support cell to boost combat prowess of nearby allies; mutated from Cagrant Cesiant
 
-# 25 January 2024
+# 25 January 2025
 ## Year 3, month 1, patch 2
 
 This patch will include new features, balance adjustments, bugfixes, and audiovisual improvements.
@@ -253,7 +253,7 @@ We are still hunting for desyncs! Please submit your `Critical` and `Sync Random
 	- **Death Cycle**:
 		- Ensnare timer 3 seconds » 1 second
 
-# 11 January 2024
+# 11 January 2025
 ## Year 3, month 1, patch 1
 
 This patch will include new features, balance adjustments, bugfixes, and audiovisual improvements.

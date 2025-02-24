@@ -1,5 +1,5 @@
-# 23 February 2024
-## Year 3, month 2, patch 2
+# 22 February 2025
+## Year 3, month 2, patch 2.1
 
 This patch includes new units and features, balance adjustments, bugfixes, and audiovisual improvements!
 
@@ -11,6 +11,10 @@ Our goals for the next patch (8 March 2025) include:
 - Deployment of the [Tencendur](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/tencendur), [Xenolith](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/xenolith), and [Zobriolisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/zobriolisk) (concepts will be adjusted!)
 - More factional units for Golden Republic, Nydus Trinity, Starbound, and Imicren Tendril
 - AI and stability improvements
+
+## HOTFIX - 23 February 2025
+- Fixed a common crash when unloading turreted units from transports
+- Fixed a rare crash related to rescuable units in scenarios (r. & c. DF)
 
 ## Mapmaking
 - Added crig action `announce_player_defeat`
