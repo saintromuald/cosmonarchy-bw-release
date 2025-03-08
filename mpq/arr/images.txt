@@ -351,7 +351,7 @@ Mineral Field Type2
 Mineral Field Type2 Shadow
 Mineral Field Type3
 Mineral Field Type3 Shadow
-Aerie
+Facade
 Zerg Beacon
 Zerg Beacon Overlay
 Terran Beacon
@@ -1005,7 +1005,7 @@ Iroleth
 Matrix
 Paladin
 Madrigal Base (Imperioso)
-Savant
+Savant (Entropy Gauntlets)
 Scrapyard
 Rotary
 Matrix Shadow
@@ -1071,8 +1071,8 @@ Malediction Overlay Large
 Rotary Shadow
 Simulacrum
 Simulacrum Shadow
-unused
-Savant Shadow
+Savant (Power Siphon)
+Savant Shadow (Power Siphon)
 Ancile
 Ancile Shadow
 Ancile Engines
@@ -1131,7 +1131,7 @@ Crucible
 Crucible Shadow
 Crucible Warpin
 Wyvern Shadow
-Aerie Shadow
+Facade Shadow
 Oberon
 Gladius
 Gladius Shadow
@@ -1361,8 +1361,8 @@ Claymore
 Claymore Shadow
 Aion Shadow
 Scribe Remains
-unused
-unused
+Tethvith Swamp
+Tethvith Swamp Shadow
 Warp Anchor Underlay
 Alaszileth
 Alaszileth Shadow
@@ -1946,7 +1946,7 @@ Ecclesiast (Khalendric Knights)
 Ecclesiast Shadow (Khalendric Knights)
 Vibrance
 Vibrance Shadow
-Blackjack (Damaged)
+Blackjack Damaged
 Phase Disruptor Large
 Harakan (Golden)
 Harakan (Golden) Shadow
@@ -1988,46 +1988,46 @@ Unar Shadow
 Unar Orbital
 Ashguard
 Ashguard Shadow
-Extended Image #988
-Extended Image #989
-Extended Image #990
-Extended Image #991
-Extended Image #992
-Extended Image #993
-Extended Image #994
-Extended Image #995
-Extended Image #996
-Extended Image #997
-Extended Image #998
-Extended Image #999
-Extended Image #1000
-Extended Image #1001
-Extended Image #1002
-Extended Image #1003
-Extended Image #1004
-Extended Image #1005
-Extended Image #1006
-Extended Image #1007
-Extended Image #1008
-Extended Image #1009
-Extended Image #1010
-Extended Image #1011
-Extended Image #1012
-Extended Image #1013
-Extended Image #1014
-Extended Image #1015
-Extended Image #1016
-Extended Image #1017
-Extended Image #1018
-Extended Image #1019
-Extended Image #1020
-Extended Image #1021
-Extended Image #1022
-Extended Image #1023
-Extended Image #1024
-Extended Image #1025
-Extended Image #1026
-Extended Image #1027
+Rilirokor Birth
+Xenolith
+Xenolith Shadow
+Xenolith Warp Flash
+Zobriolisk Burrow Weaponfire
+Lakizilisk Mutate
+Zobriolisk Birth
+Landlock
+Landlock Shadow
+Quazrokor
+Quazrokor Shadow
+Dracadin (Order)
+Dracadin Shadow (Order)
+Dracadin Remains (Order)
+Savant Shadow (Entropy Gauntlets)
+Blackjack (Golden)
+Blackjack Shadow (Golden)
+Blackjack Damaged (Golden)
+Tiangou (Base)
+Tiangou (Turret)
+Tiangou Shadow
+Eidolon (Nydus)
+Eidolon Shadow (Nydus)
+Maverick (Futurist)
+Maverick Shadow (Futurist)
+Hydralisk (Orkoti)
+Hydralisk Shadow (Orkoti)
+Tencendur
+Tencendur Shadow
+Tencendur Attack Overlay (Orange)
+Tencendur Attack Overlay (Blue)
+Tencendur Attack Overlay (Green)
+Hydralisk Remains (Orkoti)
+Tencendur Flag
+Inzorthrokor
+Inzorthrokor Shadow
+Inzorthrokor Remains
+Inzorthrokor Birth
+Manifold (Starbound)
+Manifold Shadow (Starbound)
 Extended Image #1028
 Extended Image #1029
 Extended Image #1030

@@ -86,7 +86,7 @@ Psionic Storm (Cantavis ability)
 Hollowed Glaves (Liiralisk)
 Phase Spear (Legionnaire)
 Harrying Talons (Akistrokor)
-Discoid Railgun (Savant)
+Discoid Railgun (Savant Siphon)
 Electromagnetic Explosion (Lobotomy Mine)
 Celestial Cannons (Star Sovereign)
 Intervention Missiles (Star Sovereign behavior)
@@ -165,7 +165,7 @@ Pungent Spores (Protathalor)
 Dissolving Sabers (Vilgorokor)
 Explosive Spores (Tosgrilisk)
 Gnashing Tendrils (Ghitorokor)
-Rapid Spines (Zobriolisk)
+Rapid Spines (Zobriolisk G)
 Fusion Saw (Wendigo)
 Knockout Drivers (Southpaw)
 Pharoah Cannons (Ramesses)
@@ -197,7 +197,7 @@ Sparring Saber (Sycophant)
 Kissing Emoji (Smoochie Boy)
 Khaydarin Plasma Laser (Engram)
 Ion Cannon (Diadem)
-Discoid Railgun (Savant, Piercing)
+Discoid Railgun (Savant Entropy)
 Geometric Rifle (Sevenstep, Piercing)
 Twinstrike Cannons (Matador)
 Cylindrical Blaster (Analogue)
@@ -229,14 +229,14 @@ Repeating Blaster (Extatus)
 Autonomous Ray (Unar)
 Phase Cremator (Ashguard)
 Successive Spines (Lakizilisk, Zorthos)
-Extended Weapon #102
-Extended Weapon #103
-Extended Weapon #104
-Extended Weapon #105
-Extended Weapon #106
-Extended Weapon #107
-Extended Weapon #108
-Extended Weapon #109
+Rapid Spines (Zobriolisk A)
+Quazrok Spray (Quazrokor)
+Phase Disruptor (Dracadin)
+Moonbound Salvo (Tiangou)
+Revenant Rifle (Nydus Eidolon)
+Gauss Slugger (Maverick Futurist)
+Needle Spores (Hydralisk Orkoti)
+Inzor Reflux (Inzorthrokor)
 Extended Weapon #110
 Extended Weapon #111
 Extended Weapon #112

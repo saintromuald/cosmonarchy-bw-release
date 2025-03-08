@@ -91,7 +91,7 @@ Flag (Yellow) (Pl.8)
 Cleric
 Valkyrie
 Dugalle
-Autocrat
+Stukov
 Duran
 Artanis
 Raszagal
@@ -178,104 +178,104 @@ Empress
 Cikralisk
 Kagralisk
 Hypnagogue
-Apostle
+Apostle (unused)
 Pythean
-Extended Portrait #73
-Extended Portrait #74
-Extended Portrait #75
-Extended Portrait #76
-Extended Portrait #77
-Extended Portrait #78
-Extended Portrait #79
-Extended Portrait #80
-Extended Portrait #81
-Extended Portrait #82
-Extended Portrait #83
-Extended Portrait #84
-Extended Portrait #85
-Extended Portrait #86
-Extended Portrait #87
-Extended Portrait #88
-Extended Portrait #89
-Extended Portrait #90
-Extended Portrait #91
-Extended Portrait #92
-Extended Portrait #93
-Extended Portrait #94
-Extended Portrait #95
-Extended Portrait #96
-Extended Portrait #97
-Extended Portrait #98
-Extended Portrait #99
-Extended Portrait #100
-Extended Portrait #101
-Extended Portrait #102
-Extended Portrait #103
-Extended Portrait #104
-Extended Portrait #105
-Extended Portrait #106
-Extended Portrait #107
-Extended Portrait #108
-Extended Portrait #109
-Extended Portrait #110
-Extended Portrait #111
-Extended Portrait #112
-Extended Portrait #113
-Extended Portrait #114
-Extended Portrait #115
-Extended Portrait #116
-Extended Portrait #117
-Extended Portrait #118
-Extended Portrait #119
-Extended Portrait #120
-Extended Portrait #121
-Extended Portrait #122
-Extended Portrait #123
-Extended Portrait #124
-Extended Portrait #125
-Extended Portrait #126
-Extended Portrait #127
-Extended Portrait #128
-Extended Portrait #129
-Extended Portrait #130
-Extended Portrait #131
-Extended Portrait #132
-Extended Portrait #133
-Extended Portrait #134
-Extended Portrait #135
-Extended Portrait #136
-Extended Portrait #137
-Extended Portrait #138
-Extended Portrait #139
-Extended Portrait #140
-Francisco Goska
+Advisor - Khalendric Knights
+Advisor - Orkoti
+Inzorthrokor
+Artisan
+Clarion
+Charlatan
+Ashguard
+Oscilliant
+Golem
+Magister
+Eidolon (Nydus)
+Apostle Joran
+Analogue
+Entarch Furen
+Vassal
+Vibrance
+Idol
+Unar
+Starscribe Kortar
+Emissary
+Specialist Goska
 Stroluum
-Cerebrate Tuzor
-Cerebrate Gorn
-Extended Portrait #145
-Extended Portrait #146
-Extended Portrait #147
-Extended Portrait #148
-Extended Portrait #149
-Extended Portrait #150
-Extended Portrait #151
-Extended Portrait #152
-Extended Portrait #153
-Extended Portrait #154
-Extended Portrait #155
-Extended Portrait #156
-Extended Portrait #157
-Extended Portrait #158
-Extended Portrait #159
-Extended Portrait #160
-Extended Portrait #161
-Extended Portrait #162
-Extended Portrait #163
-Extended Portrait #164
-Extended Portrait #165
-Extended Portrait #166
-Extended Portrait #167
-Extended Portrait #168
+Organ Tuzor
+Organ Gorn
+Nine Mephis
+Algannor
+Thalazim
+Warmonger
+Yggdrasil
+Senescent Organ
+Apostle Mirith
+Vilgorokor
+Tethzorokor
+Ghitorokor
+Tetcaerokor
+Nathrokor
+Sasyrvoleth
+Cherbrathalor
+Okrimnilisk
+Sovroleth
+Algoztalisk
+Nathrelisk
+Almaksalisk
+Akistrokor
+Kalkalisk
+Othstoleth
+Zobriolisk
+Quazilisk
+Tosgrilisk
+Gosvileth
+Gorgrokor
+Zarcavrokor
+Liiralisk
+Bactalisk
+Iroleth
+Axitrilisk
+Ramesses
+Autocrat
+Heracles
+Cuirass
+Auriel
+Siren
+Johnny Barlow
+Paladin
+Commander William Ajax
+Eritreus
+Apostle
+Ancile
+Wendigo
+PILER
+Officer Mannen Osina
+Pazuzu
+Bio-Master Arnold Lannigan
+Officer Oscar Esmond
+Prince Arthur Mazakel
+Centaur
+Aion
+Silvertongue
+Durendal
+Talos
+Konvilisk
+Alkajelisk
+Anticthon
+Barghest
+Simulacrum
+Azazel
+Officer Tom Medly
+Initiate Terimanok
+Prudence
+Morningstar
+Battlemaster Trodin
+Saberhand Tazarain
+Sectarian Venammar
+Actuary Ithintos
+Justicar Kiraxxar
+Demiurge
 Extended Portrait #169
 Extended Portrait #170
 Extended Portrait #171

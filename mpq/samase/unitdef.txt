@@ -48,6 +48,11 @@ military qilin = 398
 military auriel = 399
 military cyclops_futurist = 410
 military harakan_golden = 413
+military cleric_futurist = 418
+military blackjack_golden = 431
+military eidolon_nydus = 432
+military tiangou = 433
+military maverick_futurist = 435
 
 # Protoss factional units
 military adherent = 400
@@ -57,6 +62,8 @@ military ecclesiast_khalendric = 412
 military cicatus = 414
 military renesair = 423
 military ashguard = 424
+military dracadin_order = 430
+military manifold_starbound = 437
 
 # Zerg factional units
 military nathrelisk = 402
@@ -64,6 +71,7 @@ military iziralisk = 403
 military inzorthrokor = 415
 military quazrokor = 422
 military lakizilisk_zorthos = 425
+military hydralisk_orkoti = 436
 
 # Terran military units
 military maverick = 0
@@ -234,7 +242,7 @@ military epigraph = 266
 military servitor = 306
 military positron = 307
 military analogue = 308
-military mainstay = 309
+military unar = 309
 military maven = 310
 military cloudform = 311
 military vibrance = 312
@@ -286,6 +294,7 @@ building sequestered_icon = 304
 building unitary_union = 305
 building hall_of_heretics = 349
 building cedent = 420
+building xenolith = 426
 
 # Zerg military units
 military zethrokor = 37

@@ -185,7 +185,7 @@ Protoss Empress
 Protoss Prudence
 Zerg Skithrokor
 Terran Paladin
-Terran Savant
+Terran Savant (Entropy Gauntlets)
 Vespene Geyser
 Terran Hadron
 Terran Biotic Bastion
@@ -257,11 +257,11 @@ Terran Ancile
 Terran Matador (Tank Mode)
 Terran Future Station
 Zerg Zarcavrokor
-Terran Quantum Institute
-Terran Aerie
-Terran Pegasus
+Terran Quantum Institute (unused)
+Terran Aerie (unused)
+Terran Pegasus (unused)
 Terran Hippogriff
-Terran Oberon
+Terran Oberon (unused)
 Terran Aion
 Protoss Herald
 Protoss Epigraph
@@ -404,7 +404,7 @@ Zerg Nathrelisk (Zorthos)
 Zerg Iziralisk (Zorthos)
 Faction Selection Protoss
 Faction Selection Zerg
-Terran Anchor (Grounded)
+Terran Trenchfoot
 Zerg Sasyrvoleth
 Terran Tencendur
 Ackmed
@@ -424,18 +424,18 @@ Zerg Quazrokor
 Protoss Renesair
 Protoss Ashguard
 Zerg Lakizilisk (Zorthos)
-Extended Unit #199
-Extended Unit #200
-Extended Unit #201
-Extended Unit #202
-Extended Unit #203
-Extended Unit #204
-Extended Unit #205
-Extended Unit #206
-Extended Unit #207
-Extended Unit #208
-Extended Unit #209
-Extended Unit #210
+Protoss Xenolith
+Terran Facade
+Terran Savant (Power Siphon)
+Askosi Landlock
+Protoss Dracadin (Order)
+Terran Blackjack (Golden Republic)
+Terran Eidolon (Nydus Trinity)
+Terran Tiangou (Base)
+Tiangou Turret
+Terran Maverick (Futurist)
+Zerg Hydralisk (Orkoti)
+Protoss Manifold (Starbound)
 Extended Unit #211
 Extended Unit #212
 Extended Unit #213

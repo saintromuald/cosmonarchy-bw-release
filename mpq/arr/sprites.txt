@@ -280,7 +280,7 @@ Bengalaas (Jungle)
 Mineral Field Type1
 Mineral Field Type2
 Mineral Field Type3
-Aerie
+Facade
 Zerg Beacon
 Terran Beacon
 Protoss Beacon
@@ -522,7 +522,7 @@ Iroleth
 Sundog
 Paladin
 Madrigal
-Savant
+Savant (Entropy Gauntlets)
 Scrapyard
 Rotary
 Wyvern
@@ -690,7 +690,7 @@ Konvilisk
 Konvilisk Remnants
 Claymore
 Scribe Remnants
-Gorgral Swamp
+Tethvith Swamp
 Keskathalor Acid Pool
 Alaszileth
 Ion Field
@@ -975,27 +975,27 @@ Renesair Remains
 Unar
 Unar Orbital
 Ashguard
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
+Xenolith
+Savant (Power Siphon)
+Landlock
+Quazrokor
+Dracadin (Order)
+Dracadin Remains (Order)
+Blackjack (Golden)
+Blackjack (Golden) Damaged
+Tiangou (Base)
+Tiangou (Turret)
+Eidolon (Nydus)
+Maverick (Futurist)
+Hydralisk (Orkoti)
+Tencendur
+Tencendur Attack Overlay (Orange)
+Tencendur Attack Overlay (Blue)
+Tencendur Attack Overlay (Green)
+Hydralisk Remains (Orkoti)
+Inzorthrokor
+Inzorthrokor Remains
+Manifold (Starbound)
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1

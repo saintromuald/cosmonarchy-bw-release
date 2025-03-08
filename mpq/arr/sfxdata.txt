@@ -3444,45 +3444,45 @@ Aspirant Under Attack 01
 Aspirant Under Attack 02
 Aspirant Under Attack 03
 Aspirant Under Attack 04
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Quazrokor Weaponfire 01
+Quazrokor Weaponfire 02
+Quazrokor Weaponfire 03
+Ramesses Ready 01
+Ramesses Ready 02
+Ramesses Ready 03
+Ramesses Selected 01
+Ramesses Selected 02
+Ramesses Selected 03
+Ramesses Selected 04
+Ramesses Order Passive 01
+Ramesses Order Passive 02
+Ramesses Order Passive 03
+Ramesses Order Passive 04
+Ramesses Order Aggressive 01
+Ramesses Order Aggressive 02
+Ramesses Order Aggressive 03
+Ramesses Order Aggressive 04
+Ramesses Under Attack 01
+Ramesses Under Attack 02
+Ramesses Under Attack 03
+Ramesses Under Attack 04
+Maverick Futurist Weaponfire 01
+Maverick Futurist Weaponfire 02
+Maverick Futurist Weaponfire 03
+Eidolon Nydus Weaponfire 01
+Eidolon Nydus Weaponfire 02
+Eidolon Nydus Weaponfire 03
+Eidolon Nydus Weaponfire 04
+Eidolon Nydus Weaponfire 05
+Manifold Weaponfire 01
+Manifold Weaponfire 02
+Manifold Weaponfire 03
+Manifold Weaponfire 04
+Tiangou Weaponfire 01
+Tiangou Weaponfire 02
+Tiangou Weaponfire 03
+Tiangou Weaponfire 04
+Tiangou Weaponfire 05
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

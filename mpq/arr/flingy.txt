@@ -119,7 +119,7 @@ Vespene Geyser
 Mineral Field Type1
 Mineral Field Type2
 Mineral Field Type3
-Aerie
+Facade
 Zerg Beacon
 Terran Beacon
 Protoss Beacon
@@ -215,7 +215,7 @@ Iroleth
 Matrix
 Paladin
 Madrigal
-Savant
+Savant (Entropy Gauntlets)
 Scrapyard
 Rotary
 Sundog
@@ -356,7 +356,7 @@ Aspirant Criticality Field
 Akistrokor
 Konvilisk
 Claymore
-Gorgral Swamp
+Tethvith Swamp
 Keskathalor Weaponhit
 Alaszileth
 Diadem Weaponhit
@@ -546,20 +546,20 @@ Oscilliant
 Renesair
 Unar
 Ashguard
-Extended Flingy #340
-Extended Flingy #341
-Extended Flingy #342
-Extended Flingy #343
-Extended Flingy #344
-Extended Flingy #345
-Extended Flingy #346
-Extended Flingy #347
-Extended Flingy #348
-Extended Flingy #349
-Extended Flingy #350
-Extended Flingy #351
-Extended Flingy #352
-Extended Flingy #353
+Xenolith
+Savant (Power Siphon)
+Landlock
+Quazrokor
+Dracadin (Order)
+Blackjack (Golden)
+Tiangou Base
+Tiangou (Turret)
+Eidolon (Nydus)
+Maverick (Futurist)
+Hydralisk (Orkoti)
+Tencendur
+Inzorthrokor
+Manifold (Starbound)
 Extended Flingy #354
 Extended Flingy #355
 Extended Flingy #356

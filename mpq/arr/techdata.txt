@@ -25,7 +25,7 @@ Archon Warp (unused)
 Savant Onhit Toggle
 Disruption Field (Lanifect)
 Rescind Control (Mind Tyrant)
-Tyranny (Mind Tyrant)
+Maledictus (Mind Tyrant)
 Select Control (Larva)
 Grief of All Gods (Star Sovereign)
 Aural Assault (Luminary)
