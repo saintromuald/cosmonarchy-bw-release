@@ -1,191 +1,111 @@
-# 8 March 2025
-## Year 3, month 3, patch 1
-
-## Patch summary
-- Reworked [Savant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/savant), [Siren](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/siren), and [Mind Tyrant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/mind-tyrant)
-- Deployment of the [Tencendur](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/tencendur), [Xenolith](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/xenolith), and [Zobriolisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/zobriolisk)
-- More factional units for Futurist Federation, Golden Republic, Nydus Trinity, Order of the Sacred Saber, Starbound, Imicren Tendril, and Orkoti Tendril
-- AI and stability improvements
-- New terrain blends
+# 22 March 2025
+## Year 3, month 3, patch 2
 
 Download [Fraud Launcher 2](https://fraudsclub.com/files/Fraud%20Launcher%202.zip) for easier setup and maintenance! It now includes automatic setup and updates for CrownLink, a networking alternative for Cosmonarchy!
 
-## Next patch...
-Our goals for the next patch (22 March 2025) include:
-- Balance adjustments ahead of the March Invitational
-- Deployment of the [Facade](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/facade), and other infrastructure
-- More factional units
-- AI and stability improvements
-- New terrain blends
+## Patch summary
+- Made several balance adjustments ahead of the March Invitational (29-30 March 2025)
+- Adjusted tech requirements for the Valkyrie, the Pythean, and the Xenolith
+- Deployed the [Cestus](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cestus), the [Facade](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/facade), and the [Bulwark](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/bulwark)
+- Made several bugfixes and a few AI improvements
+- Added a few new terrain blends to Desert
+- Added some new models, courtesy of DeltaCadimus and Solstice
+- Updated Ramesses unit responses, courtesy of Myrian
 
 ## Bugfixes
-- **Stability:**
-	- Further reduced desync rate (a. DF)
-	- Fixed a crash case related to rescuable units (r. & c. DF)
 - **Gameplay:**
-	- When **flip-attack-and-patrol** is enabled, fixed a buttonset issue with **Talos**es (r. Hamster)
-	- **Khalendric Ashguard** now correctly benefits from Vengeful March (r. Londier)
-	- **Futurist Cleric**s no longer provide **Nanoshield** (r. jakulangski)
-- **Performance:**
-	- Movement speed calculations have been optimized, reducing performance cost of things like **Zoryusthaleth Swarming Omen** (c. DF)
+	- Projectiles for the **Hotshot**, **Siren**, **Cataphract**, and **Valkyrie** now no longer fail to strike targets that are at max range
+	- **Steward**s are no longer affected by speed modifiers, fixing bugs with attacking targets (r. ArbuzBudesh)
+	- Fixed bad buttonset for Futurist Federation **Stockade**s (r. Londier)
 - **Audiovisuals:**
-	- Improved minimap legibility of Jet Black and Dim Grey player colors
-	- Power fields now display when selecting allied power generators (c. DF)
-	- Power fields now consistently show in witness mode and replay mode (c. DF)
-	- Weapon tooltip for **Oscilliant** has been corrected (r. BladehollowRWL)
+	- Fixed **Manifold** and variant weapon SFX being muted (r. lolrsk8s)
+	- Fixed **Sublime Shepherd** overlays showing on cloaked/burrowed units (r. GreenEggs'NSpam)
+	- Fixed debug errors in **Piety Ward** death animations (r. Londier)
+	- Fixed bad **Starbound Manifold** passive string (.r lolrsk8s)
 
 ## Audiovisuals
-- Detectors now have a command card button
-- All non-factional units have received unique placeholder portraits (many c. jun3hong)
+- New models for:
+	- **Simulacrum**, **Matrix** (c. DeltaCadimus)
+	- **Star Sovereign** (c. Solstice)
 - New unit responses for:
-	- **Ramesses**
+	- **Ramesses** (c. Myrian)
 
 ## Terran
-- [Eidolon](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/eidolon):
-	- Build time 23 » 20
-- [Savant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/savant): **Revised!**
-	- Build time 25 » 23
-	- **Breathing Battery:**
-		- Now a proper transformation
-		- Movement speed in Entropy mode 4.4 » 5
-		- Now immobile in Siphon mode
-	- **Discoid Railgun:**
-		- Weapon range in Siphon mode 6 » 7
-		- Armor penetration in Siphon mode 3 » 0
-		- Weapon cooldown in Siphon mode 0.83 » 0.75
-- [Madcap](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/madcap):
-	- **Danaan Autogun:**
-		- Weapon damage 1x6 » 1x7
-- [Siren](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/siren): **Revised!**
-	- Resource costs 75/75 » 75/100
-	- HP 90 » 100
-	- **Charybdal Rifle:**
-		- Weapon factor 5 » 3
-	- **NEW: Law of Attraction:**
-		- Now pulls victims 2 range closer to the Siren
-- [Dilettante](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/dilettante):
-	- Build time 20 » 15
-	- Transport weight 2 » 1
-- [Sevenstep](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/sevenstep):
-	- Build time 30 » 26
-- [Silvertongue](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/silvertongue):
-	- Build time 40 » 35
-- [Goliath](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/goliath):
-	- HP 220 200
-	- **Twin Autocannons:**
-		- Weapon damage 2x5 » 2x4
+- [Savant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/savant):
+	- **Power Siphon:**
+		- Weapon range 7 » 8
 - [Blackjack](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/blackjack):
-	- **Monogun:**
-		- Weapon cooldown 0.54 » 0.5
-- [Matador](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/matador): **Revised!**
-	- No longer has Twinstrike Cannons
-	- Now attacks 25% faster in Cinder Mode
-- [Ramesses](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/ramesses):
-	- Build time 25 » 22
-	- HP 100 » 110
-	- **Pharoah Cannons:**
-		- Weapon damage 2x6 » 2x7
-- [Durendal](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/durendal):
-	- Build time 28 » 26
-- [Cataphract](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cataphract):
-	- Build time 45 » 40
-- [Sundog](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/sundog):
-	- Build time 35 » 30
-- [Salamander](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/salamander):
-	- Build time 35 » 32
+	- Movement speed 5 » 5.5
+- [Wraith](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/wraith):
+	- Build time 28 » 25
+- [Valkyrie](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/valkyrie):
+	- Now trained at Starpad, from Starport
+- [Trojan](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/trojan):
+	- Build time 30 » 28
+- [Pythean](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/pythean):
+	- Now trained at Starport, from Nanite Assembly
+	- Now accelerates faster, reducing drift
 - [Azazel](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/azazel):
-	- Build time 35 » 32
-- [Seraph](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/seraph):
-	- Build time 40 » 35
-- [Fulcrum](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/fulcrum):
-	- Build time 45 » 50
-- [Rotary](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/rotary):
-	- Resource costs 200/75 » 175/75
-	- Build time 35 » 30
-- **NEW:** [Tencendur](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/tencendur):
-	- Heavy garrison; requires Atlas
-- **NEW:** [Maverick (Futurist)](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/maverick-futurist):
-	- Futurist Federation: Maverick variant
-- **NEW:** [Blackjack (Golden)](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/blackjack-golden):
-	- Golden Republic: Blackjack variant
-- **NEW:** [Eidolon (Nydus)](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/eidolon-nydus):
-	- Nydus Trinity: Eidolon variant
+	- **Sublime Shepherd:**
+		- Effect range 4 » 6
+		- Now always applies to structures
+		- Now applies if the attacker dies before the attack lands
+- [Anchor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/anchor):
+	- Transport weight 10 » 15
+- [Sentinel](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/sentinel):
+	- Transport weight 8 » 12
+- **NEW:** [Cestus](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cestus):
+	- Warding outpost; detects and provides armor; no tech requirement
+- **NEW:** [Facade](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/facade):
+	- Cloaking outpost; can activate a cloaking field; requires Atlas
 
 ## Protoss
-- [Artisan](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/artisan):
-	- Build time 25 » 28
-- [Mind Tyrant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/mind-tyrant) **Revised!**:
-	- **Tyranny » Maledictus:**
-		- Channels for 5 seconds before declaring the target their malefactor
-		- While within 10 range of their tyrant, malefactors gain 33% movement speed, use the tyrant's energy as an overshield, and tyrannize hostiles on death
-		- Tyrants can only have one malefactor at a time
-	- **Maelstrom:**
-		- Duration 4 seconds » 5 seconds
-- [Accantor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/accantor):
-	- Movement speed 1.63 » 1.8 (10% faster)
-	- Removed variable movement speed steps
-- [Architect](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/architect):
-	- **Dispersive Salvo:**
-		- Weapon damage 1x40 » 1x30
+- [Manifold](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/manifold):
+	- Build time 20 » 18
+- [Idol](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/idol):
+	- Resource costs 100/50 » 75/50
+	- Build time 28 » 25
+	- HP 80 » 70
+	- Armor 1 » 0
+- [Golem](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/golem):
+	- Build time 30 » 28
 - [Vibrance](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/vibrance):
-	- Armor 4 » 3
-	- Movement speed 5 » 4.14 (17% slower)
 	- **Sensory Overload:**
-		- Weapon damage 1x15 » 1x10
-- [Solarion](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/solarion):
-	- Armor 6 » 5
-- [Star Sovereign](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/star-sovereign):
-	- Shields 150 » 200
-- [Cedent](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/cedent):
-	- Build time 25 » 20
-- [Aquifer](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/aquifer) and [Matrix](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/matrix):
-	- Build time 45 » 40
-	- Now requires a tier 1 production structure
-- [Crucible](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/crucible):
-	- Now requires a tier 1 production structure
-	- Now counts as a tier 2 production structure
-- [Engram](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/engram):
-	- Now requires a tier 2 production structure
-- [Unitary Union](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/unitary-union):
-	- Resource costs 400/300 » 400/350
-- **NEW:** [Xenolith](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/xenolith):
-	- Recalling power array; requires any tier 2
-- **NEW:** [Dracadin (Order](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/dracadin-order):
-	- Order of the Sacred Saber: Dracadin variant
+		- No longer attacks air units
+- [Didact](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/didact):
+	- Movement speed 2.914 » 3.332
+	- **Dimensional Recall:**
+		- Channel time 2.25 » 4
+- [Xenolith](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/xenolith):
+	- Now requires any tier 3, from any tier 2
+	- Resource costs 250/150 » 250/200
+	- Build time 30 » 40
+	- **Dimensional Recall:**
+		- Channel time 2.25 » 4
+- [Lattice](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/lattice):
+	- Resource costs 150/25 » 175/25
+- **NEW:** [Bulwark](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/bulwark):
+	- Protective core; detects and heals shields; no tech requirement
 
 ## Zerg
-- [Rilirokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/rilirokor): **Revised!**
-	- Can now be mutated from Larvae (dual-birth, no tech requirement)
-	- Timed life now resets to full while on cagra
-	- On attack, now gains +1 second of timed life
-- [Hydralisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/hydralisk):
-	- Movement speed 6.52 » 6.398 (2% slower)
-	- Removed variable movement speed steps
-- [Kagralisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/kagralisk):
-	- Movement speed 4.496 » 4.797 (7% faster)
-	- Removed variable movement speed steps
-- [Gorgrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/gorgrokor):
-	- Sight range 8 » 7
+- [Rilirokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/rilirokor):
+	- No longer has **Saber Siphon**
+	- *This was intended to be removed when the timed life gain on-hit was implemented. Oops!*
+- [Rililisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/rililisk):
+	- No longer has **Saber Siphon**
+	- Now gains timed life on each attack
+- [Liiralisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/liiralisk):
+	- **Hollowed Glaves:**
+		- Armor penetration 1 » 2
+- [Tethzorokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/tethzorokor):
+	- Resource costs 150/50 » 150/25
 - [Ultrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/ultrokor):
-	- Resource costs 250/150 » 300/150
-	- HP 500 » 400
-	- Armor 5 » 3
-- [Zarcavrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/zarcavrokor):
-	- Resource costs 175/150 » 200/125
-	- HP 300 » 280
-	- Armor 4 » 3
-	- Sight range 10 » 9
-- [Larvosk Cesiant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/larvosk-cesiant):
-	- Build time 30 » 35
-- [Ultrav Cavern](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/ultrav-cavern):
-	- Resource costs 1000/500 » 400/400
-	- Build time 60 » 50
-	- HP 1250 » 1200
-	- Armor 8 » 7
-	- Now requires Irol Iris, from Othstol Oviform
-- **NEW:** [Zobriolisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/zobriolisk):
-	- Versatile assault strain; morphed from Lakizilisk, requires Ultrav Cavern
-- **NEW:** [Quazrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/quazrokor):
-	- Imicren Tendril: Quazilisk variant
-- **NEW:** [Hydralisk (Orkoti)](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/hydralisk-orkoti):
-	- Orkoti Tendril: Hydralisk variant
+	- Resource costs 300/150 » 250/125
+- [Surkith Cesiant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/surkith-cesiant) and [Skortrith Cesiant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/skortrith-cesiant):
+	- Weapon fire animation timing reduced
+- [Spraith Cesiant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/spraith-cesiant):
+	- **Seeker Spores:**
+		- Weapon cooldown 0.54 » 0.42
+- [Spirtith Cesiant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/spirtith-cesiant):
+	- **Spirtith Spores:**
+		- Weapon cooldown 0.54 » 0.42

@@ -3483,10 +3483,10 @@ Tiangou Weaponfire 02
 Tiangou Weaponfire 03
 Tiangou Weaponfire 04
 Tiangou Weaponfire 05
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Facade Cast 01
+Facade Off 01
+Facade Selected 01
+Cestus Selected 01
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

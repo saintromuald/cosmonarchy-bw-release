@@ -2018,9 +2018,9 @@ Death         	[NONE]
 # ----------------------------------------------------------------------------- #
 
 MatralethDeathInit:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	wait              	2 
-	imgol             	58 0 0	# Zerg Air Death Explosion (Large) (thingy\zAirDthL.grp)
+	imgol             	58 0 0 # Zerg Air Death Explosion (Large) (thingy\zAirDthL.grp)
 	wait              	1 
 	end
 
@@ -3439,27 +3439,21 @@ SurkithCesiantInit:
 	goto              	ScourgeLocal00
 
 SurkithCesiantGndAttkInit:
+	playsnd           	78 # Bullet\ZLuFir00.wav
 	trgtarccondjmp    	74 42 SurkithCesiantLocal00
 	trgtarccondjmp    	159 42 SurkithCesiantLocal01
 	nobrkcodestart
-	playsnd           	78
 	playfram          	24
 	wait              	1
 	playfram          	25
-	wait              	1
-	playfram          	26
 	wait              	1
 	playfram          	27
 	wait              	1
 	playfram          	28
 	wait              	1
-	playfram          	29
-	wait              	1
 	playfram          	30
 	wait              	1
 	playfram          	31
-	wait              	1
-	playfram          	32
 	wait              	1
 	playfram          	33
 	wait              	1
@@ -3500,26 +3494,17 @@ SurkithCesiantIsWorking:
 
 SurkithCesiantLocal00:
 	nobrkcodestart
-	playsnd           	78 # Bullet\ZLuFir00.wav
-	playfram          	3
-	wait              	1
 	playfram          	4
 	wait              	1
 	playfram          	5
-	wait              	1
-	playfram          	6
 	wait              	1
 	playfram          	7
 	wait              	1
 	playfram          	8
 	wait              	1
-	playfram          	9
-	wait              	1
 	playfram          	10
 	wait              	1
 	playfram          	11
-	wait              	1
-	playfram          	12
 	wait              	1
 	playfram          	13
 	wait              	1
@@ -3552,24 +3537,17 @@ SurkithCesiantLocal00:
 
 SurkithCesiantLocal01:
 	nobrkcodestart
-	playsnd           	78 # Bullet\ZLuFir00.wav
 	playfram          	14
 	wait              	1
 	playfram          	15
-	wait              	1
-	playfram          	16
 	wait              	1
 	playfram          	0x11
 	wait              	1
 	playfram          	18
 	wait              	1
-	playfram          	19
-	wait              	1
 	playfram          	20
 	wait              	1
 	playfram          	21
-	wait              	1
-	playfram          	22
 	wait              	1
 	playfram          	23
 	wait              	1
@@ -5280,13 +5258,13 @@ Type          	13
 Init          	EidolonInit
 Death         	EidolonDeath
 GndAttkInit   	EidolonGndAttkInit
-AirAttkInit   	EidolonAirAttkInit
+AirAttkInit   	EidolonGndAttkInit
 Unused1       	EidolonUnused1
 GndAttkRpt    	EidolonGndAttkRpt
-AirAttkRpt    	EidolonAirAttkRpt
+AirAttkRpt    	EidolonGndAttkRpt
 CastSpell     	EidolonCastSpell
 GndAttkToIdle 	EidolonGndAttkToIdle
-AirAttkToIdle 	EidolonAirAttkToIdle
+AirAttkToIdle 	EidolonGndAttkToIdle
 Unused2       	[NONE]
 Walking       	EidolonWalking
 WalkingToIdle 	EidolonWalkingToIdle
@@ -5369,26 +5347,7 @@ EidolonLocal02:
 
 EidolonDeath:
 	playsnd           	238 # Terran\GHOST\TGhDth00.wav
-	setfldirect       	0
-	playfram          	221
-	wait              	2
-	playfram          	222
-	wait              	2
-	playfram          	223
-	wait              	2
-	playfram          	224
-	wait              	2
-	playfram          	225
-	wait              	2
-	playfram          	226
-	wait              	2
-	playfram          	227
-	wait              	2
-	playfram          	228
-	wait              	2
-	lowsprul          	230 0 0 # Eidolon Remnants (terran\tghDeath.grp)
-	wait              	1 
-	end
+	goto				EidolonDeathInit
 	
 EidolonUnused1:
 	wait				1
@@ -5432,30 +5391,6 @@ EidolonGndAttkRpt:
 	gotorepeatattk
 	ignorerest
 EidolonGndAttkToIdle:
-	playfram          	0x11
-	wait              	1
-	playfram          	0x00
-	wait              	1
-	goto              	EidolonWalkingToIdle
-
-EidolonAirAttkInit:
-	playfram          	0x00
-	wait              	1
-	playfram          	0x11
-	wait              	1
-	playfram          	0x22
-EidolonAirAttkRpt:
-	wait              	1
-	nobrkcodestart
-	playsnd           	98 # Bullet\TGhFir00.wav
-	attack
-	playfram          	0xcc
-	wait              	1
-	playfram          	0x22
-	nobrkcodeend
-	gotorepeatattk
-	ignorerest
-EidolonAirAttkToIdle:
 	playfram          	0x11
 	wait              	1
 	playfram          	0x00
@@ -8000,7 +7935,7 @@ FulcrumLanding:
 	wait              	2
 	playfram          	0x11
 	wait              	2
-	playsnd           	472
+	playsnd           	472 # Misc\Land.WAV
 	playfram          	0x10
 	wait              	2
 	playfram          	0x0F
@@ -8025,7 +7960,7 @@ FulcrumLanding:
 
 FulcrumLiftOff:
 	nobrkcodestart
-	playsnd           	471
+	playsnd           	471 # Misc\LiftOff.WAV
 	playfram          	0x08
 	wait              	2
 	playfram          	0x09
@@ -24330,7 +24265,7 @@ AlmostBuilt   	TreasuryAlmostBuilt
 Built         	TreasuryBuilt
 Landing       	TreasuryLanding
 LiftOff       	TreasuryLiftoff
-IsWorking     	TreasuryIsWorking
+IsWorking     	[NONE]
 WorkingToIdle 	TreasuryBuilt
 WarpIn        	[NONE]
 .headerend
@@ -24389,49 +24324,6 @@ TreasuryLiftoff:
 	sigorder          	16
 	nobrkcodeend
 	goto              	ScourgeLocal00
-
-TreasuryIsWorking:
-	playfram			1
-	wait				2
-	playfram			2
-	waitrand			2 4
-	playfram			3
-	wait				2
-	playfram			4
-	waitrand			2 4
-	playfram			5
-	wait				2
-	playfram			6
-	waitrand			2 4
-	playfram			7
-	wait				2
-	playfram			8
-	waitrand			2 4
-	playfram			9
-	wait				2
-	playfram			10
-	waitrand			2 4
-	playfram			11
-	wait				2
-	playfram			12
-	waitrand			2 4
-	playfram			13
-	wait				2
-	playfram			14
-	waitrand			2 4
-	playfram			15
-	wait				2
-	playfram			16
-	waitrand			2 4
-	playfram			17
-	wait				2
-	playfram			18
-	waitrand			2 4
-	playfram			19
-	wait				2
-	playfram			0x00
-	waitrand			2 4
-	goto              	TreasuryIsWorking
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -24654,7 +24546,7 @@ WarpIn        	SimulacrumWarpIn
 SimulacrumInit:
 	imgul             	1072 0 0 # Simulacrum Shadow (protoss\pdrShad.grp)
 SimulacrumWalkingToIdle:
-	playfram          	0x00
+	playfram          	0x33
 	goto              	ScourgeLocal00
 
 SimulacrumDeath:
@@ -24666,18 +24558,18 @@ SimulacrumDeath:
 	end
 
 SimulacrumGndAttkInit:
-	playfram			0x00
+	playfram			0x33
 	wait				1
 	nobrkcodestart
 	playsndbtwn			1427 1434 # Simulacrum weapon fire 01, 02, 03, 04, 05, 06, 07, 08
 	attackwith			1
-	playfram          	0x33
+	playfram          	0x00
 	wait              	1 
 	playfram          	0x11
 	wait              	1 
-	playfram          	0x33
+	playfram          	0x22
 	wait              	1 
-	playfram          	0x00
+	playfram          	0x33
 	wait              	1 
 	nobrkcodeend
 	gotorepeatattk
@@ -24715,12 +24607,6 @@ SimulacrumWalking:
 	move              	5
 	wait              	1
 	playfram          	0xdd
-	move              	4
-	wait              	1
-	playfram          	0xee
-	move              	5
-	wait              	1
-	playfram          	0xff
 	goto              	SimulacrumWalking
 
 SimulacrumWarpIn:
@@ -25716,10 +25602,14 @@ StarSovereignUnused1:
 	goto				StarSovereignWalkingToIdle
 
 StarSovereignGndAttkInit:
+	playfram			0x00
+	wait				1
+	playfram			0x20
 	playsndbtwn       	1227 1230 # Star Sovereign weapon fire 01, 02, 03, 04
-	attackwith        	1 
-	attackwith        	1 
+	attackwith        	1
+	attackwith        	1
 	wait              	2
+	playfram			0x00
 	gotorepeatattk
 	goto              	ScourgeLocal00
 	
@@ -25772,11 +25662,11 @@ StarSovereignLocal03:
 
 StarSovereignWalking:
 	setvertpos        	0 
-	imgol				1205 0 0 # Star Sovereign Engines (cm\protoss\starsovereign-engine.grp)
+#	imgol				1205 0 0 # Star Sovereign Engines (cm\protoss\starsovereign-engine.grp)
 	goto              	ScourgeLocal00
 
 StarSovereignWarpIn:
-	imgol             	143 0 0	# Star Sovereign Warp Flash (protoss\empyrean.grp)
+	imgol             	143 0 0	# Star Sovereign Warp Flash (protoss\starsovereign.grp)
 	goto              	ScourgeLocal00
 	
 # ----------------------------------------------------------------------------- #
@@ -29196,8 +29086,8 @@ PennantIsWorking:
 	goto              	PennantIsWorking
 
 PennantEnable:
-	playfram          	0x00	# Frame set 0
-	wait              	2 
+	playfram          	0x00
+	wait              	2
 	goto              	InfestedTerranWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
@@ -29218,7 +29108,7 @@ CyclopsWeaponHitInit:
 	sigorder          	1 
 	wait              	1 
 CyclopsWeaponHitDeath:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	domissiledmg
 	wait				1
 	playfram			1
@@ -29261,7 +29151,7 @@ AirAttkInit   	[NONE]
 # ----------------------------------------------------------------------------- #
 
 MaelstromProjectileInit:
-	playsnd           	99	# Bullet\DragBull.wav
+	playsnd           	99 # Bullet\DragBull.wav
 	wait              	1
 	sigorder          	1
 	wait              	1
@@ -42251,7 +42141,6 @@ MatrixInit:
 	goto              	MatrixBuilt
 
 MatrixBuilt:
-	wait				2
 	playfram			1
 	wait				2
 	playfram			2
@@ -42260,7 +42149,10 @@ MatrixBuilt:
 	wait				2
 	playfram			4
 	wait				2
+	playfram			5
+	wait				2
 	playfram			0x00
+	wait				1
 	goto              	MatrixBuilt
 
 MatrixDeath:
@@ -42272,12 +42164,23 @@ MatrixDeath:
 	end
 
 MatrixGndAttkInit:
-	playfram          	0x00
+	playfram          	6
 MatrixGndAttkRpt:
 	wait              	1
 	attack
 	playsndbtwn			1157 1159 # Matrix weaponfire 01, 02, 03
-	imgol				1163 0 -25 # Matrix impact
+	imgol				1163 0 -52 # Matrix impact
+	wait				1
+	playfram			7
+	wait				1
+	playfram			8
+	wait				1
+	playfram			9
+	wait				1
+	playfram			10
+	wait				1
+	playfram			11
+	wait				1
 	gotorepeatattk
 	ignorerest
 	goto				MatrixBuilt
@@ -42692,101 +42595,6 @@ HippogriffWalking:
 	setvertpos        	0
 	imgol             	1551 0 0 # Hippogriff Engines (cm\terran\hippogriff-engines.grp)
 	goto              	HippogriffLocal00
-
-# ----------------------------------------------------------------------------- #
-# This header is used by images.dat entries:
-# 353 Facade (cm\terran\facade.grp)
-.headerstart
-IsId          	684
-Type          	20
-Init          	FacadeInit
-Death         	FulcrumDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
-Unused1       	[NONE]
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
-Walking       	ScourgeLocal00
-WalkingToIdle 	ScourgeLocal00
-SpecialState1 	StarpadBuilt
-SpecialState2 	[NONE]
-AlmostBuilt   	FacadeAlmostBuilt
-Built         	StarpadBuilt
-Landing       	FacadeLanding
-LiftOff       	FacadeLiftOff
-IsWorking     	FacadeIsWorking
-WorkingToIdle 	StarpadBuilt
-WarpIn        	[NONE]
-.headerend
-# ----------------------------------------------------------------------------- #
-
-FacadeInit:
-	imgul             	1133 0 0 # Facade Shadow (cm\terran\facade-shadow.grp)
-	goto				StarpadBuilt
-
-FacadeAlmostBuilt:
-	playfram          	20
-	goto              	ScourgeLocal00
-
-FacadeLanding:
-	nobrkcodestart
-	wait              	20
-	playsnd           	472 # Misc\Land.WAV
-	playfram          	0
-	wait				20
-#	wait              	5
-#	playfram          	0
-#	wait              	5
-#	playfram          	0
-#	wait              	5
-#	playfram          	0
-#	wait              	5
-	playfram          	0x00
-	sigorder          	16
-	nobrkcodeend
-	goto              	ScourgeLocal00
-
-FacadeLiftOff:
-	nobrkcodestart
-	playsnd           	471 # Misc\LiftOff.WAV
-	playfram          	0
-	wait				15
-#	wait              	5
-#	playfram          	0
-#	wait              	5
-#	playfram          	0
-#	wait              	5
-#	playfram          	0
-	sigorder          	16
-	nobrkcodeend
-	goto              	ScourgeLocal00
-
-FacadeIsWorking:
-	playfram			1
-	wait				1
-	playfram			3
-	wait				1
-	playfram			5
-	wait				1
-	playfram			7
-	wait				1
-	playfram			9
-	wait				1
-	playfram			11
-	wait				1
-	playfram			13
-	wait				1
-	playfram			15
-	wait				1
-	playfram			17
-	wait				1
-	playfram			19
-	wait				1
-	goto              	FacadeIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -49206,27 +49014,21 @@ SkortrithCesiantInit:
 	goto              	ScourgeLocal00
 
 SkortrithCesiantGndAttkInit:
+	playsnd           	2540 # Skortrith Cesiant weaponfire 01
 	trgtarccondjmp    	74 42 SkortrithCesiantLocal00
 	trgtarccondjmp    	159 42 SkortrithCesiantLocal01
 	nobrkcodestart
-	playsnd           	2540 # Skortrith Cesiant weaponfire 01
 	playfram          	24
 	wait              	1
 	playfram          	25
-	wait              	1
-	playfram          	26
 	wait              	1
 	playfram          	27
 	wait              	1
 	playfram          	28
 	wait              	1
-	playfram          	29
-	wait              	1
 	playfram          	30
 	wait              	1
 	playfram          	31
-	wait              	1
-	playfram          	32
 	wait              	1
 	playfram          	33
 	wait              	1
@@ -49257,26 +49059,17 @@ SkortrithCesiantGndAttkInit:
 
 SkortrithCesiantLocal00:
 	nobrkcodestart
-	playsnd           	2540 # Skortrith Cesiant weaponfire 01
-	playfram          	3
-	wait              	1
 	playfram          	4
 	wait              	1
 	playfram          	5
-	wait              	1
-	playfram          	6
 	wait              	1
 	playfram          	7
 	wait              	1
 	playfram          	8
 	wait              	1
-	playfram          	9
-	wait              	1
 	playfram          	10
 	wait              	1
 	playfram          	11
-	wait              	1
-	playfram          	12
 	wait              	1
 	playfram          	13
 	wait              	1
@@ -49309,24 +49102,17 @@ SkortrithCesiantLocal00:
 
 SkortrithCesiantLocal01:
 	nobrkcodestart
-	playsnd           	2540 # Skortrith Cesiant weaponfire 01
 	playfram          	14
 	wait              	1
 	playfram          	15
-	wait              	1
-	playfram          	16
 	wait              	1
 	playfram          	0x11
 	wait              	1
 	playfram          	18
 	wait              	1
-	playfram          	19
-	wait              	1
 	playfram          	20
 	wait              	1
 	playfram          	21
-	wait              	1
-	playfram          	22
 	wait              	1
 	playfram          	23
 	wait              	1
@@ -52484,7 +52270,7 @@ Tiangou_Turret_GndAttkRpt:
 .headerstart
 IsId              819
 Type              24
-Init              TencedurFlagGround
+Init              TencendurFlagGround
 Death             Generic_Wait1End
 GndAttkInit       [NONE]
 AirAttkInit       [NONE]
@@ -52495,32 +52281,32 @@ CastSpell         [NONE]
 GndAttkToIdle     [NONE]
 AirAttkToIdle     [NONE]
 Unused2           [NONE]
-Walking           TencedurFlagAir
-WalkingToIdle     TencedurFlagGround
+Walking           TencendurFlagAir
+WalkingToIdle     TencendurFlagGround
 SpecialState1     [NONE]
 SpecialState2     [NONE]
-AlmostBuilt       TencedurFlagGround
-Built             TencedurFlagGround
-Landing           TencedurFlagAir
-LiftOff           TencedurFlagAir
+AlmostBuilt       TencendurFlagGround
+Built             TencendurFlagGround
+Landing           TencendurFlagAir
+LiftOff           TencendurFlagAir
 IsWorking         [NONE]
 WorkingToIdle     [NONE]
 WarpIn            [NONE]
 Unused3           [NONE]
 StarEditInit      [NONE]
-Disable           TencedurFlagGround
+Disable           TencendurFlagGround
 Burrow            [NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-TencedurFlagGround:
+TencendurFlagGround:
     playfram              0x00
     wait                  2
     playfram              0x11
     wait                  2
     playfram              0x22
     wait                  2
-TencedurFlagLocal01:
+TencendurFlagLocal01:
     playfram              0x33
     wait                  2
     playfram              0x44
@@ -52533,9 +52319,9 @@ TencedurFlagLocal01:
     wait                  2
     playfram              0x88
     wait                  2
-    goto                  TencedurFlagLocal01
+    goto                  TencendurFlagLocal01
 
-TencedurFlagAir:
+TencendurFlagAir:
     playfram              0x99
     wait                  2
     playfram              0xAA
@@ -52548,7 +52334,7 @@ TencedurFlagAir:
     wait                  2
     playfram              0xEE
     wait                  2
-    goto                  TencedurFlagAir
+    goto                  TencendurFlagAir
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -52610,4 +52396,212 @@ InzorthrokorGndAttkInit:
 	gotorepeatattk
 	goto              	ZoryusthalethGndAttkToIdle
 	
-## Next free IsId: 821
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1044 Cestus (cm\terran\cestus.grp)
+.headerstart
+IsId          	821
+Type          	20
+Init          	CestusInit
+Death         	AtelierDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	CestusAlmostBuilt
+Built         	CestusWorkingToIdle
+Landing       	CestusLanding
+LiftOff       	CestusLiftOff
+IsWorking     	ScourgeLocal00
+WorkingToIdle 	CestusWorkingToIdle
+WarpIn        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+CestusInit:
+	imgul             	1045 0 0 # Cestus Shadow (cm\terran\cestus-shadow.grp)
+	playfram          	0x00
+	goto              	ScourgeLocal00
+
+CestusAlmostBuilt:
+	playfram          	1
+	goto              	ScourgeLocal00
+	
+CestusWorkingToIdle:
+	playfram          	0x00
+	wait				2
+	playfram			2
+	wait				2
+	playfram			3
+	wait				2
+	playfram			4
+	wait				2
+	playfram			5
+	wait				2
+	playfram			6
+	wait				2
+	playfram			7
+	goto              	CestusWorkingToIdle
+	
+CestusLanding:
+	nobrkcodestart
+	wait              	25
+	playsnd           	472	# Misc\Land.WAV
+	playfram			0x00
+#	playfram          	4
+#	wait              	4
+#	playfram          	2
+#	wait              	4
+#	playfram          	3
+#	wait              	4
+#	playfram          	5
+#	wait              	4
+#	playfram          	0x00
+	wait				16
+	sigorder          	16
+	nobrkcodeend
+	goto              	CestusWorkingToIdle
+
+CestusLiftOff:
+	nobrkcodestart
+	playsnd           	471 # Misc\LiftOff.WAV
+#	playfram          	5
+#	wait              	4
+#	playfram          	3
+#	wait              	4
+#	playfram          	2
+#	wait              	4
+#	playfram          	4
+	wait				16
+	playfram			0x00
+	sigorder          	16
+	nobrkcodeend
+	goto              	ScourgeLocal00
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 353 Facade (cm\terran\facade.grp)
+.headerstart
+IsId          	822
+Type          	20
+Init          	FacadeInit
+Death         	FulcrumDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	ScourgeLocal00
+WalkingToIdle 	ScourgeLocal00
+SpecialState1 	StarpadBuilt
+SpecialState2 	[NONE]
+AlmostBuilt   	FacadeAlmostBuilt
+Built         	StarpadBuilt
+Landing       	FacadeLanding
+LiftOff       	FacadeLiftOff
+IsWorking     	[NONE]
+WorkingToIdle 	StarpadBuilt
+WarpIn        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+FacadeInit:
+	imgul             	1133 0 0 # Facade Shadow (cm\terran\facade-shadow.grp)
+	goto				StarpadBuilt
+
+FacadeAlmostBuilt:
+	playfram          	20
+	goto              	ScourgeLocal00
+
+FacadeLanding:
+	nobrkcodestart
+	wait              	20
+	playsnd           	472 # Misc\Land.WAV
+	playfram          	0
+	wait				20
+	playfram          	0x00
+	sigorder          	16
+	nobrkcodeend
+	goto              	ScourgeLocal00
+
+FacadeLiftOff:
+	nobrkcodestart
+	playsnd           	471 # Misc\LiftOff.WAV
+	playfram          	0
+	wait				16
+	sigorder          	16
+	nobrkcodeend
+	goto              	ScourgeLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1078 Prying Eyes Overlay (cm\effect\cruciblepennant-medium.grp)
+.headerstart
+IsId          	823
+Type          	1
+Init          	PryingEyesInit
+Death         	PryingEyesDeath
+.headerend
+# ----------------------------------------------------------------------------- #
+
+PryingEyesInit:
+	playfram          	0x00
+	wait              	1
+	playfram			1
+	wait 				1
+	playfram			3
+	wait 				1
+	playfram			4
+	wait 				1
+	playfram			5
+	wait 				1
+	playfram			6
+	wait 				1
+	playfram			7
+	wait 				1
+	playfram			8
+	wait 				1
+	playfram			9
+	wait				1
+	playfram			10
+	wait				1
+	playfram			11
+	wait				1
+	playfram			12
+	wait				1
+	playfram			13
+	wait				1
+	playfram			14
+	wait				1
+	playfram			15
+	wait				1
+	playfram			16
+	wait				2
+	playfram			17
+	wait				1
+	playfram			18
+	wait				1
+	playfram			19
+	wait				1
+	playfram			20
+	wait				1
+	goto				PryingEyesInit
+
+PryingEyesDeath:
+	wait              	1
+	end
+	
+## Next free IsId: 824

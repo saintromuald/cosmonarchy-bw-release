@@ -257,7 +257,7 @@ Terran Ancile
 Terran Matador (Tank Mode)
 Terran Future Station
 Zerg Zarcavrokor
-Terran Quantum Institute (unused)
+Terran Cestus
 Terran Aerie (unused)
 Terran Pegasus (unused)
 Terran Hippogriff

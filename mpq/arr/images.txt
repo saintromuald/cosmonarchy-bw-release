@@ -1042,8 +1042,8 @@ Kalkiir Pond
 Othstol Oviform
 Kalkiir Pond Shadow
 Othstol Oviform Shadow
-Quantum Institute
-Quantum Institute Shadow
+Cestus
+Cestus Shadow
 Irulent Ivoa
 Irulent Ivoa Shadow
 Othstoleth
@@ -1076,7 +1076,7 @@ Savant Shadow (Power Siphon)
 Ancile
 Ancile Shadow
 Ancile Engines
-unused
+Prying Eyes Channel
 unused
 unused
 unused
