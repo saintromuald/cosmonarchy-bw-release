@@ -29510,7 +29510,7 @@ WarpIn        	LanifectWarpIn
 # ----------------------------------------------------------------------------- #
 
 ArchitectInit:
-	imgul             	1220 0 14 # Architect Shadow (cm\protoss\architect.grp)
+	imgul             	1220 0 0 # Architect Shadow (cm\protoss\architect.grp)
 ArchitectGndAttkToIdle:
 	playfram          	0x00
 	goto              	ArchitectWalkingToIdle
@@ -29537,8 +29537,10 @@ ArchitectGndAttkInit:
 	imgol				1820 0 0 # Architect charge overlay
 	wait				8
 	playsndbtwn       	1413 1415 # Architect weapon fire 01, 02, 03
+	playfram			0x20
 	attackwith        	1 
 	wait              	2
+	playfram			0x00
 	nobrkcodeend
 	gotorepeatattk
 	goto              	ScourgeLocal00

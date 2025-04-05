@@ -436,7 +436,7 @@ Tiangou Turret
 Terran Maverick (Futurist)
 Zerg Hydralisk (Orkoti)
 Protoss Manifold (Starbound)
-Extended Unit #211
+Zerg Yblyleth (Zorthos)
 Extended Unit #212
 Extended Unit #213
 Extended Unit #214

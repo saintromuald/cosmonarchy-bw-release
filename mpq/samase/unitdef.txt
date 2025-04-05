@@ -72,6 +72,7 @@ military inzorthrokor = 415
 military quazrokor = 422
 military lakizilisk_zorthos = 425
 military hydralisk_orkoti = 436
+military yblyleth = 438
 
 # Terran military units
 military maverick = 0
