@@ -74,7 +74,7 @@ Gathtelosk
 Gathtelosk Shadow
 Caphrolosk
 Caphrolosk Shadow
-Surkith Colony
+Surkith Cesiant
 Surkith Colony Shadow
 Mature Chrysalis
 Mature Chrysalis Shadow
@@ -89,8 +89,8 @@ Nydus Cesiant Shadow
 Overmind With Shell
 Overmind Remains
 Overmind Without Shell
-Ultrok Cavern
-Ultrok Cavern Shadow
+Ultrav Cavern
+Ultrav Cavern Shadow
 Excisant
 Excisant Shadow
 Hydrith Den
@@ -195,7 +195,7 @@ Lattice Warp Flash
 Lattice Shadow
 Shield Battery
 Shield Battery Overlay
-Shileld Battery Warp Flash
+Shield Battery Warp Flash
 Shield Battery Shadow
 Stargate
 Stargate Overlay
@@ -291,9 +291,9 @@ Covert Ops Connector
 Covert Ops Overlay
 Covert Ops Shadow
 Ion Cannon (old, unused)
-Machine Shop
-Machine Shop Connector
-Machine Shop Shadow
+Palladium
+Palladium Connector
+Palladium Shadow
 Watchdog (Base)
 Watchdog (Turret)
 Watchdog (Base) Shadow
@@ -393,7 +393,7 @@ Recall Field
 Flag
 Young Chrysalis
 Psi Emitter
-Large Protoss Laser
+Data Disk
 Khaydarin Crystal
 Mineral Chunk Type1
 Mineral Chunk Type2
@@ -419,7 +419,7 @@ Psi Emitter Shadow (Ground)
 Psi Emitter Shadow (Carried)
 Acid Spray (Unused)
 Plasma Drip (Unused)
-FlameThrower
+Flame Thrower
 Longbolt/Gemini Missiles Trail
 Burrowing Dust
 Shield Overlay
@@ -534,8 +534,8 @@ Fragmentation Grenade
 Arclite Shock Cannon Hit
 ATS/ATA Laser Battery
 Burst Lasers
-Siege Tank(Tank) Turret Attack Overlay
-Siege Tank(Siege) Turret Attack Overlay
+Siege Tank (Tank) Turret Attack Overlay
+Siege Tank (Siege) Turret Attack Overlay
 Science Vessel Overlay (Part1)
 Science Vessel Overlay (Part2)
 Science Vessel Overlay (Part3)
@@ -911,7 +911,7 @@ Unknown Desert Shadow
 8/23 Desert Shadow
 12/1 Desert Overlay
 11/3 Desert
-Unknown913
+Wraith Engines
 Lurker Egg
 Vithrilisk
 Vithrilisk Shadow
@@ -977,8 +977,8 @@ Mind Control Hit (Large)
 Optical Flare Hit (Small)
 Optical Flare Hit (Medium)
 Optical Flare Hit (Large)
-Feedback (Small)
-Feedback (Medium)
+Feedback Hit (Small)
+Feedback Hit (Medium)
 Feedback Hit (Large)
 Maelstrom Overlay (Small)
 Maelstrom Overlay (Medium)
@@ -1125,8 +1125,8 @@ Argosy Shadow
 Argosy Warpin
 Nanite Assembly
 Nanite Assembly Shadow
-Particle Accelerator
-Particle Accelerator Shadow
+Hadron
+Hadron Shadow
 Crucible
 Crucible Shadow
 Crucible Warpin
@@ -1161,7 +1161,7 @@ Sanctum of Sorrow
 Sanctum of Sorrow Shadow
 Sanctum of Sorrow Warpin
 Phobos Engines
-Photon Cannon Muzzle Flash
+Warden Muzzle Flash
 Beta Protoss Explosion Small
 Last Orders Impact
 Salamander Engine
@@ -2033,8 +2033,8 @@ Yblyleth Shadow
 Yblyleth Remains
 Yblyleth Birth
 Yblyleth Mutate
-Extended Image #1033
-Extended Image #1034
+Large Protoss Laser
+Healing Pulse Underlay
 Extended Image #1035
 Extended Image #1036
 Extended Image #1037

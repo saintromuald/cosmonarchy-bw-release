@@ -1,63 +1,37 @@
-# 5 April 2025
-## Year 3, month 4, patch 1
+# 19 April 2025
+## Year 3, month 4, patch 2
 
 ## Patch summary
-- Made balance adjustments following the March Invitational
-- Deployed the **Yblyleth**, a factional Ovileth replacement for the Zorthos Tendril
-- Made several bugfixes, including a fix for replays crashing from commands executed during a game pause (c. DF)
-- Replaced the Architect sprite, courtesy of DeltaCadimus
-- Added a few new terrain blends to Desert
-
-## Bugfixes
-- **Stability:**
-	- Excessive chat messages and other commands during pauses no longer desync or crash replays (c. DF)
-- **Gameplay:**
-	- Fixed **Facade** still providing Prying Eyes when lifted
-	- Resolve mnemonic hotkey conflict between **Watchdog** and **Cestus** (r. Neblime)
-- **Audiovisuals:**
-	- Fix disappearing **Lanifect** button when queues are full (r. Tudor)
-	- Use Protoss cloaking SFX for **Vibrance** (r. lolrsk8s)
-	- Fix **Gorgon** passive tooltip (r. Bashka91)
+- Made balance tweaks to a few units
+- Began under-the-hood changes for Askosi implementation
+- Added new audiovisuals
 
 ## Audiovisuals:
-- New model for:
-	- Architect (c. DeltaCadimus)
+- Added several new icons (c. Raenarill)
+- New unit responses for:
+	- **Cikralisk** (c. Milestone)
 
 ## Terran
-- [Vestry](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/vestry):
-	- Build time 20 » 15
-- [Covenant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/covenant):
-	- Build time 25 » 22
-- [Tinkerer's Tower](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/tinkerers-tower):
-	- Build time 25 » 20
+- [Apostle](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/apostle):
+	- **NEW: Blood Tithe:**
+		- On attack, heals allies within 3 range for 5 HP
+- [Ramesses](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/ramesses):
+	- Resource costs 150/25 » 125/25
+- [Salamander](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/salamander):
+	- Resource costs 100/150 » 125/125
+	- Movement speed 4.58 » 5.47
 - [Guildhall](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/guildhall):
-	- Build time 30 » 22
-- [Palladium](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/palladium):
-	- Build time 25 » 22
-- [Future Station](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/future-station):
-	- Build time 40 » 30
-- [Biotic Bastion](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/biotic-bastion):
-	- Build time 45 » 30
-- [Rotary](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/rotary):
-	- Build time 25 » 20
-- [Commandment](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/commandment):
-	- Build time 30 » 22
-- [Hadron](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/hadron):
-	- Build time 45 » 30
+	- Resource costs 200/200 » 150/150
+- [Apothecary](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/apothecary):
+	- Resource costs 200/300 » 150/250
+- [Iron Foundry](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/iron-foundry):
+	- Resource costs 500/200 » 400/200
 
 ## Protoss
-- [Accantor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/accantor):
-	- **Plasma Shell:**
-		- Weapon range 9 » 8
-- [Extatus](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/extatus):
-	- Now has **Astral Blessing**, from **Astral Tether**
-- [Ardent Authority](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/ardent-authority):
-	- Resource costs 300/200 » 250/200
+- **Dimensional Recall:**
+	- Now recalls one unit every 0.5 seconds
 
 ## Zerg
-- **Regression:**
-	- Flyer -> ground regressions are now shifted downwards, and can no longer spawn on unwalkable terrain
-- [Gosvileth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/gosvileth):
-	- Now regresses to Droleth where possible
-- **NEW:** [Yblyleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/yblyleth):
-	- Zorthos Tendril: Ovileth replacement. Ground transport strain with cagra spread & Rilirokor corpse autophagy while burrowed
+- [Sovroleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/sovroleth):
+	- **Corpse Cocoon:**
+		- No longer procs on broodspawn corpses

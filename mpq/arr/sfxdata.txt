@@ -3487,28 +3487,28 @@ Facade Cast 01
 Facade Off 01
 Facade Selected 01
 Cestus Selected 01
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Cikralisk Ready 01
+Cikralisk Ready 02
+Cikralisk Ready 03
+Cikralisk Selected 01
+Cikralisk Selected 02
+Cikralisk Selected 03
+Cikralisk Selected 04
+Cikralisk Order Passive 01
+Cikralisk Order Passive 02
+Cikralisk Order Passive 03
+Cikralisk Order Passive 04
+Cikralisk Order Aggressive 01
+Cikralisk Order Aggressive 02
+Cikralisk Order Aggressive 03
+Cikralisk Order Aggressive 04
+Cikralisk Under Attack 01
+Cikralisk Under Attack 02
+Cikralisk Under Attack 03
+Cikralisk Under Attack 04
+Cikralisk Death 01
+Cikralisk Death 02
+Cikralisk Death 03
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1
