@@ -151,7 +151,7 @@ Khaydarin Ray (Matrix)
 Blindside Rockets (Sundog)
 Twinstrike Flamethrowers (Matador)
 Bisecting Blades (Zarcavrokor)
-Bones of Reflection (Zarcavrokor)
+Bones of Reflection
 Retractor Batteries (Pegasus)
 Lancet Missiles (Pegasus)
 Chimera Cannons (Hippogriff)

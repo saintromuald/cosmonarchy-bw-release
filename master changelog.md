@@ -5,6 +5,7 @@ Since December 2022, this changelog shows only past changes.
 See patchnotes.md for info on the most recent patch!
 
 # Table of Contents
+- [19 April 2025](#19-april-2025)
 - [5 April 2025](#5-april-2025)
 - [22 March 2025](#22-march-2025)
 - [8 March 2025](#8-march-2025)
@@ -20,11 +21,11 @@ See patchnotes.md for info on the most recent patch!
 - [25 May 2024](#25-may-2024)
 - [16 April 2024](#16-april-2024)
 - [13 April 2024](#13-april-2024)
-- [6 April 2024](#6-april-2024]
+- [6 April 2024](#6-april-2024)
 - [23 March 2024](#23-march-2024)
-- [16 March 2024](#16-march-2024]
-- [2 March 2024][#2-march-2024]
-- [30 December 2023][#30-december-2023]
+- [16 March 2024](#16-march-2024)
+- [2 March 2024](#2-march-2024)
+- [30 December 2023](#30-december-2023)
 - [3 December 2023](#3-december-2023)
 - [25 November 2023](#25-november-2023)
 - [4 November 2023](#4-november-2023)

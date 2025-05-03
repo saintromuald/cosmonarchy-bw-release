@@ -1,0 +1,102 @@
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1997 Landlock (cm\askosi\landlock.grp)
+.headerstart
+IsId          	812
+Type          	21
+Init          	LandlockInit
+Death         	LandlockDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	LandlockBuilt
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	LandlockIsWorking
+WorkingToIdle 	LandlockWorkingToIdle
+WarpIn        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+LandlockInit:
+	imgul             	1998 0 0 # Landlock Shadow (cm\askosi\landlock-shadow.grp)
+LandlockWorkingToIdle:
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+LandlockDeath:
+	playsnd           	7 # Misc\ExploLrg.wav
+	imgol             	215 0 0 # Explosion (Large) (thingy\tBangX.grp)
+	wait              	3
+	lowsprul          	274 0 0 # Terran Building Rubble (Large) (thingy\RubbleL.grp)
+	# REPLACE RUBBLE
+	wait              	1 
+	end
+
+LandlockBuilt:
+	imgol             	1820 0 0 # Architect weaponfire channel
+	goto              	SkryrokorLocal00
+	
+LandlockIsWorking:
+	playfram			1
+	wait				1
+	playfram			2
+	wait				1
+	playfram			3
+	wait				1
+	playfram			4
+	wait				1
+	playfram			5
+	wait				1
+	playfram			6
+	wait				1
+	playfram			7
+	wait				1
+	goto				LandlockIsWorking
+	
+InfestedTerranWalkingToIdle:
+	playfram			0x00
+SkryrokorLocal00:
+	wait				125
+	goto				SkryrokorLocal00
+	
+LiftedTerranStructureDeath:
+	lowsprul          	274 0 42 # Terran Building Rubble (Large) (thingy\RubbleL.grp)
+	wait              	1
+	end
+
+LiftedTerranStructureDeath_Small:
+	lowsprul          	273 0 42 # Terran Building Rubble (Small) (thingy\RubbleS.grp)
+	wait              	1
+	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# All shadows
+.headerstart
+IsId          	275
+Type          	1
+Init          	ShadowHeaderInit
+Death         	Generic_Wait1End
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ShadowHeaderInit:
+	wait              	1
+	followmaingraphic
+	goto              	ShadowHeaderInit
+	
+Generic_Wait1End:
+	wait				1
+	end

@@ -3509,3 +3509,4 @@ cm\z\cikralisk\hlp-04.wav
 cm\z\cikralisk\dth-01.wav
 cm\z\cikralisk\dth-02.wav
 cm\z\cikralisk\dth-02.wav
+cm\t\apostle\revive-01.wav
