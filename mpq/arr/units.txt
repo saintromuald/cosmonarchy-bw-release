@@ -437,10 +437,10 @@ Terran Maverick (Futurist)
 Zerg Hydralisk (Orkoti)
 Protoss Manifold (Starbound)
 Zerg Yblyleth (Zorthos)
-Extended Unit #212
-Extended Unit #213
-Extended Unit #214
-Extended Unit #215
+Askosi Pilgrim
+Basic Askosi Facilities
+Advanced Askosi Facilities
+Supreme Askosi Facilities
 Extended Unit #216
 Extended Unit #217
 Extended Unit #218

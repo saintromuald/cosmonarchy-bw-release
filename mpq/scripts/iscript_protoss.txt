@@ -168,7 +168,7 @@ Init          	DidactInit
 Death         	DidactDeath
 GndAttkInit   	DidactGndAttkInit
 AirAttkInit   	DidactGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	DidactGndAttkRpt
 AirAttkRpt    	DidactGndAttkRpt
 CastSpell     	DidactCastSpell
@@ -415,7 +415,7 @@ Init          	ArchonBeingInit
 Death         	Generic_Wait1End
 GndAttkInit   	ArchonBeingGndAttkInit
 AirAttkInit   	ArchonBeingGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	ArchonBeingGndAttkInit
 AirAttkRpt    	ArchonBeingGndAttkInit
 CastSpell     	[NONE]
@@ -639,7 +639,7 @@ Init          	DarkTemplar_Hero_Init
 Death         	DarkTemplar_Hero_Death
 GndAttkInit   	DarkTemplar_Hero_GndAttkInit
 AirAttkInit   	[NONE]
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	DarkTemplar_Hero_GndAttkInit
 AirAttkRpt    	[NONE]
 CastSpell     	DarkTemplar_Hero_CastSpell
@@ -896,7 +896,7 @@ Init          	StewardInit
 Death         	StewardDeath
 GndAttkInit   	StewardGndAttkInit
 AirAttkInit   	StewardGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	StewardGndAttkInit
 AirAttkRpt    	StewardGndAttkInit
 CastSpell     	[NONE]
@@ -1047,7 +1047,7 @@ Init          	EnvoyInit
 Death         	EnvoyDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	[NONE]
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
@@ -1625,7 +1625,7 @@ Init          	WitnessInit
 Death         	WitnessDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	[NONE]
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
@@ -4056,7 +4056,7 @@ AirAttkRpt    	Generic_Wait1End
 CastSpell     	Generic_Wait1End
 GndAttkToIdle 	Generic_Wait1End
 AirAttkToIdle 	Generic_Wait1End
-Unused2       	[NONE]
+Unused2       	SkryrokorLocal00
 Walking       	Engines_GlowHeaderInit
 WalkingToIdle 	Generic_Wait1End
 SpecialState1 	[NONE]
@@ -4844,13 +4844,13 @@ Init          	MindTyrantBeingInit
 Death         	Generic_Wait1End
 GndAttkInit   	MindTyrantBeingGndAttkInit
 AirAttkInit   	MindTyrantBeingGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	MindTyrantBeingGndAttkInit
 AirAttkRpt    	MindTyrantBeingGndAttkInit
 CastSpell     	MindTyrantBeingCastSpell
 GndAttkToIdle 	MindTyrantBeingGndAttkToIdle
 AirAttkToIdle 	MindTyrantBeingGndAttkToIdle
-Unused2       	[NONE]
+Unused2       	SkryrokorLocal00
 Walking       	MindTyrantBeingGndAttkToIdle
 WalkingToIdle 	MindTyrantBeingGndAttkToIdle
 SpecialState1 	[NONE]
@@ -5029,7 +5029,7 @@ Init          	LanifectInit
 Death         	LanifectDeath
 GndAttkInit   	LanifectAirAttkInit
 AirAttkInit   	LanifectAirAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	LanifectAirAttkInit
 AirAttkRpt    	LanifectAirAttkInit
 CastSpell     	LanifectCastSpell
@@ -5387,7 +5387,7 @@ Init          	ExemplarInit
 Death         	ExemplarDeath
 GndAttkInit   	ExemplarGndAttkInit
 AirAttkInit   	ExemplarGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	ExemplarGndAttkInit
 AirAttkRpt    	ExemplarGndAttkInit
 CastSpell     	[NONE]
@@ -5830,7 +5830,7 @@ Init          	AuroraInit
 Death         	AuroraDeath
 GndAttkInit   	AuroraGndAttkInit
 AirAttkInit   	AuroraGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	AuroraGndAttkInit
 AirAttkRpt    	AuroraGndAttkInit
 CastSpell     	[NONE]
@@ -5908,7 +5908,7 @@ Init          	PanoptusInit
 Death         	PanoptusDeath
 GndAttkInit   	PanoptusGndAttkInit
 AirAttkInit   	PanoptusGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	PanoptusGndAttkInit
 AirAttkRpt    	PanoptusGndAttkInit
 CastSpell     	[NONE]
@@ -6053,7 +6053,7 @@ Init          	SimulacrumInit
 Death         	SimulacrumDeath
 GndAttkInit   	SimulacrumGndAttkInit
 AirAttkInit   	SimulacrumGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	SimulacrumGndAttkInit
 AirAttkRpt    	SimulacrumGndAttkInit
 CastSpell     	[NONE]
@@ -6154,7 +6154,7 @@ Init          	EmpyreanInit
 Death         	EmpyreanDeath
 GndAttkInit   	EmpyreanGndAttkInit
 AirAttkInit   	EmpyreanGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	EmpyreanGndAttkInit
 AirAttkRpt    	EmpyreanGndAttkInit
 CastSpell     	[NONE]
@@ -6522,7 +6522,7 @@ Init          	ExtatusInit
 Death         	AuroraDeath
 GndAttkInit   	AuroraGndAttkInit
 AirAttkInit   	AuroraGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	AuroraGndAttkInit
 AirAttkRpt    	AuroraGndAttkInit
 CastSpell     	[NONE]
@@ -7030,7 +7030,7 @@ Init          	GladiusInit
 Death         	GladiusDeath
 GndAttkInit   	GladiusGndAttkInit
 AirAttkInit   	GladiusGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	GladiusGndAttkInit
 AirAttkRpt    	GladiusGndAttkInit
 CastSpell     	[NONE]
@@ -7103,7 +7103,7 @@ Init          	MagisterInit
 Death         	MagisterDeath
 GndAttkInit   	MagisterGndAttkInit
 AirAttkInit   	MagisterGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	MagisterGndAttkInit
 AirAttkRpt    	MagisterGndAttkInit
 CastSpell     	[NONE]
@@ -7184,7 +7184,7 @@ Init          	VassalInit
 Death         	VassalDeath
 GndAttkInit   	VassalGndAttkInit
 AirAttkInit   	VassalGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	VassalGndAttkInit
 AirAttkRpt    	VassalGndAttkInit
 CastSpell     	[NONE]
@@ -7439,7 +7439,7 @@ Init          	AtreusInit
 Death         	AtreusDeath
 GndAttkInit   	AtreusGndAttkInit
 AirAttkInit   	AtreusGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	AtreusGndAttkInit
 AirAttkRpt    	AtreusGndAttkInit
 CastSpell     	[NONE]
@@ -7557,7 +7557,7 @@ Init          	AmaranthInit
 Death         	AmaranthDeath
 GndAttkInit   	AmaranthGndAttkInit
 AirAttkInit   	AmaranthGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	AmaranthGndAttkRpt
 AirAttkRpt    	AmaranthGndAttkRpt
 CastSpell     	AmaranthCastSpell
@@ -7822,7 +7822,7 @@ Init          	IdolInit
 Death         	IdolDeath
 GndAttkInit   	IdolGndAttkInit
 AirAttkInit   	IdolGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	IdolGndAttkRpt
 AirAttkRpt    	IdolGndAttkRpt
 CastSpell     	[NONE]
@@ -7915,7 +7915,7 @@ Init          	GolemInit
 Death         	GolemDeath
 GndAttkInit   	GolemGndAttkInit
 AirAttkInit   	[NONE]
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	GolemGndAttkInit
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
@@ -7980,7 +7980,7 @@ Init          	BarghestInit
 Death         	BarghestDeath
 GndAttkInit   	BarghestGndAttkInit
 AirAttkInit   	BarghestGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	BarghestGndAttkInit
 AirAttkRpt    	BarghestGndAttkInit
 CastSpell     	[NONE]
@@ -8186,7 +8186,7 @@ Init          	PariahInit
 Death         	PariahDeath
 GndAttkInit   	PariahGndAttkInit
 AirAttkInit   	PariahGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	PariahGndAttkInit
 AirAttkRpt    	PariahGndAttkInit
 CastSpell     	[NONE]
@@ -8530,7 +8530,7 @@ Init          	ManifoldInit
 Death         	ManifoldDeath
 GndAttkInit   	ManifoldGndAttkInit
 AirAttkInit   	ManifoldGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	ManifoldGndAttkInit
 AirAttkRpt    	ManifoldGndAttkInit
 CastSpell     	[NONE]
@@ -8605,7 +8605,7 @@ Init          	ArchitectInit
 Death         	ArchitectDeath
 GndAttkInit   	ArchitectGndAttkInit
 AirAttkInit   	ArchitectGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	ArchitectGndAttkInit
 AirAttkRpt    	ArchitectGndAttkInit
 CastSpell     	[NONE]
@@ -9690,7 +9690,7 @@ Init          	ClarionInit
 Death         	ClarionDeath
 GndAttkInit   	ClarionGndAttkToIdle
 AirAttkInit   	ClarionGndAttkToIdle
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	ClarionGndAttkToIdle
 AirAttkRpt    	ClarionGndAttkToIdle
 CastSpell     	[NONE]
@@ -9808,7 +9808,7 @@ Init          	LegionnaireInit
 Death         	LegionnaireDeath
 GndAttkInit   	LegionnaireGndAttkInit
 AirAttkInit   	[NONE]
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	LegionnaireGndAttkRpt
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
@@ -9995,7 +9995,7 @@ Init          	DemiurgeInit
 Death         	DemiurgeDeath
 GndAttkInit   	DemiurgeGndAttkInit
 AirAttkInit   	DemiurgeGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	DemiurgeGndAttkInit
 AirAttkRpt    	DemiurgeGndAttkInit
 CastSpell     	[NONE]
@@ -10255,7 +10255,7 @@ Init          	AnthelionInit
 Death         	AnthelionDeath
 GndAttkInit   	AnthelionGndAttkInit
 AirAttkInit   	AnthelionGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	AnthelionGndAttkInit
 AirAttkRpt    	AnthelionGndAttkInit
 CastSpell     	[NONE]
@@ -10676,7 +10676,7 @@ Init          	EmpressInit
 Death         	EmpressDeath
 GndAttkInit   	EmpressGndAttkInit
 AirAttkInit   	EmpressGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	EmpressGndAttkInit
 AirAttkRpt    	EmpressGndAttkInit
 CastSpell     	[NONE]
@@ -12203,7 +12203,7 @@ Init          	EpigraphInit
 Death         	EpigraphDeath
 GndAttkInit   	EpigraphGndAttkInit
 AirAttkInit   	EpigraphGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	EpigraphGndAttkInit
 AirAttkRpt    	EpigraphGndAttkInit
 CastSpell     	[NONE]
@@ -12782,7 +12782,7 @@ Init          	OptectonInit
 Death         	StarSovereignDeath
 GndAttkInit   	OptectonGndAttkInit
 AirAttkInit   	OptectonGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	OptectonGndAttkInit
 AirAttkRpt    	OptectonGndAttkInit
 CastSpell     	[NONE]
@@ -13194,7 +13194,7 @@ Init          	AnalogueInit
 Death         	AnalogueDeath
 GndAttkInit   	AnalogueGndAttkInit
 AirAttkInit   	AnalogueGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	AnalogueGndAttkInit
 AirAttkRpt    	AnalogueGndAttkInit
 CastSpell     	[NONE]
@@ -13447,7 +13447,7 @@ Init          	AdherentInit
 Death         	LegionnaireDeath
 GndAttkInit   	AdherentGndAttkInit
 AirAttkInit   	[NONE]
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	AdherentGndAttkInit
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
@@ -14278,7 +14278,7 @@ Init          	VibranceInit
 Death         	AnalogueDeath
 GndAttkInit   	VibranceGndAttkInit
 AirAttkInit   	VibranceGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	VibranceGndAttkInit
 AirAttkRpt    	VibranceGndAttkInit
 CastSpell     	[NONE]
@@ -14313,7 +14313,7 @@ Init          	CicatusInit
 Death         	LegionnaireDeath
 GndAttkInit   	LegionnaireGndAttkInit
 AirAttkInit   	[NONE]
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	LegionnaireGndAttkRpt
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
@@ -14348,7 +14348,7 @@ Init          	OscilliantInit
 Death         	AtreusDeath
 GndAttkInit   	OscilliantGndAttkInit
 AirAttkInit   	OscilliantGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	OscilliantGndAttkRpt
 AirAttkRpt    	OscilliantGndAttkRpt
 CastSpell     	[NONE]
@@ -14444,7 +14444,7 @@ Init          	RenesairInit
 Death         	RenesairDeath
 GndAttkInit   	VassalGndAttkInit
 AirAttkInit   	VassalGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	VassalGndAttkInit
 AirAttkRpt    	VassalGndAttkInit
 CastSpell     	[NONE]
@@ -14493,7 +14493,7 @@ Init          	UnarInit
 Death         	UnarDeath
 GndAttkInit   	UnarGndAttkInit
 AirAttkInit   	UnarGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	UnarGndAttkInit
 AirAttkRpt    	UnarGndAttkInit
 CastSpell     	[NONE]

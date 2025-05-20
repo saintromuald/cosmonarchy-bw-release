@@ -51,10 +51,10 @@ Argus Talisman (DA +50)
 Unknown Upgrade50
 Caduceus Reactor (Medic +50)
 Chitinous Plating
-Anabolic Synthesis
-Charon Booster
-Unknown Upgrade55
-Unknown Upgrade56
+Askosi Biotic Bolting
+Askosi Mechani Bolting
+Askosi Skyskip Bolting
+Askosi Structure Bolting
 Protoss Structure Armor
 Zerg Structure Armor
 Terran Structure Armor

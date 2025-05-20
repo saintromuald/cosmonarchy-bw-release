@@ -19,7 +19,7 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	[NONE]
+AlmostBuilt   	SkryrokorLocal00
 Built         	LandlockBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
@@ -39,9 +39,8 @@ LandlockDeath:
 	playsnd           	7 # Misc\ExploLrg.wav
 	imgol             	215 0 0 # Explosion (Large) (thingy\tBangX.grp)
 	wait              	3
-	lowsprul          	274 0 0 # Terran Building Rubble (Large) (thingy\RubbleL.grp)
-	# REPLACE RUBBLE
-	wait              	1 
+	lowsprul          	1004 0 0 # Askosi Structure Rubble (Large) (cm\askosi\a-rubble-large.grp)
+	wait              	1
 	end
 
 LandlockBuilt:
@@ -99,4 +98,51 @@ ShadowHeaderInit:
 	
 Generic_Wait1End:
 	wait				1
+	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2040 Askosi Structure Rubble (Large) (cm\askosi\a-rubble-large.grp)
+.headerstart
+IsId          	145
+Type          	1
+Init          	AskosiBuildingRubbleHeaderInit
+Death         	AskosiBuildingRubbleHeaderDeath
+.headerend
+# ----------------------------------------------------------------------------- #
+
+AskosiBuildingRubbleHeaderInit:
+	playfram			0x00
+AskosiBuildingRubbleHeaderLocal00:
+	playfram			1
+	wait				2
+	playfram			2
+	wait				2
+	playfram			3
+	wait				2
+	playfram			2
+	wait				2
+	playfram			1
+	wait				2
+	playfram			0
+	wait				2
+	playfram			1
+	wait				2
+	playfram			2
+	wait				2
+	playfram			3
+	wait				2
+AskosiBuildingRubbleHeaderDeath:
+	playfram          	4
+	wait              	239
+	wait              	1
+	playfram          	5
+	wait              	255
+	wait              	24
+	playfram          	6
+	wait              	255
+	wait              	24
+	playfram          	7
+	wait              	255
+	wait              	24
 	end

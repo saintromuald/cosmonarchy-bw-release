@@ -95,10 +95,10 @@ Excisant
 Excisant Shadow
 Hydrith Den
 Hydrith Den Shadow
-Muthrok Spire
-Muthrok Spire Shadow
-Spraith Colony
-Spraith Colony Shadow
+Mutath Spire
+Mutath Spire Shadow
+Spraith Cesiant
+Spraith Cesiant Shadow
 Infested Ministry Overlay
 Zerg Construction (Large)
 Zerg Building Morph
@@ -2038,9 +2038,9 @@ Healing Pulse Underlay
 Terran Heavy Missile Aion
 Corrosive Touch Explosion
 Skryrokor Death Reversed
-Extended Image #1038
-Extended Image #1039
-Extended Image #1040
+Askosi Structure Rubble (Large)
+Pilgrim
+Pilgrim Shadow
 Extended Image #1041
 Extended Image #1042
 Extended Image #1043

@@ -50,8 +50,8 @@ Glave Wurm (Mutalisk)
 Parasitic Spores (Alkajelisk)
 Corrosive Acid (Bactalisk)
 Jupiter Driver (Pazuzu)
-Seeker Spores (Spraith Colony)
-Subterranean Tentacle (Surkith Colony)
+Seeker Spores (Spraith Cesiant)
+Subterranean Tentacle (Surkith Cesiant)
 Skittering Spores (Skithrokor)
 Suicide (Skryrokor)
 Parasitic Excision (Matraleth ability)
@@ -237,7 +237,7 @@ Revenant Rifle (Nydus Eidolon)
 Gauss Slugger (Maverick Futurist)
 Needle Spores (Hydralisk Orkoti)
 Inzor Reflux (Inzorthrokor)
-Extended Weapon #110
+Mining Saber (Pilgrim)
 Extended Weapon #111
 Extended Weapon #112
 Extended Weapon #113

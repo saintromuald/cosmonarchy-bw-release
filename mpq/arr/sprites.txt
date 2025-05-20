@@ -175,11 +175,11 @@ Matravil Nest
 Nydus Cesiant
 Overmind With Shell
 Overmind Without Shell
-Ultrok Cavern
+Ultrav Cavern
 Excisant
 Hydrith Den
 Mutath Spire
-Spraith Colony
+Spraith Cesiant
 Zerg Building Spawn (Small)
 Zerg Building Spawn (Medium)
 Zerg Building Spawn (Large)
@@ -999,10 +999,10 @@ Manifold (Starbound)
 Yblyleth
 Corrosive Touch Explosion
 Terran Heavy Missile Aion
-Extended Sprite #1
+Pilgrim
 Francisco Goska
 Stroluum
-Extended Sprite #1
+Askosi Structure Rubble (Large)
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1

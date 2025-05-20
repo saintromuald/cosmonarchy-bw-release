@@ -8,7 +8,7 @@ Init          	MinotaurInit
 Death         	MinotaurDeath
 GndAttkInit   	MinotaurGndAttkInit
 AirAttkInit   	MinotaurAirAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	MinotaurGndAttkInit
 AirAttkRpt    	MinotaurAirAttkInit
 CastSpell     	MinotaurCastSpell
@@ -80,10 +80,6 @@ InfestedTerranWalkingToIdle:
 SkryrokorLocal00:
 	wait				125
 	goto				SkryrokorLocal00
-	
-Generic_Wait1End:
-	wait				1
-	end
 	
 LiftedTerranStructureDeath:
 	lowsprul          	274 0 42 # Terran Building Rubble (Large) (thingy\RubbleL.grp)
@@ -174,7 +170,7 @@ Init          	TrojanInit
 Death         	TrojanDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	[NONE]
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
@@ -627,6 +623,10 @@ EidolonDeathInit:
 	wait              	1
 	end
 
+Generic_Wait1End:
+	wait				1
+	end
+
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 232 Nuke Beam (thingy\NukeBeam.grp)
@@ -867,7 +867,7 @@ Init          	SarahKerriganInit
 Death         	SarahKerriganDeath
 GndAttkInit   	SarahKerriganGndAttkInit
 AirAttkInit   	SarahKerriganGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	SarahKerriganGndAttkRpt
 AirAttkRpt    	SarahKerriganGndAttkRpt
 CastSpell     	SarahKerriganCastSpell
@@ -1342,7 +1342,7 @@ Init          	WraithInit
 Death         	WraithDeath
 GndAttkInit   	WraithGndAttkInit
 AirAttkInit   	WraithGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	WraithGndAttkInit
 AirAttkRpt    	WraithGndAttkInit
 CastSpell     	[NONE]
@@ -1741,7 +1741,7 @@ Init          	SeraphBaseInit
 Death         	SeraphBaseDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	[NONE]
 AirAttkRpt    	[NONE]
 CastSpell     	SeraphBaseCastSpell
@@ -1793,7 +1793,7 @@ Init          	SeraphTurretInit
 Death         	Generic_Wait1End
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	[NONE]
 AirAttkRpt    	[NONE]
 CastSpell     	SkryrokorLocal00
@@ -1820,7 +1820,7 @@ Init          	Phalanx_Tank_BaseInit
 Death         	Phalanx_Tank_BaseDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	[NONE]
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
@@ -1868,7 +1868,7 @@ Init          	InfestedTerranWalkingToIdle
 Death         	Generic_Wait1End
 GndAttkInit   	Phalanx_Tank_TurretGndAttkInit
 AirAttkInit   	[NONE]
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	Phalanx_Tank_TurretGndAttkInit
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
@@ -1906,7 +1906,7 @@ Init          	Phalanx_Siege_BaseInit
 Death         	Phalanx_Siege_BaseDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	[NONE]
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
@@ -1914,7 +1914,7 @@ GndAttkToIdle 	[NONE]
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
 Walking       	[NONE]
-WalkingToIdle 	[NONE]
+WalkingToIdle 	SkryrokorLocal00
 SpecialState1 	[NONE]
 SpecialState2 	Phalanx_Siege_BaseSpecialState2
 AlmostBuilt   	[NONE]
@@ -2000,7 +2000,7 @@ Init          	Phalanx_Siege_TurretInit
 Death         	Generic_Wait1End
 GndAttkInit   	Phalanx_Siege_TurretGndAttkInit
 AirAttkInit   	[NONE]
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	Phalanx_Siege_TurretGndAttkInit
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
@@ -3456,7 +3456,7 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	[NONE]
+AlmostBuilt   	SkryrokorLocal00
 Built         	SkryrokorLocal00
 Landing       	PalladiumConnectorLanding
 LiftOff       	PalladiumConnectorLiftOff
@@ -3602,8 +3602,8 @@ CastSpell     	[NONE]
 GndAttkToIdle 	Watchdog_Turret_GndAttkToIdle
 AirAttkToIdle 	Watchdog_Turret_GndAttkToIdle
 Unused2       	[NONE]
-Walking       	[NONE]
-WalkingToIdle 	[NONE]
+Walking       	SkryrokorLocal00
+WalkingToIdle 	SkryrokorLocal00
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	SkryrokorLocal00
@@ -4152,7 +4152,7 @@ AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
 GndAttkToIdle 	[NONE]
 AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
+Unused2       	SkryrokorLocal00
 Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
@@ -6582,7 +6582,7 @@ Init          	ValkyrieInit
 Death         	ValkyrieDeath
 GndAttkInit   	ValkyrieAirAttkInit
 AirAttkInit   	ValkyrieAirAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	ValkyrieAirAttkInit
 AirAttkRpt    	ValkyrieAirAttkInit
 CastSpell     	[NONE]
@@ -7298,7 +7298,7 @@ GndAttkRpt    	MadrigalImperiosoTurretGndAttkInit
 AirAttkRpt    	MadrigalImperiosoTurretGndAttkInit
 CastSpell     	[NONE]
 GndAttkToIdle 	SkryrokorLocal00
-AirAttkToIdle 	[NONE]
+AirAttkToIdle 	SkryrokorLocal00
 Unused2       	[NONE]
 Walking       	SkryrokorLocal00
 WalkingToIdle 	SkryrokorLocal00
@@ -7354,7 +7354,7 @@ GndAttkToIdle 	[NONE]
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
 Walking       	[NONE]
-WalkingToIdle 	[NONE]
+WalkingToIdle 	SkryrokorLocal00
 SpecialState1 	[NONE]
 SpecialState2 	MadrigalFuriaBaseSpecialState2
 AlmostBuilt   	[NONE]
@@ -7899,7 +7899,7 @@ Init          	SavantPowerSiphonInit
 Death         	MadcapDeath
 GndAttkInit   	MadcapGndAttkInit
 AirAttkInit   	MadcapGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	MadcapGndAttkRpt
 AirAttkRpt    	MadcapGndAttkRpt
 CastSpell     	[NONE]
@@ -7932,7 +7932,7 @@ Init          	SavantInit
 Death         	MadcapDeath
 GndAttkInit   	MadcapGndAttkInit
 AirAttkInit   	MadcapGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	MadcapGndAttkRpt
 AirAttkRpt    	MadcapGndAttkRpt
 CastSpell     	[NONE]
@@ -7972,7 +7972,7 @@ Init          	PytheanInit
 Death         	PytheanDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	[NONE]
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
@@ -8951,7 +8951,7 @@ Init          	SalamanderInit
 Death         	SalamanderDeath
 GndAttkInit   	SalamanderGndAttkInit
 AirAttkInit   	SalamanderAirAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	SalamanderGndAttkInit
 AirAttkRpt    	SalamanderAirAttkInit
 CastSpell     	[NONE]
@@ -9076,7 +9076,7 @@ Init          	GorgonInit
 Death         	GorgonDeath
 GndAttkInit   	GorgonGndAttkInit
 AirAttkInit   	GorgonGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	GorgonGndAttkInit
 AirAttkRpt    	GorgonGndAttkInit
 CastSpell     	[NONE]
@@ -9127,7 +9127,7 @@ Init          	PhobosInit
 Death         	PhobosDeath
 GndAttkInit   	PhobosGndAttkInit
 AirAttkInit   	PhobosGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	PhobosGndAttkInit
 AirAttkRpt    	PhobosGndAttkInit
 CastSpell     	PhobosCastSpell
@@ -12263,7 +12263,7 @@ Init          	ClaymoreInit
 Death         	ClaymoreDeath
 GndAttkInit   	ClaymoreGndAttkInit
 AirAttkInit   	ClaymoreGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	ClaymoreGndAttkInit
 AirAttkRpt    	ClaymoreGndAttkInit
 CastSpell     	[NONE]
@@ -12327,7 +12327,7 @@ Init          	SirenInit
 Death         	SirenDeath
 GndAttkInit   	SirenGndAttkInit
 AirAttkInit   	SirenGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	SirenGndAttkInit
 AirAttkRpt    	SirenGndAttkInit
 CastSpell     	SirenCastSpell
@@ -12866,7 +12866,7 @@ Init          	AutocratInit
 Death         	AutocratDeath
 GndAttkInit   	AutocratGndAttkInit
 AirAttkInit   	AutocratGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	AutocratGndAttkRpt
 AirAttkRpt    	AutocratGndAttkRpt
 CastSpell     	[NONE]
@@ -13105,7 +13105,7 @@ Init          	StrigaInit
 Death         	StrigaDeath
 GndAttkInit   	StrigaGndAttkInit
 AirAttkInit   	StrigaGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	StrigaGndAttkInit
 AirAttkRpt    	StrigaGndAttkInit
 CastSpell     	[NONE]
@@ -13251,7 +13251,7 @@ Init          	LuminaryInit
 Death         	LuminaryDeath
 GndAttkInit   	LuminaryGndAttkInit
 AirAttkInit   	LuminaryGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	LuminaryGndAttkInit
 AirAttkRpt    	LuminaryGndAttkInit
 CastSpell     	LuminaryCastSpell
@@ -13719,14 +13719,14 @@ CastSpell     	[NONE]
 GndAttkToIdle 	IonCannonAttackAInit
 AirAttkToIdle 	IonCannonAttackAInit
 Unused2       	[NONE]
-Walking       	[NONE]
-WalkingToIdle 	[NONE]
+Walking       	SkryrokorLocal00
+WalkingToIdle 	SkryrokorLocal00
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
 Built         	[NONE]
-Landing       	[NONE]
-LiftOff       	[NONE]
+Landing       	SkryrokorLocal00
+LiftOff       	SkryrokorLocal00
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
 WarpIn        	[NONE]
@@ -14495,7 +14495,7 @@ FusionCutterHitDamagelessDeath:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 296 Sentinel (Base)
+# 1544 Sentinel (Base) (cm\terran\sentinel-base.grp)
 .headerstart
 IsId          	666
 Type          	20
@@ -14567,14 +14567,14 @@ Sentinel_Base_Landing:
 	goto              	SkryrokorLocal00
 
 Sentinel_Base_Built:
-	imgol             	1545 0 0 # Sentinel (Turret)
+	imgol             	1545 0 0 # Sentinel (Turret) (cm\terran\sentinel-turret.grp)
 Sentinel_Base_WorkingToIdle:
 	playfram          	2
 	goto              	SkryrokorLocal00
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 297 Sentinel (Turret)
+# 1545 Sentinel (Turret) (cm\terran\sentinel-turret.grp)
 .headerstart
 IsId          	667
 Type          	24
@@ -14589,8 +14589,8 @@ CastSpell     	[NONE]
 GndAttkToIdle 	Sentinel_Turret_GndAttkToIdle
 AirAttkToIdle 	Sentinel_Turret_GndAttkToIdle
 Unused2       	[NONE]
-Walking       	[NONE]
-WalkingToIdle 	[NONE]
+Walking       	SkryrokorLocal00
+WalkingToIdle 	SkryrokorLocal00
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	SkryrokorLocal00
@@ -14711,7 +14711,7 @@ Init          	SundogInit
 Death         	SundogDeath
 GndAttkInit   	SundogGndAttkInit
 AirAttkInit   	SundogGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	SundogGndAttkInit
 AirAttkRpt    	SundogGndAttkInit
 CastSpell     	[NONE]
@@ -14953,7 +14953,7 @@ Init          	AncileInit
 Death         	AncileDeath
 GndAttkInit   	AncileGndAttkInit
 AirAttkInit   	AncileGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	AncileGndAttkInit
 AirAttkRpt    	AncileGndAttkInit
 CastSpell     	AncileCastSpell
@@ -15023,7 +15023,7 @@ Init          	HippogriffInit
 Death         	HippogriffDeath
 GndAttkInit   	HippogriffGndAttkInit
 AirAttkInit   	HippogriffAirAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	HippogriffGndAttkInit
 AirAttkRpt    	HippogriffAirAttkInit
 CastSpell     	[NONE]
@@ -15114,7 +15114,7 @@ Init          	WyvernInit
 Death         	WyvernDeath
 GndAttkInit   	WyvernGndAttkInit
 AirAttkInit   	WyvernGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	WyvernGndAttkInit
 AirAttkRpt    	WyvernGndAttkInit
 CastSpell     	WyvernCastSpell
@@ -15351,7 +15351,7 @@ Init          	AzazelInit
 Death         	AzazelDeath
 GndAttkInit   	AzazelGndAttkToIdle
 AirAttkInit   	AzazelGndAttkToIdle
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	AzazelGndAttkToIdle
 AirAttkRpt    	AzazelGndAttkToIdle
 CastSpell     	AzazelCastSpell
@@ -15415,7 +15415,7 @@ Init          	WendigoInit
 Death         	WendigoDeath
 GndAttkInit   	WendigoGndAttkInit
 AirAttkInit   	WendigoGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	WendigoGndAttkInit
 AirAttkRpt    	WendigoGndAttkInit
 CastSpell     	[NONE]
@@ -15490,7 +15490,7 @@ Init          	SouthpawInit
 Death         	SouthpawDeath
 GndAttkInit   	SouthpawGndAttkInit
 AirAttkInit   	SouthpawGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	SouthpawGndAttkInit
 AirAttkRpt    	SouthpawGndAttkInit
 CastSpell     	[NONE]
@@ -15572,7 +15572,7 @@ Init          	CyprianInit
 Death         	CyprianDeath
 GndAttkInit   	CyprianGndAttkInit
 AirAttkInit   	CyprianGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	CyprianGndAttkRpt
 AirAttkRpt    	CyprianGndAttkRpt
 CastSpell     	CyprianCastSpell
@@ -15906,7 +15906,7 @@ Init          	SevenstepInit
 Death         	SevenstepDeath
 GndAttkInit   	SevenstepGndAttkInit
 AirAttkInit   	SevenstepGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	SevenstepGndAttkRpt
 AirAttkRpt    	SevenstepGndAttkRpt
 CastSpell     	SevenstepCastSpell
@@ -17166,7 +17166,7 @@ MatadorCinderModeSpecialState2:
 # 1523 Matador Tank Mode Turret (cm\terran\matador-turret.grp)
 .headerstart
 IsId          	738
-Type          	12
+Type          	13
 Init          	InfestedTerranWalkingToIdle
 Death         	Generic_Wait1End
 GndAttkInit   	MatadorGndAttkInit
@@ -17180,7 +17180,7 @@ AirAttkToIdle 	InfestedTerranWalkingToIdle
 Unused2       	[NONE]
 Walking       	MatadorWalking
 WalkingToIdle 	InfestedTerranWalkingToIdle
-SpecialState1 	[NONE]
+SpecialState1 	SkryrokorLocal00
 .headerend
 # ----------------------------------------------------------------------------- #
 	
@@ -17280,7 +17280,7 @@ GndAttkToIdle 	ShamanVisionaryModeGndAttkToIdle
 AirAttkToIdle 	ShamanVisionaryModeGndAttkToIdle
 Unused2       	[NONE]
 Walking       	[NONE]
-WalkingToIdle 	[NONE]
+WalkingToIdle 	SkryrokorLocal00
 SpecialState1 	ShamanVisionaryModeSpecialState2
 SpecialState2 	ShamanVisionaryModeSpecialState2
 AlmostBuilt   	[NONE]
@@ -17385,7 +17385,7 @@ Init          	PhilocInit
 Death         	PhilocDeath
 GndAttkInit   	PhilocGndAttkInit
 AirAttkInit   	PhilocGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	PhilocGndAttkInit
 AirAttkRpt    	PhilocGndAttkInit
 CastSpell     	[NONE]
@@ -17602,7 +17602,7 @@ Init          	HotshotInit
 Death         	MadcapDeath
 GndAttkInit   	MadcapGndAttkInit
 AirAttkInit   	MadcapGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	MadcapGndAttkRpt
 AirAttkRpt    	MadcapGndAttkRpt
 CastSpell     	[NONE]
@@ -17629,7 +17629,7 @@ Init          	QilinInit
 Death         	QilinDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	[NONE]
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
