@@ -1423,7 +1423,7 @@ WraithAfterburnersInit:
 	wait              	1 
 	engframe          	0 
 	wait              	1 
-	engframe          	17 
+	engframe          	17
 	goto              	WraithAfterburnersInit
 
 # ----------------------------------------------------------------------------- #
@@ -1802,7 +1802,7 @@ AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
 Walking       	SkryrokorLocal00
 WalkingToIdle 	SkryrokorLocal00
-SpecialState1 	[NONE]
+SpecialState1 	SkryrokorLocal00
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
 Built         	[NONE]
