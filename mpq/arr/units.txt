@@ -441,28 +441,28 @@ Askosi Pilgrim
 Basic Askosi Facilities
 Advanced Askosi Facilities
 Supreme Askosi Facilities
-Extended Unit #216
-Extended Unit #217
-Extended Unit #218
-Extended Unit #219
-Extended Unit #220
-Extended Unit #221
-Extended Unit #222
-Extended Unit #223
-Extended Unit #224
-Extended Unit #225
-Extended Unit #226
-Extended Unit #227
-Extended Unit #228
-Extended Unit #229
-Extended Unit #230
-Extended Unit #231
-Extended Unit #232
-Extended Unit #233
-Extended Unit #234
-Extended Unit #235
-Extended Unit #236
-Extended Unit #237
+Askosi Proselyte
+Askosi Dyad
+Askosi Missionary
+Askosi Cardinal
+Askosi Mimic
+Askosi Vicar
+Askosi Rove
+Askosi Object
+Askosi Scepter
+Askosi Intendent
+Askosi Helion
+Askosi Emissary
+Askosi Inkblot
+Askosi Tirade
+Askosi Arch
+Askosi Grandstand
+Askosi Chantry
+Askosi Radix
+Askosi Cipher
+Askosi Function
+Askosi Gauntlet
+Askosi Cosmoscope
 Extended Unit #238
 Extended Unit #239
 Extended Unit #240

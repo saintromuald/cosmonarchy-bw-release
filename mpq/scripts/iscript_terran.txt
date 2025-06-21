@@ -346,7 +346,7 @@ HarakanGndAttkInit:
 HarakanGndAttkRpt:
 	wait              	1
 	nobrkcodestart
-	imgol             	421 0 0 # FlameThrower (thingy\flamer.grp)
+	imgol             	421 0 0 # Flamethrower (thingy\flamer.grp)
 	playfram          	0x20
 	attkshiftproj     	24
 	sigorder			32
@@ -1788,7 +1788,7 @@ SeraphBaseSpecialState1:
 # 261 Seraph (Turret) (terran\wesselt.grp)
 .headerstart
 IsId          	89
-Type          	12
+Type          	26
 Init          	SeraphTurretInit
 Death         	Generic_Wait1End
 GndAttkInit   	[NONE]
@@ -1803,6 +1803,20 @@ Unused2       	[NONE]
 Walking       	SkryrokorLocal00
 WalkingToIdle 	SkryrokorLocal00
 SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	[NONE]
+UnBurrow      	[NONE]
+Enable        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -6055,7 +6069,7 @@ IrradiateInit:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 421 FlameThrower (thingy\flamer.grp)
+# 421 Flamethrower (thingy\flamer.grp)
 .headerstart
 IsId          	312
 Type          	1
@@ -7413,7 +7427,7 @@ GndAttkRpt    	MadrigalFuriaTurretGndAttkInit
 AirAttkRpt    	MadrigalFuriaTurretGndAttkInit
 CastSpell     	[NONE]
 GndAttkToIdle 	SkryrokorLocal00
-AirAttkToIdle 	[NONE]
+AirAttkToIdle 	SkryrokorLocal00
 Unused2       	[NONE]
 Walking       	[NONE]
 WalkingToIdle 	SkryrokorLocal00
@@ -8074,7 +8088,7 @@ EnergyDecayDeath:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1110 Savant Form Switch - Power (cm\terran\savant-form-switch.grp)
+# 1110 Savant Form Switch - Power   (cm\terran\savant-form-switch.grp)
 # 1846 Savant Form Switch - Entropy (cm\terran\savant-form-switch.grp)
 .headerstart
 IsId          	459
@@ -8142,8 +8156,6 @@ SavantFormSwitchDeath:
 	wait              	1
 	end
 	
-
-	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 1141 Madcap (cm\terran\madcap.grp)
@@ -8154,7 +8166,7 @@ Init          	MadcapInit
 Death         	MadcapDeath
 GndAttkInit   	MadcapGndAttkInit
 AirAttkInit   	MadcapGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	MadcapGndAttkRpt
 AirAttkRpt    	MadcapGndAttkRpt
 CastSpell     	[NONE]
@@ -9727,7 +9739,7 @@ Init          	TalosInit
 Death         	TalosDeath
 GndAttkInit   	TalosGndAttkInit
 AirAttkInit   	TalosGndAttkInit
-Unused1       	[NONE]
+Unused1       	TalosUnused1
 GndAttkRpt    	TalosGndAttkRpt
 AirAttkRpt    	TalosGndAttkRpt
 CastSpell     	[NONE]
@@ -9767,6 +9779,19 @@ TalosDeath:
 	lowsprul			845 0 42 # Terran Unit Rubble Small
 	wait              	1
 	end
+	
+TalosUnused1:
+	wait				1
+	nobrkcodestart
+	tmprmgraphicstart
+	playsnd				1168
+	wait				8
+	sprol				742 0 0 # Small Explosion Reversed
+	wait				10
+	setfldirect			12
+	tmprmgraphicend
+	nobrkcodeend
+	goto				InfestedTerranWalkingToIdle
 
 TalosGndAttkInit:
 	playfram          	0x00
@@ -14821,7 +14846,7 @@ MatadorGndAttkInit:
 	nobrkcodestart
 	playfram          	0x100
 	playsndbtwn			2736 2738 # Matador weaponfire 2 01, 02, 03
-	imgol             	421 0 0 # FlameThrower (thingy\flamer.grp)
+	imgol             	421 0 0 # Flamethrower (thingy\flamer.grp)
 	attkshiftproj     	24
 	sigorder			32
 	wait              	1
@@ -15824,7 +15849,7 @@ DurendalGndAttkRpt:
 	nobrkcodestart
 	wait				1
 	playfram			0x260
-	imgol             	421 0 0 # FlameThrower (thingy\flamer.grp)
+	imgol             	421 0 0 # Flamethrower (thingy\flamer.grp)
 	attkshiftproj     	24
 	sigorder			32
 	wait              	1
@@ -17081,7 +17106,7 @@ GndAttkToIdle 	MatadorCinderModeGndAttkToIdle
 AirAttkToIdle 	MatadorCinderModeGndAttkToIdle
 Unused2       	[NONE]
 Walking       	[NONE]
-WalkingToIdle 	[NONE]
+WalkingToIdle 	SkryrokorLocal00
 SpecialState1 	MatadorCinderModeSpecialState2
 SpecialState2 	MatadorCinderModeSpecialState2
 AlmostBuilt   	[NONE]
@@ -17132,7 +17157,7 @@ MatadorCinderModeGndAttkInit:
 	nobrkcodestart
 	playfram          	0x1A0
 	playsndbtwn			2736 2738 # Matador weaponfire 2 01, 02, 03
-	imgol             	421 0 0 # FlameThrower (thingy\flamer.grp)
+	imgol             	421 0 0 # Flamethrower (thingy\flamer.grp)
 	attkshiftproj     	24
 	sigorder			32
 	wait              	1

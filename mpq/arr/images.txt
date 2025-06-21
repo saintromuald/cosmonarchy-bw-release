@@ -2036,12 +2036,12 @@ Yblyleth Mutate
 Large Protoss Laser
 Healing Pulse Underlay
 Terran Heavy Missile Aion
-Corrosive Touch Explosion
+Corrosive Touch Explosion Medium
 Skryrokor Death Reversed
 Askosi Structure Rubble (Large)
 Pilgrim
 Pilgrim Shadow
-Extended Image #1041
+Corrosive Touch Explosion Small
 Extended Image #1042
 Extended Image #1043
 Extended Image #1044

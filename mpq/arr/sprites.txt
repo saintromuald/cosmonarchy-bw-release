@@ -997,15 +997,15 @@ Inzorthrokor
 Inzorthrokor Remains
 Manifold (Starbound)
 Yblyleth
-Corrosive Touch Explosion
+Corrosive Touch Explosion Medium
 Terran Heavy Missile Aion
 Pilgrim
 Francisco Goska
 Stroluum
 Askosi Structure Rubble (Large)
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
+Pilgrim
+Corrosive Touch Explosion Small
+Askosi Structure Rubble (Small)
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1

@@ -132,17 +132,162 @@ AskosiBuildingRubbleHeaderLocal00:
 	wait				2
 	playfram			3
 	wait				2
+	playfram			1
+	wait				2
+	playfram			2
+	wait				2
+	playfram			3
+	wait				2
+	playfram			2
+	wait				2
+	playfram			1
+	wait				2
+	playfram			0
+	wait				2
+	playfram			1
+	wait				2
+	playfram			2
+	wait				2
+	playfram			3
+	wait				2
+	playfram			1
+	wait				2
+	playfram			2
+	wait				2
+	playfram			3
+	wait				2
+	playfram			2
+	wait				2
+	playfram			1
+	wait				2
+	playfram			0
+	wait				2
+	playfram			1
+	wait				2
+	playfram			2
+	wait				2
+	playfram			3
+	wait				2
 AskosiBuildingRubbleHeaderDeath:
 	playfram          	4
 	wait              	239
 	wait              	1
-	playfram          	5
-	wait              	255
-	wait              	24
 	playfram          	6
 	wait              	255
 	wait              	24
 	playfram          	7
 	wait              	255
 	wait              	24
+	playfram          	8
+	wait              	255
+	wait              	24
+	playfram          	9
+	wait              	255
+	wait              	24
 	end
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2041 Pilgrim (cm\askosi\pilgrim.grp)
+.headerstart
+IsId          	84
+Type          	15
+Init          	PilgrimInit
+Death         	PilgrimDeath
+GndAttkInit   	PilgrimGndAttkInit
+AirAttkInit   	[NONE]
+Unused1       	PilgrimUnused1
+GndAttkRpt    	PilgrimGndAttkInit
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	PilgrimGndAttkToIdle
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	PilgrimWalking
+WalkingToIdle 	InfestedTerranWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	PilgrimAlmostBuilt
+.headerend
+# ----------------------------------------------------------------------------- #
+
+PilgrimInit:
+	imgul             	2042 0 0 # Pilgrim Shadow (cm\askosi\pilgrim-shadow.grp)
+	goto              	InfestedTerranWalkingToIdle
+
+PilgrimDeath:
+	playsnd           	369 # Terran\SCV\TSCDth00.WAV
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	2
+	lowsprul          	809 0 0 # Pilgrim Remnants (cm\terran\mason-remnants.grp)
+	wait				1
+	end
+	
+PilgrimUnused1:
+	wait				1
+	nobrkcodestart
+	tmprmgraphicstart
+	playsnd				1168
+	wait				8
+	sprol				742 0 0 # Small Explosion Reversed
+	wait				10
+	setfldirect			12
+	tmprmgraphicend
+	nobrkcodeend
+	goto				InfestedTerranWalkingToIdle
+
+PilgrimGndAttkInit:
+	wait              	1
+	nobrkcodestart
+	playfram          	0xaa
+	attackwith        	1
+	playsndbtwn       	35 39 # terran\SCV\EDrRep00.wav | terran\SCV\EDrRep04.wav
+	wait              	1
+	playfram          	0x99
+	wait              	1
+	nobrkcodeend
+	gotorepeatattk
+	goto              	PilgrimGndAttkToIdle
+
+PilgrimGndAttkToIdle:
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+PilgrimWalking:
+	playfram          	0x11
+	move				4
+	wait				1
+	playfram          	0x22
+	move				4
+	wait				1
+	playfram          	0x33
+	move				4
+	wait				1
+	playfram          	0x44
+	move				4
+	wait				1
+	playfram          	0x55
+	move				4
+	wait				1
+	playfram          	0x66
+	move				4
+	wait				1
+	playfram          	0x77
+	move				4
+	wait				1
+	playfram          	0x88
+	move				4
+	wait				1
+	goto              	PilgrimWalking
+
+PilgrimAlmostBuilt:
+	setvertpos        	0
+	wait              	1
+PilgrimLocal00:
+	playfram          	0xbb
+	useweapon         	14 # Fusion Cutter (Harvest) (Fusion Cutter)
+	sigorder			32
+	wait              	3
+	playfram          	0x99
+	wait 				10
+	goto              	PilgrimLocal00

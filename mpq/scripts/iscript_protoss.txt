@@ -7837,13 +7837,13 @@ SpecialState1 	[NONE]
 
 IdolInit:
 	imgul             	1183 0 0 # Idol Shadow (cm\protoss\idol-shad.grp)
-	playfram          	0x77
+	playfram          	0x00
 	goto				SkryrokorLocal00
 	
 IdolGndAttkToIdle:
-	playfram			0x88
+	playfram			0x22
 	wait				1
-	playfram          	0x77
+	playfram          	0x00
 	goto              	SkryrokorLocal00
 
 IdolDeath:
@@ -7855,23 +7855,23 @@ IdolDeath:
 	end
 
 IdolGndAttkInit:
-	playfram			0x88
+	playfram			0x22
 	wait				1
-	playfram			0x99
+	playfram			0x33
 IdolGndAttkRpt:
 	wait				1
 	nobrkcodestart
-	playfram          	0xbb
+	playfram          	0x44
 	attack
 	playsndbtwn			1268 1272 # Idol weaponfire 01, 02, 03, 04, 05
 	wait              	1
-	playfram			0x99
+	playfram			0x55
 	wait              	3
-	playfram          	0xbb
+	playfram          	0x99
 	attack
 	playsndbtwn			1268 1272 # Idol weaponfire 01, 02, 03, 04, 05
 	wait              	1
-	playfram			0x99
+	playfram			0xee
 	wait				1
 	nobrkcodeend
 	gotorepeatattk
@@ -7879,30 +7879,42 @@ IdolGndAttkRpt:
 	goto              	IdolGndAttkToIdle
 
 IdolWalking:
-	move              	5 
-	wait              	1 
-	playfram          	0x00
-	move              	5 
-	wait              	1 
-	playfram          	0x11
-	move              	5 
-	wait              	1 
-	playfram          	0x22
-	move              	5 
-	wait              	1 
-	playfram          	0x33
-	move              	5 
-	wait              	1 
-	playfram          	0x44
-	move              	5 
-	wait              	1 
-	playfram          	0x55
-	move              	5 
-	wait              	1 
-	playfram          	0x66
-	move              	5 
-	wait              	1 
-	playfram          	0x77
+	move              	5
+	wait              	1
+	playfram          	0xff
+	move              	5
+	wait              	1
+	playfram          	0x110
+	move              	5
+	wait              	1
+	playfram          	0x121
+	move              	5
+	wait              	1
+	playfram          	0x132
+	move              	5
+	wait              	1
+	playfram          	0x143
+	move              	5
+	wait              	1
+	playfram          	0x154
+	move              	5
+	wait              	1
+	playfram          	0x165
+	move              	5
+	wait              	1
+	playfram          	0x176
+	move              	5
+	wait              	1
+	playfram          	0x187
+	move              	5
+	wait              	1
+	playfram          	0x198
+	move              	5
+	wait              	1
+	playfram          	0x1a9
+	move              	5
+	wait              	1
+	playfram          	0x1ba
 	goto              	IdolWalking
 	
 # ----------------------------------------------------------------------------- #
@@ -10865,9 +10877,35 @@ AnthelionTeleportDepartInit:
 # 1456 Anthelion Teleport (Arrival) (cm\protoss\anthelion-teleport-arrive.grp)
 .headerstart
 IsId          	632
-Type          	0
+Type          	27
 Init          	AnthelionTeleportArriveInit
 Death         	[NONE]
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	[NONE]
+UnBurrow      	[NONE]
+Enable        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 

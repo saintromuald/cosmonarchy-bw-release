@@ -8666,7 +8666,7 @@ AirAttkToIdle 	QuaziliskGndAttkToIdle
 Unused2       	[NONE]
 Walking       	QuaziliskWalking
 WalkingToIdle 	QuaziliskGndAttkToIdle
-SpecialState1 	[NONE]
+SpecialState1 	SkryrokorLocal00
 SpecialState2 	QuaziliskSpecialState2
 AlmostBuilt   	[NONE]
 Built         	[NONE]
@@ -11760,13 +11760,11 @@ KagraliskGndAttkInit:
 	attack
 	wait              	1
 	playfram          	0x22
-	attack
 	wait              	1
 	playfram          	0x33
 	attack
 	wait              	1
 	playfram          	0x44
-	attack
 	wait              	1
 	playfram          	0x55
 	wait              	1
@@ -16268,3 +16266,41 @@ SkryrokorDeathReversedInit:
 	playfram          	0x00
 	wait              	1
 	goto				Generic_Wait1End
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2038 Corrosive Touch Explosion (Medium) (cm\zerg\corrosive-touch-explosion-medium.grp)
+# 2043 Corrosive Touch Explosion (Small) (cm\zerg\corrosive-touch-explosion-small.grp)
+.headerstart
+IsId          	829
+Type          	1
+Init          	CorrosiveTouchExplosionInit
+Death         	Generic_Wait1End
+.headerend
+# ----------------------------------------------------------------------------- #
+
+CorrosiveTouchExplosionInit:
+	playsnd           	924	# Zerg\Matraleth\ZQuEns00.WAV #TODO Own SFX
+	playfram          	4
+	wait              	1
+	playfram          	5
+	wait              	1
+	playfram          	6
+	wait              	1
+	playfram          	7
+	wait              	1
+	playfram          	8
+	wait              	1
+	playfram          	9
+	wait              	1
+	playfram          	10
+	wait              	1
+	playfram          	11
+	wait              	1
+	playfram          	12
+	wait              	1
+	playfram          	13
+	wait              	1
+	playfram          	14
+	wait              	1
+	end
