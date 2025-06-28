@@ -8064,7 +8064,7 @@ Init          	KalkaliskInit
 Death         	KalkaliskDeath
 GndAttkInit   	KalkaliskGndAttkInit
 AirAttkInit   	KalkaliskGndAttkInit
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	KalkaliskGndAttkInit
 AirAttkRpt    	KalkaliskGndAttkInit
 CastSpell     	[NONE]

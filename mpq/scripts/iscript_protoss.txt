@@ -121,9 +121,33 @@ Explosion_Medium_Init:
 # 334 Building Explosion (Large) (thingy\tBangX.grp)
 .headerstart
 IsId          	144
-Type          	0
+Type            24
 Init          	Explosion_Large_Init
-Death         	[NONE]
+Death         	Explosion_Large_Init
+GndAttkInit     Explosion_Large_Init
+AirAttkInit     Explosion_Large_Init
+Unused1         Explosion_Large_Init
+GndAttkRpt      Explosion_Large_Init
+AirAttkRpt      Explosion_Large_Init
+CastSpell       Explosion_Large_Init
+GndAttkToIdle   Explosion_Large_Init
+AirAttkToIdle   Explosion_Large_Init
+Unused2         Explosion_Large_Init
+Walking         Explosion_Large_Init
+WalkingToIdle   Explosion_Large_Init
+SpecialState1   Explosion_Large_Init
+SpecialState2   Explosion_Large_Init
+AlmostBuilt     Explosion_Large_Init
+Built           Explosion_Large_Init
+Landing         Explosion_Large_Init
+LiftOff         Explosion_Large_Init
+IsWorking       Explosion_Large_Init
+WorkingToIdle   Explosion_Large_Init
+WarpIn          Explosion_Large_Init
+Unused3         Explosion_Large_Init
+StarEditInit    Explosion_Large_Init
+Disable         Explosion_Large_Init
+Burrow          Explosion_Large_Init
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -11888,7 +11912,7 @@ GndAttkToIdle 	MatrixBuilt
 AirAttkToIdle 	MatrixBuilt
 Unused2       	[NONE]
 Walking       	[NONE]
-WalkingToIdle 	[NONE]
+WalkingToIdle 	SkryrokorLocal00
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
