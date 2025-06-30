@@ -1142,7 +1142,7 @@ AirAttkToIdle 	HydraliskGndAttkToIdle
 Unused2       	[NONE]
 Walking       	HydraliskWalking
 WalkingToIdle 	HydraliskWalkingToIdle
-SpecialState1 	[NONE]
+SpecialState1 	SkryrokorLocal00
 SpecialState2 	HydraliskSpecialState2
 AlmostBuilt   	[NONE]
 Built         	[NONE]
