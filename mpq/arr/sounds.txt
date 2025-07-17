@@ -3510,3 +3510,17 @@ cm\z\cikralisk\dth-01.wav
 cm\z\cikralisk\dth-02.wav
 cm\z\cikralisk\dth-02.wav
 cm\t\apostle\revive-01.wav
+cm\f-t\blackguard\ch-01.wav
+cm\f-t\blackguard\ch-02.wav
+cm\f-t\blackguard\ch-03.wav
+cm\f-t\blackguard\ch-04.wav
+cm\f-t\blackguard\wf-01.wav
+cm\f-t\blackguard\wf-02.wav
+cm\f-t\blackguard\wf-03.wav
+cm\f-t\blackguard\wf-04.wav
+cm\f-t\arhaun\wf-01.wav
+cm\f-t\arhaun\wf-02.wav
+cm\f-t\arhaun\wf-03.wav
+cm\f-z\hydralisk-orkoti\wf-01.wav
+cm\f-z\hydralisk-orkoti\wf-02.wav
+cm\f-z\hydralisk-orkoti\wf-03.wav

@@ -6989,7 +6989,7 @@ IrolIrisIsWorking:
 # 1095 Nathrokor (cm\zerg\nathrokor.grp)
 .headerstart
 IsId          	451
-Type          	12
+Type          	14
 Init          	NathrokorInit
 Death         	NathrokorDeath
 GndAttkInit   	NathrokorGndAttkInit
@@ -7003,7 +7003,9 @@ AirAttkToIdle 	NathrokorGndAttkToIdle
 Unused2       	[NONE]
 Walking       	NathrokorWalking
 WalkingToIdle 	NathrokorGndAttkToIdle
-SpecialState1 	[NONE]
+SpecialState1 	SkryrokorLocal00
+SpecialState2 	SkryrokorLocal00
+AlmostBuilt   	SkryrokorLocal00
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -7453,7 +7455,7 @@ GndAttkToIdle 	SurkithCesiantGndAttkToIdle
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
 Walking       	[NONE]
-WalkingToIdle 	[NONE]
+WalkingToIdle 	SurkithCesiantIsWorking
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	SurkithCesiantAlmostBuilt
@@ -16304,3 +16306,39 @@ CorrosiveTouchExplosionInit:
 	playfram          	14
 	wait              	1
 	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1782 Skibact Scab (cm\zerg\skibact-scab.grp)
+.headerstart
+IsId          	830
+Type          	20
+Init          	SkibactScabInit
+Death         	HydrithDenDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	HydrithDenAlmostBuilt
+Built         	HydrithDenBuilt
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	HydrithDenIsWorking
+WorkingToIdle 	HydrithDenWorkingToIdle
+WarpIn        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+SkibactScabInit:
+	imgul             	2044 0 0 # Skibact Scab Shadow (cm\zerg\skibact-scab-shadow.grp)
+	playfram          	0x00
+	goto              	HydrithDenWorkingToIdle

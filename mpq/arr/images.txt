@@ -201,7 +201,7 @@ Stargate
 Stargate Overlay
 Stargate Warp Flash
 Stargate Shadow
-Stasis Cell/Prison
+Stasis Cell
 Robotics Support Bay
 Robotics Support Bay Warp Flash
 Robotics Support Bay Shadow
@@ -912,7 +912,7 @@ Unknown Desert Shadow
 12/1 Desert Overlay
 11/3 Desert
 Wraith Engines
-Lurker Egg
+Lakizilisk Egg (Unused)
 Vithrilisk
 Vithrilisk Shadow
 Vithrilisk Birth
@@ -956,8 +956,8 @@ Kakaru (Twilight)
 Kakaru (Twilight) Shadow
 Ursadon (Ice)
 Ursadon (Ice) Shadow
-Vorvrokor
-Bactalisk
+Uraj
+Khalis
 Halo Rockets Trail
 Subterranean Spines
 Corrosive Acid Shot
@@ -1780,7 +1780,7 @@ Ocsal Regression Overlay
 Tyranny Overlay
 Nathrok Lake
 Mortothrokor Birth
-Skithrok Scab
+Skibact Scab
 Mortothrokor Passive Overlay
 Quarry Connector
 Qilin
@@ -2042,15 +2042,15 @@ Askosi Structure Rubble (Large)
 Pilgrim
 Pilgrim Shadow
 Corrosive Touch Explosion Small
-Extended Image #1042
-Extended Image #1043
-Extended Image #1044
-Extended Image #1045
-Extended Image #1046
-Extended Image #1047
-Extended Image #1048
-Extended Image #1049
-Extended Image #1050
+Skibact Scab Shadow
+Vorvrokor
+Bactalisk
+Stasis Cell Shadow
+Blackguard
+Blackguard Shadow
+Arhaun Base
+Arhaun Turret
+Arhaun Shadow
 Extended Image #1051
 Extended Image #1052
 Extended Image #1053

@@ -127,7 +127,7 @@ Carapace Swarm
 Flag
 Young Chrysalis
 Psi Emitter
-Large Protoss Laser
+Data Disk
 Khaydarin Crystal
 Mineral Chunk Type1
 Mineral Chunk Type2
@@ -205,8 +205,8 @@ Subterranean Spines
 Corrosive Acid Shot
 Corrosive Acid Hit
 Neutron Flare
-Vorvrokor
-Bactalisk
+Uraj
+Khalis
 Copy of Skryling
 Copy of Maverick
 Quarry
@@ -563,13 +563,13 @@ Manifold (Starbound)
 Yblyleth
 Terran Heavy Missile Aion
 Pilgrim
-Extended Flingy #357
-Extended Flingy #358
-Extended Flingy #359
-Extended Flingy #360
-Extended Flingy #361
-Extended Flingy #362
-Extended Flingy #363
+Large Protoss Laser
+Vorvrokor
+Bactalisk
+Blackguard
+Arhaun Projectile
+Arhaun Base
+Arhaun Turret
 Extended Flingy #364
 Extended Flingy #365
 Extended Flingy #366

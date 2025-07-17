@@ -2995,11 +2995,11 @@ StargateOverlayDeath:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 203 Stasis Cell/Prison (neutral\stasis.grp)
+# 203 Stasis Cell (neutral\stasis.grp)
 .headerstart
 IsId          	187
 Type          	20
-Init          	StasisCell_PrisonInit
+Init          	StasisCell_Init
 Death         	ForgeDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
@@ -3015,7 +3015,7 @@ WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
-Built         	StasisCell_PrisonInit
+Built         	StasisCell_Built
 Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	SkryrokorLocal00
@@ -3024,7 +3024,9 @@ WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-StasisCell_PrisonInit:
+StasisCell_Init:
+	imgul				2047 0 0 # Stasis Cell Shadow (neutral\stasis-cell-shadow.grp)
+StasisCell_Built:
 	playfram          	0x00
 	goto              	SkryrokorLocal00
 

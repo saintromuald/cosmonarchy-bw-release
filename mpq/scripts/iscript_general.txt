@@ -1,103 +1,92 @@
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 338 Ragnasaur (neutral\Acritter.grp)
+# 338 Ragnasaur (Ash) (neutral\Acritter.grp)
 .headerstart
 IsId          	198
 Type          	12
-Init          	RagnasaurInit
-Death         	RagnasaurDeath
-GndAttkInit   	RagnasaurGndAttkInit
-AirAttkInit   	RagnasaurGndAttkInit
+Init          	Ragnasaur_AshworldCritter_Init
+Death         	Ragnasaur_AshworldCritter_Death
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
 Unused1       	[NONE]
-GndAttkRpt    	RagnasaurGndAttkInit
-AirAttkRpt    	RagnasaurGndAttkInit
-CastSpell     	RagnasaurCastSpell
-GndAttkToIdle 	RagnasaurGndAttkToIdle
-AirAttkToIdle 	RagnasaurGndAttkToIdle
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
-Walking       	RagnasaurWalking
-WalkingToIdle 	RagnasaurGndAttkToIdle
+Walking       	Ragnasaur_AshworldCritter_Walking
+WalkingToIdle 	Ragnasaur_AshworldCritter_WalkingToIdle
 SpecialState1 	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-RagnasaurInit:
-	imgul             	339 0 0 # Ragnasaur Shadow (neutral\nacShad.grp)
-RagnasaurGndAttkToIdle:
-	playfram          	0x00
+Ragnasaur_AshworldCritter_Init:
+	imgul             	339 0 0 # Ragnasaur (Ash) Shadow (neutral\nacShad.grp)
+Ragnasaur_AshworldCritter_WalkingToIdle:
+	playfram          	0x66
 	goto              	SkryrokorLocal00
 
-RagnasaurDeath:
-	playsndbtwn       	276 277 # Maverick death 01, 02
-	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
-	wait              	3
+Ragnasaur_AshworldCritter_Death:
+	playsnd           	53 # Misc\CRITTERS\LCrDth00.wav
+	setfldirect       	0
+	playfram          	0x99
+	wait              	1
+	playfram          	154
+	wait              	1
+	playfram          	155
+	wait              	1
+	playfram          	156
+	wait              	1
+	playfram          	157
+	wait              	1
+	playfram          	158
+	wait              	1
+	playfram          	159
+	wait              	1
+	playfram          	160
+	wait              	1
 	end
 
-RagnasaurGndAttkInit:
-	playfram          	0x00
-	wait              	1
-RagnasaurGndAttkRpt:
-	nobrkcodestart
-	playfram          	0x11
-	wait              	1
-	playfram          	0x22
-	playsndbtwn       	1189 1193 # Ragnasaur weaponfire 01, 02, 03, 04, 05
-	attackwith        	1
-	wait              	1
-	playfram          	0x11
-	wait              	1
-	nobrkcodeend
-	gotorepeatattk
-	goto              	RagnasaurGndAttkToIdle
-
-RagnasaurCastSpell:
-	playsnd           	974 # Misc\CRITTERS\ScWht03.wav
-	wait              	1
-	goto              	RagnasaurGndAttkToIdle
-
-RagnasaurWalking:
-	move              	3
-	wait              	1
-	playfram          	0x11
-	move              	3
-	wait              	1
-	playfram          	0x33
-	move              	3
-	wait              	1
-	playfram          	0x44
-	move              	3
-	wait              	1
-	playfram          	0x55
-	move              	3
-	wait              	1
-	playfram          	0x66
-	move              	3
+Ragnasaur_AshworldCritter_Walking:
+	move              	4
 	wait              	1
 	playfram          	0x77
-	move              	3
+	move              	4
 	wait              	1
 	playfram          	0x88
-	move              	3
+	move              	4
 	wait              	1
-	playfram          	0x99
-	move              	3
+	playfram          	0x00
+	move              	4
 	wait              	1
-	playfram          	0xaa
-	move              	3
+	playfram          	0x11
+	move              	4
 	wait              	1
-	playfram          	0xbb
-	move              	3
+	playfram          	0x22
+	move              	4
 	wait              	1
-	playfram          	0xcc
-	move              	3
+	playfram          	0x33
+	move              	4
 	wait              	1
-	playfram          	0xdd
-	move              	3
+	playfram          	0x44
+	move              	4
 	wait              	1
-	playfram          	0xee
-	move              	3
+	playfram          	0x55
+	move              	4
 	wait              	1
-	goto              	RagnasaurWalking
+	playfram          	0x66
+	goto              	Ragnasaur_AshworldCritter_Walking
+	
+InfestedTerranWalkingToIdle:
+	playfram			0x00
+SkryrokorLocal00:
+	wait				125
+	goto				SkryrokorLocal00
+	
+Generic_Wait1End:
+	wait				1
+	end
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -209,9 +198,9 @@ SpecialState1 	[NONE]
 # ----------------------------------------------------------------------------- #
 
 Bengalaas_JungleCritter_Init:
-	imgul             	343 0 0 # Bengalaas (Jungle) Shadow (neutral\njcShad.grp)
+	imgul             	343 0 0	# Bengalaas (Jungle) Shadow (neutral\njcShad.grp)
 Bengalaas_JungleCritter_WalkingToIdle:
-	playfram          	0x00
+	playfram          	0x00 # Frame set 0
 	goto              	SkryrokorLocal00
 
 Bengalaas_JungleCritter_Death:
@@ -3346,16 +3335,6 @@ KhaydarinEclipseProtossAccelerantDeath:
 	wait              	1 
 	end
 	
-InfestedTerranWalkingToIdle:
-	playfram			0x00
-SkryrokorLocal00:
-	wait				125
-	goto				SkryrokorLocal00
-	
-Generic_Wait1End:
-	wait				1
-	end
-	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 769 8/3 Twilight1 (thingy\tileset\twilight\rstatue.grp)
@@ -4289,5 +4268,308 @@ DurendalWeaponfireInit:
 	playfram          	6
 	wait              	1
 	goto              	Generic_Wait1End
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 952 Scantid (Desert) (neutral\Kcritter.grp)
+.headerstart
+IsId          	375
+Type          	12
+Init          	Scantid_DesertCritter_Init
+Death         	Scantid_DesertCritter_Death
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	Scantid_DesertCritter_Walking
+WalkingToIdle 	Scantid_DesertCritter_WalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+Scantid_DesertCritter_Init:
+	imgul             	953 0 0	# Scantid (Desert) Shadow (neutral\nckShad.grp)
+Scantid_DesertCritter_WalkingToIdle:
+	playfram          	0x66
+	goto              	SkryrokorLocal00
+
+Scantid_DesertCritter_Death:
+	playsnd           	975 # Misc\CRITTERS\ScDeath01.wav
+	setfldirect       	0
+	playfram          	0xcc
+	wait              	2
+	playfram          	205
+	wait              	2
+	playfram          	206
+	wait              	2
+	playfram          	207
+	wait              	2
+	playfram          	208
+	wait              	2
+	playfram          	209
+	wait              	2
+	playfram          	210
+	wait              	2
+	playfram          	211
+	wait              	2
+	end
+
+Scantid_DesertCritter_Walking:
+	move              	4
+	wait              	1
+	playfram          	0x77
+	move              	4
+	wait              	1
+	playfram          	0x88
+	move              	4
+	wait              	1
+	playfram          	0x00
+	move              	4
+	wait              	1
+	playfram          	0x11
+	move              	4
+	wait              	1
+	playfram          	0x22
+	move              	4
+	wait              	1
+	playfram          	0x33
+	move              	4
+	wait              	1
+	playfram          	0x44
+	move              	4
+	wait              	1
+	playfram          	0x55
+	move              	4
+	wait              	1
+	playfram          	0x66
+	move              	4
+	wait              	1
+	playfram          	0x77
+	move              	4
+	wait              	1
+	playfram          	0x88
+	move              	4
+	wait              	1
+	playfram          	0x99
+	move              	4
+	wait              	1
+	playfram          	0xaa
+	move              	4
+	wait              	1
+	playfram          	0xbb
+	goto              	Scantid_DesertCritter_Walking
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 954 Kakaru (Twilight) (neutral\Scritter.grp)
+.headerstart
+IsId          	376
+Type          	12
+Init          	Kakaru_TwilightCritter_Init
+Death         	Kakaru_TwilightCritter_Death
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	Kakaru_TwilightCritter_Walking
+WalkingToIdle 	Kakaru_TwilightCritter_WalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+Kakaru_TwilightCritter_Init:
+	imgul             	955 0 42 # Kakaru (Twilight) Shadow (neutral\Scritter.grp)
+Kakaru_TwilightCritter_WalkingToIdle:
+	playfram          	0x00
+	wait              	2
+	playfram          	0x11
+	wait              	2
+	playfram          	0x22
+	wait              	2
+	playfram          	0x33
+	wait              	2
+	playfram          	0x44
+	wait              	2
+	playfram          	0x55
+	wait              	2
+	playfram          	0x66
+	wait              	2
+	playfram          	0x77
+	wait              	2
+	playfram          	0x88
+	wait              	2
+	playfram          	0x99
+	wait              	2
+	playfram          	0xaa
+	wait              	2
+	playfram          	0xbb
+	wait              	2
+	goto              	Kakaru_TwilightCritter_WalkingToIdle
+
+Kakaru_TwilightCritter_Death:
+	playsnd           	979 # Misc\CRITTERS\TerDeath01.wav
+	setfldirect       	0
+	playfram          	0xcc
+	wait              	2
+	playfram          	205
+	wait              	2
+	playfram          	206
+	wait              	2
+	playfram          	207
+	wait              	2
+	playfram          	208
+	wait              	2
+	playfram          	209
+	wait              	2
+	playfram          	210
+	wait              	2
+	playfram          	211
+	wait              	2
+	playfram          	212
+	wait              	2
+	playfram          	213
+	wait              	2
+	end
+
+Kakaru_TwilightCritter_Walking:
+	playfram          	0x00
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	playfram          	0x55
+	wait              	1
+	playfram          	0x66
+	wait              	1
+	playfram          	0x77
+	wait              	1
+	playfram          	0x88
+	wait              	1
+	playfram          	0x99
+	wait              	1
+	playfram          	0xaa
+	wait              	1
+	playfram          	0xbb
+	wait              	1
+	goto              	Kakaru_TwilightCritter_Walking
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 956 Ursadon (Ice) (neutral\Icritter.grp)
+.headerstart
+IsId          	377
+Type          	12
+Init          	Ursadon_IceCritter_Init
+Death         	Ursadon_IceCritter_Death
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	Ursadon_IceCritter_Walking
+WalkingToIdle 	Ursadon_IceCritter_WalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+Ursadon_IceCritter_Init:
+	imgul             	957 0 0 # Ursadon (Ice) Shadow (neutral\ncicShad.grp)
+Ursadon_IceCritter_WalkingToIdle:
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+Ursadon_IceCritter_Death:
+	playsnd           	971 # Misc\CRITTERS\PBDeath01.wav
+	setfldirect       	0
+	playfram          	0x88
+	wait              	2
+	playfram          	137
+	wait              	2
+	playfram          	138
+	wait              	2
+	playfram          	139
+	wait              	2
+	playfram          	140
+	wait              	50
+	playfram          	141
+	wait              	50
+	playfram          	142
+	wait              	50
+	playfram          	143
+	wait              	50
+	end
+
+Ursadon_IceCritter_Walking:
+	move              	4
+	wait              	1
+	playfram          	0x00
+	move              	4
+	wait              	1
+	playfram          	0x11
+	move              	4
+	wait              	1
+	playfram          	0x22
+	move              	4
+	wait              	1
+	playfram          	0x33
+	move              	4
+	wait              	1
+	playfram          	0x44
+	move              	4
+	wait              	1
+	playfram          	0x55
+	move              	4
+	wait              	1
+	playfram          	0x66
+	move              	4
+	wait              	1
+	playfram          	0x77
+	goto              	Ursadon_IceCritter_Walking
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 393 Young Chrysalis (neutral\KerrEgg.grp)
+.headerstart
+IsId          	220
+Type          	1
+Init          	YoungChrysalisInit
+Death         	YoungChrysalisDeath
+.headerend
+# ----------------------------------------------------------------------------- #
+
+YoungChrysalisInit:
+	playfram          	0x00
+	pwrupcondjmp      	YoungChrysalisLocal00
+	imgul             	415 0 0 # Young Chrysalis Shadow (Ground) (neutral\nkeShad.grp)
+	goto              	SkryrokorLocal00
+
+YoungChrysalisLocal00:
+	wait              	1
+	switchul          	416 # Young Chrysalis Shadow (Carried) (neutral\nkeSha2.grp)
+	goto              	SkryrokorLocal00
+
+YoungChrysalisDeath:
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	end
 
 ## Next free IsId: 829

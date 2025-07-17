@@ -1878,7 +1878,7 @@ Phalanx_Tank_BaseWalking:
 .headerstart
 IsId          	91
 Type          	13
-Init          	InfestedTerranWalkingToIdle
+Init          	Phalanx_Tank_TurretInit
 Death         	Generic_Wait1End
 GndAttkInit   	Phalanx_Tank_TurretGndAttkInit
 AirAttkInit   	[NONE]
@@ -1886,14 +1886,37 @@ Unused1       	SkryrokorLocal00
 GndAttkRpt    	Phalanx_Tank_TurretGndAttkInit
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
-GndAttkToIdle 	SkryrokorLocal00
+GndAttkToIdle 	Phalanx_Tank_TurretInit
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
 Walking       	SkryrokorLocal00
-WalkingToIdle 	SkryrokorLocal00
+WalkingToIdle 	Phalanx_Tank_TurretInit
 SpecialState1 	SkryrokorLocal00
 .headerend
 # ----------------------------------------------------------------------------- #
+	
+Phalanx_Tank_TurretInit:
+    playfram            0x00
+Phalanx_Tank_TurretLocal00:
+	wait				1
+    waitrand            62 74
+    randcondjmp        	230 Phalanx_Tank_TurretLocal00
+    sigorder            8
+    randcondjmp        	127 Phalanx_Tank_TurretLocal01
+    turnccwise          1
+    wait                3
+    turnccwise          1
+    wait                3
+    turnccwise          1
+    goto                Phalanx_Tank_TurretLocal00
+
+Phalanx_Tank_TurretLocal01:
+    turn1cwise
+    wait                3
+    turn1cwise
+    wait                3
+    turn1cwise
+    goto                Phalanx_Tank_TurretLocal00
 
 Phalanx_Tank_TurretGndAttkInit:
 	wait              	1
@@ -1927,7 +1950,7 @@ CastSpell     	[NONE]
 GndAttkToIdle 	[NONE]
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
-Walking       	[NONE]
+Walking       	SkryrokorLocal00
 WalkingToIdle 	SkryrokorLocal00
 SpecialState1 	[NONE]
 SpecialState2 	Phalanx_Siege_BaseSpecialState2
@@ -2021,7 +2044,7 @@ CastSpell     	[NONE]
 GndAttkToIdle 	SkryrokorLocal00
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
-Walking       	[NONE]
+Walking       	SkryrokorLocal00
 WalkingToIdle 	SkryrokorLocal00
 SpecialState1 	SkryrokorLocal00
 SpecialState2 	Phalanx_Siege_TurretSpecialState2
@@ -7944,8 +7967,8 @@ CastSpell     	[NONE]
 GndAttkToIdle 	MadcapGndAttkToIdle
 AirAttkToIdle 	MadcapGndAttkToIdle
 Unused2       	[NONE]
-Walking       	[NONE]
-WalkingToIdle 	[NONE]
+Walking       	SkryrokorLocal00
+WalkingToIdle 	SkryrokorLocal00
 SpecialState1 	SavantSpecialState1
 SpecialState2 	SavantEntropyGauntletsTransform
 AlmostBuilt   	[NONE]
@@ -18825,3 +18848,117 @@ MaelstromHitInit:
 	playfram          	8
 	wait              	2
 	end
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2048 Blackguard (cm\faction-t\blackguard.grp)
+.headerstart
+IsId          	828
+Type          	12
+Init          	BlackguardInit
+Death         	MadcapDeath
+GndAttkInit   	BlackguardGndAttkInit
+AirAttkInit   	BlackguardGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	BlackguardGndAttkRpt
+AirAttkRpt    	BlackguardGndAttkRpt
+CastSpell     	[NONE]
+GndAttkToIdle 	MadcapGndAttkToIdle
+AirAttkToIdle 	MadcapGndAttkToIdle
+Unused2       	[NONE]
+Walking       	MadcapWalking
+WalkingToIdle 	MadcapWalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+BlackguardInit:
+	imgul             	2049 0 0 # Blackguard Shadow (cm\faction-t\blackguard-shadow.grp)
+	goto				MadcapWalkingToIdle
+
+BlackguardGndAttkInit:
+	playfram          	0x100
+	wait				1
+	playfram			0x120
+	wait				1
+	playfram			0x140
+BlackguardGndAttkRpt:
+	wait				1
+	nobrkcodestart
+	playsndbtwn			3512 3515 # Blackguard weapon charge 01, 02, 03, 04
+	wait				1
+	playfram			0x180
+	wait				11
+	attack
+	playfram          	0x1A0
+	wait              	1
+	playfram          	0x180
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto				MadcapGndAttkToIdle
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2050 Arhaun Base (cm\faction-t\arhaun-base.grp)
+.headerstart
+IsId          	826
+Type          	12
+Init          	Arhaun_Base_Init
+Death         	Goliath_Base_Death
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	Goliath_Base_Unused1
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	Goliath_Base_Walking
+WalkingToIdle 	Goliath_Base_WalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+Arhaun_Base_Init:
+	imgul             	2052 0 0 # Arhaun Shadow (cm\faction-t\arhaun-shadow.grp)
+	goto				Goliath_Base_WalkingToIdle
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2051 Arhaun Turret (cm\faction-t\arhaun-turret.grp)
+.headerstart
+IsId          	827
+Type          	12
+Init          	Goliath_Turret_Init
+Death         	Generic_Wait1End
+GndAttkInit   	Arhaun_Turret_GndAttkInit
+AirAttkInit   	Arhaun_Turret_GndAttkInit
+Unused1       	[NONE]
+GndAttkRpt    	Arhaun_Turret_GndAttkInit
+AirAttkRpt    	Arhaun_Turret_GndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	Goliath_Turret_Init
+AirAttkToIdle 	Goliath_Turret_Init
+Unused2       	[NONE]
+Walking       	Goliath_Turret_Walking
+WalkingToIdle 	Goliath_Turret_Init
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+Arhaun_Turret_GndAttkInit:
+	wait				1
+	nobrkcodestart
+	playfram          	0xdd
+	playsndbtwn         3520 3522 # Arhaun weaponfire 01, 02, 03
+	attackwith        	1
+	attackwith        	1
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto              	Goliath_Turret_Init

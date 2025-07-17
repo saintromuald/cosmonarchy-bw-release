@@ -463,33 +463,33 @@ Askosi Cipher
 Askosi Function
 Askosi Gauntlet
 Askosi Cosmoscope
-Extended Unit #238
-Extended Unit #239
-Extended Unit #240
-Extended Unit #241
-Extended Unit #242
-Extended Unit #243
-Extended Unit #244
-Extended Unit #245
-Extended Unit #246
-Extended Unit #247
-Extended Unit #248
-Extended Unit #249
-Extended Unit #250
-Extended Unit #251
-Extended Unit #252
-Extended Unit #253
-Extended Unit #254
-Extended Unit #255
-Extended Unit #256
-Extended Unit #257
-Extended Unit #258
-Extended Unit #259
-Extended Unit #260
-Extended Unit #261
-Extended Unit #262
-Extended Unit #263
-Extended Unit #264
+Ragnasaur (Ashworld)
+Rhynadon (Badlands)
+Bengalaas (Jungle)
+Scantid (Desert)
+Ursadon (Ice)
+Kakaru (Twilight)
+Flag
+Young Chrysalis
+Psi Emitter
+Data Disk
+Khaydarin Crystal
+Uraj
+Khalis
+Mineral Chunk
+Mineral Chunk Depleted
+Terran Vespene
+Terran Vespene Depleted
+Protoss Vespene
+Protoss Vespene Depleted
+Zerg Vespene
+Zerg Vespene Depleted
+Terran Beacon
+Protoss Beacon
+Zerg Beacon
+Terran Blackguard
+Terran Arhaun (Base)
+Arhaun Turret
 Extended Unit #265
 Extended Unit #266
 Extended Unit #267

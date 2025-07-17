@@ -288,7 +288,7 @@ Carapace Swarm
 Flag
 Young Chrysalis
 Psi Emitter
-Large Protoss Laser
+Data Disk
 Khaydarin Crystal
 Mineral Chunk Type1
 Mineral Chunk Type2
@@ -513,8 +513,8 @@ Subterranean Spines
 Corrosive Acid Shot
 Corrosive Acid Hit
 Maelstrom Hit
-Vorvrokor
-Bactalisk
+Uraj
+Khalis
 Matador
 Starpad
 Matrix
@@ -1006,12 +1006,12 @@ Askosi Structure Rubble (Large)
 Pilgrim
 Corrosive Touch Explosion Small
 Askosi Structure Rubble (Small)
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
-Extended Sprite #1
+Large Protoss Laser
+Vorvrokor
+Bactalisk
+Blackguard
+Arhaun Base
+Arhaun Turret
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1

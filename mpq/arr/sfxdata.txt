@@ -1193,8 +1193,8 @@ Cyprian Weapon Fire 02
 Cyprian Weapon Fire 03
 Cyprian Weapon Fire 04
 Cyprian Weapon Fire 05
-Spraith Colony Weaponhit 01
-Spraith Colony Weaponhit 02
+Spraith Cesiant Weaponhit 01
+Spraith Cesiant Weaponhit 02
 Pazuzu Weapon Fire 01
 Pazuzu Weapon Fire 02
 Idol Ready 01
@@ -3510,20 +3510,20 @@ Cikralisk Death 01
 Cikralisk Death 02
 Cikralisk Death 03
 Apostle Revive 01
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Blackguard Charge 01
+Blackguard Charge 02
+Blackguard Charge 03
+Blackguard Charge 04
+Blackguard Weaponfire 01
+Blackguard Weaponfire 02
+Blackguard Weaponfire 03
+Blackguard Weaponfire 04
+Arhaun Weaponfire 01
+Arhaun Weaponfire 02
+Arhaun Weaponfire 03
+Hydralisk Orkoti Weaponfire 01
+Hydralisk Orkoti Weaponfire 02
+Hydralisk Orkoti Weaponfire 03
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1
