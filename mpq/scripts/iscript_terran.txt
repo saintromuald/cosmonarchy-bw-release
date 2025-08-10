@@ -4964,7 +4964,7 @@ Explosion_Medium_Init:
 # 334 Building Explosion (Large) (thingy\tBangX.grp)
 .headerstart
 IsId          	144
-Type            24
+Type            26
 Init          	Explosion_Large_Init
 Death         	Explosion_Large_Init
 GndAttkInit     Explosion_Large_Init
@@ -7827,7 +7827,7 @@ AlmostBuilt   	TreasuryAlmostBuilt
 Built         	TreasuryBuilt
 Landing       	TreasuryLanding
 LiftOff       	TreasuryLiftoff
-IsWorking     	[NONE]
+IsWorking     	TreasuryIsWorking
 WorkingToIdle 	TreasuryBuilt
 WarpIn        	[NONE]
 .headerend
@@ -7847,7 +7847,7 @@ TreasuryDeath:
 	end
 
 TreasuryAlmostBuilt:
-	playfram          	20
+	playfram          	7
 	goto              	SkryrokorLocal00
 
 TreasuryBuilt:
@@ -7857,17 +7857,16 @@ TreasuryBuilt:
 TreasuryLanding:
 	nobrkcodestart
 	wait              	25
-	playsnd           	472	# Misc\Land.WAV
-	playfram			0x00
-#	playfram          	4
+	playsnd           	472 # Misc\Land.WAV
+ 	playfram          	6
 	wait              	4
-#	playfram          	2
+ 	playfram          	5
 	wait              	4
-#	playfram          	3
+ 	playfram          	4
 	wait              	4
-#	playfram          	5
+ 	playfram          	3
 	wait              	4
-#	playfram          	0x00
+ 	playfram          	0x00
 	sigorder          	16
 	nobrkcodeend
 	goto              	SkryrokorLocal00
@@ -7875,17 +7874,27 @@ TreasuryLanding:
 TreasuryLiftoff:
 	nobrkcodestart
 	playsnd           	471 # Misc\LiftOff.WAV
-#	playfram          	5
+ 	playfram          	3
 	wait              	4
-#	playfram          	3
+ 	playfram          	4
 	wait              	4
-#	playfram          	2
+ 	playfram          	5
 	wait              	4
-#	playfram          	4
-	playfram			0x00
+ 	playfram          	6
 	sigorder          	16
 	nobrkcodeend
 	goto              	SkryrokorLocal00
+	
+TreasuryIsWorking:
+	playfram          	1
+	wait              	1
+	playfram          	2
+	waitrand			1 2
+	playfram          	1
+	wait              	1
+	playfram          	0x00
+	waitrand			2 4
+	goto				TreasuryIsWorking
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -12118,7 +12127,7 @@ AspirantWarpIn:
 # 1351 Magnetic Field (small) 	(cm\effect\magneticfield-small.grp)
 .headerstart
 IsId          	575
-Type          	2
+Type          	3
 Init          	MagneticFieldInit
 Death         	MagneticFieldDeath
 GndAttkInit   	MagneticFieldDeath

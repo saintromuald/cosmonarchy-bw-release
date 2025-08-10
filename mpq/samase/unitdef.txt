@@ -53,6 +53,8 @@ military blackjack_golden = 431
 military eidolon_nydus = 432
 military tiangou = 433
 military maverick_futurist = 435
+military blackguard = 489
+military arhaun = 490
 
 # Protoss factional units
 military adherent = 400
@@ -72,7 +74,7 @@ military inzorthrokor = 415
 military quazrokor = 422
 military lakizilisk_zorthos = 425
 military hydralisk_orkoti = 436
-military yblyleth = 438
+building yblyleth = 438
 
 # Terran military units
 military maverick = 0
@@ -377,7 +379,7 @@ building nydus_cesiant = 134
 building hydrith_den = 135
 building elthisth_mound = 136
 building matravil_nest = 138
-building ultrav_cavern = 140
+building ulgorg_cavern = 140
 building mutath_spire = 141
 building quazeth_pool = 142
 building cagrant_cesiant = 143
@@ -414,6 +416,7 @@ building ezigrisant = 364
 building vornath_pond = 396
 building skibact_scab = 397
 building eskigant = 421
+building zozarc_gorge = 493
 
 # Misc units
 military goliath_turret = 4

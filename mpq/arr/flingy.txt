@@ -30,7 +30,7 @@ Matravil Nest
 Nydus Cesiant
 Overmind With Shell
 Overmind Without Shell
-Ultrav Cavern
+Ulgorg Cavern
 Excisant
 Hydrith Den
 Muthrok Spire
@@ -570,8 +570,8 @@ Blackguard
 Arhaun Projectile
 Arhaun Base
 Arhaun Turret
-Extended Flingy #364
-Extended Flingy #365
+Morningstar Radiation Field
+Zozarc Gorge
 Extended Flingy #366
 Extended Flingy #367
 Extended Flingy #368

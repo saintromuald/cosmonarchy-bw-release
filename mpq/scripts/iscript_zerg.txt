@@ -3070,7 +3070,7 @@ CastSpell     	[NONE]
 GndAttkToIdle 	[NONE]
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
-Walking       	[NONE]
+Walking       	SkryrokorLocal00
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
@@ -3933,7 +3933,7 @@ CastSpell     	[NONE]
 GndAttkToIdle 	[NONE]
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
-Walking       	[NONE]
+Walking       	SkryrokorLocal00
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
@@ -6989,7 +6989,7 @@ IrolIrisIsWorking:
 # 1095 Nathrokor (cm\zerg\nathrokor.grp)
 .headerstart
 IsId          	451
-Type          	14
+Type          	26
 Init          	NathrokorInit
 Death         	NathrokorDeath
 GndAttkInit   	NathrokorGndAttkInit
@@ -7006,6 +7006,18 @@ WalkingToIdle 	NathrokorGndAttkToIdle
 SpecialState1 	SkryrokorLocal00
 SpecialState2 	SkryrokorLocal00
 AlmostBuilt   	SkryrokorLocal00
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	[NONE]
+UnBurrow      	[NONE]
+Enable        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -7660,7 +7672,7 @@ CastSpell     	[NONE]
 GndAttkToIdle 	[NONE]
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
-Walking       	[NONE]
+Walking       	SkryrokorLocal00
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
@@ -8466,7 +8478,7 @@ BactaliskDenIsWorking:
 # 1243 Kalkalisk Spores (bullet\Spore2.grp)
 .headerstart
 IsId          	522
-Type          	2
+Type          	3
 Init          	KalkaliskSporesInit
 Death         	KalkaliskSporesDeath
 GndAttkInit   	KalkaliskSporesGndAttkInit
@@ -9542,7 +9554,7 @@ CastSpell     	[NONE]
 GndAttkToIdle 	[NONE]
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
-Walking       	[NONE]
+Walking       	SkryrokorLocal00
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
@@ -10231,10 +10243,10 @@ Type          	26
 Init          	LiiraliskInit
 Death         	LiiraliskDeath
 GndAttkInit   	LiiraliskGndAttkInit
-AirAttkInit   	LiiraliskGndAttkInit
+AirAttkInit   	LiiraliskAirAttkInit
 Unused1       	LiiraliskUnused1
 GndAttkRpt    	LiiraliskGndAttkRpt
-AirAttkRpt    	LiiraliskGndAttkRpt
+AirAttkRpt    	LiiraliskAirAttkRpt
 CastSpell     	[NONE]
 GndAttkToIdle 	LiiraliskGndAttkToIdle
 AirAttkToIdle 	LiiraliskGndAttkToIdle
@@ -10323,8 +10335,8 @@ LiiraliskGndAttkRpt:
     playfram            0x1E0
     wait                1
     playfram            0x200
-    attack
-    attack
+    attackwith			1
+    attackwith			1
     wait                1
     playfram            0x220
     wait                1
@@ -10343,6 +10355,31 @@ LiiraliskGndAttkToIdle:
     playfram            0x00
     wait                1
     goto                LiiraliskWalkingToIdle
+
+LiiraliskAirAttkInit:
+    playfram            0x00
+    wait                1
+    playfram            0x1C0
+    wait                2
+LiiraliskAirAttkRpt:
+    wait                1
+    nobrkcodestart
+    playsndbtwn         2014 2015 # Liiralisk attack 01, 02
+    playfram            0x1E0
+    wait                1
+    playfram            0x200
+    attackwith			2
+    wait                1
+    playfram            0x220
+    wait                1
+    playfram            0x240
+    wait                1
+    playfram            0x260
+    wait                1
+    nobrkcodeend
+    gotorepeatattk
+    ignorerest
+	goto				LiiraliskGndAttkToIdle
 
 LiiraliskWalking:
 	move              	6
@@ -12005,11 +12042,11 @@ AlkagItethIsWorking:
 # 1536 Kagralisk Venom
 .headerstart
 IsId          	664
-Type          	2
+Type          	3
 Init          	KagraliskVenomInit
 Death         	KagraliskVenomDeath
 GndAttkInit   	KagraliskVenomGndAttkInit
-AirAttkInit   	[NONE]
+AirAttkInit   	KagraliskVenomGndAttkInit
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -13210,24 +13247,29 @@ CikraliskGndAttkInit:
 	playfram          	0x120
 	wait              	1
 	nobrkcodestart
-	playfram          	0x140
+	playfram			0x140
 	wait              	1
-	playfram          	0x160
-	attackwith			1
+	playfram			0x160
 	wait              	1
-	playfram          	0x180
+	playfram			0x180
 	playsndbtwn			3027 3029 # Cikralisk weaponfire 01, 02, 03
-	attackwith			1
+	imgoluselo			2056 0 0 # Green projection attack
+	attkshiftproj		24
+	wait              	1
+	attkshiftproj		54
+	wait				1
+	playfram			0x160
+	attkshiftproj		82
+	wait              	1
+	playfram			0x140
+	attkshiftproj		112
+	wait              	1
+	playfram			0x120
+	attkshiftproj		140
+	sigorder			32
 	wait				1
 	nobrkcodeend
-	playfram			0x160
-	wait				1
-	playfram			0x140
-	wait				1
-	playfram			0x120
-	wait				1
 	gotorepeatattk
-	ignorerest
 	goto				CikraliskGndAttkToIdle
 
 CikraliskWalking:
@@ -13486,7 +13528,7 @@ GhitorokorGndAttkInit:
 	nobrkcodestart
 	playfram			0x77
 	playsnd           	113 # Bullet\zmuFir00.wav
-	attackwith        	1
+	attack
 	wait              	1
 	playfram          	0x66
 	wait              	1
@@ -16255,7 +16297,7 @@ AirAttkToIdle 	SkryrokorLocal00
 Unused2       	SkryrokorLocal00
 Walking       	SkryrokorLocal00
 WalkingToIdle 	SkryrokorLocal00
-SpecialState1 	SkryrokorLocal00
+SpecialState1 	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 

@@ -3739,7 +3739,6 @@ SmoochieGndAttkInit:
 	wait              	1
 	playfram          	0x33
 	wait              	1
-	playsndbtwn       	201 203 # Terran\CIVILIAN\TCvWht03.WAV | Terran\CIVILIAN\TCvYes01.WAV
 	attackwith        	1
 	wait              	1
 	playfram          	0x44

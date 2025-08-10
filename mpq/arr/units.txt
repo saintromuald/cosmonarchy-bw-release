@@ -138,7 +138,7 @@ Zerg Elthisth Mound
 Terran Olympian
 Zerg Matravil Nest
 Zerg Almakis Antre
-Zerg Ultrav Cavern
+Zerg Ulgorg Cavern
 Zerg Muthrok Spire
 Zerg Quazeth Pool
 Zerg Cagrant Cesiant
@@ -195,7 +195,7 @@ Zerg Zorkiz Shroud
 Terran Aspirant
 Terran Blackjack
 Terran Claymore
-Zerg Vithrath Haunt
+Zerg Tosvrol Haunt
 Terran Iron Foundry
 Terran Captaincy
 Terran Scrapyard
@@ -490,8 +490,8 @@ Zerg Beacon
 Terran Blackguard
 Terran Arhaun (Base)
 Arhaun Turret
-Extended Unit #265
-Extended Unit #266
+Terran Addon Submenu
+Zerg Zozarc Gorge
 Extended Unit #267
 Extended Unit #268
 Extended Unit #269

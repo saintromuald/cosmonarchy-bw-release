@@ -89,8 +89,8 @@ Nydus Cesiant Shadow
 Overmind With Shell
 Overmind Remains
 Overmind Without Shell
-Ultrav Cavern
-Ultrav Cavern Shadow
+Ulgorg Cavern
+Ulgorg Cavern Shadow
 Excisant
 Excisant Shadow
 Hydrith Den
@@ -2051,10 +2051,10 @@ Blackguard Shadow
 Arhaun Base
 Arhaun Turret
 Arhaun Shadow
-Extended Image #1051
-Extended Image #1052
-Extended Image #1053
-Extended Image #1054
+Morningstar Radiation Field
+Zozarc Gorge
+Zozarc Gorge Shadow
+Cikralisk Attack Overlay
 Extended Image #1055
 Extended Image #1056
 Extended Image #1057

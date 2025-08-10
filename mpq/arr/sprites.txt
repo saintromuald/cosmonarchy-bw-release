@@ -175,7 +175,7 @@ Matravil Nest
 Nydus Cesiant
 Overmind With Shell
 Overmind Without Shell
-Ultrav Cavern
+Ulgorg Cavern
 Excisant
 Hydrith Den
 Mutath Spire
@@ -1012,8 +1012,8 @@ Bactalisk
 Blackguard
 Arhaun Base
 Arhaun Turret
-Extended Sprite #1
-Extended Sprite #1
+Morningstar Radiation Field
+Zozarc Gorge
 Extended Sprite #1
 Extended Sprite #1
 Extended Sprite #1

@@ -3524,14 +3524,14 @@ Arhaun Weaponfire 03
 Hydralisk Orkoti Weaponfire 01
 Hydralisk Orkoti Weaponfire 02
 Hydralisk Orkoti Weaponfire 03
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Smoochie Boy Weaponhit 01
+Smoochie Boy Weaponhit 02
+Smoochie Boy Weaponhit 03
+Smoochie Boy Weaponhit 04
+Smoochie Boy Weaponfire 01
+Smoochie Boy Weaponfire 02
+Smoochie Boy Weaponfire 03
+Zozarc Gorge Selected 01
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

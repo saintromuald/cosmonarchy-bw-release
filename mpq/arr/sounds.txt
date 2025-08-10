@@ -3524,3 +3524,11 @@ cm\f-t\arhaun\wf-03.wav
 cm\f-z\hydralisk-orkoti\wf-01.wav
 cm\f-z\hydralisk-orkoti\wf-02.wav
 cm\f-z\hydralisk-orkoti\wf-03.wav
+cm\faultline\smoochie-boy\wh-01.wav
+cm\faultline\smoochie-boy\wh-02.wav
+cm\faultline\smoochie-boy\wh-03.wav
+cm\faultline\smoochie-boy\wh-04.wav
+cm\faultline\smoochie-boy\wf-01.wav
+cm\faultline\smoochie-boy\wf-02.wav
+cm\faultline\smoochie-boy\wf-03.wav
+cm\zerg\_building\zozarc-gorge.wav

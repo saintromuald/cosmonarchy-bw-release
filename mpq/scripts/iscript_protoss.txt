@@ -121,7 +121,7 @@ Explosion_Medium_Init:
 # 334 Building Explosion (Large) (thingy\tBangX.grp)
 .headerstart
 IsId          	144
-Type            24
+Type            26
 Init          	Explosion_Large_Init
 Death         	Explosion_Large_Init
 GndAttkInit     Explosion_Large_Init
@@ -2582,7 +2582,7 @@ CastSpell     	[NONE]
 GndAttkToIdle 	[NONE]
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
-Walking       	[NONE]
+Walking       	SkryrokorLocal00
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
@@ -14648,7 +14648,7 @@ CastSpell     	[NONE]
 GndAttkToIdle 	[NONE]
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
-Walking       	[NONE]
+Walking       	SkryrokorLocal00
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
