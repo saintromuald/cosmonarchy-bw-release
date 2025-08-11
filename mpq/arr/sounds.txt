@@ -3531,4 +3531,4 @@ cm\faultline\smoochie-boy\wh-04.wav
 cm\faultline\smoochie-boy\wf-01.wav
 cm\faultline\smoochie-boy\wf-02.wav
 cm\faultline\smoochie-boy\wf-03.wav
-cm\zerg\_building\zozarc-gorge.wav
+cm\z\_building\zozarc-gorge.wav

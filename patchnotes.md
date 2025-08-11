@@ -1,10 +1,8 @@
-
-
 # 10 August 2025
 ## Year 3, month 8, patch 1
 
 ## Patch goals
-- This update makes significant changes to:
+- Make significant changes to:
 	- Terran tech scaling
 	- Protoss power concentration
 	- Zerg tech progression and anti-air
@@ -16,6 +14,8 @@
 	- Fixed several iscript errors
 - **Gameplay:**
 	- Improved **Oscilliant** Binding Plasma proc consistency (r. ArbuzBudesh)
+	- Fixed Plague preserving burning Terran structures (r. Kenoli)
+	- Fixed burning Terran structures not becoming infested (r. Kenoli)
 - **Audiovisual:**
 	- Corrected **Liiralisk** and **Kalkalisk** regression corpse
 	- Corrected **Striga** retaliation overlay when attacking **Analogue**s
