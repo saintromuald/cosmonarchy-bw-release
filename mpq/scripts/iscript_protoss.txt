@@ -9882,21 +9882,25 @@ LegionnaireDeath:
 LegionnaireGndAttkInit:
 	playfram          	0x100
 LegionnaireGndAttkRpt:
-	playfram          	0x100
-	nobrkcodestart
-	wait              	1
-	playfram          	0x120
-	wait              	1
-	playfram          	0x140
-	attackmelee       	1 1897 # Legionnaire weapon hit 01
-	wait              	1
-	playfram          	0x160
-	wait              	1
-	nobrkcodeend
-	playfram          	0x120
-	wait              	1
-	gotorepeatattk
-	ignorerest
+    playfram            0x120
+    nobrkcodestart
+    wait                1
+    playfram            0x140
+    wait                1
+    playfram            0x160
+    attackmelee         1 1897 # Legionnaire weapon hit 01
+    wait                1
+    playfram            0x180
+    wait                1
+    nobrkcodeend
+    playfram            0x1A0
+    wait                1
+    playfram            0x1C0
+    wait                1
+    playfram            0x120
+    wait                1
+    gotorepeatattk
+    ignorerest
 LegionnaireGndAttkToIdle:
 	playfram			0x100
 	wait				1
@@ -14924,3 +14928,106 @@ DurendalWeaponfireInit:
 	playfram          	6
 	wait              	1
 	goto              	Generic_Wait1End
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2057 Autocort (cm\protoss\autocort.grp)
+.headerstart
+IsId          	731
+Type          	21
+Init          	AutocortInit
+Death         	AutocortDeath
+GndAttkInit   	AutocortGndAttkInit
+AirAttkInit   	[NONE]
+Unused1       	AutocortUnused1
+GndAttkRpt    	AutocortGndAttkInit
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	SkryrokorLocal00
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	AutocortWalking
+WalkingToIdle 	SkryrokorLocal00
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	AutocortAlmostBuilt
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	AutocortWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+AutocortInit:
+	imgul             	2058 0 7 # Autocort Shadow (cm\protoss\autocort.grp)
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+AutocortDeath:
+	setfldirect       	0
+	playsnd           	598	# Protoss\PROBE\PPrDth00.WAV
+	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
+	playfram			17
+	wait				1
+	playfram			18
+	wait				1
+	playfram			19
+	wait				1
+	playfram			20
+	wait				1
+	lowsprul          	691 0 0 # Autocort Remnants (cm\protoss\autocort-death.grp)
+	wait              	1 
+	end
+	
+AutocortUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect			0
+	playsnd				1352 # Autocort Revive 01
+	playfram			20
+	wait				1
+	playfram			19
+	wait				1
+	playfram			18
+	wait				1
+	playfram			17
+	sprol             	740 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
+	wait              	1
+	playfram			0x00
+	wait				1
+	setfldirect       	10
+	nobrkcodeend
+	goto				SkryrokorLocal00
+
+AutocortGndAttkInit:
+	wait              	1
+	nobrkcodestart
+	playfram			0x20
+	attackwith        	1
+	playsndbtwn			2670 2672 # Autocort weaponfire 01, 02, 03
+	wait				1
+	playfram			0x00
+	nobrkcodeend
+	gotorepeatattk
+	goto              	SkryrokorLocal00
+
+AutocortWalking:
+	setvertpos        	0
+	goto              	AutocortWalkingLoop
+	
+AutocortWalkingLoop:
+	move				5
+	wait				1
+	goto				AutocortWalkingLoop
+
+AutocortAlmostBuilt:
+	useweapon         	63 # Particle Beam (Harvest) (Particle Beam)
+	playsnd           	614	# Protoss\PROBE\PPrMin00.WAV
+	wait              	9
+	goto              	AutocortAlmostBuilt
+
+AutocortWarpIn:
+	imgol             	139 0 0 # Autocort Warp Flash (protoss\probe.grp)
+	goto              	SkryrokorLocal00

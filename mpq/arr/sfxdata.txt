@@ -3532,74 +3532,74 @@ Smoochie Boy Weaponfire 01
 Smoochie Boy Weaponfire 02
 Smoochie Boy Weaponfire 03
 Zozarc Gorge Selected 01
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Cannibal Weaponfire 01
+Cannibal Weaponfire 02
+Cannibal Weaponfire 03
+Cannibal Weaponfire 04
+Goku Advisor - Addon Complete 01
+Goku Advisor - Addon Complete 02
+Goku Advisor - Addon Abandon 01
+Goku Advisor - Addon Abandon 02
+Goku Advisor - Ally Under Attack Askosi 01
+Goku Advisor - Ally Under Attack Askosi 02
+Goku Advisor - Ally Under Attack Askosi 03
+Goku Advisor - Ally Under Attack Bloodsummon 01
+Goku Advisor - Ally Under Attack Bloodsummon 02
+Goku Advisor - Ally Under Attack Bloodsummon 03
+Goku Advisor - Ally Under Attack Kogri 01
+Goku Advisor - Ally Under Attack Kogri 02
+Goku Advisor - Ally Under Attack Kogri 03
+Goku Advisor - Ally Under Attack Protoss 01
+Goku Advisor - Ally Under Attack Protoss 02
+Goku Advisor - Ally Under Attack Protoss 03
+Goku Advisor - Ally Under Attack Terran 01
+Goku Advisor - Ally Under Attack Terran 02
+Goku Advisor - Ally Under Attack Terran 03
+Goku Advisor - Ally Under Attack Zerg 01
+Goku Advisor - Ally Under Attack Zerg 02
+Goku Advisor - Ally Under Attack Zerg 03
+Goku Advisor - Arena 01
+Goku Advisor - Arena 02
+Goku Advisor - Army Under Attack 01
+Goku Advisor - Army Under Attack 02
+Goku Advisor - Army Under Attack 03
+Goku Advisor - Assembly 01
+Goku Advisor - Assembly 02
+Goku Advisor - Base Under Attack 01
+Goku Advisor - Base Under Attack 02
+Goku Advisor - Base Under Attack 03
+Goku Advisor - Build General
+Goku Advisor - Build Zerg
+Goku Advisor - No Energy 01
+Goku Advisor - No Energy 02
+Goku Advisor - No Energy 03
+Goku Advisor - No Energy 04
+Goku Advisor - Landing Interrupted 01
+Goku Advisor - Landing Interrupted 02
+Goku Advisor - No Minerals 01
+Goku Advisor - No Minerals 02
+Goku Advisor - No Minerals 03
+Goku Advisor - No Minerals 04
+Goku Advisor - Missile Armed 01
+Goku Advisor - Missile Armed 02
+Goku Advisor - Missile Launched 01
+Goku Advisor - Missile Launched 02
+Goku Advisor - No Build 01
+Goku Advisor - No Build 02
+Goku Advisor - No Land 01
+Goku Advisor - No Land 02
+Goku Advisor - No Warp 01
+Goku Advisor - No Warp 02
+Goku Advisor - Ritual 01
+Goku Advisor - Ritual 02
+Goku Advisor - Tech 01
+Goku Advisor - Tech 02
+Goku Advisor - No Vespene 01
+Goku Advisor - No Vespene 02
+Goku Advisor - No Vespene 03
+Goku Advisor - No Vespene 04
+Goku Advisor - Warp 01
+Goku Advisor - Warp 02
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

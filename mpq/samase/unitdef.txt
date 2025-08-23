@@ -55,6 +55,7 @@ military tiangou = 433
 military maverick_futurist = 435
 military blackguard = 489
 military arhaun = 490
+military cannibal = 496
 
 # Protoss factional units
 military adherent = 400
@@ -96,6 +97,8 @@ military valkyrie = 58
 
 # Terran NGS units
 building talos = 20
+building ogun_worker = 494
+building ogun_smithy = 497
 #
 military apostle = 10
 military shaman = 15

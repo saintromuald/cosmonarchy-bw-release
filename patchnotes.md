@@ -1,254 +1,109 @@
-# 10 August 2025
-## Year 3, month 8, patch 1
+# 24 August 2025
+## Year 3, month 8, patch 2
 
 ## Patch goals
-- Make significant changes to:
-	- Terran tech scaling
-	- Protoss power concentration
-	- Zerg tech progression and anti-air
-- Improve audiovisuals
+- Continue post-change balancing for all races
+- Implement advanced constructors for all races
+- Continue Askosi development
+- Improve audiovisuals and AI
 - [Subscribe on ko-fi](https://ko-fi.com/pr0nogoandveeq7) to get a sneak peek of the incoming changes!
+
+## Config
+- A new advisor, **Goku**, has been added! (c. 3crow)
+- The advisors **Mesk** and **ISN** have been deprecated by author request. If you get an error message on launch, consider removing them from your configs.
 
 ## Bugfixes
 - **Stability:**
-	- Fixed several iscript errors
+	- Resolved a common crash after warping in a Monument of Sin (r. HitEmUp & Sosij, c. DF)
 - **Gameplay:**
-	- Improved **Oscilliant** Binding Plasma proc consistency (r. ArbuzBudesh)
-	- Fixed Plague preserving burning Terran structures (r. Kenoli)
-	- Fixed burning Terran structures not becoming infested (r. Kenoli)
+	- Fixed **Liiralisk** bounces being able to bounce to airborne enemies
+	- Prevented **Autovitality** timers from expiring while stunned (r. Kasuga)
+- **AI:**
+	- Resolved an issue preventing Zerg AI from making **Axtoth Axis** and related units (r. GreenEggs'NSpam)
+	- Resolved issues with Zerg AI attack wave creation
 - **Audiovisual:**
-	- Corrected **Liiralisk** and **Kalkalisk** regression corpse
-	- Corrected **Striga** retaliation overlay when attacking **Analogue**s
-	- Fixed military AI message for **Yblyleth** (r. several people)
-	- Corrected coloring of the in-game menu 'Help' string (r. Mimika)
-
-## AI
-- Updated aiscripts and requirements to properly handle this patch's changes
+	- Enabled construction init SFX for Zerg gas caps
+	- Fixed icon display for **Solarion** hangar (r. jakulangski, c. DF)
+	- Corrected filenames for a few miscellaneous sound files (r. Mimika)
 
 ## Audiovisuals
 - New model for:
-	- Treasury (c. Solstice)
+	- **Legionnaire** *(c. Solstice, wireframe c. jun3hong)*
+	- **Izirokor**
 - New portrait for:
-	- Ecclesiast (c. Solstice)
-- Protoss and Zerg now have colorful changes to their UI (c. DF)
-- Reduced opacity of Morningstar radiation field for improved visibility (c. DF)
-- Adjusted 'Z' character for in-game font (c. Mimika)
+	- **Legionnaire** *(c. Solstice)*
+- Improved overlay visuals for:
+	- **Savant - Power Siphon**
 
 ## Triggers
-- **NEW:** Action: `table_edit` (c. Veeq7, b. 3crow)
-	- Allows editing data tables similar to true modding, at any point during a match
-	- Documentation forthcoming!
+- Added the following behaviors to the `set_unit_behavior` crig action:
+	- `no_collision` -- the unit will not collide with other ground units
+	- `air_transport` -- if the unit is a transport, it can transport air units
 
 ## Terran
-- **Addons:**
-	- Now unlock their units globally, for all production structures
-	- Buttons are now located in a submenu (replacing Rally Point, **D** on grid)
 - [Talos](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/talos):
-	- Armor 1 » 0
-	- Now trained at Ministry and Treasury; No longer trained at Quarry
-	- Now available as long as any structure has an attached Quarry
-- [Cyprian](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cyprian):
-	- Build time 20 » 18
-	- HP 75 » 80
-	- Movement speed 3.6 » 3.9
-	- **Twin Railguns:**
-		- Weapon damage 2x5 » 2x6
-- [Shaman](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/shaman):
-	- Resource costs 125/75 » 100/100
-- [Eidolon](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/eidolon):
-	- Build time 20 » 22
+	- **Fusion Sealers** removed
 - [Savant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/savant):
-	- Build time 22 » 25
-- [Madcap](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/madcap):
-	- Movement speed 4.4 » 4.8
-- [Heracles](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/heracles):
-	- HP 180 » 200
-- [Siren](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/siren):
-	- Resource costs 75/100 » 75/125
-- [Striga](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/striga):
-	- Resource costs 125/25 » 150/25
-- [Olympian](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/olympian):
-	- Build time 20 » 25
-	- Movement speed 4.4 » 4.8
-- [Cyclops](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cyclops):
-	- Build time 18 » 16
-	- HP 85 » 95
+	- Resource costs 100/50 » 125/50
+	- **Discoid Rifle:**
+		- **Power Siphon** attack cooldown 0.75 » 0.83 (matches **Entropy Gauntlets**)
 - [Blackjack](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/blackjack):
-	- Build time 16 » 18
-	- Movement speed 5.5 » 6
-	- **Monogun** weapon range 6 » 5
-- [Sundog](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/sundog):
-	- Build time 30 » 32
-- [Azazel](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/azazel):
-	- Build time 32 » 30
-- [Quarry](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/quarry):
-	- Resource costs 125/75 » 150/100
-	- Build time 25 » 45
-	- HP 400 » 500
-	- Armor 2 » 3
-	- No longer flagged as a Factory
-- [Treasury](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/treasury):
-	- Now flagged as a Factory
+	- Build time 18 » 16
+- [Phalanx](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/phalanx):
+	- Build time 28 » 30
+- [Valkyrie](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/valkyrie):
+	- Build time 30 » 25
+	- **Halo Rockets:**
+		- Weapon cooldown 1.08 » 0.92
+		- Weapon range 6 » 7
+		- Weapon still fired at 6 range, improving chase potential
+- [Ancile](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/ancile):
+	- Vision range 10 » 8
+- [Salamander](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/salamander):
+	- **Perdition Barrage:**
+		- Attack count 3 » 6
 - [Vestry](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/vestry):
-	- Resource costs 50/50 » 150/75
-	- Build time 15 » 30
-	- Armor 2 » 3
-	- Now globally enables Clerics & Shamans
+	- Resource costs 150/75 » 150/50
 - [Covenant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/covenant):
-	- Resource costs 50/150 » 100/250
-	- Build time 25 » 40
-	- HP 600 » 700
-	- Armor 3 » 4
-	- Now globally enables Eidolons & Savants
-- [Tinkerer's Tower](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/tinkerers-tower):
-	- Resource costs 100/75 » 300/100
-	- Build time 20 » 45
-	- Now globally enables Sirens & Strigas
-- [Guildhall](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/guildhall):
-	- Resource costs 200/200 » 200/400
-	- Build time 22 » 50
-	- HP 750 » 1000
-	- Armor 3 » 4
-	- Now globally enables Olympians & Autocrats
-- [Scrapyard](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/scrapyard):
-	- Resource costs 50/0 » 200/0
-	- Build time 15 » 30
-	- HP 350 » 500
-	- Armor 2 » 3
-	- Now globally enables Blackjacks & Matadors
-- [Palladium](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/palladium):
-	- Resource costs 150/100 » 300/150
-	- Build time 30 » 45
-	- HP 750 » 900
-	- Armor 2 » 4
-	- Now globally enables Phalanxes & Madrigals
-- [Future Station](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/future-station):
-	- Resource costs 400/200 » 600/300
-	- Build time 30 » 60
-	- HP 900 » 1000
-	- Armor 3 » 4
-	- Now globally enables Claymores & Penumbras
-- [Biotic Bastion](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/biotic-bastion):
-	- Resource costs 200/400 » 300/600
-	- Build time 45 » 60
-	- HP 850 » 950
-	- Armor 3 » 4
-	- Now globally enables Anticthons & Aions
-- [Rotary](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/rotary):
-	- Resource costs 175/75 » 350/150
-	- Build time 20 » 40
-	- HP 750 » 900
-	- Armor 2 » 3
-	- Now globally enables Sundogs & Salamanders
-- [Commandment](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/commandment):
-	- Resource costs 75/150 » 150/400
-	- Build time 30 » 50
-	- HP 700 » 850
-	- Armor 2 » 3
-	- Now globally enables Azazels & Seraphs
-- [Hadron](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/hadron):
-	- Resource costs 250/350 » 400/600
-	- Build time 45 » 60
-	- Now globally enables Hippogriffs & Phoboses
+	- Resource costs 100/250 » 100/350
+- **NEW:** [Ogun](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/ogun):
+	- Sturdy constructor with a repair-oriented deployment and **Fusion Sealers**
+	- Trained from Ministry or Treasury; requires Quarry
+- **NEW:** [Cannibal](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cannibal):
+	- **Upstart only!** Raiding infantry; replaces Cyprian
 
 ## Protoss
-- [Charlatan](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/charlatan):
-	- **Fervent Blaster:**
-		- Weapon cooldown 1.33 » 1
-- [Barghest](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/barghest):
-	- **Ray of Agony:**
-		- Weapon range 3 » 4
-- [Potentate](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/potentate):
-	- Resource costs 250/125 » 200/100
-	- Build time 45 » 40
-	- No longer has **Transcended Tide**
-- [Sycophant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/sycophant):
-	- **Idolatry:**
-		- On death, now heals allies within 3 range for 50 shields
-- [Archon](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/archon):
-	- No longer has **Astral Aegis**
-	- Now has **Triumphant Rise**
-	- **NEW: Martyrous Tempest:**
-		- On death, releases a Psionic Storm for 10 seconds
-- [Optecton](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/optecton):
-	- Build time 50 » 60
-- [Patriarch](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/patriarch):
-	- No longer has **Interception** or **Astral Rule**
-	- Now has **Signify**
-- [Analogue](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/analogue):
-	- Resource costs 200/200 » 150/100
-	- Build time 40 » 28
-	- HP 220 » 180
-	- Shields 110 » 80
-	- **Cylindrical Blaster:**
-		- Weapon cooldown 0.83 » 1
-- [Lanifect](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/lanifect):
-	- Shields 80 » 90
-	- Armor 1 » 2
-	- Sight range 9 » 8
-- [Panoptus](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/panoptus):
-	- Build time 35 » 32
-- [Gladius](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/gladius):
-	- Build time 40 » 36
-- [Exemplar](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/exemplar):
-	- HP 140 » 160
-- [Magister](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/magister):
-	- HP 180 » 200
-- [Epigraph](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/epigraph):
-	- Build time 45 » 40
-	- HP 220 » 240
-- [Ancestral Archives](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/ancestral-archives):
-	- Resource costs 800/500 » 800/800
-	- Build time 75 » 90
+- [Witness](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/witness):
+	- Resource costs 50/75 » 50/50
+- **NEW:** [Autocort](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/autocort):
+	- Advanced constructor with personal power field
+	- Trained from Embassy
 
 ## Zerg
-- **Tech nodes:**
-	- Evolutions no longer require Irol Iris or Othstol Oviform
+- [Gosvileth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/gosvileth):
+	- **Plethoral Gestation** removed
+	- **NEW: Aberrant Gestation:**
+		- Gosvileths now mutate into advanced structure strains
 - [Liiralisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/liiralisk):
-	- Transport cost 2 » 1
-	- Vision range 8 » 7
-	- **NEW: Homing Spores:**
-		- Anti-air attack with generous splash radius; does not bounce
-- [Cikralisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/cikralisk):
-	- HP 100 » 130
-	- Movement speed 5 » 6.5
-	- **Acid Salvo:**
-		- Now a line attack (e.g. Striga / Pariah) with new stats
-- [Ghitorokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/ghitorokor):
-	- **Gnashing Tendrils:**
-		- No longer attacks ground units
-		- Now attacks air units
-- [Vithrilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/vithrilisk):
-	- HP 200 » 240
-	- Armor 2 » 3
-	- Sight range 8 » 7
-	- **Corrosive Pathogen:**
-		- Range 2 » 4
-		- No longer requires the target to have Corrosive Touch first
-- [Lakizilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/lakizilisk):
-	- HP 140 » 150
-	- Movement speed 5 » 5.2
-- [Gorgrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/gorgrokor):
-	- Now requires Ulgorg Cavern
-- [Zobriolisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/zobriolisk) and [Zarcavrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/zarcavrokor):
-	- Now require Zozarc Gorge
+	- Resource costs 75/25 » 100/25
+	- **Hollowed Glaves:**
+		- Armor penetration 2 » 1
+	- **Homing Spore:**
+		- Armor penetration 0 » 1
+- [Sovroleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/sovroleth):
+	- Build time 25 » 24
+	- **Corpse Cocoon:**
+		- Gestation time 4 » 12 (half of training time)
+- [Sasyrvoleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/sasyrvoleth):
+	- Resource costs 100/200 » 100/300
+	- Build time 30 » 40
+	- HP 140 » 200
+	- Movement speed 5 » 4.16
+- [Zarcavrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/zarcavrokor):
+	- Movement speed 5.4 » 4.2
 - [Kalkiir Lake](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/kalkiir-lake):
-	- No longer requires Irol Iris
-	- Now mutates only from Vornath Pond
-- [Tethvith Swamp](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/tethvith-swamp):
-	- No longer requires Irol Iris
-	- Now mutates only from Skibact Scab
-- [Tosvrol Haunt](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/tosvrol-haunt):
-	- Resource costs 250/500 » 400/700
-	- Build time 50 » 60
-	- No longer requires Othstol Oviform
-- [Chokral Chazsal](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/chokral-chazsal):
-	- Resource costs 450/300 » 750/400
-	- Build time 45 » 60
-	- No longer requires Othstol Oviform
--[Almakis Antre](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/almakis-antre):
-	- Resource costs 350/600 » 500/600
-	- Build time 50 » 60
-	- No longer requires Othstol Oviform
-- **NEW:** [Zozarc Gorge](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/zozarc-gorge):
-	- Evolved control node; Mutated from Ulgorg Cavern; Enables Zobriolisks and Zarcavrokors
+	- Resource costs 200/100 » 200/200
+	- Time cost 40 » 50
+- **NEW:** [Agrileth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/agrileth):
+	- Mobile hive organ; has **Plethoral Gestation**
+	- Morphed from Larvae; requires Quazeth Pool or mutation

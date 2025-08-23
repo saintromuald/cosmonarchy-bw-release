@@ -2216,7 +2216,7 @@ FountainheadOverlayDeath:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 266 Stockade (terran\TBarrack.grp)
+# 266 Stockade (terran\stockade.grp)
 .headerstart
 IsId          	96
 Type          	24
@@ -6673,13 +6673,13 @@ ValkyrieAirAttkInit:
 	wait              	2
 	nobrkcodestart
 	attackwith        	2
-	wait				8
+	wait				6
 	attackwith        	2
-	wait				8
+	wait				6
 	attackwith        	2
-	wait				8
+	wait				6
 	attackwith        	2
-	wait				8
+	wait				6
 	attackwith        	2
 	nobrkcodeend
 	gotorepeatattk
@@ -9062,6 +9062,12 @@ SalamanderGndAttkInit:
 	wait              	1
 	nobrkcodestart
 	playsndbtwn	       	2777 2779 # Salamander weaponfire 01, 02, 03
+	attackwith			1
+	wait				3
+	attackwith			1
+	wait				3
+	attackwith			1
+	wait				3
 	attackwith			1
 	wait				3
 	attackwith			1
@@ -14541,9 +14547,33 @@ GenericRemnantsFiveDeath:
 # 1524 Fusion Cutter Hit Damageless (bullet\scvspark.grp)
 .headerstart
 IsId          	656
-Type          	1
+Type          	24
 Init          	FusionCutterHitDamagelessInit
 Death         	FusionCutterHitDamagelessDeath
+GndAttkInit   	FusionCutterHitDamagelessCont
+AirAttkInit   	FusionCutterHitDamagelessCont
+Unused1       	FusionCutterHitDamagelessCont
+GndAttkRpt    	FusionCutterHitDamagelessCont
+AirAttkRpt    	FusionCutterHitDamagelessCont
+CastSpell     	FusionCutterHitDamagelessCont
+GndAttkToIdle 	FusionCutterHitDamagelessCont
+AirAttkToIdle 	FusionCutterHitDamagelessCont
+Unused2       	FusionCutterHitDamagelessCont
+Walking       	FusionCutterHitDamagelessCont
+WalkingToIdle 	FusionCutterHitDamagelessCont
+SpecialState1 	FusionCutterHitDamagelessCont
+SpecialState2 	FusionCutterHitDamagelessCont
+AlmostBuilt   	FusionCutterHitDamagelessCont
+Built         	FusionCutterHitDamagelessCont
+Landing       	FusionCutterHitDamagelessCont
+LiftOff       	FusionCutterHitDamagelessCont
+IsWorking     	FusionCutterHitDamagelessCont
+WorkingToIdle 	FusionCutterHitDamagelessCont
+WarpIn        	FusionCutterHitDamagelessCont
+Unused3       	FusionCutterHitDamagelessCont
+StarEditInit  	FusionCutterHitDamagelessCont
+Disable       	FusionCutterHitDamagelessCont
+Burrow        	FusionCutterHitDamagelessCont
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -18971,3 +19001,306 @@ Arhaun_Turret_GndAttkInit:
 	gotorepeatattk
 	ignorerest
 	goto              	Goliath_Turret_Init
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1586 Cannibal (cm\terran\cannibal.grp)
+.headerstart
+IsId          	829
+Type          	12
+Init          	CannibalInit
+Death         	CannibalDeath
+GndAttkInit   	CannibalGndAttkInit
+AirAttkInit   	CannibalGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	CannibalGndAttkRpt
+AirAttkRpt    	CannibalGndAttkRpt
+CastSpell     	CannibalCastSpell
+GndAttkToIdle 	CannibalGndAttkToIdle
+AirAttkToIdle 	CannibalGndAttkToIdle
+Unused2       	[NONE]
+Walking       	CannibalWalking
+WalkingToIdle 	CannibalWalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+CannibalInit:
+	imgul             	2064 0 0 # Cannibal Shadow (cm\faction-t\cannibal.grp)
+CannibalWalkingToIdle:
+	playfram			0x00
+	goto				CannibalLocal00
+
+CannibalLocal00:
+	wait              	125
+	goto              	CannibalLocal00
+
+CannibalDeath:
+	playsndbtwn       	276 277 # Maverick death 01, 02
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait				3
+	lowsprul          	820 0 0 # Cannibal Remains (cm\terran\cannibal-remains.grp)
+	wait              	1
+	end
+
+CannibalGndAttkInit:
+	playfram          	0x120
+	wait              	1
+	playfram          	0x160
+CannibalGndAttkRpt:
+	wait              	1
+	nobrkcodestart
+	playfram          	0x1E0
+	attackwith        	1
+	attackwith        	1
+	wait              	1
+	playfram          	0x1C0
+	wait              	1
+	playfram          	0x180
+	wait              	1
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+CannibalGndAttkToIdle:
+	playfram			0x160
+	wait				1
+	playfram			0x140
+	wait				1
+	goto              	CannibalWalkingToIdle
+
+CannibalCastSpell:
+	wait              	1
+	goto              	CannibalGndAttkToIdle
+
+CannibalWalking:
+	move              	3
+	wait              	1
+	playfram          	0x80
+	move              	3
+	wait              	1
+	playfram          	0xA0
+	move              	3
+	wait              	1
+	playfram          	0xC0
+	move              	3
+	wait              	1
+	playfram          	0xE0
+	move              	3
+	wait              	1
+	playfram          	0x100
+	move              	3
+	wait              	1
+	playfram          	0x20
+	move              	3
+	wait              	1
+	playfram          	0x40
+	move              	3
+	wait              	1
+	playfram          	0x60
+	goto              	CannibalWalking
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2059 Ogun Worker Mode (cm\terran\ogun.grp)
+.headerstart
+IsId          	830
+Type          	15
+Init          	OgunInit
+Death         	OgunDeath
+GndAttkInit   	OgunGndAttkInit
+AirAttkInit   	OgunGndAttkInit
+Unused1       	OgunUnused1
+GndAttkRpt    	OgunGndAttkInit
+AirAttkRpt    	OgunGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	InfestedTerranWalkingToIdle
+AirAttkToIdle 	InfestedTerranWalkingToIdle
+Unused2       	[NONE]
+Walking       	OgunWalking
+WalkingToIdle 	InfestedTerranWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	OgunGndAttkInit
+.headerend
+# ----------------------------------------------------------------------------- #
+
+OgunInit:
+	imgul             	2060 0 0 # Ogun Shadow (cm\terran\ogun-shadow.grp)
+	playfram          	0x00
+	goto              	InfestedTerranWalkingToIdle
+
+OgunDeath:
+	playsndbtwn       	1385 1386 # Ogun death 01, 02
+	imgol             	332 0 -5 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			845 0 0 # Terran Unit Rubble Small
+	wait              	1
+	end
+
+OgunUnused1:
+	wait				1
+	nobrkcodestart
+	playsndbtwn			1705 1706 # Shaman revive 01, 02
+	sprol				742 0 0
+	setfldirect			12
+	wait				12
+	nobrkcodeend
+	goto				InfestedTerranWalkingToIdle
+
+OgunGndAttkInit:
+	playfram          	0x00
+	setvertpos        	0
+	wait              	1
+	useweapon         	14 # Fusion Cutter (Harvest) (Fusion Cutter)
+	sigorder			32
+	wait				13
+	goto              	OgunGndAttkInit
+
+OgunWalking:
+	playfram			0x20
+	move				4
+	wait				1
+	playfram			0x40
+	move				4
+	wait				1
+	playfram			0x60
+	move				4
+	wait				1
+	playfram			0x80
+	move				4
+	wait				1
+	playfram			0xA0
+	move				4
+	wait				1
+	playfram			0xC0
+	move				4
+	wait				1
+	playfram			0xE0
+	move				4
+	wait				1
+	goto              	OgunWalking
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2061 Ogun Smithy Mode (cm\terran\ogun.grp)
+.headerstart
+IsId          	831
+Type          	14
+Init          	OgunSmithyModeInit
+Death         	OgunSmithyModeDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	OgunSmithyModeUnused1
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	OgunSmithyModeGndAttkToIdle
+AirAttkToIdle 	OgunSmithyModeGndAttkToIdle
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	SkryrokorLocal00
+SpecialState1 	OgunSmithyModeSpecialState2
+SpecialState2 	OgunSmithyModeSpecialState2
+AlmostBuilt   	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+OgunSmithyModeInit:
+	imgul             	2062 0 0 # Ogun Shadow (cm\terran\ogun-shadow.grp)
+	wait              	1
+	playsnd           	2429 # Ogun Smithy Transform
+	setflspeed        	0
+	playfram          	0x120
+	wait              	1
+	playfram          	0x140
+	wait              	1
+	playfram          	0x160
+	wait              	1
+	playfram          	0x180
+	wait              	6
+	sigorder          	1
+	goto              	OgunSmithyModeGndAttkToIdle
+
+OgunSmithyModeGndAttkToIdle:
+	playfram          	0x180
+	wait				1
+	playfram          	0x1A0
+	wait				1
+	playfram          	0x1C0
+	wait				1
+	playfram          	0x1E0
+	wait				1
+	playfram          	0x200
+	wait				1
+	playfram          	0x220
+	wait				1
+	playfram          	0x240
+	wait				1
+	playfram          	0x260
+	wait				1
+	goto				OgunSmithyModeGndAttkToIdle
+
+OgunSmithyModeDeath:
+	playsndbtwn       	1385 1386 # Ogun death 01, 02
+	imgol             	332 0 -5 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			845 0 0 # Terran Unit Rubble Small
+	wait              	1
+	end
+
+OgunSmithyModeUnused1:
+	wait				1
+	nobrkcodestart
+	playsndbtwn			1705 1706 # Shaman revive 01, 02
+	sprol				742 0 0
+	setfldirect			12
+	wait				12
+	nobrkcodeend
+	goto				OgunSmithyModeGndAttkToIdle
+
+OgunSmithyModeSpecialState2:
+	playsnd           	2430 # Ogun Tank Transform
+	playfram          	0x160
+	wait              	1
+	playfram          	0x140
+	wait              	1
+	playfram          	0x120
+	wait              	1
+	playfram          	0x00
+	wait              	6
+	sigorder          	1
+	goto              	SkryrokorLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2086 Power Siphon (Small) (thingy\PDaPsySm.grp)
+# 2087 Power Siphon (Medium) (thingy\PDaPsyMd.grp)
+# 2088 Power Siphon (Large) (thingy\PDaPsyLg.grp)
+.headerstart
+IsId          	392
+Type          	1
+Init          	PowerSiphonInit
+Death         	Generic_Wait1End
+.headerend
+# ----------------------------------------------------------------------------- #
+
+PowerSiphonInit:
+	playfram          	2
+	wait              	1
+	playfram          	3
+	wait              	1
+	playfram          	4
+	wait              	1
+	playfram          	5
+	wait              	1
+	playfram          	6
+	wait              	1
+	playfram          	5
+	wait              	1
+	playfram          	4
+	wait              	1
+	playfram          	3
+	wait              	1
+	playfram          	2
+	goto              	Generic_Wait1End
+	

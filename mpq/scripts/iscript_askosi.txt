@@ -291,3 +291,567 @@ PilgrimLocal00:
 	playfram          	0x99
 	wait 				10
 	goto              	PilgrimLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2069 Arch (cm\askosi\arch.grp)
+.headerstart
+IsId          	802
+Type          	20
+Init          	ArchInit
+Death         	ArchDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	ArchSpecialState1
+SpecialState2 	ArchSpecialState2
+AlmostBuilt   	ArchAlmostBuilt
+Built         	ArchBuilt
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	SkryrokorLocal00
+WorkingToIdle 	ArchBuilt
+WarpIn        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ArchInit:
+	imgul             	2070 0 0 # Sieve Shadow (cm\terran\arch-shadow.grp)
+	playfram          	1
+ArchLocal00:
+	wait              	5
+	waitrand          	5 50
+	creategasoverlays 	0
+	waitrand          	5 50
+	creategasoverlays 	2
+	waitrand          	5 50
+	creategasoverlays 	1
+	waitrand          	5 50
+	creategasoverlays 	2
+	waitrand          	5 50
+	creategasoverlays 	0
+	waitrand          	5 50
+	creategasoverlays 	1
+	waitrand          	5 50
+	creategasoverlays 	2
+	goto              	ArchLocal00
+
+ArchDeath:
+	playsnd           	7 # Misc\ExploLrg.wav
+	sprol             	272 0 0 # Building Explosion (Large) (thingy\tBangX.grp)
+	wait              	3
+	end
+
+ArchSpecialState1:
+	playfram          	0
+	goto              	ArchLocal00
+
+ArchSpecialState2:
+	playfram          	0
+	goto              	ArchLocal00
+
+ArchAlmostBuilt:
+	playfram          	0
+	goto              	ArchLocal00
+
+ArchBuilt:
+	playfram          	0x00
+	wait              	5
+ArchLocal01:
+	creategasoverlays 	0
+	wait              	20
+	waitrand          	5 100
+	goto              	ArchLocal01
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2075 Radix (cm\askosi\radix.grp)
+.headerstart
+IsId          	96
+Type          	24
+Init          	RadixInit
+Death         	LandlockDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	SkryrokorLocal00
+WalkingToIdle 	SkryrokorLocal00
+SpecialState1 	RadixSpecialState1
+SpecialState2 	SkryrokorLocal00
+AlmostBuilt   	RadixAlmostBuilt
+Built         	RadixBuilt
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	RadixIsWorking
+WorkingToIdle 	RadixBuilt
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	RadixDisable
+Burrow        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+RadixInit:
+	playfram          	0x00
+	imgul             	2076 0 0 # Radix Shadow (cm\askosi\radix-shadow.grp)
+	goto              	SkryrokorLocal00
+
+RadixSpecialState1:
+	playfram          	0
+	goto              	SkryrokorLocal00
+
+RadixAlmostBuilt:
+	playfram          	0
+	goto              	SkryrokorLocal00
+
+RadixBuilt:
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+RadixIsWorking:
+	playfram          	1
+	wait              	2
+	playfram          	0
+	waitrand			1 2
+	goto              	RadixIsWorking
+
+RadixDisable:
+	goto              	SkryrokorLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2073 Function (cm\askosi\function.grp)
+.headerstart
+IsId          	111
+Type          	24
+Init          	FunctionInit
+Death         	LandlockDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	SkryrokorLocal00
+WalkingToIdle 	SkryrokorLocal00
+SpecialState1 	FunctionSpecialState1
+SpecialState2 	SkryrokorLocal00
+AlmostBuilt   	FunctionAlmostBuilt
+Built         	FunctionBuilt
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	FunctionIsWorking
+WorkingToIdle 	FunctionBuilt
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	FunctionDisable
+Burrow        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+FunctionInit:
+	playfram          	0x00
+	imgul             	2074 0 0 # Function Shadow (cm\askosi\function-shadow.grp)
+	goto              	SkryrokorLocal00
+
+FunctionSpecialState1:
+	playfram          	0
+	goto              	SkryrokorLocal00
+
+FunctionAlmostBuilt:
+	playfram          	0
+	goto              	SkryrokorLocal00
+
+FunctionBuilt:
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+FunctionIsWorking:
+	playfram          	1
+	wait              	2
+	playfram          	0
+	waitrand			1 2
+	goto              	FunctionIsWorking
+
+FunctionDisable:
+	goto              	SkryrokorLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2083 Missionary (cm\askosi\missionary.grp)
+.headerstart
+IsId          	69
+Type          	12
+Init          	MissionaryInit
+Death         	MissionaryDeath
+GndAttkInit   	MissionaryGndAttkInit
+AirAttkInit   	[NONE]
+Unused1       	MissionaryUnused1
+GndAttkRpt    	MissionaryGndAttkRpt
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	MissionaryGndAttkToIdle
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	MissionaryWalking
+WalkingToIdle 	MissionaryWalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+MissionaryInit:
+	imgul             	2084 0 0 # Missionary Shadow (cm\askosi\missionary-shadow.grp)
+MissionaryWalkingToIdle:
+	playfram          	0x00
+MissionaryLocal00:
+	wait				63
+	randcondjmp       	25 MissionaryLocal01
+	randcondjmp       	128 MissionaryLocal02
+	goto              	MissionaryLocal00
+
+MissionaryLocal01:
+	playfram          	0x20
+	wait              	1
+	randcondjmp       	192 MissionaryLocal03
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	wait              	6
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	wait              	6
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	goto              	MissionaryWalkingToIdle
+
+MissionaryLocal03:
+	wait              	13 
+	goto              	MissionaryWalkingToIdle
+
+MissionaryLocal02:
+	playfram          	0x80
+	wait              	1
+	playfram          	0xA0
+	wait              	1
+	turnrand          	3
+	wait              	1
+	playfram          	0x80
+	wait              	1
+	goto              	MissionaryWalkingToIdle
+
+MissionaryDeath:
+	playsndbtwn       	296 298 # Terran\Firebat\TFBDth00.WAV | Terran\Firebat\TFBDth02.WAV
+	imgol             	2089 0 0 # Askosi Death Explosion Small (cm\askosi\a-death-small.grp)
+	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
+	setfldirect       	0
+	wait              	8
+	lowsprul          	2085 0 0 # Missionary Remnants (cm\askosi\missionary-remnants.grp)
+	wait              	1
+	end
+	
+MissionaryUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect       	0
+	playsndbtwn			1163 1165
+	sprol				742 0 0 # Explosion Small Reversed
+#	playfram			176
+	wait				2
+#	playfram			175
+	wait				2
+#	playfram			174
+	wait				2
+#	playfram			173
+	wait				2
+#	playfram			172
+	wait				2
+#	playfram			171
+	wait				2
+#	playfram			170
+	wait              	2
+	setfldirect       	12
+	nobrkcodeend
+	goto				MissionaryWalkingToIdle
+
+MissionaryGndAttkInit:
+	playfram          	0x20
+MissionaryGndAttkRpt:
+	wait              	1
+	nobrkcodestart
+	playfram          	0x40
+	attackwith			1
+	wait              	1
+	playfram          	0x20
+	wait              	1
+	nobrkcodeend
+	playfram          	0x40
+	wait              	1
+	playfram          	0x20
+	wait              	1
+	gotorepeatattk
+	ignorerest
+MissionaryGndAttkToIdle:
+	goto              	MissionaryWalkingToIdle
+
+MissionaryWalking:
+	move              	4
+	wait              	1
+	playfram          	0x80
+	move              	4
+	wait              	1
+	playfram          	0xA0
+	move              	4
+	wait              	1
+	playfram          	0xC0
+	move              	4
+	wait              	1
+	playfram          	0xE0
+	move              	4
+	wait              	1
+	playfram          	0x100
+	move              	4
+	wait              	1
+	playfram          	0x120
+	move              	4
+	wait              	1
+	playfram          	0x140
+	move              	4
+	wait              	1
+	playfram          	0x60
+	goto              	MissionaryWalking
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2077 Cardinal (cm\askosi\cardinal.grp)
+.headerstart
+IsId          	497
+Type          	12
+Init          	CardinalInit
+Death         	CardinalDeath
+GndAttkInit   	CardinalGndAttkInit
+AirAttkInit   	[NONE]
+Unused1       	CardinalUnused1
+GndAttkRpt    	CardinalGndAttkRpt
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	CardinalGndAttkToIdle
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	CardinalWalking
+WalkingToIdle 	CardinalWalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+CardinalInit:
+	imgul             	2078 0 0 # Cardinal Shadow (cm\askosi\cardinal-shadow.grp)
+CardinalWalkingToIdle:
+	playfram          	0x00
+	goto				SkryrokorLocal00
+
+CardinalDeath:
+	playsndbtwn       	296 298 # Terran\Firebat\TFBDth00.WAV | Terran\Firebat\TFBDth02.WAV
+	imgol             	2089 0 0 # Askosi Death Explosion Small (cm\askosi\a-death-small.grp)
+	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
+	setfldirect       	0
+	wait				8
+	lowsprul          	1027 0 0 # Cardinal Remnants (cm\askosi\cardinal-remnants.grp)
+	wait              	1
+	end
+	
+CardinalUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect       	0
+	playsndbtwn			1163 1165 # 
+	sprol				742 0 0 # Explosion Small Reversed
+	wait				10
+	setfldirect       	12
+	nobrkcodeend
+	goto				CardinalWalkingToIdle
+
+CardinalGndAttkInit:
+	playfram          	0xaa
+CardinalGndAttkRpt:
+	wait              	1
+	playsndbtwn			1937 1938 # Golem weaponfire 01, 02
+	nobrkcodestart
+	playfram          	0xbb
+	wait				1
+	playfram			0xcc
+	attackwith			1
+	playsnd				664 # Protoss\ZEALOT\pzeHit00.WAV
+	wait              	1
+	playfram          	0xee
+	wait              	1
+	playfram          	0xff
+	sigorder			32
+	attackwith			1
+	playsnd				664 # Protoss\ZEALOT\pzeHit00.WAV
+	wait              	1
+	playfram          	0x110
+	wait              	1
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+CardinalGndAttkToIdle:
+	goto              	CardinalWalkingToIdle
+
+CardinalWalking:
+	move              	4
+	wait              	1
+	playfram          	0x11
+	move              	4
+	wait              	1
+	playfram          	0x22
+	move              	4
+	wait              	1
+	playfram          	0x33
+	move              	4
+	wait              	1
+	playfram          	0x44
+	move              	4
+	wait              	1
+	playfram          	0x55
+	move              	4
+	wait              	1
+	playfram          	0x66
+	move              	4
+	wait              	1
+	playfram          	0x77
+	move              	4
+	wait              	1
+	playfram          	0x88
+	goto              	CardinalWalking
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2080 Vicar (cm\askosi\vicar.grp)
+.headerstart
+IsId          	498
+Type          	12
+Init          	VicarInit
+Death         	VicarDeath
+GndAttkInit   	VicarGndAttkInit
+AirAttkInit   	[NONE]
+Unused1       	VicarUnused1
+GndAttkRpt    	VicarGndAttkRpt
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	VicarGndAttkToIdle
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	VicarWalking
+WalkingToIdle 	VicarWalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+VicarInit:
+	imgul             	2081 0 0 # Vicar Shadow (cm\askosi\vicar-shadow.grp)
+VicarWalkingToIdle:
+	playfram          	0x77
+	goto				SkryrokorLocal00
+
+VicarDeath:
+	playsndbtwn       	296 298 # Terran\Firebat\TFBDth00.WAV | Terran\Firebat\TFBDth02.WAV
+	imgol             	2089 0 0 # Askosi Death Explosion Small (cm\askosi\a-death-small.grp)
+	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
+	setfldirect       	0
+	wait				8
+	lowsprul          	1029 0 0 # Vicar Remnants (cm\askosi\vicar-remnants.grp)
+	wait              	1
+	end
+	
+VicarUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect       	0
+	playsndbtwn			1163 1165
+	sprol				742 0 0 # Explosion Small Reversed
+	wait				10
+	setfldirect       	12
+	nobrkcodeend
+	goto				VicarWalkingToIdle
+
+VicarGndAttkInit:
+	playfram          	0x88
+VicarGndAttkRpt:
+	wait              	1
+	nobrkcodestart
+	playfram          	0xbb
+	attackwith			1
+	wait              	1
+	playfram          	0xcc
+	wait              	1
+	nobrkcodeend
+	playfram          	0xaa
+	wait              	1
+	playfram          	0x99
+	wait              	1
+	gotorepeatattk
+	ignorerest
+VicarGndAttkToIdle:
+	goto              	VicarWalkingToIdle
+
+VicarWalking:
+	move              	4
+	wait              	1
+	playfram          	0x22
+	move              	4
+	wait              	1
+	playfram          	0x33
+	move              	4
+	wait              	1
+	playfram          	0x44
+	move              	4
+	wait              	1
+	playfram          	0x55
+	move              	4
+	wait              	1
+	playfram          	0x66
+	move              	4
+	wait              	1
+	playfram          	0x00
+	move              	4
+	wait              	1
+	playfram          	0x11
+	goto              	VicarWalking

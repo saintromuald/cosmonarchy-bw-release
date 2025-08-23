@@ -492,10 +492,10 @@ Terran Arhaun (Base)
 Arhaun Turret
 Terran Addon Submenu
 Zerg Zozarc Gorge
-Extended Unit #267
-Extended Unit #268
-Extended Unit #269
-Extended Unit #270
+Terran Ogun (Worker Mode)
+Protoss Autocort
+Terran Cannibal (Upstart)
+Terran Ogun (Smithy Mode)
 Extended Unit #271
 Extended Unit #272
 Francisco Goska

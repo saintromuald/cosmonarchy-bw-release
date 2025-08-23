@@ -10985,8 +10985,8 @@ GndAttkToIdle 	IzirokorGndAttkToIdle
 AirAttkToIdle 	IzirokorGndAttkToIdle
 Unused2       	[NONE]
 Walking       	IzirokorWalking
-WalkingToIdle 	IzirokorGndAttkToIdle
-SpecialState1 	[NONE]
+WalkingToIdle 	IzirokorWalkingToIdle
+SpecialState1 	SkryrokorLocal00
 SpecialState2 	IzirokorSpecialState2
 AlmostBuilt   	[NONE]
 Built         	[NONE]
@@ -11006,8 +11006,9 @@ Enable        	[NONE]
 
 IzirokorInit:
 	imgul             	1473 0 0 # Izirokor Shadow (cm\zerg\izirokor-shad.grp)
+	goto				IzirokorWalkingToIdle
 IzirokorGndAttkToIdle:
-	playfram          	0x00
+	playfram          	0xAA
 	goto              	IzirokorLocal00
 
 IzirokorLocal00:
@@ -11016,53 +11017,45 @@ IzirokorLocal00:
 	goto              	IzirokorLocal00
 
 IzirokorLocal01:
-	playfram          	0x11
+	playfram          	0x99
 	wait              	1
-	playfram          	0x22
+	playfram          	0xAA
 	wait              	1
-	playfram          	0x33
+	playfram          	0xBB
 	wait              	1
-	playfram          	0x44
-	wait              	1
-	playfram          	0x55
-	wait              	1
-	playfram          	0x66
-	wait              	1
+	playfram          	0xCC
+	wait              	4
 	randcondjmp			34 IzirokorLocal02
-	playfram          	0x55
+	playfram          	0xBB
 	wait              	1
-	playfram          	0x44
-	wait              	1
-	playfram          	0x33
-	wait              	1
-	playfram          	0x22
-	wait              	1
-	playfram          	0x11
-	wait              	1
-	goto              	IzirokorGndAttkToIdle
-
-IzirokorLocal02:
-	randcondjmp       	62 IzirokorLocal03
-	randcondjmp       	51 IzirokorLocal04
-	playfram          	0x77
-	wait              	1
-	playfram          	0x88
+	playfram          	0xAA
 	wait              	1
 	playfram          	0x99
 	wait              	1
-	playfram          	0xaa
+	goto              	IzirokorWalkingToIdle
+
+IzirokorLocal02:
+	playfram          	0xBB
 	wait              	1
-	playfram          	0xbb
+	playfram          	0xAA
+	wait              	3
+	randcondjmp       	62 IzirokorLocal03
+	randcondjmp       	51 IzirokorLocal04
+	playfram          	0xBB
 	wait              	1
-	playfram          	0xcc
+	playfram          	0xCC
 	wait              	1
-	goto              	IzirokorGndAttkToIdle
+	playfram          	0xBB
+	wait              	1
+	goto              	IzirokorWalkingToIdle
 
 IzirokorLocal03:
-	playfram          	0x55
+	playfram          	0x99
+	wait              	4
+	playfram          	0x11
 	wait              	1
 	turnccwise         	1
-	playfram          	0x44
+	playfram          	0x22
 	wait              	1
 	turnccwise         	1
 	playfram          	0x33
@@ -11074,13 +11067,15 @@ IzirokorLocal03:
 	playfram          	0x11
 	wait              	1
 	turnccwise         	1
-	goto              	IzirokorGndAttkToIdle
+	goto              	IzirokorWalkingToIdle
 
 IzirokorLocal04:
-	playfram          	0x55
+	playfram          	0x99
+	wait              	4
+	playfram          	0x11
 	wait              	1
 	turncwise         	1
-	playfram          	0x44
+	playfram          	0x22
 	wait              	1
 	turncwise         	1
 	playfram          	0x33
@@ -11092,12 +11087,27 @@ IzirokorLocal04:
 	playfram          	0x11
 	wait              	1
 	turncwise         	1
-	goto              	IzirokorGndAttkToIdle
+	goto              	IzirokorWalkingToIdle
 
 IzirokorDeath:
 	playsnd           	1506 # Izirokor death 01
-	imgol             	28 0 0 # Geszithalor Death (zerg\zguDeath.grp)
-	wait              	5
+	setfldirect       	0
+	playfram          	459
+	wait              	2
+	playfram          	460
+	wait              	2
+	playfram          	461
+	wait              	2
+	playfram          	462
+	wait              	2
+	playfram          	463
+	wait              	2
+	playfram          	464
+	wait              	2
+	playfram          	465
+	wait              	2
+	playfram          	466
+	wait              	2
 	lowsprul          	763 0 0 # Izirokor Remnants (cm\zerg\izirokor-corpse.grp)
 	wait              	2
 	end
@@ -11129,77 +11139,68 @@ IzirokorUnused1:
 	wait				2
 	setfldirect       	14
 	nobrkcodeend
-	goto				IzirokorGndAttkToIdle
+	goto				IzirokorWalkingToIdle
 
 IzirokorGndAttkInit:
-	playfram          	0x1ba
+	playfram          	0x99
 	wait				1
-	playfram			0x1dc
+	playfram			0xAA
 IzirokorGndAttkRpt:
+	wait              	1
 	nobrkcodestart
 	playsndbtwn			1880 1881 # Izirokor weapon fire 01, 02
 	wait              	1
+	playfram          	0xBB
 	wait              	1
-	playfram          	0x1fe
-	wait              	1
-	playfram          	0x20f
-	attack
+	playfram          	0xCC
+	attackwith			1
 	wait              	2
-	playfram          	0x220
+	playfram          	0xDD
 	wait              	2
-	playfram          	0x231
+	playfram          	0xEE
 	wait              	1
-	playfram          	0x242
+	playfram          	0xFF
 	wait              	2
-	playfram          	0x253
+	playfram          	0x110
 	wait              	1
-	playfram          	0x264
+	playfram          	0x121
 	wait              	1
 	nobrkcodeend
+	playfram          	0x132
+	wait              	1
 	gotorepeatattk
 	goto              	IzirokorGndAttkToIdle
 
 IzirokorWalking:
 	move              	5
 	wait              	1
-	playfram          	0x110
+	playfram          	0x11
 	move              	5
 	wait              	1
-	playfram          	0x121
+	playfram          	0x22
 	move              	5
 	wait              	1
-	playfram          	0x132
+	playfram          	0x33
 	move              	5
 	wait              	1
-	playfram          	0x143
+	playfram          	0x44
 	move              	5
 	wait              	1
-	playfram          	0x154
+	playfram          	0x55
 	move              	5
 	wait              	1
-	playfram          	0x165
+	playfram          	0x66
 	move              	5
 	wait              	1
-	playfram          	0x176
+	playfram          	0x77
 	move              	5
 	wait              	1
-	playfram          	0x187
-	move              	5
-	wait              	1
-	playfram          	0x198
-	move              	5
-	wait              	1
-	playfram          	0x1a9
-	move              	5
-	wait              	1
-	playfram          	0xdd
-	move              	5
-	wait              	1
-	playfram          	0xee
-	move              	5
-	wait              	1
-	playfram          	0xff
+	playfram          	0x88
 	goto              	IzirokorWalking
+	
+IzirokorWalkingToIdle:
+	playfram          	0x0
+	goto              	IzirokorLocal00
 	
 IzirokorSpecialState2:
 	playfram			0x187
@@ -11208,25 +11209,25 @@ IzirokorSpecialState2:
 IzirokorBurrow:
 	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
 	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
-	playfram          	0x286
+	playfram          	0x143
 	wait              	1
-	playfram          	0x297
+	playfram          	0x154
 	wait              	1
-	playfram          	0x2a8
+	playfram          	0x165
 	wait              	1
-	playfram          	0x2b9
+	playfram          	0x176
 	wait              	1
-	playfram          	0x2ca
+	playfram          	0x187
 	imgol             	423 15 12 # Burrowing Dust (thingy\bDust.grp)
 	imgol             	423 12 -15 # Burrowing Dust (thingy\bDust.grp)
 	imgol             	423 -12 -3 # Burrowing Dust (thingy\bDust.grp)
 	wait              	1
-	playfram          	0x2db
+	playfram          	0x198
 	wait              	1
-	playfram          	0x2ec
+	playfram          	0x1A9
 	wait              	1
 	sigorder          	4
-	playfram			0x2fd
+	playfram			0x1BA
 	goto				SkryrokorLocal00
 
 IzirokorUnburrow:
@@ -11234,23 +11235,23 @@ IzirokorUnburrow:
 	waitrand          	1 2
 	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
 	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
-	playfram          	0x2ec
+	playfram          	0x1A9
 	wait              	1
-	playfram          	0x2db
+	playfram          	0x198
 	wait              	1
-	playfram          	0x2ca
+	playfram          	0x187
 	wait              	1
-	playfram          	0x2b9
+	playfram          	0x176
 	imgol             	423 12 -15 # Burrowing Dust (thingy\bDust.grp)
 	imgol             	423 -12 -12 # Burrowing Dust (thingy\bDust.grp)
 	wait              	1
-	playfram          	0x2a8
+	playfram          	0x165
 	wait              	1
-	playfram          	0x297
+	playfram          	0x154
 	wait              	1
 	sigorder          	4
 	setfldirect			14
-	goto              	IzirokorGndAttkToIdle
+	goto              	IzirokorWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -14125,7 +14126,7 @@ ZergSporeExplosionLargeDeath:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 050 Mortothrokor (cm\zerg\mortothrokor.grp)
+# 1735 Mortothrokor (cm\zerg\mortothrokor.grp)
 .headerstart
 IsId          	743
 Type          	26
@@ -16384,3 +16385,266 @@ SkibactScabInit:
 	imgul             	2044 0 0 # Skibact Scab Shadow (cm\zerg\skibact-scab-shadow.grp)
 	playfram          	0x00
 	goto              	HydrithDenWorkingToIdle
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2065 Agrileth (cm\zerg\agrileth.grp)
+.headerstart
+IsId          	831
+Type          	26
+Init          	AgrilethInit
+Death         	AgrilethDeath
+GndAttkInit   	AgrilethGndAttkInit
+AirAttkInit   	[NONE]
+Unused1       	AgrilethUnused1
+GndAttkRpt    	AgrilethGndAttkRpt
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	AgrilethGndAttkToIdle
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	AgrilethWalking
+WalkingToIdle 	AgrilethGndAttkToIdle
+SpecialState1 	[NONE]
+SpecialState2 	SkryrokorLocal00
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	AgrilethBurrow
+UnBurrow      	AgrilethUnBurrow
+Enable        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+AgrilethInit:
+	imgul             	2066 0 0 # Agrileth Shadow (cm\zerg\agrileth-shadow.grp)
+AgrilethGndAttkToIdle:
+	playfram          	0x00
+	goto              	AgrilethLocal00
+
+AgrilethLocal00:
+	wait              	62
+	randcondjmp       	25 AgrilethLocal01
+	randcondjmp       	128 AgrilethLocal02
+	goto              	AgrilethLocal00
+
+AgrilethLocal01:
+	playfram          	0x55
+	wait              	1
+	playfram          	0x66
+	wait              	10
+	playfram          	0x55
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	goto              	AgrilethGndAttkToIdle
+
+AgrilethLocal02:
+	randcondjmp       	128 AgrilethLocal03
+	playfram          	0x11
+	wait              	1
+	turnccwise        	1
+	playfram          	0x22
+	wait              	1
+	turnccwise        	1
+	playfram          	0x33
+	wait              	1
+	turnccwise        	1
+	playfram          	0x44
+	wait              	1
+	turnccwise        	1
+	playfram          	0x33
+	wait              	1
+	turnccwise        	1
+	playfram          	0x22
+	wait              	1
+	turnccwise        	1
+	playfram          	0x11
+	wait              	1
+	turnccwise        	1
+	goto              	AgrilethGndAttkToIdle
+
+AgrilethLocal03:
+	playfram          	0x11
+	wait              	1
+	turncwise         	1
+	playfram          	0x22
+	wait              	1
+	turncwise         	1
+	playfram          	0x33
+	wait              	1
+	turncwise         	1
+	playfram          	0x44
+	wait              	1
+	turncwise         	1
+	playfram          	0x33
+	wait              	1
+	turncwise         	1
+	playfram          	0x22
+	wait              	1
+	turncwise         	1
+	playfram          	0x11
+	wait              	1
+	turncwise         	1
+	goto              	AgrilethGndAttkToIdle
+
+AgrilethDeath:
+	playsnd           	878 # Zerg\Ultra\ZUlDth00.WAV
+	setfldirect       	0
+	playfram          	595
+	wait              	2
+	playfram          	596
+	wait              	2
+	playfram          	597
+	wait              	2
+	playfram          	598
+	wait              	2
+	playfram          	599
+	wait              	2
+	playfram          	600
+	wait              	2
+	playfram          	601
+	wait              	2
+	lowsprul			1021 0 0 # Agrileth Remnants (cm\zerg\agrileth-remnants.grp)
+	wait              	1
+	end
+	
+AgrilethUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect       	0
+	playsnd				1181 # Ultrokor revive 01
+	playfram			173
+	wait				2
+	playfram			172
+	wait				2
+	playfram			171
+	wait				2
+	playfram			170
+	wait				12
+	setfldirect       	14
+	nobrkcodeend
+	goto				AgrilethGndAttkToIdle
+
+AgrilethGndAttkInit:
+	playfram          	0x00
+AgrilethGndAttkRpt:
+	wait              	1
+	nobrkcodestart
+	playsndrand       	3 891 892 893 # Zerg\Ultra\zulAtt00.WAV | Zerg\Ultra\zulAtt01.WAV | Zerg\Ultra\zulAtt02.WAV
+	wait              	1
+	playfram          	0xBB
+	wait              	1
+	playfram          	0xCC
+	wait              	1
+	playfram			0xDD
+	wait				1
+	playfram			0xEE
+	attackwith 			1
+	playsndbtwn			3145 3146 # Zerg\Ultra\zulHit00.WAV | Zerg\Ultra\zulHit01.WAV
+	wait				1
+	playfram			0xFF
+	wait				1
+	playfram          	0x110
+	wait              	1
+	playfram          	0x121
+	wait              	1
+	playfram          	0x132
+	wait              	1
+	playfram          	0x143
+	wait              	1
+	nobrkcodeend
+	gotorepeatattk
+	goto              	AgrilethGndAttkToIdle
+
+AgrilethWalking:
+	move              	4
+	playfram          	0x11
+	wait				1
+	move              	4
+	playfram          	0x22
+	wait				1
+	move              	4
+	playfram          	0x33
+	wait				1
+	move              	4
+	playfram          	0x44
+	wait				1
+	move              	4
+	playfram          	0x55
+	wait				1
+	move              	4
+	playfram          	0x66
+	wait				1
+	move              	4
+	playfram          	0x77
+	wait				1
+	move              	4
+	playfram          	0x88
+	wait				1
+	move              	4
+	playfram          	0x99
+	wait				1
+	move              	4
+	playfram          	0xAA
+	wait				1
+	goto              	AgrilethWalking
+
+AgrilethBurrow:
+    setfldirect			14
+    imgol      			423 0 0 # Burrowing Dust (thingy\bDust.grp)
+    playfram   			0x165
+    wait       			1
+    playfram   			0x176
+    wait       			1
+    playfram   			0x187
+    wait       			1
+    playfram   			0x198
+    wait       			1
+    playfram   			0x1A9
+    wait       			1
+    imgol      			423 0 0 # Burrowing Dust (thingy\bDust.grp)
+    playfram   			0x1C0
+    wait       			1
+    playfram   			0x1DA
+    wait       			1
+    playfram   			0x1EB
+    wait       			1
+    playfram   			0x1FC
+    wait       			1
+    playfram   			0x20D
+    wait       			1
+    playfram   			0x21E
+    wait       			1
+    playfram   			0x231
+    wait       			1
+    sigorder   			4
+    goto       			SkryrokorLocal00
+
+AgrilethUnBurrow:
+    wait                1
+    waitrand            1 2
+    setfldirect         14
+    imgul               423 0 0 # Burrowing Dust (thingy\bDust.grp)
+    playfram            0x21E
+    wait                1
+    playfram            0x20D
+    wait                1
+    playfram            0x1DA
+    wait                1
+    playfram            0x185
+    wait                1
+    playfram            0x176
+    wait                1
+    playfram            0x165
+    wait                1
+    sigorder            4
+    goto                AgrilethGndAttkToIdle
+	

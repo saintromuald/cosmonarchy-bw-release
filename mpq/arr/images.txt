@@ -2055,40 +2055,40 @@ Morningstar Radiation Field
 Zozarc Gorge
 Zozarc Gorge Shadow
 Cikralisk Attack Overlay
-Extended Image #1055
-Extended Image #1056
-Extended Image #1057
-Extended Image #1058
-Extended Image #1059
-Extended Image #1060
-Extended Image #1061
-Extended Image #1062
-Extended Image #1063
-Extended Image #1064
-Extended Image #1065
-Extended Image #1066
-Extended Image #1067
-Extended Image #1068
-Extended Image #1069
-Extended Image #1070
-Extended Image #1071
-Extended Image #1072
-Extended Image #1073
-Extended Image #1074
-Extended Image #1075
-Extended Image #1076
-Extended Image #1077
-Extended Image #1078
-Extended Image #1079
-Extended Image #1080
-Extended Image #1081
-Extended Image #1082
-Extended Image #1083
-Extended Image #1084
-Extended Image #1085
-Extended Image #1086
-Extended Image #1087
-Extended Image #1088
+Autocort
+Autocort Shadow
+Ogun (Tank Mode)
+Ogun Shadow (Tank Mode)
+Ogun (Smithy Mode)
+Ogun Shadow (Smithy Mode)
+Cannibal
+Cannibal Shadow
+Agrileth
+Agrileth Shadow
+Agrileth Remains
+Agrileth Birth
+Arch
+Arch Shadow
+Chantry
+Chantry Shadow
+Function
+Function Shadow
+Radix
+Radix Shadow
+Cardinal
+Cardinal Shadow
+Cardinal Remains
+Vicar
+Vicar Shadow
+Vicar Remains
+Missionary
+Missionary Shadow
+Missionary Remains
+Power Siphon Hit (Small)
+Power Siphon Hit (Medium)
+Power Siphon Hit (Large)
+Askosi Death Explosion Small
+Askosi Death Explosion Large
 Extended Image #1089
 Extended Image #1090
 Extended Image #1091

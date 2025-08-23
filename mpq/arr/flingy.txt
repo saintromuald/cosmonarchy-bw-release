@@ -572,18 +572,18 @@ Arhaun Base
 Arhaun Turret
 Morningstar Radiation Field
 Zozarc Gorge
-Extended Flingy #366
-Extended Flingy #367
-Extended Flingy #368
-Extended Flingy #369
-Extended Flingy #370
-Extended Flingy #371
-Extended Flingy #372
-Extended Flingy #373
-Extended Flingy #374
-Extended Flingy #375
-Extended Flingy #376
-Extended Flingy #377
+Autocort
+Ogun (Tank Mode)
+Ogun (Smithy Mode)
+Cannibal
+Agrileth
+Arch
+Chantry
+Function
+Radix
+Cardinal
+Vicar
+Missionary
 Extended Flingy #378
 Extended Flingy #379
 Extended Flingy #380
