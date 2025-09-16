@@ -10,7 +10,7 @@ Attack
 Attack (Obscured)
 Attack Unit (Normal)
 Attack In Range
-Attack Ground (Unused)
+Rematerialize (Askosi)
 Salvage (Talos)
 Attack Move
 Building Is Being Infested

@@ -214,7 +214,7 @@ Vespene Ridge
 Iroleth
 Matrix
 Paladin
-Madrigal
+Madrigal (Imperioso)
 Savant (Entropy Gauntlets)
 Scrapyard
 Rotary
@@ -584,17 +584,17 @@ Radix
 Cardinal
 Vicar
 Missionary
-Extended Flingy #378
-Extended Flingy #379
-Extended Flingy #380
-Extended Flingy #381
-Extended Flingy #382
-Extended Flingy #383
-Extended Flingy #384
-Extended Flingy #385
-Extended Flingy #386
-Extended Flingy #387
-Extended Flingy #388
+Emissary
+Inkblot
+Vulture (Hecaton)
+Tartarus Mine (Hecaton)
+Madrigal (Hecaton, Imperioso)
+Madrigal Turret (Hecaton, Imperioso)
+Madrigal (Hecaton, Furia)
+Madrigal Turret (Hecaton, Furia)
+Rove
+Burst Lasers Green Impact
+Burst Lasers Cyan Impact
 Extended Flingy #389
 Extended Flingy #390
 Extended Flingy #391

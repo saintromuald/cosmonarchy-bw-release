@@ -515,7 +515,7 @@ Corrosive Acid Hit
 Maelstrom Hit
 Uraj
 Khalis
-Matador
+Matador (Tank Mode)
 Starpad
 Matrix
 Iroleth
@@ -1033,17 +1033,17 @@ Missionary Remains
 Power Siphon (Small)
 Power Siphon (Medium)
 Power Siphon (Large)
-Extended Sprite #519
-Extended Sprite #520
-Extended Sprite #521
-Extended Sprite #522
-Extended Sprite #523
-Extended Sprite #524
-Extended Sprite #525
-Extended Sprite #526
-Extended Sprite #527
-Extended Sprite #528
-Extended Sprite #529
+Emissary
+Inkblot
+Vulture (Hecaton)
+Tartarus Mine (Hecaton)
+Madrigal (Hecaton, Imperioso)
+Madrigal Turret (Hecaton, Imperioso)
+Madrigal (Hecaton, Furia)
+Madrigal Turret (Hecaton, Furia)
+Rove
+Burst Lasers Green Impact
+Burst Lasers Cyan Impact
 Extended Sprite #530
 Extended Sprite #531
 Extended Sprite #532

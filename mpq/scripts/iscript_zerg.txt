@@ -136,7 +136,7 @@ Generic_Wait1End:
 # 005 Rilirokor (zerg\brood.grp)
 .headerstart
 IsId          	4
-Type          	12
+Type          	26
 Init          	RilirokorInit
 Death         	RilirokorDeath
 GndAttkInit   	RilirokorGndAttkInit
@@ -150,7 +150,21 @@ AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
 Walking       	RilirokorWalking
 WalkingToIdle 	RilirokorGndAttkToIdle
-SpecialState1 	[NONE]
+SpecialState1 	SkryrokorLocal00
+SpecialState2 	SkryrokorLocal00
+AlmostBuilt   	SkryrokorLocal00
+Built         	SkryrokorLocal00
+Landing       	SkryrokorLocal00
+LiftOff       	SkryrokorLocal00
+IsWorking     	SkryrokorLocal00
+WorkingToIdle 	SkryrokorLocal00
+WarpIn        	SkryrokorLocal00
+Unused3       	SkryrokorLocal00
+StarEditInit  	SkryrokorLocal00
+Disable       	SkryrokorLocal00
+Burrow        	SkryrokorLocal00
+UnBurrow      	SkryrokorLocal00
+Enable        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -2335,7 +2349,7 @@ AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
 Walking       	ZethrokorWalking
 WalkingToIdle 	ZethrokorGndAttkToIdle
-SpecialState1 	[NONE]
+SpecialState1 	SkryrokorLocal00
 SpecialState2 	ZethrokorSpecialState2
 AlmostBuilt   	[NONE]
 Built         	[NONE]
@@ -3449,6 +3463,7 @@ SurkithCesiantGndAttkInit:
 	trgtarccondjmp    	74 42 SurkithCesiantLocal00
 	trgtarccondjmp    	159 42 SurkithCesiantLocal01
 	nobrkcodestart
+	wait				1
 	playfram          	24
 	wait              	1
 	playfram          	25
@@ -3482,11 +3497,11 @@ SurkithCesiantGndAttkInit:
 	playfram          	25
 	wait              	1
 	playfram          	24
-	wait              	1
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
 SurkithCesiantGndAttkToIdle:
+	wait				1
 	goto              	SurkithCesiantIsWorking
 
 SurkithCesiantIsWorking:
@@ -3500,6 +3515,7 @@ SurkithCesiantIsWorking:
 
 SurkithCesiantLocal00:
 	nobrkcodestart
+	wait				1
 	playfram          	4
 	wait              	1
 	playfram          	5
@@ -3543,6 +3559,7 @@ SurkithCesiantLocal00:
 
 SurkithCesiantLocal01:
 	nobrkcodestart
+	wait				1
 	playfram          	14
 	wait              	1
 	playfram          	15
@@ -7490,6 +7507,7 @@ SkortrithCesiantGndAttkInit:
 	trgtarccondjmp    	74 42 SkortrithCesiantLocal00
 	trgtarccondjmp    	159 42 SkortrithCesiantLocal01
 	nobrkcodestart
+	wait              	1
 	playfram          	24
 	wait              	1
 	playfram          	25
@@ -7523,7 +7541,6 @@ SkortrithCesiantGndAttkInit:
 	playfram          	25
 	wait              	1
 	playfram          	24
-	wait              	1
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
@@ -7531,6 +7548,7 @@ SkortrithCesiantGndAttkInit:
 
 SkortrithCesiantLocal00:
 	nobrkcodestart
+	wait              	1
 	playfram          	4
 	wait              	1
 	playfram          	5
@@ -7574,6 +7592,7 @@ SkortrithCesiantLocal00:
 
 SkortrithCesiantLocal01:
 	nobrkcodestart
+	wait              	1
 	playfram          	14
 	wait              	1
 	playfram          	15
@@ -9148,8 +9167,23 @@ ZoryusthalethLocal06:
 
 ZoryusthalethDeath:
 	playsnd           	1917 # Zoryusthaleth death 01
-	imgol             	28 0 0 # Geszithalor Death (zerg\zguDeath.grp)
-	wait              	5
+	setfldirect       	0
+	playfram          	408
+	wait              	2
+	playfram          	409
+	wait              	2
+	playfram          	410
+	wait              	2
+	playfram          	411
+	wait              	2
+	playfram          	412
+	wait              	2
+	playfram          	413
+	wait              	2
+	playfram          	414
+	wait              	2
+	playfram          	415
+	wait              	2
 	lowsprul			823 0 0 # Zoryusthaleth Remains
 	wait              	1
 	end
@@ -9169,20 +9203,20 @@ ZoryusthalethGndAttkInit:
 	wait				1
 	nobrkcodestart
 	playsndbtwn			1918 1919 # Zoryusthaleth weaponfire 01, 02
-	playfram			0xaa
+	playfram			0xAA
 	wait				1
-	playfram			0xbb
+	playfram			0xBB
 	wait				1
-	playfram			0xcc
+	playfram			0xCC
 	wait				1
-	playfram			0xdd
+	playfram			0xDD
 	attackmelee       	2 894 895 # Zerg\Ultra\zulHit00.WAV | Zerg\Ultra\zulHit01.WAV
 	wait              	1 
-	playfram			0xcc
+	playfram			0xEE
 	wait				1
-	playfram			0xbb
+	playfram			0xFF
 	wait				1
-	playfram			0xaa
+	playfram			0x110
 	nobrkcodeend
 	gotorepeatattk
 	goto              	ZoryusthalethGndAttkToIdle
@@ -9206,25 +9240,31 @@ ZoryusthalethCastSpell:
 
 ZoryusthalethWalking:
 	move              	5
-	wait              	1 
+	wait              	1
+	playfram          	0x11
+	move              	5 
+	wait              	1
+	playfram          	0x22
+	move              	5 
+	wait              	1
 	playfram          	0x33
-	move              	5 
-	wait              	1 
-	playfram          	0x44
-	move              	5 
-	wait              	1 
-	playfram          	0x55
 	move              	5
-	wait              	1 
+	wait              	1
+	playfram          	0x44
+	move              	5
+	wait              	1
+	playfram          	0x55
+	move              	5 
+	wait              	1
 	playfram          	0x66
 	move              	5
-	wait              	1 
+	wait              	1
 	playfram          	0x77
-	move              	5 
-	wait              	1 
+	move              	5
+	wait              	1
 	playfram          	0x88
 	move              	5
-	wait              	1 
+	wait              	1
 	playfram          	0x99
 	goto              	ZoryusthalethWalking
 
@@ -9235,22 +9275,22 @@ ZoryusthalethSpecialState2:
 ZoryusthalethBurrow:
 	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
 	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
-	playfram          	0xee
-	wait              	1
-	playfram          	0xff
-	wait              	1
-	playfram          	0x110
-	wait              	1
 	playfram          	0x121
 	wait              	1
 	playfram          	0x132
-	imgol             	423 15 12 # Burrowing Dust (thingy\bDust.grp)
-	imgol             	423 12 -15 # Burrowing Dust (thingy\bDust.grp)
-	imgol             	423 -12 -3 # Burrowing Dust (thingy\bDust.grp)
 	wait              	1
 	playfram          	0x143
 	wait              	1
 	playfram          	0x154
+	wait              	1
+	playfram          	0x165
+	imgol             	423 15 12 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 12 -15 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 -12 -3 # Burrowing Dust (thingy\bDust.grp)
+	wait              	1
+	playfram          	0x176
+	wait              	1
+	playfram          	0x187
 	wait              	1
 	sigorder          	4
 	goto              	SkryrokorLocal00
@@ -9260,19 +9300,19 @@ ZoryusthalethUnBurrow:
 	waitrand          	1 2
 	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
 	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
+	playfram          	0x176
+	wait              	1
+	playfram          	0x165
+	wait              	1
+	playfram          	0x154
+	wait              	1
 	playfram          	0x143
+	imgol             	423 12 -15 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 -12 -12 # Burrowing Dust (thingy\bDust.grp)
 	wait              	1
 	playfram          	0x132
 	wait              	1
 	playfram          	0x121
-	wait              	1
-	playfram          	0x110
-	imgol             	423 12 -15 # Burrowing Dust (thingy\bDust.grp)
-	imgol             	423 -12 -12 # Burrowing Dust (thingy\bDust.grp)
-	wait              	1
-	playfram          	0xff
-	wait              	1
-	playfram          	0xee
 	wait              	1
 	sigorder          	4
 	goto              	ZoryusthalethGndAttkToIdle
@@ -9849,24 +9889,9 @@ KonviliskLocal06:
 KonviliskDeath:
 	playsndbtwn       	925 927	# Zerg\Queen\ZQuDth00.WAV | Zerg\Queen\ZQuDth02.WAV
 	sprol             	156 0 0	# Matraleth Death (zerg\zquDeath.grp)
-	playfram			204
-	wait				1
-	playfram			205
-	wait				1
-	playfram			206
-	wait				1
-	playfram			207
-	wait				1
-	playfram			208
-	wait				1
-	playfram			209
-	wait				1
-	playfram			210
-	wait				1
-	playfram			211
-	wait              	5
+	wait              	3
 	lowsprul          	689 0 0	# Konvilisk Remnants (cm\zerg\konvilisk-death.grp)
-	wait              	1 
+	wait              	1
 	end
 	
 KonviliskUnused1:
@@ -15854,7 +15879,14 @@ LakiziliskDeath:
 	playfram          	0x1ed
 	wait              	2
 	lowsprul          	484 0 0	# Lakizilisk Remnants (zerg\zLakizilisk.grp)
-	wait              	9 # Extra time to prevent nullsprite crash
+	tmprmgraphicstart
+LakiziliskDeathLoop:
+	unused_0c
+	wait				1
+	goto 				LakiziliskDeathLoop
+	
+LakiziliskDeathEnd:
+	wait				1
 	end
 	
 LakiziliskUnused1:

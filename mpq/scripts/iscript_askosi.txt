@@ -2,7 +2,7 @@
 # This header is used by images.dat entries:
 # 1997 Landlock (cm\askosi\landlock.grp)
 .headerstart
-IsId          	812
+IsId          	1
 Type          	21
 Init          	LandlockInit
 Death         	LandlockDeath
@@ -190,8 +190,8 @@ AskosiBuildingRubbleHeaderDeath:
 # This header is used by images.dat entries:
 # 2041 Pilgrim (cm\askosi\pilgrim.grp)
 .headerstart
-IsId          	84
-Type          	15
+IsId          	2
+Type          	21
 Init          	PilgrimInit
 Death         	PilgrimDeath
 GndAttkInit   	PilgrimGndAttkInit
@@ -204,99 +204,118 @@ GndAttkToIdle 	PilgrimGndAttkToIdle
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
 Walking       	PilgrimWalking
-WalkingToIdle 	InfestedTerranWalkingToIdle
+WalkingToIdle 	PilgrimWalkingToIdle
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	PilgrimAlmostBuilt
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
 PilgrimInit:
-	imgul             	2042 0 0 # Pilgrim Shadow (cm\askosi\pilgrim-shadow.grp)
-	goto              	InfestedTerranWalkingToIdle
+	imgul             	2042 0 0 # Legionnaire Shadow (cm\protoss\legionnaire-shad.grp)
+	goto				PilgrimWalkingToIdle
 
 PilgrimDeath:
-	playsnd           	369 # Terran\SCV\TSCDth00.WAV
-	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
-	wait              	2
-	lowsprul          	809 0 0 # Pilgrim Remnants (cm\terran\mason-remnants.grp)
-	wait				1
+	playsndbtwn       	296 298 # Terran\Firebat\TFBDth00.WAV | Terran\Firebat\TFBDth02.WAV
+	imgol             	2089 0 0 # Askosi Death Explosion Small (cm\askosi\a-death-small.grp)
+	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
+	setfldirect       	0
+	wait				8
+	lowsprul          	1029 0 0 # Vicar Remnants (cm\askosi\vicar-remnants.grp)
+	wait              	1
 	end
 	
 PilgrimUnused1:
 	wait				1
 	nobrkcodestart
-	tmprmgraphicstart
-	playsnd				1168
-	wait				8
-	sprol				742 0 0 # Small Explosion Reversed
+	setfldirect       	0
+	playsndbtwn			1163 1165
+	sprol				742 0 0 # Explosion Small Reversed
 	wait				10
-	setfldirect			12
-	tmprmgraphicend
+	setfldirect       	12
 	nobrkcodeend
-	goto				InfestedTerranWalkingToIdle
+	goto				PilgrimWalkingToIdle
 
 PilgrimGndAttkInit:
-	wait              	1
-	nobrkcodestart
-	playfram          	0xaa
-	attackwith        	1
-	playsndbtwn       	35 39 # terran\SCV\EDrRep00.wav | terran\SCV\EDrRep04.wav
-	wait              	1
-	playfram          	0x99
-	wait              	1
-	nobrkcodeend
-	gotorepeatattk
-	goto              	PilgrimGndAttkToIdle
-
+	playfram          	0x100
+PilgrimGndAttkRpt:
+    playfram            0x120
+    nobrkcodestart
+    wait                1
+    playfram            0x140
+    wait                1
+    playfram            0x160
+    attackmelee         1 1897 # Legionnaire weapon hit 01
+    wait                1
+    playfram            0x180
+    wait                1
+    nobrkcodeend
+    playfram            0x1A0
+    wait                1
+    playfram            0x1C0
+    wait                1
+    playfram            0x120
+    wait                1
+    gotorepeatattk
+    ignorerest
 PilgrimGndAttkToIdle:
-	playfram          	0x00
-	goto              	SkryrokorLocal00
+	playfram			0x100
+	wait				1
+	goto              	PilgrimWalkingToIdle
 
 PilgrimWalking:
-	playfram          	0x11
-	move				4
-	wait				1
-	playfram          	0x22
-	move				4
-	wait				1
-	playfram          	0x33
-	move				4
-	wait				1
-	playfram          	0x44
-	move				4
-	wait				1
-	playfram          	0x55
-	move				4
-	wait				1
-	playfram          	0x66
-	move				4
-	wait				1
-	playfram          	0x77
-	move				4
-	wait				1
-	playfram          	0x88
-	move				4
-	wait				1
+	move              	4
+	wait              	1
+	playfram          	0x20
+	move              	4
+	wait              	1
+	playfram          	0x40
+	move              	4
+	wait              	1
+	playfram          	0x60
+	move              	4
+	wait              	1
+	playfram          	0x80
+	move              	4
+	wait              	1
+	playfram          	0xA0
+	move              	4
+	wait              	1
+	playfram          	0xC0
+	move              	4
+	wait              	1
+	playfram          	0xE0
 	goto              	PilgrimWalking
+	
+PilgrimWalkingToIdle:
+	playfram          	0x00
+	goto              	SkryrokorLocal00
 
 PilgrimAlmostBuilt:
 	setvertpos        	0
 	wait              	1
 PilgrimLocal00:
-	playfram          	0xbb
+	playfram          	0x160
 	useweapon         	14 # Fusion Cutter (Harvest) (Fusion Cutter)
 	sigorder			32
-	wait              	3
-	playfram          	0x99
-	wait 				10
+	wait              	2
+	playfram          	0x140
+	wait 				2
+	playfram          	0x120
+	wait 				9
 	goto              	PilgrimLocal00
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 2069 Arch (cm\askosi\arch.grp)
 .headerstart
-IsId          	802
+IsId          	3
 Type          	20
 Init          	ArchInit
 Death         	ArchDeath
@@ -375,7 +394,7 @@ ArchLocal01:
 # This header is used by images.dat entries:
 # 2075 Radix (cm\askosi\radix.grp)
 .headerstart
-IsId          	96
+IsId          	6
 Type          	24
 Init          	RadixInit
 Death         	LandlockDeath
@@ -435,9 +454,75 @@ RadixDisable:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
+# 2071 Chantry (cm\askosi\chantry.grp)
+.headerstart
+IsId          	4
+Type          	24
+Init          	ChantryInit
+Death         	LandlockDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	SkryrokorLocal00
+WalkingToIdle 	ChantryIsWorking
+SpecialState1 	ChantrySpecialState1
+SpecialState2 	SkryrokorLocal00
+AlmostBuilt   	ChantryAlmostBuilt
+Built         	ChantryBuilt
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	ChantryIsWorking
+WorkingToIdle 	ChantryBuilt
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	ChantryDisable
+Burrow        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ChantryInit:
+	playfram          	0x00
+	imgul             	2072 0 0 # Chantry Shadow (cm\askosi\chantry-shadow.grp)
+	goto              	ChantryIsWorking
+
+ChantrySpecialState1:
+	playfram          	0
+	goto              	SkryrokorLocal00
+
+ChantryAlmostBuilt:
+	playfram          	0
+	goto              	SkryrokorLocal00
+
+ChantryBuilt:
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+ChantryIsWorking:
+	playfram          	1
+	wait              	1
+	playfram          	2
+	wait              	1
+	playfram          	3
+	wait              	1
+	playfram          	0
+	wait				12
+	goto              	ChantryIsWorking
+
+ChantryDisable:
+	goto              	SkryrokorLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
 # 2073 Function (cm\askosi\function.grp)
 .headerstart
-IsId          	111
+IsId          	5
 Type          	24
 Init          	FunctionInit
 Death         	LandlockDeath
@@ -499,7 +584,7 @@ FunctionDisable:
 # This header is used by images.dat entries:
 # 2083 Missionary (cm\askosi\missionary.grp)
 .headerstart
-IsId          	69
+IsId          	7
 Type          	12
 Init          	MissionaryInit
 Death         	MissionaryDeath
@@ -662,7 +747,7 @@ MissionaryWalking:
 # This header is used by images.dat entries:
 # 2077 Cardinal (cm\askosi\cardinal.grp)
 .headerstart
-IsId          	497
+IsId          	8
 Type          	12
 Init          	CardinalInit
 Death         	CardinalDeath
@@ -766,7 +851,7 @@ CardinalWalking:
 # This header is used by images.dat entries:
 # 2080 Vicar (cm\askosi\vicar.grp)
 .headerstart
-IsId          	498
+IsId          	9
 Type          	12
 Init          	VicarInit
 Death         	VicarDeath
@@ -775,7 +860,7 @@ AirAttkInit   	[NONE]
 Unused1       	VicarUnused1
 GndAttkRpt    	VicarGndAttkRpt
 AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
+CastSpell     	VicarCastSpell
 GndAttkToIdle 	VicarGndAttkToIdle
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
@@ -832,6 +917,20 @@ VicarGndAttkRpt:
 VicarGndAttkToIdle:
 	goto              	VicarWalkingToIdle
 
+VicarCastSpell:
+	playfram          	0x88
+	wait              	1
+	nobrkcodestart
+	playfram          	0xbb
+	wait              	1
+	playfram          	0xcc
+	wait              	1
+	castspell
+	nobrkcodeend
+	sigorder			2
+	gotorepeatattk
+	goto              	VicarWalkingToIdle
+
 VicarWalking:
 	move              	4
 	wait              	1
@@ -855,3 +954,182 @@ VicarWalking:
 	wait              	1
 	playfram          	0x11
 	goto              	VicarWalking
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2092 Emissary (cm\askosi\emissary.grp)
+.headerstart
+IsId          	10
+Type          	12
+Init          	EmissaryInit
+Death         	EmissaryDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	EmissaryCastSpell
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	EmissaryWalking
+WalkingToIdle 	EmissaryLocal00
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+EmissaryInit:
+	imgul             	2093 0 42 # Emissary Shadow (cm\askosi\emissary.grp)
+	playfram          	0x00
+EmissaryLocal00:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	EmissaryLocal00
+
+EmissaryDeath:
+	playsnd           	210 # Terran\DROPSHIP\TDrDth00.wav
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			920 0 42 # Emissary remains
+	wait              	1
+	end
+
+EmissaryCastSpell:
+	nobrkcodestart
+	wait				3
+	castspell
+	nobrkcodeend
+	gotorepeatattk
+	sigorder			2
+	goto				EmissaryLocal00
+
+EmissaryWalking:
+	setvertpos        	0
+#	imgol             	225 0 5 # Emissary Engines (thingy\tdrGlow.grp)
+	goto              	SkryrokorLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2095 Inkblot (cm\askosi\inkblot.grp)
+.headerstart
+IsId          	11
+Type          	12
+Init          	InkblotInit
+Death         	InkblotDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	InkblotWalking
+WalkingToIdle 	InkblotLocal00
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+InkblotInit:
+	imgul             	2096 0 42 # Inkblot Shadow (cm\askosi\inkblot.grp)
+	playfram          	0x00
+InkblotLocal00:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	InkblotLocal00
+
+InkblotDeath:
+	playsnd           	210 # Terran\DROPSHIP\TDrDth00.wav
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			920 0 42 # Inkblot remains
+	wait              	1
+	end
+
+InkblotWalking:
+	setvertpos        	0
+#	imgol             	225 0 5 # Inkblot Engines (thingy\tdrGlow.grp)
+	goto              	SkryrokorLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2108 Rove (cm\askosi\rove.grp)
+.headerstart
+IsId          	12
+Type          	13
+Init          	RoveInit
+Death         	RoveDeath
+GndAttkInit   	RoveGndAttkInit
+AirAttkInit   	[NONE]
+Unused1       	RoveUnused1
+GndAttkRpt    	RoveGndAttkInit
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	RoveGndAttkToIdle
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	RoveWalking
+WalkingToIdle 	RoveGndAttkToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+RoveInit:
+	imgul             	2109 0 7 # Rove Shadow (cm\askosi\rove.grp)
+	playfram          	0x00
+	goto              	RoveGndAttkToIdle
+
+RoveGndAttkToIdle:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	RoveGndAttkToIdle
+
+RoveDeath:
+	playsnd           	353 # Terran\Rove\TVuDth00.WAV
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+#	lowsprul			813 0 0 # Rove Remains
+	end
+	
+RoveUnused1:
+	wait				1
+	nobrkcodestart
+	tmprmgraphicstart
+	playsnd           	1699 # Rove revive 01
+	sprol				742 0 0
+	wait				10
+	setfldirect			12
+	tmprmgraphicend
+	nobrkcodeend
+	goto				RoveGndAttkToIdle
+
+RoveGndAttkInit:
+	wait              	1
+	attackwith        	1
+	playsnd           	106 # Bullet\tvuFir00.wav
+	gotorepeatattk
+	goto              	RoveGndAttkToIdle
+
+RoveWalking:
+	playfram          	0x00
+	setvertpos        	0
+	goto				SkryrokorLocal00

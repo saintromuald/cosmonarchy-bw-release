@@ -373,7 +373,7 @@ Terran Matador (Cinder Mode)
 Terran Cuirass (Trench Mode)
 Matador Turret (Tank Mode)
 Matador Turret (Cinder Mode)
-Lobotomy Mine
+Terran Lobotomy Mine
 Wyvern Turret
 Zerg Axitrilisk (Weaponless)
 Zerg Vilgoleth
@@ -496,18 +496,18 @@ Terran Ogun (Worker Mode)
 Protoss Autocort
 Terran Cannibal (Upstart)
 Terran Ogun (Smithy Mode)
-Extended Unit #271
-Extended Unit #272
+Buttonset Basic Zerg Mutations
+Buttonset Advanced Zerg Mutations
 Francisco Goska
 Stroluum
 Cerebrate Tuzor
 Zerg Skryrokor
-Extended Unit #277
-Extended Unit #278
-Extended Unit #279
-Extended Unit #280
-Extended Unit #281
-Extended Unit #282
+Terran Madrigal (Hecaton, Imperioso)
+Madrigal Turret (Hecaton, Imperioso)
+Terran Vulture (Hecaton)
+Terran Tartarus Mine (Hecaton)
+Terran Madrigal (Hecaton, Furia)
+Madrigal Turret (Hecaton, Furia)
 Extended Unit #283
 Extended Unit #284
 Extended Unit #285

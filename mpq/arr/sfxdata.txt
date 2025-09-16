@@ -3600,30 +3600,30 @@ Goku Advisor - No Vespene 03
 Goku Advisor - No Vespene 04
 Goku Advisor - Warp 01
 Goku Advisor - Warp 02
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Eidolon Windup 01
+Eidolon Windup 02
+Eidolon Windup 03
+Eidolon Weaponfire 01
+Eidolon Weaponfire 02
+Eidolon Weaponfire 03
+Bulwark Ambient Proc 01
+Bulwark Ambient Proc 02
+Bulwark Ambient Proc 03
+Crucible Ambient 01
+Stockade Ambient 01
+Fulcrum Ambient 01
+Starpad Ambient 01
+Ministry Ambient 01
+Nexus Ambient 01
+Gateway Ambient 01
+Lattice Ambient 01
+Embassy Ambient 01
+Stargate Ambient 01
+Egg Ambient 01
+Egg Ambient 02
+Egg Ambient 03
+Egg Ambient 04
+Treasury Ambient 01
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

@@ -1,8 +1,8 @@
-Skryling
-Skryling Shadow
-Skryling Birth
-Skryling Death
-Skryling Explosion
+Skryrokor
+Skryrokor Shadow
+Skryrokor Birth
+Skryrokor Death
+Skryrokor Explosion
 Rilirokor
 Rilirokor Shadow
 Rilirokor Remains
@@ -2089,27 +2089,27 @@ Power Siphon Hit (Medium)
 Power Siphon Hit (Large)
 Askosi Death Explosion Small
 Askosi Death Explosion Large
-Extended Image #1089
-Extended Image #1090
-Extended Image #1091
-Extended Image #1092
-Extended Image #1093
-Extended Image #1094
-Extended Image #1095
-Extended Image #1096
-Extended Image #1097
-Extended Image #1098
-Extended Image #1099
-Extended Image #1100
-Extended Image #1101
-Extended Image #1102
-Extended Image #1103
-Extended Image #1104
-Extended Image #1105
-Extended Image #1106
-Extended Image #1107
-Extended Image #1108
-Extended Image #1109
+Wraith Death Explosion
+Emissary
+Emissary Shadow
+Emissary Engines
+Inkblot
+Inkblot Shadow
+Inkblot Engines
+Vulture (Hecaton)
+Vulture (Hecaton) Shadow
+Tartarus Mine (Hecaton)
+Tartarus Mine (Hecaton) Shadow
+Madrigal (Hecaton, Imperioso)
+Madrigal (Hecaton, Imperioso) Shadow
+Madrigal Turret (Hecaton, Imperioso)
+Madrigal (Hecaton, Furia)
+Madrigal Turret (Hecaton, Furia)
+Zoryusthaleth Mutate
+Rove
+Rove Shadow
+Burst Lasers Green Impact
+Burst Lasers Cyan Impact
 Extended Image #1110
 Extended Image #1111
 Extended Image #1112

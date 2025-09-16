@@ -521,6 +521,8 @@ EidolonGndAttkInit:
 	playfram          	0x11
 	wait              	1
 	playfram          	0x22
+	playsndbtwn			3602 3604 # Eidolon windup 01, 02, 03
+	wait				12
 EidolonGndAttkRpt:
 	wait              	1
 	nobrkcodestart
@@ -1374,6 +1376,7 @@ WraithGndAttkToIdle:
 WraithDeath:
 	playsnd           	257 # Terran\PHOENIX\TPhDth00.WAV
 	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+#	imgol				2091 0 0 # Wraith Death Explosion (cm\terran\wraith-death.grp)
 	wait              	3
 	lowsprul			822 0 42 # Wraith Remains (cm\terran\wraith-remains.grp)
 	end
@@ -15264,7 +15267,7 @@ WyvernGndAttkInit:
 	goto              	WyvernGndAttkToIdle
 
 WyvernCastSpell:
-	sigorder          	64
+	sigorder          	128
 	wait              	1
 	nobrkcodestart
 	castspell
@@ -19304,3 +19307,407 @@ PowerSiphonInit:
 	playfram          	2
 	goto              	Generic_Wait1End
 	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2091 Wraith Death (cm\terran\wraith-death.grp)
+.headerstart
+IsId          	832
+Type          	0
+Init          	WraithDeathInit
+Death         	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+WraithDeathInit:
+	playfram          	0x00
+	wait              	1
+	playfram			1
+	wait              	1
+	playfram			2
+	wait              	1
+	playfram			3
+	wait              	1
+	playfram			4
+	wait              	1
+	playfram			5
+	wait              	1
+	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2100 Tartarus Mine (cm\faction-t\tartarus-mine.grp)
+.headerstart
+IsId          	833
+Type          	26
+Init          	TartarusMineInit
+Death         	TartarusMineDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	TartarusMineUnused2
+Walking       	TartarusMineWalking
+WalkingToIdle 	TartarusMineWalkingToIdle
+SpecialState1 	TartarusMineSpecialState1
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	TartarusMineBurrow
+UnBurrow      	TartarusMineUnBurrow
+Enable        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+TartarusMineInit:
+	imgul             	2101 0 0 # Tartarus Mine Shadow (cm\faction-t\tartarus-mine-shadow.grp)
+TartarusMineWalkingToIdle:
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+TartarusMineDeath:
+	playsnd           	10 # Misc\Explo1.wav
+	playfram          	12
+	wait              	1
+	playfram          	13
+	wait              	1
+	playfram          	14
+	wait              	1
+	playfram          	15
+	wait              	1
+	playfram          	16
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	18
+	wait              	1
+	playfram          	19
+	wait              	1
+	playfram          	20
+	wait              	1
+	end
+
+TartarusMineWalking:
+	playsnd           	355 # Terran\VULTURE\TVuMin00.WAV
+	move              	16
+	wait              	1
+	playfram          	0x00
+	move              	16
+	wait              	1
+	playfram          	1
+	move              	16
+	wait              	1
+	playfram          	2
+	move              	16
+	wait              	1
+	playfram          	3
+	move              	16
+	wait              	1
+	playfram          	4
+	move              	16
+	wait              	1
+	playfram          	5
+	move              	16
+	wait              	1
+	playfram          	6
+	move              	16
+	wait              	1
+	playfram          	7
+	goto              	TartarusMineWalking
+
+TartarusMineSpecialState1:
+	castspell
+	sigorder          	1
+	playsnd           	10 # Misc\Explo1.wav
+	imgol             	429 0 0 # Spider Mine Death (thingy\tmnExplo.grp)
+	goto              	SkryrokorLocal00
+	
+TartarusMineUnused2:
+	sigorder			32
+	sigorder          	1
+	playsnd           	10 # Misc\Explo1.wav
+	imgol             	429 0 0 # Spider Mine Death (thingy\tmnExplo.grp)
+	goto              	SkryrokorLocal00
+
+TartarusMineBurrow:
+	nobrkcodestart
+	imgol             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
+	playsnd           	354 # Terran\VULTURE\TVuMin01.WAV
+	playfram          	8
+	wait              	1
+	playfram          	9
+	wait              	1
+	playfram          	10
+	wait              	1
+	playfram          	11
+	wait              	1
+	sigorder          	4
+	nobrkcodeend
+	goto              	SkryrokorLocal00
+
+TartarusMineUnBurrow:
+	nobrkcodestart
+	imgul             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
+	playsnd           	354 # Terran\VULTURE\TVuMin01.WAV
+	playfram          	10
+	wait              	1
+	playfram          	9
+	wait              	1
+	playfram          	8
+	wait              	1
+	playfram          	0x00
+	sigorder          	4
+	nobrkcodeend
+	goto              	TartarusMineWalkingToIdle
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2104 Madrigal (Hecaton, Imperioso) Turret (cm\terran\madrigal-turret.grp)
+.headerstart
+IsId          	834
+Type          	13
+Init          	MadrigalHecatonImperiosoTurretInit
+Death         	Generic_Wait1End
+GndAttkInit   	MadrigalHecatonImperiosoTurretGndAttkInit
+AirAttkInit   	MadrigalHecatonImperiosoTurretGndAttkInit
+Unused1       	[NONE]
+GndAttkRpt    	MadrigalHecatonImperiosoTurretGndAttkInit
+AirAttkRpt    	MadrigalHecatonImperiosoTurretGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	SkryrokorLocal00
+AirAttkToIdle 	SkryrokorLocal00
+Unused2       	[NONE]
+Walking       	SkryrokorLocal00
+WalkingToIdle 	SkryrokorLocal00
+SpecialState1 	SkryrokorLocal00
+.headerend
+# ----------------------------------------------------------------------------- #
+
+MadrigalHecatonImperiosoTurretInit:
+	playfram			0x20
+	goto				SkryrokorLocal00
+
+MadrigalHecatonImperiosoTurretGndAttkInit:
+	wait              	1
+	nobrkcodestart
+	wait              	2
+	playfram			0x00
+	wait              	1
+	playsndbtwn			1208 1211 # Madrigal weaponfire 01, 02, 03, 04
+	attack
+	playfram			0x20
+	wait              	1
+	nobrkcodeend
+	gotorepeatattk
+	goto              	MadrigalHecatonImperiosoTurretInit
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2011 Eidolon (Nydus Trinity) (cm\faction-t\eidolon-nydus.grp)
+.headerstart
+IsId          	835
+Type          	13
+Init          	EidolonNydusInit
+Death         	EidolonNydusDeath
+GndAttkInit   	EidolonNydusGndAttkInit
+AirAttkInit   	EidolonNydusGndAttkInit
+Unused1       	EidolonNydusUnused1
+GndAttkRpt    	EidolonNydusGndAttkRpt
+AirAttkRpt    	EidolonNydusGndAttkRpt
+CastSpell     	EidolonNydusCastSpell
+GndAttkToIdle 	EidolonNydusGndAttkToIdle
+AirAttkToIdle 	EidolonNydusGndAttkToIdle
+Unused2       	[NONE]
+Walking       	EidolonNydusWalking
+WalkingToIdle 	EidolonNydusWalkingToIdle
+SpecialState1 	EidolonNydusSpecialState1
+.headerend
+# ----------------------------------------------------------------------------- #
+
+EidolonNydusInit:
+	imgul             	2012 0 0 # Eidolon (Nydus) Shadow (terran\tghShad.grp)
+EidolonNydusWalkingToIdle:
+	playfram          	0x33
+EidolonNydusLocal00:
+	wait				63
+	randcondjmp       	25 EidolonNydusLocal01
+	randcondjmp       	128 EidolonNydusLocal02
+	goto              	EidolonNydusLocal00
+
+EidolonNydusLocal01:
+	playfram          	0x00
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+	randcondjmp       	192 EidolonNydusLocal03
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	wait              	6
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	wait              	6
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	goto              	EidolonNydusLocal04
+
+EidolonNydusLocal04:
+	playfram          	0x11
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	goto              	EidolonNydusWalkingToIdle
+
+EidolonNydusLocal03:
+	wait              	13
+	playfram          	0x11
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	goto              	EidolonNydusWalkingToIdle
+
+EidolonNydusLocal02:
+	playfram          	0x44
+	wait              	1
+	playfram          	0x55
+	wait              	1
+	turnrand          	3
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	goto              	EidolonNydusWalkingToIdle
+
+EidolonNydusDeath:
+	playsnd           	238 # Terran\GHOST\TGhDth00.wav
+	goto				EidolonDeathInit
+	
+EidolonNydusUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect			0
+	playsnd				1166 # Eidolon revive 01
+	playfram			228
+	wait				2
+	playfram			227
+	wait				2
+	playfram			226
+	wait				2
+	playfram			225
+	wait				2
+	playfram			224
+	wait				2
+	playfram			223
+	wait				2
+	playfram			222
+	wait				2
+	playfram			221
+	wait				2
+	setfldirect			12
+	nobrkcodeend
+	goto				EidolonNydusWalkingToIdle
+
+EidolonNydusGndAttkInit:
+	playfram          	0x00
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+EidolonNydusGndAttkRpt:
+	wait              	1
+	nobrkcodestart
+	attack
+	playfram          	0xcc
+	wait              	1
+	playfram          	0x22
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+EidolonNydusGndAttkToIdle:
+	playfram          	0x11
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	goto              	EidolonNydusWalkingToIdle
+
+EidolonNydusCastSpell:
+	nobrkcodestart
+	wait              	1
+	playsnd           	240 # Terran\GHOST\TGhLkd00.wav
+	castspell
+	playfram          	0xcc
+	wait              	2
+	playfram          	0x22
+	nobrkcodeend
+	gotorepeatattk
+	sigorder          	2
+	goto              	EidolonNydusGndAttkToIdle
+
+EidolonNydusWalking:
+	move              	4
+	wait              	1
+	playfram          	0x44
+	move              	4
+	wait              	1
+	playfram          	0x55
+	move              	4
+	wait              	1
+	playfram          	0x66
+	move              	4
+	wait              	1
+	playfram          	0x77
+	move              	4
+	wait              	1
+	playfram          	0x88
+	move              	4
+	wait              	1
+	playfram          	0x99
+	move              	4
+	wait              	1
+	playfram          	0xaa
+	move              	4
+	wait              	1
+	playfram          	0xbb
+	move              	4
+	wait              	1
+	playfram          	0x33
+	goto              	EidolonNydusWalking
+
+EidolonNydusSpecialState1:
+	playfram          	0x00
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	goto              	SkryrokorLocal00
