@@ -210,7 +210,7 @@ Right Pit Door
 Terran Sentinel
 Spliced Tarasque
 Terran Anticthon
-Zerg Alkaj Chasm
+Zerg Kethraj Keep
 Terran Atelier
 Start Location
 Terran Treasury
@@ -508,8 +508,8 @@ Terran Vulture (Hecaton)
 Terran Tartarus Mine (Hecaton)
 Terran Madrigal (Hecaton, Furia)
 Madrigal Turret (Hecaton, Furia)
-Extended Unit #283
-Extended Unit #284
+Askosi Bounty
+Zerg Azanthrokor (Orkoti)
 Extended Unit #285
 Extended Unit #286
 Extended Unit #287

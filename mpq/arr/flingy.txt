@@ -1,4 +1,4 @@
-Skryling
+Skryrokor
 Rilirokor
 Infested Terran
 Cocoon
@@ -282,7 +282,7 @@ Salamander Torpedo
 Sanctum of Sorrow
 Geszkath Grotto
 Shaman (Support Mode)
-Alkaj Chasm
+Kethraj Keep
 Idol
 Golem
 Barghest
@@ -506,7 +506,7 @@ Spoke Shell
 Adherent
 Extatus
 Nathrelisk
-Iziralisk
+Unused
 Anchor (Grounded)
 Carapace Swarm (Small)
 Chokralgant Chazsal
@@ -595,7 +595,7 @@ Madrigal Turret (Hecaton, Furia)
 Rove
 Burst Lasers Green Impact
 Burst Lasers Cyan Impact
-Extended Flingy #389
+Kethrostalor
 Extended Flingy #390
 Extended Flingy #391
 Francisco Goska

@@ -5,6 +5,8 @@ Since December 2022, this changelog shows only past changes.
 See patchnotes.md for info on the most recent patch!
 
 # Table of Contents
+- [15 September 2025](#15-september-2025)
+- [24 August 2025](#24-august-2025)
 - [10 August 2025](#10-august-2025)
 - [17 July 2025](#17-july-2025)
 - [20 June 2025](#20-june-2025)
@@ -103,6 +105,211 @@ See patchnotes.md for info on the most recent patch!
 - [15 August 2020](#15-august-2020)
 - [13 August 2020](#13-august-2020)
 - [12 August 2020](#12-august-2020)
+
+# 15 September 2025
+## Year 3, month 9, patch 1
+
+## Patch goals
+- Continue balancing for all races
+- Continue Askosi development
+- Further improve audiovisuals and AI
+- [Subscribe on ko-fi](https://ko-fi.com/pr0nogoandveeq7) to get a sneak peek of the incoming changes!
+
+## Game Modes
+- Renamed **Competitive** to **Unranked**
+	- **Ranked** mode is coming soon™!
+
+## Bugfixes
+- **Stability:**
+	- Improved floating point safety to further reduce desyncs (c. Veeq7)
+	- Resolved a crash when certain types of graphics were drawn after the Monument of Sin was warped in (r. Sosij & OyA, c. DF)
+	- Score screen freezes should be resolved, though those replays will freeze during playback -- send them to us with info!
+	- Resolve a Zerg AI freeze (r. Solstice & others)
+	- Fixed rare crash when **Cohort**s self-revive at the unit limit (r. sharktemplar)
+	- Fixed rare crash when **Matraleth**-spawned **Vilgoleth**s were attempted to be made at the unit limit
+- **Gameplay:**
+	- Resolved issues with **Swarming Omen** not correctly applying to flingy units, and incorrectly applying to FFA hostiles (r. GreenEggs'NSpam)
+	- Improved Artisan responsivity (not completely epic yet, still working on it)
+	- Fix pneumonic hotkey mismatch for **Lobotomy Mine** detonation (r. Kenoli)
+- **Audiovisual:**
+	- Fixed wonky birth and mutation animations for the Izirokor (c. Solstice)
+	- Fixed bad minimap color for revealed neutral structures and defeated units
+	- Fixed bad requirement strings for Tarasque and Luminary
+	- Corrected Matrix selection circle
+	- Fixed bad death animation for Konvilisk
+	- Added **Miasma** passive icons & tooltips to **Kagralisk** and **Cherbrathalor** (r. Raenarill)
+	- Fixed **Swarming Omen** speed boost not always appearing on the armor tooltip (r. GreenEggs'NSpam)
+	- Fixed **Golden Republic Blackjack** build icon missing before Scrapyard completion (r. SgzzZ)
+	- Added **Brontes Payload** icon to **Futurist Cyclops** (r. Raenarill)
+- **AI:**
+	- AI-controlled **Seraph**s will no longer cast **Irradiate** on allies (r. Vilius & jakulangski)
+	- Improved Zerg structure mutation and Hachirosk priorities, resolving some build order bugs
+
+## Audiovisuals
+- Smoothed camera follow for units (not pixel-perfect, yet...) (c. DF)
+- New models for:
+	- **Matador** (c. Solstice)
+	- **Artisan** (c. DeltaCadimus)
+- Modified models for:
+	- **Madrigal** (material updates)
+	- **Legionnaire** and **Izirokor** (slight size increases, c. Solstice)
+	- **Architect** (fixed engine, improved player color + muzzleflash)
+- New portrait for:
+	- **Izirokor** (c. Solstice)
+- New wireframe for:
+	- **Izirokor** (c. jun3hong)
+- New icons for: (c. Raenarill)
+	- **Burst Lasers** (Wraith)
+	- **Perpetual Wind** (Axitrilisk), **Reconstitution** (Vilgorokor), Screaming Venom (Keskathalor)
+- New SFX for:
+	- **Stockade** (training ambience)
+	- **Bulwark** (passive proc)
+	- **Crucible** (ambience)
+
+## Terran
+- [Eidolon](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/eidolon):
+	- HP 65 » 70
+	- **Coroner Rifle:**
+		- Now fires a fast projectile to indicate directionality
+		- Weapon cooldown 1.2 » 1
+		- Weapon windup 0 » 0.66
+- [Matador](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/matador):
+	- **NEW: Fore Castle**
+		- While in Tank Mode, now gains +2 armor when facing attackers.
+- [Cestus](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cestus):
+	- Vision range 9 » 11
+- **NEW:** [Hecaton Vulture](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/vulture-hecaton):
+	- Factional variant that lays [Tartarus Mines](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/tartarus-mine) instead of Lobotomy Mines
+- **NEW:** [Hecaton Madrigal](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/madrigal-hecaton):
+	- Factional variant that **Incinerate**s ground and air units while in **Imperioso Mode**
+
+## Protoss
+- [Dracadin](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/dracadin) and [Hierophant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/hierophant):
+	- Transport space 4 » 3
+- [Bulwark](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/bulwark):
+	- Vision range 9 » 11
+	- Now benefits from **Crucible Khaydarin Charge**
+
+## Zerg
+- [Ovileth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/ovileth):
+	- Resource costs 75/50 » 100/25
+	- Build time 22 » 20
+- [Cagrant Cesiant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/cagrant-cesiant), [Surkith Cesiant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/surkith-cesiant), and [Skortrith Cesiant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/skortrith-cesiant:
+	- Vision range 10 » 9
+- [Kazitrith Cesiant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/surkith-cesiant):
+	- Vision range 10 » 11
+- [Ocsal Cesiant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/ocsal-cesiant):
+	- Vision range 9 » 8
+
+# 24 August 2025
+## Year 3, month 8, patch 2
+
+## Patch goals
+- Continue post-change balancing for all races
+- Implement advanced constructors for all races
+- Continue Askosi development
+- Improve audiovisuals and AI
+- [Subscribe on ko-fi](https://ko-fi.com/pr0nogoandveeq7) to get a sneak peek of the incoming changes!
+
+## Config
+- A new advisor, **Goku**, has been added! (c. 3crow)
+- The advisors **Mesk** and **ISN** have been deprecated by author request. If you get an error message on launch, consider removing them from your configs.
+
+## Bugfixes
+- **Stability:**
+	- Resolved a common crash after warping in a Monument of Sin (r. HitEmUp & Sosij, c. DF)
+- **Gameplay:**
+	- Fixed **Liiralisk** bounces being able to bounce to airborne enemies
+	- Prevented **Autovitality** timers from expiring while stunned (r. Kasuga)
+- **AI:**
+	- Resolved an issue preventing Zerg AI from making **Axtoth Axis** and related units (r. GreenEggs'NSpam)
+	- Resolved issues with Zerg AI attack wave creation
+- **Audiovisual:**
+	- Enabled construction init SFX for Zerg gas caps
+	- Fixed icon display for **Solarion** hangar (r. jakulangski, c. DF)
+	- Corrected filenames for a few miscellaneous sound files (r. Mimika)
+
+## Audiovisuals
+- New model for:
+	- **Legionnaire** *(c. Solstice, wireframe c. jun3hong)*
+	- **Izirokor**
+- New portrait for:
+	- **Legionnaire** *(c. Solstice)*
+- Improved overlay visuals for:
+	- **Savant - Power Siphon**
+
+## Triggers
+- Added the following behaviors to the `set_unit_behavior` crig action:
+	- `no_collision` -- the unit will not collide with other ground units
+	- `air_transport` -- if the unit is a transport, it can transport air units
+
+## Terran
+- [Talos](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/talos):
+	- **Fusion Sealers** removed
+- [Savant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/savant):
+	- Resource costs 100/50 » 125/50
+	- **Discoid Rifle:**
+		- **Power Siphon** attack cooldown 0.75 » 0.83 (matches **Entropy Gauntlets**)
+- [Blackjack](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/blackjack):
+	- Build time 18 » 16
+- [Phalanx](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/phalanx):
+	- Build time 28 » 30
+- [Valkyrie](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/valkyrie):
+	- Build time 30 » 25
+	- **Halo Rockets:**
+		- Weapon cooldown 1.08 » 0.92
+		- Weapon range 6 » 7
+		- Weapon still fired at 6 range, improving chase potential
+- [Ancile](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/ancile):
+	- Vision range 10 » 8
+- [Salamander](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/salamander):
+	- **Perdition Barrage:**
+		- Attack count 3 » 6
+- [Vestry](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/vestry):
+	- Resource costs 150/75 » 150/50
+- [Covenant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/covenant):
+	- Resource costs 100/250 » 100/350
+- **NEW:** [Ogun](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/ogun):
+	- Sturdy constructor with a repair-oriented deployment and **Fusion Sealers**
+	- Trained from Ministry or Treasury; requires Quarry
+- **NEW:** [Cannibal](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cannibal):
+	- **Upstart only!** Raiding infantry; replaces Cyprian
+
+## Protoss
+- [Witness](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/witness):
+	- Resource costs 50/75 » 50/50
+- **NEW:** [Autocort](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/autocort):
+	- Advanced constructor with personal power field
+	- Trained from Embassy
+
+## Zerg
+- [Gosvileth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/gosvileth):
+	- **Plethoral Gestation** removed
+	- **NEW: Aberrant Gestation:**
+		- Gosvileths now mutate into advanced structure strains
+- [Liiralisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/liiralisk):
+	- Resource costs 75/25 » 100/25
+	- **Hollowed Glaves:**
+		- Armor penetration 2 » 1
+	- **Homing Spore:**
+		- Armor penetration 0 » 1
+- [Sovroleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/sovroleth):
+	- Build time 25 » 24
+	- **Corpse Cocoon:**
+		- Gestation time 4 » 12 (half of training time)
+- [Sasyrvoleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/sasyrvoleth):
+	- Resource costs 100/200 » 100/300
+	- Build time 30 » 40
+	- HP 140 » 200
+	- Movement speed 5 » 4.16
+- [Zarcavrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/zarcavrokor):
+	- Movement speed 5.4 » 4.2
+- [Kalkiir Lake](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/kalkiir-lake):
+	- Resource costs 200/100 » 200/200
+	- Time cost 40 » 50
+- **NEW:** [Agrileth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/agrileth):
+	- Mobile hive organ; has **Plethoral Gestation**
+	- Morphed from Larvae; requires Quazeth Pool or mutation
 
 # 10 August 2025
 ## Year 3, month 8, patch 1

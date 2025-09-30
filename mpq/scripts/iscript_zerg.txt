@@ -1591,26 +1591,40 @@ InfestedKerriganUnBurrow:
 # 036 Larva (zerg\larva.grp)
 .headerstart
 IsId          	21
-Type          	12
+Type          	26
 Init          	LarvaInit
 Death         	LarvaDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
-Unused1       	[NONE]
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
-CastSpell     	[NONE]
-GndAttkToIdle 	[NONE]
-AirAttkToIdle 	[NONE]
-Unused2       	[NONE]
+GndAttkInit   	SkryrokorLocal00
+AirAttkInit   	SkryrokorLocal00
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	SkryrokorLocal00
+AirAttkRpt    	SkryrokorLocal00
+CastSpell     	SkryrokorLocal00
+GndAttkToIdle 	SkryrokorLocal00
+AirAttkToIdle 	SkryrokorLocal00
+Unused2       	SkryrokorLocal00
 Walking       	LarvaWalking
 WalkingToIdle 	LarvaInit
-SpecialState1 	[NONE]
+SpecialState1 	SkryrokorLocal00
+SpecialState2 	SkryrokorLocal00
+AlmostBuilt   	SkryrokorLocal00
+Built         	SkryrokorLocal00
+Landing       	SkryrokorLocal00
+LiftOff       	SkryrokorLocal00
+IsWorking     	SkryrokorLocal00
+WorkingToIdle 	SkryrokorLocal00
+WarpIn        	SkryrokorLocal00
+Unused3       	SkryrokorLocal00
+StarEditInit  	SkryrokorLocal00
+Disable       	SkryrokorLocal00
+Burrow        	SkryrokorLocal00
+UnBurrow      	SkryrokorLocal00
+Enable        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
 LarvaInit:
-	playfram          	0x00 # Frame set 0
+	playfram          	0x00
 	goto              	SkryrokorLocal00
 
 LarvaDeath:
@@ -6346,7 +6360,7 @@ GorgrokorWalkingToIdle:
 	goto              	GorgrokorWalkingToIdle
 
 GorgrokorDeath:
-	playsnd           	852	# Zerg\Guardian\ZGuDth00.WAV
+	playsndbtwn 		3651 3652 # Geszithalor death 01, 02
 	imgol             	28 0 0 # Geszithalor Death (zerg\zguDeath.grp)
 	wait              	1
 	lowsprul			963 0 42 # Zerg Building Rubble Small
@@ -16679,4 +16693,641 @@ AgrilethUnBurrow:
     wait                1
     sigorder            4
     goto                AgrilethGndAttkToIdle
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2141 Kethrostalor (cm\zerg\kethrostalor.grp)
+.headerstart
+IsId          	832
+Type          	26
+Init          	KethrostalorInit
+Death         	KethrostalorDeath
+GndAttkInit   	KethrostalorGndAttkInit
+AirAttkInit   	KethrostalorGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	KethrostalorGndAttkRpt
+AirAttkRpt    	KethrostalorGndAttkRpt
+CastSpell     	[NONE]
+GndAttkToIdle 	KethrostalorGndAttkToIdle
+AirAttkToIdle 	KethrostalorGndAttkToIdle
+Unused2       	[NONE]
+Walking       	KethrostalorWalking
+WalkingToIdle 	KethrostalorGndAttkToIdle
+SpecialState1 	[NONE]
+SpecialState2 	KethrostalorSpecialState2
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	KethrostalorBurrow
+UnBurrow      	KethrostalorUnBurrow
+Enable        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+KethrostalorInit:
+	imgul             	2142 0 0 # Kethrostalor Shadow (cm\zerg\kethrostalor-shadow.grp)
+KethrostalorGndAttkToIdle:
+	playfram          	0x00
+	goto              	KethrostalorLocal00
+
+KethrostalorLocal00:
+	wait				62
+	randcondjmp       	25 KethrostalorLocal02
+	randcondjmp       	85 KethrostalorLocal01
+	goto              	KethrostalorLocal00
+
+KethrostalorLocal01:
+	playfram          	0x88
+	wait              	1 
+	playfram          	0x99
+	wait              	1 
+	playfram          	0xaa
+	wait              	1 
+	playfram          	0xbb
+	wait              	25 
+	playfram          	0xaa
+	wait              	1 
+	playfram          	0x99
+	wait              	1 
+	randcondjmp			25 KethrostalorLocal03
+	goto              	KethrostalorGndAttkToIdle
+
+KethrostalorLocal02:
+	playfram          	0x00
+	wait              	1 
+	turnccwise        	1 
+	playfram          	0x11
+	wait              	1 
+	turnccwise        	1 
+	playfram          	0x22
+	wait              	1 
+	turnccwise        	1 
+	playfram          	0x11
+	wait              	1 
+	turnccwise        	1 
+	playfram          	0x00
+	wait              	1 
+	turnccwise        	1 
+	playfram          	0x88
+	wait              	1 
+	turnccwise        	1 
+	goto              	KethrostalorGndAttkToIdle
 	
+KethrostalorLocal03:
+	playfram          	0x88
+	wait				1
+	turncwise        	1 
+	playfram          	0x00
+	wait              	1 
+	turncwise        	1 
+	playfram          	0x11
+	wait              	1 
+	turncwise        	1 
+	playfram          	0x22
+	wait              	1 
+	turncwise        	1 
+	playfram          	0x11
+	wait              	1 
+	turncwise        	1 
+	playfram          	0x00
+	wait              	1 
+	turncwise        	1 
+	goto				KethrostalorGndAttkToIdle
+
+KethrostalorDeath:
+	playsnd           	878	# Zerg\Ultra\ZUlDth00.WAV
+	imgol             	28 0 0 # Geszithalor Death (zerg\zguDeath.grp)
+	wait              	2
+	lowsprul			186 0 0 # Zerg Building Rubble Small
+	wait              	1
+	end
+
+KethrostalorGndAttkInit:
+	playfram          	0x11
+KethrostalorGndAttkRpt:
+	wait              	1 
+	nobrkcodestart
+	playfram			0x22
+	attackwith			1
+	wait				1
+	playfram			0x33
+	wait				1
+	playfram			0x44
+	wait				1
+	playfram			0x55
+	wait				4
+	playfram			0x66
+	attackwith			1
+	wait				1
+	playfram			0x55
+	wait				1
+	playfram			0x44
+	wait				1
+	playfram			0x33
+	wait				1
+	playfram			0x22
+	wait				4
+	playfram			0x33
+	attackwith			1
+	wait				1
+	playfram			0x44
+	wait				1
+	playfram			0x55
+	wait				1
+	playfram			0x66
+	wait				1
+	playfram			0x55
+	wait				1
+	playfram			0x44
+	wait				4
+	playfram			0x33
+	attackwith			1
+	wait				1
+	playfram			0x22
+	wait				1
+	playfram			0x33
+	wait				1
+	playfram			0x44
+	wait				4
+	playfram			0x55
+	attackwith			1
+	wait				1
+	playfram			0x66
+	wait				1
+	playfram			0x77
+	wait				1
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto              	KethrostalorGndAttkToIdle
+
+KethrostalorWalking:
+	playfram          	0x99
+	move              	3
+	wait              	1
+	playfram          	0xaa
+	move              	3
+	wait              	1
+	playfram          	0xbb
+	move              	3
+	wait              	1
+	playfram          	0xcc
+	move              	3
+	wait              	1
+	playfram          	0xee
+	move              	3
+	wait              	1
+	playfram          	0xff
+	move              	3
+	wait              	1
+	playfram          	0x110
+	move              	3
+	wait              	1
+	playfram          	0x121
+	move              	3
+	wait              	1
+	playfram          	0x132
+	move              	3
+	wait              	1
+	playfram          	0x143
+	move              	3
+	wait              	1
+	playfram          	0x154
+	move              	3
+	wait              	1
+	goto              	KethrostalorWalking
+	
+KethrostalorSpecialState2:
+	playfram          	0x165
+	goto              	SkryrokorLocal00
+
+KethrostalorBurrow:
+	setfldirect			14
+	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	playfram			0x11
+	wait				1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	playfram          	0x55
+	wait              	1
+	playfram          	0x66
+	wait              	1
+	playfram          	0x165
+	wait              	1
+	sigorder          	4
+	goto              	SkryrokorLocal00
+
+KethrostalorUnBurrow:
+	wait 				1
+	waitrand          	1 2
+	setfldirect			14
+	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	playfram          	0x66
+	wait              	1
+	playfram          	0x55
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram			0x11
+	wait				1
+	sigorder          	4
+	goto              	KethrostalorGndAttkToIdle
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1180 Kethraj Keep (cm\zerg\kethraj-keep.grp)
+.headerstart
+IsId          	833
+Type          	20
+Init          	KethrajKeepInit
+Death         	KethrajKeepDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	KethrajKeepAlmostBuilt
+Built         	KethrajKeepBuilt
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	KethrajKeepIsWorking
+WorkingToIdle 	KethrajKeepWorkingToIdle
+WarpIn        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+KethrajKeepInit:
+	imgul             	1181 0 0 # Kethraj Keep Shadow (cm\zerg\kethraj-keep-shadow.grp)
+	playfram          	0x00
+	goto              	KethrajKeepWorkingToIdle
+
+KethrajKeepWorkingToIdle:
+	playfram			1
+	wait				2
+	playfram			2
+	wait				2
+	playfram			3
+	wait				2
+	playfram			4
+	wait				2
+	playfram			5
+	wait				2
+	playfram			6
+	wait				2
+	playfram			7
+	wait				2
+	playfram			8
+	wait				2
+	playfram			9
+	wait				2
+	playfram			10
+	wait				2
+	goto              	KethrajKeepWorkingToIdle
+
+KethrajKeepDeath:
+	playsnd           	774	# Zerg\Bldg\ZBldgDth.WAV
+	imgol             	60 0 0 # Zerg Building Explosion (thingy\zBldDthS.grp)
+	wait              	3 
+	lowsprul          	186 0 0 # Zerg Building Rubble (Small) (thingy\ZRubbleS.grp)
+	wait              	1 
+	end
+
+KethrajKeepAlmostBuilt:
+	imgol             	107 0 0	# Zerg Building Spawn (Small) (zerg\zSpawn01.grp)
+KethrajKeepBuilt:
+	playfram          	0x00
+	wait				2
+	goto              	KethrajKeepWorkingToIdle
+
+KethrajKeepIsWorking:
+	playfram          	0x00
+	wait				1
+	playfram			1
+	waitrand			1 2
+	playfram			2
+	wait				1
+	playfram			3
+	waitrand			1 2
+	playfram			4
+	wait				1
+	playfram			5
+	waitrand			1 2
+	playfram			6
+	wait				1
+	playfram			7
+	waitrand			1 2
+	playfram			8
+	wait				1
+	playfram			9
+	waitrand			1 2
+	playfram			10
+	wait				1
+	goto              	KethrajKeepIsWorking
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1800 Iziralisk (cm\faction-z\iziralisk.grp)
+.headerstart
+IsId          	834
+Type          	26
+Init          	IziraliskInit
+Death         	IziraliskDeath
+GndAttkInit   	IziraliskGndAttkInit
+AirAttkInit   	IziraliskGndAttkInit
+Unused1       	IziraliskUnused1
+GndAttkRpt    	IziraliskGndAttkRpt
+AirAttkRpt    	IziraliskGndAttkRpt
+CastSpell     	[NONE]
+GndAttkToIdle 	IziraliskGndAttkToIdle
+AirAttkToIdle 	IziraliskGndAttkToIdle
+Unused2       	[NONE]
+Walking       	IziraliskWalking
+WalkingToIdle 	IziraliskGndAttkToIdle
+SpecialState1 	[NONE]
+SpecialState2 	IziraliskSpecialState2
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	IziraliskBurrow
+UnBurrow      	IziraliskUnburrow
+Enable        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+IziraliskInit:
+	imgul             	1473 0 0 # Iziralisk Shadow (cm\zerg\izirokor-shad.grp)
+IziraliskGndAttkToIdle:
+	playfram          	0x00
+	goto              	IziraliskLocal00
+
+IziraliskLocal00:
+	wait              	62
+	randcondjmp       	128 IziraliskLocal01
+	goto              	IziraliskLocal00
+
+IziraliskLocal01:
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	playfram          	0x55
+	wait              	1
+	playfram          	0x66
+	wait              	1
+	randcondjmp			34 IziraliskLocal02
+	playfram          	0x55
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	goto              	IziraliskGndAttkToIdle
+
+IziraliskLocal02:
+	randcondjmp       	62 IziraliskLocal03
+	randcondjmp       	51 IziraliskLocal04
+	playfram          	0x77
+	wait              	1
+	playfram          	0x88
+	wait              	1
+	playfram          	0x99
+	wait              	1
+	playfram          	0xaa
+	wait              	1
+	playfram          	0xbb
+	wait              	1
+	playfram          	0xcc
+	wait              	1
+	goto              	IziraliskGndAttkToIdle
+
+IziraliskLocal03:
+	playfram          	0x55
+	wait              	1
+	turnccwise         	1
+	playfram          	0x44
+	wait              	1
+	turnccwise         	1
+	playfram          	0x33
+	wait              	1
+	turnccwise         	1
+	playfram          	0x22
+	wait              	1
+	turnccwise         	1
+	playfram          	0x11
+	wait              	1
+	turnccwise         	1
+	goto              	IziraliskGndAttkToIdle
+
+IziraliskLocal04:
+	playfram          	0x55
+	wait              	1
+	turncwise         	1
+	playfram          	0x44
+	wait              	1
+	turncwise         	1
+	playfram          	0x33
+	wait              	1
+	turncwise         	1
+	playfram          	0x22
+	wait              	1
+	turncwise         	1
+	playfram          	0x11
+	wait              	1
+	turncwise         	1
+	goto              	IziraliskGndAttkToIdle
+
+IziraliskDeath:
+	playsnd           	1506 # Iziralisk death 01
+	imgol             	28 0 0 # Geszithalor Death (zerg\zguDeath.grp)
+	wait              	5
+	lowsprul          	763 0 0 # Iziralisk Remnants (cm\zerg\izirokor-corpse.grp)
+	wait              	2
+	end
+	
+IziraliskUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect       	0
+	playsnd				1181
+	playfram			639
+	wait				2
+	playfram			638
+	wait				2
+	playfram			637
+	wait				2
+	playfram			636
+	wait				2
+	playfram			635
+	wait				2
+	playfram			634
+	wait				2
+	playfram			633
+	wait				2
+	playfram			632
+	wait				2
+	playfram			631
+	wait				2
+	playfram			630
+	wait				2
+	setfldirect       	14
+	nobrkcodeend
+	goto				IziraliskGndAttkToIdle
+
+IziraliskGndAttkInit:
+	playfram          	0x1ba
+	wait				1
+	playfram			0x1dc
+IziraliskGndAttkRpt:
+	nobrkcodestart
+	playsndbtwn			1880 1881 # Iziralisk weapon fire 01, 02
+	wait              	1
+	wait              	1
+	playfram          	0x1fe
+	wait              	1
+	playfram          	0x20f
+	attack
+	wait              	2
+	playfram          	0x220
+	wait              	2
+	playfram          	0x231
+	wait              	1
+	playfram          	0x242
+	wait              	2
+	playfram          	0x253
+	wait              	1
+	playfram          	0x264
+	wait              	1
+	nobrkcodeend
+	gotorepeatattk
+	goto              	IziraliskGndAttkToIdle
+
+IziraliskWalking:
+	move              	5
+	wait              	1
+	playfram          	0x110
+	move              	5
+	wait              	1
+	playfram          	0x121
+	move              	5
+	wait              	1
+	playfram          	0x132
+	move              	5
+	wait              	1
+	playfram          	0x143
+	move              	5
+	wait              	1
+	playfram          	0x154
+	move              	5
+	wait              	1
+	playfram          	0x165
+	move              	5
+	wait              	1
+	playfram          	0x176
+	move              	5
+	wait              	1
+	playfram          	0x187
+	move              	5
+	wait              	1
+	playfram          	0x198
+	move              	5
+	wait              	1
+	playfram          	0x1a9
+	move              	5
+	wait              	1
+	playfram          	0xdd
+	move              	5
+	wait              	1
+	playfram          	0xee
+	move              	5
+	wait              	1
+	playfram          	0xff
+	goto              	IziraliskWalking
+	
+IziraliskSpecialState2:
+	playfram			0x187
+	goto				SkryrokorLocal00
+
+IziraliskBurrow:
+	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
+	playfram          	0x286
+	wait              	1
+	playfram          	0x297
+	wait              	1
+	playfram          	0x2a8
+	wait              	1
+	playfram          	0x2b9
+	wait              	1
+	playfram          	0x2ca
+	imgol             	423 15 12 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 12 -15 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 -12 -3 # Burrowing Dust (thingy\bDust.grp)
+	wait              	1
+	playfram          	0x2db
+	wait              	1
+	playfram          	0x2ec
+	wait              	1
+	sigorder          	4
+	playfram			0x2fd
+	goto				SkryrokorLocal00
+
+IziraliskUnburrow:
+	wait 				1
+	waitrand          	1 2
+	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
+	playfram          	0x2ec
+	wait              	1
+	playfram          	0x2db
+	wait              	1
+	playfram          	0x2ca
+	wait              	1
+	playfram          	0x2b9
+	imgol             	423 12 -15 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 -12 -12 # Burrowing Dust (thingy\bDust.grp)
+	wait              	1
+	playfram          	0x2a8
+	wait              	1
+	playfram          	0x297
+	wait              	1
+	sigorder          	4
+	setfldirect			14
+	goto              	IziraliskGndAttkToIdle

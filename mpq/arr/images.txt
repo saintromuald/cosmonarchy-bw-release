@@ -1178,8 +1178,8 @@ Geszkath Grotto
 Geszkath Grotto Shadow
 Oberon Shadow
 Oberon Engines
-Alkaj Chasm
-Alkaj Chasm Shadow
+Kethraj Keep
+Kethraj Keep Shadow
 Idol
 Idol Shadow
 Golem
@@ -1798,10 +1798,10 @@ Extatus Engines
 Nathrelisk
 Nathrelisk Shadow
 Nathrelisk Birth
-Iziralisk
-Iziralisk Shadow
-Iziralisk Birth
-Iziralisk Remains
+Unused
+Unused
+Unused
+Unused
 Anchor (Grounded)
 Anchor (Grounded) Shadow
 Carapace Swarm (Small)
@@ -2110,62 +2110,62 @@ Rove
 Rove Shadow
 Burst Lasers Green Impact
 Burst Lasers Cyan Impact
-Extended Image #1110
-Extended Image #1111
-Extended Image #1112
-Extended Image #1113
-Extended Image #1114
-Extended Image #1115
-Extended Image #1116
-Extended Image #1117
-Extended Image #1118
-Extended Image #1119
-Extended Image #1120
-Extended Image #1121
-Extended Image #1122
-Extended Image #1123
-Extended Image #1124
-Extended Image #1125
-Extended Image #1126
-Extended Image #1127
-Extended Image #1128
-Extended Image #1129
-Extended Image #1130
-Extended Image #1131
-Extended Image #1132
-Extended Image #1133
-Extended Image #1134
-Extended Image #1135
-Extended Image #1136
-Extended Image #1137
-Extended Image #1138
-Extended Image #1139
-Extended Image #1140
-Extended Image #1141
-Extended Image #1142
-Extended Image #1143
-Extended Image #1144
-Extended Image #1145
-Extended Image #1146
-Extended Image #1147
-Extended Image #1148
-Extended Image #1149
-Extended Image #1150
-Extended Image #1151
-Extended Image #1152
-Extended Image #1153
-Extended Image #1154
-Extended Image #1155
-Extended Image #1156
-Extended Image #1157
-Extended Image #1158
-Extended Image #1159
-Extended Image #1160
-Extended Image #1161
-Extended Image #1162
-Extended Image #1163
-Extended Image #1164
-Extended Image #1165
+Legionnaire Warp Flash
+Golem Warp Flash
+Hierophant Warp Flash
+Simulacrum Warp Flash
+Vassal Warp Flash
+Manifold Warp Flash
+Idol Warp Flash
+Artisan Warp Flash
+Archon Warp Flash
+Autocort Warp Flash
+Cabalist Warp Flash
+Amaranth Warp Flash
+Atreus Warp Flash
+Oscilliant Warp Flash
+Herald Warp Flash
+Vagrant Warp Flash
+Charlatan Warp Flash
+Ecclesiast Warp Flash
+Barghest Warp Flash
+Lanifect Warp Flash
+Aurora Warp Flash
+Gladius Warp Flash
+Exemplar Warp Flash
+Servitor Warp Flash
+Positron Warp Flash
+Clarion Warp Flash
+Archon Being Warp Flash
+Mind Tyrant Warp Flash
+Mind Tyrant Being Warp Flash
+Kethrostalor
+Kethrostalor Shadow
+Pariah Warp Flash
+Potentate Warp Flash
+Sycophant Warp Flash
+Unar Warp Flash
+Architect Warp Flash
+Vibrance Warp Flash
+Adherent Warp Flash
+Magister Warp Flash
+Epigraph Warp Flash
+Empyrean Warp Flash
+Optecton Warp Flash
+Patriarch Warp Flash
+Analogue Warp Flash
+Demiurge Warp Flash
+Empress Warp Flash
+Star Sovereign Warp Flash
+Anthelion Warp Flash
+Ecclesiast Warp Flash (Khalendric)
+Ashguard Warp Flash
+Dracadin Warp Flash (Order)
+Renesair Warp Flash
+Extatus Warp Flash
+Cicatus Warp Flash
+Zealot Warp Flash (Starbound)
+Manifold Warp Flash (Starbound)
 Extended Image #1166
 Extended Image #1167
 Extended Image #1168

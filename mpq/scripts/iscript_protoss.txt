@@ -299,7 +299,7 @@ DidactWarpIn:
 # 134 Archon Energy (protoss\archon.grp)
 .headerstart
 IsId          	147
-Type          	13
+Type          	21
 Init          	ArchonEnergyInit
 Death         	ArchonEnergyDeath
 GndAttkInit   	ArchonEnergyGndAttkInit
@@ -314,6 +314,14 @@ Unused2       	[NONE]
 Walking       	ArchonEnergyGndAttkInit
 WalkingToIdle 	ArchonEnergyGndAttkInit
 SpecialState1 	ArchonEnergySpecialState1
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	ArchonWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -429,12 +437,16 @@ ArchonEnergyLocal00:
 	wait              	2
 	goto              	ArchonEnergyLocal00
 
+ArchonWarpIn:
+	imgol             	2120 0 0 # Archon Warp Flash (protoss\archon.grp)
+	goto              	ArchonEnergyGndAttkInit
+
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 135 Archon Being (protoss\archonT.grp)
 .headerstart
 IsId          	148
-Type          	12
+Type          	21
 Init          	ArchonBeingInit
 Death         	Generic_Wait1End
 GndAttkInit   	ArchonBeingGndAttkInit
@@ -449,6 +461,14 @@ Unused2       	[NONE]
 Walking       	ArchonBeingGndAttkToIdle
 WalkingToIdle 	ArchonBeingGndAttkToIdle
 SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	ArchonBeingWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -525,6 +545,10 @@ ArchonBeingLocal00:
 	wait              	2
 	nobrkcodeend
 	gotorepeatattk
+	goto              	ArchonBeingGndAttkToIdle
+
+ArchonBeingWarpIn:
+	imgol             	2138 0 0 # Archon Being Warp Flash (protoss\archonT.grp)
 	goto              	ArchonBeingGndAttkToIdle
 
 # ----------------------------------------------------------------------------- #
@@ -908,7 +932,7 @@ DracadinWalking:
 
 DracadinWarpIn:
 	imgol             	125 0 0 # Dracadin Warp Flash (protoss\dragoon.grp)
-	goto              	SkryrokorLocal00
+	goto              	DracadinWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -1114,7 +1138,7 @@ EnvoyWalking:
 
 EnvoyWarpIn:
 	imgol             	121 0 0	# Envoy Warp Flash (protoss\shuttle.grp)
-	goto              	SkryrokorLocal00
+	goto              	EnvoyWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -1276,7 +1300,7 @@ CantavisWalkingToIdle:
 
 CantavisWarpIn:
 	imgol             	128 0 0 # Cantavis Warp Flash (protoss\templar.grp)
-	goto              	SkryrokorLocal00
+	goto              	CantavisWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -1377,7 +1401,7 @@ AccantorWalking:
 
 AccantorWarpIn:
 	imgol             	146 0 0 # Accantor Warp Flash (protoss\trilob.grp)
-	goto              	SkryrokorLocal00
+	goto              	AccantorWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -1608,7 +1632,7 @@ ZealotWalking:
 
 ZealotWarpIn:
 	imgol             	154 0 0 # Zealot Warp Flash (protoss\zealot.grp)
-	goto              	ZealotLocal00
+	goto              	ZealotWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -1690,7 +1714,7 @@ WitnessWalking:
 
 WitnessWarpIn:
 	imgol             	150 0 0	# Witness Warp Flash (protoss\witness.grp)
-	goto              	SkryrokorLocal00
+	goto              	SolarionLocal00
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -3352,12 +3376,6 @@ Death         	Generic_Wait1End
 .headerend
 # ----------------------------------------------------------------------------- #
 
-WarpFlashHeaderInit:
-	playfram          	0x00
-	wait              	1
-	followmaingraphic
-	goto              	SkryrokorLocal00
-
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 210 Warp Texture (protoss\texture.grp)
@@ -4725,7 +4743,7 @@ GenericRemnantsFourDeath:
 # 925 Mind Tyrant Energy (protoss\darchn.grp)
 .headerstart
 IsId          	365
-Type          	13
+Type          	21
 Init          	MindTyrantEnergyInit
 Death         	MindTyrantEnergyDeath
 GndAttkInit   	MindTyrantEnergyGndAttkInit
@@ -4740,6 +4758,14 @@ Unused2       	MindTyrantEnergyUnused2
 Walking       	MindTyrantEnergyGndAttkInit
 WalkingToIdle 	MindTyrantEnergyGndAttkInit
 SpecialState1 	MindTyrantEnergySpecialState1
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	MindTyrantEnergyWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -4860,12 +4886,16 @@ MindTyrantEnergyLocal00:
 	wait              	2
 	goto              	MindTyrantEnergyLocal00
 
+MindTyrantEnergyWarpIn:
+	imgol             	2139 0 0 # Mind Tyrant Warp Flash (protoss\darchon.grp)
+	goto              	MindTyrantEnergyGndAttkInit
+
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 926 Mind Tyrant Being (protoss\darchnT.grp)
 .headerstart
 IsId          	366
-Type          	12
+Type          	21
 Init          	MindTyrantBeingInit
 Death         	Generic_Wait1End
 GndAttkInit   	MindTyrantBeingGndAttkInit
@@ -4880,6 +4910,14 @@ Unused2       	SkryrokorLocal00
 Walking       	MindTyrantBeingGndAttkToIdle
 WalkingToIdle 	MindTyrantBeingGndAttkToIdle
 SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	MindTyrantBeingWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -4951,6 +4989,10 @@ MindTyrantBeingCastSpell:
 	sigorder          	2
 	nobrkcodeend
 	gotorepeatattk
+	goto              	MindTyrantBeingGndAttkToIdle
+
+MindTyrantBeingWarpIn:
+	imgol             	2140 0 0 # Mind Tyrant Being Warp Flash (protoss\darchonT.grp)
 	goto              	MindTyrantBeingGndAttkToIdle
 
 # ----------------------------------------------------------------------------- #
@@ -5130,8 +5172,8 @@ LanifectWalking:
 	goto              	SkryrokorLocal00
 
 LanifectWarpIn:
-	imgol             	143 0 0 # Scout Warp Flash (protoss\scout.grp)
-	goto              	SkryrokorLocal00
+	imgol             	2131 0 0 # Lanifect Warp Flash (cm\protoss\lanifect.grp)
+	goto              	LanifectGndAttkToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -5217,7 +5259,7 @@ Unknown371Death:
 # 933 Cabalist (protoss\dtemplar.grp)
 .headerstart
 IsId          	372
-Type          	12
+Type          	21
 Init          	CabalistInit
 Death         	CabalistDeath
 GndAttkInit   	CabalistGndAttkInit
@@ -5232,6 +5274,14 @@ Unused2       	[NONE]
 Walking       	CabalistWalking
 WalkingToIdle 	CabalistGndAttkToIdle
 SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	CabalistWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -5320,6 +5370,10 @@ CabalistWalking:
 	wait              	1
 	playfram          	0x121
 	goto              	CabalistWalking
+
+CabalistWarpIn:
+	imgol             	2122 0 0 # Cabalist Warp Flash (protoss\dtemplar.grp)
+	goto              	CabalistGndAttkToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -5430,7 +5484,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	LanifectWarpIn
+WarpIn        	ExemplarWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -5481,6 +5535,10 @@ ExemplarWalking:
 	setvertpos        	0
 	imgol             	1202 0 0 # Exemplar Engines (cm\protoss\exemplar-engine.grp)
 	goto              	SkryrokorLocal00
+
+ExemplarWarpIn:
+	imgol             	2134 0 0 # Exemplar Warp Flash (cm\protoss\exemplar.grp)
+	goto              	ExemplarWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -5873,7 +5931,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	LanifectWarpIn
+WarpIn        	AuroraWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -5923,6 +5981,10 @@ AuroraWalking:
 	setvertpos        	0
 	imgol             	1199 0 0 # Aurora Engines (cm\protoss\aurora-engine.grp)
 	goto              	SkryrokorLocal00
+
+AuroraWarpIn:
+	imgol             	2132 0 0 # Aurora Warp Flash (cm\protoss\aurora.grp)
+	goto              	AuroraWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -5951,7 +6013,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	LanifectWarpIn
+WarpIn        	PanoptusWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -5995,6 +6057,10 @@ PanoptusWalking:
 	setvertpos        	0
 	imgol             	142 0 0 # Panoptus Engines (thingy\pscGlow.grp)
 	goto              	SkryrokorLocal00
+
+PanoptusWarpIn:
+	imgol             	143 0 0 # Panoptus Warp Flash (cm\protoss\panoptus.grp)
+	goto              	PanoptusWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -6167,8 +6233,8 @@ SimulacrumWalking:
 	goto              	SimulacrumWalking
 
 SimulacrumWarpIn:
-	imgol             	125 0 0 # Simulacrum Warp Flash (protoss\simulacrum.grp)
-	goto              	SkryrokorLocal00
+	imgol             	2115 0 0 # Simulacrum Warp Flash (protoss\simulacrum.grp)
+	goto              	SimulacrumWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -6236,7 +6302,7 @@ EmpyreanWalking:
 	goto              	SkryrokorLocal00
 
 EmpyreanWarpIn:
-	imgol             	143 0 0 # Empyrean Warp Flash (protoss\empyrean.grp)
+	imgol             	2152 0 0 # Empyrean Warp Flash (cm\protoss\empyrean.grp)
 	goto              	SkryrokorLocal00
 
 # ----------------------------------------------------------------------------- #
@@ -6469,7 +6535,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	ZealotWarpIn
+WarpIn        	ZealotStarboundWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 	
@@ -6477,6 +6543,10 @@ ZealotStarboundGndAttkInit:
 	playfram          	0x00
 	wait              	1
 	goto				ZealotWalkingToIdle
+
+ZealotStarboundWarpIn:
+	imgol             	2166 0 0 # Zealot (Starbound) Warp Flash (cm\faction-p\zealot-starbound.grp)
+	goto              	ZealotWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -6565,7 +6635,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	LanifectWarpIn
+WarpIn        	ExtatusWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -6578,6 +6648,10 @@ ExtatusWalking:
 	setvertpos        	0
 	imgol             	1199 0 0 # Extatus Engines (cm\faction-p\extatus-engine.grp)
 	goto              	SkryrokorLocal00
+
+ExtatusWarpIn:
+	imgol             	2164 0 0 # Extatus Warp Flash (cm\faction-p\extatus.grp)
+	goto              	AuroraWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -6624,13 +6698,17 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	DracadinWarpIn
+WarpIn        	DracadinOrderWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
 DracadinOrderInit:
 	imgul             	2002 0 0 # Dracadin Order Shadow (faction-p\dracadin-order-shadow.grp)
 	goto				DracadinWalkingToIdle
+
+DracadinOrderWarpIn:
+	imgol             	2162 0 0 # Dracadin (Order) Warp Flash (cm\faction-p\dracadin-order.grp)
+	goto              	DracadinWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -6782,8 +6860,8 @@ StarSovereignWalking:
 	goto              	SkryrokorLocal00
 
 StarSovereignWarpIn:
-	imgol             	143 0 0	# Star Sovereign Warp Flash (protoss\starsovereign.grp)
-	goto              	SkryrokorLocal00
+	imgol             	2158 0 0 # Star Sovereign Warp Flash (protoss\starsovereign.grp)
+	goto              	StarSovereignWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -7073,7 +7151,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	LanifectWarpIn
+WarpIn        	GladiusWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -7118,6 +7196,10 @@ GladiusWalking:
 	imgol             	1204 0 0 # Gladius Engines (cm\protoss\gladius-engine.grp)
 	playfram          	0x00
 	goto              	SkryrokorLocal00
+
+GladiusWarpIn:
+	imgol             	2133 0 0 # Gladius Warp Flash (cm\protoss\gladius.grp)
+	goto              	GladiusWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -7146,7 +7228,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	LanifectWarpIn
+WarpIn        	MagisterWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -7199,6 +7281,10 @@ MagisterWalking:
 	playfram          	0x00
 	setvertpos        	0
 	goto              	SkryrokorLocal00
+
+MagisterWarpIn:
+	imgol             	2150 0 0 # Magister Warp Flash (cm\protoss\magister.grp)
+	goto              	MagisterWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -7227,7 +7313,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	LanifectWarpIn
+WarpIn        	VassalWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -7274,6 +7360,10 @@ VassalWalking:
 	playfram          	0x00
 	imgol				1206 0 0 # Vassal Engines (cm\protoss\vassal-engine.grp)
 	goto              	SkryrokorLocal00
+
+VassalWarpIn:
+	imgol             	2116 0 0 # Vassal Warp Flash (cm\protoss\vassal.grp)
+	goto              	VassalWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -7570,8 +7660,8 @@ AtreusWalking:
 	goto				AtreusWalking
 
 AtreusWarpIn:
-	imgol             	125 0 0	# Cantavis Warp Flash (protoss\templar.grp)
-	goto              	SkryrokorLocal00
+	imgol             	2124 0 0 # Atreus Warp Flash (cm\protoss\atreus.grp)
+	goto              	AtreusGndAttkToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -7715,8 +7805,8 @@ AmaranthWalkingToIdle:
 	goto              	SkryrokorLocal00
 
 AmaranthWarpIn:
-	imgol             	128 0 0 # Cantavis Warp Flash (protoss\templar.grp)
-	goto              	SkryrokorLocal00
+	imgol             	2123 0 0 # Amaranth Warp Flash (cm\protoss\amaranth.grp)
+	goto              	AmaranthWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -7835,15 +7925,15 @@ EcclesiastWalking:
 	goto				EcclesiastWalking
 
 EcclesiastWarpIn:
-	imgol             	128 0 0	# Cantavis Warp Flash (protoss\templar.grp)
-	goto              	SkryrokorLocal00
+	imgol             	2129 0 0 # Ecclesiast Warp Flash (cm\protoss\ecclesiast.grp)
+	goto              	InfestedTerranWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 1182 Idol (cm\protoss\idol.grp)
 .headerstart
 IsId          	498
-Type          	12
+Type          	21
 Init          	IdolInit
 Death         	IdolDeath
 GndAttkInit   	IdolGndAttkInit
@@ -7858,6 +7948,14 @@ Unused2       	[NONE]
 Walking       	IdolWalking
 WalkingToIdle 	IdolGndAttkToIdle
 SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	IdolWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -7942,13 +8040,17 @@ IdolWalking:
 	wait              	1
 	playfram          	0x1ba
 	goto              	IdolWalking
+
+IdolWarpIn:
+	imgol             	2118 0 0 # Idol Warp Flash (cm\protoss\idol.grp)
+	goto              	IdolGndAttkToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 1184 Golem (golem.grp)
 .headerstart
 IsId          	499
-Type          	12
+Type          	21
 Init          	GolemInit
 Death         	GolemDeath
 GndAttkInit   	GolemGndAttkInit
@@ -7963,6 +8065,14 @@ Unused2       	[NONE]
 Walking       	LegionnaireWalking
 WalkingToIdle 	GolemWalkingToIdle
 SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	GolemWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -8007,13 +8117,17 @@ GolemGndAttkRpt:
 GolemWalkingToIdle:
 	playfram          	0x00
 	goto              	SkryrokorLocal00
+
+GolemWarpIn:
+	imgol             	2113 0 0 # Golem Warp Flash (cm\protoss\golem.grp)
+	goto              	GolemWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 1186 Barghest (cm\protoss\barghest.grp)
 .headerstart
 IsId          	500
-Type          	12
+Type          	21
 Init          	BarghestInit
 Death         	BarghestDeath
 GndAttkInit   	BarghestGndAttkInit
@@ -8028,6 +8142,14 @@ Unused2       	[NONE]
 Walking       	BarghestWalking
 WalkingToIdle 	BarghestGndAttkToIdle
 SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	BarghestWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -8095,6 +8217,10 @@ BarghestWalking:
 	playfram          	0x00
 	wait              	1
 	goto              	BarghestWalking
+	
+BarghestWarpIn:
+	imgol             	2130 0 0 # Barghest Warp Flash (cm\protoss\barghest.grp)
+	goto              	BarghestGndAttkToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -8334,8 +8460,8 @@ PariahWalking:
 	goto              	PariahWalking
 
 PariahWarpIn:
-	imgol             	125 0 0	# Pariah Warp Flash (protoss\pariah.grp)
-	goto              	SkryrokorLocal00
+	imgol             	2143 0 0 # Pariah Warp Flash (cm\protoss\pariah.grp)
+	goto              	PariahWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -8630,8 +8756,8 @@ ManifoldWalkingToIdle:
 	goto              	ManifoldGndAttkToIdle
 
 ManifoldWarpIn:
-	imgol             	125 0 0	# Cantavis Warp Flash (protoss\templar.grp)
-	goto              	ManifoldGndAttkToIdle
+	imgol             	2117 0 0 # Manifold Warp Flash (cm\protoss\manifold.grp)
+	goto              	ManifoldWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -8660,7 +8786,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	LanifectWarpIn
+WarpIn        	ArchitectWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -8709,6 +8835,10 @@ ArchitectWalking2:
 	move				4
 	wait				1
 	goto				ArchitectWalking2
+	
+ArchitectWarpIn:
+	imgol             	2147 0 0 # Architect Warp Flash (cm\protoss\architect.grp)
+	goto				ArchitectWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -9715,8 +9845,8 @@ HierophantWalking:
 	goto              	HierophantWalking
 
 HierophantWarpIn:
-	imgol             	125 0 0 # Dracadin Warp Flash (protoss\dragoon.grp)
-	goto              	SkryrokorLocal00
+	imgol             	2114 0 0 # Hierophant Warp Flash (protoss\hierophant.grp)
+	goto              	HierophantWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -9833,7 +9963,7 @@ ClarionWalking:
 	goto              	ClarionWalking
 
 ClarionWarpIn:
-	imgol             	133 0 0 # Didact Warp Flash (protoss\didact.grp)
+	imgol             	2137 0 0 # Clarion Warp Flash (cm\protoss\clarion.grp)
 	goto              	SkryrokorLocal00
 	
 # ----------------------------------------------------------------------------- #
@@ -9931,8 +10061,8 @@ LegionnaireWalking:
 	goto              	LegionnaireWalking
 
 LegionnaireWarpIn:
-	imgol             	154 0 0 # Zealot Warp Flash (protoss\zealot.grp)
-	goto              	SkryrokorLocal00
+	imgol             	2112 0 0 # Legionnaire Warp Flash (cm\protoss\legionnaire.grp)
+	goto              	GolemWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -10054,7 +10184,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	PariahWarpIn
+WarpIn        	DemiurgeWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -10099,6 +10229,10 @@ DemiurgeGndAttkInit:
 DemiurgeGndAttkToIdle:
 	wait				1
 	goto				PariahWalkingToIdle
+
+DemiurgeWarpIn:
+	imgol             	2156 0 0 # Demiurge Warp Flash (cm\protoss\demiurge.grp)
+	goto              	PariahWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -10127,12 +10261,16 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	EcclesiastWarpIn
+WarpIn        	CharlatanWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
 CharlatanInit:
 	imgul             	1172 0 0 # Charlatan Shadow (cm\protoss\charlatan-shad.grp)
+	goto				InfestedTerranWalkingToIdle
+	
+CharlatanWarpIn:
+	imgol             	2128 0 0 # Charlatan Warp Flash (cm\protoss\charlatan.grp)
 	goto				InfestedTerranWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
@@ -10443,8 +10581,8 @@ AnthelionWalking:
 	goto              	AnthelionWalking
 
 AnthelionWarpIn:
-	imgol             	143 0 0	# Anthelion Warp Flash
-	goto              	AnthelionLocal00
+	imgol             	2159 0 0 # Anthelion Warp Flash (cm\protoss\anthelion.grp)
+	goto              	AnthelionWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -10710,7 +10848,7 @@ MonumentOfSinWarpIn:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1098 Empress (cm\shared\empress.grp)
+# 1098 Empress (cm\protoss\empress.grp)
 .headerstart
 IsId          	617
 Type          	21
@@ -10740,7 +10878,7 @@ WarpIn        	EmpressWarpIn
 # ----------------------------------------------------------------------------- #
 
 EmpressInit:
-	imgul             	1437 0 42 # Empress Shadow (cm\shared\empress.grp)
+	imgul             	1437 0 42 # Empress Shadow (cm\protoss\empress.grp)
 EmpressGndAttkToIdle:
 	playfram          	0x00
 EmpressWalkingToIdle:
@@ -10774,12 +10912,12 @@ EmpressGndAttkInit:
 
 EmpressWalking:
 	setvertpos        	0 
-	#imgol             	1203 0 0 # Empress Engines (cm\shared\empress-engine.grp)
+	#imgol             	1203 0 0 # Empress Engines (cm\protoss\empress-engine.grp)
 	goto              	SkryrokorLocal00
 
 EmpressWarpIn:
-	imgol             	143 0 0	# Empress Warp Flash (shared\empress.grp)
-	goto              	SkryrokorLocal00
+	imgol             	2157 0 0 # Empress Warp Flash (cm\protoss\empress.grp)
+	goto              	EmpressWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -11404,8 +11542,8 @@ ArtisanAlmostBuilt:
 	goto              	ArtisanAlmostBuilt
 
 ArtisanWarpIn:
-	imgol             	139 0 0	# Artisan Warp Flash (protoss\probe.grp)
-	goto              	SkryrokorLocal00
+	imgol             	2119 0 0 # Artisan Warp Flash (cm\protoss\artisan.grp)
+	goto              	ArtisanWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -12172,8 +12310,8 @@ VagrantGndAttkRpt:
 	goto				EcclesiastGndAttkToIdle
 
 VagrantWarpIn:
-	imgol             	128 0 0	# Cantavis Warp Flash (protoss\templar.grp)
-	goto              	SkryrokorLocal00
+	imgol             	2127 0 0 # Vagrant Warp Flash (cm\protoss\vagrant.grp)
+	goto              	InfestedTerranWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -12371,8 +12509,8 @@ HeraldWalkingToIdle:
 	goto				HeraldLocal00
 
 HeraldWarpIn:
-	imgol             	128 0 0	# Cantavis Warp Flash (protoss\templar.grp)
-	goto              	SkryrokorLocal00
+	imgol             	2126 0 0 # Herald Warp Flash (cm\protoss\herald.grp)
+	goto              	HeraldWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -12401,7 +12539,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	LanifectWarpIn
+WarpIn        	EpigraphWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -12470,6 +12608,10 @@ EpigraphWalking:
 	imgol             	1301 0 0 # Epigraph Engines (cm\protoss\epigraph-engine.grp)
 	playfram          	0x00
 	goto              	EpigraphLocal00
+	
+EpigraphWarpIn:
+	imgol             	2151 0 0 # Epigraph Warp Flash (cm\protoss\epigraph.grp)
+	goto              	EpigraphWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -12547,7 +12689,7 @@ UnitaryUnionWarpIn:
 # 1660 Servitor (cm\protoss\servitor.grp)
 .headerstart
 IsId          	718
-Type          	12
+Type          	21
 Init          	ServitorInit
 Death         	ServitorDeath
 GndAttkInit   	ServitorGndAttkInit
@@ -12562,6 +12704,14 @@ Unused2       	[NONE]
 Walking       	ServitorWalking
 WalkingToIdle 	ServitorWalkingToIdle
 SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	ServitorWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -12613,12 +12763,16 @@ ServitorWalking:
 	setvertpos        	0
 	goto              	InfestedTerranWalkingToIdle
 
+ServitorWarpIn:
+	imgol             	2135 0 0 # Servitor Warp Flash (cm\protoss\servitor.grp)
+	goto              	ServitorWalkingToIdle
+
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 1660 Positron (cm\protoss\positron.grp)
 .headerstart
 IsId          	719
-Type          	12
+Type          	21
 Init          	PositronInit
 Death         	PositronDeath
 GndAttkInit   	PositronGndAttkInit
@@ -12633,6 +12787,14 @@ Unused2       	[NONE]
 Walking       	PositronWalking
 WalkingToIdle 	PositronWalkingToIdle
 SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	PositronWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -12683,6 +12845,10 @@ PositronGndAttkInit:
 PositronWalking:
 	setvertpos        	0
 	goto              	InfestedTerranWalkingToIdle
+
+PositronWarpIn:
+	imgol             	2136 0 0 # Positron Warp Flash (cm\protoss\positron.grp)
+	goto              	PositronWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -12868,8 +13034,8 @@ SycophantWalking:
 	goto              	SycophantWalking
 
 SycophantWarpIn:
-	imgol             	154 0 0 # Sycophant Warp Flash (protoss\zealot.grp)
-	goto              	SycophantLocal00
+	imgol             	2145 0 0 # Sycophant Warp Flash (cm\protoss\sycophant.grp)
+	goto              	SycophantWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -13001,11 +13167,15 @@ OptectonGndAttkRpt:
 	wait				1
 	nobrkcodestart
 	wait				1
-	playsnd				1557 # Architect charge 01
+	playsndbtwn			3634 3636 # Optecton charge 01, 02, 03
 	imgol				1820 0 0 # Architect charge overlay
-	wait				7
+	wait				8
 	imgol				1820 0 0 # Architect charge overlay
-	wait				7
+	wait				8
+	imgol				1820 0 0 # Architect charge overlay
+	wait				8
+	imgol				1820 0 0 # Architect charge overlay
+	wait				8
 	imgol				1820 0 0 # Architect charge overlay
 	wait				8
 	playfram			0x220
@@ -13157,8 +13327,8 @@ OptectonWalkingToIdle:
 	goto              	SkryrokorLocal00
 
 OptectonWarpIn:
-	imgol             	125 0 0	# Cantavis Warp Flash (protoss\templar.grp)
-	goto              	SkryrokorLocal00
+	imgol             	2153 0 0 # Optecton Warp Flash (cm\protoss\optecton.grp)
+	goto              	OptectonWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -13328,8 +13498,8 @@ PatriarchWalkingToIdle:
 	goto				PatriarchLocal00
 
 PatriarchWarpIn:
-	imgol             	128 0 0	# Cantavis Warp Flash (protoss\templar.grp)
-	goto              	SkryrokorLocal00
+	imgol             	2154 0 0 # Patriarch Warp Flash (cm\protoss\patriarch.grp)
+	goto              	PatriarchWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -13370,7 +13540,7 @@ Engines_MultiGlowHeader_OmniInit:
 # 1731 Analogue (cm\protoss\analogue.grp)
 .headerstart
 IsId          	741
-Type          	12
+Type          	21
 Init          	AnalogueInit
 Death         	AnalogueDeath
 GndAttkInit   	AnalogueGndAttkInit
@@ -13385,6 +13555,14 @@ Unused2       	[NONE]
 Walking       	AnalogueWalking
 WalkingToIdle 	AnalogueGndAttkToIdle
 SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	AnalogueWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -13446,6 +13624,10 @@ AnalogueWalking:
 	playfram          	0x00
 	wait              	1
 	goto				AnalogueWalking
+
+AnalogueWarpIn:
+	imgol             	2155 0 0 # Analogue Warp Flash (cm\protoss\analogue.grp)
+	goto              	AnalogueGndAttkToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -13615,8 +13797,8 @@ PotentateMeleeAttkRpt:
 	goto				InfestedTerranWalkingToIdle
 
 PotentateWarpIn:
-	imgol             	128 0 0	# Cantavis Warp Flash (protoss\templar.grp)
-	goto              	SkryrokorLocal00
+	imgol             	2144 0 0 # Potentate Warp Flash (cm\protoss\potentate.grp)
+	goto              	InfestedTerranWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -13645,7 +13827,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	LegionnaireWarpIn
+WarpIn        	AdherentWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -13671,6 +13853,10 @@ AdherentGndAttkInit:
 	gotorepeatattk
 	ignorerest
 	goto				LegionnaireGndAttkToIdle
+
+AdherentWarpIn:
+	imgol             	2149 0 0 # Adherent Warp Flash (cm\faction-p\adherent.grp)
+	goto              	GolemWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -14454,7 +14640,7 @@ AvengeProcDeath:
 # 1946 Vibrance (cm\protoss\vibrance.grp)
 .headerstart
 IsId          	798
-Type          	12
+Type          	21
 Init          	VibranceInit
 Death         	AnalogueDeath
 GndAttkInit   	VibranceGndAttkInit
@@ -14469,6 +14655,14 @@ Unused2       	[NONE]
 Walking       	SkryrokorLocal00
 WalkingToIdle 	VibranceGndAttkToIdle
 SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	VibranceWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -14482,6 +14676,10 @@ VibranceGndAttkToIdle:
 VibranceGndAttkInit:
 	attack
 	gotorepeatattk
+	goto				VibranceGndAttkToIdle
+	
+VibranceWarpIn:
+	imgol             	2148 0 0 # Vibrance Warp Flash (cm\protoss\vibrance.grp)
 	goto				VibranceGndAttkToIdle
 
 # ----------------------------------------------------------------------------- #
@@ -14511,7 +14709,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	LegionnaireWarpIn
+WarpIn        	CicatusWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -14543,13 +14741,17 @@ CicatusGndAttkToIdle:
 	playfram			0x100
 	wait				1
 	goto              	GolemWalkingToIdle
+
+CicatusWarpIn:
+	imgol             	2165 0 0 # Cicatus Warp Flash (cm\faction-p\cicatus.grp)
+	goto              	GolemWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 1978 Oscilliant (cm\protoss\oscilliant.grp)
 .headerstart
 IsId          	806
-Type          	12
+Type          	21
 Init          	OscilliantInit
 Death         	AtreusDeath
 GndAttkInit   	OscilliantGndAttkInit
@@ -14564,6 +14766,14 @@ Unused2       	[NONE]
 Walking       	OscilliantWalking
 WalkingToIdle 	OscilliantGndAttkToIdle
 SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	OscilliantWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -14640,6 +14850,10 @@ OscilliantWalking:
 	playfram          	0xcc
 	goto              	OscilliantWalking
 	
+OscilliantWarpIn:
+	imgol             	2125 0 0 # Oscilliant Warp Flash (cm\protoss\oscilliant.grp)
+	goto              	OscilliantGndAttkToIdle
+	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 1981 Renesair (cm\faction-p\renesair.grp)
@@ -14667,7 +14881,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	LanifectWarpIn
+WarpIn        	RenesairWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -14688,6 +14902,10 @@ RenesairWalking:
 	playfram          	0x00
 	imgol				1983 0 0 # Renesair Engines (cm\faction-p\renesair-engine.grp)
 	goto              	SkryrokorLocal00
+
+RenesairWarpIn:
+	imgol             	2163 0 0 # Renesair Warp Flash (cm\faction-p\renesair.grp)
+	goto              	VassalWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -14716,7 +14934,7 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	LanifectWarpIn
+WarpIn        	UnarWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -14772,6 +14990,10 @@ UnarWalking:
 	playfram          	0x00
 	setvertpos        	0
 	goto              	SkryrokorLocal00
+
+UnarWarpIn:
+	imgol             	2146 0 0 # Unar Warp Flash (cm\protoss\unar.grp)
+	goto				ArchitectWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -14846,8 +15068,9 @@ Death         	Generic_Wait1End
 
 ShadowHeaderInit:
 	wait              	1
+WarpFlashHeaderInit:
 	followmaingraphic
-	goto              	ShadowHeaderInit
+	goto 				ShadowHeaderInit
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -15085,7 +15308,7 @@ GndAttkToIdle 	SkryrokorLocal00
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
 Walking       	AutocortWalking
-WalkingToIdle 	SkryrokorLocal00
+WalkingToIdle 	DidactGndAttkToIdle
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	AutocortAlmostBuilt
@@ -15101,7 +15324,7 @@ WarpIn        	AutocortWarpIn
 AutocortInit:
 	imgul             	2058 0 7 # Autocort Shadow (cm\protoss\autocort.grp)
 	playfram          	0x00
-	goto              	SkryrokorLocal00
+	goto              	DidactGndAttkToIdle
 
 AutocortDeath:
 	setfldirect       	0
@@ -15167,5 +15390,222 @@ AutocortAlmostBuilt:
 	goto              	AutocortAlmostBuilt
 
 AutocortWarpIn:
-	imgol             	139 0 0 # Autocort Warp Flash (protoss\probe.grp)
-	goto              	SkryrokorLocal00
+	imgol             	2121 0 0 # Autocort Warp Flash (cm\protoss\autocort.grp)
+	goto              	DidactGndAttkToIdle
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2028 Manifold (Starbound) (cm\faction-p\manifold-starbound.grp)
+.headerstart
+IsId          	732
+Type          	21
+Init          	ManifoldStarboundInit
+Death         	ManifoldStarboundDeath
+GndAttkInit   	ManifoldStarboundGndAttkInit
+AirAttkInit   	ManifoldStarboundGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	ManifoldStarboundGndAttkInit
+AirAttkRpt    	ManifoldStarboundGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	ManifoldStarboundGndAttkToIdle
+AirAttkToIdle 	ManifoldStarboundGndAttkToIdle
+Unused2       	[NONE]
+Walking       	ManifoldStarboundWalking
+WalkingToIdle 	ManifoldStarboundWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	ManifoldStarboundWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ManifoldStarboundInit:
+	imgul             	2029 0 -1 # Manifold (Starbound) Shadow (cm\faction-p\manifold-starbound-shadow.grp)
+	playfram          	0x00
+	wait				1
+	goto				DidactGndAttkToIdle
+	
+ManifoldStarboundGndAttkToIdle:
+	playfram          	0x00
+	wait				1
+	goto              	DidactGndAttkToIdle
+
+ManifoldStarboundDeath:
+	playsndbtwn			3138 3140 # Manifold (Starbound) death 01, 02, 03
+	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
+	wait 				3
+	lowsprul			945 0 0 # Manifold (Starbound) remains (cm\protoss\manifold-death.grp)
+	wait              	1
+	end
+
+ManifoldStarboundGndAttkInit:
+	playfram			0x00
+	wait				1
+	nobrkcodestart
+	playfram			0x20
+	attackwith        	1
+	wait				1
+	playfram			0x00
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto				ManifoldStarboundGndAttkToIdle
+
+ManifoldStarboundWalking:
+	playfram			0x00
+	goto				ManifoldStarboundGndAttkToIdle
+
+ManifoldStarboundWalkingToIdle:
+	playfram          	0x00
+	goto              	ManifoldStarboundGndAttkToIdle
+
+ManifoldStarboundWarpIn:
+	imgol             	2167 0 0 # Manifold (Starbound) Warp Flash (cm\faction-p\manifold-starbound.grp)
+	goto              	ManifoldStarboundWalkingToIdle
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1988 Ashguard (cm\faction-p\ashguard.grp)
+.headerstart
+IsId          	733
+Type          	21
+Init          	AshguardInit
+Death         	AshguardDeath
+GndAttkInit   	AshguardGndAttkInit
+AirAttkInit   	AshguardGndAttkInit
+Unused1       	AshguardUnused1
+GndAttkRpt    	AshguardGndAttkRpt
+AirAttkRpt    	AshguardGndAttkRpt
+CastSpell     	[NONE]
+GndAttkToIdle 	AshguardGndAttkToIdle
+AirAttkToIdle 	AshguardGndAttkToIdle
+Unused2       	[NONE]
+Walking       	AshguardWalking
+WalkingToIdle 	AshguardWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	AshguardWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+AshguardInit:
+	imgul             	1989 0 0 # Ashguard Shadow (cm\faction-p\ashguard-shadow.grp)
+AshguardWalkingToIdle:
+	playfram          	0x00
+	wait				1
+	goto				DracadinLocal00
+
+AshguardDeath:
+	playsnd           	1335 # Ashguard death 01
+	imgol             	1774 0 0 # Dracadin death explosion (cm\protoss\dracadin-explosion.grp)
+	imgol             	153 0 0 # Zealot Death (protoss\zealot.grp)
+	setfldirect       	0
+	playfram			832
+	wait				2
+	playfram			833
+	wait				2
+	playfram			834
+	wait				2
+	playfram			835
+	wait				2
+	playfram			836
+	wait				2
+	lowsprul			925 0 0 # Ashguard remains
+	wait              	1
+	end
+	
+AshguardUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect       	0
+	playsnd           	1704 # Ashguard Revive 01
+	sprol				746 0 0 # Zealot Death Reversed (protoss\zealot.grp)
+	wait				2
+	playfram			773
+	wait				2
+	playfram			772
+	wait				2
+	playfram			771
+	wait				2
+	playfram			770
+	wait				2
+	playfram			769
+	wait				2
+	playfram			768
+	wait				2
+	setfldirect			12
+	nobrkcodeend
+	goto				AshguardWalkingToIdle
+
+AshguardGndAttkInit:
+	playfram          	0x220
+	wait              	1
+	playfram          	0x260
+	wait              	1
+	playfram          	0x280
+	wait              	1
+AshguardGndAttkRpt:
+	playfram          	0x2A0
+	wait              	1
+	playfram          	0x2C0
+	wait              	1
+	attackwith        	1
+	playfram          	0x2E0
+	wait              	1
+	playfram          	0x2C0
+	gotorepeatattk
+	ignorerest
+AshguardGndAttkToIdle:
+	wait              	1
+	playfram          	0x2A0
+	wait              	1
+	playfram          	0x280
+	wait              	1
+	playfram          	0x260
+	wait              	1
+	playfram          	0x240
+	wait              	1
+	playfram          	0x220
+	goto              	AshguardWalkingToIdle
+
+AshguardWalking:
+	move              	6
+	wait              	1
+	playfram          	0x100
+	move              	6
+	wait              	1
+	playfram          	0x120
+	move              	6
+	wait              	1
+	playfram          	0x140
+	move              	6
+	wait              	1
+	playfram          	0x160
+	move              	6
+	wait              	1
+	playfram          	0x180
+	move              	6
+	wait              	1
+	playfram          	0x1A0
+	move              	6
+	wait              	1
+	playfram          	0x1C0
+	move              	6
+	wait              	1
+	playfram          	0x1E0
+	goto              	AshguardWalking
+
+AshguardWarpIn:
+	imgol             	2161 0 0 # Ashguard Warp Flash (cm\faction-p\ashguard.grp)
+	goto              	AshguardWalkingToIdle

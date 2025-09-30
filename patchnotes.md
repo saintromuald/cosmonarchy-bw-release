@@ -1,109 +1,84 @@
-# 24 August 2025
-## Year 3, month 8, patch 2
+# 29 September 2025
+## Year 3, month 9, patch 2
 
 ## Patch goals
-- Continue post-change balancing for all races
-- Implement advanced constructors for all races
+- Implement the Kethrostalor
+- Continue balancing for all races
 - Continue Askosi development
-- Improve audiovisuals and AI
+- Further improve audiovisuals and AI
 - [Subscribe on ko-fi](https://ko-fi.com/pr0nogoandveeq7) to get a sneak peek of the incoming changes!
-
-## Config
-- A new advisor, **Goku**, has been added! (c. 3crow)
-- The advisors **Mesk** and **ISN** have been deprecated by author request. If you get an error message on launch, consider removing them from your configs.
 
 ## Bugfixes
 - **Stability:**
-	- Resolved a common crash after warping in a Monument of Sin (r. HitEmUp & Sosij, c. DF)
-- **Gameplay:**
-	- Fixed **Liiralisk** bounces being able to bounce to airborne enemies
-	- Prevented **Autovitality** timers from expiring while stunned (r. Kasuga)
-- **AI:**
-	- Resolved an issue preventing Zerg AI from making **Axtoth Axis** and related units (r. GreenEggs'NSpam)
-	- Resolved issues with Zerg AI attack wave creation
-- **Audiovisual:**
-	- Enabled construction init SFX for Zerg gas caps
-	- Fixed icon display for **Solarion** hangar (r. jakulangski, c. DF)
-	- Corrected filenames for a few miscellaneous sound files (r. Mimika)
+	- Prospectively resolved Zerg AI panic
+	- Resolved more iscript errors (r. TheBeaver99)
+- **Audiovisuals:**
+	- Restored graphical functionality of the Iziralisk (r. lolrsk8s & 3crow)
+	- Made 'no corpse' behaviors spawn a consumed corpse for better visual feedback
+	- Updated Matador production icon
+	- Resolved slight game timer slowness (r. & c. DF)
+	- Resolved asynchronous replay and game timers (r. The Shambler, c. DF)
 
 ## Audiovisuals
-- New model for:
-	- **Legionnaire** *(c. Solstice, wireframe c. jun3hong)*
-	- **Izirokor**
-- New portrait for:
-	- **Legionnaire** *(c. Solstice)*
-- Improved overlay visuals for:
-	- **Savant - Power Siphon**
-
-## Triggers
-- Added the following behaviors to the `set_unit_behavior` crig action:
-	- `no_collision` -- the unit will not collide with other ground units
-	- `air_transport` -- if the unit is a transport, it can transport air units
+- New sprite for:
+	- **Autocort** (c. DeltaCadimus)
+- Improved sprite for:
+	- **Aspirant** (c. Mimika)
+- New VFX for:
+	- Protoss unit completion (assistance by DF!)
+- New SFX for:
+	- Unit completion (Terran, Protoss, Larvae)
+	- Ambient training SFX (Grand Library, Rogue Gallery, Prostration Stage, Ancestral Archives, Ardent Authority, Unitary Union, Synthetic Synod, Argosy, Monument of Sin, Egg & Cocoon)
+	- Attack windup (Optecton)
+	- Building response (Ancestral Archives)
+	- Death (Gorgrokor)
+	- Corpse consumption (Ultrokor)
+- Modified SFX for:
+	- Ambient training SFX (Ministry, Embassy, Lattice)
 
 ## Terran
+- For units with windups, added a slight forgiveness period to allow more movement and retargeting
 - [Talos](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/talos):
-	- **Fusion Sealers** removed
+	- Vision range 8 » 7
+- [Cyprian](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cyprian):
+	- **Twin Railguns:**
+		- Attack windup 0 » 0.33 seconds
 - [Savant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/savant):
-	- Resource costs 100/50 » 125/50
-	- **Discoid Rifle:**
-		- **Power Siphon** attack cooldown 0.75 » 0.83 (matches **Entropy Gauntlets**)
-- [Blackjack](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/blackjack):
-	- Build time 18 » 16
-- [Phalanx](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/phalanx):
-	- Build time 28 » 30
-- [Valkyrie](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/valkyrie):
-	- Build time 30 » 25
-	- **Halo Rockets:**
-		- Weapon cooldown 1.08 » 0.92
-		- Weapon range 6 » 7
-		- Weapon still fired at 6 range, improving chase potential
-- [Ancile](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/ancile):
-	- Vision range 10 » 8
-- [Salamander](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/salamander):
-	- **Perdition Barrage:**
-		- Attack count 3 » 6
-- [Vestry](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/vestry):
-	- Resource costs 150/75 » 150/50
-- [Covenant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/covenant):
-	- Resource costs 100/250 » 100/350
-- **NEW:** [Ogun](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/ogun):
-	- Sturdy constructor with a repair-oriented deployment and **Fusion Sealers**
-	- Trained from Ministry or Treasury; requires Quarry
-- **NEW:** [Cannibal](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cannibal):
-	- **Upstart only!** Raiding infantry; replaces Cyprian
+	- Vision range 9 » 7
+- [Olympian](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/olympian):
+	- **Dishonorable Discharge**
+		- No longer grants bonus armor penetration
+		- Now grants bonus damage equal to excess armor pen
 
 ## Protoss
-- [Witness](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/witness):
-	- Resource costs 50/75 » 50/50
-- **NEW:** [Autocort](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/autocort):
-	- Advanced constructor with personal power field
-	- Trained from Embassy
+- [Optecton](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/optecton):
+	- **Sunsplit Beam:**
+		- Windup 0.95 » 1.67
+- [Manifold](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/manifold):
+	- Vision range 8 » 7
+	- Also affects **Starbound** variant
+- [Oscilliant](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/oscilliant):
+	- **Rotating Ray:**
+		- Armor penetration 5 » 3
 
 ## Zerg
-- [Gosvileth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/gosvileth):
-	- **Plethoral Gestation** removed
-	- **NEW: Aberrant Gestation:**
-		- Gosvileths now mutate into advanced structure strains
-- [Liiralisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/liiralisk):
-	- Resource costs 75/25 » 100/25
-	- **Hollowed Glaves:**
-		- Armor penetration 2 » 1
-	- **Homing Spore:**
-		- Armor penetration 0 » 1
-- [Sovroleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/sovroleth):
-	- Build time 25 » 24
-	- **Corpse Cocoon:**
-		- Gestation time 4 » 12 (half of training time)
-- [Sasyrvoleth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/sasyrvoleth):
-	- Resource costs 100/200 » 100/300
-	- Build time 30 » 40
-	- HP 140 » 200
-	- Movement speed 5 » 4.16
-- [Zarcavrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/zarcavrokor):
-	- Movement speed 5.4 » 4.2
-- [Kalkiir Lake](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/kalkiir-lake):
-	- Resource costs 200/100 » 200/200
-	- Time cost 40 » 50
-- **NEW:** [Agrileth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/agrileth):
-	- Mobile hive organ; has **Plethoral Gestation**
-	- Morphed from Larvae; requires Quazeth Pool or mutation
+- [Izirokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/izirokor):
+	- Vision range 9 » 7
+- [Skithrokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/izirokor):
+	- Vision range 9 » 7
+- [Tethzorokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/tethzorokor):
+	- Vision range 9 » 8
+- [Keskathalor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/keskathalor):
+	- Armor 4 » 3
+	- Vision range 9 » 8
+- [Alkajelisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/alkajelisk):
+	- Now requires **Kethraj Keep**
+- [Ulgorg Cavern](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/ulgorg-cavern):
+	- Armor 6 » 5
+- [Zozarc Gorge](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/zozarc-gorge):
+	- Armor 8 » 6
+- **NEW:** [Kethrostalor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/kethrostalor):
+	- Unmatched artillery strain, capable of launching combatants to the frontline
+	- Morphed from Keskathalor; requires Kethraj Keep
+- **NEW:** [Kethraj Keep](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/kethraj-keep):
+	- Artillery assault node; mutated from Geszkath Grotto

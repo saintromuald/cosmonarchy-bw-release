@@ -3624,47 +3624,47 @@ Egg Ambient 02
 Egg Ambient 03
 Egg Ambient 04
 Treasury Ambient 01
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Cyprian Windup 01
+Cyprian Windup 02
+Cyprian Windup 03
+Terran Unit Deployment 01
+Protoss Unit Deployment 01
+Protoss Unit Deployment 02
+Protoss Unit Deployment 03
+Protoss Unit Deployment 04
+Optecton Windup 01
+Optecton Windup 02
+Optecton Windup 03
+Grand Library Ambient 01
+Rogue Gallery Ambient 01
+Prostration Stage Ambient 01
+Ancestral Archives Ambient 01
+Ardent Authority Ambient 01
+Unitary Union Ambient 01
+Synthetic Synod Ambient 01
+Argosy Ambient 01
+Monument of Sin Ambient 01
+Larva Spawn 01
+Larva Spawn 02
+Larva Spawn 03
+Ancestral Archives What 01
+Kethraj Keep What 01
+Gorgrokor Death 01
+Gorgrokor Death 02
+Kethrostalor Weaponfire 01
+Kethrostalor Weaponfire 02
+Kethrostalor Weaponfire 03
+Kethrostalor Weaponhit 01
+Kethrostalor Weaponhit 02
+Kethrostalor Weaponhit 03
+Kethrostalor Weaponhit 04
+Kethrostalor Weaponhit 05
+Ultrokor Consume 01
+Ultrokor Consume 02
+Ultrokor Consume 03
+Askosi Scrap 01
+Askosi Scrap 02
+Askosi Scrap 03
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

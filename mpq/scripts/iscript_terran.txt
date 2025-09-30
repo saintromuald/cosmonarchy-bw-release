@@ -520,8 +520,8 @@ EidolonGndAttkInit:
 	wait              	1
 	playfram          	0x11
 	wait              	1
+	sigorder			32
 	playfram          	0x22
-	playsndbtwn			3602 3604 # Eidolon windup 01, 02, 03
 	wait				12
 EidolonGndAttkRpt:
 	wait              	1
@@ -691,11 +691,11 @@ IsId          	75
 Type          	12
 Init          	Goliath_Base_Init
 Death         	Goliath_Base_Death
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
+GndAttkInit   	SkryrokorLocal00
+AirAttkInit   	SkryrokorLocal00
 Unused1       	Goliath_Base_Unused1
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
+GndAttkRpt    	SkryrokorLocal00
+AirAttkRpt    	SkryrokorLocal00
 CastSpell     	[NONE]
 GndAttkToIdle 	[NONE]
 AirAttkToIdle 	[NONE]
@@ -796,8 +796,9 @@ Goliath_Turret_Init:
 	goto              	SkryrokorLocal00
 
 Goliath_Turret_GndAttkInit:
-	playsndbtwn			3201 3203 # Goliath windup 01, 02, 03
-	wait				5
+	wait				1
+	sigorder			32
+	wait				4
 Goliath_Turret_GndAttkRpt:
 	wait				1
 	nobrkcodestart
@@ -7417,7 +7418,7 @@ CastSpell     	[NONE]
 GndAttkToIdle 	[NONE]
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
-Walking       	[NONE]
+Walking       	SkryrokorLocal00
 WalkingToIdle 	SkryrokorLocal00
 SpecialState1 	[NONE]
 SpecialState2 	MadrigalFuriaBaseSpecialState2
@@ -7479,7 +7480,7 @@ CastSpell     	[NONE]
 GndAttkToIdle 	SkryrokorLocal00
 AirAttkToIdle 	SkryrokorLocal00
 Unused2       	[NONE]
-Walking       	[NONE]
+Walking       	SkryrokorLocal00
 WalkingToIdle 	SkryrokorLocal00
 SpecialState1 	SkryrokorLocal00
 SpecialState2 	MadrigalFuriaTurretSpecialState2
@@ -12005,19 +12006,19 @@ AspirantWalkingToIdle:
 	playfram          	0x00
 	wait				1
 AspirantLocal00:
-	playfram          	0x11
+	playfram          	0x20
 	wait              	2
-	playfram          	0x22
+	playfram          	0x40
 	wait              	2
-	playfram          	0x33
+	playfram          	0x60
 	wait              	2
-	playfram          	0x44
+	playfram          	0x80
 	wait              	2
-	playfram          	0x55
+	playfram          	0xA0
 	wait              	2
-	playfram          	0x66
+	playfram          	0xC0
 	wait              	2
-	playfram          	0x77
+	playfram          	0xE0
 	wait              	2
 	playfram          	0x00
 	wait              	2
@@ -12026,19 +12027,19 @@ AspirantLocal00:
 AspirantDeath:
 	playsndbtwn			1435 1438 # Aspirant death 01, 02, 03, 04
 	setfldirect       	0
-	playfram          	0x198
+	playfram          	0x300
 	wait              	2
-	playfram          	409
+	playfram          	769
 	wait              	2
-	playfram          	410
+	playfram          	770
 	wait              	2
-	playfram          	411
+	playfram          	771
 	wait              	2
-	playfram          	412
+	playfram          	772
 	wait              	2
-	playfram          	413
+	playfram          	773
 	wait              	2
-	playfram          	414
+	playfram          	774
 	wait              	2
 	lowsprul          	685 0 0 # Aspirant Remnants (cm\terran\aspirant-death.grp)
 	wait              	1 
@@ -12049,79 +12050,79 @@ AspirantUnused1:
 	nobrkcodestart
 	playsndbtwn			1435 1438 # Aspirant death 01, 02, 03, 04
 	setfldirect			0
-	playfram			413
+	playfram			773
 	wait				2
-	playfram			412
+	playfram			772
 	wait				2
-	playfram			411
+	playfram			771
 	wait				2
-	playfram			410
+	playfram			770
 	wait				2
-	playfram			409
+	playfram			769
 	wait				2
-	playfram			0x198
+	playfram			0x300
 	setfldirect			12
 	nobrkcodeend
 	goto				AspirantWalkingToIdle
 
 AspirantGndAttkInit:
-	playfram          	0x110
+	playfram          	0x200
 	wait              	1
-	playfram          	0x132
+	playfram          	0x240
 	wait              	1
-	playfram          	0x154
+	playfram          	0x280
 	wait              	1
 AspirantGndAttkRpt:
 	nobrkcodestart
 	playsndbtwn			1409 1411 # Aspirant weapon fire 01, 02, 03
-	playfram          	0x176
+	playfram          	0x2C0
 	wait              	1
-	playfram          	0x187
+	playfram          	0x2E0
 	wait              	1
 	attackwith        	1
-	playfram          	0x176
+	playfram          	0x2C0
 	wait              	1
-	playfram          	0x165
+	playfram          	0x2A0
 	wait				1
-	playfram          	0x154
+	playfram          	0x200
 	wait              	1
-	playfram          	0x143
+	playfram          	0x180
 	wait              	1
-	playfram			0x77
+	playfram			0xE0
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
 AspirantGndAttkToIdle:
 	wait              	1
-	playfram			0x77
+	playfram			0xE0
 	wait              	1
 	goto              	AspirantWalkingToIdle
 
 AspirantWalking:
 	move              	5
 	wait              	1
-	playfram          	0x88
+	playfram          	0x100
 	move              	5
 	wait              	1
-	playfram          	0x99
+	playfram          	0x120
 	move              	5
 	wait              	1
-	playfram          	0xaa
+	playfram          	0x140
 	move              	5
 	wait              	1
-	playfram          	0xbb
+	playfram          	0x160
 	move              	5
 	wait              	1
-	playfram          	0xcc
+	playfram          	0x180
 	move              	5
 	wait              	1
-	playfram          	0xdd
+	playfram          	0x1A0
 	move              	5
 	wait              	1
-	playfram          	0xee
+	playfram          	0x1C0
 	move              	5
 	wait              	1
-	playfram          	0xff
+	playfram          	0x1E0
 	goto              	AspirantWalking
 
 AspirantWarpIn:
@@ -15720,9 +15721,11 @@ CyprianDeath:
 CyprianGndAttkInit:
 	playfram          	0x120
 	wait              	1
+	sigorder			32
 	playfram          	0x140
 	wait              	1
 	playfram          	0x160
+	wait				6
 CyprianGndAttkRpt:
 	wait              	1
 	nobrkcodestart
