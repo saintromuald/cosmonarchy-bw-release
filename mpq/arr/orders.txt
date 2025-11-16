@@ -11,7 +11,7 @@ Attack (Obscured)
 Attack Unit (Normal)
 Attack In Range
 Rematerialize (Askosi)
-Salvage (Talos)
+Rapid Rendezvous (Askosi)
 Attack Move
 Building Is Being Infested
 Nothing 1 (Unused)
@@ -102,7 +102,7 @@ Watch Target
 Script (Starting Creep Growth)
 Script (Spread Creep&Spawn Larva)
 Script (Stopping Creep Growth)
-Guardian Aspect (Unused)
+Use Ability (Lobotomy Warhead)
 Move and Morph Archon
 Completing Archon Summon
 Hold Position (Normal)
@@ -113,14 +113,14 @@ Unload Unit (Transport)
 Move&Unload Unit (Transport)
 Use Ability (Yamato Gun)
 Use Ability  On Obscured (Yamato Gun)
-Use Ability  (Lockdown)
+Use Ability (Lobotomy Grenade)
 Burrow
 Idle (Burrowed)
 Unburrow
 Use Ability (Dark Swarm)
 Use Ability (Parasite)
 Use Ability (Spawn Broodling)
-Use Ability (EMP Shockwave)
+Use Ability (Lobotomy Warhead old)
 Unknown
 Idle (Nuclear Silo)
 Attack (Nuke)

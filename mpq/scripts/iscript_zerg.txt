@@ -16911,17 +16911,17 @@ KethrostalorSpecialState2:
 KethrostalorBurrow:
 	setfldirect			14
 	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
-	playfram			0x11
+	playfram			0x99
 	wait				1
-	playfram          	0x22
+	playfram          	0xaa
 	wait              	1
-	playfram          	0x33
+	playfram          	0xbb
 	wait              	1
-	playfram          	0x44
+	playfram          	0xcc
 	wait              	1
-	playfram          	0x55
+	playfram          	0xdd
 	wait              	1
-	playfram          	0x66
+	playfram          	0xee
 	wait              	1
 	playfram          	0x165
 	wait              	1
@@ -16933,17 +16933,17 @@ KethrostalorUnBurrow:
 	waitrand          	1 2
 	setfldirect			14
 	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
-	playfram          	0x66
+	playfram          	0xee
 	wait              	1
-	playfram          	0x55
+	playfram          	0xdd
 	wait              	1
-	playfram          	0x44
+	playfram          	0xcc
 	wait              	1
-	playfram          	0x33
+	playfram          	0xbb
 	wait              	1
-	playfram          	0x22
+	playfram          	0xaa
 	wait              	1
-	playfram			0x11
+	playfram			0x99
 	wait				1
 	sigorder          	4
 	goto              	KethrostalorGndAttkToIdle
@@ -17331,3 +17331,95 @@ IziraliskUnburrow:
 	sigorder          	4
 	setfldirect			14
 	goto              	IziraliskGndAttkToIdle
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2182 Azanthrokor (cm\faction-z\azanthrokor.grp)
+.headerstart
+IsId          	835
+Type          	12
+Init          	AzanthrokorInit
+Death         	AzanthrokorDeath
+GndAttkInit   	AzanthrokorGndAttkInit
+AirAttkInit   	AzanthrokorGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	AzanthrokorGndAttkInit
+AirAttkRpt    	AzanthrokorGndAttkInit
+CastSpell     	SkryrokorLocal00
+GndAttkToIdle 	AzanthrokorGndAttkToIdle
+AirAttkToIdle 	AzanthrokorGndAttkToIdle
+Unused2       	[NONE]
+Walking       	AzanthrokorWalking
+WalkingToIdle 	AzanthrokorGndAttkToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+AzanthrokorInit:
+	imgul             	2183 0 42 # Azanthrokor Shadow (cm\faction-z\azanthrokor.grp)
+	playfram          	0x00
+	wait				2
+AzanthrokorGndAttkToIdle:
+	playfram          	0x11
+	wait              	2
+	playfram          	0x22
+	wait              	2
+	playfram          	0x33
+	wait              	2
+	playfram          	0x44
+	wait              	2
+	playfram          	0x55
+	wait              	2
+	playfram          	0x00
+	wait              	2
+	goto              	AzanthrokorGndAttkToIdle
+
+AzanthrokorDeath:
+	playsnd           	878 # Zerg\Ultra\ZUlDth00.WAV
+	imgol             	28 0 0 # Geszithalor Death (zerg\zguDeath.grp)
+	wait              	1
+	lowsprul			186 0 42 # Zerg Building Rubble Small
+	wait              	1
+	end
+
+AzanthrokorGndAttkInit:
+	playfram			0x00
+	wait				1
+	nobrkcodestart
+	playfram			0x11
+	wait				1
+	playfram			0x22
+	playsndbtwn			1889 1890 # Azanthrokor attack 01, 02
+	imgoluselo			2056 0 0 # Green projection attack
+	attkshiftproj		24
+	wait              	1
+	playfram			0x11
+	attkshiftproj		54
+	wait              	1
+	playfram			0x22
+	attkshiftproj		80
+	wait				1
+	playfram			0x11
+	attkshiftproj		108
+	sigorder			32
+	wait              	1
+	playfram			0x00
+	wait              	1
+	nobrkcodeend
+	gotorepeatattk
+	goto              	AzanthrokorGndAttkToIdle
+
+AzanthrokorWalking:
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	playfram          	0x55
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	goto              	AzanthrokorWalking

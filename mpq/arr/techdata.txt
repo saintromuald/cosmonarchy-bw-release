@@ -7,7 +7,7 @@ Siege Mode (Phalanx)
 Defensive Matrix (Azazel)
 Irradiate (Seraph)
 Yamato Cannon (Magnetar)
-Select Assimilated (unused)
+Rapid Rendezvous (Askosi)
 Personnel Cloaking (unused)
 Burrowing (Zerg)
 Infestation (unused)
@@ -21,7 +21,7 @@ Psionic Storm (Cantavis)
 Hallucination (Cantavis)
 Recall (Didact)
 Stasis Field (Didact)
-Rematerialize
+Rematerialize (Askosi)
 Savant Onhit Toggle
 Disruption Field (Lanifect)
 Rescind Control (Mind Tyrant)
@@ -44,7 +44,7 @@ Through the Looking Glass (Hypnagogue)
 None
 None
 Through the Looking Glass (Hypnagogue)
-Adaptation (Kazitrith Colony)
+Lobotomy Warhead (Triton)
 Prying Eyes (Facade)
 Extended Tech #5
 Extended Tech #6

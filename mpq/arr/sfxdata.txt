@@ -3665,181 +3665,181 @@ Ultrokor Consume 03
 Askosi Scrap 01
 Askosi Scrap 02
 Askosi Scrap 03
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Askosi Advisor - Addon 01
+Askosi Advisor - Addon 02
+Askosi Advisor - Addon Abandoned 01
+Askosi Advisor - Addon Abandoned 02
+Askosi Advisor - Ally Attack A 01
+Askosi Advisor - Ally Attack A 02
+Askosi Advisor - Ally Attack A 03
+Askosi Advisor - Ally Attack B 01
+Askosi Advisor - Ally Attack B 02
+Askosi Advisor - Ally Attack B 03
+Askosi Advisor - Ally Attack K 01
+Askosi Advisor - Ally Attack K 02
+Askosi Advisor - Ally Attack K 03
+Askosi Advisor - Ally Attack P 01
+Askosi Advisor - Ally Attack P 02
+Askosi Advisor - Ally Attack P 03
+Askosi Advisor - Ally Attack T 01
+Askosi Advisor - Ally Attack T 02
+Askosi Advisor - Ally Attack T 03
+Askosi Advisor - Ally Attack Z 01
+Askosi Advisor - Ally Attack Z 02
+Askosi Advisor - Ally Attack Z 03
+Askosi Advisor - Arena 01
+Askosi Advisor - Arena 02
+Askosi Advisor - Army Attack 01
+Askosi Advisor - Army Attack 02
+Askosi Advisor - Army Attack 03
+Askosi Advisor - Army Attack 04
+Askosi Advisor - Assembly 01
+Askosi Advisor - Assembly 02
+Askosi Advisor - Base Attack 01
+Askosi Advisor - Base Attack 02
+Askosi Advisor - Base Attack 03
+Askosi Advisor - Base Attack 04
+Askosi Advisor - Build 01
+Askosi Advisor - Build 02
+Askosi Advisor - Build Zerg 01
+Askosi Advisor - Build Zerg 02
+Askosi Advisor - Energy 01
+Askosi Advisor - Energy 02
+Askosi Advisor - Energy 03
+Askosi Advisor - Energy 04
+Askosi Advisor - Landing Interrupted 01
+Askosi Advisor - Landing Interrupted 02
+Askosi Advisor - Minerals 01
+Askosi Advisor - Minerals 02
+Askosi Advisor - Minerals 03
+Askosi Advisor - Minerals 04
+Askosi Advisor - Missile Armed 01
+Askosi Advisor - Missile Armed 02
+Askosi Advisor - Missile Launch 01
+Askosi Advisor - Missile Launch 02
+Askosi Advisor - No Build 01
+Askosi Advisor - No Build 02
+Askosi Advisor - No Land 01
+Askosi Advisor - No Land 02
+Askosi Advisor - No Warp 01
+Askosi Advisor - No Warp 02
+Askosi Advisor - Ritual 01
+Askosi Advisor - Ritual 02
+Askosi Advisor - Tech 01
+Askosi Advisor - Tech 02
+Askosi Advisor - Vespene 01
+Askosi Advisor - Vespene 02
+Askosi Advisor - Vespene 03
+Askosi Advisor - Vespene 04
+Askosi Advisor - Warp 01
+Askosi Advisor - Warp 02
+Triton Ready 01
+Triton Ready 02
+Triton Ready 03
+Triton Selected 01
+Triton Selected 02
+Triton Selected 03
+Triton Selected 04
+Triton Order Passive 01
+Triton Order Passive 02
+Triton Order Passive 03
+Triton Order Passive 04
+Triton Order Aggressive 01
+Triton Order Aggressive 02
+Triton Order Aggressive 03
+Triton Order Aggressive 04
+Triton Under Attack 01
+Triton Under Attack 02
+Triton Under Attack 03
+Triton Under Attack 04
+Triton Ability Fire 01
+Triton Ability Fire 02
+Triton Ability Fire 03
+Triton Ability Hit 01
+Triton Weapon Fire 01
+Triton Weapon Fire 02
+Proselyte Ready 01
+Proselyte Ready 02
+Proselyte Ready 03
+Proselyte Selected 01
+Proselyte Selected 02
+Proselyte Selected 03
+Proselyte Selected 04
+Proselyte Order Passive 01
+Proselyte Order Passive 02
+Proselyte Order Passive 03
+Proselyte Order Passive 04
+Proselyte Order Aggressive 01
+Proselyte Order Aggressive 02
+Proselyte Order Aggressive 03
+Proselyte Order Aggressive 04
+Proselyte Under Attack 01
+Proselyte Under Attack 02
+Proselyte Under Attack 03
+Proselyte Under Attack 04
+Proselyte Banter 01
+Proselyte Banter 02
+Proselyte Banter 03
+Proselyte Banter 04
+Pazuzu Ready 01
+Pazuzu Ready 02
+Pazuzu Ready 03
+Pazuzu Order Aggressive 01
+Pazuzu Order Aggressive 02
+Pazuzu Order Aggressive 03
+Pazuzu Order Aggressive 04
+Cannibal Ready 01
+Cannibal Ready 02
+Cannibal Ready 03
+Cannibal Selected 01
+Cannibal Selected 02
+Cannibal Selected 03
+Cannibal Selected 04
+Cannibal Order Passive 01
+Cannibal Order Passive 02
+Cannibal Order Passive 03
+Cannibal Order Passive 04
+Cannibal Order Aggressive 01
+Cannibal Order Aggressive 02
+Cannibal Order Aggressive 03
+Cannibal Order Aggressive 04
+Cannibal Under Attack 01
+Cannibal Under Attack 02
+Cannibal Under Attack 03
+Cannibal Under Attack 04
+Pazuzu Under Attack 01
+Pazuzu Under Attack 02
+Pazuzu Under Attack 03
+Pazuzu Under Attack 04
+Pilgrim Ready 01
+Pilgrim Ready 02
+Pilgrim Ready 03
+Pilgrim Selected 01
+Pilgrim Selected 02
+Pilgrim Selected 03
+Pilgrim Selected 04
+Pilgrim Order Passive 01
+Pilgrim Order Passive 02
+Pilgrim Order Passive 03
+Pilgrim Order Passive 04
+Pilgrim Order Aggressive 01
+Pilgrim Order Aggressive 02
+Pilgrim Order Aggressive 03
+Pilgrim Order Aggressive 04
+Pilgrim Under Attack 01
+Pilgrim Under Attack 02
+Pilgrim Under Attack 03
+Pilgrim Under Attack 04
+Eidolon Weaponhit 01
+Eidolon Weaponhit 02
+Eidolon Weaponhit 03
+Sovrokor Weaponhit 01
+Sovrokor Weaponhit 02
+Sovrokor Weaponhit 03
+Valkyrie Hecaton Weaponfire 01
+Valkyrie Hecaton Weaponfire 02
+Valkyrie Hecaton Weaponfire 03
+Valkyrie Hecaton Weaponfire 04
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

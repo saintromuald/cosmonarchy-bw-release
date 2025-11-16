@@ -1015,7 +1015,7 @@ Arhaun Turret
 Morningstar Radiation Field
 Zozarc Gorge
 Autocort
-Ogun (Tank Mode)
+Ogun (Worker Mode)
 Ogun (Smithy Mode)
 Cannibal
 Agrileth
@@ -1045,29 +1045,29 @@ Rove
 Burst Lasers Green Impact
 Burst Lasers Cyan Impact
 Kethrostalor
-Extended Sprite #531
-Extended Sprite #532
-Extended Sprite #533
-Extended Sprite #534
-Extended Sprite #535
-Extended Sprite #536
-Extended Sprite #537
-Extended Sprite #538
-Extended Sprite #539
-Extended Sprite #540
-Extended Sprite #541
-Extended Sprite #542
-Extended Sprite #543
-Extended Sprite #544
-Extended Sprite #545
-Extended Sprite #546
-Extended Sprite #547
-Extended Sprite #548
-Extended Sprite #549
-Extended Sprite #550
-Extended Sprite #551
-Extended Sprite #552
-Extended Sprite #553
+Dyad
+Cipher
+Gauntlet
+Cosmoscope
+Helion
+Tirade
+Scepter
+Azanthrokor
+Bounty
+Proselyte
+Triton
+Triton Turret
+Mineral Field (Rich) 01
+Mineral Field (Rich) 02
+Mineral Field (Rich) 03
+Mineral Chunk (Rich) 01
+Mineral Chunk (Rich) 02
+Proselyte Remains
+Askosi Structure Rubble (Tiny)
+Sovrokor
+Valkyrie (Hecaton)
+Garvrokor
+Simulacrum (Astral)
 Extended Sprite #554
 Extended Sprite #555
 Extended Sprite #556

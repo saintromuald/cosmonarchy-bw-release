@@ -1027,7 +1027,7 @@ Centaur
 Centaur Shadow
 Cuirass
 Cuirass Shadow
-Centaur Engine
+Centaur Engines
 Centaur Missile
 Parasite Overlay
 Azazel Engines
@@ -1077,7 +1077,7 @@ Ancile
 Ancile Shadow
 Ancile Engines
 Prying Eyes Channel
-unused
+Talos Engines
 unused
 unused
 unused
@@ -2057,8 +2057,8 @@ Zozarc Gorge Shadow
 Cikralisk Attack Overlay
 Autocort
 Autocort Shadow
-Ogun (Tank Mode)
-Ogun Shadow (Tank Mode)
+Ogun (Worker Mode)
+Ogun Shadow (Worker Mode)
 Ogun (Smithy Mode)
 Ogun Shadow (Smithy Mode)
 Cannibal
@@ -2166,45 +2166,45 @@ Extatus Warp Flash
 Cicatus Warp Flash
 Zealot Warp Flash (Starbound)
 Manifold Warp Flash (Starbound)
-Extended Image #1166
-Extended Image #1167
-Extended Image #1168
-Extended Image #1169
-Extended Image #1170
-Extended Image #1171
-Extended Image #1172
-Extended Image #1173
-Extended Image #1174
-Extended Image #1175
-Extended Image #1176
-Extended Image #1177
-Extended Image #1178
-Extended Image #1179
-Extended Image #1180
-Extended Image #1181
-Extended Image #1182
-Extended Image #1183
-Extended Image #1184
-Extended Image #1185
-Extended Image #1186
-Extended Image #1187
-Extended Image #1188
-Extended Image #1189
-Extended Image #1190
-Extended Image #1191
-Extended Image #1192
-Extended Image #1193
-Extended Image #1194
-Extended Image #1195
-Extended Image #1196
-Extended Image #1197
-Extended Image #1198
-Extended Image #1199
-Extended Image #1200
-Extended Image #1201
-Extended Image #1202
-Extended Image #1203
-Extended Image #1204
+Dyad
+Dyad Shadow
+Cipher
+Cipher Shadow
+Gauntlet
+Gauntlet Shadow
+Cosmoscope
+Cosmoscope Shadow
+Helion
+Helion Shadow
+Tirade
+Tirade Shadow
+Scepter
+Scepter Shadow
+Azanthrokor
+Azanthrokor Shadow
+Bounty
+Bounty Shadow
+Azanthrokor Birth
+Azanthrokor Mutate
+Kethrostalor Birth
+Proselyte
+Proselyte Shadow
+Triton
+Triton Shadow
+Triton Turret
+Helion Engines
+Mineral Field (Rich) 01
+Mineral Field (Rich) 02
+Mineral Field (Rich) 03
+Mineral Chunk (Rich) 01
+Mineral Chunk (Rich) 02
+Proselyte Remains
+Askosi Structure Rubble (Tiny)
+Sovrokor
+Valkyrie (Hecaton)
+Garvrokor
+Simulacrum (Astral)
+Simulacrum (Astral) Shadow
 Extended Image #1205
 Extended Image #1206
 Extended Image #1207

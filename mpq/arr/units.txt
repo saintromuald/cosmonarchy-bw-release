@@ -488,7 +488,7 @@ Terran Beacon
 Protoss Beacon
 Zerg Beacon
 Terran Blackguard
-Terran Arhaun (Base)
+Terran Arhaun
 Arhaun Turret
 Terran Addon Submenu
 Zerg Zozarc Gorge
@@ -510,26 +510,26 @@ Terran Madrigal (Hecaton, Furia)
 Madrigal Turret (Hecaton, Furia)
 Askosi Bounty
 Zerg Azanthrokor (Orkoti)
-Extended Unit #285
-Extended Unit #286
-Extended Unit #287
-Extended Unit #288
-Extended Unit #289
-Extended Unit #290
-Extended Unit #291
-Extended Unit #292
-Extended Unit #293
-Extended Unit #294
-Extended Unit #295
-Extended Unit #296
-Extended Unit #297
-Extended Unit #298
-Extended Unit #299
-Extended Unit #300
-Extended Unit #301
-Extended Unit #302
-Extended Unit #303
-Extended Unit #304
+Terran Triton
+Triton Turret
+Mineral Field (Rich) 01
+Mineral Field (Rich) 02
+Mineral Field (Rich) 03
+Mineral Chunk (Rich) 01
+Mineral Chunk (Rich) 02
+Zerg Sovrokor (Goszirith)
+Terran Valkyrie (Hecaton)
+Zerg Garvrokor (Goszirith)
+Protoss Simulacrum (Astral)
+Protoss Warlock (Astral)
+Scenario Unit 1
+Scenario Unit 2
+Scenario Unit 3
+Scenario Unit 4
+Scenario Unit 5
+Scenario Unit 6
+Scenario Unit 7
+Scenario Unit 8
 Extended Unit #305
 Extended Unit #306
 Extended Unit #307

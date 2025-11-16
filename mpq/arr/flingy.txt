@@ -573,7 +573,7 @@ Arhaun Turret
 Morningstar Radiation Field
 Zozarc Gorge
 Autocort
-Ogun (Tank Mode)
+Ogun (Worker Mode)
 Ogun (Smithy Mode)
 Cannibal
 Agrileth
@@ -596,29 +596,29 @@ Rove
 Burst Lasers Green Impact
 Burst Lasers Cyan Impact
 Kethrostalor
-Extended Flingy #390
-Extended Flingy #391
+Dyad
+Cipher
 Francisco Goska
 Stroluum
-Extended Flingy #394
-Extended Flingy #395
-Extended Flingy #396
-Extended Flingy #397
-Extended Flingy #398
-Extended Flingy #399
-Extended Flingy #400
-Extended Flingy #401
-Extended Flingy #402
-Extended Flingy #403
-Extended Flingy #404
-Extended Flingy #405
-Extended Flingy #406
-Extended Flingy #407
-Extended Flingy #408
-Extended Flingy #409
-Extended Flingy #410
-Extended Flingy #411
-Extended Flingy #412
+Gauntlet
+Cosmoscope
+Helion
+Tirade
+Scepter
+Azanthrokor
+Bounty
+Proselyte
+Triton
+Triton Turret
+Mineral Field (Rich) 01
+Mineral Field (Rich) 02
+Mineral Field (Rich) 03
+Mineral Chunk (Rich) 01
+Mineral Chunk (Rich) 02
+Sovrokor
+Valkyrie (Hecaton)
+Garvrokor
+Simulacrum (Astral)
 Extended Flingy #413
 Extended Flingy #414
 Extended Flingy #415

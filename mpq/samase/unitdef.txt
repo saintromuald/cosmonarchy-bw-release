@@ -56,6 +56,10 @@ military maverick_futurist = 435
 military blackguard = 489
 military arhaun = 490
 military cannibal = 496
+military madrigal_hecaton = 504
+military vulture_hecaton = 506
+military madrigal_hecaton_furia = 508
+military valkyrie_hecaton = 520
 
 # Protoss factional units
 military adherent = 400
@@ -67,6 +71,7 @@ military renesair = 423
 military ashguard = 424
 military dracadin_order = 430
 military manifold_starbound = 437
+military simulacrum_astral = 522
 
 # Zerg factional units
 military nathrelisk = 402
@@ -76,6 +81,8 @@ military quazrokor = 422
 military lakizilisk_zorthos = 425
 military hydralisk_orkoti = 436
 building yblyleth = 438
+military azanthrokor = 511
+military sovrokor = 519
 
 # Terran military units
 military maverick = 0
@@ -149,6 +156,8 @@ military thespian = 297
 military silvertongue = 298
 military emperor = 300
 military jester = 301
+military madrigal_furia = 381
+military triton = 512
 
 # Terran buildings
 building mason = 7

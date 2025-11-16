@@ -10459,7 +10459,7 @@ WarpIn        	AnthelionWarpIn
 AnthelionInit:
 	imgul             	1419 0 42 # Anthelion Shadow (cm\protoss\anthelion.grp)
 AnthelionGndAttkToIdle:
-	playfram          	0x00	# Frame set 0
+	playfram          	0x00
 	setvertpos			0
 	goto              	AnthelionWalkingToIdle
 
@@ -10501,6 +10501,54 @@ AnthelionWalkingToIdle:
 	playfram			18
 	wait				2
 	playfram			19
+	wait				2
+	playfram			20
+	wait				2
+	playfram			21
+	wait				2
+	playfram			22
+	wait				2
+	playfram			23
+	wait				2
+	playfram			24
+	wait				2
+	playfram			25
+	wait				2
+	playfram			26
+	wait				2
+	playfram			27
+	wait				2
+	playfram			28
+	wait				2
+	playfram			29
+	wait				2
+	playfram			30
+	wait				2
+	playfram			31
+	wait				2
+	playfram			32
+	wait				2
+	playfram			33
+	wait				2
+	playfram			34
+	wait				2
+	playfram			35
+	wait				2
+	playfram			36
+	wait				2
+	playfram			37
+	wait				2
+	playfram			38
+	wait				2
+	playfram			39
+	wait				2
+	playfram			40
+	wait				2
+	playfram			41
+	wait				2
+	playfram			42
+	wait				2
+	playfram			43
 	wait				2
 	playfram			0x00
 	wait				2
@@ -10575,6 +10623,54 @@ AnthelionWalking:
 	playfram			18
 	wait				1
 	playfram			19
+	wait				1
+	playfram			20
+	wait				1
+	playfram			21
+	wait				1
+	playfram			22
+	wait				1
+	playfram			23
+	wait				1
+	playfram			24
+	wait				1
+	playfram			25
+	wait				1
+	playfram			26
+	wait				1
+	playfram			27
+	wait				1
+	playfram			28
+	wait				1
+	playfram			29
+	wait				1
+	playfram			30
+	wait				1
+	playfram			31
+	wait				1
+	playfram			32
+	wait				1
+	playfram			33
+	wait				1
+	playfram			34
+	wait				1
+	playfram			35
+	wait				1
+	playfram			36
+	wait				1
+	playfram			37
+	wait				1
+	playfram			38
+	wait				1
+	playfram			39
+	wait				1
+	playfram			40
+	wait				1
+	playfram			41
+	wait				1
+	playfram			42
+	wait				1
+	playfram			43
 	wait				1
 	playfram			0x00
 	wait				1
@@ -12799,7 +12895,7 @@ WarpIn        	PositronWarpIn
 # ----------------------------------------------------------------------------- #
 
 PositronInit:
-	imgul             	1661 0 10 # Positron shadow (cm\protoss\positron.grp)
+	imgul             	1663 0 0 # Positron shadow (cm\protoss\positron.grp)
 	goto              	InfestedTerranWalkingToIdle
 
 PositronWalkingToIdle:
@@ -12833,7 +12929,7 @@ PositronUnused1:
 	goto				PositronWalkingToIdle
 
 PositronGndAttkInit:
-	playfram			0x11
+	playfram			0x20
 	playsndbtwn			2172 2173 # Positron weaponfire 01, 02
 	attackwith        	1
 	wait				2
