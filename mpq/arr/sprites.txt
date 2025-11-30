@@ -318,7 +318,7 @@ Energy Pulse Underlay
 Double Explosion
 Cursor Marker
 Egg Spawn
-High Templar Glow
+Cantavis Glow
 Psi Field (Right Upper)
 Burrowing Dust
 Building Landing Dust Type1
@@ -1068,11 +1068,11 @@ Sovrokor
 Valkyrie (Hecaton)
 Garvrokor
 Simulacrum (Astral)
-Extended Sprite #554
-Extended Sprite #555
-Extended Sprite #556
-Extended Sprite #557
-Extended Sprite #558
+Herald Glow
+Maverick Remains (Futurist)
+Grandstand (Cannon)
+Grandstand (Holdout)
+Grandstand (Vision)
 Extended Sprite #559
 Extended Sprite #560
 Extended Sprite #561

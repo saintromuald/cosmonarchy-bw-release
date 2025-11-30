@@ -456,7 +456,7 @@ Askosi Emissary
 Askosi Inkblot
 Askosi Tirade
 Askosi Arch
-Askosi Grandstand
+Askosi Grandstand (Cannon)
 Askosi Chantry
 Askosi Radix
 Askosi Cipher
@@ -530,8 +530,8 @@ Scenario Unit 5
 Scenario Unit 6
 Scenario Unit 7
 Scenario Unit 8
-Extended Unit #305
-Extended Unit #306
+Askosi Grandstand (Holdout)
+Askosi Grandstand (Vision)
 Extended Unit #307
 Extended Unit #308
 Extended Unit #309

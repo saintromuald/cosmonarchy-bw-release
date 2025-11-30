@@ -3840,84 +3840,84 @@ Valkyrie Hecaton Weaponfire 01
 Valkyrie Hecaton Weaponfire 02
 Valkyrie Hecaton Weaponfire 03
 Valkyrie Hecaton Weaponfire 04
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Herald Ready 01
+Herald Ready 02
+Herald Ready 03
+Herald Selected 01
+Herald Selected 02
+Herald Selected 03
+Herald Selected 04
+Herald Order Passive 01
+Herald Order Passive 02
+Herald Order Passive 03
+Herald Order Passive 04
+Herald Order Aggressive 01
+Herald Order Aggressive 02
+Herald Order Aggressive 03
+Herald Order Aggressive 04
+Herald Under Attack 01
+Herald Under Attack 02
+Herald Under Attack 03
+Herald Under Attack 04
+Optecton Winddown 01
+Optecton Winddown 02
+Optecton Winddown 03
+Autocrat Windup 01
+Autocrat Windup 02
+Autocrat Windup 03
+Dilettante Ready 01
+Dilettante Ready 02
+Dilettante Ready 03
+Dilettante Selected 01
+Dilettante Selected 02
+Dilettante Selected 03
+Dilettante Selected 04
+Dilettante Order Passive 01
+Dilettante Order Passive 02
+Dilettante Order Passive 03
+Dilettante Order Passive 04
+Dilettante Order Aggressive 01
+Dilettante Order Aggressive 02
+Dilettante Order Aggressive 03
+Dilettante Order Aggressive 04
+Dilettante Under Attack 01
+Dilettante Under Attack 02
+Dilettante Under Attack 03
+Dilettante Under Attack 04
+Missionary Ready 01
+Missionary Ready 02
+Missionary Ready 03
+Missionary Selected 01
+Missionary Selected 02
+Missionary Selected 03
+Missionary Selected 04
+Missionary Order Passive 01
+Missionary Order Passive 02
+Missionary Order Passive 03
+Missionary Order Passive 04
+Missionary Order Aggressive 01
+Missionary Order Aggressive 02
+Missionary Order Aggressive 03
+Missionary Order Aggressive 04
+Missionary Under Attack 01
+Missionary Under Attack 02
+Missionary Under Attack 03
+Missionary Under Attack 04
+Amaranth Ready 01
+Amaranth Ready 02
+Amaranth Ready 03
+Amaranth Order Aggressive 01
+Amaranth Order Aggressive 02
+Amaranth Order Aggressive 03
+Amaranth Order Aggressive 04
+Amaranth Under Attack 01
+Amaranth Under Attack 02
+Amaranth Under Attack 03
+Amaranth Under Attack 04
+Amaranth Banter 01
+Amaranth Banter 02
+Amaranth Banter 03
+Amaranth Banter 04
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

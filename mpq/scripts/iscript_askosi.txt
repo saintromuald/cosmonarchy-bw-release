@@ -218,7 +218,7 @@ WarpIn        	[NONE]
 # ----------------------------------------------------------------------------- #
 
 PilgrimInit:
-	imgul             	2042 0 0 # Legionnaire Shadow (cm\protoss\legionnaire-shad.grp)
+	imgul             	2042 0 0 # Pilgrim Shadow (cm\askosi\pilgrim-shadow.grp)
 	goto				PilgrimWalkingToIdle
 
 PilgrimDeath:
@@ -459,7 +459,7 @@ RadixDisable:
 IsId          	4
 Type          	24
 Init          	ChantryInit
-Death         	LandlockDeath
+Death         	ChantryDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -491,6 +491,14 @@ ChantryInit:
 	playfram          	0x00
 	imgul             	2072 0 0 # Chantry Shadow (cm\askosi\chantry-shadow.grp)
 	goto              	ChantryIsWorking
+	
+ChantryDeath:
+	playsnd           	7 # Misc\ExploLrg.wav
+	imgol             	215 0 0 # Explosion (Large) (thingy\tBangX.grp)
+	wait              	3
+	lowsprul          	1007 0 0 # Askosi Structure Rubble (Small) (cm\askosi\a-rubble-small.grp)
+	wait              	1
+	end
 
 ChantrySpecialState1:
 	playfram          	0
@@ -1830,3 +1838,60 @@ GenericRemnantsFiveDeath:
 	wait              	255
 	wait				24
 	end
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2210 Grandstand (Cannon) (cm\askosi\grandstand.grp)
+.headerstart
+IsId          	21
+Type          	27
+Init          	GrandstandInit
+Death         	ChantryDeath
+GndAttkInit   	GrandstandGndAttkInit
+AirAttkInit   	GrandstandGndAttkInit
+Unused1       	[NONE]
+GndAttkRpt    	GrandstandGndAttkInit
+AirAttkRpt    	GrandstandGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	GrandstandBuilt
+AirAttkToIdle 	GrandstandBuilt
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	SkryrokorLocal00
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	GrandstandBuilt
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	GrandstandBuilt
+WorkingToIdle 	GrandstandBuilt
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	SkryrokorLocal00
+Burrow        	[NONE]
+UnBurrow      	[NONE]
+Enable        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+GrandstandInit:
+	imgul             	2211 0 0 # Grandstand (Cannon) Shadow (cm\askosi\grandstand-shadow.grp)
+	goto              	GrandstandBuilt
+
+GrandstandBuilt:
+	playfram			0x00
+	wait				255
+	goto              	GrandstandBuilt
+
+GrandstandGndAttkInit:
+	playfram          	0
+	wait              	1
+	attack
+	playsndbtwn			1157 1159 # Grandstand weaponfire 01, 02, 03
+	imgol				1163 0 -52 # Grandstand muzzle flash
+	wait				2
+	gotorepeatattk
+	ignorerest
+	goto				GrandstandBuilt

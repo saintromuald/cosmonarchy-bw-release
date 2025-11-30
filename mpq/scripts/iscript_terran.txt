@@ -816,18 +816,22 @@ Goliath_Turret_GndAttkInit:
 	sigorder			32
 	wait				4
 Goliath_Turret_GndAttkRpt:
-	wait				1
-	nobrkcodestart
-	playfram          	0xdd
-	playsnd           	70 # Bullet\TGoFir00.wav
-	attackwith        	1
-	wait              	1
-	playfram          	0x00
-	wait              	1
-	nobrkcodeend
-	gotorepeatattk
-	ignorerest
-	goto              	Goliath_Turret_Init
+    wait                1
+    nobrkcodestart
+    playfram            0xdd
+    playsnd             70 # Bullet\TGoFir00.wav
+    attackwith          1
+    wait                1
+    playfram            0xff
+    wait                1
+    nobrkcodeend
+    gotorepeatattk
+    playfram            0xee
+    wait                1
+    playfram            0x00
+    wait                1
+    ignorerest
+    goto                Goliath_Turret_Init
 
 Goliath_Turret_AirAttkInit:
 	wait              	1
@@ -1056,7 +1060,7 @@ SarahKerriganSpecialState1:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 239 Maverick (terran\marine.grp)
+# 239 Maverick (terran\maverick.grp)
 .headerstart
 IsId          	78
 Type          	12
@@ -1078,9 +1082,9 @@ SpecialState1 	[NONE]
 # ----------------------------------------------------------------------------- #
 
 MaverickInit:
-	imgul             	240 0 0 # Maverick Shadow (cm\terran\Maverick-shadow.grp)
+	imgul             	240 0 0 # Maverick Shadow (cm\terran\maverick-shadow.grp)
 MaverickWalkingToIdle:
-	playfram          	0x44
+	playfram          	0x80
 MaverickLocal00:
 	wait				63
 	randcondjmp       	25 MaverickLocal01
@@ -1090,9 +1094,9 @@ MaverickLocal00:
 MaverickLocal01:
 	playfram          	0x00
 	wait              	1
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 	randcondjmp       	192 MaverickLocal03
 	turnccwise        	2
 	wait              	3
@@ -1125,7 +1129,7 @@ MaverickLocal01:
 	goto              	MaverickLocal04
 
 MaverickLocal04:
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
 	playfram          	0x00
 	wait              	1
@@ -1133,43 +1137,43 @@ MaverickLocal04:
 
 MaverickLocal03:
 	wait              	13
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
 	playfram          	0x00
 	wait              	1
 	goto              	MaverickWalkingToIdle
 
 MaverickLocal02:
-	playfram          	0x55
+	playfram          	0xA0
 	wait              	1
-	playfram          	0x66
+	playfram          	0xC0
 	wait              	1
 	turnrand          	3
 	wait              	1
-	playfram          	0x55
+	playfram          	0xA0
 	wait              	1
 	goto              	MaverickWalkingToIdle
 
 MaverickDeath:
 	playsndbtwn       	276 277 # Terran\MARINE\TMaDth00.WAV | Terran\MARINE\TMaDth01.WAV
 	setfldirect       	0
-	playfram          	221
+	playfram          	416
 	wait              	2
-	playfram          	222
+	playfram          	417
 	wait              	2
-	playfram          	223
+	playfram          	418
 	wait              	2
-	playfram          	224
+	playfram          	419
 	wait              	2
-	playfram          	225
+	playfram          	420
 	wait              	2
-	playfram          	226
+	playfram          	421
 	wait              	2
-	playfram          	227
+	playfram          	422
 	wait              	2
-	playfram          	228
+	playfram          	423
 	wait              	2
-	lowsprul          	236 0 0 # Maverick Remnants (terran\tmaDeath.grp)
+	lowsprul          	236 0 0 # Maverick Remnants (terran\maverick-death.grp)
 	wait              	1
 	end
 	
@@ -1178,19 +1182,19 @@ MaverickUnused1:
 	nobrkcodestart
 	setfldirect       	0
 	playsndbtwn			1161 1162
-	playfram			227
+	playfram			422
 	wait				2
-	playfram			226
+	playfram			421
 	wait				2
-	playfram			225
+	playfram			420
 	wait				2
-	playfram			224
+	playfram			419
 	wait				2
-	playfram			223
+	playfram			418
 	wait				2
-	playfram			222
+	playfram			417
 	wait				2
-	playfram			221
+	playfram			416
 	wait              	2
 	setfldirect       	12
 	nobrkcodeend
@@ -1199,30 +1203,30 @@ MaverickUnused1:
 MaverickGndAttkInit:
 	playfram          	0x00
 	wait              	1
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 MaverickGndAttkRpt:
 	wait              	1
 	nobrkcodestart
 	attackwith        	1
-	playfram          	0x33
+	playfram          	0x60
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 	wait              	1
-	playfram          	0x33
+	playfram          	0x60
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 	wait              	1
-	playfram          	0x33
+	playfram          	0x60
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 	wait              	1
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
 MaverickGndAttkToIdle:
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
 	playfram          	0x00
 	wait              	1
@@ -1231,31 +1235,31 @@ MaverickGndAttkToIdle:
 MaverickWalking:
 	move              	4
 	wait              	1
-	playfram          	0x55
+	playfram          	0xA0
 	move              	4
 	wait              	1
-	playfram          	0x66
+	playfram          	0xC0
 	move              	4
 	wait              	1
-	playfram          	0x77
+	playfram          	0xE0
 	move              	4
 	wait              	1
-	playfram          	0x88
+	playfram          	0x100
 	move              	4
 	wait              	1
-	playfram          	0x99
+	playfram          	0x120
 	move              	4
 	wait              	1
-	playfram          	0xaa
+	playfram          	0x140
 	move              	4
 	wait              	1
-	playfram          	0xbb
+	playfram          	0x160
 	move              	4
 	wait              	1
-	playfram          	0xcc
+	playfram          	0x180
 	move              	4
 	wait              	1
-	playfram          	0x44
+	playfram          	0x80
 	goto              	MaverickWalking
 
 # ----------------------------------------------------------------------------- #
@@ -1499,11 +1503,11 @@ MasonUnused1:
 MasonGndAttkInit:
 	setvertpos        	0
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 	attackwith        	1
 	playsndbtwn       	35 39 # terran\SCV\EDrRep00.wav | terran\SCV\EDrRep04.wav
 	wait              	1
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
 	gotorepeatattk
 	goto              	SkryrokorLocal00
@@ -1527,11 +1531,11 @@ MasonAlmostBuilt:
 	setvertpos        	0
 	wait              	1
 MasonLocal00:
-	playfram          	0x22
+	playfram          	0x40
 	useweapon         	14 # Fusion Cutter (Harvest) (Fusion Cutter)
 	sigorder			32
 	wait              	1
-	playfram          	0x11
+	playfram          	0x20
 	wait 				12
 	goto              	MasonLocal00
 	
@@ -9953,15 +9957,24 @@ TalosGndAttkRpt:
 	goto              	TalosGndAttkToIdle
 
 TalosWalking:
-	setvertpos        	0
-	playfram			0x20
-	wait				1
-	playfram			0x40
-	wait				1
-	playfram			0x60
-	wait				1
-	imgol             	1079 0 0 # Talos Engines (cm\terran\talos-engine.grp)
-	goto              	SkryrokorLocal00
+    setvertpos          0
+    playfram            0x20
+    wait                2
+    playfram            0x40
+    wait                2
+    playfram            0x60
+    wait                2
+    imgol               1079 0 0 # Talos Engines (cm\terran\talos-engine.grp)
+    goto                SkryrokorLocal00
+    
+TalosWalkingToIdle:
+    playfram            0x60
+    wait                2
+    playfram            0x40
+    wait                1
+    playfram            0x20
+    wait                1
+    goto 				TalosGndAttkToIdle
 
 TalosAlmostBuilt:
 	setvertpos        	0
@@ -13129,10 +13142,19 @@ AutocratDeath:
 
 AutocratGndAttkInit:
 	playfram          	0xaa
+	wait              	1
+	sigorder			32
+	wait				22
 AutocratGndAttkRpt:
 	wait              	2
 	nobrkcodestart
-	playsndbtwn			1474 1478
+	playsndbtwn			1474 1478 # Autocrat weaponfire 01
+	attack
+	playfram          	0x99
+	wait              	1
+	playfram          	0xaa
+	wait				3
+	playsndbtwn			1474 1478 # Autocrat weaponfire 01
 	attack
 	playfram          	0x99
 	wait              	1
@@ -20119,3 +20141,277 @@ Triton_Turret_Walking:
 	wait              	1
 	playfram          	0x88
 	goto              	Triton_Turret_Walking
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2013 Maverick (Futurist) (cm\faction-t\\maverick-futurist.grp)
+.headerstart
+IsId          	838
+Type          	12
+Init          	MaverickFuturistInit
+Death         	MaverickFuturistDeath
+GndAttkInit   	MaverickFuturistGndAttkInit
+AirAttkInit   	MaverickFuturistGndAttkInit
+Unused1       	MaverickFuturistUnused1
+GndAttkRpt    	MaverickFuturistGndAttkRpt
+AirAttkRpt    	MaverickFuturistGndAttkRpt
+CastSpell     	[NONE]
+GndAttkToIdle 	MaverickFuturistGndAttkToIdle
+AirAttkToIdle 	MaverickFuturistGndAttkToIdle
+Unused2       	[NONE]
+Walking       	MaverickFuturistWalking
+WalkingToIdle 	MaverickFuturistWalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+MaverickFuturistInit:
+	imgul             	2014 0 0 # Maverick Futurist Shadow (cm\faction-t\maverick-futurist-shadow.grp)
+MaverickFuturistWalkingToIdle:
+	playfram          	0x80
+MaverickFuturistLocal00:
+	wait				63
+	randcondjmp       	25 MaverickFuturistLocal01
+	randcondjmp       	128 MaverickFuturistLocal02
+	goto              	MaverickFuturistLocal00
+
+MaverickFuturistLocal01:
+	playfram          	0x00
+	wait              	1
+	playfram          	0x20
+	wait              	1
+	playfram          	0x40
+	randcondjmp       	192 MaverickFuturistLocal03
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	wait              	6
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	wait              	6
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	goto              	MaverickFuturistLocal04
+
+MaverickFuturistLocal04:
+	playfram          	0x20
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	goto              	MaverickFuturistWalkingToIdle
+
+MaverickFuturistLocal03:
+	wait              	13
+	playfram          	0x20
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	goto              	MaverickFuturistWalkingToIdle
+
+MaverickFuturistLocal02:
+	playfram          	0xA0
+	wait              	1
+	playfram          	0xC0
+	wait              	1
+	turnrand          	3
+	wait              	1
+	playfram          	0xA0
+	wait              	1
+	goto              	MaverickFuturistWalkingToIdle
+
+MaverickFuturistDeath:
+	playsndbtwn       	276 277 # Terran\MARINE\TMaDth00.WAV | Terran\MARINE\TMaDth01.WAV
+	setfldirect       	0
+	playfram          	416
+	wait              	2
+	playfram          	417
+	wait              	2
+	playfram          	418
+	wait              	2
+	playfram          	419
+	wait              	2
+	playfram          	420
+	wait              	2
+	playfram          	421
+	wait              	2
+	playfram          	422
+	wait              	2
+	playfram          	423
+	wait              	2
+	lowsprul          	1071 0 0 # Maverick Futurist Remnants (cm\faction-t\maverick-futurist-death.grp)
+	wait              	1
+	end
+	
+MaverickFuturistUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect       	0
+	playsndbtwn			1161 1162 # Maverick revive 01, 02
+	playfram			422
+	wait				2
+	playfram			421
+	wait				2
+	playfram			420
+	wait				2
+	playfram			419
+	wait				2
+	playfram			418
+	wait				2
+	playfram			417
+	wait				2
+	playfram			416
+	wait              	2
+	setfldirect       	12
+	nobrkcodeend
+	goto				MaverickFuturistWalkingToIdle
+
+MaverickFuturistGndAttkInit:
+	playfram          	0x00
+	wait              	1
+	playfram          	0x20
+	wait              	1
+	playfram          	0x40
+MaverickFuturistGndAttkRpt:
+	wait              	1
+	nobrkcodestart
+	attackwith        	1
+	playfram          	0x60
+	wait              	1
+	playfram          	0x40
+	wait              	3
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+MaverickFuturistGndAttkToIdle:
+	playfram          	0x20
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	goto              	MaverickFuturistWalkingToIdle
+
+MaverickFuturistWalking:
+	move              	4
+	wait              	1
+	playfram          	0xA0
+	move              	4
+	wait              	1
+	playfram          	0xC0
+	move              	4
+	wait              	1
+	playfram          	0xE0
+	move              	4
+	wait              	1
+	playfram          	0x100
+	move              	4
+	wait              	1
+	playfram          	0x120
+	move              	4
+	wait              	1
+	playfram          	0x140
+	move              	4
+	wait              	1
+	playfram          	0x160
+	move              	4
+	wait              	1
+	playfram          	0x180
+	move              	4
+	wait              	1
+	playfram          	0x80
+	goto              	MaverickFuturistWalking
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2098 Vulture (Hecaton) (cm\faction-t\vulture-hecaton.grp)
+.headerstart
+IsId          	839
+Type          	13
+Init          	VultureHecatonInit
+Death         	VultureHecatonDeath
+GndAttkInit   	VultureHecatonGndAttkInit
+AirAttkInit   	[NONE]
+Unused1       	VultureHecatonUnused1
+GndAttkRpt    	VultureHecatonGndAttkInit
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	VultureHecatonGndAttkToIdle
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	VultureHecatonWalking
+WalkingToIdle 	VultureHecatonGndAttkToIdle
+SpecialState1 	VultureHecatonSpecialState1
+.headerend
+# ----------------------------------------------------------------------------- #
+
+VultureHecatonInit:
+	imgul             	2099 0 7 # Vulture (Hecaton) Shadow (cm\faction-t\vulture-hecaton.grp)
+	playfram          	0x00
+	goto              	VultureHecatonGndAttkToIdle
+
+VultureHecatonGndAttkToIdle:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	VultureHecatonGndAttkToIdle
+
+VultureHecatonDeath:
+	playsnd           	353 # Terran\VULTURE\TVuDth00.WAV
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			813 0 0 # Vulture Remains
+	end
+	
+VultureHecatonUnused1:
+	wait				1
+	nobrkcodestart
+	tmprmgraphicstart
+	playsnd           	1699 # Vulture revive 01
+	sprol				742 0 0
+	wait				10
+	setfldirect			12
+	tmprmgraphicend
+	nobrkcodeend
+	goto				VultureHecatonGndAttkToIdle
+
+VultureHecatonGndAttkInit:
+	wait              	1
+	attackwith        	1
+	attackwith        	1
+	playsnd           	106 # Bullet\tvuFir00.wav
+	gotorepeatattk
+	goto              	VultureHecatonGndAttkToIdle
+
+VultureHecatonWalking:
+	playfram          	0x00
+	setvertpos        	0
+	imgol             	2209 0 0 # Vulture (Hecaton) Engines
+	goto				SkryrokorLocal00
+
+VultureHecatonSpecialState1:
+	attackwith        	1
+	sigorder          	1
+	wait              	1
+	end

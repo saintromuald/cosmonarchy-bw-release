@@ -3630,9 +3630,33 @@ EnergyRegenOverlayDeath:
 # 1676 Santa Hat - Extra Large - 17
 .headerstart
 IsId          	722
-Type          	1
+Type          	24
 Init          	SantaHatInit
 Death         	SantaHatDeath
+GndAttkInit   	SantaHatLocal00
+AirAttkInit   	SantaHatLocal00
+Unused1       	SantaHatLocal00
+GndAttkRpt    	SantaHatLocal00
+AirAttkRpt    	SantaHatLocal00
+CastSpell     	SantaHatLocal00
+GndAttkToIdle 	SantaHatLocal00
+AirAttkToIdle 	SantaHatLocal00
+Unused2       	SantaHatLocal00
+Walking       	SantaHatLocal00
+WalkingToIdle 	SantaHatLocal00
+SpecialState1 	SantaHatLocal00
+SpecialState2 	SantaHatLocal00
+AlmostBuilt   	SantaHatLocal00
+Built         	SantaHatLocal00
+Landing       	SantaHatLocal00
+LiftOff       	SantaHatLocal00
+IsWorking     	SantaHatLocal00
+WorkingToIdle 	SantaHatLocal00
+WarpIn        	SantaHatLocal00
+Unused3       	SantaHatLocal00
+StarEditInit  	SantaHatLocal00
+Disable       	SantaHatLocal00
+Burrow        	SantaHatLocal00
 .headerend
 # ----------------------------------------------------------------------------- #
 

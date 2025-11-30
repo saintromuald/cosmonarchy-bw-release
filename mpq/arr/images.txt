@@ -447,7 +447,7 @@ Cursor Marker
 Battlecruiser Attack Overlay
 Burst Lasers Hit
 Burst Lasers Overlay (Unused)
-High Templar Glow
+Cantavis Glow
 Flames1 Type1 (Small)
 Flames1 Type2 (Small)
 Flames1 Type3 (Small)
@@ -2205,15 +2205,15 @@ Valkyrie (Hecaton)
 Garvrokor
 Simulacrum (Astral)
 Simulacrum (Astral) Shadow
-Extended Image #1205
-Extended Image #1206
-Extended Image #1207
-Extended Image #1208
-Extended Image #1209
-Extended Image #1210
-Extended Image #1211
-Extended Image #1212
-Extended Image #1213
+Herald Glow
+Maverick Remains (Futurist)
+Vulture (Hecaton) Engines
+Grandstand (Cannon)
+Grandstand (Cannon) shadow
+Grandstand (Holdout)
+Grandstand (Holdout) shadow
+Grandstand (Vision)
+Grandstand (Vision) shadow
 Extended Image #1214
 Extended Image #1215
 Extended Image #1216

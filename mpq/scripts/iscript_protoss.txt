@@ -1148,14 +1148,14 @@ IsId          	158
 Type          	21
 Init          	CantavisInit
 Death         	CantavisDeath
-GndAttkInit   	[NONE]
-AirAttkInit   	[NONE]
+GndAttkInit   	CantavisGndAttkInit
+AirAttkInit   	CantavisGndAttkInit
 Unused1       	CantavisUnused1
-GndAttkRpt    	[NONE]
-AirAttkRpt    	[NONE]
+GndAttkRpt    	CantavisGndAttkInit
+AirAttkRpt    	CantavisGndAttkInit
 CastSpell     	CantavisCastSpell
 GndAttkToIdle 	CantavisGndAttkToIdle
-AirAttkToIdle 	[NONE]
+AirAttkToIdle 	CantavisGndAttkToIdle
 Unused2       	CantavisUnused2
 Walking       	CantavisWalking
 WalkingToIdle 	CantavisWalkingToIdle
@@ -1235,6 +1235,25 @@ CantavisUnused1:
 	setfldirect       	12
 	nobrkcodeend
 	goto				CantavisWalkingToIdle
+	
+CantavisGndAttkInit:
+	playsnd           	101	# Bullet\LaserB.wav
+	playfram          	0x00
+	wait              	1
+	nobrkcodestart
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	attackwith        	1
+	playfram          	0x44
+	wait              	1
+	nobrkcodeend
+	gotorepeatattk
+	playfram          	0x66
+	goto              	CantavisGndAttkToIdle
 
 CantavisCastSpell:
 	playfram          	0x00
@@ -1285,7 +1304,7 @@ CantavisWalking:
 	playfram          	0x55
 	setvertpos        	0
 CantavisLocal00:
-	wait              	3 
+	wait              	3
 	spruluselo        	320 0 0	# Cantavis Glow (thingy\pteglow.grp)
 	goto              	CantavisLocal00
 
@@ -12449,56 +12468,30 @@ HeraldLocal42:
 
 HeraldLocal00:
 	playfram			0x20
-	wait				1
+	wait				2
 	playfram			0x40
-	wait				1
+	wait				2
 	playfram			0x60
-	wait				1
+	wait				2
 	playfram			0x80
-	wait				1
+	wait				2
 	playfram			0xA0
-	wait				1
+	wait				2
 	playfram			0xC0
-	wait				1
+	wait				2
 	playfram			0xE0
-	wait				1
+	wait				2
 	playfram			0x100
-	wait				1
+	wait				2
 	playfram			0x120
-	wait				1
+	wait				2
 	playfram			0x140
-	wait				1
+	wait				2
 	playfram			0x160
-	wait				1
+	wait				2
 	playfram			0x00
-	wait				1
-	randcondjmp       	24 HeraldLocal01
+	wait				2
 	goto				HeraldLocal00
-
-HeraldLocal01:
-	playfram			0x180
-	wait				1
-	playfram			0x1A0
-	wait				1
-	playfram			0x1C0
-	wait				1
-	playfram          	0x1E0
-	wait				1
-	playfram          	0x200
-	wait				1
-	playfram          	0x220
-	wait				1
-	playfram          	0x240
-	wait				1
-	playfram          	0x260
-	wait				1
-	playfram          	0x280
-	wait				1
-	playfram          	0x2A0
-	wait				1
-	playfram			0x00
-	wait				1
-	goto              	HeraldLocal00
 
 HeraldDeath:
 	playsnd           	635	# Protoss\TEMPLAR\PTeDth00.WAV
@@ -12532,37 +12525,48 @@ HeraldUnused1:
 	goto				HeraldLocal42
 
 HeraldGndAttkInit:
-	playfram          	0x2C0
+	playfram          	0x200
 	wait              	1
 	nobrkcodestart
-#	playfram          	0x2E0
-#	wait              	1
-	playfram          	0x300
+	playfram          	0x220
 	wait              	1
-#	playfram          	0x320
-#	wait				1
+	playfram          	0x240
+	wait				1
+	playfram          	0x260
+	wait				1
+	playfram          	0x280
+	wait				1
+	playfram          	0x2A0
+	playsndbtwn			2158 2160 # Herald attack 01, 02, 03
+	attackwith        	1
+	wait				1
+	playfram          	0x2C0
+	wait				1
+	playfram          	0x2E0
+	wait				1
+	playfram          	0x300
+	nobrkcodeend
+	playfram          	0x320
+	wait				1
 	playfram          	0x340
 	wait				1
-#	playfram          	0x360
-#	wait				1
+	playfram          	0x360
+	wait				1
 	playfram          	0x380
 	wait				1
-#	playfram          	0x3A0
-#	wait				1
+	playfram          	0x3A0
+	wait				1
 	playfram          	0x3C0
 	wait				1
 	playfram          	0x3E0
-	playsndbtwn			2158 2160 # Herald attack 01, 02, 03
-	attackwith        	1
 	wait				1
 	playfram          	0x400
 	wait				1
 	playfram          	0x420
 	wait				1
 	playfram          	0x440
-	nobrkcodeend
+	wait				1
 	gotorepeatattk
-	ignorerest
 	wait				1
 	playfram          	0x00
 	wait				1
@@ -12574,34 +12578,26 @@ HeraldGndAttkToIdle:
 	goto              	HeraldLocal00
 
 HeraldWalking:
-	playfram			0x20
-	wait				1
-	playfram			0x40
-	wait				1
-	playfram			0x60
-	wait				1
-	playfram			0x80
-	wait				1
-	playfram			0xA0
-	wait				1
-	playfram			0xC0
-	wait				1
-	playfram			0xE0
-	wait				1
-	playfram			0x100
-	wait				1
-	playfram			0x120
-	wait				1
-	playfram			0x140
-	wait				1
-	playfram			0x160
-	wait				1
-	playfram			0x00
-	wait				1
-	goto				HeraldWalking
+	playfram          	0x180
+	wait              	1
+	playfram          	0x1A0
+	wait              	1
+	playfram          	0x1C0
+	wait              	1
+	playfram          	0x1E0
+	setvertpos        	0
+HeraldGlowLoop:
+	wait              	3
+	spruluselo        	1070 0 0 # Herald Glow (cm\protoss\herald-glow.grp)
+	goto              	HeraldGlowLoop
 	
 HeraldWalkingToIdle:
-	playfram			0x00
+	playfram          	0x1C0
+	wait              	1
+	playfram          	0x1A0
+	wait              	1
+	playfram          	0x180
+	wait              	1
 	goto				HeraldLocal00
 
 HeraldWarpIn:
@@ -13274,6 +13270,8 @@ OptectonGndAttkRpt:
 	wait				8
 	imgol				1820 0 0 # Architect charge overlay
 	wait				8
+	imgol				1820 0 0 # Architect charge overlay
+	wait				11
 	playfram			0x220
 	imgoluselo			1855 0 0 # Optecton muzzle flash
 	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
@@ -13358,10 +13356,13 @@ OptectonGndAttkRpt:
 	wait				1
 	playfram			0x240
 	wait				3
+	playsndbtwn			3861 3863 # Optecton winddown 01, 02, 03
 	playfram			0x260
 	wait				1
 	playfram			0x00
 	wait				1
+	imgol				1820 0 0 # Architect charge overlay
+	wait				24
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
@@ -15705,3 +15706,26 @@ AshguardWalking:
 AshguardWarpIn:
 	imgol             	2161 0 0 # Ashguard Warp Flash (cm\faction-p\ashguard.grp)
 	goto              	AshguardWalkingToIdle
+
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 449 Herald Glow (cm\protoss\herald-glow.grp)
+.headerstart
+IsId          	734
+Type          	1
+Init          	HeraldGlowInit
+Death         	Generic_Wait1End
+.headerend
+# ----------------------------------------------------------------------------- #
+
+HeraldGlowInit:
+	playfram          	0x00
+	wait              	2
+	playfram          	0x20
+	wait              	2
+	playfram          	0x40
+	wait              	1
+	playfram          	0x60
+	wait              	1
+	end

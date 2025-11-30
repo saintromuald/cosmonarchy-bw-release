@@ -619,9 +619,9 @@ Sovrokor
 Valkyrie (Hecaton)
 Garvrokor
 Simulacrum (Astral)
-Extended Flingy #413
-Extended Flingy #414
-Extended Flingy #415
+Grandstand (Cannon)
+Grandstand (Holdout)
+Grandstand (Vision)
 Extended Flingy #416
 Extended Flingy #417
 Extended Flingy #418
