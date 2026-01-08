@@ -86,7 +86,7 @@ Protoss Witness
 Protoss Plasma Shell (deprecated)
 Protoss Demiurge
 Protoss Pariah
-Protoss Vassal (old)
+Tassadar
 Protoss Simulacrum
 Protoss Charlatan
 Terran Wyvern
@@ -134,7 +134,7 @@ Zerg Caphrolosk
 Zerg Gathtelosk
 Zerg Nydus Cesiant
 Zerg Hydrith Den
-Zerg Elthisth Mound
+Zerg Rakzogth Roost
 Terran Olympian
 Zerg Matravil Nest
 Zerg Almakis Antre
@@ -301,7 +301,7 @@ Terran Throneroom
 Terran Emperor
 Terran Jester
 Zerg Agrileth
-Zerg Rakzogth Roost
+unused
 Protoss Sequestered Icon
 Protoss Unitary Union
 Protoss Servitor
@@ -532,31 +532,31 @@ Scenario Unit 7
 Scenario Unit 8
 Askosi Grandstand (Holdout)
 Askosi Grandstand (Vision)
-Extended Unit #307
-Extended Unit #308
-Extended Unit #309
-Extended Unit #310
-Extended Unit #311
-Extended Unit #312
-Extended Unit #313
-Extended Unit #314
-Extended Unit #315
-Extended Unit #316
-Extended Unit #317
-Extended Unit #318
-Extended Unit #319
-Extended Unit #320
-Extended Unit #321
-Extended Unit #322
-Extended Unit #323
-Extended Unit #324
-Extended Unit #325
-Extended Unit #326
-Extended Unit #327
-Extended Unit #328
-Extended Unit #329
-Extended Unit #330
-Extended Unit #331
+Protoss Warp Gate (The Fall)
+Zerg Cerebrate (The Fall)
+Zerg Overmind (With Shell, The Fall)
+Zerg Overmind (The Fall)
+Askosi Avatar
+Askosi Abutment
+Askosi Proscenium
+Terran Quadriga (Golden Republic)
+Askosi Thaumalogue
+Askosi Petract
+Askosi Crematorium
+Askosi Zylode
+Askosi Astrolabe
+Terran Serathiel (Hecaton)
+Zerg Malkothrokor
+unused
+Askosi Panoply
+Askosi Aphorist
+Askosi Doronin
+Askosi Agonist
+Askosi Phontis
+Askosi Zonguard
+Askosi Akreno
+Askosi Iconoclast
+Askosi Paraclete
 Extended Unit #332
 Extended Unit #333
 Extended Unit #334

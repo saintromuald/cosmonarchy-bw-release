@@ -321,7 +321,7 @@ HarakanUnused1:
 	wait				1
 	nobrkcodestart
 	setfldirect       	0
-	playsndbtwn			1163 1165
+	playsndbtwn			1163 1165 # Harakan revive 01, 02, 03
 	sprol				742 0 0 # Explosion Small Reversed
 #	playfram			176
 	wait				2
@@ -6510,7 +6510,7 @@ DustVariant2Init:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 944 Cleric (terran\medic.grp)
+# 944 Cleric (terran\cleric.grp)
 .headerstart
 IsId          	360
 Type          	13
@@ -6532,7 +6532,7 @@ SpecialState1 	ClericSpecialState1
 # ----------------------------------------------------------------------------- #
 
 ClericInit:
-	imgul             	945 0 0 # Cleric Shadow (terran\tmeShad.grp)
+	imgul             	945 0 0 # Cleric Shadow (terran\cleric-shadow.grp)
 ClericLocal00:
 	playfram          	0x00
 ClericLocal01:
@@ -6541,38 +6541,40 @@ ClericLocal01:
 	goto              	ClericLocal01
 
 ClericLocal02:
-	playfram          	0x66
+	playfram          	0xC0
 	wait              	1
-	playfram          	0x77
+	playfram          	0xE0
 	wait              	1
 	turnrand          	3
 	wait              	1
-	playfram          	0x66
+	playfram          	0xC0
 	wait              	1
 	goto              	ClericLocal00
 
 ClericDeath:
 	playsnd           	1000 # Terran\Medic\TMdDth00.wav
 	setfldirect       	0
-	playfram          	221
-	wait              	2
-	playfram          	222
-	wait              	2
-	playfram          	223
-	wait              	2
-	playfram          	224
-	wait              	2
-	playfram          	225
-	wait              	2
-	playfram          	226
-	wait              	2
-	playfram          	227
-	wait              	2
-	playfram          	228
+	playfram			17
+	wait				2
+	playfram			416
+	wait				2
+	playfram			417
+	wait				2
+	playfram			418
+	wait				2
+	playfram			419
+	wait				2
+	playfram			420
+	wait				2
+	playfram			421
+	wait				2
+	playfram			422
+	wait				2
+	playfram			423
+	wait				2
+	playfram			424
 	wait              	4
-	playfram          	229
-	wait              	4
-	lowsprul          	490 0 0 # Cleric Remnants (terran\tmeDeath.grp)
+	lowsprul          	490 0 0 # Cleric Remnants (terran\cleric-death.grp)
 	wait              	1
 	end
 	
@@ -6581,23 +6583,25 @@ ClericUnused1:
 	nobrkcodestart
 	setfldirect			0
 	playsnd				1188
-	playfram			229
+	playfram			424
 	wait				2
-	playfram			228
+	playfram			423
 	wait				2
-	playfram			227
+	playfram			422
 	wait				2
-	playfram			226
+	playfram			421
 	wait				2
-	playfram			225
+	playfram			420
 	wait				2
-	playfram			224
+	playfram			419
 	wait				2
-	playfram			223
+	playfram			418
 	wait				2
-	playfram			222
+	playfram			417
 	wait				2
-	playfram			221
+	playfram			416
+	wait				2
+	playfram			17
 	wait				2
 	setfldirect			12
 	nobrkcodeend
@@ -6606,13 +6610,13 @@ ClericUnused1:
 ClericCastSpell:
 	orderdone         	1
 	nobrkcodestart
-	playfram          	0x11
+	playfram          	0x20
 	wait              	3
-	playfram          	0x22
+	playfram          	0x40
 	castspell
 	sigorder          	2
 	wait              	3
-	playfram          	0x11
+	playfram          	0x20
 	wait              	3
 	nobrkcodeend
 	gotorepeatattk
@@ -6623,28 +6627,25 @@ ClericWalking:
 	orderdone         	1
 	move              	4
 	wait              	1
-	playfram          	0x66
+	playfram          	0xC0
 	move              	4
 	wait              	1
-	playfram          	0x77
+	playfram          	0xE0
 	move              	4
 	wait              	1
-	playfram          	0x88
+	playfram          	0x100
 	move              	4
 	wait              	1
-	playfram          	0x99
+	playfram          	0x120
 	move              	4
 	wait              	1
-	playfram          	0xaa
+	playfram          	0x140
 	move              	4
 	wait              	1
-	playfram          	0xbb
+	playfram          	0x160
 	move              	4
 	wait              	1
-	playfram          	0xcc
-	move              	4
-	wait              	1
-	playfram          	0x00
+	playfram          	0x180
 	goto              	ClericWalking
 
 ClericWalkingToIdle:
@@ -6652,25 +6653,25 @@ ClericWalkingToIdle:
 	goto              	ClericLocal00
 
 ClericSpecialState1:
-	playfram          	0x33
+	playfram          	0x60
 	wait              	1
 ClericLocal04:
 	sigorder          	1
-	playfram          	0x44
+	playfram          	0x80
 	wait              	1
-	playfram          	0x55
+	playfram          	0xA0
 	wait              	1
-	playfram          	0x44
+	playfram          	0x80
 	wait              	1
-	playfram          	0x55
+	playfram          	0xA0
 	wait              	1
-	playfram          	0x44
+	playfram          	0x80
 	wait              	1
-	playfram          	0x55
+	playfram          	0xA0
 	wait              	1
-	playfram          	0x44
+	playfram          	0x80
 	wait              	1
-	playfram          	0x55
+	playfram          	0xA0
 	wait              	1
 	playsnd           	1018 # Terran\Medic\TMedHeal.wav
 	goto              	ClericLocal04
@@ -8725,9 +8726,16 @@ ApostleDeath:
 	setfldirect       	0
 	playfram          	0x00
 	imgol             	3 0 0 # Skryrokor Death (zerg\zavDeath.grp)
+	wait              	2
+	imgol             	3 0 0 # Skryrokor Death (zerg\zavDeath.grp)
+	wait              	5
+	imgol             	3 0 0 # Skryrokor Death (zerg\zavDeath.grp)
+	wait              	5
+	imgol             	3 0 0 # Skryrokor Death (zerg\zavDeath.grp)
+	wait              	5
+	imgol             	3 0 0 # Skryrokor Death (zerg\zavDeath.grp)
 	wait              	5
 	lowsprul          	565 0 0	# Apostle Remnants (cm\terran\apostle-death.grp)
-	wait              	1
 	end
 
 ApostleUnused1:
@@ -8740,7 +8748,7 @@ ApostleUnused1:
 	tmprmgraphicend
 	playfram			0x00
 	setfldirect			13
-	wait				8
+	wait				20
 	nobrkcodeend
 	goto				MadcapWalkingToIdle
 
@@ -13135,10 +13143,28 @@ AutocratDeath:
 	setfldirect       	0
 	playfram          	0x00
 	imgol             	3 0 0 # Skryrokor Death (zerg\zavDeath.grp)
-	wait              	2
+	wait              	5
+	imgol             	3 0 0 # Skryrokor Death (zerg\zavDeath.grp)
+	wait              	5
+	imgol             	3 0 0 # Skryrokor Death (zerg\zavDeath.grp)
+	wait              	5
+	imgol             	3 0 0 # Skryrokor Death (zerg\zavDeath.grp)
+	wait              	5
+	imgol             	3 0 0 # Skryrokor Death (zerg\zavDeath.grp)
+	wait              	5
 	lowsprul          	230 0 0 # Eidolon Remnants (terran\tghDeath.grp)
-	wait              	1
 	end
+
+AutocratUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect			0
+	playsnd				1166 # Eidolon revive 01
+	sprol				742 0 0 # Explosion Small Reversed
+	setfldirect			12
+	wait				24
+	nobrkcodeend
+	goto				EidolonWalkingToIdle
 
 AutocratGndAttkInit:
 	playfram          	0xaa
@@ -20415,3 +20441,130 @@ VultureHecatonSpecialState1:
 	sigorder          	1
 	wait              	1
 	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2226 Quadriga (cm\faction-t\quadriga.grp)
+.headerstart
+IsId          	840
+Type          	12
+Init          	QuadrigaInit
+Death         	QuadrigaDeath
+GndAttkInit   	QuadrigaAirAttkInit
+AirAttkInit   	QuadrigaAirAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	QuadrigaAirAttkInit
+AirAttkRpt    	QuadrigaAirAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	TrojanLocal00
+AirAttkToIdle 	TrojanLocal00
+Unused2       	[NONE]
+Walking       	QuadrigaWalking
+WalkingToIdle 	QuadrigaWalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+QuadrigaInit:
+	imgulnextid			0 42 # Quadriga Shadow (cm\faction-t\quadriga.grp)
+	playfram          	0x00
+	goto              	TrojanLocal00
+
+QuadrigaDeath:
+	playsnd           	1040 # Terran\FRIGATE\TVkDth00.WAV
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			844 0 42 # Terran Unit Rubble Medium
+	wait              	1
+	end
+
+QuadrigaAirAttkInit:
+	wait              	2
+	nobrkcodestart
+	attackwith        	2
+	wait				6
+	attackwith        	2
+	wait				6
+	attackwith        	2
+	wait				6
+	attackwith        	2
+	wait				6
+	attackwith        	2
+	nobrkcodeend
+	gotorepeatattk
+	goto              	TrojanLocal00
+
+QuadrigaWalking:
+	setvertpos        	0
+	imgol             	2228 0 0 # Quadriga Engines (cm\faction-t\quadriga-engine.grp)
+	sigorder          	64
+	goto              	SkryrokorLocal00
+
+QuadrigaWalkingToIdle:
+	orderdone         	64
+	goto              	TrojanLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2231 Serathiel (cm\faction-t\serathiel.grp)
+.headerstart
+IsId          	841
+Type          	14
+Init          	SerathielInit
+Death         	SerathielDeath
+GndAttkInit   	SerathielGndAttkToIdle
+AirAttkInit   	SerathielGndAttkToIdle
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	SerathielGndAttkToIdle
+AirAttkRpt    	SerathielGndAttkToIdle
+CastSpell     	SerathielCastSpell
+GndAttkToIdle 	SerathielGndAttkToIdle
+AirAttkToIdle 	SerathielGndAttkToIdle
+Unused2       	[NONE]
+Walking       	SerathielWalking
+WalkingToIdle 	SerathielGndAttkToIdle
+SpecialState1 	[NONE]
+SpecialState2	SerathielCastSpell
+AlmostBuilt   	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+SerathielInit:
+	imgulnextid			0 42 # Serathiel Shadow (cm\faction-t\serathiel-shadow.grp)
+	playfram          	0x00
+	goto              	SerathielGndAttkToIdle
+
+SerathielGndAttkToIdle:
+	setvertpos        	1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	SerathielGndAttkToIdle
+
+SerathielDeath:
+	playsnd           	257	# Terran\PHOENIX\TPhDth00.WAV
+	imgol             	332 0 0	# Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			844 0 42 # Terran Unit Rubble Medium
+	wait              	1
+	end
+
+SerathielLocal00:
+	wait              	125
+	goto              	SerathielLocal00
+
+SerathielCastSpell:
+	wait				1
+	castspell
+	sigorder          	2
+	gotorepeatattk
+	goto              	SerathielGndAttkToIdle
+
+SerathielWalking:
+	setvertpos        	0
+	imgol             	2233 0 0 # Serathiel Engines (cm\terran\serathiel-engine.grp)
+	goto              	SerathielLocal00

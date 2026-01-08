@@ -170,7 +170,7 @@ Gathtelosk
 Caphrolosk
 Surkith Colony
 Vithrath Haunt
-Sovthrath Mound
+Rakzogth Roost
 Matravil Nest
 Nydus Cesiant
 Overmind With Shell
@@ -1073,22 +1073,22 @@ Maverick Remains (Futurist)
 Grandstand (Cannon)
 Grandstand (Holdout)
 Grandstand (Vision)
-Extended Sprite #559
-Extended Sprite #560
-Extended Sprite #561
-Extended Sprite #562
-Extended Sprite #563
-Extended Sprite #564
-Extended Sprite #565
-Extended Sprite #566
-Extended Sprite #567
-Extended Sprite #568
-Extended Sprite #569
-Extended Sprite #570
-Extended Sprite #571
-Extended Sprite #572
-Extended Sprite #573
-Extended Sprite #574
+Mimic
+Intendent
+Object
+Abutment
+Proscenium
+Quadriga
+Landlock (Christmas)
+Serathiel
+Divine Discipline Field
+Intendent Electricity
+Askosi Construction (Large)
+Askosi Construction (Medium)
+Askosi Construction (Small)
+Ogroszaleth
+Malkothrokor
+Malkothrokor Remnants
 Extended Sprite #575
 Extended Sprite #576
 Extended Sprite #577

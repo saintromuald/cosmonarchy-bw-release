@@ -25,7 +25,7 @@ Gathtelosk
 Caphrolosk
 Surkith Colony
 Vithrath Haunt
-Sovthrath Mound
+Rakzogth Roost
 Matravil Nest
 Nydus Cesiant
 Overmind With Shell
@@ -622,20 +622,20 @@ Simulacrum (Astral)
 Grandstand (Cannon)
 Grandstand (Holdout)
 Grandstand (Vision)
-Extended Flingy #416
-Extended Flingy #417
-Extended Flingy #418
-Extended Flingy #419
-Extended Flingy #420
-Extended Flingy #421
-Extended Flingy #422
-Extended Flingy #423
-Extended Flingy #424
-Extended Flingy #425
-Extended Flingy #426
-Extended Flingy #427
-Extended Flingy #428
-Extended Flingy #429
+Mimic
+Intendent
+Object
+Abutment
+Proscenium
+Quadriga
+Landlock (Christmas)
+Serathiel
+Intendent Electricity
+Askosi Construction (Large)
+Askosi Construction (Medium)
+Askosi Construction (Small)
+Ogroszaleth
+Malkothrokor
 Extended Flingy #430
 Extended Flingy #431
 Extended Flingy #432

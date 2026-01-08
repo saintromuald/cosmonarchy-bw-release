@@ -80,8 +80,8 @@ Mature Chrysalis
 Mature Chrysalis Shadow
 Tosvrol Haunt
 Tosvrol Haunt Shadow
-Sovthrath Mound
-Sovthrath Mound Shadow
+Rakzogth Roost
+Rakzogth Roost Shadow
 Matravil Nest
 Matravil Nest Shadow
 Nydus Cesiant
@@ -2214,43 +2214,43 @@ Grandstand (Holdout)
 Grandstand (Holdout) shadow
 Grandstand (Vision)
 Grandstand (Vision) shadow
-Extended Image #1214
-Extended Image #1215
-Extended Image #1216
-Extended Image #1217
-Extended Image #1218
-Extended Image #1219
-Extended Image #1220
-Extended Image #1221
-Extended Image #1222
-Extended Image #1223
-Extended Image #1224
-Extended Image #1225
-Extended Image #1226
-Extended Image #1227
-Extended Image #1228
-Extended Image #1229
-Extended Image #1230
-Extended Image #1231
-Extended Image #1232
-Extended Image #1233
-Extended Image #1234
-Extended Image #1235
-Extended Image #1236
-Extended Image #1237
-Extended Image #1238
-Extended Image #1239
-Extended Image #1240
-Extended Image #1241
-Extended Image #1242
-Extended Image #1243
-Extended Image #1244
-Extended Image #1245
-Extended Image #1246
-Extended Image #1247
-Extended Image #1248
-Extended Image #1249
-Extended Image #1250
+Mimic
+Mimic Shadow
+Intendent
+Intendent Shadow
+Object
+Object Shadow
+Abutment
+Abutment Shadow
+Proscenium
+Proscenium Shadow
+Quadriga
+Quadriga Shadow
+Quadriga Engines
+Quadriga Afterburners
+Landlock (Christmas)
+Serathiel
+Serathiel Shadow
+Serathiel Engines
+Divine Discipline Field
+Intendent Electricity
+Askosi Construction (Large)
+Askosi Construction (Large) Shadow
+Askosi Construction (Medium)
+Askosi Construction (Medium) Shadow
+Askosi Construction (Small)
+Askosi Construction (Small) Shadow
+Ogroszaleth
+Ogroszaleth Shadow
+Impact Dissipation (Small)
+Impact Dissipation (Medium)
+Impact Dissipation (Large)
+Impact Dissipation (XLarge)
+Ogroszaleth Birth
+Malkothrokor
+Malkothrokor Shadow
+Malkothrokor Remnants
+Malkothrokor Birth
 Extended Image #1251
 Extended Image #1252
 Extended Image #1253

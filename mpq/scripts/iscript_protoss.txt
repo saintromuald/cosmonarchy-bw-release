@@ -6186,9 +6186,9 @@ WarpIn        	SimulacrumWarpIn
 # ----------------------------------------------------------------------------- #
 
 SimulacrumInit:
-	imgul             	1072 0 0 # Simulacrum Shadow (protoss\pdrShad.grp)
+	imgulnextid			0 0
 SimulacrumWalkingToIdle:
-	playfram          	0x33
+	playfram          	0x00
 	goto              	SkryrokorLocal00
 
 SimulacrumDeath:
@@ -6200,19 +6200,15 @@ SimulacrumDeath:
 	end
 
 SimulacrumGndAttkInit:
-	playfram			0x33
+	playfram			0x140
 	wait				1
 	nobrkcodestart
 	playsndbtwn			1427 1434 # Simulacrum weapon fire 01, 02, 03, 04, 05, 06, 07, 08
 	attackwith			1
-	playfram          	0x00
+	playfram          	0x180
 	wait              	1 
-	playfram          	0x11
-	wait              	1 
-	playfram          	0x22
-	wait              	1 
-	playfram          	0x33
-	wait              	1 
+	playfram          	0x1A0
+	wait				1
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
@@ -6221,34 +6217,31 @@ SimulacrumGndAttkInit:
 SimulacrumWalking:
 	move              	4
 	wait              	1
-	playfram          	0x44
+	playfram          	0x20
 	move              	5
 	wait              	1
-	playfram          	0x55
+	playfram          	0x40
 	move              	4
 	wait              	1
-	playfram          	0x66
+	playfram          	0x60
 	move              	5
 	wait              	1
-	playfram          	0x77
+	playfram          	0x80
 	move              	4
 	wait              	1
-	playfram          	0x88
+	playfram          	0xA0
 	move              	5
 	wait              	1
-	playfram          	0x99
+	playfram          	0xC0
 	move              	4
 	wait              	1
-	playfram          	0xaa
+	playfram          	0xE0
 	move              	5
 	wait              	1
-	playfram          	0xbb
+	playfram          	0x100
 	move              	4
 	wait              	1
-	playfram          	0xcc
-	move              	5
-	wait              	1
-	playfram          	0xdd
+	playfram          	0x120
 	goto              	SimulacrumWalking
 
 SimulacrumWarpIn:
@@ -6751,7 +6744,7 @@ WalkingToIdle 	StarSovereignWalkingToIdle
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
-Built         	[NONE]
+Built         	StarSovereignWalkingToIdle
 Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]

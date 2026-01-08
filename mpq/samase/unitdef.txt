@@ -60,6 +60,9 @@ military madrigal_hecaton = 504
 military vulture_hecaton = 506
 military madrigal_hecaton_furia = 508
 military valkyrie_hecaton = 520
+military quadriga = 541
+military serathiel = 547
+@spellcaster(serathiel)
 
 # Protoss factional units
 military adherent = 400
@@ -72,6 +75,7 @@ military ashguard = 424
 military dracadin_order = 430
 military manifold_starbound = 437
 military simulacrum_astral = 522
+military warlock = 523
 
 # Zerg factional units
 military nathrelisk = 402
@@ -83,6 +87,7 @@ military hydralisk_orkoti = 436
 building yblyleth = 438
 military azanthrokor = 511
 military sovrokor = 519
+military garvrokor = 521
 
 # Terran military units
 military maverick = 0

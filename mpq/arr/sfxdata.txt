@@ -3918,240 +3918,240 @@ Amaranth Banter 01
 Amaranth Banter 02
 Amaranth Banter 03
 Amaranth Banter 04
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Goska (T) Selected 01
-Goska (T) Selected 02
-Goska (T) Selected 03
-Goska (T) Selected 04
-Goska (T) Order Passive 01
-Goska (T) Order Passive 02
-Goska (T) Order Passive 03
-Goska (T) Order Passive 04
-Goska Weaponfire 01
-Goska Weaponfire 02
-Goska Weaponfire 03
-Goska Grenade Impact
-Stroluum Selected 01
-Stroluum Selected 02
-Stroluum Selected 03
-Stroluum Selected 04
-Stroluum Order Passive 01
-Stroluum Order Passive 02
-Stroluum Order Passive 03
-Stroluum Order Passive 04
-Stroluum Under Attack 01
-Stroluum Under Attack 02
-Stroluum Under Attack 03
-Stroluum Under Attack 04
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Sevenstep Ready 01
+Sevenstep Ready 02
+Sevenstep Ready 03
+Sevenstep Selected 01
+Sevenstep Selected 02
+Sevenstep Selected 03
+Sevenstep Selected 04
+Sevenstep Order Passive 01
+Sevenstep Order Passive 02
+Sevenstep Order Passive 03
+Sevenstep Order Passive 04
+Sevenstep Order Aggressive 01
+Sevenstep Order Aggressive 02
+Sevenstep Order Aggressive 03
+Sevenstep Order Aggressive 04
+Sevenstep Under Attack 01
+Sevenstep Under Attack 02
+Sevenstep Under Attack 03
+Sevenstep Under Attack 04
+Liiralisk Ready 01
+Liiralisk Ready 02
+Liiralisk Selected 01
+Liiralisk Selected 02
+Liiralisk Selected 03
+Liiralisk Order Passive 01
+Liiralisk Order Passive 02
+Liiralisk Order Passive 03
+Liiralisk Order Passive 04
+Liiralisk Order Aggressive 01
+Liiralisk Order Aggressive 02
+Liiralisk Order Aggressive 03
+Liiralisk Under Attack 01
+Liiralisk Under Attack 02
+Bloodsummon Addon 01
+Bloodsummon Addon 02
+Bloodsummon Addon Abandon 01
+Bloodsummon Addon Abandon 02
+Bloodsummon Ally Attack Askosi 01
+Bloodsummon Ally Attack Askosi 02
+Bloodsummon Ally Attack Askosi 03
+Bloodsummon Ally Attack Bloodsummon 01
+Bloodsummon Ally Attack Bloodsummon 02
+Bloodsummon Ally Attack Bloodsummon 03
+Bloodsummon Ally Attack Kogri 01
+Bloodsummon Ally Attack Kogri 02
+Bloodsummon Ally Attack Kogri 03
+Bloodsummon Ally Attack Protoss 01
+Bloodsummon Ally Attack Protoss 02
+Bloodsummon Ally Attack Protoss 03
+Bloodsummon Ally Attack Terran 01
+Bloodsummon Ally Attack Terran 02
+Bloodsummon Ally Attack Terran 03
+Bloodsummon Ally Attack Zerg 01
+Bloodsummon Ally Attack Zerg 02
+Bloodsummon Ally Attack Zerg 03
+Bloodsummon Arena 01
+Bloodsummon Arena 02
+Bloodsummon Army Attack 01
+Bloodsummon Army Attack 02
+Bloodsummon Army Attack 03
+Bloodsummon Army Attack 04
+Bloodsummon Assembly 01
+Bloodsummon Assembly 02
+Bloodsummon Base Attack 01
+Bloodsummon Base Attack 02
+Bloodsummon Base Attack 03
+Bloodsummon Base Attack 04
+Bloodsummon Build 01
+Bloodsummon Build 02
+Bloodsummon Build Zerg 01
+Bloodsummon Build Zerg 02
+Bloodsummon No Energy 01
+Bloodsummon No Energy 02
+Bloodsummon No Energy 03
+Bloodsummon No Energy 04
+Bloodsummon Landing Interrupted 01
+Bloodsummon Landing Interrupted 02
+Bloodsummon No Minerals 01
+Bloodsummon No Minerals 02
+Bloodsummon No Minerals 03
+Bloodsummon No Minerals 04
+Bloodsummon Missile Armed 01
+Bloodsummon Missile Armed 02
+Bloodsummon Missile Launched 01
+Bloodsummon Missile Launched 02
+Bloodsummon No Build 01
+Bloodsummon No Build 02
+Bloodsummon No Land 01
+Bloodsummon No Land 02
+Bloodsummon No Warp 01
+Bloodsummon No Warp 02
+Bloodsummon Ritual 01
+Bloodsummon Ritual 02
+Bloodsummon Tech 01
+Bloodsummon Tech 02
+Bloodsummon No Vespene 01
+Bloodsummon No Vespene 02
+Bloodsummon No Vespene 03
+Bloodsummon No Vespene 04
+Bloodsummon Warp 01
+Bloodsummon Warp 02
+Askosi Mining 01
+Askosi Mining 02
+Askosi Mining 03
+Askosi Mining 04
+Askosi Mining 05
+Intendent Weaponfire A 01
+Intendent Weaponfire A 02
+Intendent Weaponfire A 03
+Intendent Weaponfire B 01
+Intendent Weaponfire B 02
+Intendent Weaponfire B 03
+Grandstand Weaponfire 01
+Grandstand Weaponfire 02
+Grandstand Weaponfire 03
+Askosi Building 01
+Askosi Building 02
+Askosi Building 03
+Askosi Building 04
+Askosi Building 05
+Vicar Weaponfire 01
+Vicar Weaponfire 02
+Vicar Weaponfire 03
+Missionary Weaponfire 01
+Missionary Weaponfire 02
+Missionary Weaponfire 03
+Proselyte Weaponfire 01
+Proselyte Weaponfire 02
+Proselyte Weaponfire 03
+Scepter Weaponfire 01
+Scepter Weaponfire 02
+Scepter Weaponfire 03
+Tirade Weaponfire 01
+Tirade Weaponfire 02
+Tirade Weaponfire 03
+Avatar Weaponfire 01
+Avatar Weaponfire 02
+Avatar Weaponfire 03
+Askosi Deployment 01
+Askosi Deployment 02
+Askosi Deployment 03
+Askosi Unit Deployment 01
+Cardinal Weaponfire 01
+Cardinal Weaponfire 02
+Cardinal Weaponfire 03
+Cardinal Weaponhit 01
+Cardinal Weaponhit 02
+Cardinal Weaponhit 03
+Rove Weaponfire 01
+Rove Weaponfire 02
+Rove Weaponfire 03
+Rove Ready 01
+Rove Ready 02
+Rove Ready 03
+Rove Selected 01
+Rove Selected 02
+Rove Selected 03
+Rove Selected 04
+Rove Order Passive 01
+Rove Order Passive 02
+Rove Order Passive 03
+Rove Order Passive 04
+Rove Order Aggressive 01
+Rove Order Aggressive 02
+Rove Order Aggressive 03
+Rove Order Aggressive 04
+Rove Under Attack 01
+Rove Under Attack 02
+Rove Under Attack 03
+Rove Under Attack 04
+Rove Banter 01
+Rove Banter 02
+Rove Banter 03
+Rove Banter 04
+Pilgrim Weaponfire 01
+Pilgrim Weaponfire 02
+Pilgrim Weaponfire 03
+Pilgrim Weaponfire 04
+Helion Ready 01
+Helion Ready 02
+Helion Ready 03
+Helion Selected 01
+Helion Selected 02
+Helion Selected 03
+Helion Selected 04
+Helion Order Passive 01
+Helion Order Passive 02
+Helion Order Passive 03
+Helion Order Passive 04
+Helion Order Aggressive 01
+Helion Order Aggressive 02
+Helion Order Aggressive 03
+Helion Order Aggressive 04
+Helion Under Attack 01
+Helion Under Attack 02
+Helion Under Attack 03
+Helion Under Attack 04
+Helion Banter 01
+Helion Banter 02
+Helion Banter 03
+Helion Banter 04
+Sycophant Ready 01
+Sycophant Ready 02
+Sycophant Ready 03
+Sycophant Selected 01
+Sycophant Selected 02
+Sycophant Selected 03
+Sycophant Selected 04
+Sycophant Order Passive 01
+Sycophant Order Passive 02
+Sycophant Order Passive 03
+Sycophant Order Passive 04
+Sycophant Order Aggressive 01
+Sycophant Order Aggressive 02
+Sycophant Order Aggressive 03
+Sycophant Order Aggressive 04
+Sycophant Under Attack 01
+Sycophant Under Attack 02
+Sycophant Under Attack 03
+Sycophant Under Attack 04
+Askosi Construction End 01
+Askosi Rescue 01
+Landlock Selected 01
+Function Selected 01
+Cosmoscope Selected 01
+Askosi Explosion Medium 01
+Askosi Explosion Medium 02
+Askosi Explosion Medium 03
+Askosi Explosion Large 01
+Askosi Explosion Large 02
+Askosi Explosion Large 03
+Blackguard Weaponhit 01
+Blackguard Weaponhit 02
+Blackguard Weaponhit 03
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

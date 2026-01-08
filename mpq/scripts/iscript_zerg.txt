@@ -1026,7 +1026,7 @@ GeszithalorGndAttkToIdle:
 
 GeszithalorDeath:
 	playsnd           	852	# Zerg\Geszithalor\ZGuDth00.WAV
-	imgol             	28 0 0	# Geszithalor Death (zerg\zguDeath.grp)
+	imgol             	28 0 0 # Geszithalor Death (zerg\zguDeath.grp)
 	wait              	1
 	lowsprul			186 0 42 # Zerg Building Rubble Small
 	wait              	1
@@ -3772,12 +3772,12 @@ TosvrolHauntIsWorking:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 082 ElthisthMound (zerg\Mutapit.grp)
+# 082 Rakzogth Roost (zerg\Mutapit.grp)
 .headerstart
 IsId          	49
 Type          	20
-Init          	ElthisthMoundInit
-Death         	ElthisthMoundDeath
+Init          	RakzogthRoostInit
+Death         	RakzogthRoostDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -3791,22 +3791,22 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	ElthisthMoundAlmostBuilt
-Built         	ElthisthMoundBuilt
+AlmostBuilt   	RakzogthRoostAlmostBuilt
+Built         	RakzogthRoostBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	ElthisthMoundIsWorking
-WorkingToIdle 	ElthisthMoundWorkingToIdle
+IsWorking     	RakzogthRoostIsWorking
+WorkingToIdle 	RakzogthRoostWorkingToIdle
 WarpIn        	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
-ElthisthMoundInit:
-	imgul             	83 0 0 # Elthisth Mound Shadow (zerg\zmhShad.grp)
+RakzogthRoostInit:
+	imgul             	83 0 0 # Rakzogth Roost Shadow (zerg\zmhShad.grp)
 	playfram          	0x00
-	goto              	ElthisthMoundWorkingToIdle
+	goto              	RakzogthRoostWorkingToIdle
 
-ElthisthMoundWorkingToIdle:
+RakzogthRoostWorkingToIdle:
 	playfram          	1
 	wait              	2
 	playfram          	2
@@ -3819,9 +3819,9 @@ ElthisthMoundWorkingToIdle:
 	wait              	2
 	playfram          	0x00
 	wait              	3
-	goto              	ElthisthMoundWorkingToIdle
+	goto              	RakzogthRoostWorkingToIdle
 
-ElthisthMoundDeath:
+RakzogthRoostDeath:
 	playsnd           	774 # Zerg\Bldg\ZBldgDth.WAV
 	imgol             	60 0 0 # Zerg Building Explosion (thingy\zBldDthS.grp)
 	wait              	3
@@ -3829,14 +3829,14 @@ ElthisthMoundDeath:
 	wait              	1
 	end
 
-ElthisthMoundAlmostBuilt:
+RakzogthRoostAlmostBuilt:
 	imgol             	108 0 0 # Zerg Building Spawn (Medium) (zerg\zSpawn02.grp)
-ElthisthMoundBuilt:
+RakzogthRoostBuilt:
 	playfram          	0x00
 	wait				2
-	goto              	ElthisthMoundWorkingToIdle
+	goto              	RakzogthRoostWorkingToIdle
 
-ElthisthMoundIsWorking:
+RakzogthRoostIsWorking:
 	playfram          	4
 	wait              	2
 	playfram          	5
@@ -3857,7 +3857,7 @@ ElthisthMoundIsWorking:
 	wait              	3
 	playfram          	5
 	wait              	2
-	goto              	ElthisthMoundIsWorking
+	goto              	RakzogthRoostIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -7462,7 +7462,6 @@ KeskathalorBurrow:
 
 KeskathalorUnBurrow:
 	wait 				1
-	waitrand          	1 2
 	setfldirect			14
 	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
 	playfram          	0x66
@@ -14789,7 +14788,7 @@ CherbrathalorGndAttkToIdle:
 CherbrathalorDeath:
 	playsnd           	878	# Zerg\Ultra\ZUlDth00.WAV
 	imgol             	28 0 0 # Geszithalor Death (zerg\zguDeath.grp)
-	wait              	2
+	wait              	12
 	lowsprul			186 0 0 # Zerg Building Rubble Small
 	wait              	1
 	end
@@ -17423,3 +17422,400 @@ AzanthrokorWalking:
 	playfram          	0x00
 	wait              	1
 	goto              	AzanthrokorWalking
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2242 Ogroszaleth (cm\zerg\ogroszaleth.grp)
+.headerstart
+IsId          	836
+Type          	26
+Init          	OgroszalethInit
+Death         	OgroszalethDeath
+GndAttkInit   	OgroszalethGndAttkInit
+AirAttkInit   	OgroszalethGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	OgroszalethGndAttkInit
+AirAttkRpt    	OgroszalethGndAttkInit
+CastSpell     	SkryrokorLocal00
+GndAttkToIdle 	OgroszalethGndAttkToIdle
+AirAttkToIdle 	OgroszalethGndAttkToIdle
+Unused2       	[NONE]
+Walking       	OgroszalethWalking
+WalkingToIdle 	OgroszalethGndAttkToIdle
+SpecialState1 	[NONE]
+SpecialState2 	OgroszalethSpecialState2
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	OgroszalethBurrow
+UnBurrow      	OgroszalethUnBurrow
+Enable        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+OgroszalethInit:
+	imgulnextid			0 0 # Ogroszaleth Shadow (cm\zerg\ogroszaleth.grp)
+	playfram          	0x00
+	wait				2
+	goto				SkryrokorLocal00
+	
+OgroszalethGndAttkToIdle:
+	playfram			0x00
+	goto				SkryrokorLocal00
+
+OgroszalethDeath:
+	playsnd           	878 # Zerg\Ultra\ZUlDth00.WAV
+	imgol             	28 0 0 # Geszithalor Death (zerg\zguDeath.grp)
+	wait              	1
+	lowsprul			186 0 0 # Zerg Building Rubble Small
+	wait              	1
+	end
+
+OgroszalethGndAttkInit:
+	playfram			0x00
+	wait				1
+	nobrkcodestart
+	playfram			0x22
+	wait				1
+	playfram			0x44
+	playsndbtwn			1316 1318 # Kalkalisk attack 01, 02, 03
+	attackwith			1
+	wait              	1
+	playfram			0x22
+	nobrkcodeend
+	gotorepeatattk
+	goto              	OgroszalethGndAttkToIdle
+
+OgroszalethWalking:
+	playfram          	0x11
+	wait              	1
+	move				4
+	playfram          	0x22
+	wait              	1
+	move				4
+	playfram          	0x33
+	wait              	1
+	move				4
+	playfram          	0x44
+	wait              	1
+	move				4
+	playfram          	0x55
+	wait              	1
+	move				4
+	playfram          	0x66
+	wait              	1
+	move				4
+	playfram          	0x77
+	wait              	1
+	move				4
+	playfram          	0x88
+	wait              	1
+	move				4
+	playfram          	0x00
+	wait              	1
+	move				4
+	goto              	OgroszalethWalking
+	
+OgroszalethSpecialState2:
+	playfram          	0xdd
+	goto              	SkryrokorLocal00
+
+OgroszalethBurrow:
+	setfldirect			14
+	imgol             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 -18 15 # Burrowing Dust (thingy\bDust.grp)
+	playfram          	0x99
+	wait              	1
+	playfram          	0x88
+	wait              	1
+	playfram			0x99
+	wait				1
+	imgol             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 12 -15 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 -15 -18 # Burrowing Dust (thingy\bDust.grp)
+	playfram          	0xaa
+	wait              	1
+	playfram          	0xbb
+	wait              	1
+	playfram          	0xcc
+	wait              	1
+	playfram          	0xdd
+	imgol             	423 -12 -12 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 9 15 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 -15 21 # Burrowing Dust (thingy\bDust.grp)
+	wait              	1
+	sigorder          	4
+	goto              	SkryrokorLocal00
+
+OgroszalethUnBurrow:
+	wait 				1
+	setfldirect			14
+	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
+	playfram          	0xcc
+	wait              	1
+	playfram          	0xbb
+	wait              	1
+	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 -12 -12 # Burrowing Dust (thingy\bDust.grp)
+	playfram          	0xaa
+	wait              	1
+	playfram          	0x99
+	wait              	1
+	playfram          	0x88
+	wait              	1
+	playfram			0x99
+	imgol             	423 12 -15 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 -15 9 # Burrowing Dust (thingy\bDust.grp)
+	wait				1
+	sigorder          	4
+	goto              	OgroszalethGndAttkToIdle
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2249 Malkothrokor (cm\zerg\malkothrokor.grp)
+.headerstart
+IsId           	837
+Type           	26
+Init           	MalkothrokorInit
+Death          	MalkothrokorDeath
+GndAttkInit    	MalkothrokorGndAttkInit
+AirAttkInit    	[NONE]
+Unused1        	[NONE]
+GndAttkRpt     	MalkothrokorGndAttkRpt
+AirAttkRpt     	[NONE]
+CastSpell      	[NONE]
+GndAttkToIdle  	MalkothrokorGndAttkToIdle
+AirAttkToIdle  	[NONE]
+Unused2        	[NONE]
+Walking        	MalkothrokorWalking
+WalkingToIdle  	MalkothrokorWalkingToIdle
+SpecialState1  	[NONE]
+SpecialState2 	MalkothrokorSpecialState2
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	MalkothrokorBurrow
+UnBurrow      	MalkothrokorUnBurrow
+Enable        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+MalkothrokorInit:
+	imgulnextid     	0 -6 # Malkothrokor Shadow (cm\zerg\malkothrokor-shadow.grp)
+	playfram          	221
+	wait				1
+MalkothrokorWalkingToIdle:
+	wait           		125
+	goto           		MalkothrokorWalkingToIdle
+
+MalkothrokorDeath:
+	playsnd        		815 # Zerg\DEFILER\ZDeDth00.WAV
+	setfldirect    		0
+	playfram       		544
+	wait           		2
+	playfram       		545
+	wait           		2
+	playfram       		546
+	wait           		2
+	playfram       		547
+	wait           		2
+	playfram       		548
+	wait           		2
+	playfram       		549
+	wait           		2
+	playfram       		550
+	wait           		2
+	playfram       		551
+	wait           		2
+	playfram       		552
+	wait           		2
+	playfram       		553
+	wait           		2
+	playfram       		554
+	wait           		2
+	playfram       		555
+	wait           		2
+	playfram       		556
+	wait           		2
+	lowsprul       		1090 0 0 # Malkothrokor Remnants (cm\zerg\malkothrokor-death.grp)
+	wait           		1
+	end            	
+
+MalkothrokorGndAttkInit:
+	playfram			221
+	wait           		1
+	playfram			238
+	wait           		1
+	playfram			255
+	wait           		1
+	playfram			272
+	wait           		1
+	playfram			289
+	wait           		1
+	playfram			306
+	wait           		1
+	playfram			323
+	wait           		1
+	playfram			340
+	wait           		1
+MalkothrokorGndAttkRpt:
+	nobrkcodestart 	
+	playsndrand     	3 891 892 893 # Zerg\Ultra\zulAtt00.WAV | Zerg\Ultra\zulAtt01.WAV | Zerg\Ultra\zulAtt02.WAV
+	playfram			0
+	wait           		1
+	playfram			17
+	wait           		1
+	playfram			34
+	wait           		1
+	playfram			51
+	wait           		1
+	playfram			68
+	wait           		1
+	playfram			85
+	wait           		1
+	attackmelee       	2 894 895 # Zerg\Ultra\zulHit00.WAV | Zerg\Ultra\zulHit01.WAV
+	playfram			68
+	wait           		1
+	playfram			51
+	wait           		1
+	playfram			34
+	wait           		1
+	playfram			17
+	wait           		1
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+MalkothrokorGndAttkToIdle:
+	playfram			221
+	wait           		1
+	playfram			238
+	wait           		1
+	playfram			255
+	wait           		1
+	playfram			272
+	wait           		1
+	playfram			289
+	wait           		1
+	playfram			306
+	wait           		1
+	playfram			323
+	wait           		1
+	playfram			340
+	wait           		1
+	goto           		MalkothrokorWalkingToIdle
+
+MalkothrokorWalking:
+	playfram        	357
+	move            	4
+	wait            	1
+	playfram        	374
+	move            	4
+	wait            	1
+	playfram        	391
+	move            	4
+	wait            	1
+	playfram        	408
+	move            	4
+	wait            	1
+	playfram        	425
+	move            	4
+	wait            	1
+	playfram        	442
+	move            	4
+	wait            	1
+	playfram        	459
+	move            	4
+	wait            	1
+	playfram        	476
+	move            	4
+	wait            	1
+	playfram        	493
+	move            	4
+	wait            	1
+	playfram        	510
+	move            	4
+	wait            	1
+	playfram        	527
+	move            	4
+	wait            	1
+	goto           		MalkothrokorWalking
+	
+MalkothrokorSpecialState2:
+	playfram			0x22d
+	goto				SkryrokorLocal00
+	
+MalkothrokorBurrow:
+	imgol             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 -18 15 # Burrowing Dust (thingy\bDust.grp)
+	playsnd           	1093 # Zerg\LURKER\ZLuBurrw.wav
+	playfram          	0xff
+	wait              	1 
+	playfram          	0x110
+	wait              	1 
+	playfram          	0x121
+	wait              	1 
+	playfram          	0x132
+	wait              	1 
+	imgol             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 12 -15 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 -15 -18 # Burrowing Dust (thingy\bDust.grp)
+	playfram          	0x143
+	wait              	1 
+	playfram          	0x154
+	wait              	1 
+	playfram          	0x165
+	wait              	1 
+	playfram          	0x176
+	wait              	1 
+	playfram			0x22d
+	imgol             	423 -12 -12 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 9 15 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 -15 21 # Burrowing Dust (thingy\bDust.grp)
+	wait              	1 
+	sigorder          	4 
+	goto              	SkryrokorLocal00
+
+MalkothrokorUnBurrow:
+	wait 				1
+	waitrand          	1 2
+	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 12 -9 # Burrowing Dust (thingy\bDust.grp)
+	playfram          	0x176
+	wait              	1 
+	playfram          	0x165
+	wait              	1 
+	playfram          	0x154
+	wait              	1 
+	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 -12 -12 # Burrowing Dust (thingy\bDust.grp)
+	playfram          	0x143
+	wait              	1 
+	playfram          	0x132
+	wait              	1 
+	playfram          	0x121
+	wait              	1 
+	playfram          	0x110
+	wait              	1 
+	playfram          	0xff
+	imgol             	423 12 -15 # Burrowing Dust (thingy\bDust.grp)
+	imgol             	423 -15 9 # Burrowing Dust (thingy\bDust.grp)
+	wait              	1 
+	sigorder          	4 
+	goto              	MalkothrokorGndAttkToIdle
