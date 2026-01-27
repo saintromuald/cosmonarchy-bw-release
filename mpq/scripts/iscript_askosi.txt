@@ -1101,7 +1101,7 @@ SpecialState1 	[NONE]
 # ----------------------------------------------------------------------------- #
 
 RoveInit:
-	imgul             	2109 0 7 # Rove Shadow (cm\askosi\rove.grp)
+	imgulnextid			0 7 # Rove Shadow (cm\askosi\rove.grp)
 	playfram          	0x00
 	goto              	RoveGndAttkToIdle
 
@@ -1137,13 +1137,20 @@ RoveUnused1:
 
 RoveGndAttkInit:
 	wait              	1
+	nobrkcodestart
+	wait              	1
+	playfram			0x20
 	attackwith        	1
+	wait				1
+	playfram			0x00
+	nobrkcodeend
 	gotorepeatattk
 	goto              	RoveGndAttkToIdle
 
 RoveWalking:
 	playfram          	0x00
 	setvertpos        	0
+	imgol             	2303 0 0 # Rove Engine
 	goto				SkryrokorLocal00
 	
 # ----------------------------------------------------------------------------- #
@@ -1458,7 +1465,7 @@ SpecialState1 	[NONE]
 # ----------------------------------------------------------------------------- #
 
 HelionInit:
-	imgul             	2177 0 42 # Helion Shadow (cm\askosi\helion.grp)
+	imgulnextid			0 42 # Helion Shadow (cm\askosi\helion.grp)
 HelionGndAttkToIdle:
 	playfram          	0x00
 HelionLocal00:
@@ -1522,7 +1529,7 @@ SpecialState1 	TiradeSpecialState1
 # ----------------------------------------------------------------------------- #
 
 TiradeInit:
-	imgul             	2179 0 42 # Tirade Shadow (cm\askosi\tirade.grp)
+	imgulnextid			0 42 # Tirade Shadow (cm\askosi\tirade.grp)
 TiradeGndAttkToIdle:
 	playfram          	0x00
 TiradeLocal00:
@@ -2021,7 +2028,7 @@ MimicWalking:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 4026 Intendent (cm\askosi\intendent.grp)
+# 2218 Intendent (cm\askosi\intendent.grp)
 .headerstart
 IsId          	23
 Type          	21
@@ -2072,7 +2079,6 @@ IntendentGndAttkRpt:
 	wait				1
 	nobrkcodestart
 	playfram			0x200
-	playsndbtwn			1788 1790 # Atreus weapon fire 01, 02, 03
 	attackwith        	1
 	wait				1
 	playfram			0x220
@@ -2639,3 +2645,1919 @@ OpticalFlareHitInit:
 	playfram          	8
 	wait              	1
 	goto              	Generic_Wait1End
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2253 Aphorist (cm\askosi\aphorist.grp)
+.headerstart
+IsId          	33
+Type          	21
+Init          	AphoristInit
+Death         	AphoristDeath
+GndAttkInit   	AphoristGndAttkInit
+AirAttkInit   	AphoristGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	AphoristGndAttkRpt
+AirAttkRpt    	AphoristGndAttkRpt
+CastSpell     	[NONE]
+GndAttkToIdle 	AphoristGndAttkToIdle
+AirAttkToIdle 	AphoristGndAttkToIdle
+Unused2       	[NONE]
+Walking       	AphoristWalking
+WalkingToIdle 	AphoristGndAttkToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+AphoristInit:
+	imgulnextid			0 0 # Aphorist Shadow (cm\askosi\aphorist-shadow.grp)
+	playfram          	0x00
+	goto				SkryrokorLocal00
+	
+AphoristGndAttkToIdle:
+	playfram			0x22
+	wait				1
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+AphoristDeath:
+	playsndbtwn			3053 3056 # Aphorist death 01, 02, 03, 04
+	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			947 0 0 # Aphorist remains (cm\protoss\aphorist-death.grp)
+	wait              	1
+	end
+
+AphoristGndAttkInit:
+	playfram			0x22
+	wait				1
+	playfram			0x33
+AphoristGndAttkRpt:
+	wait				1
+	nobrkcodestart
+	playfram          	0x44
+	attack
+	wait              	1
+	playfram			0x55
+	wait              	6
+	playfram          	0x99
+	attack
+	wait              	1
+	playfram			0xee
+	wait				6
+	playfram          	0x44
+	attack
+	wait              	1
+	playfram			0x55
+	wait              	6
+	playfram          	0x99
+	attack
+	wait              	1
+	playfram			0xee
+	wait				1
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto              	AphoristGndAttkToIdle
+
+AphoristWalking:
+	move              	5
+	wait              	1
+	playfram          	0xff
+	move              	5
+	wait              	1
+	playfram          	0x110
+	move              	5
+	wait              	1
+	playfram          	0x121
+	move              	5
+	wait              	1
+	playfram          	0x132
+	move              	5
+	wait              	1
+	playfram          	0x143
+	move              	5
+	wait              	1
+	playfram          	0x154
+	move              	5
+	wait              	1
+	playfram          	0x165
+	move              	5
+	wait              	1
+	playfram          	0x176
+	move              	5
+	wait              	1
+	playfram          	0x187
+	move              	5
+	wait              	1
+	playfram          	0x198
+	move              	5
+	wait              	1
+	playfram          	0x1a9
+	move              	5
+	wait              	1
+	playfram          	0x1ba
+	goto              	AphoristWalking
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 239 Thaumalogue (cm\askosi\thaumalogue.grp)
+.headerstart
+IsId          	34
+Type          	21
+Init          	ThaumalogueInit
+Death         	ThaumalogueDeath
+GndAttkInit   	ThaumalogueGndAttkInit
+AirAttkInit   	ThaumalogueGndAttkInit
+Unused1       	ThaumalogueUnused1
+GndAttkRpt    	ThaumalogueGndAttkRpt
+AirAttkRpt    	ThaumalogueGndAttkRpt
+CastSpell     	[NONE]
+GndAttkToIdle 	ThaumalogueGndAttkToIdle
+AirAttkToIdle 	ThaumalogueGndAttkToIdle
+Unused2       	[NONE]
+Walking       	ThaumalogueWalking
+WalkingToIdle 	ThaumalogueWalkingToIdle
+SpecialState1 	ObjectSpecialState1
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ThaumalogueInit:
+	imgulnextid			0 0 # Thaumalogue Shadow (cm\askosi\thaumalogue-shadow.grp)
+ThaumalogueWalkingToIdle:
+	playfram          	0x80
+ThaumalogueLocal00:
+	wait				63
+	randcondjmp       	25 ThaumalogueLocal01
+	randcondjmp       	128 ThaumalogueLocal02
+	goto              	ThaumalogueLocal00
+
+ThaumalogueLocal01:
+	playfram          	0x00
+	wait              	1
+	playfram          	0x20
+	wait              	1
+	playfram          	0x40
+	randcondjmp       	192 ThaumalogueLocal03
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	wait              	6
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	wait              	6
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	goto              	ThaumalogueLocal04
+
+ThaumalogueLocal04:
+	playfram          	0x20
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	goto              	ThaumalogueWalkingToIdle
+
+ThaumalogueLocal03:
+	wait              	13
+	playfram          	0x20
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	goto              	ThaumalogueWalkingToIdle
+
+ThaumalogueLocal02:
+	playfram          	0xA0
+	wait              	1
+	playfram          	0xC0
+	wait              	1
+	turnrand          	3
+	wait              	1
+	playfram          	0xA0
+	wait              	1
+	goto              	ThaumalogueWalkingToIdle
+
+ThaumalogueDeath:
+	playsndbtwn       	296 298 # Terran\Firebat\TFBDth00.WAV | Terran\Firebat\TFBDth02.WAV
+	imgol             	2089 0 0 # Askosi Death Explosion Small (cm\askosi\a-death-small.grp)
+	setfldirect       	0
+	playfram          	416
+	wait              	2
+	playfram          	417
+	wait              	2
+	playfram          	418
+	wait              	2
+	playfram          	419
+	wait              	2
+	playfram          	420
+	wait              	2
+	playfram          	421
+	wait              	2
+	playfram          	422
+	wait              	2
+	playfram          	423
+	wait              	2
+	lowsprul          	236 0 0 # Thaumalogue Remnants (terran\thaumalogue-death.grp)
+	wait              	1
+	end
+	
+ThaumalogueUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect       	0
+	playsndbtwn			1161 1162
+	playfram			422
+	wait				2
+	playfram			421
+	wait				2
+	playfram			420
+	wait				2
+	playfram			419
+	wait				2
+	playfram			418
+	wait				2
+	playfram			417
+	wait				2
+	playfram			416
+	wait              	2
+	setfldirect       	12
+	nobrkcodeend
+	goto				ThaumalogueWalkingToIdle
+
+ThaumalogueGndAttkInit:
+	playfram          	0x00
+	wait              	1
+	playfram          	0x20
+	wait              	1
+	playfram          	0x40
+ThaumalogueGndAttkRpt:
+	wait              	1
+	nobrkcodestart
+	attackwith        	1
+	playfram          	0x60
+	wait              	1
+	playfram          	0x40
+	wait              	1
+	playfram          	0x60
+	wait              	1
+	playfram          	0x40
+	wait              	1
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+ThaumalogueGndAttkToIdle:
+	playfram          	0x20
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	goto              	ThaumalogueWalkingToIdle
+
+ThaumalogueWalking:
+	move              	4
+	wait              	1
+	playfram          	0xA0
+	move              	4
+	wait              	1
+	playfram          	0xC0
+	move              	4
+	wait              	1
+	playfram          	0xE0
+	move              	4
+	wait              	1
+	playfram          	0x100
+	move              	4
+	wait              	1
+	playfram          	0x120
+	move              	4
+	wait              	1
+	playfram          	0x140
+	move              	4
+	wait              	1
+	playfram          	0x160
+	move              	4
+	wait              	1
+	playfram          	0x180
+	move              	4
+	wait              	1
+	playfram          	0x80
+	goto              	ThaumalogueWalking
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2269 Conduit (cm\askosi\conduit.grp)
+.headerstart
+IsId          	35
+Type          	24
+Init          	ConduitInit
+Death         	LandlockDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	SkryrokorLocal00
+WalkingToIdle 	SkryrokorLocal00
+SpecialState1 	ConduitSpecialState1
+SpecialState2 	SkryrokorLocal00
+AlmostBuilt   	ConduitAlmostBuilt
+Built         	ConduitBuilt
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	ConduitIsWorking
+WorkingToIdle 	ConduitBuilt
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	ConduitDisable
+Burrow        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ConduitInit:
+	imgulnextid			0 0 # Conduit Shadow (cm\askosi\conduit-shadow.grp)
+	playfram          	0
+	goto              	SkryrokorLocal00
+
+ConduitSpecialState1:
+	playfram          	1
+	goto              	SkryrokorLocal00
+
+ConduitAlmostBuilt:
+	playfram          	1
+	goto              	SkryrokorLocal00
+
+ConduitBuilt:
+	playfram          	0
+	goto              	SkryrokorLocal00
+
+ConduitIsWorking:
+	playfram          	2
+	wait              	2
+	playfram          	0
+	waitrand			1 2
+	goto              	ConduitIsWorking
+
+ConduitDisable:
+	goto              	SkryrokorLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2271 Bestiary (cm\askosi\bestiary.grp)
+.headerstart
+IsId          	36
+Type          	24
+Init          	BestiaryInit
+Death         	LandlockDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	SkryrokorLocal00
+WalkingToIdle 	SkryrokorLocal00
+SpecialState1 	BestiarySpecialState1
+SpecialState2 	SkryrokorLocal00
+AlmostBuilt   	BestiaryAlmostBuilt
+Built         	BestiaryBuilt
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	BestiaryIsWorking
+WorkingToIdle 	BestiaryBuilt
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	BestiaryDisable
+Burrow        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+BestiaryInit:
+	imgulnextid			0 0 # Bestiary Shadow (cm\askosi\conduit-shadow.grp)
+	playfram          	0
+	goto              	SkryrokorLocal00
+
+BestiarySpecialState1:
+	playfram          	1
+	goto              	SkryrokorLocal00
+
+BestiaryAlmostBuilt:
+	playfram          	1
+	goto              	SkryrokorLocal00
+
+BestiaryBuilt:
+	playfram          	0
+	goto              	SkryrokorLocal00
+
+BestiaryIsWorking:
+	playfram          	2
+	wait              	2
+	playfram          	0
+	waitrand			1 2
+	goto              	BestiaryIsWorking
+
+BestiaryDisable:
+	goto              	SkryrokorLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2273 Zylode (cm\askosi\zylode.grp)
+.headerstart
+IsId          	37
+Type          	24
+Init          	ZylodeInit
+Death         	LandlockDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	SkryrokorLocal00
+WalkingToIdle 	SkryrokorLocal00
+SpecialState1 	ZylodeSpecialState1
+SpecialState2 	SkryrokorLocal00
+AlmostBuilt   	ZylodeAlmostBuilt
+Built         	ZylodeBuilt
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	ZylodeIsWorking
+WorkingToIdle 	ZylodeBuilt
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	ZylodeDisable
+Burrow        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ZylodeInit:
+	imgulnextid			0 0 # Zylode Shadow (cm\askosi\zylode-shadow.grp)
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+ZylodeSpecialState1:
+	playfram          	9
+	goto              	SkryrokorLocal00
+
+ZylodeAlmostBuilt:
+	playfram          	9
+	goto              	SkryrokorLocal00
+
+ZylodeBuilt:
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+ZylodeIsWorking:
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait				1
+	playfram          	3
+	wait				1
+	playfram          	4
+	wait				1
+	playfram          	5
+	wait				1
+	playfram          	6
+	wait				1
+	playfram          	7
+	wait				1
+	playfram          	8
+	wait				1
+	goto              	ZylodeIsWorking
+
+ZylodeDisable:
+	goto              	SkryrokorLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2275 Astrolabe (cm\askosi\astrolabe.grp)
+.headerstart
+IsId          	38
+Type          	24
+Init          	AstrolabeInit
+Death         	LandlockDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	SkryrokorLocal00
+WalkingToIdle 	SkryrokorLocal00
+SpecialState1 	AstrolabeSpecialState1
+SpecialState2 	SkryrokorLocal00
+AlmostBuilt   	AstrolabeAlmostBuilt
+Built         	AstrolabeBuilt
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	AstrolabeIsWorking
+WorkingToIdle 	AstrolabeBuilt
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	AstrolabeDisable
+Burrow        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+AstrolabeInit:
+	imgulnextid			0 0 # Astrolabe Shadow (cm\askosi\astrolabe-shadow.grp)
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+AstrolabeSpecialState1:
+	playfram          	1
+	goto              	SkryrokorLocal00
+
+AstrolabeAlmostBuilt:
+	playfram          	1
+	goto              	SkryrokorLocal00
+
+AstrolabeBuilt:
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+AstrolabeIsWorking:
+	playfram          	2
+	wait              	1
+	playfram          	3
+	wait				1
+	playfram          	4
+	wait				1
+	playfram          	5
+	wait				1
+	playfram          	6
+	wait				1
+	playfram          	7
+	wait				1
+	playfram          	8
+	wait				1
+	playfram          	9
+	wait				1
+	playfram          	10
+	wait				1
+	playfram          	11
+	wait				1
+	playfram          	12
+	wait				1
+	playfram          	13
+	wait				1
+	playfram          	14
+	wait				1
+	playfram          	15
+	wait				1
+	playfram          	16
+	wait				1
+	playfram          	17
+	wait				1
+	playfram          	0
+	wait				1
+	goto              	AstrolabeIsWorking
+
+AstrolabeDisable:
+	goto              	SkryrokorLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2258 Avatar (cm\askosi\avatar.grp)
+.headerstart
+IsId          	39
+Type          	12
+Init          	AvatarInit
+Death         	AvatarDeath
+GndAttkInit   	AvatarGndAttkInit
+AirAttkInit   	AvatarGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	AvatarGndAttkInit
+AirAttkRpt    	AvatarGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	AvatarGndAttkToIdle
+AirAttkToIdle 	AvatarGndAttkToIdle
+Unused2       	[NONE]
+Walking       	AvatarWalking
+WalkingToIdle 	AvatarGndAttkToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+AvatarInit:
+	imgulnextid			0 0 # Avatar Shadow (cm\askosi\avatar-shadow.grp)
+AvatarGndAttkToIdle:
+	playfram          	0x00
+	goto              	AvatarLocal00
+
+AvatarLocal00:
+	wait              	62
+	randcondjmp       	43 AvatarLocal01
+	goto              	AvatarLocal00
+
+AvatarLocal01:
+	randcondjmp       	128 AvatarLocal02
+	playfram          	0x11
+	wait              	1
+	turnccwise        	1
+	playfram          	0x22
+	wait              	1
+	turnccwise        	1
+	playfram          	0x33
+	wait              	1
+	turnccwise        	1
+	playfram          	0x22
+	wait              	1
+	turnccwise        	1
+	playfram          	0x11
+	wait              	1
+	turnccwise        	1
+	playfram          	0x00
+	wait              	1
+	turnccwise        	1
+	goto              	AvatarGndAttkToIdle
+
+AvatarLocal02:
+	playfram          	0x11
+	wait              	1
+	turnccwise        	1
+	playfram          	0x22
+	wait              	1
+	turnccwise        	1
+	playfram          	0x33
+	wait              	1
+	turnccwise        	1
+	playfram          	0x22
+	wait              	1
+	turnccwise        	1
+	playfram          	0x11
+	wait              	1
+	turnccwise        	1
+	playfram          	0x00
+	wait              	1
+	turnccwise        	1
+	goto              	AvatarGndAttkToIdle
+
+AvatarDeath:
+	playsnd           	353	# Terran\VULTURE\TVuDth00.WAV
+	imgol             	332 0 0	# Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	2
+	lowsprul          	230 0 0 # Eidolon Remnants (terran\tghDeath.grp)
+	wait              	1
+	wait              	3 
+	end
+
+AvatarGndAttkInit:
+	playfram          	0x99
+	wait              	1
+	nobrkcodestart
+	wait              	4
+	attackwith			1
+	playfram          	0xaa
+	wait              	1 
+	playfram          	0x99
+	wait              	1 
+	playfram          	0xaa
+	wait              	1 
+	playfram          	0x99
+	wait              	1 
+	playfram          	0xaa
+	wait              	1 
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto              	AvatarGndAttkToIdle
+
+AvatarWalking:
+	move              	5
+	wait              	1
+	playfram          	0x11
+	move              	5
+	wait              	1
+	playfram          	0x22
+	move              	5
+	wait              	1
+	playfram          	0x33
+	move              	5
+	wait              	1
+	playfram          	0x44
+	move              	5
+	wait              	1
+	playfram          	0x55
+	move              	5
+	wait              	1
+	playfram          	0x66
+	move              	5
+	wait              	1
+	playfram          	0x77
+	move              	5
+	wait              	1
+	playfram          	0x88
+	goto              	AvatarWalking
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2260 Doronin (cm\askosi\doronin.grp)
+.headerstart
+IsId          	40
+Type          	26
+Init          	DoroninInit
+Death         	DoroninDeath
+GndAttkInit   	DoroninGndAttkInit
+AirAttkInit   	DoroninGndAttkInit
+Unused1       	DoroninUnused1
+GndAttkRpt    	DoroninGndAttkInit
+AirAttkRpt    	DoroninGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	DoroninGndAttkToIdle
+AirAttkToIdle 	DoroninGndAttkToIdle
+Unused2       	[NONE]
+Walking       	DoroninWalking
+WalkingToIdle 	DoroninWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	[NONE]
+UnBurrow      	[NONE]
+Enable        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+DoroninInit:
+	imgulnextid			0 -3 # Doronin Shadow (cm\askosi\doronin-shadow.grp)
+	goto				DoroninLocal42
+DoroninLocal42:
+	playfram          	0x00
+	wait				1
+	goto              	DoroninLocal00
+
+DoroninLocal00:
+	wait				62
+	randcondjmp       	85 DoroninLocal01
+	goto				DoroninLocal00
+
+DoroninLocal01:
+	playfram			0x20
+	wait				1
+	playfram			0x40
+	wait				1
+	playfram			0x60
+	wait				1
+	playfram			0x80
+	wait				1
+	playfram			0xa0
+	wait				1
+	playfram			0xc0
+	wait				1
+	playfram			0xe0
+	wait				1
+	playfram			0x100
+	wait				1
+	playfram			0x120
+	wait				1
+	playfram			0x140
+	wait				1
+	playfram			0x160
+	wait				1
+	goto              	DoroninLocal42
+
+DoroninDeath:
+	playsnd           	1917 # Zoryusthaleth death 01
+	imgol             	28 0 0 # Geszithalor Death (zerg\zguDeath.grp)
+	wait              	5
+	lowsprul			848 0 0 # Zerg Unit Rubble Medium
+	wait              	1
+	end
+	
+DoroninUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect       	0
+	playsnd				1171 # Ultrokor death reversed
+#	playfram			244
+	wait				2
+#	playfram			243
+	wait				2
+#	playfram			242
+	wait				2
+#	playfram			241
+	wait				2
+#	playfram			240
+	wait				2
+	wait				2
+	setfldirect       	12
+	nobrkcodeend
+	goto				DoroninLocal42
+
+DoroninGndAttkInit:
+	playfram          	0x320
+	wait              	1
+	nobrkcodestart
+	playfram          	0x360
+	wait              	1
+	playfram          	0x380
+	wait              	1
+	playfram          	0x400
+	playsndbtwn			3141 3144 # Doronin weaponfire 01, 02, 03, 04
+	attackwith 			1
+	wait				1
+	playfram          	0x420
+	wait				1
+	playfram          	0x440
+	wait				1
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto				DoroninGndAttkToIdle
+	
+DoroninGndAttkToIdle:
+	playfram 			0x320
+	wait 				1
+	goto              	DoroninLocal00
+
+DoroninWalking:
+	playfram          	0x180
+	move              	5
+	wait              	1
+	playfram			0x1A0
+	move              	5
+	wait              	1
+	playfram			0x1C0
+	move              	5
+	wait              	1
+	playfram          	0x1E0
+	move              	5
+	wait              	1
+	playfram          	0x200
+	move              	5
+	wait              	1
+	playfram          	0x220
+	move              	5
+	wait              	1
+	playfram          	0x240
+	move              	5
+	wait              	1
+	playfram          	0x260
+	move              	5
+	wait              	1
+	playfram          	0x280
+	move              	5
+	wait              	1
+	playfram          	0x2A0
+	move              	5
+	wait              	1
+	playfram          	0x2C0
+	move              	5
+	wait              	1
+	playfram          	0x2E0
+	move              	5
+	wait              	1
+	playfram          	0x300
+	move              	5
+	wait              	1
+	goto				DoroninWalking
+	
+DoroninWalkingToIdle:
+	playfram			0x00
+	goto				DoroninLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2257 Thaumalogue Remains (cm\askosi\thaumalogue-remains.grp)
+.headerstart
+IsId          	41
+Type          	1
+Init          	GenericRemnantsThreeInit
+Death         	GenericRemnantsThreeDeath
+.headerend
+# ----------------------------------------------------------------------------- #
+
+GenericRemnantsThreeInit:
+	playfram          	0x00
+	wait              	239
+GenericRemnantsThreeDeath:
+	wait				1
+	playfram          	1
+	wait              	255
+	wait				24
+	playfram          	2
+	wait              	255
+	wait				24
+	playfram          	3
+	wait              	255
+	wait				24
+	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2277 Ash Heap Overlay (cm\askosi\a-fire-v.grp)
+.headerstart
+IsId          	42
+Type          	1
+Init          	Flames_Small_Init
+Death         	Flames_Small_Death
+.headerend
+# ----------------------------------------------------------------------------- #
+
+Flames_Small_Init:
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	10
+	wait              	2
+	playfram          	11
+	wait              	2
+	goto              	Flames_Small_Init
+
+Flames_Small_Death:
+	wait              	1 
+	end
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2178 Crematorium (cm\askosi\crematorium.grp)
+.headerstart
+IsId          	43
+Type          	21
+Init          	CrematoriumInit
+Death         	CrematoriumDeath
+GndAttkInit   	CrematoriumGndAttkInit
+AirAttkInit   	CrematoriumGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	CrematoriumGndAttkInit
+AirAttkRpt    	CrematoriumGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	CrematoriumGndAttkToIdle
+AirAttkToIdle 	CrematoriumGndAttkToIdle
+Unused2       	[NONE]
+Walking       	CrematoriumWalking
+WalkingToIdle 	CrematoriumLocal00
+SpecialState1 	CrematoriumSpecialState1
+.headerend
+# ----------------------------------------------------------------------------- #
+
+CrematoriumInit:
+	imgulnextid			0 42 # Crematorium Shadow (cm\askosi\crematorium.grp)
+CrematoriumGndAttkToIdle:
+	playfram          	0x00
+CrematoriumLocal00:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	CrematoriumLocal00
+
+CrematoriumDeath:
+	playsnd           	177	# Terran\BATTLE\tbaDth00.wav
+	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
+	wait              	3
+	lowsprul          	1065 0 42 # Askosi Unit Rubble (cm\askosi\a-rubble-tiny.grp)
+	wait              	1
+	end
+	
+CrematoriumGndAttkInit:
+	setvertpos			0
+	wait				1
+	nobrkcodestart
+	playfram			0x00
+	attackwith			1
+	imgol				2245 0 0 # Impact Dissipation (medium)
+	wait 				3
+	playfram			0x00
+	attackwith			1
+	imgol				2245 0 0 # Impact Dissipation (medium)
+	wait 				3
+	playfram			0x00
+	attackwith			1
+	imgol				2245 0 0 # Impact Dissipation (medium)
+	wait 				3
+	playfram			0x00
+	attackwith			1
+	imgol				2245 0 0 # Impact Dissipation (medium)
+	wait 				1
+	nobrkcodeend
+	gotorepeatattk
+	goto				CrematoriumGndAttkToIdle
+
+CrematoriumWalking:
+	setvertpos        	0
+#	imgol             	225 0 5 # Crematorium Engines (thingy\tdrGlow.grp)
+	goto              	SkryrokorLocal00
+	
+CrematoriumSpecialState1:
+	playfram			0x00
+	wait				12
+	goto				SkryrokorLocal00
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2280 Eyelet (cm\askosi\eyelet.grp)
+.headerstart
+IsId          	44
+Type          	26
+Init          	EyeletInit
+Death         	EyeletDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	EyeletUnused2
+Walking       	SkryrokorLocal00
+WalkingToIdle 	EyeletWalkingToIdle
+SpecialState1 	EyeletSpecialState1
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	EyeletBurrow
+UnBurrow      	EyeletUnBurrow
+Enable        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+EyeletInit:
+	imgulnextid			0 -6 # Spider Mine Shadow (cm\askosi\eyelet-shadow.grp)
+EyeletWalkingToIdle:
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+EyeletDeath:
+	playsnd           	10 # Misc\Explo1.wav
+	playfram          	12
+	wait              	1
+	playfram          	13
+	wait              	1
+	playfram          	14
+	wait              	1
+	playfram          	15
+	wait              	1
+	playfram          	16
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	18
+	wait              	1
+	playfram          	19
+	wait              	1
+	playfram          	20
+	wait              	1
+	end
+
+EyeletSpecialState1:
+	castspell
+	sigorder          	1
+	playsnd           	10 # Misc\Explo1.wav
+	imgol             	429 0 0 # Spider Mine Death (thingy\tmnExplo.grp)
+	goto              	SkryrokorLocal00
+	
+EyeletUnused2:
+	sigorder			32
+	sigorder          	1
+	playsnd           	10 # Misc\Explo1.wav
+	imgol             	429 0 0 # Spider Mine Death (thingy\tmnExplo.grp)
+	goto              	SkryrokorLocal00
+
+EyeletBurrow:
+	nobrkcodestart
+	imgol             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
+	playsnd           	354 # Terran\VULTURE\TVuMin01.WAV
+	playfram          	8
+	wait              	1
+	playfram          	9
+	wait              	1
+	playfram          	10
+	wait              	1
+	playfram          	11
+	wait              	1
+	sigorder          	4
+	nobrkcodeend
+	goto              	SkryrokorLocal00
+
+EyeletUnBurrow:
+	nobrkcodestart
+	imgul             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
+	playsnd           	354 # Terran\VULTURE\TVuMin01.WAV
+	playfram          	10
+	wait              	1
+	playfram          	9
+	wait              	1
+	playfram          	8
+	wait              	1
+	playfram          	0x00
+	sigorder          	4
+	nobrkcodeend
+	goto              	EyeletWalkingToIdle
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2282 Obelisk (cm\askosi\obelisk.grp)
+.headerstart
+IsId          	45
+Type          	24
+Init          	ObeliskInit
+Death         	LandlockDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	SkryrokorLocal00
+WalkingToIdle 	SkryrokorLocal00
+SpecialState1 	ObeliskSpecialState1
+SpecialState2 	SkryrokorLocal00
+AlmostBuilt   	ObeliskAlmostBuilt
+Built         	ObeliskBuilt
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	ObeliskIsWorking
+WorkingToIdle 	ObeliskBuilt
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	ObeliskDisable
+Burrow        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ObeliskInit:
+	imgulnextid			0 0 # Obelisk Shadow (cm\askosi\obelisk-shadow.grp)
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+ObeliskSpecialState1:
+	playfram          	1
+	goto              	SkryrokorLocal00
+
+ObeliskAlmostBuilt:
+	playfram          	1
+	goto              	SkryrokorLocal00
+
+ObeliskBuilt:
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+ObeliskIsWorking:
+	playfram          	2
+	wait              	1
+	playfram          	3
+	wait				1
+	playfram          	4
+	wait				1
+	playfram          	5
+	wait				1
+	playfram          	6
+	wait				1
+	playfram          	7
+	wait				1
+	playfram          	8
+	wait				1
+	playfram          	9
+	wait				1
+	playfram          	10
+	wait				1
+	playfram          	11
+	wait				1
+	playfram          	12
+	wait				1
+	playfram          	13
+	wait				1
+	playfram          	14
+	wait				1
+	playfram          	15
+	wait				1
+	playfram          	16
+	wait				1
+	playfram          	0
+	wait				1
+	goto              	ObeliskIsWorking
+
+ObeliskDisable:
+	goto              	SkryrokorLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2284 Agonist (cm\askosi\agonist.grp)
+.headerstart
+IsId          	46
+Type          	13
+Init          	AgonistInit
+Death         	AgonistDeath
+GndAttkInit   	AgonistGndAttkInit
+AirAttkInit   	AgonistGndAttkInit
+Unused1       	AgonistUnused1
+GndAttkRpt    	AgonistGndAttkInit
+AirAttkRpt    	AgonistGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	AgonistGndAttkToIdle
+AirAttkToIdle 	AgonistGndAttkToIdle
+Unused2       	[NONE]
+Walking       	AgonistWalking
+WalkingToIdle 	AgonistGndAttkToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+AgonistInit:
+	imgulnextid			0 7 # Agonist Shadow (cm\askosi\agonist.grp)
+	playfram          	0x00
+	goto              	AgonistGndAttkToIdle
+
+AgonistGndAttkToIdle:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	AgonistGndAttkToIdle
+
+AgonistDeath:
+	playsnd           	353 # Terran\Agonist\TVuDth00.WAV
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul          	1065 0 0 # Askosi Unit Rubble (cm\askosi\a-rubble-tiny.grp)
+	end
+	
+AgonistUnused1:
+	wait				1
+	nobrkcodestart
+	tmprmgraphicstart
+	playsnd           	1699 # Agonist revive 01
+	sprol				742 0 0
+	wait				10
+	setfldirect			12
+	tmprmgraphicend
+	nobrkcodeend
+	goto				AgonistGndAttkToIdle
+
+AgonistGndAttkInit:
+	wait              	1
+	attackwith        	1
+	gotorepeatattk
+	goto              	AgonistGndAttkToIdle
+
+AgonistWalking:
+	playfram          	0x00
+	setvertpos        	0
+	goto				SkryrokorLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2292 Akreno (cm\askosi\akreno.grp)
+.headerstart
+IsId          	47
+Type          	21
+Init          	AkrenoInit
+Death         	AkrenoDeath
+GndAttkInit   	AkrenoGndAttkInit
+AirAttkInit   	AkrenoGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	AkrenoGndAttkInit
+AirAttkRpt    	AkrenoGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	AkrenoGndAttkToIdle
+AirAttkToIdle 	AkrenoGndAttkToIdle
+Unused2       	[NONE]
+Walking       	AkrenoWalking
+WalkingToIdle 	AkrenoGndAttkToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+AkrenoInit:
+	imgulnextid			0 42 # Akreno Shadow (cm\askosi\akreno.grp)
+AkrenoGndAttkToIdle:
+	playfram          	0x00
+	wait              	2
+	playfram          	0x11
+	wait              	2
+	playfram          	0x22
+	wait              	2
+	playfram          	0x33
+	wait              	2
+	playfram          	0x44
+	wait              	2
+	playfram          	0x55
+	wait              	2
+	playfram          	0x66
+	wait              	2
+	playfram          	0x77
+	wait              	2
+	goto              	AkrenoGndAttkToIdle
+
+AkrenoDeath:
+	playsnd           	257 # Terran\PHOENIX\TPhDth00.WAV
+	playsnd           	942	# Zerg\Mutalid\ZMuDth00.WAV
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul          	1065 0 42 # Askosi Unit Rubble (cm\askosi\a-rubble-tiny.grp)
+	wait              	1
+	end
+	
+AkrenoGndAttkInit:
+	setvertpos			0
+	wait				1
+	nobrkcodestart
+	playsnd				1326 # Nathrokor weaponfire 01
+	wait 				1
+	attackmelee       	1 894 # Zerg\Ultra\zulHit00.WAV
+	attackwith			2
+	attackwith			2
+	wait 				1
+	nobrkcodeend
+	gotorepeatattk
+	goto				AkrenoGndAttkToIdle
+
+AkrenoWalking:
+	playfram          	0x00
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	playfram          	0x55
+	wait              	1
+	playfram          	0x66
+	wait              	1
+	playfram          	0x77
+	wait              	1
+	goto              	AkrenoWalking
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2178 Iconoclast (cm\askosi\iconoclast.grp)
+.headerstart
+IsId          	48
+Type          	21
+Init          	IconoclastInit
+Death         	IconoclastDeath
+GndAttkInit   	IconoclastGndAttkInit
+AirAttkInit   	IconoclastGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	IconoclastGndAttkInit
+AirAttkRpt    	IconoclastGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	IconoclastGndAttkToIdle
+AirAttkToIdle 	IconoclastGndAttkToIdle
+Unused2       	[NONE]
+Walking       	IconoclastWalking
+WalkingToIdle 	IconoclastLocal00
+SpecialState1 	IconoclastSpecialState1
+.headerend
+# ----------------------------------------------------------------------------- #
+
+IconoclastInit:
+	imgulnextid			0 42 # Iconoclast Shadow (cm\askosi\iconoclast.grp)
+IconoclastGndAttkToIdle:
+	playfram          	0x00
+IconoclastLocal00:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	IconoclastLocal00
+
+IconoclastDeath:
+	playsndbtwn			1249 1251 # Gorgon death 01, 02, 03
+	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
+	wait              	3
+	lowsprul          	1065 0 42 # Askosi Unit Rubble (cm\askosi\a-rubble-tiny.grp)
+	wait              	1
+	end
+	
+IconoclastGndAttkInit:
+	setvertpos			0
+	wait				1
+	nobrkcodestart
+	playfram			0x00
+	attackwith			1
+	wait 				2
+	attackwith			1
+	wait 				1
+	nobrkcodeend
+	gotorepeatattk
+	goto				IconoclastGndAttkToIdle
+
+IconoclastWalking:
+	setvertpos        	0
+#	imgol             	225 0 5 # Iconoclast Engines (thingy\tdrGlow.grp)
+	goto              	SkryrokorLocal00
+	
+IconoclastSpecialState1:
+	playfram			0x00
+	wait				12
+	goto				SkryrokorLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2178 Constituent (cm\askosi\constituent.grp)
+.headerstart
+IsId          	49
+Type          	15
+Init          	ConstituentInit
+Death         	ConstituentDeath
+GndAttkInit   	ConstituentGndAttkInit
+AirAttkInit   	ConstituentGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	ConstituentGndAttkInit
+AirAttkRpt    	ConstituentGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	ConstituentGndAttkToIdle
+AirAttkToIdle 	ConstituentGndAttkToIdle
+Unused2       	[NONE]
+Walking       	ConstituentWalking
+WalkingToIdle 	ConstituentLocal00
+SpecialState1 	ConstituentSpecialState1
+SpecialState2 	[NONE]
+AlmostBuilt   	ConstituentAlmostBuilt
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ConstituentInit:
+	imgulnextid			0 42 # Constituent Shadow (cm\askosi\constituent.grp)
+ConstituentGndAttkToIdle:
+	playfram          	0x00
+ConstituentLocal00:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	ConstituentLocal00
+
+ConstituentDeath:
+	playsndbtwn			1249 1251 # Gorgon death 01, 02, 03
+	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
+	wait              	3
+	lowsprul          	1065 0 42 # Askosi Unit Rubble (cm\askosi\a-rubble-tiny.grp)
+	wait              	1
+	end
+	
+ConstituentGndAttkInit:
+	setvertpos			0
+	wait				1
+	nobrkcodestart
+	playfram			0x00
+	attackwith			1
+	wait 				1
+	nobrkcodeend
+	gotorepeatattk
+	goto				ConstituentGndAttkToIdle
+
+ConstituentWalking:
+	setvertpos        	0
+#	imgol             	225 0 5 # Constituent Engines (thingy\tdrGlow.grp)
+	goto              	SkryrokorLocal00
+	
+ConstituentSpecialState1:
+	playfram			0x00
+	wait				12
+	goto				SkryrokorLocal00
+
+ConstituentAlmostBuilt:
+	setvertpos        	0
+	playfram          	0x60
+	wait              	1
+ConstituentLocal01:
+	playfram          	0x80
+	useweapon         	14	# Fusion Cutter (Harvest) (Fusion Cutter)
+	sigorder			32
+	wait              	1
+	playfram          	0xA0
+	wait				1
+	playfram			0x80
+	wait				10
+	playfram			0xA0
+	wait 				1
+	goto              	ConstituentLocal01
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2290 Zonguard (cm\askosi\zonguard.grp)
+.headerstart
+IsId          	50
+Type          	13
+Init          	ZonguardInit
+Death         	ZonguardDeath
+GndAttkInit   	ZonguardGndAttkInit
+AirAttkInit   	ZonguardGndAttkInit
+Unused1       	ZonguardUnused1
+GndAttkRpt    	ZonguardGndAttkInit
+AirAttkRpt    	ZonguardGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	ZonguardGndAttkToIdle
+AirAttkToIdle 	ZonguardGndAttkToIdle
+Unused2       	[NONE]
+Walking       	ZonguardWalking
+WalkingToIdle 	ZonguardGndAttkToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ZonguardInit:
+	imgulnextid			0 7 # Zonguard Shadow (cm\askosi\zonguard.grp)
+	playfram          	0x00
+	goto              	ZonguardGndAttkToIdle
+
+ZonguardGndAttkToIdle:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	ZonguardGndAttkToIdle
+
+ZonguardDeath:
+	playsnd           	353 # Terran\Zonguard\TVuDth00.WAV
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul          	1065 0 0 # Askosi Unit Rubble (cm\askosi\a-rubble-tiny.grp)
+	end
+	
+ZonguardUnused1:
+	wait				1
+	nobrkcodestart
+	tmprmgraphicstart
+	playsnd           	1699 # Zonguard revive 01
+	sprol				742 0 0
+	wait				10
+	setfldirect			12
+	tmprmgraphicend
+	nobrkcodeend
+	goto				ZonguardGndAttkToIdle
+
+ZonguardGndAttkInit:
+	wait              	1
+	attackwith        	1
+	attackwith        	1
+	gotorepeatattk
+	goto              	ZonguardGndAttkToIdle
+
+ZonguardWalking:
+	playfram          	0x00
+	setvertpos        	0
+	goto				SkryrokorLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2286 Petract (cm\askosi\petract.grp)
+.headerstart
+IsId          	51
+Type          	21
+Init          	PetractInit
+Death         	PetractDeath
+GndAttkInit   	PetractGndAttkInit
+AirAttkInit   	PetractGndAttkInit
+Unused1       	PetractUnused1
+GndAttkRpt    	PetractGndAttkInit
+AirAttkRpt    	PetractGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	PetractGndAttkToIdle
+AirAttkToIdle 	PetractGndAttkToIdle
+Unused2       	[NONE]
+Walking       	PetractWalking
+WalkingToIdle 	PetractGndAttkToIdle
+SpecialState1 	ObjectSpecialState1
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+PetractInit:
+	imgulnextid			0 0 # Petract Shadow (cm\askosi\petract-shadow.grp)
+	playfram          	0x00
+	goto              	PetractGndAttkToIdle
+
+PetractGndAttkToIdle:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	PetractGndAttkToIdle
+
+PetractDeath:
+	playsnd           	353 # Terran\Petract\TVuDth00.WAV
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul          	1065 0 0 # Askosi Unit Rubble (cm\askosi\a-rubble-tiny.grp)
+	end
+	
+PetractUnused1:
+	wait				1
+	nobrkcodestart
+	tmprmgraphicstart
+	playsnd           	1699 # Petract revive 01
+	sprol				742 0 0
+	wait				10
+	setfldirect			12
+	tmprmgraphicend
+	nobrkcodeend
+	goto				PetractGndAttkToIdle
+
+PetractGndAttkInit:
+	wait              	1
+	attackwith        	1
+	attackwith        	1
+	gotorepeatattk
+	goto              	PetractGndAttkToIdle
+
+PetractWalking:
+	playfram          	0x00
+	setvertpos        	0
+	goto				SkryrokorLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2288 Phontis (cm\askosi\phontis.grp)
+.headerstart
+IsId          	52
+Type          	21
+Init          	PhontisInit
+Death         	PhontisDeath
+GndAttkInit   	PhontisGndAttkInit
+AirAttkInit   	PhontisGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	PhontisGndAttkInit
+AirAttkRpt    	PhontisGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	PhontisGndAttkToIdle
+AirAttkToIdle 	PhontisGndAttkToIdle
+Unused2       	[NONE]
+Walking       	PhontisWalking
+WalkingToIdle 	PhontisGndAttkToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+PhontisInit:
+	imgulnextid			0 0 # Phontis Shadow (cm\askosi\phontis-shadow.grp)
+	goto				PhontisGndAttkToIdle
+	
+PhontisGndAttkToIdle:
+	playfram          	0x220
+	goto              	SkryrokorLocal00
+
+PhontisDeath:
+	playsnd           	533	# Protoss\Scout\PScDth00.WAV
+	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
+	wait 				2
+	lowsprul          	1065 0 0 # Askosi Unit Rubble (cm\askosi\a-rubble-tiny.grp)
+	wait              	1
+	end
+
+PhontisGndAttkInit:
+	playfram          	0x220
+PhontisGndAttkRpt:
+	wait				1
+	nobrkcodestart
+	playfram			0x200
+	attackwith        	1
+	wait				1
+	playfram			0x220
+	wait				4
+	playfram			0x200
+	attackwith        	1
+	wait				1
+	playfram			0x220
+	wait				1
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto				PhontisGndAttkToIdle
+
+PhontisWalking:
+	move				4
+	wait				1
+	playfram          	0x00
+	move				4
+	wait				1
+	playfram          	0x20
+	move				4
+	wait				1
+	playfram          	0x40
+	move				4
+	wait				1
+	playfram          	0x60
+	move				4
+	wait				1
+	playfram          	0x80
+	move				4
+	wait				1
+	playfram          	0xA0
+	move				4
+	wait				1
+	playfram          	0xC0
+	move				4
+	wait				1
+	playfram          	0xE0
+	move				4
+	wait				1
+	playfram          	0x100
+	move				4
+	wait				1
+	playfram          	0x120
+	move				4
+	wait				1
+	playfram          	0x140
+	move				4
+	wait				1
+	playfram          	0x160
+	move				4
+	wait				1
+	playfram          	0x180
+	move				4
+	wait				1
+	playfram          	0x1A0
+	move				4
+	wait				1
+	playfram          	0x1C0
+	move				4
+	wait				1
+	playfram          	0x1E0
+	goto				PhontisWalking
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2302 Electric Impact Small (cm\askosi\lightning-hit-small.grp)
+.headerstart
+IsId          	53
+Type          	2
+Init          	LightningImpactSmallInit
+Death         	LightningImpactSmallDeath
+GndAttkInit   	LightningImpactSmallDeath
+AirAttkInit   	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+LightningImpactSmallInit:
+	wait              	1
+	sigorder          	1
+	wait              	1
+LightningImpactSmallDeath:
+	playfram          	0x00
+	domissiledmg
+	wait              	1
+	playfram			3
+	wait 				1
+	playfram			5
+	wait 				1
+	playfram			7
+	wait 				1
+	playfram			9
+	wait              	1
+	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+.headerstart
+IsId          	291
+Type          	15
+Init          	Engines_GlowHeaderInit
+Death         	Generic_Wait1End
+GndAttkInit   	Generic_Wait1End
+AirAttkInit   	Generic_Wait1End
+Unused1       	[NONE]
+GndAttkRpt    	Generic_Wait1End
+AirAttkRpt    	Generic_Wait1End
+CastSpell     	Generic_Wait1End
+GndAttkToIdle 	Generic_Wait1End
+AirAttkToIdle 	Generic_Wait1End
+Unused2       	[NONE]
+Walking       	Engines_GlowHeaderInit
+WalkingToIdle 	Generic_Wait1End
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	Generic_Wait1End
+.headerend
+# ----------------------------------------------------------------------------- #
+
+Engines_GlowHeaderInit:
+	engset            	0
+	wait              	1
+	engset            	1
+	wait              	1
+	goto              	Engines_GlowHeaderInit

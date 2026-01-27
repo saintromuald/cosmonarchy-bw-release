@@ -1553,7 +1553,7 @@ Hippogriff Engines
 unused
 Salamander Death
 Protathalor
-Vulture Engines
+Vulture Engine
 Blade Vortex Debuff Small
 Blade Vortex Debuff Medium
 Blade Vortex Debuff Large
@@ -2251,57 +2251,57 @@ Malkothrokor
 Malkothrokor Shadow
 Malkothrokor Remnants
 Malkothrokor Birth
-Extended Image #1251
-Extended Image #1252
-Extended Image #1253
-Extended Image #1254
-Extended Image #1255
-Extended Image #1256
-Extended Image #1257
-Extended Image #1258
-Extended Image #1259
-Extended Image #1260
-Extended Image #1261
-Extended Image #1262
-Extended Image #1263
-Extended Image #1264
-Extended Image #1265
-Extended Image #1266
-Extended Image #1267
-Extended Image #1268
-Extended Image #1269
-Extended Image #1270
-Extended Image #1271
-Extended Image #1272
-Extended Image #1273
-Extended Image #1274
-Extended Image #1275
-Extended Image #1276
-Extended Image #1277
-Extended Image #1278
-Extended Image #1279
-Extended Image #1280
-Extended Image #1281
-Extended Image #1282
-Extended Image #1283
-Extended Image #1284
-Extended Image #1285
-Extended Image #1286
-Extended Image #1287
-Extended Image #1288
-Extended Image #1289
-Extended Image #1290
-Extended Image #1291
-Extended Image #1292
-Extended Image #1293
-Extended Image #1294
-Extended Image #1295
-Extended Image #1296
-Extended Image #1297
-Extended Image #1298
-Extended Image #1299
-Extended Image #1300
-Extended Image #1301
+Aphorist
+Aphorist Shadow
+Thaumalogue
+Thaumalogue Shadow
+Thaumalogue Remains
+Avatar
+Avatar Shadow
+Doronin
+Doronin Shadow
+Zethalor
+Zethalor Shadow
+Zethalor Birth
+Scrylyleth
+Scrylyleth Shadow
+Scrylyleth Birth
+Zethalor Remains
+Conduit
+Conduit Shadow
+Bestiary
+Bestiary Shadow
+Zylode
+Zylode Shadow
+Astrolabe
+Astrolabe Shadow
+Ash Heap Overlay
+Crematorium
+Crematorium Shadow
+Eyelet
+Eyelet Shadow
+Obelisk
+Obelisk Shadow
+Agonist
+Agonist Shadow
+Petract
+Petract Shadow
+Phontis
+Phontis Shadow
+Zonguard
+Zonguard Shadow
+Akreno
+Akreno Shadow
+Iconoclast
+Iconoclast Shadow
+Paraclete
+Paraclete Shadow
+Auxine
+Auxine Shadow
+Constituent
+Constituent Shadow
+Missionary Weaponhit
+Rove Engine
 Extended Image #1302
 Extended Image #1303
 Extended Image #1304

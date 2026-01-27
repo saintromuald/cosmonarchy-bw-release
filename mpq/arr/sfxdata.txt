@@ -4152,40 +4152,40 @@ Askosi Explosion Large 03
 Blackguard Weaponhit 01
 Blackguard Weaponhit 02
 Blackguard Weaponhit 03
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Proselyte Weaponfire 01
+Proselyte Weaponfire 02
+Proselyte Weaponfire 03
+Proselyte Weaponfire 04
+Aphorist Weaponfire 01
+Aphorist Weaponfire 02
+Aphorist Weaponfire 03
+Aphorist Weaponhit 01
+Aphorist Weaponhit 02
+Aphorist Weaponhit 03
+Phontis Weaponfire 01
+Phontis Weaponfire 02
+Phontis Weaponfire 03
+Crematorium Weaponfire 01
+Crematorium Weaponfire 02
+Crematorium Weaponfire 03
+Zonguard Weaponfire B 01
+Zonguard Weaponfire B 02
+Zonguard Weaponfire B 03
+Agonist Weaponfire 01
+Agonist Weaponfire 02
+Agonist Weaponfire 03
+Petract Weaponfire 01
+Petract Weaponfire 02
+Petract Weaponfire 03
+Akreno Weaponfire 01
+Akreno Weaponfire 02
+Akreno Weaponfire 03
+Akreno Passive Charge 01
+Akreno Passive Charge 02
+Akreno Passive Charge 03
+Akreno Passive Proc 01
+Akreno Passive Proc 02
+Akreno Passive Proc 03
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

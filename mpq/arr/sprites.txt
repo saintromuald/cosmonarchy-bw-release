@@ -1089,31 +1089,31 @@ Askosi Construction (Small)
 Ogroszaleth
 Malkothrokor
 Malkothrokor Remnants
-Extended Sprite #575
-Extended Sprite #576
-Extended Sprite #577
-Extended Sprite #578
-Extended Sprite #579
-Extended Sprite #580
-Extended Sprite #581
-Extended Sprite #582
-Extended Sprite #583
-Extended Sprite #584
-Extended Sprite #585
-Extended Sprite #586
-Extended Sprite #587
-Extended Sprite #588
-Extended Sprite #589
-Extended Sprite #590
-Extended Sprite #591
-Extended Sprite #592
-Extended Sprite #593
-Extended Sprite #594
-Extended Sprite #595
-Extended Sprite #596
-Extended Sprite #597
-Extended Sprite #598
-Extended Sprite #599
+Aphorist
+Thaumalogue
+Avatar
+Doronin
+Zylode
+Agonist
+Petract
+Phontis
+Zonguard
+Astrolabe
+Akreno
+Iconoclast
+Crematorium
+Paraclete
+Zethalor
+Scrylyleth
+Thaumalogue Remnants
+Zethalor Remnants
+Conduit
+Bestiary
+Eyelet
+Obelisk
+Auxine
+Constituent
+Missionary Weaponhit
 Extended Sprite #600
 Extended Sprite #601
 Extended Sprite #602

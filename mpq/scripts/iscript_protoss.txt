@@ -1512,9 +1512,9 @@ WarpIn        	ZealotWarpIn
 # ----------------------------------------------------------------------------- #
 
 ZealotInit:
-	imgul             	152 0 0 # Zealot Shadow (protoss\pzeShad.grp)
+	imgulnextid			0 0 # Zealot Shadow (protoss\zealot-shadow.grp)
 ZealotWalkingToIdle:
-	playfram          	0x55
+	playfram          	0xC0
 ZealotLocal00:
 	wait              	62
 	randcondjmp       	64 ZealotLocal01
@@ -1523,7 +1523,7 @@ ZealotLocal00:
 ZealotLocal01:
 	playfram          	0x00
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 ZealotLocal03:
 	wait              	1
 	waitrand          	14 21
@@ -1555,20 +1555,20 @@ ZealotLocal04:
 ZealotDeath:
 	playsnd           	678	# Protoss\ZEALOT\PZeDth00.WAV
 	setfldirect       	0
-	playfram          	221
+	playfram          	416
 	wait              	2
-	playfram          	222
+	playfram          	417
 	wait              	2
 	lowsprul			815 0 0 # Zealot Remains
-	playfram          	223
+	playfram          	418
 	wait              	2
-	playfram          	224
+	playfram          	419
 	wait              	2
-	playfram          	225
+	playfram          	420
 	wait              	2
-	playfram          	226
+	playfram          	421
 	wait              	2
-	playfram          	227
+	playfram          	422
 	wait              	2
 	end
 	
@@ -1577,17 +1577,17 @@ ZealotUnused1:
 	nobrkcodestart
 	setfldirect       	0 
 	playsnd				1187
-	playfram			226
+	playfram			422
 	wait				2
-	playfram			225
+	playfram			421
 	wait				2
-	playfram			224
+	playfram			420
 	wait				2
-	playfram			223
+	playfram			419
 	wait				2
-	playfram			222
+	playfram			418
 	wait				2
-	playfram			221
+	playfram			417
 	wait				2
 	setfldirect       	12
 	nobrkcodeend
@@ -1598,22 +1598,22 @@ ZealotGndAttkInit:
 	wait              	1
 ZealotGndAttkRpt:
 	playsndrand       	2 662 663 # Protoss\ZEALOT\pzeAtt00.WAV | Protoss\ZEALOT\pzeAtt01.WAV
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
 	nobrkcodestart
-	playfram          	0x22
+	playfram          	0x40
 	wait              	1
-	playfram          	0x33
+	playfram          	0x60
 	wait              	1
-	playfram          	0x44
+	playfram          	0x80
+    attackmelee         1 1897 # Legionnaire weapon hit 01
+	wait              	1
+	playfram          	0x60
+	wait              	1
+	playfram          	0x40
 	attackmelee       	1 0
 	wait              	1
-	playfram          	0x33
-	wait              	1
-	playfram          	0x22
-	attackmelee       	1 0
-	wait              	1
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
 	playfram          	0x00
 	nobrkcodeend
@@ -1625,28 +1625,28 @@ ZealotGndAttkToIdle:
 ZealotWalking:
 	move              	4
 	wait              	1
-	playfram          	0x55
+	playfram          	0xA0
 	move              	4
 	wait              	1
-	playfram          	0x66
+	playfram          	0xC0
 	move              	4
 	wait              	1
-	playfram          	0x77
+	playfram          	0xE0
 	move              	4
 	wait              	1
-	playfram          	0x88
+	playfram          	0x100
 	move              	4
 	wait              	1
-	playfram          	0x99
+	playfram          	0x120
 	move              	4
 	wait              	1
-	playfram          	0xaa
+	playfram          	0x140
 	move              	4
 	wait              	1
-	playfram          	0xbb
+	playfram          	0x160
 	move              	4
 	wait              	1
-	playfram          	0xcc
+	playfram          	0x180
 	goto              	ZealotWalking
 
 ZealotWarpIn:
@@ -1666,19 +1666,19 @@ Death         	Generic_Wait1End
 
 ZealotDeathInit:
 	setfldirect       	0
-	playfram          	0xdd
+	playfram          	416
 	wait              	2
-	playfram          	222
+	playfram          	417
 	wait              	2
-	playfram          	223
+	playfram          	418
 	wait              	2
-	playfram          	224
+	playfram          	419
 	wait              	2
-	playfram          	225
+	playfram          	420
 	wait              	2
-	playfram          	226
+	playfram          	421
 	wait              	2
-	playfram          	227
+	playfram          	422
 	wait              	2
 	end
 
@@ -11039,20 +11039,20 @@ Death         	Generic_Wait1End
 # ----------------------------------------------------------------------------- #
 
 ZealotDeathReversedInit:
-	playfram          	227
-	wait              	2 
-	playfram          	226
-	wait              	2 
-	playfram          	225
-	wait              	2 
-	playfram          	224
-	wait              	2 
-	playfram          	223
-	wait              	2 
-	playfram          	222
-	wait              	2 
-	playfram          	0xdd
-	wait              	2 
+	playfram          	422
+	wait              	2
+	playfram          	421
+	wait              	2
+	playfram          	420
+	wait              	2
+	playfram          	419
+	wait              	2
+	playfram          	418
+	wait              	2
+	playfram          	417
+	wait              	2
+	playfram          	416
+	wait              	2
 	end
 	
 # ----------------------------------------------------------------------------- #
@@ -14818,12 +14818,12 @@ CicatusGndAttkRpt:
     playfram            0x160
     attackmelee         1 1897 # Legionnaire weapon hit 01
     wait                1
-    playfram            0x180
+    playfram            0x140
     wait                1
     nobrkcodeend
-    playfram            0x1A0
-    wait                1
     playfram            0x120
+    wait                1
+    playfram            0x100
     wait                1
     gotorepeatattk
     ignorerest

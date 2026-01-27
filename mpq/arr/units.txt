@@ -557,20 +557,20 @@ Askosi Zonguard
 Askosi Akreno
 Askosi Iconoclast
 Askosi Paraclete
-Extended Unit #332
-Extended Unit #333
-Extended Unit #334
-Extended Unit #335
-Extended Unit #336
-Extended Unit #337
-Extended Unit #338
-Extended Unit #339
-Extended Unit #340
-Extended Unit #341
-Extended Unit #342
-Extended Unit #343
-Extended Unit #344
-Extended Unit #345
+Zerg Zethalor (Orkoti)
+Zerg Scrylyleth (Zorthos)
+Askosi Bestiary
+Askosi Conduit
+Askosi Obelisk
+Askosi Eyelet
+Askosi Auxine
+Askosi Constituent
+Terran Goremast (Upstart)
+Terran Broadside (Upstart)
+Broadside Turret (Upstart)
+Terran Vulture (Upstart)
+Terran Cutlass (Futurist)
+Cutlass Turret (Futurist)
 Extended Unit #346
 Extended Unit #347
 Extended Unit #348

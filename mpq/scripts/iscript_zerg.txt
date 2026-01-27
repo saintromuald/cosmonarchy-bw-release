@@ -17819,3 +17819,430 @@ MalkothrokorUnBurrow:
 	wait              	1 
 	sigorder          	4 
 	goto              	MalkothrokorGndAttkToIdle
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2262 Zethalor (cm\faction-z\zethalor.grp)
+.headerstart
+IsId          	838
+Type          	26
+Init          	ZethalorInit
+Death         	ZethalorDeath
+GndAttkInit   	ZethalorGndAttkInit
+AirAttkInit   	ZethalorGndAttkInit
+Unused1       	ZethalorUnused1
+GndAttkRpt    	ZethalorGndAttkRpt
+AirAttkRpt    	ZethalorGndAttkRpt
+CastSpell     	[NONE]
+GndAttkToIdle 	ZethalorGndAttkToIdle
+AirAttkToIdle 	ZethalorGndAttkToIdle
+Unused2       	[NONE]
+Walking       	ZethalorWalking
+WalkingToIdle 	ZethalorWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	ZethalorSpecialState2
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	ZethalorBurrow
+UnBurrow      	ZethalorUnBurrow
+Enable        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ZethalorInit:
+	imgulnextid			0 -5 # Zethalor Shadow (cm\faction-z\zethalor-shadow.grp)
+ZethalorWalkingToIdle:
+	playfram          	0x00
+	goto				SkryrokorLocal00
+
+ZethalorDeath:
+	playsnd           	896	# Zerg\Zergling\ZZeDth00.WAV
+	imgol             	3 0 0 # Skryrokor Death (zerg\zavDeath.grp)
+	wait              	5
+	lowsprul			849 0 0 # Zerg Unit Rubble Small
+	wait              	1
+	end
+	
+ZethalorUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect       	0 
+	playsnd				1171
+	playfram			0x210
+#	wait				2
+#	playfram			0xaa
+#	wait				2
+#	playfram			0xbb
+#	wait				2
+#	playfram			0xcc
+#	wait				2
+#	playfram			0xdd
+#	wait				2
+#	playfram			0xee
+#	wait				2
+#	playfram			0xff
+#	wait				2
+	wait				14
+	setfldirect			10
+	nobrkcodeend
+	goto				ZethalorGndAttkToIdle
+
+ZethalorGndAttkInit:
+    playfram            0x120
+    wait                1
+    playfram            0x160
+    wait                2
+ZethalorGndAttkRpt:
+    wait                1
+    nobrkcodestart
+    playsndbtwn         2014 2015 # Liiralisk attack 01, 02
+    playfram            0x1A0
+    wait                1
+    playfram            0x1E0
+    attackwith			1
+    wait                1
+    playfram            0x1A0
+    wait                1
+    playfram            0x160
+    wait                1
+    playfram            0x120
+    wait                1
+    nobrkcodeend
+    gotorepeatattk
+    ignorerest
+ZethalorGndAttkToIdle:
+    playfram            0x00
+    wait                1
+    goto                ZethalorWalkingToIdle
+
+ZethalorWalking:
+	move              	6
+	wait              	1
+	playfram          	0x20
+	move              	6
+	wait              	1
+	playfram          	0x40
+	move              	6
+	wait              	1
+	playfram          	0x60
+	move              	6
+	wait              	1 
+	playfram          	0x80
+	move              	6
+	wait              	1
+	playfram          	0x100
+	move              	6
+	wait              	1
+	playfram          	0x00
+	goto              	ZethalorWalking
+
+ZethalorSpecialState2:
+	playfram          	0x280
+	goto              	SkryrokorLocal00
+
+ZethalorBurrow:
+	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	playfram			0x00
+	wait				1
+#	playfram			0x280
+	wait				1
+#	playfram			0x2A0
+	wait				1
+#	playfram			0x2C0
+	wait				1
+#	playfram			0x2E0
+	wait				1
+#	playfram			0x300
+	sigorder          	4
+	playfram			0x280
+	goto              	SkryrokorLocal00
+
+ZethalorUnBurrow:
+	wait 				1
+	waitrand          	1 2
+	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+#	playfram          	0x300
+	wait              	1
+#	playfram          	0x2E0
+	wait              	1
+#	playfram          	0x2C0
+	wait              	1
+#	playfram          	0x2A0
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	sigorder          	4
+	goto              	ZethalorWalkingToIdle
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2265 Scrylyleth (unit/cm/zerg/evigrilisk.grp)
+.headerstart
+IsId          	839
+Type          	26
+Init          	ScrylylethInit
+Death         	ScrylylethDeath
+GndAttkInit   	ScrylylethGndAttkInit
+AirAttkInit   	ScrylylethGndAttkInit
+Unused1       	ScrylylethUnused1
+GndAttkRpt    	ScrylylethGndAttkInit
+AirAttkRpt    	ScrylylethGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	ScrylylethGndAttkToIdle
+AirAttkToIdle 	ScrylylethGndAttkToIdle
+Unused2       	[NONE]
+Walking       	ScrylylethWalking
+WalkingToIdle 	ScrylylethWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	ScrylylethSpecialState2
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	ScrylylethBurrow
+UnBurrow      	ScrylylethUnBurrow
+Enable        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ScrylylethInit:
+	imgulnextid			0 0 # Scrylyleth Shadow (cm\faction-z\scrylyleth-shadow.grp)
+ScrylylethWalkingToIdle:
+	playfram          	0x00
+ScrylylethLocal00:
+	wait				62
+	randcondjmp       	25 ScrylylethLocal01
+	randcondjmp       	128 ScrylylethLocal02
+	goto              	ScrylylethLocal00
+
+ScrylylethLocal01:
+	wait				1
+	goto              	ScrylylethWalkingToIdle
+
+ScrylylethLocal02:
+	randcondjmp       	128 ScrylylethLocal03
+	playfram          	0xcc
+	wait              	1
+	turnccwise        	1
+	playfram          	0xdd
+	wait              	1
+	turnccwise        	1
+	playfram          	0xee
+	wait              	1
+	turnccwise        	1
+	playfram          	0xff
+	wait              	1
+	turnccwise        	1
+	playfram          	0xee
+	wait              	1
+	turnccwise        	1
+	playfram          	0xdd
+	wait              	1
+	turnccwise        	1
+	playfram          	0xcc
+	wait              	1
+	turnccwise        	1
+	goto              	ScrylylethWalkingToIdle
+
+ScrylylethLocal03:
+	playfram          	0xcc
+	wait              	1
+	turncwise        	1
+	playfram          	0xdd
+	wait              	1
+	turncwise        	1
+	playfram          	0xee
+	wait              	1
+	turncwise        	1
+	playfram          	0xff
+	wait              	1
+	turncwise        	1
+	playfram          	0xee
+	wait              	1
+	turncwise        	1
+	playfram          	0xdd
+	wait              	1
+	turncwise        	1
+	playfram          	0xcc
+	wait              	1
+	turncwise        	1
+	goto              	ScrylylethWalkingToIdle
+
+ScrylylethDeath:
+	playsnd           	1080 # Zerg\LURKER\ZLuDth00.WAV
+	setfldirect       	0
+	imgol             	28 0 0 # Geszithalor Death (zerg\zguDeath.grp)
+	wait				5
+#	playfram          	221
+#	wait              	2
+#	playfram          	222
+#	wait              	2
+#	playfram          	223
+#	wait              	2
+#	playfram          	224
+#	wait              	2
+#	playfram          	225
+#	wait              	2
+#	playfram          	226
+#	wait              	2
+#	playfram          	227
+#	wait              	2
+#	playfram          	228
+#	wait              	2
+#	playfram          	229
+#	wait              	2
+	lowsprul          	484 0 0	# Lakizilisk Remnants (zerg\zLakizilisk.grp)
+	wait              	1 
+	end
+	
+ScrylylethUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect			0
+	sprol				753 0 0 # Ovileth death reversed
+	playsnd				1172 # Hydralisk Revive 01
+#	playfram			229
+	wait				2
+#	playfram			228
+	wait				2
+#	playfram			227
+	wait				2
+#	playfram			226
+	wait				2
+#	playfram			225
+	wait				2
+#	playfram			224
+	wait				2
+#	playfram			223
+	wait				2
+#	playfram			222
+	wait				2
+#	playfram			221
+	wait				2
+	setfldirect			12
+	nobrkcodeend
+	goto				ScrylylethWalkingToIdle
+
+ScrylylethGndAttkInit:
+	playfram          	0x00
+	wait              	1
+	nobrkcodestart
+	playfram          	0x11
+	playsndbtwn         1898 1900 # Scrylyleth weaponfire 01, 02, 03
+	imgoluselo        	518 0 0 # Geszithalor Attack Overlay (thingy\eplMuzz.grp)
+	attack
+	playfram			0x22
+	wait				1
+	playfram			0x33
+	wait				1
+	playfram			0x44
+	wait				1
+	playfram			0x55
+	playsndbtwn         1898 1900 # Scrylyleth weaponfire 01, 02, 03
+	attack
+	wait				1
+	playfram			0x66
+	wait				1
+	playfram			0x77
+	wait				1
+	playfram			0x88
+	playsndbtwn         1898 1900 # Scrylyleth weaponfire 01, 02, 03
+	attack
+	wait				1
+	playfram			0x99
+	wait				1
+	playfram			0xaa
+	wait				1
+	playfram			0xbb
+	playsndbtwn         1898 1900 # Scrylyleth weaponfire 01, 02, 03
+	attack
+	wait				1
+	playfram			0xcc
+	wait				1
+	playfram			0x00
+	wait				1
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+ScrylylethGndAttkToIdle:
+	playfram          	0x00
+	wait              	1
+	goto              	ScrylylethWalkingToIdle
+
+ScrylylethWalking:
+	move              	4
+	wait              	1
+	playfram          	0xdd
+	move              	4
+	wait              	1
+	playfram          	0xee
+	move              	4
+	wait              	1
+	playfram          	0xff
+	move              	4
+	wait              	1
+	playfram          	0x110
+	move              	4
+	wait              	1
+	playfram          	0x121
+	move              	4
+	wait              	1
+	playfram          	0x132
+	move              	4
+	wait              	1
+	playfram          	0x143
+	move              	4
+	wait              	1
+	playfram          	0x154
+	move              	4
+	wait              	1
+	playfram          	0x165
+	goto              	ScrylylethWalking
+
+ScrylylethSpecialState2:
+	playfram          	0x176
+	goto              	SkryrokorLocal00
+
+ScrylylethBurrow:
+	imgol             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
+	playfram			0xdd
+	wait              	1
+	playfram          	0xee
+	wait              	1
+	playfram          	0xff
+	wait              	1
+	playfram          	0x110
+	wait              	1
+	playfram          	0x176
+	sigorder          	4
+	wait              	1
+	goto              	SkryrokorLocal00
+
+ScrylylethUnBurrow:
+	wait 				1
+	waitrand          	1 2
+	imgul             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
+	playfram          	0x110
+	wait              	1
+	playfram          	0xff
+	wait              	1
+	playfram          	0xee
+	wait              	1
+	playfram          	0xdd
+	wait              	1
+	sigorder          	4
+	goto              	ScrylylethWalkingToIdle
