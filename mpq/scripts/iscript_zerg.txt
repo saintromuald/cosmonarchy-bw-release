@@ -6636,7 +6636,6 @@ ParasiteOverlayInit:
 	playfram          	8
 	wait              	2
 	playfram          	9
-	playsnd           	3239 # Rilirokor\ZBrPss02.wav
 	wait              	1
 	end
 
@@ -10654,7 +10653,7 @@ AirAttkToIdle 	SkryrokorLocal00
 Unused2       	[NONE]
 Walking       	AxitriliskWalking
 WalkingToIdle 	AxitriliskWalkingToIdle
-SpecialState1 	[NONE]
+SpecialState1 	SkryrokorLocal00
 SpecialState2 	AxitriliskSpecialState2
 AlmostBuilt   	[NONE]
 Built         	[NONE]

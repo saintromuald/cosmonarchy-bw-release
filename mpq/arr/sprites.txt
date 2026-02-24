@@ -1114,20 +1114,20 @@ Obelisk
 Auxine
 Constituent
 Missionary Weaponhit
-Extended Sprite #600
-Extended Sprite #601
-Extended Sprite #602
-Extended Sprite #603
-Extended Sprite #604
-Extended Sprite #605
-Extended Sprite #606
-Extended Sprite #607
-Extended Sprite #608
-Extended Sprite #609
-Extended Sprite #610
-Extended Sprite #611
-Extended Sprite #612
-Extended Sprite #613
+Maverick (Upstart)
+Maverick (Upstart) Remains
+Vulture (Upstart)
+Goremast
+Eidolon (Upstart)
+Cutlass
+Cutlass Turret
+Broadside
+Broadside Turret
+Ecclesiast (Astral Omen)
+Dorminge
+Domain
+Panoply
+Lotiro
 Extended Sprite #614
 Extended Sprite #615
 Extended Sprite #616

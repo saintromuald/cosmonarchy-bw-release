@@ -4186,19 +4186,19 @@ Akreno Passive Charge 03
 Akreno Passive Proc 01
 Akreno Passive Proc 02
 Akreno Passive Proc 03
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Seraph Irradiate Cast 01
+Broadside Weaponfire 01
+Broadside Weaponfire 02
+Broadside Weaponfire 03
+Cutlass Weaponfire 01
+Cutlass Weaponfire 02
+Cutlass Weaponfire 03
+Cutlass Weaponfire 04
+Avenging Gestation Proc 01
+Warring Winds Proc 01
+Warring Winds Proc 02
+Warring Winds Proc 03
+Warring Winds Proc Final
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

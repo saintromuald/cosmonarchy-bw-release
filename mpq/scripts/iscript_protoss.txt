@@ -3952,6 +3952,8 @@ EnergyPulseUnderlayInit:
 	playfram          	11
 	wait              	1
 	playfram          	12
+	goto				EnergyPulseUnderlayDeath
+	
 EnergyPulseUnderlayDeath:
 	wait              	1
 	end

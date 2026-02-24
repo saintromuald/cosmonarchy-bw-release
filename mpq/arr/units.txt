@@ -408,7 +408,7 @@ Terran Trenchfoot
 Zerg Sasyrvoleth
 Terran Tencendur
 Ackmed
-Terran Cyclops (Futurist Federation)
+Terran Cyclops (Futurist)
 Protoss Zealot (Starbound)
 Protoss Ecclesiast (Khalendric Knights)
 Terran Harakan (Golden Republic)
@@ -571,31 +571,31 @@ Broadside Turret (Upstart)
 Terran Vulture (Upstart)
 Terran Cutlass (Futurist)
 Cutlass Turret (Futurist)
-Extended Unit #346
-Extended Unit #347
-Extended Unit #348
-Extended Unit #349
-Extended Unit #350
-Extended Unit #351
-Extended Unit #352
-Extended Unit #353
-Extended Unit #354
-Extended Unit #355
-Extended Unit #356
-Extended Unit #357
-Extended Unit #358
-Extended Unit #359
-Extended Unit #360
-Extended Unit #361
-Extended Unit #362
+Terran Maverick (Upstart)
+Protoss Ecclesiast (Astral)
+Terran Eidolon (Upstart)
+Terran Ajax (Futurist)
+Askosi Dorminge
+Askosi Lotiro
+Askosi Domain
+Terran Maverick (Golden)
+Terran Shaman (Support, Upstart)
+Terran Shaman (Adrenaline, Upstart)
+Askosi Insurant
+Askosi Silversoul
+Askosi Ghostwrit
+Askosi Azjoran
+Askosi Elgird
+Askosi Histrion
+Askosi Egocent
 Extended Unit #363
-Extended Unit #364
+Askosi Begolor
 Extended Unit #365
 Extended Unit #366
 Extended Unit #367
 Extended Unit #368
-Extended Unit #369
-Extended Unit #370
+Askosi Lekrot
+Askosi Hearthshard
 Extended Unit #371
 Extended Unit #372
 Extended Unit #373

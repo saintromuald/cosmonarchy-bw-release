@@ -1,5 +1,5 @@
-# 27 January 2026
-## Year 4, month 1, patch 2
+# 23 February 2026
+## Year 4, month 2, patch 1
 
 ## Patch goals
 - Continue balancing for all races
@@ -7,138 +7,150 @@
 - Further improve audiovisuals
 - [Subscribe on ko-fi](https://ko-fi.com/pr0nogoandveeq7) to get a sneak peek of the incoming changes!
 
+### *Notes in italics are from Pr0nogo*
+
 # Core changes
 
-## Random (c. Jesse)
-- Now supports **Askosi**!
-- Now displays the race assigned to players on map start
-- It is now possible to select which races will be eligible for random selection via config!
-
-## User Interface (c. Jesse)
-- Launch screen version string now displays build version
-- CrownLink passwords are now shown in lobby, if applicable
-
 ## Game Modes
-- **Faction Wars:**
-	- Now randomizes player faction after 1 minute, if not set
+- **Omnipresence:**
+	- Starting worker count increased from 6 to 8
+	- Human players now begin with 2 **Pilgrim**s
+	- **Pilgrim**s are now trainable from the **Omnivale**
 
 ## Bugfixes
-- **Desyncs:**
-	- Resolved desyncs related to construction and training speeds (c. Veeq7 & Jesse)
 - **Stability:**
-	- Fixed common Solarion crash (r. MuskyHusky)
-	- Fixed Grandstand cargo crash (r. ConcealedOrganic)
+	- Bandaged a crash that could occur when a Larvae dies while selected (r. shopkeeper dog)
+	- Bandaged a rare division by zero crash related to Psi Storm (r. ArbuzBudesh)
+- **Desyncs:**
+	- Removed floating point math for: (c. Jesse, some a. Veeq7)
+		- Weapon cooldown changes
+		- Weapon & sight ranges
+		- Structure HP gain (e.g. **Askosi** teambuild cases)
+		- Lifesteal and shieldsteal
+		- Morningstar damage
+		- Clarion Phase Link distribution
+		- CPU unit / structure requests
+		- CPU micromanagement
+- **Gameplay:**
+	- Fixed target acquisition range for air weapons (e.g. **Nathrokor**)
+	- Askosi constructing has been improved (a. DF)
+	- Hijacked units with more than 100 current HP are no longer set to 100 HP (r. shopkeeper dog)
+	- Improved attack responsivity for **Akreno** (r. jakulangski)
+	- Corrected **Phontis** attack damage (r. Hamster)
+	- Fixed **Apostle - Blood Tithe** range (r. Jesse)
+	- **Agonists** can no longer attack from mobile **Petracts** (r. Hamster)
+	- Fixed **Yblyleth** command card while burrowed (r. Vilius)
+	- Fixed damage reliability for **Quazrokors** (r. Alexhandr)
+	- **Quazrokors** can now correctly target air units (r. lolrsk8s)
+	- Resolved unit limit error for maps with more than 1700 preplaced units (c. DF)
 - **Audiovisual**
-	- Fixed vespene and supply icons for Askosi (c. Jesse)
-	- Fixed various text display issues related to unit training and cancel context
+	- Fixed missing animation error for **Axitrilisk** (r. Sosij)
+	- Fixed header too short error for large explosions (r. The Shambler)
+	- Fixed invalid shield overlay for **Rove**
+	- Corrected strings for being out of energy as Askosi (r. Sosij)
+	- Filled in wireframes for **Avatar** and **Phontis** (placeholder)
+	- Added missing **Multi-Attack III** passive button for **Starbound Manifold** (r. Concealed Organic)
+	- Lardfix: Civilian (Blackjack) portrait now plays talking animations (r. lolrsks8s)
 
 ## Audiovisuals
-- New sprite for:
-	- **Zealot** (incl. Starbound variant; c. Solstice)
-	- **Rove**
-- New unit responses for:
-	- **Striga** (c. OunceOfMilia)
+- New model for:
+	- **Autocrat**
+- Tweaked model for:
+	- **Apostle**
+- New portraits for: (many c. jun3hong, some c. lolrsk8s)
+	- **TERRAN:** Maverick (Futurist & Upstart), Arhaun, Blackguard, Blackjack (Golden), Cleric (Futurist), Cyclops (Futurist), Harakan (Golden), Qilin, Tiangou
+	- **PROTOSS:** Cicatus, Dracadin (Order), Ecclesiast (Khalendric), Extatus, Manifold (Starbound), Renesair, Zealot (Starbound)
+	- **ZERG:** Quazrokor, Hydralisk (Orkoti)
+	- **ASKOSI:** Auxine
+- New cast SFX for **Seraph Irradiate**
+- Added almost built frame for:
+	- **Landlock**, **Grandstand**, **Radix**
+- Added damage overlay for:
+	- **Landlock**
 
 # Balance changes
 
 ## Terran
-- [Lodestone](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/lodestone):
-	- Sight range 10 » 12
-- [Atlas](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/atlas):
-	- Build time 75 » 60
-- [Daedala](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/daedala):
-	- Build time 120 » 100
+- [Apostle](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/apostle):
+	- Resource costs 75/200 » 75/150
+	- Now has 150 max energy
+	- Now spends 5 energy every **Blood Tithe** proc
+	- Now spends 20 energy every **Lazarus Agent** proc
+	- Prioritizes **Blood Tithe**
+- [Autocrat](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/autocrat):
+	- Resource costs 125/250 » 125/200
+	- Now has 100 max energy
+	- Now spends 25 energy every **Reclamation Fields** proc
+- [Anticthon](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/anticthon):
+	- Resource costs 250/350 » 250/300
+	- Now has 200 max energy
+	- Now spends 25 energy every **Counter-Proposal** proc
+- [Aion](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/aion):
+	- Resource costs 450/450 » 450/350
+	- Now has 200 max energy
+	- Now spends 25 energy every **Reclamation Fields** proc
 
 ## Protoss
-- [Atreus](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/atreus):
-	- Resource costs 200/50 » 200/25
-- [Grand Library](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/grand-library):
-	- Resource costs 250/50 » 225/50
-	- Build time 55 » 60
-- [Prostration Stage](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/prostration-stage):
-	- Resource costs 400/200 450/200
-	- Build time 65 » 70 
-- [Unitary Union](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/unitary-union):
-	- Resource costs 400/350 450/350
-	- Build time 65 » 70
-- [Argosy](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/argosy):
-	- Build time 70 » 75
+- [Demiurge](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=protoss/demiurge):
+	- Resource costs 200/350 » 200/300
+	- Now has 100 max energy
+	- Now spends 10 energy every **Worship** proc
 
 ## Zerg
-- **Bone of Reflection:**
-	- *Used by Tethzorokor, Zarcavrokor**
-	- Armor penetration 3 » 0
-- [Agrileth](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/agrileth):
-	- Resource costs 150/100 » 150/50
-	- Transport weight 8 » 6
-- [Tethzorokor](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/tethzorokor):
-	- HP 240 » 220
-- [Irol Iris](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/irol-iris):
-	- Build time 60 » 20
-- [Othstol Oviform](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/othstol-oviform):
-	- Build time 120 » 40
+- [Vithrilisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=zerg/vithrilisk):
+	- **NEW: Avenging Mitosis:**
+		- Incubates on damage taken, spawning a Skryrokor after a short delay.
 
 ## Askosi
-- **New arrivals:**
-	- T1: Eyelet (from Proselyte)
-	- T2: Constituent (from Bounty)
-	- T2: Biotic (Aphorist, Thaumalogue, Avatar, Doronin), Conduit, Bestiary
-	- T2: Skybound (Akreno, Iconoclast, Crematorium), Astrolabe
-- **Booming Blast:**
-	- Used by **Vicar**
-	- Now deals friendly splash
-- **Rematerialize:**
-	- Used by **Vicar** and **Emissary**
-	- Ability range 5 » 6
-- [Dyad](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/dyad):
-	- Resource costs 50/50 » 50/25
-- [Mimic](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/mimic):
-	- Sight range 8 » 9
-	- **Scrapworld: Vital Remains:**
-		- Now grants 1 non-stacking armor pen to allies for 4 seconds
-- [Vicar](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/vicar):
-	- Resource costs 75/50 » 100/50
-	- **Ospo Twinshard:**
-		- Weapon range 7 » 6
-- [Rove](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/rove):
-	- Armor 1 » 0
-	- Collision size reduced by ~10%
-	- Acceleration adjusted
-- [Scepter](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/scepter):
-	- **Principality Assembly:**
-		- While active, now grants 1 stacking armor pen to allies within 8 range
-- [Intendent](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/intendent):
-	- Resource costs 150/50 » 125/50
-	- HP 140 » 120
-	- Armor 2 » 1
-	- **Ersa Driver:**
-		- Armor penetration 3 » 0
-		- Weapon range 6 » 5
-- [Helion](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/helion):
-	- Resource costs 100/50 » 100/25
-	- Build time 18 » 15
-	- HP 120 » 100
-	- **Usko Scrapray:**
-		- Weapon cooldown 0.63 » 0.5
-- [Tirade](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/tirade):
-	- Armor 2 » 1
-	- **Ikta Driver:**
-		- Weapon damage 10 » 7
-- [Grandstand](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/grandstand):
-	- No longer has **Booming Blast**
-	- Now has **Power Overload**
+- **Hijack:**
+	- Now procs when a unit that is being hijacked dies
+	- Now restores 100 flat HP on proc
+- [Pilgrim](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/pilgrim):
+	- Now has **Scrapworld: Gold Rush**
+- [Constituent](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/constituent):
+	- Resource costs 50/25 » 50/50
+	- Build time 14 » 18
+	- Movement speed 5.8 » 6.6
+	- Now trained at Landlock, from Bounty
+	- Now requires Proscenium OR Zylode
 - [Chantry](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/chantry):
-	- Resource costs 100/50 » 75/50
-	- HP 350 » 400
-- [Radix](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/radix):
-	- Build time 50 » 65
-- [Cipher](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/cipher):
-	- Build time 65 » 75
-- [Function](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/function):
-	- Build time 60 » 75
-- [Gauntlet](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/gauntlet):
-	- Resource costs 200/75 » 200/100
-	- Build time 80 » 90
+	- **Sermon Salve:**
+		- Now gives units cloaking until their next attack / notable action
+- [Bounty](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/bounty):
+	- Resource costs 200/300 » 150/250
+	- Placement size 4x3 » 3x3
+	- Collision size adjusted to better match new graphic
+	- **NEW: Scrapworld: Gold Rush**
+		- Salvages one corpse within 8 range every second
+- [Proscenium](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/proscenium):
+	- Resource costs 200/50 » 175/50
+- [Zylode](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/zylode):
+	- Resource costs 350/50 » 250/75
+- [Astrolabe](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/astrolabe):
+	- Resource costs 200/200 » 200/150
 - [Cosmoscope](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/cosmoscope):
-	- Resource costs 100/150 100/100
-	- Now requires Radix OR Function, from Cipher OR Gauntlet
+	- Resource costs 100/150 » 100/100
+
+# New units
+
+## Askosi
+- [Zonguard](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/zonguard):
+	- Tier 2 mechanized -- durable mechbeast with Preylock ability
+- [Paraclete](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/paraclete):
+	- Tier 2 skybound -- potent skybeast with Remote Hijack ability
+- [Dorminge](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/dorminge):
+	- Tier 2 infrastructure -- shrine that slows movement speed of nearby hostiles
+- [Domain](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/domain)
+	- Tier 3 infrastructure -- town center that harvests resources passively
+
+## Futurist Federation
+- [Cutlass](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/cutlass):
+	- Matador replacement with Kinetic Penetration and no deployment
+
+## Upstart Terrans
+- [Maverick (Upstart)](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/maverick-upstart):
+	- Frailer Maverick variant with faster-acting, less intense Stimpack
+- [Vulture (Upstart)](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/vulture-upstart):
+	- Faster Vulture variant that lays [Goremast](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/goremast)s
+- [Broadside](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=terran/broadside):
+	- Phalanx replacement with Fore Castle and no deployment

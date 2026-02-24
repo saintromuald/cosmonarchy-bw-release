@@ -659,20 +659,20 @@ Obelisk
 Auxine
 Constituent
 Missionary Weaponhit
-Extended Flingy #453
-Extended Flingy #454
-Extended Flingy #455
-Extended Flingy #456
-Extended Flingy #457
-Extended Flingy #458
-Extended Flingy #459
-Extended Flingy #460
-Extended Flingy #461
-Extended Flingy #462
-Extended Flingy #463
-Extended Flingy #464
-Extended Flingy #465
-Extended Flingy #466
+Maverick (Upstart)
+Vulture (Upstart)
+Goremast
+Eidolon (Upstart)
+Cutlass
+Cutlass Turret
+Broadside
+Broadside Turret
+Ecclesiast (Astral)
+Ajax
+Dorminge
+Domain
+Panoply
+Lotiro
 Extended Flingy #467
 Extended Flingy #468
 Extended Flingy #469

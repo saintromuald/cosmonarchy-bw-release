@@ -26,7 +26,7 @@ Nothing 3 (Unused)
 Drone Start Mutate
 Drone Mutate
 Use Ability (Infest 1)
-Use Ability (Infest 2) unused
+Use Ability (Preylock)
 Infest (Queen)
 Build (SCV)
 Build (Probe)
@@ -137,7 +137,7 @@ Attack Ground (Infested Terran)
 Hold Position (Suicide Units)
 Use Ability (Dimensional Recall)
 Teleport To Location (Freezes the casting unit)
-Use Ability (Scanner Sweep) unused
+Use Ability (Remote Hijack)
 Idle (Scanner Sweep)
 Use Ability (Defensive Matrix)
 Use Ability (Psionic Storm)

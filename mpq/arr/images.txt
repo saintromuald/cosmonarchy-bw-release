@@ -2302,35 +2302,35 @@ Constituent
 Constituent Shadow
 Missionary Weaponhit
 Rove Engine
-Extended Image #1302
-Extended Image #1303
-Extended Image #1304
-Extended Image #1305
-Extended Image #1306
-Extended Image #1307
-Extended Image #1308
-Extended Image #1309
-Extended Image #1310
-Extended Image #1311
-Extended Image #1312
-Extended Image #1313
-Extended Image #1314
-Extended Image #1315
-Extended Image #1316
-Extended Image #1317
-Extended Image #1318
-Extended Image #1319
-Extended Image #1320
-Extended Image #1321
-Extended Image #1322
-Extended Image #1323
-Extended Image #1324
-Extended Image #1325
-Extended Image #1326
-Extended Image #1327
-Extended Image #1328
-Extended Image #1329
-Extended Image #1330
+Askosi Embedded Overlay
+Maverick (Upstart)
+Maverick (Upstart) Shadow
+Maverick (Upstart) Remains
+Vulture (Upstart)
+Vulture (Upstart) Shadow
+Vulture (Upstart) Engine
+Goremast
+Goremast Shadow
+Eidolon (Upstart)
+Eidolon (Upstart) Shadow
+Eidolon (Upstart) Remains
+Cutlass
+Cutlass Shadow
+Cutlass Turret
+Broadside
+Broadside Shadow
+Broadside Turret
+Ecclesiast (Astral)
+Ecclesiast (Astral) Shadow
+Dorminge
+Dorminge Shadow
+Warring Winds Overlay
+Domain
+Domain Shadow
+Panoply
+Panoply Shadow
+Lotiro
+Lotiro Shadow
 Extended Image #1331
 Extended Image #1332
 Extended Image #1333

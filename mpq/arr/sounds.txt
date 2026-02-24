@@ -4174,6 +4174,9 @@ cm\a\zonguard\wf-b-03.wav
 cm\a\agonist\wf-01.wav
 cm\a\agonist\wf-02.wav
 cm\a\agonist\wf-03.wav
+cm\a\petract\wf-01.wav
+cm\a\petract\wf-02.wav
+cm\a\petract\wf-03.wav
 cm\a\akreno\wf-01.wav
 cm\a\akreno\wf-02.wav
 cm\a\akreno\wf-03.wav
@@ -4183,3 +4186,16 @@ cm\a\akreno\pas-charge-03.wav
 cm\a\akreno\pas-proc-01.wav
 cm\a\akreno\pas-proc-02.wav
 cm\a\akreno\pas-proc-03.wav
+cm\t\seraph\irradiate-cast-01.wav
+cm\f-t\broadside\wf-01.wav
+cm\f-t\broadside\wf-02.wav
+cm\f-t\broadside\wf-03.wav
+cm\f-t\cutlass\wf-01.wav
+cm\f-t\cutlass\wf-02.wav
+cm\f-t\cutlass\wf-03.wav
+cm\f-t\cutlass\wf-04.wav
+Zerg\AVENGER\ZAvRdy00.WAV
+cm\a\phontis\pas-proc-a-01.wav
+cm\a\phontis\pas-proc-a-02.wav
+cm\a\phontis\pas-proc-a-03.wav
+cm\a\phontis\pas-proc-b-01.wav

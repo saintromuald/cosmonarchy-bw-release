@@ -1795,6 +1795,7 @@ SeraphBaseDeath:
 SeraphBaseCastSpell:
 	imgol             	539 0 0	# Seraph Overlay (Part2) (thingy\tveGlowO.grp)
 	nobrkcodestart
+	playsnd				4188
 	wait              	3
 	castspell
 	nobrkcodeend
@@ -13077,147 +13078,77 @@ SpecialState1 	[NONE]
 # ----------------------------------------------------------------------------- #
 
 AutocratInit:
-	imgul             	1397 0 0 # Autocrat Shadow (terran\autocrat-shad.grp)
+	imgulnextid			0 0 # Autocrat Shadow (cm\terran\autocrat-shadow.grp)
 AutocratWalkingToIdle:
 	playfram          	0x00
-AutocratLocal00:
-	wait				62
-	randcondjmp       	25 AutocratLocal01
-	randcondjmp       	128 AutocratLocal01
-	goto              	AutocratLocal00
-
-AutocratLocal01:
-	playfram          	0x00
-	wait              	1
-	playfram          	0x11
-	wait              	1
-	playfram          	0x22
-	randcondjmp       	192 AutocratLocal03
-	turnccwise        	2
-	wait              	3
-	turnccwise        	2
-	wait              	3
-	turnccwise        	2
-	wait              	3
-	turnccwise        	2
-	wait              	3
-	turnccwise        	2
-	wait              	3
-	wait              	6
-	turncwise         	2
-	wait              	3
-	turncwise         	2
-	wait              	3
-	turncwise         	2
-	wait              	3
-	turncwise         	2
-	wait              	3
-	turncwise         	2
-	wait              	3
-	wait              	6
-	turnccwise        	2
-	wait              	3
-	turnccwise        	2
-	wait              	3
-	turnccwise        	2
-	wait              	3
-	goto              	AutocratLocal04
-
-AutocratLocal04:
-	playfram          	0x11
-	wait              	1
-	playfram          	0x00
-	wait              	1
-	goto              	AutocratWalkingToIdle
-
-AutocratLocal03:
-	wait              	13
-	playfram          	0x11
-	wait              	1
-	playfram          	0x00
-	wait              	1
-	goto              	AutocratWalkingToIdle
+	goto              	SkryrokorLocal00
 
 AutocratDeath:
-	playsnd           	238 # Terran\Ghost\TGhDth00.wav
+	playsndbtwn       	276 277 # Terran\MARINE\TMaDth00.WAV | Terran\MARINE\TMaDth01.WAV
 	setfldirect       	0
 	playfram          	0x00
 	imgol             	3 0 0 # Skryrokor Death (zerg\zavDeath.grp)
 	wait              	5
-	imgol             	3 0 0 # Skryrokor Death (zerg\zavDeath.grp)
-	wait              	5
-	imgol             	3 0 0 # Skryrokor Death (zerg\zavDeath.grp)
-	wait              	5
-	imgol             	3 0 0 # Skryrokor Death (zerg\zavDeath.grp)
-	wait              	5
-	imgol             	3 0 0 # Skryrokor Death (zerg\zavDeath.grp)
-	wait              	5
-	lowsprul          	230 0 0 # Eidolon Remnants (terran\tghDeath.grp)
+	lowsprul          	236 0 0 # Maverick Remnants (terran\tmaDeath.grp)
+	wait              	1
 	end
 
-AutocratUnused1:
-	wait				1
-	nobrkcodestart
-	setfldirect			0
-	playsnd				1166 # Eidolon revive 01
-	sprol				742 0 0 # Explosion Small Reversed
-	setfldirect			12
-	wait				24
-	nobrkcodeend
-	goto				EidolonWalkingToIdle
-
 AutocratGndAttkInit:
-	playfram          	0xaa
-	wait              	1
+	playfram          	0x100
+	wait				1
+	playfram			0x140
+	wait				1
+	playfram			0x180
 	sigorder			32
 	wait				22
 AutocratGndAttkRpt:
-	wait              	2
+	wait				2
 	nobrkcodestart
 	playsndbtwn			1474 1478 # Autocrat weaponfire 01
 	attack
-	playfram          	0x99
+	playfram          	0x1A0
 	wait              	1
-	playfram          	0xaa
+	playfram          	0x180
 	wait				3
 	playsndbtwn			1474 1478 # Autocrat weaponfire 01
 	attack
-	playfram          	0x99
+	playfram          	0x1A0
 	wait              	1
-	playfram          	0xaa
+	playfram          	0x180
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
 AutocratGndAttkToIdle:
-	playfram          	0x00
-	wait              	1 
+	playfram          	0x140
+	wait				1
+	playfram			0x120
+	wait				1
+	playfram			0x100
+	wait				1
 	goto              	AutocratWalkingToIdle
 
 AutocratWalking:
+	playfram          	0x40
 	move              	4
 	wait              	1
-	playfram          	0x11
+	playfram          	0x60
 	move              	4
 	wait              	1
-	playfram          	0x22
+	playfram          	0x80
 	move              	4
 	wait              	1
-	playfram          	0x33
+	playfram          	0xA0
 	move              	4
 	wait              	1
-	playfram          	0x44
-	move              	4 
-	wait              	1 
-	playfram          	0x55
+	playfram          	0xC0
 	move              	4
 	wait              	1
-	playfram          	0x66
+	playfram          	0xE0
 	move              	4
 	wait              	1
-	playfram          	0x77
+	playfram          	0x20
 	move              	4
 	wait              	1
-	playfram          	0x88
 	goto              	AutocratWalking
 	
 # ----------------------------------------------------------------------------- #
@@ -17946,25 +17877,25 @@ HelixBoltDeath:
 IsId          	764
 Type          	12
 Init          	HotshotInit
-Death         	MadcapDeath
-GndAttkInit   	MadcapGndAttkInit
-AirAttkInit   	MadcapGndAttkInit
+Death         	AutocratDeath
+GndAttkInit   	AutocratGndAttkInit
+AirAttkInit   	AutocratGndAttkInit
 Unused1       	SkryrokorLocal00
-GndAttkRpt    	MadcapGndAttkRpt
-AirAttkRpt    	MadcapGndAttkRpt
+GndAttkRpt    	AutocratGndAttkRpt
+AirAttkRpt    	AutocratGndAttkRpt
 CastSpell     	[NONE]
-GndAttkToIdle 	MadcapGndAttkToIdle
-AirAttkToIdle 	MadcapGndAttkToIdle
+GndAttkToIdle 	AutocratGndAttkToIdle
+AirAttkToIdle 	AutocratGndAttkToIdle
 Unused2       	[NONE]
-Walking       	MadcapWalking
-WalkingToIdle 	MadcapWalkingToIdle
+Walking       	AutocratWalking
+WalkingToIdle 	AutocratWalkingToIdle
 SpecialState1 	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
 HotshotInit:
 	imgul             	1777 0 0 # Hotshot Shadow (cm\faction-t\hotshot-shadow.grp)
-	goto				MadcapWalkingToIdle
+	goto				AutocratWalkingToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -19147,25 +19078,25 @@ MaelstromHitInit:
 IsId          	828
 Type          	12
 Init          	BlackguardInit
-Death         	MadcapDeath
+Death         	AutocratDeath
 GndAttkInit   	BlackguardGndAttkInit
 AirAttkInit   	BlackguardGndAttkInit
 Unused1       	SkryrokorLocal00
 GndAttkRpt    	BlackguardGndAttkRpt
 AirAttkRpt    	BlackguardGndAttkRpt
 CastSpell     	[NONE]
-GndAttkToIdle 	MadcapGndAttkToIdle
-AirAttkToIdle 	MadcapGndAttkToIdle
+GndAttkToIdle 	AutocratGndAttkToIdle
+AirAttkToIdle 	AutocratGndAttkToIdle
 Unused2       	[NONE]
-Walking       	MadcapWalking
-WalkingToIdle 	MadcapWalkingToIdle
+Walking       	AutocratWalking
+WalkingToIdle 	AutocratWalkingToIdle
 SpecialState1 	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
 
 BlackguardInit:
 	imgul             	2049 0 0 # Blackguard Shadow (cm\faction-t\blackguard-shadow.grp)
-	goto				MadcapWalkingToIdle
+	goto				AutocratWalkingToIdle
 
 BlackguardGndAttkInit:
 	playfram          	0x100
@@ -19187,7 +19118,7 @@ BlackguardGndAttkRpt:
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
-	goto				MadcapGndAttkToIdle
+	goto				AutocratGndAttkToIdle
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -20568,3 +20499,279 @@ SerathielWalking:
 	setvertpos        	0
 	imgol             	2233 0 0 # Serathiel Engines (cm\terran\serathiel-engine.grp)
 	goto              	SerathielLocal00
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2319 Broadside (cm\faction-t\broadside.grp)
+.headerstart
+IsId          	842
+Type          	23
+Init          	BroadsideInit
+Death         	BroadsideDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	BroadsideUnused1
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	BroadsideWalking
+WalkingToIdle 	BroadsideWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	Broadside_BaseStarEditInit
+.headerend
+# ----------------------------------------------------------------------------- #
+
+BroadsideInit:
+	wait              	1 
+	imgulnextid			0 0 # Broadside Shadow
+	setfldirect       	12 
+BroadsideWalkingToIdle:
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+BroadsideDeath:
+	playsnd           	317	# Terran\TANK\TTaDth00.WAV
+	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
+	sprol             	156 0 0	# Matraleth Death (zerg\zquDeath.grp)
+	wait              	3
+	lowsprul			273 0 0 # Terran Building Rubble Small
+	wait				1
+	end
+
+BroadsideUnused1:
+	wait				1
+	nobrkcodestart
+	playsnd           	1699
+	sprol				744 0 0
+	wait				12
+	setfldirect			13
+	nobrkcodeend
+	goto				BroadsideWalkingToIdle
+
+BroadsideGndAttkInit:
+	playfram          	0x00
+	wait				1
+	imgol				1499 0 0 # Broadside Muzzle Flash
+	playsndbtwn			1639 1641 # Broadside weapon 1 fire 01, 02, 03
+	attackwith			1
+	wait				1
+	gotorepeatattk
+	ignorerest
+	goto				BroadsideWalkingToIdle
+
+BroadsideWalking:
+	move              	4 
+	wait              	1 
+	playfram          	0x00
+	move              	4 
+	wait              	1 
+	playfram          	0x11
+	move              	4 
+	wait              	1 
+	playfram          	0x22
+	goto              	BroadsideWalking
+	
+Broadside_BaseStarEditInit:
+	setfldirect       	12
+	imgoluselo        	2321 2 0 # Broadside Turret (cm\faction-t\broadside-turret.grp)
+	wait              	1
+	imgul             	2320 0 0 # Broadside Base Shadow (cm\faction-t\broadside-shadow.grp)
+	setfldirect       	12
+	playfram          	0x00
+	goto              	InfestedTerranWalkingToIdle
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2321 Broadside Turret (cm\faction-t\broadside-turret.grp)
+.headerstart
+IsId          	843
+Type          	13
+Init          	BroadsideTurretInit
+Death         	Generic_Wait1End
+GndAttkInit   	BroadsideTurretGndAttkInit
+AirAttkInit   	[NONE]
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	BroadsideTurretGndAttkInit
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	BroadsideTurretInit
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	SkryrokorLocal00
+WalkingToIdle 	BroadsideTurretInit
+SpecialState1 	SkryrokorLocal00
+.headerend
+# ----------------------------------------------------------------------------- #
+	
+BroadsideTurretInit:
+    playfram            0x00
+BroadsideTurretLocal00:
+	wait				1
+    waitrand            62 74
+    randcondjmp        	230 BroadsideTurretLocal00
+    sigorder            8
+    randcondjmp        	127 BroadsideTurretLocal01
+    turnccwise          1
+    wait                3
+    turnccwise          1
+    wait                3
+    turnccwise          1
+    goto                BroadsideTurretLocal00
+
+BroadsideTurretLocal01:
+    turn1cwise
+    wait                3
+    turn1cwise
+    wait                3
+    turn1cwise
+    goto                BroadsideTurretLocal00
+
+BroadsideTurretGndAttkInit:
+	wait              	1
+	nobrkcodestart
+	playfram          	0x00
+	playsndbtwn			4189 4191 # Broadside weaponfire 01, 02, 03
+	imgol             	536 0 0	# Phalanx (Tank) Turret Attack Overlay (thingy\ettFlash.grp)
+	wait              	1
+	attackwith        	1
+	wait				3
+	nobrkcodeend
+	gotorepeatattk
+	goto              	SkryrokorLocal00
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2316 Cutlass (cm\faction-t\cutlass.grp)
+.headerstart
+IsId          	844
+Type          	23
+Init          	CutlassInit
+Death         	CutlassDeath
+GndAttkInit   	CutlassGndAttkInit
+AirAttkInit   	CutlassGndAttkInit
+Unused1       	CutlassUnused1
+GndAttkRpt    	CutlassGndAttkInit
+AirAttkRpt    	CutlassGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	InfestedTerranWalkingToIdle
+AirAttkToIdle 	InfestedTerranWalkingToIdle
+Unused2       	[NONE]
+Walking       	CutlassWalking
+WalkingToIdle 	InfestedTerranWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	Cutlass_Tank_BaseStarEditInit
+.headerend
+# ----------------------------------------------------------------------------- #
+
+CutlassInit:
+	imgulnextid			0 0 # Cutlass Shadow (cm\faction-t\cutlass-shadow.grp)
+	playfram          	0x00
+	goto              	InfestedTerranWalkingToIdle
+
+CutlassDeath:
+	playsndbtwn       	1385 1386 # Cutlass death 01, 02
+	imgol             	332 0 -5 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			845 0 0 # Terran Unit Rubble Small
+	wait              	1
+	end
+
+CutlassUnused1:
+	wait				1
+	nobrkcodestart
+	playsndbtwn			1705 1706
+	sprol				742 0 0
+	setfldirect			12
+	wait				12
+	nobrkcodeend
+	goto				InfestedTerranWalkingToIdle
+
+CutlassGndAttkInit:
+	playfram          	0x00
+	wait              	1
+	nobrkcodestart
+	playfram          	0x100
+	playsndbtwn			4192 4195 # Cutlass weaponfire 01, 02, 03, 04
+	attackwith			1
+	playfram          	0x00
+	wait				3
+	nobrkcodeend
+	gotorepeatattk
+	goto              	InfestedTerranWalkingToIdle
+
+CutlassWalking:
+	playfram			0x20
+	move				4
+	wait				1
+	playfram			0x40
+	move				4
+	wait				1
+	playfram			0x60
+	move				4
+	wait				1
+	playfram			0x80
+	move				4
+	wait				1
+	playfram			0xA0
+	move				4
+	wait				1
+	playfram			0xC0
+	move				4
+	wait				1
+	playfram			0xE0
+	move				4
+	wait				1
+	goto              	CutlassWalking
+
+Cutlass_Tank_BaseStarEditInit:
+	setfldirect       	12
+	imgoluselo        	2318 2 0 # Cutlass (Tank) Turret (terran\matador-turret.grp)
+	wait              	1
+	imgul             	2317 0 0 # Cutlass (Tank) Base Shadow (terran\matador-shadow.grp)
+	setfldirect       	12
+	playfram          	0x00
+	goto              	InfestedTerranWalkingToIdle
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2318 Cutlass Turret (cm\faction-t\cutlass-turret.grp)
+.headerstart
+IsId          	845
+Type          	13
+Init          	InfestedTerranWalkingToIdle
+Death         	Generic_Wait1End
+GndAttkInit   	CutlassGndAttkInit
+AirAttkInit   	CutlassGndAttkInit
+Unused1       	[NONE]
+GndAttkRpt    	CutlassGndAttkInit
+AirAttkRpt    	CutlassGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	InfestedTerranWalkingToIdle
+AirAttkToIdle 	InfestedTerranWalkingToIdle
+Unused2       	[NONE]
+Walking       	CutlassWalking
+WalkingToIdle 	InfestedTerranWalkingToIdle
+SpecialState1 	SkryrokorLocal00
+.headerend
+# ----------------------------------------------------------------------------- #

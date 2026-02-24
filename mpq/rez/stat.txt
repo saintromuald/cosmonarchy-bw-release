@@ -314,8 +314,8 @@
 <0>
 <0>
 Spider Mines<0>
-<0>
-<0>
+Goremasts<0>
+Piety Wards<0>
 <0>
 <0>
 <0>
@@ -329,7 +329,7 @@ Anchor Attack requires:<10>   Loaded ranged combatant<0>
 ¤<3><4>Heretical Bedlam <2>(passive)<10>Dying hostiles that were struck by the Pariah in the last 2 seconds have their corpses ascended after 1 second.<0>
 <0>
 ¤<3><4>Swarming Omen <2>(passive)<10>Hostiles afflicted by the this strain's attacks grant 125% movement speed to any of this strain's allies within 10 range.<0>
-<0>
+e<3><4>Plant Goremast <1>(<3>E<1>)<10>Places a Goremast at the target site. Goremasts damage and cripple targets that trip them.<0>
 d<3><4>Divine Discipline <1>(<3>D<1>)<10>Creates an alchemical field at the target location. Allies within the field gain 25% increased attack speed, while enemies within the field suffer 25% reduced attack speed.<0>
 d<3><4>Rejoinder of Service <1>(<3>D<1>)<10>Augments the combatant for 5 seconds, empowering their attacks to ignore armor.<10>If a combatant dies while under this effect, all hostiles within its vision range are pulled towards it by 2 range.<0>
 t<3><4>Inject Stimpack <1>(<3>T<1>)<10>Take a dangerous injection that deals 5 damage. After a 1.5 second delay, gain 75% movement speed and 100% attack speed for 7.5 seconds.<0>
@@ -358,9 +358,9 @@ s<1><4>Morph into Protathalor <1>(<3>S<1>)<10>Mobile artillery strain.<0>
 <0>
 <0>
 <0>
-<0>
-<0>
-<0>
+¤<3><4>Scrapworld: Gold Vein <2>(passive)<10>This structure salvages one corpse within 8 range every second, securing 25% of the corpses's resource cost.<0>
+¤<3><4>Crushing Delivery <2>(passive)<10>Enemy combatants within 8 range of the Dorminge find their movement speed slowed by 33%.<0>
+c<3><4>Preylock <1>(<3>C<1>)<10>Pulls the target enemy within 5 range to the combatant's location, and afflicts it with Booming Blast.<0>
 b<1><4>Build Blackjack <1>(<3>B<1>)<10>Scrappy walker drone.<0>
 ¤<3><4>Labyrinthine Targeters <2>(passive)<10>So long as they are facing the targets, Minotaurs can attack up to 5 hostiles at once.<0>
 Almaksalisk requires:<10>   Alkag Iteth<0>
@@ -380,14 +380,14 @@ x<3><4>Parasitic Excision <1>(<3>X<1>)<10>After a 1-second channel, the Matralet
 g<3><4>Plague <1>(<3>G<1>)<10>After a 1-second channel, creates a 3-range zone that lasts 10 seconds. Victims that enter the zone are infected with Plague, and take up to 50 damage over 5 seconds.<10>On death, victims create a smaller 1.5-range infection zone that lasts 5 seconds. Plague cannot kill its victims.<0>
 ¤<3><4>Ensnaring Brood <2>(passive)<10>Allies within 4 range of a Matraleth apply Ensnare with every attack. Ensnared targets move and attack 33% slower. Ensnare expires after 2 seconds.<0>
 a<1><4>Assemble Vassal <1>(<3>A<1>)<10>Light fighter.<0>
-<0>
+c<3><4>Remote Hijack <1>(<3>C<1>)<10>Launches a bioform that attaches to the victim and slows their movement speed by 50%.<10>After 5 seconds, the bioform becomes the target.<10>The bioform is released from their new form on death, or immediately if the target is an embedded craft.<0>
 ¤<3><4>Ormis Materializer <2>(passive)<10>Emissaries can load allies from up to 4 range.<0>
 ¤<3><4>Robotic Fleet <2>(passive)<10>Solarions can assemble up to 12 Stewards to use in their attacks. Solarions cannot attack without any Stewards.<0>
 v<1><4>Warp in Prostration Stage <1>(<3>V<1>)<10>Relentless disciple production.<0>
 z<1><4>Mutate into Zorkiz Shroud <1>(<3>Z<1>)<10>Control node. Enables Zoryusthaleths and Lakizilisks.<0>
 e<1><4>Warp in Rogue Gallery <1>(<3>E<1>)<10>Profane disciple production.<0>
-<0>
-<0>
+Constituent Requires:<10>   Proscenium OR Zylode<0>
+a<1><4>Build Cutlass <1>(<3>A<1>)<10>Assault armor.<0>
 c<1><4>Raise Constituent <1>(<3>C<1>)<10>Skybound worker.<0>
 e<3><4>Salvage <1>(<3>E<1>)<10>Orders the builder to deconstruct the target mechanical unit or structure, returning up to 33% of its resource cost during the channel.<0>
 e<3><4>Rapid Rendezvous <1>(<3>E<1>)<10>Leaps to the target ground ally within 5 range, activating Impact Dissipation for all allies within 3 range of the jump target.<0>
@@ -428,7 +428,7 @@ Plasma Shields<0>
 t<1><4>Warp in Monument of Sin <1>(<3>T<1>)<10>Capital stellar production.<0>
 Axtoth Axis requires:<10>   Othstol Oviform<0>
 f<1><4>Bestow Harakan <1>(<3>F<1>)<10>Dutiful frontline infantry.<0>
-<0>
+t<1><4>Build Broadside <1>(<3>T<1>)<10>Encroaching armor.<0>
 x<1><4>Morph into Axitrilisk <1>(<3>X<1>)<10>Sustaining skirmisher strain.<0>
 Axitrilisk requires:<10>   Axtoth Axis<0>
 ¤<3><4>Perpetual Wind <2>(passive)<10>Upon taking fatal damage, Axitrilisks revert to a weaponless state and attempt to rejuvenate.<10><10>Should they survive in this form for eight seconds, Axitrilisks recover full use of their weapon.<0>
@@ -451,8 +451,8 @@ d<1><4>Morph into Mortothrokor <1>(<3>D<1>)<10>Rampaging melee strain.<0>
 w<1><4>Build Tinkerer's Tower <1>(<3>W<1>)<10>Enables Sirens and Strigas.<0>
 e<1><4>Profanate Empress <1>(<3>E<1>)<10>Reinforcing destroyer.<0>
 ¤<3><4>Escape Velocity <2>(passive)<10>Algoztalisk projectiles gain +1 armor penetration for every range traveled.<0>
-<0>
-<0>
+¤<3><4>Shrapnel Strike <2>(passive)<10>Goremasts inflict 15 damage to all targets within 2 range, and slow their attack and movement speeds by 33% for 3 seconds. If the trap is destroyed or manually detonated, nearby targets are only slowed.<0>
+z<3><4>Detonate <1>(<3>Z<1>)<10>Trips the Goremast immediately, applying its slow effects to all combatants within 2 range.<0>
 ¤<3><4>Advancing Motion <2>(passive)<10>This combatant's primary weapon can be fired while moving.<0>
 Iron Foundry requires:<10>   Daedala<0>
 f<1><4>Build Iron Foundry <1>(<3>F<1>)<10>Advanced vehicle production.<0>
@@ -586,7 +586,7 @@ Protathalor requires:<10>   Mutath Spire<0>
 a<1><4>Train Maverick <1>(<3>A<1>)<10>All-purpose infantry.<0>
 g<1><4>Train Eidolon <1>(<3>G<1>)<10>Disruptive specialist infantry.<0>
 f<1><4>Train Harakan <1>(<3>F<1>)<10>Durable frontline infantry.<0>
-v<1><4>Build Vulture <1>(<3>V<1>)<10>Fast anti-infantry harasser.<0>
+v<1><4>Build Vulture <1>(<3>V<1>)<10>Harrying vehicle.<0>
 g<1><4>Build Goliath <1>(<3>G<1>)<10>Versatile walker.<0>
 t<1><4>Build Phalanx <1>(<3>T<1>)<10>Durable artillery.<0>
 s<1><4>Build Mason <1>(<3>S<1>)<10>Worker.<0>
@@ -705,7 +705,7 @@ e<1><4>Warp in Adherent <1>(<3>E<1>)<10>Stolid skirmisher.<0>
 b<1><4>Install Radix <1>(<3>B<1>)<10>Biotic production.<0>
 r<1><4>Train Siren <1>(<3>R<1>)<10>Eclectic specialist.<0>
 a<1><4>Morph into Rilirokors <1>(<3>A<1>)<10>Fodder strain.<0>
-¤<3><4>Worship <2>(passive)<10>When a hostile combatant takes fatal damage within 6 range of a Demiurge, they undergo a Crisis of Faith, and will serve the Demiurge after 5 seconds.<10>The combatants expire normally if no Demiurges are within 6 range during the Crisis.<0>
+¤<3><4>Worship <2>(passive)<10>When a hostile combatant takes fatal damage within 6 range of the Demiurge, they drain 10 energy from the Demiurge and undergo a Crisis of Faith, serving a new master after 5 seconds.<10>The combatants expire normally if no Demiurges are within 6 range during the Crisis.<0>
 g<1><4>Build Arhaun <1>(<3>G<1>)<10>Strike walker.<0>
 g<1><4>Build Southpaw <1>(<3>G<1>)<10>Disruptive vehicle.<0>
 q<1><4>Morph into Quazrokors <1>(<3>Q<1>)<10>Harrying strain.<0>
@@ -732,7 +732,7 @@ t<1><4>Meld Intendent <1>(<3>T<1>)<10>Assault crawler.<0>
 z<1><4>Mutate into Skortrith Cesiant <1>(<3>Z<1>)<10>Advanced anti-surface cell.<0>
 Scepter requires:<10>   Cipher<0>
 ¤<3><4>Gravity Well <2>(passive)<10>Anthelion attacks radiate out from their center of mass. Hostiles damaged by the Anthelion are pulled toward it.<0>
-¤<3><4>Counter-Proposal <2>(passive)<10>Once per second, the Anticthon reclaims the closest corpse within 3 range.<0>
+¤<3><4>Counter-Proposal <2>(passive)<10>Once per second, the Anticthon expends 25 energy to reclaim the closest corpse within 3 range.<0>
 ¤<3><4>Endless Eclipse <2>(passive)<10>Anthelions channel for 5 seconds before instantly manifesting at their destination, which must be revealed before movement can begin.<0>
 ¤<3><4>Observance <2>(passive)<10>While any Seraph remains within 6 range of hostiles, their armor is reduced by 1 every 5 seconds.<10><10>Armor returns after 5 seconds of not being observed.<0>
 Zethrokors Require:<10>   Quazeth Pool<0>
@@ -812,7 +812,7 @@ Hide Terrain (<3>Tab<1>)<0>
 Diplomacy<0>
 Messaging<0>
 Game Menu (<3>F10<1>)<0>
-¤<3><4>Sermon Salve <2>(passive)<10>While allied combatants and structures remain peaceful within 8 range of the Chantry, they regenerate 5 HP per second.<0>
+¤<3><4>Sermon Salve <2>(passive)<10>While allies remain peaceful within 8 range of the Chantry, they regenerate 5 HP per second.<10>Allied combatants become cloaked until their next attack.<0>
 ¤<3><4>Discordant Chorus <2>(passive)<10>Enemies struck by this combatant have their armor reduced by 1 for 2 seconds. This penalty does not stack.<0>
 ¤<3><4>Astral Splendor <2>(passive)<10>Once every 2 seconds, this core restores 10 shields to allies within 8 range. Allies can only be restored once every 2 seconds.<0>
 x<1><4>Build Cestus <1>(<3>X<1>)<10>Warding outpost.<0>
@@ -964,17 +964,17 @@ b<1><4>Install Zylode <1>(<3>B<1>)<10>Advanced mechanized production.<0>
 Zylode Requires<10>   Cipher AND Gauntlet<0>
 b<1><4>Install Astrolabe <1>(<3>B<1>)<10>Advanced skyborne production.<0>
 Astrolabe Requires<10>   Proscenium OR Zylode<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
+Must target enemy units.<0>
+Must target allied units.<0>
+Must target allied ground units.<0>
+Must target enemy units or allied embedded units.<0>
+Must target units with no hijackers.<0>
+¤<3><4>Avenging Mitosis <2>(passive)<10>Upon taking damage, this strain incubates, spawning one Skryrokor after a two-second delay.<10>This status cannot be applied if the strain is already incubating.<0>
+w<1><4>Install Dorminge <1>(<3>W<1>)<10>Impeding shrine.<0>
+Dorminge requires:<10>   Cipher AND Gauntlet<0>
+w<1><4>Install Domain <1>(<3>C<1>)<10>Encompassing town center.<0>
+Domain requires:<10>   Conduit AND Bestiary<0>
+¤<3><4>Earthly Profusion <2>(passive)<10>Every 10 seconds, the Domain harvests all available resource nodes within 12 range. This does not interrupt active mining efforts.<0>
 <0>
 <0>
 <0>
@@ -1067,7 +1067,7 @@ z<0><4>Advanced Warp <1>(<3>Z<1>)<0>
 b<0><4>Basic Warp <1>(<3>B<1>)<0>
 g<1><4>Warp in Gladius <1>(<3>G<1>)<10>Crowd-controlling corvette.<0>
 <0>
-<0>
+Eyelet<0>
 g<1><4>Build Monogram <1>(<3>G<1>)<10>Reinforcing hovercraft.<0>
 g<1><4>Build Gorgon <1>(<3>G<1>)<10>All-purpose corvette.<0>
 a<1><4>Build Salamander <1>(<3>A<1>)<10>Area-denial cruiser.<0>
@@ -1226,7 +1226,7 @@ Supreme Warps require:<10>   Empowered Warp<0>
 ¤<3><4>Writhing Web <2>(passive)<10>For every allied Sovroleth within 8 range, lose 6% movement speed and gain 6% weapon range.<0>
 ¤<3><4>Babylon Plating <2>(passive)<10>Phalanxes gain +4 armor while in Tank mode.<0>
 Ogun requires:<10>   Quarry<0>
-¤<3><4>Blood Tithe <2>(passive)<10>When an Apostle attacks a target, allies within 3 range of the Apostle are healed for 5 HP.<0>
+¤<3><4>Blood Tithe <2>(passive)<10>When attacking hostiles, Apostles expend 5 energy to heal allies within 3 range for 5 HP.<0>
 e<1><4>Build Cyclops <1>(<3>E<1>)<10>Crowd-controlling walker.<0>
 ¤<3><4>Nanite Drones <2>(passive)<10>While in Smithy Mode, Oguns repair all structures within 4 range.<0>
 Nanite Drones:<10>   Must be in Smithy Mode<0>
@@ -1386,7 +1386,7 @@ r<1><4>Warp in Automaton Register <1>(<3>R<1>)<10>Heavy robotic production.<0>
 z<1><4>Mutate into Alkag Iteth <1>(<3>Z<1>)<10>Assault node. Enables Kagralisks, Evigrilisks, and Almaksalisks.<0>
 x<1><4>Build Sentinel <1>(<3>X<1>)<10>All-purpose tower.<0>
 c<1><4>Assemble Simulacrum <1>(<3>C<1>)<10>Robotic swarmer.<0>
-¤<3><4>Lazarus Agent <2>(passive)<10>When attacking a hostile, Apostles reclaim one corpse within 3 range of themselves.<0>
+¤<3><4>Lazarus Agent <2>(passive)<10>When attacking hostiles, Apostles expend 20 energy to reclaim one corpse within 3 range of themselves.<0>
 Sentinel requires:<10>   Atlas<0>
 ¤<3><4>Kinetic Penetration <2>(passive)<10>This combatant's projectiles travel to maximum range, piercing targets with insufficient armor, and becoming intercepted by targets with more armor. Additional victims take half damage.<0>
 <0>
@@ -1475,8 +1475,8 @@ Mortothrokor requires:<10>   Axtoth Axis<0>
 d<1><4>Manifest Droleth <1>(<3>D<1>)<10>Worker strain.<0>
 a<1><4>Manifest Mason <1>(<3>A<1>)<10>Worker.<0>
 s<1><4>Manifest Scribe <1>(<3>S<1>)<10>Worker automata.<0>
-<0>
-<0>
+Cutlass requires:<10>   Scrapyard<0>
+Broadside requires:<10>   Palladium<0>
 ¤<3><4>Transcendent Tide <2>(passive)<10>Each time a Potentate attacks an enemy within 3 range, all allies within 3 range are ascended, granting 25% increased attack speed.<0>
 a<1><4>Warp in Potentate <1>(<3>A<1>)<10>Ascendent ranger<0>
 a<1><4>Train Hotshot <1>(<3>A<1>)<10>Close-combat infantry.<0>
@@ -1791,7 +1791,7 @@ r<1><4>Build Priestess <1>(<3>R<1>)<10>Restorative infantry.<0>
 b<1><4>Build Barker <1>(<3>B<1>)<10>Frontline cavalry.<0>
 <27><0><4>Cancel Demolition <1>(<3>ESC<1>)<0>
 ¤<3><4>Evasive Maneuvers <2>(passive)<10>After falling below 30 HP, Stewards will return to their Solarion, regaining all HP and becoming cleansed of any debuffs.<0>
-¤<3><4>Mechanical Rage <2>(passive)<10>After killing an enemy combatant, the Zonguard gains 7 bonus armor 2 seconds.<0>
+¤<3><4>Mechanical Rage <2>(passive)<10>After killing an enemy combatant, the Zonguard gains 10 bonus armor 2 seconds.<0>
 Chokral Chaszal requires:<10>   Othstol Oviform<0>
 <0>
 <0>
@@ -1799,7 +1799,7 @@ Chokral Chaszal requires:<10>   Othstol Oviform<0>
 ¤<3><4>Astral Rule <2>(passive)<10>Victims of the Patriarch's attacks are debuffed for 2 seconds, and restore 5 shields to any attackers.<0>
 g<1><4>Morph into Algoztalisk <1>(<3>G<1>)<10>Relentless corvette strain.<0>
 Algoz Aspect requires:<10>   Chokral Chazsal<0>
-¤<3><4>Reclamation Fields <2>(passive)<10>This combatant's attacks create Lazarus fields that reclaim a corpse within 2 range after 1.5 seconds.<0>
+¤<3><4>Reclamation Fields <2>(passive)<10>This combatant's attacks expend 25 energy to create Lazarus fields that reclaim a corpse within 2 range after 1.5 seconds.<0>
 <0>
 ¤<3><4>Fan of Teeth <2>(passive)<10>Upon taking damage, this strain launches a retaliatory bone in the direction of their attacker that travels up to 3 range, piercing any hostiles in its path.<0>
 Cherbrath Aspect requires:<10>   Chokral Chazsal<0>
