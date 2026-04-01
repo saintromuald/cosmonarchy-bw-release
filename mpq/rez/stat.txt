@@ -354,10 +354,10 @@ e<3><4>Holdout Module <1>(<3>E<1>)<10>Extends the structure outwards with a shel
 e<3><4>Vision Module <1>(<3>E<1>)<10>Extends the structure skywards, providing +2 vision range and Detector status.<0>
 s<1><4>Morph into Protathalor <1>(<3>S<1>)<10>Mobile artillery strain.<0>
 <0>
-<0>
-<0>
-<0>
-<0>
+¤<3><4>Hated Reflection <2>(passive)<10>When damaged by hostiles, the Histrion deploys an Egocent at its location. This cannot occur more than once every 2 seconds.<0>
+z<3><4>Ashbind <1>(<3>Z<1>)<10>Leaps to the target ground enemy within 5 range, applying Scrapworld: Ash Heap to all hostiles within 3 range of the jump target.<0>
+Puppeteer requires:<10>   Recent victim<0>
+c<3><4>Puppeteer <1>(<3>C<1>)<10>Activates a trap on the most recently-damaged foe, pulling hostiles within 5 range towards the target.<0>
 ¤<3><4>Scrapworld: Gold Vein <2>(passive)<10>This structure salvages one corpse within 8 range every second, securing 25% of the corpses's resource cost.<0>
 ¤<3><4>Crushing Delivery <2>(passive)<10>Enemy combatants within 8 range of the Dorminge find their movement speed slowed by 33%.<0>
 c<3><4>Preylock <1>(<3>C<1>)<10>Pulls the target enemy within 5 range to the combatant's location, and afflicts it with Booming Blast.<0>
@@ -392,7 +392,7 @@ c<1><4>Raise Constituent <1>(<3>C<1>)<10>Skybound worker.<0>
 e<3><4>Salvage <1>(<3>E<1>)<10>Orders the builder to deconstruct the target mechanical unit or structure, returning up to 33% of its resource cost during the channel.<0>
 e<3><4>Rapid Rendezvous <1>(<3>E<1>)<10>Leaps to the target ground ally within 5 range, activating Impact Dissipation for all allies within 3 range of the jump target.<0>
 c<3><4>Hijack <1>(<3>C<1>)<10>Leaps to the target hostile, attaching to the victim and slowing their movement speed by 50%.<10><10>After 5 seconds, the Askosi combatant becomes the target.<0>
-e<3><4>Rematerialize <1>(<3>E<1>)<10>Pulls the target ally within 5 range to the combatant's location, and grants them Impact Dissipation.<0>
+e<3><4>Rematerialize <1>(<3>E<1>)<10>Pulls allies within 3 range of the target to the combatant's location, and grants them Impact Dissipation.<0>
 e<1><4>Mutate into Kalkiir Lake <1>(<3>E<1>)<10>Swarm node. Enables Liiralisks and Kalkalisks.<0>
 Terran Structure Armor<0>
 Zerg Structure Carapace<0>
@@ -722,10 +722,10 @@ c<1><4>Build Tencendur <1>(<3>C<1>)<10>Heavy garrison.<0>
 Tencendur requires:<10>   Atlas<0>
 f<1><4>Build Facade <1>(<3>F<1>)<10>Cloaking outpost.<0>
 r<1><4>Warp in Herald <1>(<3>R<1>)<10>Frontline instigator.<0>
-s<1><4>Install Cosmoscope <1>(<3>S<1>)<10>Skyborne production.<0>
+s<1><4>Install Cosmoscope <1>(<3>S<1>)<10>skybound production.<0>
 e<1><4>Install Cipher <1>(<3>E<1>)<10>Combat control relay.<0>
 g<1><4>Install Gauntlet <1>(<3>G<1>)<10>Assault relay.<0>
-c<1><4>Install Chantry <1>(<3>C<1>)<10>Sustaining shrine.<0>
+t<1><4>Install Chantry <1>(<3>T<1>)<10>Sustaining shrine.<0>
 b<1><4>Meld Object <1>(<3>B<1>)<10>Imposing crawler.<0>
 c<1><4>Meld Scepter <1>(<3>C<1>)<10>Commanding armor.<0>
 t<1><4>Meld Intendent <1>(<3>T<1>)<10>Assault crawler.<0>
@@ -947,8 +947,8 @@ z<1><4>Raise Zonguard <1>(<3>Z<1>)<10>Ravenous mechbeast.<0>
 Phontis requires:<10>   Conduit<0>
 Zonguard requires:<10>   Bestiary<0>
 a<1><4>Raise Akreno <1>(<3>A<1>)<10>Light skybeast.<0>
-s<1><4>Meld Meld Iconoclast <1>(<3>S<1>)<10>Crowd-controlling frigate.<0>
-c<1><4>Meld Meld Crematorium <1>(<3>C<1>)<10>Assault cruiser.<0>
+s<1><4>Meld Iconoclast <1>(<3>S<1>)<10>Crowd-controlling frigate.<0>
+c<1><4>Meld Crematorium <1>(<3>C<1>)<10>Assault cruiser.<0>
 r<1><4>Raise Paraclete <1>(<3>R<1>)<10>Interdicting skybeast.<0>
 Crematorium requires:<10>   Conduit<0>
 Paraclete requires:<10>   Bestiary<0>
@@ -956,13 +956,13 @@ v<1><4>Morph into Zethalor <1>(<3>V<1>)<10>Swarming artillery strain.<0>
 Zethar Aspect requires:<10>   Vornath Pond<0>
 r<1><4>Morph into Scrylyleth <1>(<3>V<1>)<10>Territorial strain.<0>
 Scrylyl Aspect requires:<10>   Irol Iris<0>
-b<1><4>Install Conduit <1>(<3>B<1>)<10>Ashen relay.<0>
+c<1><4>Install Conduit <1>(<3>C<1>)<10>Ashen relay.<0>
 Conduit Requires<10>   Proscenium OR Zylode<0>
-b<1><4>Install Bestiary <1>(<3>B<1>)<10>Beast relay.<0>
+t<1><4>Install Bestiary <1>(<3>T<1>)<10>Beast relay.<0>
 Bestiary Requires<10>   Proscenium OR Zylode<0>
-b<1><4>Install Zylode <1>(<3>B<1>)<10>Advanced mechanized production.<0>
+z<1><4>Install Zylode <1>(<3>Z<1>)<10>Advanced mechanized production.<0>
 Zylode Requires<10>   Cipher AND Gauntlet<0>
-b<1><4>Install Astrolabe <1>(<3>B<1>)<10>Advanced skyborne production.<0>
+s<1><4>Install Astrolabe <1>(<3>S<1>)<10>Advanced skybound production.<0>
 Astrolabe Requires<10>   Proscenium OR Zylode<0>
 Must target enemy units.<0>
 Must target allied units.<0>
@@ -972,9 +972,38 @@ Must target units with no hijackers.<0>
 ¤<3><4>Avenging Mitosis <2>(passive)<10>Upon taking damage, this strain incubates, spawning one Skryrokor after a two-second delay.<10>This status cannot be applied if the strain is already incubating.<0>
 w<1><4>Install Dorminge <1>(<3>W<1>)<10>Impeding shrine.<0>
 Dorminge requires:<10>   Cipher AND Gauntlet<0>
-w<1><4>Install Domain <1>(<3>C<1>)<10>Encompassing town center.<0>
+c<1><4>Install Domain <1>(<3>C<1>)<10>Encompassing town center.<0>
 Domain requires:<10>   Conduit AND Bestiary<0>
 ¤<3><4>Earthly Profusion <2>(passive)<10>Every 10 seconds, the Domain harvests all available resource nodes within 12 range. This does not interrupt active mining efforts.<0>
+r<1><4>Install Panoply <1>(<3>R<1>)<10>Superb biotic production.<0>
+Panoply Requires<10>   Conduit AND Bestiary<0>
+z<1><4>Install Lotiro <1>(<3>Z<1>)<10>Superb mechanized production.<0>
+Lotiro Requires<10>   Conduit AND Bestiary<0>
+s<1><4>Install Obelisk <1>(<3>S<1>)<10>Superb skybound production.<0>
+Obelisk Requires<10>   Panoply OR Lotiro<0>
+¤<3><4>Spirited Assembly <2>(passive)<10>While mobile, Silversouls cloak allies within 6 range until their next attack.<10>Upon taking fatal damage while mobile, Silversouls embed themselves into the surface, becoming immobile and more heavily-armored. During this time, they apply Impact Dissipation to allies within 8 range.<0>
+a<1><4>Raise Insurant <1>(<3>A<1>)<10>Discerning trooper.<0>
+t<1><4>Raise Silversoul <1>(<3>T<1>)<10>Quieting trooper.<0>
+v<1><4>Raise Ghostwrit <1>(<3>V<1>)<10>Vengeful specialist.<0>
+d<1><4>Raise Azjoran <1>(<3>D<1>)<10>Unstoppable trooper.<0>
+Ghostwrit requires:<10>   Lekrot<0>
+Azjoran requires:<10>   Hearthshard<0>
+a<1><4>Meld Elgird <1>(<3>A<1>)<10>Interceding vehicle.<0>
+t<1><4>Meld Histrion <1>(<3>T<1>)<10>Aggrandizing vehicle.<0>
+v<1><4>Meld Alacyne <1>(<3>V<1>)<10>Overpowering vehicle.<0>
+d<1><4>Meld Begolor <1>(<3>D<1>)<10>Earthshaking mechbeast.<0>
+Alacyne requires:<10>   Lekrot<0>
+Begolor requires:<10>   Hearthshard<0>
+a<1><4>Meld Limire <1>(<3>A<1>)<10>Anti-ship craft.<0>
+t<1><4>Meld Endbore <1>(<3>T<1>)<10>Precision gunboat.<0>
+v<1><4>Meld Tortare <1>(<3>V<1>)<10>Heavy corvette.<0>
+d<1><4>Meld Cybrene <1>(<3>D<1>)<10>Flagship.<0>
+Tortare requires:<10>   Lekrot<0>
+Cybrene requires:<10>   Hearthshard<0>
+c<1><4>Install Lekrot <1>(<3>S<1>)<10>Manipulation relay.<0>
+Lekrot Requires<10>   Panoply OR Lotiro<0>
+t<1><4>Install Hearthshard <1>(<3>S<1>)<10>Immortal relay.<0>
+Hearthshard Requires<10>   Panoply OR Lotiro<0>
 <0>
 <0>
 <0>
@@ -992,43 +1021,14 @@ Domain requires:<10>   Conduit AND Bestiary<0>
 <0>
 <0>
 <0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
+a<1><4>Construct Athla <1>(<3>A<1>)<10>Constructor model.<0>
+f<1><4>Construct Ferrum <1>(<3>F<1>)<10>Aggressor model.<0>
+c<1><4>Construct Chalyb <1>(<3>C<1>)<10>Defender model.<0>
+t<1><4>Construct Circitor <1>(<3>T<1>)<10>Pursuit model.<0>
+x<1><4>Construct Exigo <1>(<3>X<1>)<10>Defense platform.<0>
+v<1><4>Construct Vicere <1>(<3>V<1>)<10>Assault platform.<0>
+Forerunner Alloy<0>
+Forerunner Lattice<0>
 Hive Tissues:<10>   Must not have a hive tissue.<0>
 Intestinal Infinity:<10>   Must be burrowed.<0>
 c<0><4>Hive Tissues <1>(<3>C<1>)<0>
@@ -1066,7 +1066,7 @@ g<1><4>Warp in Magister <1>(<3>G<1>)<10>Battle platform.<0>
 z<0><4>Advanced Warp <1>(<3>Z<1>)<0>
 b<0><4>Basic Warp <1>(<3>B<1>)<0>
 g<1><4>Warp in Gladius <1>(<3>G<1>)<10>Crowd-controlling corvette.<0>
-<0>
+¤<3><4>Impact Prevarication <2>(passive)<10>Each time this combatant is attacked by a hostile, it gains 33% increased movement and attack speeds for 3 seconds, and regenerates 30 HP over time.<0>
 Eyelet<0>
 g<1><4>Build Monogram <1>(<3>G<1>)<10>Reinforcing hovercraft.<0>
 g<1><4>Build Gorgon <1>(<3>G<1>)<10>All-purpose corvette.<0>
@@ -1412,7 +1412,7 @@ s<1><4>Warp in Atreus <1>(<3>S<1>)<10>Stalwart strider.<0>
 ¤<3><4>Autovitality <2>(passive)<10>4 seconds after taking hull damage from an enemy, this combatant creates a clone of itself, inheriting shields, life, and statuses.<0>
 ¤<3><4>Petrification <2>(passive)<10>Gorgon's attacks slow victims by 10% per stack. Stacks expire after 2 seconds.<0>
 ¤<3><4>Adrenal Implant <2>(passive)<10>While Trinity Eidolons are cloaked, they move 33% faster and regenerate life twice as fast.<0>
-¤<3><4>Reclamation <1>(Cornerstone)<10>This combatant is a Reclaimer, capable of raising the dead. Reclaimed combatants move 25% slower, and restore half of all damage taken when out of combat.<0>
+¤<3><4>Reclamation <1>(Cornerstone)<2><10>This combatant is a Reclaimer, capable of raising the dead. Reclaimed combatants move 25% slower, and restore half of all damage taken when out of combat.<0>
 ¤<3><4>Parasitic Spores <2>(passive)<10>Targets killed by the Alkajelisk spawn a spore that seeks out nearby hostiles and explodes, dealing 15 damage to all hostiles within 1.5 range.<0>
 Babylon Plating requires:<10>   Tank Mode<0>
 ¤<3><4>Furia Salvo <2>(passive)<10>While deployed, the Madrigal fires a staggered salvo of missiles at all targets within weapon range.<0>

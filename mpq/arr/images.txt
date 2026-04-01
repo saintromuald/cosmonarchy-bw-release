@@ -2331,65 +2331,65 @@ Panoply
 Panoply Shadow
 Lotiro
 Lotiro Shadow
-Extended Image #1331
-Extended Image #1332
-Extended Image #1333
-Extended Image #1334
-Extended Image #1335
-Extended Image #1336
-Extended Image #1337
-Extended Image #1338
-Extended Image #1339
-Extended Image #1340
-Extended Image #1341
-Extended Image #1342
-Extended Image #1343
-Extended Image #1344
-Extended Image #1345
-Extended Image #1346
-Extended Image #1347
-Extended Image #1348
-Extended Image #1349
-Extended Image #1350
-Extended Image #1351
-Extended Image #1352
-Extended Image #1353
-Extended Image #1354
-Extended Image #1355
-Extended Image #1356
-Extended Image #1357
-Extended Image #1358
-Extended Image #1359
-Extended Image #1360
-Extended Image #1361
-Extended Image #1362
-Extended Image #1363
-Extended Image #1364
-Extended Image #1365
-Extended Image #1366
-Extended Image #1367
-Extended Image #1368
-Extended Image #1369
-Extended Image #1370
-Extended Image #1371
-Extended Image #1372
-Extended Image #1373
-Extended Image #1374
-Extended Image #1375
-Extended Image #1376
-Extended Image #1377
-Extended Image #1378
-Extended Image #1379
-Extended Image #1380
-Extended Image #1381
-Extended Image #1382
-Extended Image #1383
-Extended Image #1384
-Extended Image #1385
-Extended Image #1386
-Extended Image #1387
-Extended Image #1388
-Extended Image #1389
+Pathlight
+Pathlight Shadow
+Ferrum
+Ferrum Shadow
+Ferrum Warp Flash
+Chalyb
+Chalyb Shadow
+Chalyb Warp Flash
+Circitor
+Circitor Shadow
+Circitor Warp Flash
+Exigo
+Exigo Shadow
+Exigo Warp Flash
+Athla
+Athla Shadow
+Athla Warp Flash
+Vicere
+Vicere Shadow
+Vicere Warp Flash
+Machinamentum
+Machinamentum Shadow
+Machinamentum Warp Flash
+Big Infested Kerrigan
+Big Infested Kerrigan Shadow
+Lekrot
+Lekrot Shadow
+Hearthshard
+Hearthshard Shadow
+Insurant
+Insurant Shadow
+Silversoul
+Silversoul Shadow
+Ghostwrit
+Ghostwrit Shadow
+Azjoran
+Azjoran Shadow
+Elgird
+Elgird Shadow
+Histrion
+Histrion Shadow
+Egocent
+Egocent Shadow
+Alacyne
+Alacyne Shadow
+Begolor
+Begolor Shadow
+Limire
+Limire Shadow
+Endbore
+Endbore Shadow
+Tortare
+Tortare Shadow
+Cybrene
+Cybrene Shadow
+Silversoul Remains
+Alacyne Engine
+Elgird Engine
+Histrion Engine
 Extended Image #1390
 Extended Image #1391
 Extended Image #1392

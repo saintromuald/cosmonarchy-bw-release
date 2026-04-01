@@ -673,30 +673,30 @@ Dorminge
 Domain
 Panoply
 Lotiro
-Extended Flingy #467
-Extended Flingy #468
-Extended Flingy #469
-Extended Flingy #470
-Extended Flingy #471
-Extended Flingy #472
-Extended Flingy #473
-Extended Flingy #474
-Extended Flingy #475
-Extended Flingy #476
-Extended Flingy #477
-Extended Flingy #478
-Extended Flingy #479
-Extended Flingy #480
-Extended Flingy #481
-Extended Flingy #482
-Extended Flingy #483
-Extended Flingy #484
-Extended Flingy #485
-Extended Flingy #486
-Extended Flingy #487
-Extended Flingy #488
-Extended Flingy #489
-Extended Flingy #490
+Pathlight
+Ferrum
+Chalyb
+Circitor
+Exigo
+Athla
+Vicere
+Machinamentum
+Big Infested Kerrigan
+Lekrot
+Hearthshard
+Insurant
+Silversoul
+Ghostwrit
+Azjoran
+Elgird
+Histrion
+Egocent
+Alacyne
+Begolor
+Limire
+Endbore
+Tortare
+Cybrene
 Extended Flingy #491
 Extended Flingy #492
 Extended Flingy #493

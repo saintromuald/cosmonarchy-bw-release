@@ -588,29 +588,29 @@ Askosi Azjoran
 Askosi Elgird
 Askosi Histrion
 Askosi Egocent
-Extended Unit #363
+Askosi Alacyne
 Askosi Begolor
-Extended Unit #365
-Extended Unit #366
-Extended Unit #367
-Extended Unit #368
+Askosi Limire
+Askosi Endbore
+Askosi Tortare
+Askosi Cybrene
 Askosi Lekrot
 Askosi Hearthshard
-Extended Unit #371
-Extended Unit #372
-Extended Unit #373
-Extended Unit #374
-Extended Unit #375
-Extended Unit #376
-Extended Unit #377
-Extended Unit #378
-Extended Unit #379
-Extended Unit #380
-Extended Unit #381
-Extended Unit #382
-Extended Unit #383
-Extended Unit #384
-Extended Unit #385
+Terran Nuriel
+Terran Phoenix
+Terran Archbishop
+Protoss Pathlight
+Protoss Saladius
+Protoss Garantis
+Zerg Zoltorokor
+Forerunner Ferrum
+Forerunner Chalyb
+Forerunner Circitor
+Forerunner Exigo
+Forerunner Athla
+Forerunner Vicere
+Forerunner Machinamentum
+Big Infested Kerrigan
 Extended Unit #386
 Extended Unit #387
 Extended Unit #388

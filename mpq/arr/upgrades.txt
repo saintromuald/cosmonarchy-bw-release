@@ -58,4 +58,43 @@ Askosi Structure Bolting
 Protoss Structure Armor
 Zerg Structure Armor
 Terran Structure Armor
-Unknown Upgrade60
+GlobalUpgrade60
+Forerunner Alloy
+Forerunner Lattice
+Extended Upgrade #3
+Extended Upgrade #4
+Extended Upgrade #5
+Extended Upgrade #6
+Extended Upgrade #7
+Extended Upgrade #8
+Extended Upgrade #9
+Extended Upgrade #10
+Extended Upgrade #11
+Extended Upgrade #12
+Extended Upgrade #13
+Extended Upgrade #14
+Extended Upgrade #15
+Extended Upgrade #16
+Extended Upgrade #17
+Extended Upgrade #18
+Extended Upgrade #19
+Extended Upgrade #20
+Extended Upgrade #21
+Extended Upgrade #22
+Extended Upgrade #23
+Extended Upgrade #24
+Extended Upgrade #25
+Extended Upgrade #26
+Extended Upgrade #27
+Extended Upgrade #28
+Extended Upgrade #29
+Extended Upgrade #30
+Extended Upgrade #31
+Extended Upgrade #32
+Extended Upgrade #33
+Extended Upgrade #34
+Extended Upgrade #35
+Extended Upgrade #36
+Extended Upgrade #37
+Extended Upgrade #38
+Extended Upgrade #39

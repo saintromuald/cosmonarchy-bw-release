@@ -4619,4 +4619,577 @@ YoungChrysalisDeath:
 	wait              	3
 	end
 
-## Next free IsId: 829
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2335 Ferrum (hl\fr\ferrum.grp)
+.headerstart
+IsId          	378
+Type          	21
+Init          	FerrumInit
+Death         	FerrumDeath
+GndAttkInit   	FerrumGndAttkInit
+AirAttkInit   	FerrumGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	FerrumGndAttkInit
+AirAttkRpt    	FerrumGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	FerrumGndAttkToIdle
+AirAttkToIdle 	FerrumGndAttkToIdle
+Unused2       	[NONE]
+Walking       	FerrumWalking
+WalkingToIdle 	FerrumWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	FerrumWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+FerrumInit:
+	imgulnextid			0 42 # Ferrum Shadow (hl\fr\ferrum.grp)
+FerrumGndAttkToIdle:
+	playfram          	0x00
+	goto              	FerrumWalkingToIdle
+
+FerrumWalkingToIdle:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	FerrumWalkingToIdle
+
+FerrumDeath:
+	playsndbtwn			4214 4215 # Ferrum death 01, 02
+	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul          	1065 0 42 # Askosi Unit Rubble (cm\askosi\a-rubble-tiny.grp)
+	wait              	1
+	end
+
+FerrumGndAttkInit:
+	wait				1
+	attack
+	wait				2
+	gotorepeatattk
+	ignorerest
+	goto              	SkryrokorLocal00
+
+FerrumWalking:
+	playfram          	0x00
+	setvertpos        	0
+#	imgol             	142 0 0 # Ferrum Engines (thingy\pscGlow.grp)
+	goto              	SkryrokorLocal00
+
+FerrumWarpIn:
+	imgol             	2337 0 0 # Ferrum Warp Flash (hl\fr\ferrum.grp)
+	goto              	FerrumWalkingToIdle
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2338 Chalyb (hl\fr\chalyb.grp)
+.headerstart
+IsId          	379
+Type          	21
+Init          	ChalybInit
+Death         	ChalybDeath
+GndAttkInit   	ChalybGndAttkInit
+AirAttkInit   	ChalybGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	ChalybGndAttkInit
+AirAttkRpt    	ChalybGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	ChalybGndAttkToIdle
+AirAttkToIdle 	ChalybGndAttkToIdle
+Unused2       	[NONE]
+Walking       	ChalybWalking
+WalkingToIdle 	ChalybWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	ChalybWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ChalybInit:
+	imgulnextid			0 42 # Chalyb Shadow (hl\fr\chalyb.grp)
+ChalybGndAttkToIdle:
+	playfram          	0x00
+	goto              	ChalybWalkingToIdle
+
+ChalybWalkingToIdle:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	ChalybWalkingToIdle
+
+ChalybDeath:
+	playsndbtwn			4214 4215 # Ferrum death 01, 02
+	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul          	1065 0 42 # Askosi Unit Rubble (cm\askosi\a-rubble-tiny.grp)
+	wait              	1
+	end
+
+ChalybGndAttkInit:
+	wait				1
+	attack
+	wait				2
+	gotorepeatattk
+	ignorerest
+	goto              	SkryrokorLocal00
+
+ChalybWalking:
+	playfram          	0x00
+	setvertpos        	0
+#	imgol             	142 0 0 # Chalyb Engines (thingy\pscGlow.grp)
+	goto              	SkryrokorLocal00
+
+ChalybWarpIn:
+	imgol             	2340 0 0 # Chalyb Warp Flash (hl\fr\chalyb.grp)
+	goto              	ChalybWalkingToIdle
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2341 Circitor (hl\fr\circitor.grp)
+.headerstart
+IsId          	380
+Type          	21
+Init          	CircitorInit
+Death         	CircitorDeath
+GndAttkInit   	CircitorGndAttkInit
+AirAttkInit   	CircitorGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	CircitorGndAttkInit
+AirAttkRpt    	CircitorGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	CircitorGndAttkToIdle
+AirAttkToIdle 	CircitorGndAttkToIdle
+Unused2       	[NONE]
+Walking       	CircitorWalking
+WalkingToIdle 	CircitorWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	CircitorWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+CircitorInit:
+	imgulnextid			0 42 # Circitor Shadow (hl\fr\circitor.grp)
+CircitorGndAttkToIdle:
+	playfram          	0x00
+	goto              	CircitorWalkingToIdle
+
+CircitorWalkingToIdle:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	CircitorWalkingToIdle
+
+CircitorDeath:
+	playsndbtwn			4214 4215 # Ferrum death 01, 02
+	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul          	1065 0 42 # Askosi Unit Rubble (cm\askosi\a-rubble-tiny.grp)
+	wait              	1
+	end
+
+CircitorGndAttkInit:
+	wait				1
+	attack
+	wait				2
+	gotorepeatattk
+	ignorerest
+	goto              	SkryrokorLocal00
+
+CircitorWalking:
+	playfram          	0x00
+	setvertpos        	0
+#	imgol             	142 0 0 # Circitor Engines (thingy\pscGlow.grp)
+	goto              	SkryrokorLocal00
+
+CircitorWarpIn:
+	imgol             	2343 0 0 # Circitor Warp Flash (hl\fr\circitor.grp)
+	goto              	CircitorWalkingToIdle
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2344 Exigo (hl\fr\exigo.grp)
+.headerstart
+IsId          	381
+Type          	21
+Init          	ExigoInit
+Death         	ExigoDeath
+GndAttkInit   	ExigoGndAttkInit
+AirAttkInit   	ExigoGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	ExigoGndAttkInit
+AirAttkRpt    	ExigoGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	ExigoGndAttkToIdle
+AirAttkToIdle 	ExigoGndAttkToIdle
+Unused2       	[NONE]
+Walking       	ExigoWalking
+WalkingToIdle 	ExigoWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	ExigoWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ExigoInit:
+	imgulnextid			0 42 # Exigo Shadow (hl\fr\exigo.grp)
+ExigoGndAttkToIdle:
+	playfram          	0x00
+	goto              	ExigoWalkingToIdle
+
+ExigoWalkingToIdle:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	ExigoWalkingToIdle
+
+ExigoDeath:
+	playsnd           	533 # Protoss\Scout\PScDth00.WAV
+	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul          	1007 0 0 # Askosi Structure Rubble (Small) (cm\a\a-rubble-small.grp)
+	wait              	1
+	end
+
+ExigoGndAttkInit:
+	wait				1
+	nobrkcodestart
+	attack
+	wait				6
+	attack
+	wait				6
+	attack
+	wait				6
+	attack
+	wait				6
+	attack
+	wait				2
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto              	SkryrokorLocal00
+
+ExigoWalking:
+	playfram          	0x00
+	setvertpos        	0
+#	imgol             	142 0 0 # Exigo Engines (thingy\pscGlow.grp)
+	goto              	SkryrokorLocal00
+
+ExigoWarpIn:
+	imgol             	2346 0 0 # Exigo Warp Flash (hl\fr\exigo.grp)
+	goto              	ExigoWalkingToIdle
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2350 Vicere (hl\fr\vicere.grp)
+.headerstart
+IsId          	382
+Type          	21
+Init          	VicereInit
+Death         	VicereDeath
+GndAttkInit   	VicereGndAttkInit
+AirAttkInit   	VicereGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	VicereGndAttkInit
+AirAttkRpt    	VicereGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	VicereGndAttkToIdle
+AirAttkToIdle 	VicereGndAttkToIdle
+Unused2       	[NONE]
+Walking       	VicereWalking
+WalkingToIdle 	VicereWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	VicereWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+VicereInit:
+	imgulnextid			0 42 # Vicere Shadow (hl\fr\vicere.grp)
+VicereGndAttkToIdle:
+	playfram          	0x00
+	goto              	VicereWalkingToIdle
+
+VicereWalkingToIdle:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	VicereWalkingToIdle
+
+VicereDeath:
+	playsnd           	533 # Protoss\Scout\PScDth00.WAV
+	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul          	1007 0 0 # Askosi Structure Rubble (Small) (cm\a\a-rubble-small.grp)
+	wait              	1
+	end
+
+VicereGndAttkInit:
+	wait				1
+	attack
+	attack
+	wait				2
+	gotorepeatattk
+	ignorerest
+	goto              	SkryrokorLocal00
+
+VicereWalking:
+	playfram          	0x00
+	setvertpos        	0
+#	imgol             	142 0 0 # Vicere Engines (thingy\pscGlow.grp)
+	goto              	SkryrokorLocal00
+
+VicereWarpIn:
+	imgol             	2352 0 0 # Vicere Warp Flash (hl\fr\vicere.grp)
+	goto              	VicereWalkingToIdle
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2347 Athla (hl\fr\athla.grp)
+.headerstart
+IsId          	383
+Type          	15
+Init          	AthlaInit
+Death         	AthlaDeath
+GndAttkInit   	AthlaGndAttkInit
+AirAttkInit   	AthlaGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	AthlaGndAttkInit
+AirAttkRpt    	AthlaGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	AthlaGndAttkToIdle
+AirAttkToIdle 	AthlaGndAttkToIdle
+Unused2       	[NONE]
+Walking       	AthlaWalking
+WalkingToIdle 	AthlaGndAttkToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	AthlaAlmostBuilt
+.headerend
+# ----------------------------------------------------------------------------- #
+
+AthlaInit:
+	imgulnextid			0 42 # Athla Shadow (hl\fr\athla.grp)
+	playfram          	0x00
+	wait				2
+AthlaGndAttkToIdle:
+	playfram			0x00
+	goto				AthlaLocal69
+AthlaLocal69:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	goto              	AthlaLocal69
+
+AthlaDeath:
+	playsndbtwn			4214 4215 # Ferrum death 01, 02
+	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul          	1065 0 42 # Askosi Unit Rubble (cm\askosi\a-rubble-tiny.grp)
+	wait              	1
+	end
+	
+AthlaGndAttkInit:
+	wait				1
+#	attack
+	wait				2
+	gotorepeatattk
+	ignorerest
+	goto              	SkryrokorLocal00
+
+AthlaWalking:
+    setvertpos          0
+    playfram            0x00
+#	imgol             	142 0 0 # Athla Engines (thingy\pscGlow.grp)
+    goto                SkryrokorLocal00
+    
+AthlaWalkingToIdle:
+	playfram          	0x00
+	setvertpos        	0
+	goto              	SkryrokorLocal00
+
+AthlaAlmostBuilt:
+	setvertpos        	0
+	playfram          	0x00
+	wait              	1
+AthlaLocal00:
+	playfram          	0x00
+	useweapon         	14	# Fusion Cutter (Harvest) (Fusion Cutter)
+	sigorder			32
+	wait              	1
+	playfram          	0x00
+	wait				1
+	playfram			0x00
+	wait				10
+	playfram			0x00
+	wait 				1
+	goto              	AthlaLocal00
+
+AthlaWarpIn:
+	imgol             	2349 0 0 # Athla Warp Flash (hl\fr\athla.grp)
+	goto              	AthlaGndAttkToIdle
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2353 Machinamentum (hl\fr\machinamentum.grp)
+.headerstart
+IsId          	384
+Type          	27
+Init          	MachinamentumInit
+Death         	MachinamentumDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	MachinamentumSpecialState1
+SpecialState2 	MachinamentumSpecialState2
+AlmostBuilt   	MachinamentumAlmostBuilt
+Built         	SkryrokorLocal00
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	MachinamentumIsWorking
+WorkingToIdle 	MachinamentumWorkingToIdle
+WarpIn        	MachinamentumAlmostBuilt
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	MachinamentumDisable
+Burrow        	[NONE]
+UnBurrow      	[NONE]
+Enable        	MachinamentumEnable
+.headerend
+# ----------------------------------------------------------------------------- #
+
+MachinamentumInit:
+	imgulnextid			0 0 # Machinamentum Shadow (hl\fr\machinamentum-shadow.grp)
+	playfram          	0
+	wait              	2
+	goto              	SkryrokorLocal00
+
+MachinamentumDeath:
+	playsndbtwn			4148 4150 # Askosi explosion large 01, 02, 03
+	imgol             	215 0 0 # Explosion (Large) (thingy\tBangX.grp)
+	wait              	3
+	lowsprul          	1004 0 0 # Askosi Structure Rubble (Large) (cm\askosi\a-rubble-large.grp)
+	wait              	1
+	end
+
+MachinamentumSpecialState1:
+	playsnd           	528 # Protoss\SHUTTLE\pshBld00.wav
+	wait              	1 
+	goto              	MachinamentumLocal00
+
+MachinamentumLocal00:
+	wait              	255 
+	goto              	MachinamentumLocal00
+
+MachinamentumSpecialState2:
+	wait              	1 
+	goto              	MachinamentumWorkingToIdle
+
+MachinamentumWorkingToIdle:
+	playfram          	0
+	goto              	SkryrokorLocal00
+
+MachinamentumAlmostBuilt:
+	imgol             	2355 0 0 # Machinamentum Warp Flash (hl\fr\machinamentum.grp)
+	goto              	SkryrokorLocal00
+
+MachinamentumIsWorking:
+	playfram			1
+	wait				1
+	playfram			2
+	wait				1
+	playfram			3
+	wait				1
+	playfram			4
+	wait				1
+	playfram			5
+	wait				1
+	playfram			6
+	wait				1
+	playfram			7
+	wait				1
+	playfram			8
+	wait				1
+	playfram			0
+	wait				3
+	goto              	MachinamentumIsWorking
+
+MachinamentumDisable:
+	playfram          	0
+	wait              	1
+	goto              	SkryrokorLocal00
+
+MachinamentumEnable:
+	playfram          	0
+	wait              	1
+	goto              	MachinamentumWorkingToIdle

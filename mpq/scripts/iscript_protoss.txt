@@ -15702,7 +15702,6 @@ AshguardWarpIn:
 	imgol             	2161 0 0 # Ashguard Warp Flash (cm\faction-p\ashguard.grp)
 	goto              	AshguardWalkingToIdle
 
-
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
 # 449 Herald Glow (cm\protoss\herald-glow.grp)
@@ -15724,3 +15723,90 @@ HeraldGlowInit:
 	playfram          	0x60
 	wait              	1
 	end
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2333 Pathlight (protoss\panoptus.grp)
+.headerstart
+IsId          	735
+Type          	21
+Init          	PathlightInit
+Death         	PathlightDeath
+GndAttkInit   	PathlightGndAttkInit
+AirAttkInit   	PathlightGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	PathlightGndAttkInit
+AirAttkRpt    	PathlightGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	PathlightGndAttkToIdle
+AirAttkToIdle 	PathlightGndAttkToIdle
+Unused2       	[NONE]
+Walking       	PathlightWalking
+WalkingToIdle 	PathlightWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	PathlightWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+PathlightInit:
+	imgulnextid			0 42 # Pathlight Shadow (cm\protoss\panoptus.grp)
+PathlightGndAttkToIdle:
+	playfram          	0x00
+	goto              	PathlightWalkingToIdle
+
+PathlightWalkingToIdle:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	PathlightWalkingToIdle
+
+PathlightDeath:
+	playsnd           	533 # Protoss\Pathlight\PScDth00.WAV
+	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			846 0 42 # Protoss Unit Rubble Medium
+	wait              	1
+	end
+
+PathlightGndAttkInit:
+	wait				1
+	nobrkcodestart
+	wait				1
+	playfram          	0x20
+	playsndbtwn			2020 2023 # Pathlight weaponfire 01, 02, 03, 04
+	attack
+	wait				2
+	playfram			0x00
+	wait				4
+	playfram          	0x20
+	playsndbtwn			2020 2023 # Pathlight weaponfire 01, 02, 03, 04
+	attack
+	wait				2
+	playfram			0x00
+	wait				1
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto              	SkryrokorLocal00
+
+PathlightWalking:
+	playfram          	0x00
+	setvertpos        	0
+	imgol             	142 0 0 # Pathlight Engines (thingy\pscGlow.grp)
+	goto              	SkryrokorLocal00
+
+PathlightWarpIn:
+	imgol             	143 0 0 # Pathlight Warp Flash (cm\protoss\panoptus.grp)
+	goto              	PathlightWalkingToIdle

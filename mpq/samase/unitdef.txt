@@ -16,7 +16,7 @@ building left_upper_door = 205
 building right_upper_door = 206
 
 # Special
-building special_control_node = 192
+building town_center_marker = 192
 building crashed_minotaur = 335
 building psi_disruptor = 336
 building power_generator = 337
@@ -434,6 +434,91 @@ building vornath_pond = 396
 building skibact_scab = 397
 building eskigant = 421
 building zozarc_gorge = 493
+
+# Askosi units
+military proselyte = 443
+military missionary = 445
+military cardinal = 446
+military mimic = 447
+military vicar = 448
+military rove = 449
+military object = 450
+military scepter = 451
+military intendent = 452
+military helion = 453
+military emissary = 454
+military inkblot = 455
+military tirade = 456
+military avatar = 538
+military thaumalogue = 542
+military petract = 543
+military crematorium = 544
+military aphorist = 551
+military doronin = 552
+military agonist = 553
+military phontis = 554
+military zonguard = 555
+military akreno = 556
+military iconoclast = 557
+military paraclete = 558
+military eyelet = 564
+military auxine = 565
+military insurant = 583
+military silversoul = 584
+military ghostwrit = 585
+military azjoran = 586
+military histrion = 587
+military elgird = 588
+military egocent = 589
+military alacyne = 590
+military begolor = 591
+military limire = 592
+military endbore = 593
+military tortare = 594
+military cybrene = 595
+
+# Askosi buildings
+building pilgrim = 439
+building dyad = 444
+building constituent = 566
+#
+building landlock = 429
+building arch = 457
+building grandstand = 458
+building chantry = 459
+building radix = 460
+building cipher = 461
+building function = 462
+building gauntlet = 463
+building cosmoscope = 464
+building Bounty = 510
+building grandstand_holdout = 532
+building grandstand_vision = 533
+building abutment = 539
+building proscenium = 540
+building zylode = 545
+building astrolabe = 546
+building panoply = 550
+building bestiary = 561
+building conduit = 562
+building obelisk = 563
+building dorminge = 577
+building lotiro = 578
+building domain = 579
+building lekrot = 596
+building hearthshard = 597
+
+# Forerunner units
+military ferrum = 605
+military chalyb = 606
+military circitor = 607
+military exigo = 608
+military vicere = 610
+
+# Forerunner buildings
+building athla = 609
+#
+building machinamentum = 611
 
 # Misc units
 military goliath_turret = 4

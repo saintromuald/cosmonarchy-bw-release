@@ -1105,8 +1105,8 @@ Crematorium
 Paraclete
 Zethalor
 Scrylyleth
-Thaumalogue Remnants
-Zethalor Remnants
+Thaumalogue Remains
+Zethalor Remains
 Conduit
 Bestiary
 Eyelet
@@ -1128,31 +1128,31 @@ Dorminge
 Domain
 Panoply
 Lotiro
-Extended Sprite #614
-Extended Sprite #615
-Extended Sprite #616
-Extended Sprite #617
-Extended Sprite #618
-Extended Sprite #619
-Extended Sprite #620
-Extended Sprite #621
-Extended Sprite #622
-Extended Sprite #623
-Extended Sprite #624
-Extended Sprite #625
-Extended Sprite #626
-Extended Sprite #627
-Extended Sprite #628
-Extended Sprite #629
-Extended Sprite #630
-Extended Sprite #631
-Extended Sprite #632
-Extended Sprite #633
-Extended Sprite #634
-Extended Sprite #635
-Extended Sprite #636
-Extended Sprite #637
-Extended Sprite #638
+Pathlight
+Ferrum
+Chalyb
+Circitor
+Exigo
+Athla
+Vicere
+Machinamentum
+Big Infested Kerrigan
+Lekrot
+Hearthshard
+Insurant
+Silversoul
+Ghostwrit
+Azjoran
+Elgird
+Histrion
+Egocent
+Alacyne
+Begolor
+Limire
+Endbore
+Tortare
+Cybrene
+Silversoul Remains
 Extended Sprite #639
 Extended Sprite #640
 Extended Sprite #641

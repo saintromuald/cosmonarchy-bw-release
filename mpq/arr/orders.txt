@@ -14,7 +14,7 @@ Use Ability (Rematerialize)
 Use Ability (Rapid Rendezvous)
 Attack Move
 Building Is Being Infested
-Nothing 1 (Unused)
+Use Ability (Ashbind)
 Power-Up (Unused)
 Guard (Building)
 Attack (Building)
