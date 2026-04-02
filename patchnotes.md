@@ -12,9 +12,10 @@
 ### *Notes in italics are from Pr0nogo*
 
 # Singleplayer content
-- **Sovereign Saga:**
-	- vterran01 "Boot Camp" is now available in the campaign directory!
-	- [Read more about Sovereign Saga here!]()
+
+## Sovereign Saga
+	- **vterran01 "Boot Camp"** is now available in the campaign directory!
+	- [Read more about Sovereign Saga here!](https://www.youtube.com/post/Ugkx8QYekyyYn_TJy5xKfUfxGqIxw9j0G4hZ)
 
 # Editor improvements
 
@@ -51,6 +52,7 @@
 
 ## Bugfixes
 - **Gameplay:**
+	- Fixed armor rend apply timer for Askosi **Ash Heap** (r. shopkeeper dog)
 	- Resolved many actions that should have cancelled passive cloak, but didn't (r. shopkeeper dog)
 	- Fixed **Zonguard** not applying Booming Blast with Preylock (r. shopkeeper dog)
 	- Fixed various mnemonic hotkey conflicts for Askosi structures (r. Neblime)
