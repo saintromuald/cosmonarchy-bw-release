@@ -324,7 +324,7 @@ Piety Wards<0>
 ¤<3><4>Flanking Spines <2>(passive)<10>When targeting debuffed enemies, Almaksalisk attacks ignore armor.<0>
 Anchor Attack requires:<10>   Loaded ranged combatant<0>
 <0>
-<0>
+e<3><4>Lay Spider Mines <1>(<3>E<1>)<10>Places a Spider Mine at the target site. Spider Mines explode on hostiles that trip them, dealing significant splash damage.<0>
 ¤<3><4>Autophagy <2>(passive)<10>On death, Vilgorokors transform into Vilgoleths and immediately spawn 2 Rilirokors.<0>
 ¤<3><4>Heretical Bedlam <2>(passive)<10>Dying hostiles that were struck by the Pariah in the last 2 seconds have their corpses ascended after 1 second.<0>
 <0>
@@ -353,7 +353,7 @@ e<3><4>Cannon Module <1>(<3>E<1>)<10>Extends the structure forwards with a power
 e<3><4>Holdout Module <1>(<3>E<1>)<10>Extends the structure outwards with a shell capable of garrisoning 2 weight's worth of air and ground units.<0>
 e<3><4>Vision Module <1>(<3>E<1>)<10>Extends the structure skywards, providing +2 vision range and Detector status.<0>
 s<1><4>Morph into Protathalor <1>(<3>S<1>)<10>Mobile artillery strain.<0>
-<0>
+¤<3><4>Birect <2>(passive)<10>Every time this combatant is struck, it releases a healing pulse worth 5 HP for allies within 8 range.<10>After sustaining ten attacks, this combatant pulls all hostiles within 8 range towards itself.<0>
 ¤<3><4>Hated Reflection <2>(passive)<10>When damaged by hostiles, the Histrion deploys an Egocent at its location. This cannot occur more than once every 2 seconds.<0>
 z<3><4>Ashbind <1>(<3>Z<1>)<10>Leaps to the target ground enemy within 5 range, applying Scrapworld: Ash Heap to all hostiles within 3 range of the jump target.<0>
 Puppeteer requires:<10>   Recent victim<0>
@@ -375,7 +375,7 @@ r<0><4>Unburrow <1>(<3>R<1>)<10>Unburrows the unit, revealing it and allowing it
 ¤<3><4>Terrestrial Assembly <2>(passive)<10>Upon taking fatal damage while mobile, Petracts embed themselves into the surface, becoming immobile and more heavily-armored.<10>During this time, their weapon targets air and ground, and loaded combatants may return fire.<0>
 w<3><4>Carapace Swarm <1>(<3>W<1>)<10>Creates damage-absorbing cloud cover that lasts for 25 seconds or until it has absorbed 1000 damage.<0>
 x<3><4>Parasitic Excision <1>(<3>X<1>)<10>After a 1-second channel, the Matraleth deposits a Vilgoleth at the target location.<0>
-¤<3><4>Warring Winds <2>(passive)<10>Every time the Phontis is struck, it releases a healing pulse worth 5 HP for allies within 8 range.<10>After sustaining ten attacks, the Phontis pulls all combatants within 8 range towards itself.<0>
+¤<3><4>Warring Winds <2>(passive)<10>Every time this combatant is struck, it releases a healing pulse worth 5 HP for allies within 8 range. This effect has a cooldown of 0.25 seconds<10>After ten healing pulses, this combatant pulls all hostiles within 8 range towards itself.<0>
 ¤<3><4>Scrapworld: Implosion <2>(passive)<10>This combatant detonates 1 seconds after death, pulling all combatants within 6 range towards its death site and slowing their movement speed by 33% for 5 seconds.<0>
 g<3><4>Plague <1>(<3>G<1>)<10>After a 1-second channel, creates a 3-range zone that lasts 10 seconds. Victims that enter the zone are infected with Plague, and take up to 50 damage over 5 seconds.<10>On death, victims create a smaller 1.5-range infection zone that lasts 5 seconds. Plague cannot kill its victims.<0>
 ¤<3><4>Ensnaring Brood <2>(passive)<10>Allies within 4 range of a Matraleth apply Ensnare with every attack. Ensnared targets move and attack 33% slower. Ensnare expires after 2 seconds.<0>
@@ -821,7 +821,7 @@ v<1><4>Morph into Yblyleth <1>(<3>V<1>)<10>Expanding strain.<0>
 ¤<3><4>Cagra Autophagy <2>(passive)<10>Every 2 seconds while burrowed, Yblyleths consume the closest corpse within 5 range, spawning 2 Rilirokors.<0>
 ¤<3><4>Cagragenesis <2>(passive)<10>While burrowed, this strain generates cagra in an 8-tile radius.<0>
 ¤<3><4>Corrosive Touch <2>(passive)<10>This strain's air attacks debuff enemies, increasing attack cooldown by 25% and reducing armor by 1 for 3 seconds.<0>
-¤<3><4>Sermon Salve <2>(passive)<10>Every second strike, the Cardinal's weapon releases a restorative pulse, healing all allies within 3 range for damage dealt.<0>
+<0>
 s<1><4>Meld Emissary <1>(<3>S<1>)<10>Swift transport.<0>
 ¤<3><4>Reintegration <2>(passive)<10>While wounded, stepping over a corpse consumes it, healing for 50HP over 10 seconds.<0>
 Disabled<0>
@@ -997,7 +997,7 @@ Begolor requires:<10>   Hearthshard<0>
 a<1><4>Meld Limire <1>(<3>A<1>)<10>Anti-ship craft.<0>
 t<1><4>Meld Endbore <1>(<3>T<1>)<10>Precision gunboat.<0>
 v<1><4>Meld Tortare <1>(<3>V<1>)<10>Heavy corvette.<0>
-d<1><4>Meld Cybrene <1>(<3>D<1>)<10>Flagship.<0>
+d<1><4>Meld Cybrene <1>(<3>D<1>)<10>Supreme cruiser.<0>
 Tortare requires:<10>   Lekrot<0>
 Cybrene requires:<10>   Hearthshard<0>
 c<1><4>Install Lekrot <1>(<3>S<1>)<10>Manipulation relay.<0>
@@ -1089,7 +1089,7 @@ b<1><4>Build Captaincy <1>(<3>B<1>)<10>Advanced infantry production.<0>
 g<1><4>Assemble Golem <1>(<3>G<1>)<10>Sturdy frontline drone.<0>
 t<1><4>Build Mantle <1>(<3>T<1>)<10>Walker outpost.<0>
 ¤<3><4>Apollyoid Adhesive <2>(passive)<10>Flame-based attacks set victims alight, rending 1 armor per stack, and dealing 3 damage every second.<10><10>Apollyoid Adhesive burns itself out after 2 seconds of not being stacked.<0>
-¤<3><4>Sustaining Sermon <2>(passive)<10>Every second strike, the Cardinal's weapon releases a restorative pulse, granting to all allies within 3 range a heal equal to damage dealt.<0>
+¤<3><4>Sustaining Sermon <2>(passive)<10>Every strike, the Cardinal's weapon releases a restorative pulse, healing 10 hit points for all allies within 3 range.<0>
 ¤<3><4>Impact Dissipation <2>(passive)<10>Each time this combatant is attacked by a hostile, it gains 33% increased movement speed for 3 seconds, and regenerates 15 HP over time.<0>
 Mining Efficiency<0>
 ¤<3><4>Schematic Unity <2>(passive)<10>Up to 5 Askosi workers can collaborate on construction efforts.<10>When Dyads assist in construction, they increase construction rate by 30%.<0>
@@ -1288,7 +1288,7 @@ q<1><4>Build Quarry <1>(<3>Q<1>)<10>Auxiliary worker production.<0>
 v<5><4>Morph into Vithrilisk <1>(<3>V<1>)<10>Heavy fighter strain.<0>
 c<1><4>Train Cleric <1>(<3>C<1>)<10>Support infantry.<0>
 v<1><4>Build Quadriga <1>(<3>V<1>)<10>Reinforced gunboat.<0>
-v<1><4>Build Valkyrie <1>(<3>V<1>)<10>Air superiority corvette.<0>
+v<1><4>Build Valkyrie <1>(<3>V<1>)<10>Air superiority frigate.<0>
 r<1><4>Warp in Lanifect <1>(<3>R<1>)<10>Air superiority fighter.<0>
 a<1><4>Profanate Cabalist <1>(<3>A<1>)<10>Cloaked melee assassin.<0>
 <0>

@@ -821,7 +821,7 @@ CardinalGndAttkRpt:
 	wait              	1
 	playfram          	0xff
 	sigorder			32
-	attackwith			1
+#	attackwith			1
 	playsndbtwn 		4065 4067 # Cardinal weaponhit 01, 02, 03
 	wait              	1
 	playfram          	0x110

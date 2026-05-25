@@ -3913,7 +3913,7 @@ AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
 Walking       	SkryrokorLocal00
 WalkingToIdle 	SkryrokorLocal00
-SpecialState1 	[NONE]
+SpecialState1 	SkryrokorLocal00
 SpecialState2 	[NONE]
 AlmostBuilt   	AnchorAlmostBuilt
 Built         	AnchorBuilt
@@ -14615,7 +14615,7 @@ GenericRemnantsFiveDeath:
 # 1524 Fusion Cutter Hit Damageless (bullet\scvspark.grp)
 .headerstart
 IsId          	656
-Type          	24
+Type          	25
 Init          	FusionCutterHitDamagelessInit
 Death         	FusionCutterHitDamagelessDeath
 GndAttkInit   	FusionCutterHitDamagelessCont
@@ -17877,18 +17877,18 @@ HelixBoltDeath:
 IsId          	764
 Type          	12
 Init          	HotshotInit
-Death         	AutocratDeath
-GndAttkInit   	AutocratGndAttkInit
-AirAttkInit   	AutocratGndAttkInit
+Death         	MadcapDeath
+GndAttkInit   	MadcapGndAttkInit
+AirAttkInit   	MadcapGndAttkInit
 Unused1       	SkryrokorLocal00
-GndAttkRpt    	AutocratGndAttkRpt
-AirAttkRpt    	AutocratGndAttkRpt
+GndAttkRpt    	MadcapGndAttkRpt
+AirAttkRpt    	MadcapGndAttkRpt
 CastSpell     	[NONE]
-GndAttkToIdle 	AutocratGndAttkToIdle
-AirAttkToIdle 	AutocratGndAttkToIdle
+GndAttkToIdle 	MadcapGndAttkToIdle
+AirAttkToIdle 	MadcapGndAttkToIdle
 Unused2       	[NONE]
-Walking       	AutocratWalking
-WalkingToIdle 	AutocratWalkingToIdle
+Walking       	MadcapWalking
+WalkingToIdle 	MadcapWalkingToIdle
 SpecialState1 	[NONE]
 .headerend
 # ----------------------------------------------------------------------------- #
