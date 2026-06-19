@@ -1154,9 +1154,9 @@ Tortare
 Cybrene
 Silversoul Remains
 Raynor Vulture
-Extended Sprite #640
-Extended Sprite #641
-Extended Sprite #642
+Scralia
+Endbore Electricity
+Civilian Remnants
 Extended Sprite #643
 Extended Sprite #644
 Extended Sprite #645

@@ -6813,7 +6813,6 @@ StarSovereignGndAttkInit:
 	playfram			0x00
 	wait				1
 	playfram			0x20
-	playsndbtwn       	1227 1230 # Star Sovereign weapon fire 01, 02, 03, 04
 	attackwith        	1
 	attackwith        	1
 	wait              	2

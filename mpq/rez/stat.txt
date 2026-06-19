@@ -345,7 +345,7 @@ f<1><4>Morph into Inzorthrokor <1>(<3>F<1>)<10>Infestation strain.<0>
 Inzorthrokor requires:<10>   Zorkiz Shroud<0>
 c<1><4>Train Heracles <1>(<3>C<1>)<10>Frontline infantry.<0>
 b<1><4>Build Tiangou <1>(<3>B<1>)<10>Relentless walker.<0>
-<0>
+¤<3><4>Deathrattle Assembly <2>(passive)<10>Upon taking fatal damage while mobile and above solid ground, Tortares descend and embed themselves into the surface, becoming immobile and more heavily-armored.<10>During this time, dying hostiles within 8 range suffer from Scrapworld: Implosion.<0>
 c<1><4>Warp in Ecclesiast <1>(<3>C<1>)<10>Supportive ranger.<0>
 e<3><4>Smithy Mode <1>(<3>E<1>)<10>Switches forms, gaining the ability to repair structures at range and disabling movement.<0>
 e<0><4>Worker Mode <1>(<3>E<1>)<10>Returns the Ogun's repairs and mobility to normal.<0>

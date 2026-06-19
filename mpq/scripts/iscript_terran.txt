@@ -129,7 +129,7 @@ CivilianLocal01:
 
 CivilianDeath:
 	playsndbtwn       	276 277 # Terran\MARINE\TMaDth00.WAV | Terran\MARINE\TMaDth01.WAV
-	imgol             	242 0 0 # Marine Death (terran\marine.grp)
+	imgol             	2398 0 0 # Civilian Death (terran\civilian.grp)
 	wait              	1
 	end
 
@@ -20775,3 +20775,36 @@ WalkingToIdle 	InfestedTerranWalkingToIdle
 SpecialState1 	SkryrokorLocal00
 .headerend
 # ----------------------------------------------------------------------------- #
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2398 Civilian Death (terran\civilian-death.grp)
+.headerstart
+IsId          	846
+Type          	1
+Init          	CivilianDeathInit
+Death         	Generic_Wait1End
+.headerend
+# ----------------------------------------------------------------------------- #
+
+CivilianDeathInit:
+	setfldirect       	0
+	playfram          	0
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	lowsprul          	1158 0 0 # Civilian Remnants (terran\civilian-remains.grp)
+	wait              	1
+	end

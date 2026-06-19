@@ -5811,22 +5811,6 @@ EndboreGndAttkInit:
 	playfram			0x00
 	attackwith			1
 	imgol				2245 0 0 # Impact Dissipation (medium)
-	wait 				3
-	playfram			0x00
-	attackwith			1
-	imgol				2245 0 0 # Impact Dissipation (medium)
-	wait 				3
-	playfram			0x00
-	attackwith			1
-	imgol				2245 0 0 # Impact Dissipation (medium)
-	wait 				3
-	playfram			0x00
-	attackwith			1
-	imgol				2245 0 0 # Impact Dissipation (medium)
-	wait 				3
-	playfram			0x00
-	attackwith			1
-	imgol				2245 0 0 # Impact Dissipation (medium)
 	wait 				1
 	nobrkcodeend
 	gotorepeatattk
@@ -6195,6 +6179,195 @@ EgocentUnBurrow:
 	sigorder          	4
 	nobrkcodeend
 	goto              	EgocentWalkingToIdle
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2176 Limire (cm\a\limire.grp)
+.headerstart
+IsId          	71
+Type          	21
+Init          	LimireInit
+Death         	LimireDeath
+GndAttkInit   	LimireGndAttkInit
+AirAttkInit   	LimireGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	LimireGndAttkInit
+AirAttkRpt    	LimireGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	LimireGndAttkToIdle
+AirAttkToIdle 	LimireGndAttkToIdle
+Unused2       	[NONE]
+Walking       	LimireWalking
+WalkingToIdle 	LimireLocal00
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+LimireInit:
+	imgulnextid			0 42 # Limire Shadow (cm\a\limire.grp)
+LimireGndAttkToIdle:
+	playfram          	0x00
+LimireLocal00:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	LimireLocal00
+
+LimireDeath:
+	playsnd           	257 # Terran\PHOENIX\TPhDth00.WAV
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul          	1065 0 42 # Askosi Unit Rubble (cm\a\a-rubble-tiny.grp)
+	wait              	1
+	end
+	
+LimireGndAttkInit:
+	setvertpos			0
+	wait				1
+	nobrkcodestart
+	playfram			0x00
+	attackwith			2
+	wait 				3
+	attackwith			2
+	wait 				3
+	attackwith			2
+	wait 				1
+	nobrkcodeend
+	gotorepeatattk
+	goto				LimireGndAttkToIdle
+
+LimireWalking:
+	setvertpos        	0
+#	imgol             	2194 0 0 # Limire Engines (cm\a\limire-engine.grp)
+	goto              	SkryrokorLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2178 Tortare (cm\a\tortare.grp)
+.headerstart
+IsId          	72
+Type          	21
+Init          	TortareInit
+Death         	TortareDeath
+GndAttkInit   	TortareGndAttkInit
+AirAttkInit   	TortareGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	TortareGndAttkInit
+AirAttkRpt    	TortareGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	TortareGndAttkToIdle
+AirAttkToIdle 	TortareGndAttkToIdle
+Unused2       	[NONE]
+Walking       	TortareWalking
+WalkingToIdle 	TortareLocal00
+SpecialState1 	TortareSpecialState1
+.headerend
+# ----------------------------------------------------------------------------- #
+
+TortareInit:
+	imgulnextid			0 42 # Tortare Shadow (cm\a\tortare.grp)
+TortareGndAttkToIdle:
+	playfram          	0x00
+TortareLocal00:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	TortareLocal00
+
+TortareDeath:
+	playsnd           	177	# Terran\BATTLE\tbaDth00.wav
+	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
+	wait              	3
+	lowsprul          	1065 0 42 # Askosi Unit Rubble (cm\a\a-rubble-tiny.grp)
+	wait              	1
+	end
+	
+TortareGndAttkInit:
+	setvertpos			0
+	wait				1
+	nobrkcodestart
+	playfram			0x00
+	attackwith			1
+	imgol				2245 0 0 # Impact Dissipation (medium)
+	wait 				3
+	nobrkcodeend
+	gotorepeatattk
+	goto				TortareGndAttkToIdle
+
+TortareWalking:
+	setvertpos        	0
+#	imgol             	225 0 5 # Tortare Engines (thingy\tdrGlow.grp)
+	goto              	SkryrokorLocal00
+	
+TortareSpecialState1:
+	playfram			0x00
+	wait				12
+	goto				SkryrokorLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2397 Endbore Electricity (cm\t\phobos-laser.grp)
+.headerstart
+IsId          	73
+Type          	13
+Init          	EndboreElectricityInit
+Death         	EndboreElectricityDeath
+GndAttkInit   	EndboreElectricityGndAttkInit
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	EndboreElectricitySpecialState1
+.headerend
+# ----------------------------------------------------------------------------- #
+
+EndboreElectricityInit:
+	playfram          	0x00
+	wait              	1
+	sigorder          	1
+	goto              	EndboreElectricityGndAttkInit
+
+EndboreElectricityGndAttkInit:
+	playfram			0x11
+	wait				1
+	playfram			0x22
+	wait				1
+	playfram			0x33
+	wait				1
+	playfram			0x44
+	wait				1
+	playfram			0x00
+	wait				1
+	goto              	EndboreElectricityGndAttkInit
+
+EndboreElectricityDeath:
+	imgol             	1168 0 0 # Phobos Laser Impact (cm\terran\phobos-laser-impact.grp)
+	domissiledmg
+	wait              	1 
+	end
+	
+EndboreElectricitySpecialState1:
+	imgol             	1168 0 0 # Phobos Laser Impact (cm\terran\phobos-laser-impact.grp)
+	playsnd           	2848 # Panoptus weaponhit 01
+	domissiledmg
+	wait              	1
+	goto              	EndboreElectricityGndAttkInit
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:

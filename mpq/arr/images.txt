@@ -2393,11 +2393,11 @@ Histrion Engine
 Raynor Vulture
 Raynor Vulture Shadow
 Raynor Vulture Engine
-Extended Image #1393
-Extended Image #1394
-Extended Image #1395
-Extended Image #1396
-Extended Image #1397
+Scralia
+Scralia Shadow
+Endbore Electricity
+Civilian Death
+Civilian Remains
 Extended Image #1398
 Extended Image #1399
 Extended Image #1400

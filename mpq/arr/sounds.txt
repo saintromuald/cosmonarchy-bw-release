@@ -4237,3 +4237,13 @@ cm\a\alacyne\wf-03.wav
 cm\a\silversoul\wf-01.wav
 cm\a\silversoul\wf-02.wav
 cm\a\silversoul\wf-03.wav
+cm\a\limire\wf-01.wav
+cm\a\limire\wf-02.wav
+cm\a\limire\wf-03.wav
+cm\a\endbore\wf-01.wav
+cm\a\endbore\wf-02.wav
+cm\a\endbore\wf-03.wav
+cm\a\endbore\wf-04.wav
+cm\a\tortare\wf-01.wav
+cm\a\tortare\wf-02.wav
+cm\a\tortare\wf-03.wav
