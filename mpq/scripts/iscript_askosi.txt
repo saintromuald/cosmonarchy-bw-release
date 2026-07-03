@@ -226,7 +226,7 @@ PilgrimInit:
 	goto				PilgrimWalkingToIdle
 
 PilgrimDeath:
-	playsndbtwn       	296 298 # Terran\Firebat\TFBDth00.WAV | Terran\Firebat\TFBDth02.WAV
+	playsndbtwn       	4252 4253 # Pilgrim death 01, 02
 	imgol             	2089 0 0 # Askosi Death Explosion Small (cm\a\a-death-small.grp)
 	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
 	setfldirect       	0
@@ -1292,14 +1292,12 @@ DyadAlmostBuilt:
 	setvertpos        	0
 	wait              	1
 DyadLocal01:
-	playfram          	0x00
+	playfram          	0x11
 	useweapon         	14 # Fusion Cutter (Harvest) (Fusion Cutter)
 	sigorder			32
 	wait              	2
 	playfram          	0x00
-	wait 				2
-	playfram          	0x00
-	wait 				9
+	wait 				11
 	goto              	DyadLocal01
 	
 # ----------------------------------------------------------------------------- #

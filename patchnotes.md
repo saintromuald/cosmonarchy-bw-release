@@ -1,30 +1,25 @@
-# 19 Jun 2026
-## Year 4, month 6, patch 1
+# 3 July 2026
+## Year 4, month 7, patch 1
 
 ## Patch goals
-- Continue balancing for all races, in preparation for the Battlements stage!
-- Continue Askosi development
+- Continue technical improvements in preparation for the Throneroom stage!
 - Further improve audiovisuals
-- Tweak balance for all factions
-- Deploy new singleplayer content
 - [Subscribe on ko-fi](https://ko-fi.com/pr0nogoandveeq7) to get a sneak peek of the incoming changes!
 
 # Core changes
 
 ## Bugfixes
 - **Gameplay:**
-	- Fixed bad targeting logic causing units to ignore closer targets when attack-moving (b. HitEmUp)
-	- **Silversoul** attacks now correctly proc **Booming Blast** (r. shopkeeper dog)
-	- Fixed requirement issues for some T2 and T3 Askosi structures (r. shopkeeper dog)
+	- Added fallback alert for Askosi structure completion, when player's advisor is without an "assembly" alert (r. shopkeeper dog)
 - **Audiovisual:**
-	- Corrected **Civilian** death animation and corpse (r. Londier)
+	- Askosi workers now turn to face their construction project
+		- *Caveat: Workers may decollide, changing their intended facing angle*
 
-# Balance changes
-
-## Askosi
-
-- **New arrivals:**
-	- [Obelisk](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/obelisk) -- tier 3 Skybound production
-	- [Limire](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/limire) -- anti-ship fighter
-	- [Endbore](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/endbore) -- precision gunboat
-	- [Tortare](https://www.fraudsclub.com/cosmonarchy-bw/show.php?target=askosi/tortare) -- heavy corvette
+## Audiovisuals
+- New SFX for:
+	- Askosi load/unload
+	- Askosi construction start
+	- **Pilgrim** death
+- New visuals for:
+	- **Emissary** load/unload
+	- **Pilgrim** corpse

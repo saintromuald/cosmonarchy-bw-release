@@ -1157,7 +1157,7 @@ Raynor Vulture
 Scralia
 Endbore Electricity
 Civilian Remnants
-Extended Sprite #643
+Pilgrim Remnants
 Extended Sprite #644
 Extended Sprite #645
 Extended Sprite #646

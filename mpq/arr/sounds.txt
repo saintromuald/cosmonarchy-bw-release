@@ -4247,3 +4247,9 @@ cm\a\endbore\wf-04.wav
 cm\a\tortare\wf-01.wav
 cm\a\tortare\wf-02.wav
 cm\a\tortare\wf-03.wav
+cm\a\a-load-01.wav
+cm\a\a-unload-01.wav
+cm\a\a-construction-start-01.wav
+cm\a\pilgrim\dth-01.wav
+cm\a\pilgrim\dth-02.wav
+cm\a\pilgrim\bld-01.wav
