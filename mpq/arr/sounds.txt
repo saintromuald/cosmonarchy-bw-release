@@ -4253,3 +4253,6 @@ cm\a\a-construction-start-01.wav
 cm\a\pilgrim\dth-01.wav
 cm\a\pilgrim\dth-02.wav
 cm\a\pilgrim\bld-01.wav
+cm\a\domain\pas-01.wav
+cm\a\domain\pas-02.wav
+cm\a\domain\pas-03.wav

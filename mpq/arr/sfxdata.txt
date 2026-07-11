@@ -4253,9 +4253,9 @@ Askosi Construction Start 01
 Pilgrim Death 01
 Pilgrim Death 02
 Pilgrim Construction Completion 01
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Domain Passive 01
+Domain Passive 02
+Domain Passive 03
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

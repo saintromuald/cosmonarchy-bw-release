@@ -374,15 +374,15 @@ ArchDeath:
 	end
 
 ArchSpecialState1:
-	playfram          	0
+	playfram          	1
 	goto              	ArchLocal00
 
 ArchSpecialState2:
-	playfram          	0
+	playfram          	1
 	goto              	ArchLocal00
 
 ArchAlmostBuilt:
-	playfram          	0
+	playfram          	1
 	goto              	ArchLocal00
 
 ArchBuilt:
@@ -509,7 +509,7 @@ ChantrySpecialState1:
 	goto              	SkryrokorLocal00
 
 ChantryAlmostBuilt:
-	playfram          	0
+	playfram          	4
 	goto              	SkryrokorLocal00
 
 ChantryBuilt:
@@ -575,14 +575,14 @@ FunctionSpecialState1:
 	goto              	SkryrokorLocal00
 
 FunctionAlmostBuilt:
-	playfram          	0
+	playfram          	4
 	goto              	SkryrokorLocal00
 
 FunctionBuilt:
 	playfram          	0x00
 	goto              	SkryrokorLocal00
 
-FunctionIsWorking:
+FunctionIsWorking:	
 	playfram          	1
 	wait              	2
 	playfram          	0
@@ -1345,7 +1345,7 @@ CipherSpecialState1:
 	goto              	SkryrokorLocal00
 
 CipherAlmostBuilt:
-	playfram          	0
+	playfram          	2
 	goto              	SkryrokorLocal00
 
 CipherBuilt:
@@ -1407,7 +1407,7 @@ GauntletSpecialState1:
 	goto              	SkryrokorLocal00
 
 GauntletAlmostBuilt:
-	playfram          	0
+	playfram          	11
 	goto              	SkryrokorLocal00
 
 GauntletBuilt:
@@ -1469,7 +1469,7 @@ CosmoscopeSpecialState1:
 	goto              	SkryrokorLocal00
 
 CosmoscopeAlmostBuilt:
-	playfram          	0
+	playfram          	6
 	goto              	SkryrokorLocal00
 
 CosmoscopeBuilt:
@@ -5075,7 +5075,7 @@ LotiroSpecialState1:
 	goto              	SkryrokorLocal00
 
 LotiroAlmostBuilt:
-	playfram          	0
+	playfram          	6
 	goto              	SkryrokorLocal00
 
 LotiroBuilt:
