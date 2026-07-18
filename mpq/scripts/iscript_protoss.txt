@@ -2487,7 +2487,7 @@ NexusWarpIn:
 # 181 Nexus Overlay (protoss\pneGlow.grp)
 .headerstart
 IsId          	178
-Type          	24
+Type          	27
 Init          	NexusOverlayInit
 Death         	Generic_Wait1End
 GndAttkInit   	[NONE]
@@ -2514,6 +2514,8 @@ Unused3       	[NONE]
 StarEditInit  	[NONE]
 Disable       	Generic_Wait1End
 Burrow        	[NONE]
+UnBurrow        [NONE]
+Enable        	SkryrokorLocal00
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -2613,7 +2615,7 @@ WardenWarpIn:
 # 189 Pylon (protoss\pylon.grp)
 .headerstart
 IsId          	181
-Type          	21
+Type          	27
 Init          	PylonInit
 Death         	PylonDeath
 GndAttkInit   	[NONE]
@@ -2636,6 +2638,12 @@ LiftOff       	[NONE]
 IsWorking     	SkryrokorLocal00
 WorkingToIdle 	SkryrokorLocal00
 WarpIn        	PylonWarpIn
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	Generic_Wait1End
+Burrow        	[NONE]
+UnBurrow        [NONE]
+Enable        	SkryrokorLocal00
 .headerend
 # ----------------------------------------------------------------------------- #
 
@@ -2769,12 +2777,12 @@ RoboticsFacilityEnable:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 195 Shield Battery (protoss\sbattery.grp)
+# 195 Bulwark (protoss\sbattery.grp)
 .headerstart
 IsId          	183
 Type          	27
-Init          	ShieldBatteryInit
-Death         	ShieldBatteryDeath
+Init          	BulwarkInit
+Death         	BulwarkDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
@@ -2789,47 +2797,47 @@ WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
-Built         	ShieldBatteryBuilt
+Built         	BulwarkBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	SkryrokorLocal00
 WorkingToIdle 	SkryrokorLocal00
-WarpIn        	ShieldBatteryWarpIn
+WarpIn        	BulwarkWarpIn
 Unused3       	[NONE]
 StarEditInit  	[NONE]
 Disable       	SkryrokorLocal00
 Burrow        	[NONE]
 UnBurrow      	[NONE]
-Enable        	ShieldBatteryBuilt
+Enable        	BulwarkBuilt
 .headerend
 # ----------------------------------------------------------------------------- #
 
-ShieldBatteryInit:
-	imgul             	198 0 0	# Shield Battery Shadow (protoss\pbaShad.grp)
+BulwarkInit:
+	imgul             	198 0 0	# Bulwark Shadow (protoss\pbaShad.grp)
 	playfram          	0x00	# Frame set 0
 	goto              	SkryrokorLocal00
 
-ShieldBatteryDeath:
+BulwarkDeath:
 	playsnd           	7	# Misc\ExploLrg.wav
 	imgol             	215 0 0	# Explosion (Large) (thingy\tBangX.grp)
 	wait              	3 
 	end
 
-ShieldBatteryBuilt:
-	imgol             	196 0 0	# Shield Battery Overlay (protoss\pbaGlow.grp)
+BulwarkBuilt:
+	imgol             	196 0 0	# Bulwark Overlay (protoss\pbaGlow.grp)
 	goto              	SkryrokorLocal00
 
-ShieldBatteryWarpIn:
+BulwarkWarpIn:
 	imgol             	197 0 0	# Shileld Battery Warp Flash (protoss\sbattery.grp)
 	goto              	SkryrokorLocal00
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 196 Shield Battery Overlay (protoss\pbaGlow.grp)
+# 196 Bulwark Overlay (protoss\pbaGlow.grp)
 .headerstart
 IsId          	184
-Type          	24
-Init          	ShieldBatteryOverlayInit
+Type          	27
+Init          	BulwarkOverlayInit
 Death         	Generic_Wait1End
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
@@ -2848,21 +2856,23 @@ AlmostBuilt   	[NONE]
 Built         	[NONE]
 Landing       	[NONE]
 LiftOff       	[NONE]
-IsWorking     	ShieldBatteryOverlayIsWorking
-WorkingToIdle 	ShieldBatteryOverlayInit
+IsWorking     	BulwarkOverlayIsWorking
+WorkingToIdle 	BulwarkOverlayInit
 WarpIn        	SkryrokorLocal00
 Unused3       	[NONE]
 StarEditInit  	[NONE]
 Disable       	Generic_Wait1End
 Burrow        	[NONE]
+UnBurrow        [NONE]
+Enable        	SkryrokorLocal00
 .headerend
 # ----------------------------------------------------------------------------- #
 
-ShieldBatteryOverlayInit:
+BulwarkOverlayInit:
 	playfram          	0x00
 	goto              	SkryrokorLocal00
 
-ShieldBatteryOverlayIsWorking:
+BulwarkOverlayIsWorking:
 	playsnd           	481	# Protoss\Bldg\PbaAct00.wav
 	playfram          	1
 	wait              	2
@@ -2880,7 +2890,7 @@ ShieldBatteryOverlayIsWorking:
 	wait              	2
 	playfram          	2
 	wait              	2
-	goto              	ShieldBatteryOverlayIsWorking
+	goto              	BulwarkOverlayIsWorking
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:

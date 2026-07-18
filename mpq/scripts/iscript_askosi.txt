@@ -2241,7 +2241,7 @@ BountySpecialState1:
 	goto              	SkryrokorLocal00
 
 BountyAlmostBuilt:
-	playfram          	0
+	playfram          	4
 	goto              	SkryrokorLocal00
 
 BountyBuilt:
@@ -2484,7 +2484,7 @@ ProsceniumSpecialState1:
 	goto              	SkryrokorLocal00
 
 ProsceniumAlmostBuilt:
-	playfram          	0
+	playfram          	2
 	goto              	SkryrokorLocal00
 
 ProsceniumBuilt:
@@ -4488,9 +4488,9 @@ PhontisGndAttkToIdle:
 
 PhontisDeath:
 	playsnd           	533	# Protoss\Scout\PScDth00.WAV
-	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
+	imgol             	215 0 0 # Explosion (Large) (thingy\tBangX.grp)
 	wait 				2
-	lowsprul          	1065 0 0 # Askosi Unit Rubble (cm\a\a-rubble-tiny.grp)
+	lowsprul          	1007 0 0 # Askosi Structure Rubble (Small) (cm\a\a-rubble-small.grp)
 	wait              	1
 	end
 
@@ -4784,7 +4784,7 @@ DormingeSpecialState1:
 	goto              	SkryrokorLocal00
 
 DormingeAlmostBuilt:
-	playfram          	0
+	playfram          	8
 	goto              	SkryrokorLocal00
 
 DormingeBuilt:
@@ -4927,7 +4927,7 @@ Walking       	[NONE]
 WalkingToIdle 	[NONE]
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
-AlmostBuilt   	SkryrokorLocal00
+AlmostBuilt   	DomainAlmostBuilt
 Built         	DomainBuilt
 Landing       	[NONE]
 LiftOff       	[NONE]
@@ -4951,7 +4951,12 @@ DomainDeath:
 	wait              	1
 	end
 
+DomainAlmostBuilt:
+	playfram			1
+	goto              	SkryrokorLocal00
+
 DomainBuilt:
+	playfram			0
 	imgol             	1820 0 0 # Architect weaponfire channel
 	goto              	SkryrokorLocal00
 	

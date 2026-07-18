@@ -193,10 +193,10 @@ Pylon Shadow
 Lattice
 Lattice Warp Flash
 Lattice Shadow
-Shield Battery
-Shield Battery Overlay
-Shield Battery Warp Flash
-Shield Battery Shadow
+Bulwark
+Bulwark Overlay
+Bulwark Warp Flash
+Bulwark Shadow
 Stargate
 Stargate Overlay
 Stargate Warp Flash
