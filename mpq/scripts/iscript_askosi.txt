@@ -371,6 +371,8 @@ ArchDeath:
 	playsnd           	7 # Misc\ExploLrg.wav
 	sprol             	272 0 0 # Building Explosion (Large) (thingy\tBangX.grp)
 	wait              	3
+	lowsprul          	1007 0 0 # Askosi Structure Rubble (Small) (cm\a\a-rubble-small.grp)
+	wait              	1
 	end
 
 ArchSpecialState1:
@@ -833,28 +835,28 @@ CardinalGndAttkToIdle:
 	goto              	CardinalWalkingToIdle
 
 CardinalWalking:
-	move              	4
+	move              	5
 	wait              	1
 	playfram          	0x11
-	move              	4
+	move              	5
 	wait              	1
 	playfram          	0x22
-	move              	4
+	move              	5
 	wait              	1
 	playfram          	0x33
-	move              	4
+	move              	5
 	wait              	1
 	playfram          	0x44
-	move              	4
+	move              	5
 	wait              	1
 	playfram          	0x55
-	move              	4
+	move              	5
 	wait              	1
 	playfram          	0x66
-	move              	4
+	move              	5
 	wait              	1
 	playfram          	0x77
-	move              	4
+	move              	5
 	wait              	1
 	playfram          	0x88
 	goto              	CardinalWalking
@@ -1286,7 +1288,12 @@ DyadGndAttkToIdle:
 DyadWalking:
 	setvertpos        	0
 #	imgol             	225 0 5 # Inkblot Engines (thingy\tdrGlow.grp)
-	goto              	SkryrokorLocal00
+	goto              	DyadWalkingLoop
+
+DyadWalkingLoop:
+	move				4
+	wait				1
+	goto 				DyadWalkingLoop
 	
 DyadAlmostBuilt:
 	setvertpos        	0
@@ -1610,7 +1617,6 @@ TiradeGndAttkInit:
 	nobrkcodestart
 	playfram			0x00
 	attackwith			1
-	playsndbtwn			1252 1253 # Gorgon weaponfire 01, 02
 	wait 				1
 	nobrkcodeend
 	gotorepeatattk
@@ -2416,6 +2422,8 @@ AbutmentDeath:
 	playsndbtwn			4145 4147 # Askosi explosion medium 01, 02, 03
 	sprol             	272 0 0 # Building Explosion (Large) (thingy\tBangX.grp)
 	wait              	3
+	lowsprul          	1007 0 0 # Askosi Structure Rubble (Small) (cm\a\a-rubble-small.grp)
+	wait              	1
 	end
 
 AbutmentSpecialState1:
@@ -3654,9 +3662,6 @@ GenericRemnantsThreeDeath:
 	playfram          	2
 	wait              	255
 	wait				24
-	playfram          	3
-	wait              	255
-	wait				24
 	end
 
 # ----------------------------------------------------------------------------- #
@@ -4267,7 +4272,12 @@ ConstituentGndAttkInit:
 ConstituentWalking:
 	setvertpos        	0
 #	imgol             	225 0 5 # Constituent Engines (thingy\tdrGlow.grp)
-	goto              	SkryrokorLocal00
+	goto              	ConstituentWalkingLoop
+
+ConstituentWalkingLoop:
+	move				4
+	wait				1
+	goto				ConstituentWalkingLoop
 	
 ConstituentSpecialState1:
 	playfram			0x00
@@ -6402,3 +6412,83 @@ Engines_GlowHeaderInit:
 	engset            	1
 	wait              	1
 	goto              	Engines_GlowHeaderInit
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2459 Impact Dissipation Overlay (cm\a\impact-dissipation.grp)
+.headerstart
+IsId          	74
+Type          	1
+Init          	ImpactDissipationOverlayInit
+Death         	ImpactDissipationOverlayDeath
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ImpactDissipationOverlayInit:
+	playfram          	0x00
+	wait              	1 
+	playfram			1
+	wait				1
+	playfram			3
+	wait				1
+	playfram			4
+	wait				1
+	playfram			5
+	wait				1
+	playfram			6
+	wait				1
+	playfram			7
+	wait				1
+	playfram			8
+	wait				1
+	playfram			9
+	wait				1
+	playfram			10
+	wait				1
+	playfram			11
+	wait				1
+	playfram			12
+	wait				1
+	playfram			13
+	wait				1
+	playfram			14
+	wait				1
+	playfram			15
+	wait				1
+	playfram			16
+	wait				1
+ImpactDissipationOverlayLoop:
+	playfram			17
+	wait				1
+	playfram			18
+	wait				1
+	playfram			19
+	wait				1
+	playfram			20
+	wait				1
+	playfram			21
+	wait				1
+	playfram			22
+	wait				1
+	playfram			21
+	wait				1
+	playfram			20
+	wait				1
+	playfram			19
+	wait				1
+	playfram			18
+	wait				1
+	playfram			17
+	wait				1
+	goto				ImpactDissipationOverlayLoop
+	
+ImpactDissipationOverlayDeath:
+	playfram			23
+	wait				1
+	playfram			24
+	wait				1
+	playfram			25
+	wait				1
+	playfram			26
+	wait              	1 
+	end

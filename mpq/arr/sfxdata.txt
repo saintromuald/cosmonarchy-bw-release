@@ -4256,47 +4256,47 @@ Pilgrim Construction Completion 01
 Domain Passive 01
 Domain Passive 02
 Domain Passive 03
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Striga Death 01
+Striga Death 02
+Striga Death 03
+Camazotz Weaponfire 01
+Camazotz Weaponfire 02
+Camazotz Weaponfire 03
+Rozirokor Weaponfire 01
+Rozirokor Weaponfire 02
+Rozirokor Weaponhit 01
+Rozirokor Weaponhit 02
+Rozirokor Weaponhit 03
+Bloodsummon Load 01
+Bloodsummon Unload 01
+Grimoire Selected 01
+Grimoire Passive 01
+Vicar Ready 01
+Vicar Ready 02
+Vicar Ready 03
+Vicar Selected 01
+Vicar Selected 02
+Vicar Selected 03
+Vicar Selected 04
+Vicar Order Passive 01
+Vicar Order Passive 02
+Vicar Order Passive 03
+Vicar Order Passive 04
+Vicar Order Aggressive 01
+Vicar Order Aggressive 02
+Vicar Order Aggressive 03
+Vicar Order Aggressive 04
+Vicar Under Attack 01
+Vicar Under Attack 02
+Vicar Under Attack 03
+Vicar Under Attack 04
+Vicar Ability Use 01
+Landlock Ambient 01
+Conduit Selected 01
+Cyclops (Futurist) Weaponfire 01
+Cyclops (Futurist) Weaponfire 02
+Cyclops (Futurist) Weaponfire 03
+Cyclops (Futurist) Weaponfire 04
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

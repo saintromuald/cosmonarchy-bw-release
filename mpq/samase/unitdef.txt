@@ -62,6 +62,18 @@ military madrigal_hecaton_furia = 508
 military valkyrie_hecaton = 520
 military quadriga = 541
 military serathiel = 547
+military goremast = 567
+military broadside = 568
+military vulture_upstart = 570
+military maverick_upstart = 573
+military eidolon_upstart = 575
+military ajax = 576
+military maverick_golden = 580
+military shaman_upstart = 581
+military nuriel = 598
+military phoenix = 599
+military archbishop = 600
+military camazotz = 620
 @spellcaster(serathiel)
 
 # Protoss factional units
@@ -76,6 +88,9 @@ military dracadin_order = 430
 military manifold_starbound = 437
 military simulacrum_astral = 522
 military warlock = 523
+military simulacrum_khalendric = 621
+military idol_khalendric = 622
+military cabalist_starbound = 623
 
 # Zerg factional units
 military nathrelisk = 402
@@ -84,10 +99,17 @@ military inzorthrokor = 415
 military quazrokor = 422
 military lakizilisk_zorthos = 425
 military hydralisk_orkoti = 436
-building yblyleth = 438
+military yblyleth = 438
 military azanthrokor = 511
 military sovrokor = 519
 military garvrokor = 521
+military zethalor = 559
+military scrylyleth = 560
+military zoltorokor = 604
+military rozirokor = 616
+military alzurokor = 626
+military hydrokor = 627
+military zethalisk = 630
 
 # Terran military units
 military maverick = 0

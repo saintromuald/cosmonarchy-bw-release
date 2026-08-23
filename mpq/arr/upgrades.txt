@@ -61,9 +61,9 @@ Terran Structure Armor
 GlobalUpgrade60
 Forerunner Alloy
 Forerunner Lattice
-Extended Upgrade #3
-Extended Upgrade #4
-Extended Upgrade #5
+Bloodsummon Stigmata
+Bloodsummon Atar
+Bloodsummon Sacrament
 Extended Upgrade #6
 Extended Upgrade #7
 Extended Upgrade #8

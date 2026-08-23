@@ -887,7 +887,7 @@ Cyclops Weapon Impact
 Sentinel Rail
 Lanifect Remains
 Hotshot
-Nathrok Lake
+Vornath Pond
 Skithrok Scab
 Qilin
 Auriel
@@ -1118,7 +1118,7 @@ Maverick (Upstart)
 Maverick (Upstart) Remains
 Vulture (Upstart)
 Goremast
-Eidolon (Upstart)
+Morrigan
 Cutlass
 Cutlass Turret
 Broadside
@@ -1158,32 +1158,32 @@ Scralia
 Endbore Electricity
 Civilian Remnants
 Pilgrim Remnants
-Extended Sprite #644
-Extended Sprite #645
-Extended Sprite #646
-Extended Sprite #647
-Extended Sprite #648
-Extended Sprite #649
-Extended Sprite #650
-Extended Sprite #651
-Extended Sprite #652
-Extended Sprite #653
-Extended Sprite #654
-Extended Sprite #655
-Extended Sprite #656
-Extended Sprite #657
-Extended Sprite #658
-Extended Sprite #659
-Extended Sprite #660
-Extended Sprite #661
-Extended Sprite #662
-Extended Sprite #663
-Extended Sprite #664
-Extended Sprite #665
-Extended Sprite #666
-Extended Sprite #667
-Extended Sprite #668
-Extended Sprite #669
+Rozirokor
+Rozirokor Remains
+Zytryleth
+Camazotz
+Grimoire
+Bloodsummon Rubble Small
+Bloodsummon Rubble Large
+Bloodsummon Unit Rubble Tiny
+Bloodsummon Unit Rubble Small
+Bloodsummon Unit Rubble Medium
+Atreus Remains
+Simulacrum (Khalendric)
+Idol (Khalendric)
+Idol (Khalendric) Remains
+Thrombocyte
+Vestige (Starbound)
+Arquebus (Hecaton)
+Acqui
+Alzurokor (Imicren)
+Hydrokor (Goszirith)
+Alzurokor Remains
+Hydrokor Remains
+Nihilist
+Sovrokor Remains
+Eidolon (Nydus) Remains
+Morrigan Remains
 Extended Sprite #670
 Extended Sprite #671
 Extended Sprite #672

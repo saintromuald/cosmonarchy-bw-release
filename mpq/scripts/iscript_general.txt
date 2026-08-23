@@ -3630,7 +3630,7 @@ EnergyRegenOverlayDeath:
 # 1676 Santa Hat - Extra Large - 17
 .headerstart
 IsId          	722
-Type          	24
+Type          	26
 Init          	SantaHatInit
 Death         	SantaHatDeath
 GndAttkInit   	SantaHatLocal00
@@ -5062,8 +5062,10 @@ AthlaGndAttkInit:
 AthlaWalking:
     setvertpos          0
     playfram            0x00
+	move				7
+	wait				1
 #	imgol             	142 0 0 # Athla Engines (thingy\pscGlow.grp)
-    goto                SkryrokorLocal00
+    goto                AthlaWalking
     
 AthlaWalkingToIdle:
 	playfram          	0x00

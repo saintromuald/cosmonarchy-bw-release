@@ -320,7 +320,7 @@ Piety Wards<0>
 <0>
 <0>
 <0>
-<0>
+¤<3><4>Accelerated Speech <2>(passive)<10>While the Missionary is within 2 range of its target, it gains +2 armor penetration.<0>
 ¤<3><4>Flanking Spines <2>(passive)<10>When targeting debuffed enemies, Almaksalisk attacks ignore armor.<0>
 Anchor Attack requires:<10>   Loaded ranged combatant<0>
 <0>
@@ -377,7 +377,7 @@ w<3><4>Carapace Swarm <1>(<3>W<1>)<10>Creates damage-absorbing cloud cover that 
 x<3><4>Parasitic Excision <1>(<3>X<1>)<10>After a 1-second channel, the Matraleth deposits a Vilgoleth at the target location.<0>
 ¤<3><4>Warring Winds <2>(passive)<10>Every time this combatant is struck, it releases a healing pulse worth 5 HP for allies within 8 range. This effect has a cooldown of 0.25 seconds<10>After ten healing pulses, this combatant pulls all hostiles within 8 range towards itself.<0>
 ¤<3><4>Scrapworld: Implosion <2>(passive)<10>This combatant detonates 1 seconds after death, pulling all combatants within 6 range towards its death site and slowing their movement speed by 33% for 5 seconds.<0>
-g<3><4>Plague <1>(<3>G<1>)<10>After a 1-second channel, creates a 3-range zone that lasts 10 seconds. Victims that enter the zone are infected with Plague, and take up to 50 damage over 5 seconds.<10>On death, victims create a smaller 1.5-range infection zone that lasts 5 seconds. Plague cannot kill its victims.<0>
+g<3><4>Plague <1>(<3>G<1>)<10>After a 1-second channel, creates a 3-range zone that lasts 10 seconds. Victims that enter the zone are infected with Plague, and take up to 50 damage over 5 seconds.<10>On death, victims create a smaller 1.5-range infection zone that lasts 5 seconds. Plague cannot kill its victims, and reduces healing by 50%.<0>
 ¤<3><4>Ensnaring Brood <2>(passive)<10>Allies within 4 range of a Matraleth apply Ensnare with every attack. Ensnared targets move and attack 33% slower. Ensnare expires after 2 seconds.<0>
 a<1><4>Assemble Vassal <1>(<3>A<1>)<10>Light fighter.<0>
 c<3><4>Remote Hijack <1>(<3>C<1>)<10>Launches a bioform that attaches to the victim and slows their movement speed by 50%.<10>After 5 seconds, the bioform becomes the target.<10>The bioform is released from their new form on death, or immediately if the target is an embedded craft.<0>
@@ -390,7 +390,7 @@ Constituent Requires:<10>   Proscenium OR Zylode<0>
 a<1><4>Build Cutlass <1>(<3>A<1>)<10>Assault armor.<0>
 c<1><4>Raise Constituent <1>(<3>C<1>)<10>Skybound worker.<0>
 e<3><4>Salvage <1>(<3>E<1>)<10>Orders the builder to deconstruct the target mechanical unit or structure, returning up to 33% of its resource cost during the channel.<0>
-e<3><4>Rapid Rendezvous <1>(<3>E<1>)<10>Leaps to the target ground ally within 5 range, activating Impact Dissipation for all allies within 3 range of the jump target.<0>
+z<3><4>Rapid Rendezvous <1>(<3>Z<1>)<10>Leaps to the target ground ally within 5 range, activating Impact Dissipation for all allies within 3 range of the jump target.<0>
 c<3><4>Hijack <1>(<3>C<1>)<10>Leaps to the target hostile, attaching to the victim and slowing their movement speed by 50%.<10><10>After 5 seconds, the Askosi combatant becomes the target.<0>
 e<3><4>Rematerialize <1>(<3>E<1>)<10>Pulls allies within 3 range of the target to the combatant's location, and grants them Impact Dissipation.<0>
 e<1><4>Mutate into Kalkiir Lake <1>(<3>E<1>)<10>Swarm node. Enables Liiralisks and Kalkalisks.<0>
@@ -439,7 +439,7 @@ z<1><4>Bestow Luminary <1>(<3>Z<1>)<10>Disruptive specialist craft. Provides det
 a<1><4>Bestow Aspirant <1>(<3>A<1>)<10>Unstable strider.<0>
 s<1><4>Train Striga <1>(<3>S<1>)<10>Isolating infantry.<0>
 z<1><4>Raise Luminary <1>(<3>Z<1>)<10>Disruptive craft. Provides detection.<0>
-¤<3><4>Incineration <2>(passive)<10>Victims of Auriel attacks take 4 damage per second for 2 seconds. If a victim dies while ablaze, their corpse is incinerated, leaving behind a landborne fire field that applies Apollyoid Adhesive.<0>
+¤<3><4>Incineration <2>(passive)<10>Victims of this combatant take 4 damage per second for 2 seconds.<10>If they take fatal damage during this time, their corpse explodes into a landborne fire field that applies Apollyoid Adhesive.<0>
 q<1><4>Splice Tarasque <1>(<3>Q<1>)<10>Frontal biotank.<0>
 g<1><4>Assemble Analogue <1>(<3>G<1>)<10>Durable disruption drone.<0>
 z<1><4>Splice Anticthon <1>(<3>Z<1>)<10>Corpse engine.<0>
@@ -467,7 +467,7 @@ t<1><4>Morph into Gosvileth <1>(<3>T<1>)<10>Advanced worker strain.<0>
 ¤<3><4>Criticality <2>(passive)<10>Victims of the Aspirant are debuffed for 2 seconds. If killed during this time, they create a 2-range energy field that lasts 5 seconds and restores 4 shields or HP per second for all allied ground combatants.<0>
 Abutment requires:<10>   Cipher AND Gauntlet<0>
 Gosvil Aspect requires:<10>   Irol Iris<0>
-r<1><4>Install Abutment <1>(<3>R<1>)<10>Vespene processor.<0>
+a<1><4>Install Abutment <1>(<3>A<1>)<10>Vespene processor.<0>
 a<1><4>Assemble Artisan <1>(<3>A<1>)<10>Advanced harvester.<0>
 ¤<3><4>Caustic Discharge <2>(passive)<10>Keskathalor attacks create a pool of acid that deals 30 impact damage over 5 seconds to all ground targets. Targets that move through the acid gain 150% movement speed for 3 seconds.<0>
 ¤<3><4>Ion Field <2>(passive)<10>Diadem attacks leave behind a field that deals 100 damage over 10 seconds to all ground targets. Units that move through the field gain 150% attack speed for 2 seconds.<0>
@@ -528,7 +528,7 @@ d<1><4>Build Sundog <1>(<3>D<1>)<10>Ambush fighter.<0>
 ¤<3><4>Shroud of Adun <2>(passive)<10>Didacts cloak all allies within 4 range.<0>
 r<5><4>Morph into Azanthrokor <1>(<3>R<1>)<10>Besieging corvette strain.<0>
 ¤<3><4>Larval Gestation <2>(passive)<10>This cell generates one Larva every 14 seconds.<0>
-x<1><4>Warp in Exemplar <1>(<3>X<1>)<10>Anti-armor frigate.<0>
+x<1><4>Warp in Exemplar <1>(<3>X<1>)<10>Assault corvette.<0>
 Mimic requires:<10>   Cipher<0>
 a<1><4>Build Starpad <1>(<3>A<1>)<10>Light orbital production.<0>
 v<1><4>Mutate into Larvosk Cesiant <1>(<3>V<1>)<10>Production cell.<0>
@@ -566,7 +566,7 @@ s<1><4>Raise Missionary <1>(<3>S<1>)<10>All-purpose trooper.<0>
 s<1><4>Raise Proselyte <1>(<3>S<1>)<10>Nimble trooper.<0>
 g<1><4>Morph into Agrileth <1>(<3>G<1>)<10>Construction strain.<0>
 x<1><4>Build Aion <1>(<3>X<1>)<10>Reclaiming armor.<0>
-t<1><4>Morph into Nathrelisk <1>(<3>R<1>)<10>Sustaining fighter strain.<0>
+r<1><4>Morph into Nathrelisk <1>(<3>R<1>)<10>Sustaining fighter strain.<0>
 ¤<3><4>Corrosive Pathogen <2>(passive)<10>This strain's attacks debuff all hostiles within 4 range of their target, reducing their attack speed by 25% and armor by 1 for 3 seconds.<0>
 ¤<3><4>Corrosive Touch <2>(passive)<10>This strain's attacks debuff enemies, increasing attack cooldown by 25% and reducing armor by 1 for 3 seconds.<0>
 Nathrelisk requires:<10>  Vornath Pond<0>
@@ -821,7 +821,7 @@ v<1><4>Morph into Yblyleth <1>(<3>V<1>)<10>Expanding strain.<0>
 ¤<3><4>Cagra Autophagy <2>(passive)<10>Every 2 seconds while burrowed, Yblyleths consume the closest corpse within 5 range, spawning 2 Rilirokors.<0>
 ¤<3><4>Cagragenesis <2>(passive)<10>While burrowed, this strain generates cagra in an 8-tile radius.<0>
 ¤<3><4>Corrosive Touch <2>(passive)<10>This strain's air attacks debuff enemies, increasing attack cooldown by 25% and reducing armor by 1 for 3 seconds.<0>
-<0>
+z<1><4>Mutate into Zytryleth <1>(<3>Z<1>)<10>Spontaneous chondra.<0>
 s<1><4>Meld Emissary <1>(<3>S<1>)<10>Swift transport.<0>
 ¤<3><4>Reintegration <2>(passive)<10>While wounded, stepping over a corpse consumes it, healing for 50HP over 10 seconds.<0>
 Disabled<0>
@@ -1004,23 +1004,23 @@ c<1><4>Install Lekrot <1>(<3>S<1>)<10>Manipulation relay.<0>
 Lekrot Requires<10>   Panoply OR Lotiro<0>
 t<1><4>Install Hearthshard <1>(<3>S<1>)<10>Immortal relay.<0>
 Hearthshard Requires<10>   Panoply OR Lotiro<0>
+Zytryleth Requires:<10>   Othstol Oviform<0>
+t<1><4>Bleed Thrombocyte <1>(<3>T<1>)<10>Regenerative biode.<0>
+b<3><4>Bloody Burst <1>(<3>B<1>)<10>Bursts the Thrombocyte, releasing a pulse that heals allies within 3 range for the Thrombocyte's current health.<0>
+¤<3><4>Coagulation <2>(passive)<10>This combatant's attacks heal allies equal to damage dealt.<0>
+¤<3><4>Portents <2>(passive)<10>When this combatant receives damage, it becomes cloaked, and decloaks after 2 seconds of not taking damage.<0>
+t<1><4>Build Arquebus <1>(<3>C<1>)<10>Incendiary platform.<0>
+¤<3><4>Forlorn Haste <2>(passive)<10>While isolated within 3 range, this combatant gains 200% movement speed.<0>
+t<1><4>Morph into Alzurokor <1>(<3>T<1>)<10>Subjugation strain.<0>
+Alzur Aspect requires:<10>   Ulgorg Cavern<0>
+h<1><4>Morph into Hydrokors <1>(<3>H<1>)<10>Swift melee strain.<0>
+Hydrokor requires:<10>   Hydrith Den<0>
 <0>
 <0>
+Bloodsummon Stigmata<0>
 <0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
+Bloodsummon Sacrament<0>
+¤<3><4>Ambush Agent <2>(passive)<10>While burrowed, Scrylyleths act as garrisons, allowing its cargo to attack with bonus weapon range.<0>
 a<1><4>Construct Athla <1>(<3>A<1>)<10>Constructor model.<0>
 f<1><4>Construct Ferrum <1>(<3>F<1>)<10>Aggressor model.<0>
 c<1><4>Construct Chalyb <1>(<3>C<1>)<10>Defender model.<0>
@@ -1037,7 +1037,7 @@ t<1><4>Morph into Malkothrokor <1>(<3>T<1>)<10>Relentless hive organ.<0>
 Malkothrokor requires:<10>   Othstol Oviform<0>
 ¤<3><4>Segmented Expansion <2>(passive)<10>Malkothrokors consume any corpses they walk over, restoring 10 life per corpse.<10>After consuming 10 corpses, the Malkothrokor becomes 50% slower and gestates a new Malkothrokor over the course of 15 seconds.<0>
 ¤<3><4>Intestinal Infinity <2>(passive)<10>While burrowed, Malkothrokors gain 500% HP regeneration, and they generate cagra in an 8-tile radius.<0>
-¤<3><4>Hive Tissues <2>(passive)<10>Malkothrokors can gestate Cesiant mutations, which attach to the Malkothrokor.<0>
+¤<3><4>Hive Tissues <2>(passive)<10>Malkothrokors can gestate Cesiant mutations, which attach to the Malkothrokor. Gestation occurs at an increased speed compared to standard construction.<0>
 Yblyleth requires:<10>   Quazeth Pool<0>
 ¤<3><4>Power Breach <2>(passive)<10>This combatant's attacks can bounce to the nearest hostile up to three times. Each bounce occurs after a short delay and deals 25% reduced damage.<0>
 Askosi Biotic Bolting<0>
@@ -1066,7 +1066,7 @@ g<1><4>Warp in Magister <1>(<3>G<1>)<10>Battle platform.<0>
 z<0><4>Advanced Warp <1>(<3>Z<1>)<0>
 b<0><4>Basic Warp <1>(<3>B<1>)<0>
 g<1><4>Warp in Gladius <1>(<3>G<1>)<10>Crowd-controlling corvette.<0>
-¤<3><4>Impact Prevarication <2>(passive)<10>Each time this combatant is attacked by a hostile, it gains 33% increased movement and attack speeds for 3 seconds, and regenerates 30 HP over time.<0>
+¤<3><4>Impact Prevarication <2>(passive)<10>Each time this combatant is attacked by a hostile, it gains 50% increased movement and attack speeds for 2 seconds, and blocks the next attack.<0>
 Eyelet<0>
 g<1><4>Build Monogram <1>(<3>G<1>)<10>Reinforcing hovercraft.<0>
 g<1><4>Build Gorgon <1>(<3>G<1>)<10>All-purpose corvette.<0>
@@ -1090,7 +1090,7 @@ g<1><4>Assemble Golem <1>(<3>G<1>)<10>Sturdy frontline drone.<0>
 t<1><4>Build Mantle <1>(<3>T<1>)<10>Walker outpost.<0>
 ¤<3><4>Apollyoid Adhesive <2>(passive)<10>Flame-based attacks set victims alight, rending 1 armor per stack, and dealing 3 damage every second.<10><10>Apollyoid Adhesive burns itself out after 2 seconds of not being stacked.<0>
 ¤<3><4>Sustaining Sermon <2>(passive)<10>Every strike, the Cardinal's weapon releases a restorative pulse, healing 10 hit points for all allies within 3 range.<0>
-¤<3><4>Impact Dissipation <2>(passive)<10>Each time this combatant is attacked by a hostile, it gains 33% increased movement speed for 3 seconds, and regenerates 15 HP over time.<0>
+¤<3><4>Impact Dissipation <2>(passive)<10>After being attacked by a hostile, this combatant gains 50% increased movement speed for 2 seconds, and blocks the next attack.<0>
 Mining Efficiency<0>
 ¤<3><4>Schematic Unity <2>(passive)<10>Up to 5 Askosi workers can collaborate on construction efforts.<10>When Dyads assist in construction, they increase construction rate by 30%.<0>
 ¤<3><4>Shared Designs <2>(passive)<10>Up to 5 Askosi workers can collaborate on construction efforts.<10>Each additional Pilgrim increases construction rate by 20%.<0>
@@ -1108,7 +1108,7 @@ a<1><4>Assemble Renesair <1>(<3>A<1>)<10>Reconstructing interceptor.<0>
 ¤<3><4>Triumphant Rise <2>(passive)<10>Victims of this warrior's attacks become energized for 1.5 seconds. Attacks on energized enemies bleed 2 shield points to all allies of the warrior within 3 range.<0>
 d<1><4>Train Madcap <1>(<3>D<1>)<10>Mechanized infantry.<0>
 ¤<3><4>Cabeirus Feeders <2>(passive)<10>While stationary, the Madcap gains a 15% attack speed bonus per attack, capping at a 150% bonus. This bonus falls off by 20% for every second the Madcap spends moving.<0>
-¤<3><4>Miasma <2>(passive)<10>This strain's attacks infect its victims with Plague for 1.5 seconds. Plagued victims release Miasma fields on death, spreading the infection to all nearby targets.<0>
+¤<3><4>Miasma <2>(passive)<10>This strain's attacks infect its victims with Plague for 1.5 seconds. Plagued victims release Miasma fields on death, spreading the infection to all nearby targets.<10>Plague cannot kill its victims, and reduces healing by 50%.<0>
 g<3><4>Land Grab <1>(<3>G<1>)<10>Orders the Wyvern to fire its weapon at the target site.<0>
 r<1><4>Warp in Strident Stratum <1>(<3>R<1>)<10>Utilitarian production.<0>
 Mantle requires:<10>   Atlas<0>
@@ -1133,7 +1133,7 @@ a<1><4>Warp in Aurora <1>(<3>A<1>)<10>Nimble fighter.<0>
 c<1><4>Build Centaur <1>(<3>C<1>)<10>All-purpose destroyer.<0>
 t<1><4>Build Magnetar <1>(<3>T<1>)<10>Undeniable cruiser.<0>
 ¤<3><4>Sunchaser Salvo <2>(passive)<10>While the Centaur is within 4 range of its target, it will also fire its secondary weapon.<0>
-¤<3><4>Mitosis <2>(passive)<10>Upon taking damage, the Zoryusthaleth incubates, spawning one Rilirokor after a two-second delay.<0>
+¤<3><4>Mitosis <2>(passive)<10>Upon taking damage, this strain incubates, spawning one Rilirokor after a two-second delay.<10>This status cannot be applied if the strain is already incubating.<0>
 w<1><4>Build Cuirass <1>(<3>W<1>)<10>Durable frontline walker.<0>
 ¤<3><4>Stonewall Protocol <2>(passive)<10>Upon taking fatal damage, the Cuirass deactivates, regains 50 HP, and begins self-repairing for 15 HP per second until fully-healed. If the Cuirass is dealt fatal damage again before it can fully repair, it is destroyed.<0>
 <0>
@@ -1264,8 +1264,8 @@ f<3><4>Skyfall <1>(<3>F<1>)<10>Grounds the Paladin and launches a salvo of 20 mi
 t<1><4>Profanate Mind Tyrant <1>(<3>T<1>)<10>Dominating specialist.<0>
 d<3><4>Activate Disruption Field <1>(<3>D<1>)<10>Creates an energy field beneath the Lanifect, disabling the weapons of all grounded combatants within it.<0>
 a<1><4>Build Armistice <1>(<3>A<1>)<10>Mobile garrison.<0>
-c<3><4>Maledictus <1>(<3>C<1>)<10>Channels for five seconds before declaring an allied combatant as its malefactor.<10>So long as their Tyrant is nearby, malefactors gain increased durability and speed, and victims of their attacks are tyrannized on death.<10>Mind Tyrants can only have one malefactor at a time.<0>
-e<3><4>Maelstrom <1>(<3>E<1>)<10>Fires an energy bolt that slows the movement speed of all targets within 2 range of the target area by 50% for 5 seconds. Hostile corpses within the area of effect are ascended.<0>
+c<3><4>Maledictus <1>(<3>C<1>)<10>Channels for five seconds before declaring an allied combatant as its malefactor.<10>So long as their Tyrant is nearby and has energy, malefactors gain increased durability and speed, and victims of their attacks are tyrannized on death.<10>Mind Tyrants can only have one malefactor at a time.<0>
+e<3><4>Maelstrom <1>(<3>E<1>)<10>Fires an energy bolt that slows the movement speed of all targets within 2 range of the target area by 66% for 5 seconds. Hostile corpses within the area of effect are ascended.<0>
 ¤<3><4>Idolatry <2>(passive)<10>The Sycophant recharges shields for the closest ally within 3 range. On death, the Sycophant heals allies within 3 range for 50 shields.<0>
 d<3><4>Deactivate Disruption Field <1>(<3>D<1>)<10>Returns the Lanifect's weapons systems to normal.<0>
 s<1><4>Warp in Sycophant <1>(<3>S<1>)<10>Innervating skirmisher.<0>
@@ -1291,7 +1291,7 @@ v<1><4>Build Quadriga <1>(<3>V<1>)<10>Reinforced gunboat.<0>
 v<1><4>Build Valkyrie <1>(<3>V<1>)<10>Air superiority frigate.<0>
 r<1><4>Warp in Lanifect <1>(<3>R<1>)<10>Air superiority fighter.<0>
 a<1><4>Profanate Cabalist <1>(<3>A<1>)<10>Cloaked melee assassin.<0>
-<0>
+a<1><4>Profanate Vestige <1>(<3>A<1>)<10>Reviled assassin.<0>
 <0>
 <0>
 Vithril Aspect requires:<10>   Tethvith Swamp<0>
@@ -1334,14 +1334,14 @@ Must target units with energy.<0>
 <0>
 <0>
 <0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
+¤<3><4>War Atrophy <2>(passive)<10>When a target is damaged by the Nihilist, it becomes atrophied, reducing its movement speed by 33% when moving towards its enemies.<0>
+¤<3><4>Necromastery <2>(passive)<10>The Grimoire can pay host to a single allied combatant. When other combatants of the same type die, a new one begins training at the Grimoire, free of cost.<0>
+¤<3><4>Tragyle's Coagulants <2>(passive)<10>Victims of the Camazotz's attacks react favorably to the serum within, and bleed a miasma that restores 3 HP to allies of the Harakan within 2 range.<0>
+f<1><4>Train Camazotz <1>(<3>F<1>)<10>Sustaining infantry.<0>
+¤<3><4>Seething Dominion <2>(passive)<10>Zytryleths cannot move once hatched, and launch their Omnispores at all targets within their weapon range.<0>
+Rozirokor requires:<10>   Hydrith Den<0>
 z<1><4>Morph to Izirokor <1>(<3>Z<1>)<10>Close-combat strain.<0>
-<0>
+z<1><4>Morph to Rozirokor <1>(<3>Z<1>)<10>Close-combat strain.<0>
 Izirokor requires:<10>   Hydrith Den<0>
 t<1><4>Morph into Keskathalor <1>(<3>T<1>)<10>Artillery strain.<0>
 Keskathalor requires:<10>   Geszkath Grotto<0>
@@ -1356,7 +1356,7 @@ z<3><4>Switch to Power Siphon <1>(<3>Z<1>)<10>Activates the Savant's sustained f
 v<1><4>Morph into Konvilisk <1>(<3>V<1>)<10>Reinforcing duelist strain.<0>
 ¤<3><4>Reactive Payload <2>(passive)<10>For every 4 range travelled, this combatant's missiles split into an additional projectiles, homing in on the closest combatants within 3 range of the original target.<0>
 x<1><4>Mutate to Othstol Oviform <1>(<3>X<1>)<10>Tier 3 tech node.<0>
-e<1><4>Mutate into Kethraj Keep <1>(<3>E<1>)<10>Artillery assault node.<0>
+x<1><4>Mutate into Kethraj Keep <1>(<3>X<1>)<10>Artillery assault node.<0>
 Entropy Gauntlets Require:<10>   Module switch<0>
 Power Siphon requires:<10>   Module switch<0>
 a<1><4>Morph to Kagralisk <1>(<3>A<1>)<10>Bursting ranged strain.<0>
@@ -1764,7 +1764,7 @@ z<3><4>Lobotomy Warhead <1>(<3>Z<1>)<10>Fires a missile that Lobotomizes its tar
 Chantry requires:<10>   Radix OR Function<0>
 Ocsal Aspect requires:<10>   Irol Iris<0>
 Click: Select Unit Type<10>Shift+Click: Deselect One Unit<10>Ctrl+Shift+Click: Deselect Unit Type<0>
-¤<3><4>Metastasis <2>(passive)<10>Victims of Plague spread the effect to those nearby when killed.<0>
+<0>
 a<1><4>Mutate into Ocsal Cesiant <1>(<3>A<1>)<10>Mutated production cell.<0>
 e<3><4>Imperioso Mode <1>(<3>E<1>)<10>Returns the Madrigal's weapon and mobility to normal.<0>
 <0>

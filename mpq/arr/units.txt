@@ -139,7 +139,7 @@ Terran Olympian
 Zerg Matravil Nest
 Zerg Almakis Antre
 Zerg Ulgorg Cavern
-Zerg Muthrok Spire
+Zerg Mutath Spire
 Zerg Quazeth Pool
 Zerg Cagrant Cesiant
 Zerg Spraith Cesiant
@@ -148,7 +148,7 @@ Zerg Surkith Cesiant
 Terran Guildhall
 Terran Striga
 Zerg Excisant
-Terran Luminary
+Terran Luminary (Golden Republic)
 Terran Siren
 Zerg Othstol Oviform
 Zerg Tethvith Swamp
@@ -208,7 +208,7 @@ Right Upper Level Door
 Left Pit Door
 Right Pit Door
 Terran Sentinel
-Spliced Tarasque
+Terran Tarasque (Nydus Trinity)
 Terran Anticthon
 Zerg Kethraj Keep
 Terran Atelier
@@ -572,8 +572,8 @@ Terran Vulture (Upstart)
 Terran Cutlass (Futurist)
 Cutlass Turret (Futurist)
 Terran Maverick (Upstart)
-Protoss Ecclesiast (Astral)
-Terran Eidolon (Upstart)
+Protoss Tritius (Astral)
+Terran Morrigan (Upstart)
 Terran Ajax (Futurist)
 Askosi Dorminge
 Askosi Lotiro
@@ -614,22 +614,22 @@ Big Infested Kerrigan
 Raynor Vulture
 Duke Battlecruiser
 Askosi Scralia
-Extended Unit #389
-Extended Unit #390
-Extended Unit #391
-Extended Unit #392
-Extended Unit #393
-Extended Unit #394
-Extended Unit #395
-Extended Unit #396
-Extended Unit #397
-Extended Unit #398
-Extended Unit #399
-Extended Unit #400
-Extended Unit #401
-Extended Unit #402
-Extended Unit #403
-Extended Unit #404
+Zerg Rozirokor (Imicren)
+Bloodsummon Thrombocyte
+Bloodsummon Grimoire
+Zerg Zytryleth (Zorthos)
+Terran Camazotz (Nydus)
+Protoss Simulacrum (Khalendric)
+Protoss Idol (Khalendric)
+Protoss Vestige (Starbound)
+Terran Arquebus (Hecaton)
+Bloodsummon Acqui
+Zerg Alzurokor (Imicren)
+Zerg Hydrokor (Goszirith)
+Protoss Gladius (Order)
+Terran Eidolon (Golden Republic)
+Zerg Zethalisk (Orkoti)
+Bloodsummon Nihilist
 Extended Unit #405
 Extended Unit #406
 Extended Unit #407

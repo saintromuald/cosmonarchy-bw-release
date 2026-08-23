@@ -101,7 +101,7 @@ Init          	CivilianInit
 Death         	CivilianDeath
 GndAttkInit   	[NONE]
 AirAttkInit   	[NONE]
-Unused1       	[NONE]
+Unused1       	SkryrokorLocal00
 GndAttkRpt    	[NONE]
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
@@ -207,7 +207,7 @@ TrojanDeath:
 
 TrojanWalking:
 	setvertpos        	0
-	imgol             	225 0 5 # Trojan Engines (thingy\tdrGlow.grp)
+	imgol             	225 0 0 # Trojan Engines (thingy\tdrGlow.grp)
 	goto              	SkryrokorLocal00
 
 # ----------------------------------------------------------------------------- #
@@ -392,7 +392,7 @@ HarakanWalking:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 228 Eidolon (terran\ghost.grp)
+# 228 Eidolon (terran\eidolon.grp)
 .headerstart
 IsId          	70
 Type          	13
@@ -414,9 +414,9 @@ SpecialState1 	EidolonSpecialState1
 # ----------------------------------------------------------------------------- #
 
 EidolonInit:
-	imgul             	229 0 0 # Eidolon Shadow (terran\tghShad.grp)
+	imgulnextid			0 0 # Eidolon Shadow (terran\eidolon-shadow.grp)
 EidolonWalkingToIdle:
-	playfram          	0x33
+	playfram          	0x60
 EidolonLocal00:
 	wait				63
 	randcondjmp       	25 EidolonLocal01
@@ -426,9 +426,9 @@ EidolonLocal00:
 EidolonLocal01:
 	playfram          	0x00
 	wait              	1
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 	randcondjmp       	192 EidolonLocal03
 	turnccwise        	2
 	wait              	3
@@ -461,7 +461,7 @@ EidolonLocal01:
 	goto              	EidolonLocal04
 
 EidolonLocal04:
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
 	playfram          	0x00
 	wait              	1
@@ -469,20 +469,20 @@ EidolonLocal04:
 
 EidolonLocal03:
 	wait              	13
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
 	playfram          	0x00
 	wait              	1
 	goto              	EidolonWalkingToIdle
 
 EidolonLocal02:
-	playfram          	0x44
+	playfram          	0x80
 	wait              	1
-	playfram          	0x55
+	playfram          	0xA0
 	wait              	1
 	turnrand          	3
 	wait              	1
-	playfram          	0x44
+	playfram          	0x80
 	wait              	1
 	goto              	EidolonWalkingToIdle
 
@@ -495,21 +495,21 @@ EidolonUnused1:
 	nobrkcodestart
 	setfldirect			0
 	playsnd				1166 # Eidolon revive 01
-	playfram			228
+	playfram			423
 	wait				2
-	playfram			227
+	playfram			422
 	wait				2
-	playfram			226
+	playfram			421
 	wait				2
-	playfram			225
+	playfram			420
 	wait				2
-	playfram			224
+	playfram			419
 	wait				2
-	playfram			223
+	playfram			418
 	wait				2
-	playfram			222
+	playfram			417
 	wait				2
-	playfram			221
+	playfram			416
 	wait				2
 	setfldirect			12
 	nobrkcodeend
@@ -518,18 +518,18 @@ EidolonUnused1:
 EidolonGndAttkInit:
 	playfram          	0x00
 	wait              	1
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
 	sigorder			32
-	playfram          	0x22
+	playfram          	0x40
 	wait				12
 EidolonGndAttkRpt:
 	wait              	1
 	nobrkcodestart
 	attack
-	playfram          	0xcc
+	playfram          	0x180
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
@@ -545,9 +545,9 @@ EidolonCastSpell:
 	wait              	1
 	playsnd           	240 # Terran\GHOST\TGhLkd00.wav
 	castspell
-	playfram          	0xcc
+	playfram          	0x180
 	wait              	2
-	playfram          	0x22
+	playfram          	0x40
 	nobrkcodeend
 	gotorepeatattk
 	sigorder          	2
@@ -556,45 +556,45 @@ EidolonCastSpell:
 EidolonWalking:
 	move              	4
 	wait              	1
-	playfram          	0x44
+	playfram          	0x80
 	move              	4
 	wait              	1
-	playfram          	0x55
+	playfram          	0xA0
 	move              	4
 	wait              	1
-	playfram          	0x66
+	playfram          	0xC0
 	move              	4
 	wait              	1
-	playfram          	0x77
+	playfram          	0xE0
 	move              	4
 	wait              	1
-	playfram          	0x88
+	playfram          	0x100
 	move              	4
 	wait              	1
-	playfram          	0x99
+	playfram          	0x120
 	move              	4
 	wait              	1
-	playfram          	0xaa
+	playfram          	0x140
 	move              	4
 	wait              	1
-	playfram          	0xbb
+	playfram          	0x160
 	move              	4
 	wait              	1
-	playfram          	0x33
+	playfram          	0x60
 	goto              	EidolonWalking
 
 EidolonSpecialState1:
 	playfram          	0x00
 	wait              	1
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 	wait              	1
 	goto              	SkryrokorLocal00
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 231 Eidolon Death (terran\ghost.grp)
+# 231 Eidolon Death (terran\eidolon.grp)
 .headerstart
 IsId          	72
 Type          	1
@@ -605,23 +605,23 @@ Death         	Generic_Wait1End
 
 EidolonDeathInit:
 	setfldirect       	0
-	playfram          	0xdd
-	wait              	2
-	playfram          	222
-	wait              	2
-	playfram          	223
-	wait              	2
-	playfram          	224
-	wait              	2
-	playfram          	225
-	wait              	2
-	playfram          	226
-	wait              	2
-	playfram          	227
-	wait              	2
-	playfram          	228
-	wait              	2
-	lowsprul          	230 0 0 # Eidolon Remnants (terran\tghDeath.grp)
+	playfram			416
+	wait				2
+	playfram			417
+	wait				2
+	playfram			418
+	wait				2
+	playfram			419
+	wait				2
+	playfram			420
+	wait				2
+	playfram			421
+	wait				2
+	playfram			422
+	wait				2
+	playfram			423
+	wait				2
+	lowsprul          	230 0 0 # Eidolon Remnants (terran\eidolon-remains.grp)
 	wait              	1
 	end
 
@@ -4101,6 +4101,9 @@ ReservoirDeath:
 	playsnd           	7 # Misc\ExploLrg.wav
 	sprol             	272 0 0 # Building Explosion (Large) (thingy\tBangX.grp)
 	wait              	3
+	liftoffcondjmp    	LiftedTerranStructureDeath_Small
+	lowsprul          	273 0 0 # Terran Building Rubble (Small) (thingy\RubbleS.grp)
+	wait              	1
 	end
 
 ReservoirSpecialState1:
@@ -6709,7 +6712,7 @@ GenericRemnantsFourDeath:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 939 Valkyrie (terran\bomber.grp)
+# 939 Valkyrie (terran\valkyrie.grp)
 .headerstart
 IsId          	362
 Type          	12
@@ -6731,7 +6734,7 @@ SpecialState1 	[NONE]
 # ----------------------------------------------------------------------------- #
 
 ValkyrieInit:
-	imgul             	940 0 42 # Valkyrie Shadow (terran\bomber.grp)
+	imgulnextid			0 42 # Valkyrie Shadow (terran\valkyrie.grp)
 	playfram          	0x00
 	goto              	TrojanLocal00
 
@@ -6761,7 +6764,7 @@ ValkyrieAirAttkInit:
 
 ValkyrieWalking:
 	setvertpos        	0
-	imgol             	941 0 0 # Valkyrie Engines (thingy\tbmGlow.grp)
+	imgol             	941 0 0 # Valkyrie Engines (terran\valkyrie-engine.grp)
 	sigorder          	64
 	goto              	SkryrokorLocal00
 
@@ -8572,7 +8575,7 @@ AnchorGroundedInit:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1900 Goska (terran\ghost.grp)
+# 1900 Goska (terran\eidolon.grp)
 .headerstart
 IsId          	791
 Type          	13
@@ -8594,38 +8597,38 @@ SpecialState1 	EidolonSpecialState1
 # ----------------------------------------------------------------------------- #
 
 GoskaInit:
-	imgul             	1901 0 0 # Goska Shadow (terran\tghShad.grp)
+	imgulnextid			0 0 # Goska Shadow (terran\eidolon-shadow.grp)
 	goto				EidolonWalkingToIdle
 
 GoskaGndAttkInit:
 	playfram          	0x00
 	wait              	1
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 GoskaGndAttkRpt:
 	wait              	1
 	nobrkcodestart
 	playsndbtwn			3212 3214 # Goska Weaponfire 01, 02, 03
 	attack
-	playfram          	0xcc
+	playfram          	0x180
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 	wait				1
 	attack
-	playfram          	0xcc
+	playfram          	0x180
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 	wait				1
 	attack
-	playfram          	0xcc
+	playfram          	0x180
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 	wait				1
 	attack
-	playfram          	0xcc
+	playfram          	0x180
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 	wait				1
 	nobrkcodeend
 	gotorepeatattk
@@ -9968,13 +9971,27 @@ TalosGndAttkRpt:
 TalosWalking:
     setvertpos          0
     playfram            0x20
-    wait                2
+	move				4
+    wait                1
+	move				4
+    wait                1
     playfram            0x40
-    wait                2
+	move				4
+    wait                1
+	move				4
+    wait                1
     playfram            0x60
-    wait                2
+	move				4
+    wait                1
+	move				4
+    wait                1
     imgol               1079 0 0 # Talos Engines (cm\terran\talos-engine.grp)
-    goto                SkryrokorLocal00
+    goto                TalosWalkingLoop
+	
+TalosWalkingLoop:
+	move				4
+	wait				1
+	goto				TalosWalkingLoop
     
 TalosWalkingToIdle:
     playfram            0x60
@@ -12596,7 +12613,7 @@ SirenDeath:
 	playsnd           	353	# Terran\VULTURE\TVuDth00.WAV
 	imgol             	332 0 0	# Explosion2 (Small) (thingy\tBangS.grp)
 	wait              	2
-	lowsprul          	230 0 0 # Eidolon Remnants (terran\tghDeath.grp)
+	lowsprul			845 0 0 # Terran Unit Rubble Small
 	wait              	1
 	wait              	3 
 	end
@@ -13332,12 +13349,12 @@ StrigaLocal03:
 	goto              	StrigaWalkingToIdle
 
 StrigaDeath:
-	playsnd           	238	# Terran\Ghost\TGhDth00.wav
+	playsndbtwn			4258 4260 # Striga death 01, 02, 03
 	setfldirect       	0 
 	playfram          	0x00
 	imgol             	3 0 0 # Skryrokor Death (zerg\zavDeath.grp)
 	wait              	2 
-	lowsprul          	230 0 0	# Eidolon Remnants (terran\tghDeath.grp)
+	lowsprul			845 0 0 # Terran Unit Rubble Small
 	wait              	1 
 	end
 
@@ -15857,9 +15874,9 @@ CyprianDeath:
 CyprianGndAttkInit:
 	playfram          	0x120
 	wait              	1
-	sigorder			32
 	playfram          	0x140
 	wait              	1
+	sigorder			32
 	playfram          	0x160
 	wait				6
 CyprianGndAttkRpt:
@@ -16204,7 +16221,7 @@ SevenstepDeath:
 	playsndbtwn       	276 277 # Maverick death 01, 02
 	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
 	wait              	2
-	lowsprul          	230 0 0 # Eidolon Remnants (terran\tghDeath.grp)
+	lowsprul			845 0 0 # Terran Unit Rubble Small
 	wait              	1
 	end
 
@@ -17293,6 +17310,9 @@ WellboreDeath:
 	playsnd           	7 # Misc\ExploLrg.wav
 	sprol             	272 0 0 # Building Explosion (Large) (thingy\tBangX.grp)
 	wait              	3
+	liftoffcondjmp    	LiftedTerranStructureDeath_Small
+	lowsprul          	273 0 0 # Terran Building Rubble (Small) (thingy\RubbleS.grp)
+	wait              	1
 	end
 
 WellboreSpecialState1:
@@ -19710,7 +19730,7 @@ MadrigalHecatonImperiosoTurretGndAttkInit:
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 2011 Eidolon (Nydus Trinity) (cm\faction-t\eidolon-nydus.grp)
+# 2011 Eidolon (Nydus Trinity) (cm\f-t\eidolon-nydus.grp)
 .headerstart
 IsId          	835
 Type          	13
@@ -19732,9 +19752,9 @@ SpecialState1 	EidolonNydusSpecialState1
 # ----------------------------------------------------------------------------- #
 
 EidolonNydusInit:
-	imgul             	2012 0 0 # Eidolon (Nydus) Shadow (terran\tghShad.grp)
+	imgulnextid			0 0 # Eidolon (Nydus) Shadow (cm\f-t\eidolon-nydus-shadow.grp)
 EidolonNydusWalkingToIdle:
-	playfram          	0x33
+	playfram          	0x60
 EidolonNydusLocal00:
 	wait				63
 	randcondjmp       	25 EidolonNydusLocal01
@@ -19744,9 +19764,9 @@ EidolonNydusLocal00:
 EidolonNydusLocal01:
 	playfram          	0x00
 	wait              	1
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 	randcondjmp       	192 EidolonNydusLocal03
 	turnccwise        	2
 	wait              	3
@@ -19779,7 +19799,7 @@ EidolonNydusLocal01:
 	goto              	EidolonNydusLocal04
 
 EidolonNydusLocal04:
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
 	playfram          	0x00
 	wait              	1
@@ -19787,20 +19807,20 @@ EidolonNydusLocal04:
 
 EidolonNydusLocal03:
 	wait              	13
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
 	playfram          	0x00
 	wait              	1
 	goto              	EidolonNydusWalkingToIdle
 
 EidolonNydusLocal02:
-	playfram          	0x44
+	playfram          	0x80
 	wait              	1
-	playfram          	0x55
+	playfram          	0xA0
 	wait              	1
 	turnrand          	3
 	wait              	1
-	playfram          	0x44
+	playfram          	0x80
 	wait              	1
 	goto              	EidolonNydusWalkingToIdle
 
@@ -19812,22 +19832,22 @@ EidolonNydusUnused1:
 	wait				1
 	nobrkcodestart
 	setfldirect			0
-	playsnd				1166 # Eidolon revive 01
-	playfram			228
+	playsnd				1166 # EidolonNydus revive 01
+	playfram			423
 	wait				2
-	playfram			227
+	playfram			422
 	wait				2
-	playfram			226
+	playfram			421
 	wait				2
-	playfram			225
+	playfram			420
 	wait				2
-	playfram			224
+	playfram			419
 	wait				2
-	playfram			223
+	playfram			418
 	wait				2
-	playfram			222
+	playfram			417
 	wait				2
-	playfram			221
+	playfram			416
 	wait				2
 	setfldirect			12
 	nobrkcodeend
@@ -19836,16 +19856,16 @@ EidolonNydusUnused1:
 EidolonNydusGndAttkInit:
 	playfram          	0x00
 	wait              	1
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 EidolonNydusGndAttkRpt:
 	wait              	1
 	nobrkcodestart
 	attack
-	playfram          	0xcc
+	playfram          	0x180
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 	nobrkcodeend
 	gotorepeatattk
 	ignorerest
@@ -19861,9 +19881,9 @@ EidolonNydusCastSpell:
 	wait              	1
 	playsnd           	240 # Terran\GHOST\TGhLkd00.wav
 	castspell
-	playfram          	0xcc
+	playfram          	0x180
 	wait              	2
-	playfram          	0x22
+	playfram          	0x40
 	nobrkcodeend
 	gotorepeatattk
 	sigorder          	2
@@ -19872,39 +19892,39 @@ EidolonNydusCastSpell:
 EidolonNydusWalking:
 	move              	4
 	wait              	1
-	playfram          	0x44
+	playfram          	0x80
 	move              	4
 	wait              	1
-	playfram          	0x55
+	playfram          	0xA0
 	move              	4
 	wait              	1
-	playfram          	0x66
+	playfram          	0xC0
 	move              	4
 	wait              	1
-	playfram          	0x77
+	playfram          	0xE0
 	move              	4
 	wait              	1
-	playfram          	0x88
+	playfram          	0x100
 	move              	4
 	wait              	1
-	playfram          	0x99
+	playfram          	0x120
 	move              	4
 	wait              	1
-	playfram          	0xaa
+	playfram          	0x140
 	move              	4
 	wait              	1
-	playfram          	0xbb
+	playfram          	0x160
 	move              	4
 	wait              	1
-	playfram          	0x33
+	playfram          	0x60
 	goto              	EidolonNydusWalking
 
 EidolonNydusSpecialState1:
 	playfram          	0x00
 	wait              	1
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
-	playfram          	0x22
+	playfram          	0x40
 	wait              	1
 	goto              	SkryrokorLocal00
 
@@ -20375,7 +20395,7 @@ VultureHecatonSpecialState1:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 2226 Quadriga (cm\faction-t\quadriga.grp)
+# 2226 Quadriga (cm\f-t\quadriga.grp)
 .headerstart
 IsId          	840
 Type          	12
@@ -20397,7 +20417,7 @@ SpecialState1 	[NONE]
 # ----------------------------------------------------------------------------- #
 
 QuadrigaInit:
-	imgulnextid			0 42 # Quadriga Shadow (cm\faction-t\quadriga.grp)
+	imgulnextid			0 42 # Quadriga Shadow (cm\f-t\quadriga.grp)
 	playfram          	0x00
 	goto              	TrojanLocal00
 
@@ -20427,7 +20447,7 @@ QuadrigaAirAttkInit:
 
 QuadrigaWalking:
 	setvertpos        	0
-	imgol             	2228 0 0 # Quadriga Engines (cm\faction-t\quadriga-engine.grp)
+	imgol             	2228 0 0 # Quadriga Engines (cm\f-t\quadriga-engine.grp)
 	sigorder          	64
 	goto              	SkryrokorLocal00
 
@@ -20808,3 +20828,404 @@ CivilianDeathInit:
 	lowsprul          	1158 0 0 # Civilian Remnants (terran\civilian-remains.grp)
 	wait              	1
 	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 226 Camazotz (cm\f-t\camazotz.grp)
+.headerstart
+IsId          	847
+Type          	12
+Init          	CamazotzInit
+Death         	CamazotzDeath
+GndAttkInit   	CamazotzGndAttkInit
+AirAttkInit   	[NONE]
+Unused1       	CamazotzUnused1
+GndAttkRpt    	CamazotzGndAttkRpt
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	CamazotzGndAttkToIdle
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	CamazotzWalking
+WalkingToIdle 	CamazotzWalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+CamazotzInit:
+	imgulnextid			0 0 # Camazotz Shadow (cm\f-t\camazotz-shadow.grp)
+CamazotzWalkingToIdle:
+	playfram          	0x40
+CamazotzLocal00:
+	wait				63
+	randcondjmp       	25 CamazotzLocal01
+	randcondjmp       	128 CamazotzLocal02
+	goto              	CamazotzLocal00
+
+CamazotzLocal01:
+	playfram          	0x00
+	wait              	1
+	randcondjmp       	192 CamazotzLocal03
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	wait              	6
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	wait              	6
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	goto              	CamazotzWalkingToIdle
+
+CamazotzLocal03:
+	wait              	13 
+	goto              	CamazotzWalkingToIdle
+
+CamazotzLocal02:
+	playfram          	0x60
+	wait              	1
+	playfram          	0x80
+	wait              	1
+	turnrand          	3
+	wait              	1
+	playfram          	0x60
+	wait              	1
+	goto              	CamazotzWalkingToIdle
+
+CamazotzDeath:
+	playsndbtwn       	296 298 # Terran\Firebat\TFBDth00.WAV | Terran\Firebat\TFBDth02.WAV
+	imgol             	3 0 0 # Skryrokor Death (zerg\zavDeath.grp)
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	setfldirect       	0
+#	playfram          	170
+	wait              	2
+#	playfram          	171
+	wait              	2
+#	playfram          	172
+	wait              	2
+#	playfram          	173
+	wait              	2
+#	playfram          	174
+#	wait              	2
+#	playfram          	175
+#	wait              	2
+#	playfram          	176
+#	wait              	2
+#	playfram          	177
+#	wait              	2
+	lowsprul          	615 0 0 # Camazotz Remnants (cm\terran\camazotz-remnants.grp)
+	wait              	1
+	end
+	
+CamazotzUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect       	0
+	playsndbtwn			1163 1165 # Camazotz revive 01, 02, 03
+	sprol				742 0 0 # Explosion Small Reversed
+#	playfram			176
+	wait				2
+#	playfram			175
+	wait				2
+#	playfram			174
+	wait				2
+#	playfram			173
+	wait				2
+#	playfram			172
+	wait				2
+#	playfram			171
+	wait				2
+#	playfram			170
+	wait              	2
+	setfldirect       	12
+	nobrkcodeend
+	goto				CamazotzWalkingToIdle
+
+CamazotzGndAttkInit:
+	playfram          	0x00
+CamazotzGndAttkRpt:
+	wait              	1
+	nobrkcodestart
+	playsndbtwn			4261 4263 # Camazotz weaponfire 01, 02, 03
+	imgoluselo			2056 0 0 # Green projection attack
+	playfram          	0x20
+	sigorder			32
+	wait              	1
+	attkshiftproj     	52
+	sigorder			32
+	wait              	1
+	attkshiftproj     	80
+	sigorder			32
+	wait              	5
+	playfram          	0x00
+	wait              	2
+	ignorerest
+CamazotzGndAttkToIdle:
+	goto              	CamazotzWalkingToIdle
+
+CamazotzWalking:
+	move              	4
+	wait              	1
+	playfram          	0x60
+	move              	4
+	wait              	1
+	playfram          	0x80
+	move              	4
+	wait              	1
+	playfram          	0xA0
+	move              	4
+	wait              	1
+	playfram          	0xC0
+	move              	4
+	wait              	1
+	playfram          	0xE0
+	move              	4
+	wait              	1
+	playfram          	0x100
+	move              	4
+	wait              	1
+	playfram          	0x120
+	move              	4
+	wait              	1
+	playfram          	0x40
+	goto              	CamazotzWalking
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1149 Arquebus (cm\f-t\arquebus.grp)
+.headerstart
+IsId          	848
+Type          	12
+Init          	ArquebusInit
+Death         	ArquebusDeath
+GndAttkInit   	ArquebusGndAttkInit
+AirAttkInit   	ArquebusGndAttkInit
+Unused1       	ArquebusUnused1
+GndAttkRpt    	ArquebusGndAttkInit
+AirAttkRpt    	ArquebusGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	InfestedTerranWalkingToIdle
+AirAttkToIdle 	InfestedTerranWalkingToIdle
+Unused2       	[NONE]
+Walking       	ArquebusWalking
+WalkingToIdle 	InfestedTerranWalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ArquebusInit:
+	imgulnextid			0 0 # Arquebus shadow (cm\f-t\arquebus-shadow.grp)
+	goto              	InfestedTerranWalkingToIdle
+
+ArquebusDeath:
+	playsndbtwn			3067 3073 # Arquebus death 01, 02, 03, 04, 05, 06, 07
+	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
+	wait              	3
+	lowsprul			273 0 0 # Terran Building Rubble Small
+#	lowsprul			816 0 0 # Arquebus Remains
+	wait              	1
+	end
+
+ArquebusUnused1:
+	wait				1
+	nobrkcodestart
+	playsnd           	1700
+	sprol				744 0 0 # Large Orange Explosion Reversed
+	wait				12
+	setfldirect			13
+	nobrkcodeend
+	goto				InfestedTerranWalkingToIdle
+
+ArquebusGndAttkInit:
+	wait				1
+	nobrkcodestart
+	playfram			0x220
+	playsndbtwn			2347 2350 # Arquebus weapon fire 01, 02, 03, 04
+	attackwith			1
+	wait				1
+	playfram			0x00
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+	goto              	InfestedTerranWalkingToIdle
+
+ArquebusWalking:
+	playfram          	0xA0
+	move              	3
+	wait              	1
+	playfram          	0xC0
+	move              	3
+	wait              	1
+	playfram          	0xE0
+	move              	3
+	wait              	1
+	playfram          	0x100
+	move              	3
+	wait              	1
+	playfram          	0x120
+	move              	3
+	wait              	1
+	playfram          	0x140
+	move              	3
+	wait              	1
+	playfram          	0x160
+	move              	3
+	wait              	1
+	playfram          	0x180
+	move              	3
+	wait              	1
+	playfram          	0x1A0
+	move              	3
+	wait              	1
+	playfram          	0x1C0
+	move              	3
+	wait              	1
+	playfram          	0x1E0
+	move              	3
+	wait              	1
+	playfram          	0x20
+	move              	3
+	wait              	1
+	playfram          	0x40
+	move              	3
+	wait              	1
+	playfram          	0x60
+	move              	3
+	wait              	1
+	playfram          	0x80
+	move              	3
+	wait              	1
+	goto              	ArquebusWalking
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 939 Valkyrie (Hecaton) (cm\f-t\valkyrie-hecaton.grp)
+.headerstart
+IsId          	849
+Type          	12
+Init          	ValkyrieHecatonInit
+Death         	ValkyrieHecatonDeath
+GndAttkInit   	ValkyrieHecatonAirAttkInit
+AirAttkInit   	ValkyrieHecatonAirAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	ValkyrieHecatonAirAttkInit
+AirAttkRpt    	ValkyrieHecatonAirAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	TrojanLocal00
+AirAttkToIdle 	TrojanLocal00
+Unused2       	[NONE]
+Walking       	ValkyrieHecatonWalking
+WalkingToIdle 	ValkyrieHecatonWalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ValkyrieHecatonInit:
+	imgul				2457 0 42 # Valkyrie (Hecaton) Shadow (cm\f-t\valkyrie-hecaton.grp)
+	playfram          	0x00
+	goto              	TrojanLocal00
+
+ValkyrieHecatonDeath:
+	playsnd           	1040 # Terran\FRIGATE\TVkDth00.WAV
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			844 0 42 # Terran Unit Rubble Medium
+	wait              	1
+	end
+
+ValkyrieHecatonAirAttkInit:
+	wait              	2
+	nobrkcodestart
+	attackwith        	2
+	wait				6
+	attackwith        	2
+	wait				6
+	attackwith        	2
+	wait				6
+	attackwith        	2
+	wait				6
+	attackwith        	2
+	nobrkcodeend
+	gotorepeatattk
+	goto              	TrojanLocal00
+
+ValkyrieHecatonWalking:
+	setvertpos        	0
+	imgol             	2458 0 0 # Valkyrie (Hecaton) Engines (cm\f-t\valkyrie-hecaton-engine.grp)
+	sigorder          	64
+	goto              	SkryrokorLocal00
+
+ValkyrieHecatonWalkingToIdle:
+	orderdone         	64
+	goto              	TrojanLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1154 Cyclops (Futurist) (cm\f-t\cyclops-futurist.grp)
+.headerstart
+IsId          	850
+Type          	12
+Init          	CyclopsFuturistInit
+Death         	CyclopsDeath
+GndAttkInit   	CyclopsFuturistGndAttkInit
+AirAttkInit   	CyclopsFuturistGndAttkInit
+Unused1       	CyclopsUnused1
+GndAttkRpt    	CyclopsFuturistGndAttkRpt
+AirAttkRpt    	CyclopsFuturistGndAttkRpt
+CastSpell     	[NONE]
+GndAttkToIdle 	CyclopsFuturistGndAttkToIdle
+AirAttkToIdle 	CyclopsFuturistGndAttkToIdle
+Unused2       	[NONE]
+Walking       	CyclopsWalking
+WalkingToIdle 	CyclopsWalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+CyclopsFuturistInit:
+	imgulnextid			0 0 # Cyclops (Futurist) shadow (cm\f-t\cyclops-futurist-shadow.grp)
+	goto				CyclopsWalkingToIdle
+
+CyclopsFuturistGndAttkInit:
+    playfram            0x00
+CyclopsFuturistGndAttkRpt:
+    wait                1
+    nobrkcodestart
+    playfram            0x220
+    playsndbtwn 		4295 4298 # CyclopsFuturist weapon fire 01, 02, 03, 04
+    attack
+    wait                1
+    playfram            0x240
+    wait                1
+    playfram			0x260
+    wait				1
+    playfram			0x280
+    wait				1
+    playfram			0x00
+    wait				1
+    nobrkcodeend
+    gotorepeatattk
+    ignorerest
+CyclopsFuturistGndAttkToIdle:
+    playfram			0x00
+    wait				1
+    goto				CyclopsWalkingToIdle

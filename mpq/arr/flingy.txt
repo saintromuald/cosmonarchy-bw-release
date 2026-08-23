@@ -498,7 +498,7 @@ Skortrith Cesiant Tentacle
 Cyclops Weapon Impact
 Sentinel Rail
 Hotshot
-Nathrok Lake
+Vornath Pond
 Skithrok Scab
 Qilin
 Auriel
@@ -662,7 +662,7 @@ Missionary Weaponhit
 Maverick (Upstart)
 Vulture (Upstart)
 Goremast
-Eidolon (Upstart)
+Morrigan
 Cutlass
 Cutlass Turret
 Broadside
@@ -700,19 +700,19 @@ Cybrene
 Raynor Vulture
 Scralia
 Endbore Electricity
-Extended Flingy #494
-Extended Flingy #495
-Extended Flingy #496
-Extended Flingy #497
-Extended Flingy #498
-Extended Flingy #499
-Extended Flingy #500
-Extended Flingy #501
-Extended Flingy #502
-Extended Flingy #503
-Extended Flingy #504
-Extended Flingy #505
-Extended Flingy #506
+Rozirokor
+Zytryleth
+Camazotz
+Grimoire
+Simulacrum (Khalendric)
+Idol (Khalendric)
+Thrombocyte
+Vestige (Starbound)
+Arquebus (Hecaton)
+Acqui
+Alzurokor (Imicren)
+Hydrokor (Goszirith)
+Nihilist
 Extended Flingy #507
 Extended Flingy #508
 Extended Flingy #509

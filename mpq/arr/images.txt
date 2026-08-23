@@ -1778,7 +1778,7 @@ Hotshot
 Hotshot Shadow
 Ocsal Regression Overlay
 Tyranny Overlay
-Nathrok Lake
+Vornath Pond
 Mortothrokor Birth
 Skibact Scab
 Mortothrokor Passive Overlay
@@ -2014,13 +2014,13 @@ Eidolon Shadow (Nydus)
 Maverick (Futurist)
 Maverick Shadow (Futurist)
 Hydralisk (Orkoti)
-Hydralisk Shadow (Orkoti)
+Hydralisk (Orkoti) Shadow
 Tencendur
 Tencendur Shadow
 Tencendur Attack Overlay (Orange)
 Tencendur Attack Overlay (Blue)
 Tencendur Attack Overlay (Green)
-Hydralisk Remains (Orkoti)
+Hydralisk (Orkoti) Remains
 Tencendur Flag
 Inzorthrokor
 Inzorthrokor Shadow
@@ -2311,9 +2311,9 @@ Vulture (Upstart) Shadow
 Vulture (Upstart) Engine
 Goremast
 Goremast Shadow
-Eidolon (Upstart)
-Eidolon (Upstart) Shadow
-Eidolon (Upstart) Remains
+Morrigan
+Morrigan Shadow
+Morrigan Remains
 Cutlass
 Cutlass Shadow
 Cutlass Turret
@@ -2399,68 +2399,68 @@ Endbore Electricity
 Civilian Death
 Civilian Remains
 Pilgrim Remains
-Extended Image #1399
-Extended Image #1400
-Extended Image #1401
-Extended Image #1402
-Extended Image #1403
-Extended Image #1404
-Extended Image #1405
-Extended Image #1406
-Extended Image #1407
-Extended Image #1408
-Extended Image #1409
-Extended Image #1410
-Extended Image #1411
-Extended Image #1412
-Extended Image #1413
-Extended Image #1414
-Extended Image #1415
-Extended Image #1416
-Extended Image #1417
-Extended Image #1418
-Extended Image #1419
-Extended Image #1420
-Extended Image #1421
-Extended Image #1422
-Extended Image #1423
-Extended Image #1424
-Extended Image #1425
-Extended Image #1426
-Extended Image #1427
-Extended Image #1428
-Extended Image #1429
-Extended Image #1430
-Extended Image #1431
-Extended Image #1432
-Extended Image #1433
-Extended Image #1434
-Extended Image #1435
-Extended Image #1436
-Extended Image #1437
-Extended Image #1438
-Extended Image #1439
-Extended Image #1440
-Extended Image #1441
-Extended Image #1442
-Extended Image #1443
-Extended Image #1444
-Extended Image #1445
-Extended Image #1446
-Extended Image #1447
-Extended Image #1448
-Extended Image #1449
-Extended Image #1450
-Extended Image #1451
-Extended Image #1452
-Extended Image #1453
-Extended Image #1454
-Extended Image #1455
-Extended Image #1456
-Extended Image #1457
-Extended Image #1458
-Extended Image #1459
-Extended Image #1460
+Rozirokor
+Rozirokor Shadow
+Rozirokor Remains
+Rozirokor Birth
+Rozirokor Mutate
+Thrombocyte
+Thrombocyte Shadow
+Grimoire
+Grimoire Shadow
+Zytryleth
+Zytryleth Shadow
+Inzorthrokor Mutate
+Camazotz
+Camazotz Shadow
+Grimoire
+Grimoire Shadow
+Bloodsummon Building Rubble Small
+Bloodsummon Building Rubble Large
+Bloodsummon Unit Rubble Tiny
+Bloodsummon Unit Rubble Small
+Bloodsummon Unit Rubble Medium
+Bloodsummon Ritual
+Vornath Pond Shadow
+Atreus Remains
+Simulacrum (Khalendric)
+Simulacrum (Khalendric) Shadow
+Idol (Khalendric)
+Idol (Khalendric) Shadow
+Idol (Khalendric) Remains
+Thrombocyte
+Thrombocyte Shadow
+Vestige (Starbound)
+Vestige (Starbound) Shadow
+Arquebus (Hecaton)
+Arquebus (Hecaton) Shadow
+Acqui
+Acqui Shadow
+Alzurokor (Imicren)
+Alzurokor (Imicren) Shadow
+Alzurokor (Imicren) Birth
+Alzurokor (Imicren) Remnants
+Hydrokor (Goszirith)
+Hydrokor (Goszirith) Shadow
+Hydrokor (Goszirith) Birth
+Hydrokor (Goszirith) Remains
+Hydrokor (Goszirith) Mutate
+Hydralisk Mutate
+Nihilist
+Nihilist Shadow
+Sovrokor Remains
+Sovrokor Shadow
+Sovrokor Birth
+Sovrokor Mutate
+Zethrokor Mutate
+Eidolon (Nydus) Remains
+Hydralisk (Orkoti) Mutate
+Valkyrie (Hecaton) Shadow
+Valkyrie (Hecaton) Engines
+Impact Dissipation
+Crushing Delivery Small
+Crushing Delivery Medium
+Crushing Delivery Large
 Extended Image #1461
 Extended Image #1462
 Extended Image #1463
