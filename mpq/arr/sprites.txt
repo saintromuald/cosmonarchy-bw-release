@@ -1184,15 +1184,15 @@ Nihilist
 Sovrokor Remains
 Eidolon (Nydus) Remains
 Morrigan Remains
-Extended Sprite #670
-Extended Sprite #671
-Extended Sprite #672
-Extended Sprite #673
-Extended Sprite #674
-Extended Sprite #675
-Extended Sprite #676
-Extended Sprite #677
-Extended Sprite #678
+Maverick (Golden)
+Maverick (Golden) Remains
+Gladius (Order)
+Shaman (Upstart, Support)
+Shaman (Upstart, Adrenaline)
+Ammo Crate
+Medkit
+Battery Cell
+Flamethrower (Blue)
 Extended Sprite #679
 Extended Sprite #680
 Extended Sprite #681

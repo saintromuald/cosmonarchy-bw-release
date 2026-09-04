@@ -5183,7 +5183,7 @@ MachinamentumIsWorking:
 	playfram			8
 	wait				1
 	playfram			0
-	wait				3
+	wait				5
 	goto              	MachinamentumIsWorking
 
 MachinamentumDisable:
@@ -5195,3 +5195,34 @@ MachinamentumEnable:
 	playfram          	0
 	wait              	1
 	goto              	MachinamentumWorkingToIdle
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2478 Ammo Crate (cm\n\ammocrate.grp)
+.headerstart
+IsId          	385
+Type          	1
+Init          	AmmoCrateInit
+Death         	AmmoCrateDeath
+.headerend
+# ----------------------------------------------------------------------------- #
+
+AmmoCrateInit:
+	playfram          	0x00
+	pwrupcondjmp      	AmmoCrateLocal00
+	imgul             	2479 0 0 # Ammo Crate Shadow (Ground) (cm\n\ammocrate-shadow.grp)
+	goto              	AmmoCrateLocal01
+
+AmmoCrateLocal01:
+	wait              	125 
+	goto              	AmmoCrateLocal01
+
+AmmoCrateLocal00:
+	wait              	1 
+	switchul          	2480 # Ammo Crate Shadow (Carried) (cm\n\ammocrate-shadow.grp)
+	goto              	AmmoCrateLocal01
+
+AmmoCrateDeath:
+	imgol             	332 0 0	# Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3 
+	end

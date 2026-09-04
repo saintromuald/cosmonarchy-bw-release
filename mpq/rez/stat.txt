@@ -316,23 +316,23 @@
 Spider Mines<0>
 Goremasts<0>
 Piety Wards<0>
-<0>
-<0>
-<0>
-<0>
+Morrigan Requires:<10>   Covenant<0>
+f<1><4>Train Morrigan <1>(<3>G<1>)<10>Crowd-control infantry.<0>
+¤<3><4>Dampening Field <2>(passive)<10>This combatant becomes cloaked for 2 seconds after attacking.<0>
+f<1><4>Bestow Maverick <1>(<3>F<1>)<10>Disciplined infantry.<0>
 ¤<3><4>Accelerated Speech <2>(passive)<10>While the Missionary is within 2 range of its target, it gains +2 armor penetration.<0>
 ¤<3><4>Flanking Spines <2>(passive)<10>When targeting debuffed enemies, Almaksalisk attacks ignore armor.<0>
 Anchor Attack requires:<10>   Loaded ranged combatant<0>
-<0>
+¤<3><4>Fabrication <2>(passive)<10>Raynor's Vulture automatically restocks one Spider Mine every 10 seconds.<0>
 e<3><4>Lay Spider Mines <1>(<3>E<1>)<10>Places a Spider Mine at the target site. Spider Mines explode on hostiles that trip them, dealing significant splash damage.<0>
 ¤<3><4>Autophagy <2>(passive)<10>On death, Vilgorokors transform into Vilgoleths and immediately spawn 2 Rilirokors.<0>
 ¤<3><4>Heretical Bedlam <2>(passive)<10>Dying hostiles that were struck by the Pariah in the last 2 seconds have their corpses ascended after 1 second.<0>
-<0>
+t<3><4>Inject Stimpack <1>(<3>T<1>)<10>Take a dangerous injection that deals 5 damage, instantly increasing movement and attack speeds by 50% for 5 seconds.<0>
 ¤<3><4>Swarming Omen <2>(passive)<10>Hostiles afflicted by the this strain's attacks grant 125% movement speed to any of this strain's allies within 10 range.<0>
 e<3><4>Plant Goremast <1>(<3>E<1>)<10>Places a Goremast at the target site. Goremasts damage and cripple targets that trip them.<0>
 d<3><4>Divine Discipline <1>(<3>D<1>)<10>Creates an alchemical field at the target location. Allies within the field gain 25% increased attack speed, while enemies within the field suffer 25% reduced attack speed.<0>
 d<3><4>Rejoinder of Service <1>(<3>D<1>)<10>Augments the combatant for 5 seconds, empowering their attacks to ignore armor.<10>If a combatant dies while under this effect, all hostiles within its vision range are pulled towards it by 2 range.<0>
-t<3><4>Inject Stimpack <1>(<3>T<1>)<10>Take a dangerous injection that deals 5 damage. After a 1.5 second delay, gain 75% movement speed and 100% attack speed for 7.5 seconds.<0>
+t<3><4>Inject Stimpack <1>(<3>T<1>)<10>Take a dangerous injection that deals 10 damage. After a 1.5 second delay, gain 75% movement speed and 100% attack speed for 7.5 seconds.<0>
 e<3><4>Lay Lobotomy Mines <1>(<3>E<1>)<10>Places a Lobotomy Mine at the target site. Lobotomy Mines stun and slow targets that trip them.<0>
 e<3><4>Lay Tartarus Mines <1>(<3>E<1>)<10>Places a Tartarus Mine at the target site. Tartarus Mines incinerate and rend the armor of targets that trip them.<0>
 e<3><4>Siege Mode <1>(<3>E<1>)<10>Switches forms, gaining enhanced range and splash radius and disabling movement.<0>
@@ -424,7 +424,7 @@ Zerg Flyer Attacks<0>
 Protoss Ground Weapons<0>
 Protoss Air Weapons<0>
 Plasma Shields<0>
-¤<3><4>Reconstitution <2>(passive)<10>2 seconds after taking direct damage, this strain releases a Carapace Swarm that lasts up to 5 seconds and absorbs up to 200 damage.<0>
+¤<3><4>Reconstitution <2>(passive)<10>2 seconds after taking direct damage from hostiles, this strain releases a Carapace Swarm that lasts up to 5 seconds and absorbs up to 300 damage.<0>
 t<1><4>Warp in Monument of Sin <1>(<3>T<1>)<10>Capital stellar production.<0>
 Axtoth Axis requires:<10>   Othstol Oviform<0>
 f<1><4>Bestow Harakan <1>(<3>F<1>)<10>Dutiful frontline infantry.<0>
@@ -539,7 +539,7 @@ a<1><4>Build Paladin <1>(<3>A<1>)<10>Artillery walker.<0>
 ¤<3><4>Multi-Attack V <2>(passive)<10>This combatant's primary weapon can fire at up to five targets.<0>
 ¤<3><4>Multi-Attack III <2>(passive)<10>This combatant's primary weapon can fire at up to three targets.<0>
 x<1><4>Build Hadron <1>(<3>X<1>)<10>Enables Hippogriffs and Phoboses.<0>
-1<0><4>Select Faction 1 <1>(<3>1<1>)<10><2>Orion Imperium, Divine Primacy, Ataltreth Tendril<0>
+1<0><4>Select Faction 1 <1>(<3>1<1>)<10><2>Orion Imperium<0>
 ¤<3><4>Offset: Linear <2>(passive)<10>This combatant's weapon fires its projectiles in a line pattern.<0>
 f<1><4>Build Hippogriff <1>(<3>F<1>)<10>Siege corvette.<0>
 ¤<3><4>Empathy Core <2>(passive)<10>Each time the Analogue is hit by an attack, it expends 5 energy. If they survive the attack, they clone it as a phantom strike, retaliating against their attacker for half damage.<0>
@@ -640,16 +640,16 @@ r<1><4>Warp in Lattice <1>(<3>R<1>)<10>Light robotic production.<0>
 Cikralisk requires:<10>   Mutath Spire<0>
 a<1><4>Warp in Ancestral Archives <1>(<3>A<1>)<10>Core disciple production.<0>
 s<1><4>Warp in Stargate <1>(<3>S<1>)<10>Core stellar production.<0>
-2<0><4>Select Faction 2 <1>(<3>2<1>)<10><2>Hecaton Coalition, Order of the Sacred Saber, Imicren Tendril<0>
+2<0><4>Select Faction 2 <1>(<3>2<1>)<10><2>Hecaton Coalition<0>
 d<1><4>Warp in Synthetic Synod <1>(<3>D<1>)<10>Absorbing robotic production.<0>
-3<0><4>Select Faction 3 <1>(<3>3<1>)<10><2>Futurist Federation, Khalendric Knights, Orkoti Tendril<0>
-4<0><4>Select Faction 4 <1>(<3>4<1>)<10><2>Golden Republic, Starbound, Goszirith Tendril<0>
+3<0><4>Select Faction 3 <1>(<3>3<1>)<10><2>Futurist Federation<0>
+4<0><4>Select Faction 4 <1>(<3>4<1>)<10><2>Golden Republic<0>
 c<1><4>Build Ministry <1>(<3>C<1>)<10>Town center and worker production.<0>
 r<1><4>Build Reservoir <1>(<3>R<1>)<10>Vespene processor.<0>
 b<1><4>Build Stockade <1>(<3>B<1>)<10>Infantry production.<0>
 e<1><4>Build Atlas <1>(<3>E<1>)<10>Tier 2 tech center.<0>
 t<1><4>Build Watchdog <1>(<3>T<1>)<10>Anti-air tower.<0>
-5<0><4>Select Faction 5 <1>(<3>5<1>)<10><2>Nydus Trinity, Astral Omen, Zorthos Tendril<0>
+5<0><4>Select Faction 5 <1>(<3>5<1>)<10><2>Nydus Trinity<0>
 e<1><4>Build Anchor <1>(<3>E<1>)<10>Infantry garrison.<0>
 f<1><4>Build Fulcrum <1>(<3>F<1>)<10>Vehicle production.<0>
 a<1><4>Build Starport <1>(<3>A<1>)<10>Spacecraft production.<0>
@@ -1015,8 +1015,8 @@ t<1><4>Morph into Alzurokor <1>(<3>T<1>)<10>Subjugation strain.<0>
 Alzur Aspect requires:<10>   Ulgorg Cavern<0>
 h<1><4>Morph into Hydrokors <1>(<3>H<1>)<10>Swift melee strain.<0>
 Hydrokor requires:<10>   Hydrith Den<0>
-<0>
-<0>
+t<1><4>Meld Scralia <1>(<3>T<1>)<10>Assault craft.<0>
+Scralia Requires:<10>   Gauntlet<0>
 Bloodsummon Stigmata<0>
 <0>
 Bloodsummon Sacrament<0>
@@ -1093,7 +1093,7 @@ t<1><4>Build Mantle <1>(<3>T<1>)<10>Walker outpost.<0>
 ¤<3><4>Impact Dissipation <2>(passive)<10>After being attacked by a hostile, this combatant gains 50% increased movement speed for 2 seconds, and blocks the next attack.<0>
 Mining Efficiency<0>
 ¤<3><4>Schematic Unity <2>(passive)<10>Up to 5 Askosi workers can collaborate on construction efforts.<10>When Dyads assist in construction, they increase construction rate by 30%.<0>
-¤<3><4>Shared Designs <2>(passive)<10>Up to 5 Askosi workers can collaborate on construction efforts.<10>Each additional Pilgrim increases construction rate by 20%.<0>
+¤<3><4>Shared Designs <2>(passive)<10>Up to 5 Askosi workers can collaborate on construction efforts.<10>Each additional Pilgrim increases construction rate by 25%.<0>
 d<1><4>Assemble Idol <1>(<3>D<1>)<10>Ranged assault drone.<0>
 Mutath Spire requires:<10>   Irol Iris<0>
 ¤<3><4>Stellar Enforcement <2>(passive)<10>Magisters mark their victims for 3 seconds, granting +2 weapon range to any attacks while the debuff holds.<0>
@@ -1108,11 +1108,11 @@ a<1><4>Assemble Renesair <1>(<3>A<1>)<10>Reconstructing interceptor.<0>
 ¤<3><4>Triumphant Rise <2>(passive)<10>Victims of this warrior's attacks become energized for 1.5 seconds. Attacks on energized enemies bleed 2 shield points to all allies of the warrior within 3 range.<0>
 d<1><4>Train Madcap <1>(<3>D<1>)<10>Mechanized infantry.<0>
 ¤<3><4>Cabeirus Feeders <2>(passive)<10>While stationary, the Madcap gains a 15% attack speed bonus per attack, capping at a 150% bonus. This bonus falls off by 20% for every second the Madcap spends moving.<0>
-¤<3><4>Miasma <2>(passive)<10>This strain's attacks infect its victims with Plague for 1.5 seconds. Plagued victims release Miasma fields on death, spreading the infection to all nearby targets.<10>Plague cannot kill its victims, and reduces healing by 50%.<0>
+¤<3><4>Miasma <2>(passive)<10>This strain's attacks infect its victims with Miasma for 1.5 seconds.<10>Miasma deals 50 damage over 5 seconds, cannot kill its victims, and reduces healing by 50%.<0>
 g<3><4>Land Grab <1>(<3>G<1>)<10>Orders the Wyvern to fire its weapon at the target site.<0>
 r<1><4>Warp in Strident Stratum <1>(<3>R<1>)<10>Utilitarian production.<0>
 Mantle requires:<10>   Atlas<0>
-¤<3><4>Power Overload <2>(passive)<10>Victims of this combatant sustain 5 damage once per second for every point of armor they have.<0>
+¤<3><4>Power Overload <2>(passive)<10>Victims of this combatant have their armor stolen and given to the attacker, to a maximum of 4 bonus armor.<0>
 r<1><4>Build Wyvern <1>(<3>R<1>)<10>Area-denial corvette.<0>
 v<1><4>Train Savant <1>(<3>V<1>)<10>Versatile infantry.<0>
 z<1><4>Build Apothecary <1>(<3>Z<1>)<10>Alchemical outpost.<0>
@@ -1136,7 +1136,7 @@ t<1><4>Build Magnetar <1>(<3>T<1>)<10>Undeniable cruiser.<0>
 ¤<3><4>Mitosis <2>(passive)<10>Upon taking damage, this strain incubates, spawning one Rilirokor after a two-second delay.<10>This status cannot be applied if the strain is already incubating.<0>
 w<1><4>Build Cuirass <1>(<3>W<1>)<10>Durable frontline walker.<0>
 ¤<3><4>Stonewall Protocol <2>(passive)<10>Upon taking fatal damage, the Cuirass deactivates, regains 50 HP, and begins self-repairing for 15 HP per second until fully-healed. If the Cuirass is dealt fatal damage again before it can fully repair, it is destroyed.<0>
-<0>
+g<1><4>Warp in Gladius <1>(<3>G<1>)<10>Sustaining corvette.<0>
 r<5><4>Morph into Iroleth <1>(<3>R<1>)<10>Transport strain. Provides detection.<0>
 <0>
 t<1><4>Build Lodestone <1>(<3>T<1>)<10>Defensive emplacement. Detects hidden enemies.<0>
@@ -1150,7 +1150,7 @@ Sasyrvoleth requires:<10>   Axtoth Axis<0>
 e<1><4>Warp in Cicatus <1>(<3>E<1>)<10>Destitute skirmisher.<0>
 ¤<3><4>Servile Vigor <2>(passive)<10>Cohorts revive once after death, gaining a 10-second timed life. They can consume a nearby corpse to become permanent again.<0>
 a<1><4>Warp in Extatus <1>(<3>A<1>)<10>Stolid fighter.<0>
-<0>
+c<1><4>Erect Machinamentum <1>(<3>C<1>)<10>Assembly site.<0>
 <0>
 s<1><4>Assemble Oscilliant <1>(<3>S<1>)<10>Assault drone.<0>
 a<1><4>Assemble Unar <1>(<3>A<1>)<10>Sniper drone.<0>
@@ -1162,24 +1162,24 @@ d<1><4>Train Blackguard <1>(<3>D<1>)<10>Mechanized sniper.<0>
 y<0><4>Build Addon <1>(<3>Y<1>)<0>
 <0>
 Askosi Structure Bolting<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
+1<0><4>Select Faction 1 <1>(<3>1<1>)<10><2>Inoa Scatterguard<0>
+2<0><4>Select Faction 2 <1>(<3>2<1>)<10><2>Sons of Ash<0>
+3<0><4>Select Faction 3 <1>(<3>3<1>)<10><2>Unimplemented<0>
+4<0><4>Select Faction 4 <1>(<3>4<1>)<10><2>Unimplemented<0>
+5<0><4>Select Faction 5 <1>(<3>5<1>)<10><2>Unimplemented<0>
+6<0><4>Select Faction 6 <1>(<3>6<1>)<10><2>Unimplemented<0>
+1<0><4>Select Faction 1 <1>(<3>1<1>)<10><2>Divine Primacy<0>
+2<0><4>Select Faction 2 <1>(<3>2<1>)<10><2>Order of the Sacred Saber<0>
+3<0><4>Select Faction 3 <1>(<3>3<1>)<10><2>Khalendric Knights<0>
+4<0><4>Select Faction 4 <1>(<3>4<1>)<10><2>Starbound<0>
+5<0><4>Select Faction 5 <1>(<3>5<1>)<10><2>Astral Omen<0>
+6<0><4>Select Faction 6 <1>(<3>6<1>)<10><2>Unimplemented<0>
+1<0><4>Select Faction 1 <1>(<3>1<1>)<10><2>Ataltreth Tendril<0>
+2<0><4>Select Faction 2 <1>(<3>2<1>)<10><2>Imicren Tendril<0>
+3<0><4>Select Faction 3 <1>(<3>3<1>)<10><2>Goszirith Tendril<0>
+4<0><4>Select Faction 4 <1>(<3>4<1>)<10><2>Orkoti Tendril<0>
+5<0><4>Select Faction 5 <1>(<3>5<1>)<10><2>Zorthos Tendril<0>
+6<0><4>Select Faction 6 <1>(<3>6<1>)<10><2>Unimplemented<0>
 <0>
 <0>
 <0>
@@ -1242,7 +1242,7 @@ Engram requires:<10>   Advanced Warp<0>
 g<1><4>Build Ogun <1>(<3>G<1>)<10>Sturdy constructor.<0>
 Talos requires:<10>   Quarry<0>
 t<1><4>Build Talos <1>(<3>T<1>)<10>Airborne worker.<0>
-<0>
+Mason requires:<10>   Quarry<0>
 ¤<3><4>Deathless Procession <2>(passive)<10>This combatant gains 25% movement speed while its shields hold.<0>
 a<3><4>Nanorepair <1>(<3>A<1>)<10>Heals a target ground ally for 9 HP per second. While being healed by a Cleric, the ally gains +2 armor.<0>
 x<1><4>Warp in Engram <1>(<3>X<1>)<10>Heavy tower.<0>
@@ -1752,7 +1752,7 @@ t<1><4>Train Apostle <1>(<3>T<1>)<10>Reanimation specialist.<0>
 <0>
 <0>
 <0>
-<0>
+s<1><4>Build Shaman <1>(<3>S<1>)<10>Augmenting support vehicle.<0>
 ¤<3><4>Martyrous Tempest <2>(passive)<10>On death, Archons release a Psionic Storm that lasts for 10 seconds.<0>
 x<3><4>Skryspawn <1>(<3>X<1>)<10>Channels to spawn 6 Skryrokors over 3 seconds.<0>
 Gestating...<0>
@@ -1811,3 +1811,1189 @@ e<3><4>Sublime Shepherd <2>(passive)<10>All allies within 6 range of the source 
 <0>
 e<3><4>Cinder Mode <1>(<3>E<1>)<10>Switches forms, gaining 25% bonus attack speed and 2 armor, while disabling movement.<0>
 e<0><4>Tank Mode <1>(<3>E<1>)<10>Returns the Matador's weapon, armor, and mobility to normal.<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+Gauss Rifle<0>
+Javelin Cannons<0>
+Coroner Rifle<0>
+Charon Rifle<0>
+Fragmentation Grenade<0>
+Haymaker Autogun<0>
+Spider Mines<0>
+Twin Autocannons<0>
+Contender Missiles<0>
+Danaan Autogun<0>
+Crusader Missile Salvo<0>
+Arclite Cannon<0>
+Fusion Battery<0>
+Fusion Cutter<0>
+Fusion Cutter<0>
+Monogun<0>
+Burst Lasers<0>
+Perdition Barrage<0>
+Artifice Battery<0>
+Asterion Laser Battery<0>
+Gauss Pistols<0>
+Furia Missiles<0>
+Imperioso Missiles<0>
+Artax Cannon<0>
+Sunchaser Missile Salvo<0>
+Flamethrower<0>
+Twin Railguns<0>
+Arclite Shock Cannon<0>
+Monstrous Maw<0>
+Longbolt Missiles<0>
+Yamato Cannon<0>
+Missile Strike<0>
+Lobotomy Grenade<0>
+Psi Assault<0>
+Irradiate<0>
+Zethrok Claws<0>
+Vorvrok Claws<0>
+Vestigial Strike<0>
+Needle Spines<0>
+Erebol Shock Cannon<0>
+Kaiser Blades<0>
+Screaming Venom<0>
+Toxic Spores<0>
+Spines<0>
+Spines<0>
+Plasmid Spores<0>
+Acid Spore<0>
+Serrated Cleavers<0>
+Glave Wurm<0>
+Dispatch Pistols<0>
+Corrosive Acid<0>
+Jupiter Driver<0>
+Seeker Spores<0>
+Subterranean Tentacle<0>
+Skittering Spores<0>
+Plasma Metamorphosis<0>
+Parasitic Excision<0>
+Twintorch<0>
+Screaming Venom<0>
+Carapace Swarm<0>
+Plague<0>
+Acid Barrage<0>
+Particle Beam<0>
+Particle Beam<0>
+Phase Blades<0>
+Pulse Blaster<0>
+Phase Disruptor<0>
+Plasma Flurry<0>
+Phase Cannon<0>
+Potentium Cannon<0>
+Psionic Shockwave<0>
+Plasma Barrage<0>
+Phase Signifier<0>
+Photon Blasters<0>
+Plasma Missiles<0>
+Aeon's Madness<0>
+Plasma Torpedo<0>
+Aruo Twinshot<0>
+Neutron Cannon<0>
+Pulse Cannons<0>
+Prismatic Cannon<0>
+Swarming Spores<0>
+Inoa Twinaxe<0>
+Stasis Field<0>
+Psionic Storm<0>
+Hollowed Glaves<0>
+Phase Spear<0>
+Harrying Talons<0>
+Discoid Railgun<0>
+Electromagnetic Explosion<0>
+Celestial Cannons<0>
+Intervention Missiles<0>
+Sovrol Spores<0>
+Flak Cannon<0>
+Argos Laser Batteries<0>
+Sowing Spines<0>
+Charybdal Rifle<0>
+Astral Blaster<0>
+Dauntless Disruption Cannon
+Phase Cleaver<0>
+Neutron Flare<0>
+Fervent Blaster<0>
+Acrid Barbs<0>
+Halo Rockets<0>
+Corrosive Spores<0>
+Maledictus<0>
+Galactic Weaver<0>
+Hallucination<0>
+Maelstrom<0>
+Subterranean Spines<0>
+Piercing Spines<0>
+Warp Blade<0>
+Prismatic Blaster<0>
+Phase Lances<0>
+Ray of Agony<0>
+Iconoclast's Flurry<0>
+Eminence Rifle<0>
+Viscous Acid<0>
+Phase Blaster<0>
+Dispersive Salvo<0>
+Harpoon Railgun<0>
+Aural Assault<0>
+Ospo Twinshard<0>
+Titan's Fist<0>
+Mountain Gun<0>
+Jackson Cannon<0>
+Elre Scaleshot<0>
+Orli Mallet<0>
+Final Hour<0>
+Hammerfall Beacon<0>
+None<0>
+Icarus Missiles<0>
+Litany Cannons<0>
+Projection Saber<0>
+Searing Venom<0>
+Hedon Cannon<0>
+Accelerated Plasmid<0>
+Encircling Mirror<0>
+Fading Bioplasma<0>
+Event Horizon<0>
+Emergency Detonation<0>
+Newtonian Shock Cannon<0>
+Energized Bioplasma<0>
+Gosvil Spines<0>
+Neutron Saber<0>
+Venomous Contagion<0>
+Brutish Tendrils<0>
+Cerberus Railgun<0>
+Vapid Blaster<0>
+Khaydarin Ray<0>
+Blindside Rockets<0>
+Twinstrike Flamethrowers<0>
+Bisecting Blades<0>
+Bones of Reflection<0>
+Orma Scrapray<0>
+Ersa Driver<0>
+Chimera Cannons<0>
+Booming Blast<0>
+Pegasus Missiles<0>
+Lazarus Salvo<0>
+Stellar Torch<0>
+Acid Salvo<0>
+Saber Array<0>
+Pungent Spores<0>
+Dissolving Sabers<0>
+Explosive Spores<0>
+Gnashing Tendrils<0>
+Rapid Spines<0>
+Fusion Saw<0>
+Knockout Drivers<0>
+Pharoah Cannons<0>
+Abaddon Flamethrowers<0>
+Philistine Salvo<0>
+Longinius Cannons<0>
+Upstart Rifle<0>
+Geometric Rifle<0>
+Kaleidoscope Cannon<0>
+Cleaving Maw<0>
+Spirtil Spores<0>
+Usko Scrapray<0>
+Skortra Tentacle<0>
+Ikta Driver<0>
+Arte Driver<0>
+Godhand Rockets<0>
+Wordsmith Railgun<0>
+Sunsplit Beam<0>
+Particle Ray<0>
+Ironhand Weaver<0>
+Angeltear Missiles<0>
+Massive Mandible<0>
+Apollyoid Conflagration<0>
+Plasma Shell<0>
+Wicked Incisors<0>
+Recycling Blaster<0>
+Antimatter Missile<0>
+Sparring Saber<0>
+Kissing Emoji<0>
+Khaydarin Plasma Laser<0>
+Ion Cannon<0>
+Discoid Railgun<0>
+Geometric Rifle<0>
+Piety Wards<0>
+Cylindrical Blaster<0>
+Heirloom Batteries<0>
+Nathrok Claws<0>
+Calcification<0>
+Talismanic Weaver<0>
+Remote Hijack<0>
+Dispatch Shotgun<0>
+Quarternary Rifle<0>
+Phase Blade<0>
+Signaling Spores<0>
+Bottomless Spinestacks<0>
+Azanthrok Spew<0>
+Omnispores<0>
+Contagion Bursts<0>
+Angeltear Rockets<0>
+Brontes Payload<0>
+Flak Cannon<0>
+Sensory Overload<0>
+Onla Drivers<0>
+Corrosive Bioplasma<0>
+Korozzet Beastblades<0>
+Utso Carbine<0>
+Okli Quadshard<0>
+Rotating Ray<0>
+Ansa Sunshot<0>
+Repeating Blaster<0>
+Autonomous Ray<0>
+Phase Cremator<0>
+Sucessive Spines<0>
+Rapid Spines<0>
+Quazrok Spray<0>
+Phase Disruptor<0>
+Moonbound Salvo<0>
+Revenant Rifle<0>
+Gauss Slugger<0>
+Needle Spores<0>
+Inzor Reflux<0>
+Mining Saber<0>
+Asoni Carbine<0>
+Plegethon Cannon<0>
+Homing Spores<0>
+Zulu Sidekicks<0>
+Staggered Spores<0>
+Hydria Cannons<0>
+Lobotomy Warhead<0>
+Rapid Rendezvous<0>
+Micken Melter<0>
+Medusa Rifle<0>
+Sovrol Claws<0>
+Tunneling Maw<0>
+Logi Rockets<0>
+C-10 Canister Rifle<0>
+Claws<0>
+None<0>
+Corto Railgun<0>
+Elxe Twinshot<0>
+Apathetic Sermon<0>
+Leopold Cannon<0>
+Sentinel Beam<0>
+Sentinel Beam<0>
+Sentinel Boltbeam<0>
+Enforcer Rift-Rocket<0>
+Champion Stormbeam<0>
+Phase Claws<0>
+Phase Blades<0>
+Ondo Moonbeam<0>
+Rotating Blaster<0>
+Slice Cannon<0>
+Garvrol Claws<0>
+Biotic Wingblades<0>
+Horlain Chemthrower<0>
+Hydrok Claws<0>
+Spewing Spores<0>
+Embracing Mandibles<0>
+Azgok Beastblades<0>
+Agturrik Beaststick<0>
+Bladed Appendage<0>
+Inqo Scaleshot<0>
+Alru Driver<0>
+Kalgolok Beaststick<0>
+Onji Driver<0>
+Ognirrius Beaststick<0>
+Odlu Triphshard<0>
+Emto Moonbeam<0>
+Reforming Carbine<0>
+Irko Octorshard<0>
+Ofra Ashray<0>
+Reactive Cells<0>
+Fragmentation Barrage<0>
+Asterion Laser Battery<0>
+Ardi Tripshot<0>
+Ascending Blaster<0>
+Lukankazi Railguns<0>
+Omen Blade<0>
+Magnate's Maw<0>
+Lobotomy Mines<0>
+Piety Wards<0>
+Tartarus Mines<0>
+Goremasts<0>
+Eyelets<0>
+Alko Ashgun<0>
+Phase Rifle<0>
+Plasma Flurry<0>
+Epitaph Grenade Launcher<0>
+Scalpel Cannon<0>
+Reactive Blaster<0>
+Plasmathrower<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>

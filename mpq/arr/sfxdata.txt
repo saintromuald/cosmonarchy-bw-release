@@ -4297,81 +4297,81 @@ Cyclops (Futurist) Weaponfire 01
 Cyclops (Futurist) Weaponfire 02
 Cyclops (Futurist) Weaponfire 03
 Cyclops (Futurist) Weaponfire 04
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Alzurokor Weaponhit 01
+Alzurokor Weaponhit 02
+Alzurokor Weaponhit 03
+Helion Weaponfire 01
+Helion Weaponfire 02
+Helion Weaponfire 03
+Vorvrokor Ready 01
+Vorvrokor Selected 01
+Vorvrokor Selected 02
+Vorvrokor Selected 03
+Vorvrokor Selected 04
+Vorvrokor Order Passive 01
+Vorvrokor Order Passive 02
+Vorvrokor Order Passive 03
+Vorvrokor Order Passive 04
+Vorvrokor Under Attack 01
+Vorvrokor Under Attack 02
+Vorvrokor Under Attack 03
+Mine Restock 01
+Paraclete Weaponfire 01
+Paraclete Weaponfire 02
+Paraclete Weaponfire 03
+Paraclete Cast 01
+Function Ambient 01
+Cosmoscope Ambient 01
+Morrigan Weaponfire 01
+Morrigan Weaponfire 02
+Morrigan Weaponfire 03
+Morrigan Weaponfire 04
+Morrigan Weaponfire 05
+Morrigan Weaponfire 06
+Error Askosi
+Maverick (Golden) Weaponfire 01
+Maverick (Golden) Weaponfire 02
+Maverick (Golden) Weaponfire 03
+Maverick (Golden) Weaponfire 04
+Maverick (Golden) Weaponfire 05
+Maverick (Golden) Weaponfire 06
+Cloak Attack On
+Cloak Attack Off
+Cloak Damage On 01
+Cloak Damage On 02
+Cloak Damage On 03
+Cloak Damage Off 01
+Cloak Damage Off 02
+Askosi Structure Placement 01
+Iconoclast Weaponfire 01
+Iconoclast Weaponfire 02
+Iconoclast Weaponfire 03
+Cardinal Ready 01
+Cardinal Ready 02
+Cardinal Ready 03
+Cardinal Selected 01
+Cardinal Selected 02
+Cardinal Selected 03
+Cardinal Selected 04
+Cardinal Order Passive 01
+Cardinal Order Passive 02
+Cardinal Order Passive 03
+Cardinal Order Passive 04
+Cardinal Order Aggressive 01
+Cardinal Order Aggressive 02
+Cardinal Order Aggressive 03
+Cardinal Order Aggressive 04
+Cardinal Under Attack 01
+Cardinal Under Attack 02
+Cardinal Under Attack 03
+Cardinal Under Attack 04
+Zethalor Weaponfire 01
+Zethalor Weaponfire 02
+Zethalor Weaponfire 03
+Zethalisk Weaponfire 01
+Zethalisk Weaponfire 02
+Zethalisk Weaponfire 03
+Bloodsummon Structure Placement 01
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

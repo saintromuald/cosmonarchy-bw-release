@@ -1,297 +1,257 @@
-# 23 August 2026
-## Year 4, month 8, patch 1
+# 4 September 2026
+## Year 4, month 9, patch 1
 
 ## Patch goals
-- Initial balancing adjustments post-Acropolis #4!
-- Deploy factional variants for Augustcrap, a Mapcrap event!
+- Balance tweaks ahead of Acropolis #5!
+- Deploy more factional variants for Augustcrap, a Mapcrap event!
 - Continue technical improvements and bugfixes
 - Further improve audiovisuals
 - [Subscribe on ko-fi](https://ko-fi.com/pr0nogoandveeq7) to get a sneak peek of the incoming changes!
+- Join our communities ([Discord](https://discord.com/invite/s5SKBmY) | [Fluxer](https://fluxer.gg/1rebBmBw)), or get in touch with Pr0nogo via email! pr0nogo@fraudsclub.com
 
-# Core
+## Core
+- **Weapon entries have been extended!**
+	- With much help from DarkenedFantasies (DF) and Jesse, weapon entries are (finally) virtually-unlimited! Say goodbye to broken tooltips and edge case bugs for several Askosi and factional weapons!
+	- *Please report any weapon-based oddities you encounter to us via discord/fluxer or email!*
+- **Immense improvements have been made to helper and hook wrappers!**
+	- For the less technically-inclined, this means... more stability! Less desyncs! Easier debugging!
+	- *Please report any newfound issues you encounter to us via discord/fluxer or email!*
+- **The custom trigger system has been deep-cleaned!** (c. Veeq7)
+	- This refactor makes the system easier to use, maintain, and improve upon in the future! But a huge refactor like this might have introduced new issues...
+	- *Please report any newfound issues in campaign and UMS maps to us via discord/fluxer or email!*
+	- **Known issues:** the `wait` crig action does not currently operate
+- **A new campaign menu has been achieved!** (c. Jesse)
+	- It's so epic... please enjoy!
 
-## User Interface
-- Improved server-side desync logging (c. Veeq7)
-- Added user-configurable window flash for when another player joins your lobby (c. Jesse)
-- Reorganized replay options to `Misc` tab (c. Jesse)
-- Added user-configurable Askosi player color preferences
+## Game Modes
+- **NEW: Mindshare** (b. BtyB)
+	- Resource pool is shared among allies!
+		- *Caveat: Starting resources are not yet doubled in all cases*
 
 ## Bugfixes
 - **Stability:**
-	- Resolved more desync cases
-	- Resolved a crash when certain weapons targeted units directly on top of them (r. shopkeeper dog)
-	- Crashes now generate replays, which can be attached with your bug reports! (c. DF)
-	- Lardfix: Fixed rare crash from AI attack force handling (c. DF)
+	- Arcing projectiles (Phalanx, Aphorist) no longer crash with division by zero when targeting an allied Mimic (r. TheBeaver99)
 - **Gameplay:**
-	- Group casting now correctly issues orders to selected units in cases where some selected units did not have enough energy for an ability (r. shopkeeper dog)
-		- *Caveat: Still throws an error message and some abilities will issue move orders to units with insufficient energy*
-	- **Cyprian**s no longer occasionally freeze when issued move orders between attack orders (r. shopkeeper dog)
-	- **Cardinal**s can no longer proc Sustaining Sermon on allies (r. shopkeeper dog)
-	- **Tethzorokor**s no longer fail to hit large enemies from certain angles
-	- Flying workers and **Dyad**s now use iscript-based movement, removing acceleration and eliminating rare visual and harvesting bugs
-	- The **Bounty** is no longer a resource drop-off point (r. ConcealedOrganic)
-	- Flyers can now correctly be loaded into air garrisons (e.g. Askosi Grandstand)
-	- **Scrapworld: Gold Rush** now correctly accounts for the resource cost of dual- and triple-birth units (r. shopkeeper dog)
-	- Computer-controlled **Cantavis** now spam **Psionic Storm** casts less frequently
-	- **Skryokor**s are now appropriately treated as Broodspawn for timed life and incubation purposes (r. jakulangski)
-	- Lardfix: Protected against rare AI breakage from niche town configurations (c. DF)
-	- **Nydus Trinity Eidolon**s now correctly regenerate life at a higher rate when cloaked (r. jakulangski)
-	- **Tencendur**s can now issue load orders
-	- Traps placed by mine-layers (e.g. **Vulture**) now inherit debuffs (e.g. Infestation) (r. jakulangski)
-	- Resolved mnemonic hotkey conflict between:
-		- **Rapid Rendezvous** and **Place Eyelet** (r. Krankendau)
-		- **Abutment** and **Proscenium** (r. Krankendau)
-		- **Caphrolosk** and **Kethraj Keep** (r. jakulangski)
-	- Fixed swapped faction order in `set_faction` crig action for **Goszirith** and **Orkoti** (r. Hamster)
-- **Audiovisuals:**
-	- Resolved various weapon SFX mismatches (r. lolrsk8s)
-	- Fixed "dead pixels" in Askosi UI
-	- Corrected **Spraith Cesiant** shadow (r. Mimika)
-	- Fixed **Endbore** weapon name (r. Concealed Organic)
-	- Fixed bad gas puff coordinates for Installation Vespene Ridges (r. BtyB)
-	- Hid `(null)` string on replay playback (c. DF)
-	- Hid force name display on neutral unit selection (c. DF)
-- **User Interface:**
-	- Fixed lack of options sync for **Askosi** in the random race selector (r. Alexhandr, c. Jesse)
+	- **Atreus** Binding Plasma can no longer bounce to air units (r. Krankendau)
+	- Mimicry no longer fails to account for weapon factor in many cases (r. shopkeeper dog)
+	- **Egocent**s no longer fail to mimic barrage attacks properly (r. Londier)
+	- Mimicry no longer procs on ability weapons (r. Londier)
+- **Audiovisual:**
+	- Corrected strings for **Izirokor** tech-enable on **Skibact Scab** and **Tethvith Swamp** (r. Mimika)
+	- Fixed weapon display for **Lobotomy Mine** (r. TheBeaver99)
+	- Corrected armors for **Akreno** and **Abutment** (latter r. TheBeaver99)
+	- Fixed bad shield overlay for **Vulture (Hecaton)** (r. Londier)
+	- Buttons for **Tiangou** and **Cutlass** now show as disabled when no **Scrapyard** is built (r. Pisens)
+	- **Cyclops (Futurist)** now uses its unique shadow and attack sequence instead of the standard variant's (r. lolrsk8s)
+	- Corrected tooltip for **Kagralisk** weapon string (r. Krankendau)
 
 ## Audiovisuals
 - New models for:
-	- Eidolon, Gladius (c. Solstice)
-	- Valkyrie, Trojan, Amaranth, Atreus, Servitor, Exemplar, Zethrokor, Hydralisk (c. Baelethal)
-	- Solarion, Steward (c. DeltaCadimus)
-	- Eidolon (Nydus), Valkyrie (Hecaton), Inzorthrokor (Imicren), Sovrokor (Goszirith), Hydralisk (Orkoti), Iziralisk (Zorthos)
-	- All new wireframes c. jun3hong!
-- Updated models for:
-	- Vulture, Wraith, Wyvern, Pythean, Sundog, Centaur, Phobos, Hippogriff, Dracadin, Architect, Panoptus (c. Solstice)
-- Added engine graphic for Star Sovereign (c. Solstice)
-- Updated engine graphics for:
-	- Mason, Talos, Vulture, Wraith, Ancile, Wyvern, Pythean, Sundog, Centaur, Phobos, Hippogriff
-- Updated Askosi UI to be GREEN! (c. DF)
-- Updated background graphics for Options and CrownLink Join menus (c. Jesse)
-- Added unique shadows for **Vornath Pond**, **Chokral Chaszal**
-- Updated selection circle size for **Epigraph**
-- New unit responses for:
-	- **Vicar**, **Conduit**
-- New death SFX for:
-	- Striga (c. Milia)
-- New ambient SFX for:
-	- **Landlock**
-
-# Balance
-
-## Neutral
-- Neutral garrisons (e.g. the Tencendur on Magnetron):
-	- Now eject units when taking fatal damage, heal to full life, and become stunned for 10 seconds
-	- Can only be destroyed if they take fatal damage during the 10 second stun window
+	- Magnetar, Ardent Authority, Argosy (c. DeltaCadimus)
+	- Vorvrokor (c. Baelethal)
+	- Landlock, Radix, Cipher, Function, Proscenium (c. fasswawds)
+- Resized model for:
+	- Talos, Cyprian
+- Modified model (mostly shaders) for:
+	- Maverick, Maverick (Futurist), Shaman, Blackguard, Artisan, Pilgrim, Proselyte, Missionary, Vicar, Intendent, Phontis
+	- Zethrokor, Quazilisk, Liiralisk, Hydralisk, Izirokor, Zoryusthaleth (c. Solstice)
+- Modified weaponfire VFX for Harakan (Golden) (s. Londier)
+- Added weapon launch offsets for:
+	- Aphorist, Silversoul, Ghostwrit, Phontis, Iconoclast, Crematorium
+- Modified unit responses for Vorvrokor
+- New unit responses for Cardinal
+- New error and structure placement SFX for Askosi (c. lolrsk8s)
+- New weapon SFX for:
+	- Alzurokor (c. lolrsk8s)
+	- Iconoclast, Paraclete
+- New cast SFX for Paraclete
+- New training SFX for:
+	- Function, Cosmoscope
+- New cloaking SFX for damage cloak (e.g. Vestige; c. lolrsk8s)
 
 ## Terran
-- [Shaman](https://cosmonarchy.com/terran/vulture):
-	- Resource costs 200/200 » 150/150
-	- HP 160 » 140
+- [Maverick](https://cosmonarchy.com/terran/maverick):
+	- Build time 11 » 12
+	- HP 60 » 75
+	- **Stim Pack:**
+		- HP cost 5 » 10
+- [Harakan](https://cosmonarchy.com/terran/harakan):
+	- Build time 16 » 14
+	- HP 100 » 120
+- [Cyprian](https://cosmonarchy.com/terran/cyprian):
+	- Resource costs 75/50 » 100/50
+	- HP 80 » 90
+	- Collision size increased by ~16%
+- [Heracles](https://cosmonarchy.com/terran/heracles):
+	- HP 200 » 240
 - [Vulture](https://cosmonarchy.com/terran/vulture):
-	- Vision range 8 » 7
+	- Resource costs 100/0 » 75/0
+	- HP 120 » 80
+- [Goliath](https://cosmonarchy.com/terran/goliath):
+	- Mineral cost 175/50 » 150/50
+	- HP 240 » 220
+	- Movement speed 5 » 4.5
 - [Phalanx](https://cosmonarchy.com/terran/phalanx):
-	- HP 240 » 275
-	- **Arclite Shock Cannon:**
-		- Splash radius 16/32/48 » 16/40/64
-- [Aion](https://cosmonarchy/com/terran/aion):
-	- Transport weight 8 » 12
-- [Wraith](https://cosmonarchy.com/terran/wraith):
-	- HP 110 » 120
-- [Quarry](https://cosmonarchy.com/terran/quarry/):
-	- Build time 45 » 35
-- [Palladium](https://cosmonarchy.com/terran/palladium):
-	- Resource costs 300/150 » 300/100
-	- HP 900 » 800
-	- Armor 4 » 3
-- [Mantle](https://cosmonarchy.com/terran/mantle):
-	- Resource costs 200/150 » 250/125
-	- HP 1000 » 900
-	- Armor 3 » 4
-- [Starport](https://cosmonarchy.com/terran/starport):
-	- Resource costs 150/225 » 200/150
+	- Mineral cost 200/50 » 150/75
+- [Cataphract](https://cosmonarchy.com/terran/cataphract):
+	- **Longinius Cannons:**
+		- No longer target air units
+- [Quarry](https://cosmonarchy.com/terran/quarry):
+	- Build time 35 » 45
+- [Anvil](https://cosmonarchy.com/terran/anvil):
+	- Resource costs 150/150 » 100/150
+- [Morningstar](https://cosmonarchy.com/terran/morningstar):
+	- Resource costs 100/100 » 50/100
+	- Build time 30 » 25
+- [Treasury](https://cosmonarchy.com/terran/treasury):
+	- Build time 35 » 45
+	- Can now train **Mason**s while a **Quarry** is constructed.
+- [Stockade](https://cosmonarchy.com/terran/stockade):
+	- Build time 50 » 45
+- [Fulcrum](https://cosmonarchy.com/terran/fulcrum):
+	- Resource costs 200/50 » 200/75
+	- Build time 50 » 45
 
-### Terran factions
-- [Auriel](https://cosmonarchy.com/terran/auriel):
-	- **Quarternary Rifle:**
-		- Weapon cooldown 0.92 » 0.67
-- [Broadside](https://cosmonarchy.com/terran/broadside):
-	- HP 300 » 335
-- **NEW:** [Camazotz](https://cosmonarchy.com/terran/camazotz):
-	- **Nydus Trinity:** Harakan replacement. Sustaining infantry.
-- **NEW:** [Arquebus](https://cosmonarchy.com/terran/arquebus):
-	- **Hecaton Coalition:** Cataphract replacement. Incendiary platform.
+## Terran factions
+- [Hotshot](https://cosmonarchy.com/terran/hotshot):
+	- HP 65 » 70
+	- Armor 0 » 1
+- [Maverick (Futurist)](https://cosmonarchy.com/terran/maverick-futurist):
+	- HP 70 » 75
+- [Maverick (Upstart](https://cosmonarchy.com/terran/maverick-upstart):
+	- HP 50 » 60
+- [Harakan (Golden)](https://cosmonarchy.com/terran/harakan-golden):
+	- Build time 16 » 15
+- [Vulture (Upstart](https://cosmonarchy.com/terran/vulture-upstart):
+	- Resource costs 100/0 » 75/0
+	- HP 120 » 80
+- **NEW:** [Maverick (Golden)](https://cosmonarchy.com/terran/maverick-golden):
+	- Maverick variant for Golden Republic. Has shields and a fast-firing phase rifle; no Stim Pack.
+- **NEW:** [Shaman (Upstart](https://cosmonarchy.com/terran/shaman-upstart):
+	- Shaman variant for Upstart Terrans. Stims allies when deployed.
+- **NEW:** [Morrigan](https://cosmonarchy.com/terran/morrigan):
+	- Eidolon replacement for Upstart Terrans. Has attack cloaking and an area-damage ground-only grenade launcher.
 
 ## Protoss
-- [Artisan](https://cosmonarchy.com/protoss/artisan):
-	- Movement speed 4.16 » 4 (~4% reduction)
-- [Amaranth](https://cosmonarchy.com/protoss/amaranth):
-	- Vision range 9 7
+- [Zealot](https://cosmonarchy.com/protoss/zealot):
+	- HP 150 » 160
+	- **Phase Blades:**
+		- Armor penetration 1 » 3
 - [Atreus](https://cosmonarchy.com/protoss/atreus):
-	- Resource costs 200/25 » 150/100
-	- HP 200 » 160
-	- Shields 100 » 60
-	- Armor 2 » 3
-	- Speed 4.8 » 6
+	- Sight range 9 » 8
+	- Transport weight 4 » 5
 	- **Dauntless Disruption Cannon:**
-		- Weapon damage 20 » 12
-		- Weapon range 7 » 5
-		- Attack cooldown 1.25 » 1
-		- No longer targets air units
-	- **Interception** removed
-	- **NEW: Binding Plasma**, as with **Oscilliant** / **Gladius**
-- [Cantavis](https://cosmonarchy.com/protoss/cantavis):
-	- Build time 33 » 30
-	- **Hallucination:**
-		- Projectile can no longer be intercepted by hostiles
-- [Charlatan](https://cosmonarchy.com/protoss/charlatan):
-	- **Fervent Blaster:**
-		- Splash radius 12/24/32 » 16/24/32
-- [Mind Tyrant](https://cosmonarchy.com/protoss/mind-tyrant):
-	- **Malefactor:**
-		- Tyrannize procs no longer drain energy
-		- Mind Tyrant must still have energy to proc Tyrannize
-	- **Maelstrom:**
-		- Movement speed slow 50% » 66%
-- [Idol](https://cosmonarchy.com/protoss/idol):
-	- **Prismatic Blasters:**
-		- Splash radius 12/18/24 » 16/24/32
-- [Exemplar](https://cosmonarchy.com/protoss/exemplar):
-	- Resource costs 300/150 250/150
-- [Warden](https://cosmonarchy.com/protoss/warden):
-	- Build time 35 » 30
-- [Lattice](https://cosmonarchy.com/protoss/lattice):
+		- Weapon damage 12 » 10
+		- Weapon range 5 » 4
+- [Optecton](https://cosmonarchy.com/protoss/optecton):
+	- Resource costs 500/200 » 500/300
 	- HP 400 » 500
-	- Shields 250 » 300
-- [Stargate](https://cosmonarchy.com/protoss/stargate):
-	- Resource costs 200/200 » 200/150
+- [Unar](https://cosmonarchy.com/protoss/unar):
+	- Resource costs 300/125 » 200/200
+	- Build time 50 » 45
+- [Architect](https://cosmonarchy.com/protoss/architect):
+	- Resource costs 250/200 » 300/250
+	- Build time 45 » 50
+	- HP 200 » 240
+	- Shields 50 » 40
+	- **Reactive Payload:**
+		- Weapon cooldown 1.33 » 1.25
+- [Analogue](https://cosmonarchy.com/protoss/analogue):
+	- **Cylindrical Blaster:**
+		- Weapon range 6 » 4
+- [Gateway](https://cosmonarchy.com/protoss/gateway):
+	- Resource costs 175/0 » 150/0
+	- Build time 50 » 55
+- [Grand Library](https://cosmonarchy.com/protoss/grand-library):
+	- Resource costs 225/50 » 300/50
+- [Unitary Union](https://cosmonarchy.com/protoss/unitary-union):
+	- Resource costs 500/250 » 500/300
 
-### Protoss factions
-- **NEW:** [Simulacrum (Khalendric)](https://cosmonarchy.com/protoss/simulacrum-khalendric):
-	- **Khalendric Knights:** Simulacrum variant with **Last Orders** (e.g. Aurora)
-- **NEW:** [Idol (Khalendric)](https://cosmonarchy.com/protoss/idol-khalendric):
-	- **Khalendric Knights:** Idol variant with **Signify** (e.g. Hierophant)
-- **NEW:** [Vestige](https://cosmonarchy.com/protoss/vestige):
-	- **Starbound:** Cabalist variant with on-damage cloaking
+## Protoss factions
+- **NEW:** [Gladius (Order)](https://cosmonarchy.com/protoss/gladius-order):
+	- Order of the Sacred Saber Gladius variant. Has Triumphant Rise (a la Herald / Archon).
 
 ## Zerg
-- **Bone of Reflection:**
-	- Armor pen 0 » 1
-- **Corpse Cocoon:**
-	- Allied corpses now spawn **Rilirokors** for consumed ground units and **Rililisks** for consumed air units
-- **Blissful Embrace:**
-	- Infested units now incubate **Rilirokors** on damage taken (like **Zoryusthaleth**)
-- **Plague:**
-	- Now reduces HP and shield healing by 50%
-- [Rililisk](https://cosmonarchy.com/zerg/rililisk):
-	- **Swarming Spores:**
-		- Weapon damage 1x5 » 1x4
-		- Weapon range 2 » 4
-- [Malkothrokor](https://cosmonarchy.com/zerg/malkothrokor):
-	- Structure gestation now occurs 50% faster
-- [Nathrokor](https://cosmonarchy.com/zerg/nathrokor):
-	- **Adrenal Frenzy** (movement speed on attack) removed
-- [Vorvrokor](https://cosmonarchy.com/zerg/):
-	- Build time 12 » 15
+- **Reconstitution:**
+	- *Used by Agrileth (new), Vilgorokor*
+	- Carapace Swarm HP 200 » 300
+- **Miasma:**
+	- No longer spreads on death; **Plague** remains unchanged
+	- *This will be revisited later.*
+- [Agrileth](https://cosmonarchy.com/zerg/agrileth):
+	- Resource costs 150/50 » 150/75
+	- HP 200 » 140
+	- Armor 2 » 1
+	- **NEW: Reconstitution**
+		- Releases a Carapace Swarm upon taking damage.
+- [Zethrokor](https://cosmonarchy.com/zerg/zethrokor):
+	- Resource cost 25/0 » 50/0
+	- HP 50 » 60
+	- Movement speed 7.5 » 8.4
+	- **Zethrok Claws:**
+		- Weapon damage 4 » 5
+- [Vorvrokor](https://cosmonarchy.com/zerg/vorvrokor):
+	- Resource cost 50/0 » 75/0
+	- HP 80 » 90
+	- Armor 1 » 2
+	- Movement speed 9.1 » 9.8
+	- Collision size increased by ~23%
 - [Liiralisk](https://cosmonarchy.com/zerg/liiralisk):
-	- Build time 20 » 25
-- [Kalkalisk](https://cosmonarchy.com/zerg/kalkalisk):
-	- Build time 25 » 30
+	- **Homing Spore:**
+		- Weapon range 7 » 8
 - [Protathalor](https://cosmonarchy.com/zerg/protathalor):
-	- Build time 22 » 25
-	- Resource costs 125/50 » 150/75
-	- Now two per requisition
-- [Mutalisk](https://cosmonarchy.com/zerg/mutalisk):
-	- Build time 25 » 30
-- [Sovroleth](https://cosmonarchy.com/zerg/sovroleth):
-	- Now considered a Sire
-- [Hydralisk](https://cosmonarchy.com/zerg/hydralisk):
-	- Build time 20 » 18
-	- HP 80 » 100
+	- Resource costs 125/75 » 100/100
+	- Armor 2 » 1
+- [Izirokor](https://cosmonarchy.com/zerg/izirokor):
+	- Build time 26 » 22
 - [Bactalisk](https://cosmonarchy.com/zerg/bactalisk):
-	- Build time 25 » 30
-	- HP 120 » 100
-- [Tethzorokor](https://cosmonarchy.com/zerg/tethzorokor):
-	- Build time 28 » 32
-- [Vithrilisk](https://cosmonarchy.com/zerg/vithrilisk):
-	- Build time 25 » 30
-- [Ultrokor](https://cosmonarchy.com/zerg/ultrokor):
-	- Build time 40 » 45
-- [Zobriolisk](https://cosmonarchy.com/zerg/zobriolisk):
-	- Resource costs 200/100 » 150/75
-	- Build time 25 » 35
-- [Zarcavrokor](https://cosmonarchy.com/zerg/zarcavrokor):
-	- Build time 35 » 40
-	- Vision range 9 » 7
-	- **Bisecting Blades:**
-		- Weapon cooldown 0.42 » 0.67
-- [Vornath Pond](https://cosmonarchy.com/zerg/vornath-pond):
-	- Build time 40 » 50
-- [Skibact Scab](https://cosmonarchy.com/zerg/skibact-scab):
-	- Resource costs 75/150 » 100/175
-	- Build time 45 » 50
-
-### Zerg Factions
-- [Sovrokor](https://cosmonarchy.com/zerg/sovrokor):
-	- Now considered a Sire
-- **NEW:** [Rozirokor](https://cosmonarchy.com/zerg/rozirokor):
-	- **Imicren Tendril:** Izirokor replacement. Has Saber Siphon.
-- **NEW:** [Alzurokor](https://cosmonarchy.com/zerg/alzurokor):
-	- **Imicren Tendril:** Ultrokor replacement. Has Captivating Claws and Devouring Instinct.
-- **NEW:** [Hydrokor](https://cosmonarchy.com/zerg/hydrokor):
-	- **Goszirith Tendril:** Hydralisk replacement. Dual-birth melee strain with Mitosis.
-- **NEW:** [Zytryleth](https://cosmonarchy.com/zerg/zytryleth):
-	- **Zorthos Tendril:** Structure mutated from Scrylyleth. Has Omnispores, acts as a town center, and gestates Larvae.
+	- **Corrosive Acid:**
+		- No longer targets air units
+- [Zoryusthaleth](https://cosmonarchy.com/zerg/zoryusthaleth):
+	- Resource costs 175/0 » 200/0
+	- Build time 28 » 25
+	- HP 200 » 220
+- [Lakizilisk](https://cosmonarchy.com/zerg/lakizilisk):
+	- Resource costs 75/75 » 100/75
+	- Build time 30 » 28
+	- HP 140 » 150
+	- **Subterranean Spines:**
+		- Weapon damage 12 » 15
+		- Weapon cooldown 1.63 » 1.75
+- [Vilgorokor](https://cosmonarchy.com/zerg/vilgorokor):
+	- Resource costs 220/75 » 200/50
+	- HP 280 » 200
 
 ## Askosi
-- **Impact Dissipation:**
-	- No longer heals
-	- Now blocks the next weapon attack
+- **Shared Designs:**
+	- Team building from **Pilgrim**s and **Constituent**s now increases build rate by 25% per worker, from 20%
 - **Ash Heap:**
-	- Duration 2 seconds » 5 seconds
-- [Proselyte](https://cosmonarchy.com/askosi/proselyte):
-	- Movement speed 5.2 » 5.6
-- [Missionary](https://cosmonarchy.com/askosi/missionary):
-	- HP 75 » 85
-	- **NEW: Accelerated Speech** (passive)
-		- Gains +2 armor pen when within 2 weapon range of its target
+	- Now consumes corpses
+- **Power Overload:**
+	- *Used by Grandstand, Rove (new), Intendent*
+	- No longer deals damage over time to armored targets
+	- Now steals armor, to a cap of 4
 - [Cardinal](https://cosmonarchy.com/askosi/cardinal):
-	- **Sustaining Sermon:**
-		- Now heals the proccing Cardinal
-	- **Rapid Rendevous** removed
-	- **NEW: Ashbind:**
-		- Leaps to an enemy target, applying Ash Heap to enemies within 3 range
-- [Mimic](https://cosmonarchy.com/askosi/mimic):
-	- **Scrapworld: Vital Remains** removed
-	- **Mimicry:**
-		- Mimicked attacks now apply Scrapworld: Gold Rush
-- [Aphorist](https://cosmonarchy.com/askosi/aphorist):
-	- Resource costs 50/25 » 100/25
-- [Doronin](https://cosmonarchy.com/askosi/doronin):
-	- Resource costs 225/0 » 175/50
-	- Armor 3 » 4
-- [Insurant](https://cosmonarchy.com/askosi/insurant):
-	- **Elxe Twinshot:**
-		- No longer attacks air units
+	- Resource costs 75/25 » 100/25
 - [Rove](https://cosmonarchy.com/askosi/rove):
-	- HP 90 » 100
 	- **Elre Scaleshot:**
-		- No longer attacks air units
-- [Intendent](https://cosmonarchy.com/askosi/intendent):
-	- Movement speed 4 » 5.2
-- [Endbore](https://cosmonarchy.com/askosi/endbore):
-	- **Irko Octorshard:**
-		- Weapon damage 8x10 » 8x8
-		- No longer attacks air units
-- [Grandstand](https://cosmonarchy.com/askosi/grandstand):
-	- Resource costs 200/0 » 150/0
-- [Chantry](https://cosmonarchy.com/askosi/chantry):
-	- Resource costs 75/50 » 75/100
-	- Build time 45 » 35
+		- Weapon damage 8 » 4
+		- Armor penetration 2 » 0
+		- Weapon range 5 » 3
+		- Weapon factor 1 » 3
+		- Now fires in a shotgun pattern (e.g. **Hotshot**, **Siren**)
+	- **Impact Dissipation** removed
+	- **NEW: Power Overload**
+- [Tortare](https://cosmonarchy.com/askosi/tortare):
+	- **Deathrattle Assembly:**
+		- Now grants 2 armor when deployed
 - [Radix](https://cosmonarchy.com/askosi/radix):
-	- Build time 65 » 60
+	- Resource costs 100/0 » 125/0
 - [Function](https://cosmonarchy.com/askosi/function):
-	- Resource costs 150/25 » 125/25
-	- Build time 75 » 70
-- [Cosmoscope](https://cosmonarchy.com/askosi/comoscope):
-	- Build time 90 » 75
+	- Resource costs 125/25 » 150/25
+
+## Askosi factions
+- **NEW: Sons of Ash**
+	- Conqueror clergy, set to burn the dead wood.
+- **NEW:** [Scralia](https://cosmonarchy.com/askosi/scralia)
+	- Intendent replacement for Sons of Ash. Short-range assault craft with Booming Blast and Ash Heap.

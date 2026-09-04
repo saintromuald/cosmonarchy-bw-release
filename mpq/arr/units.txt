@@ -148,7 +148,7 @@ Zerg Surkith Cesiant
 Terran Guildhall
 Terran Striga
 Zerg Excisant
-Terran Luminary (Golden Republic)
+Terran Luminary (Golden)
 Terran Siren
 Zerg Othstol Oviform
 Zerg Tethvith Swamp
@@ -208,7 +208,7 @@ Right Upper Level Door
 Left Pit Door
 Right Pit Door
 Terran Sentinel
-Terran Tarasque (Nydus Trinity)
+Terran Tarasque (Nydus)
 Terran Anticthon
 Zerg Kethraj Keep
 Terran Atelier
@@ -411,7 +411,7 @@ Ackmed
 Terran Cyclops (Futurist)
 Protoss Zealot (Starbound)
 Protoss Ecclesiast (Khalendric Knights)
-Terran Harakan (Golden Republic)
+Terran Harakan (Golden)
 Protoss Cicatus (Starbound)
 Zerg Inzorthrokor (Imicren)
 Volatile Egg
@@ -429,8 +429,8 @@ Terran Facade
 Terran Savant (Power Siphon)
 Askosi Landlock
 Protoss Dracadin (Order)
-Terran Blackjack (Golden Republic)
-Terran Eidolon (Nydus Trinity)
+Terran Blackjack (Golden)
+Terran Eidolon (Nydus)
 Terran Tiangou (Base)
 Tiangou Turret
 Terran Maverick (Futurist)
@@ -539,7 +539,7 @@ Zerg Overmind (The Fall)
 Askosi Avatar
 Askosi Abutment
 Askosi Proscenium
-Terran Quadriga (Golden Republic)
+Terran Quadriga (Golden)
 Askosi Thaumalogue
 Askosi Petract
 Askosi Crematorium
@@ -612,7 +612,7 @@ Forerunner Vicere
 Forerunner Machinamentum
 Big Infested Kerrigan
 Raynor Vulture
-Duke Battlecruiser
+Duke Minotaur
 Askosi Scralia
 Zerg Rozirokor (Imicren)
 Bloodsummon Thrombocyte
@@ -627,16 +627,16 @@ Bloodsummon Acqui
 Zerg Alzurokor (Imicren)
 Zerg Hydrokor (Goszirith)
 Protoss Gladius (Order)
-Terran Eidolon (Golden Republic)
+Terran Eidolon (Golden)
 Zerg Zethalisk (Orkoti)
 Bloodsummon Nihilist
-Extended Unit #405
-Extended Unit #406
-Extended Unit #407
-Extended Unit #408
-Extended Unit #409
-Extended Unit #410
-Extended Unit #411
+Faction Selection Askosi
+Terran Fleshthief (Nydus)
+Forerunner Lumen
+Ammo Crate
+Medkit
+Battery Cell
+Forerunner Buildings
 Extended Unit #412
 Extended Unit #413
 Extended Unit #414
@@ -2998,3 +2998,6 @@ Extended Unit #2769
 Extended Unit #2770
 Extended Unit #2771
 Extended Unit #2772
+Extended Unit #2773
+Extended Unit #2774
+Extended Unit #2775

@@ -37,80 +37,6 @@ military goska = 500
 military stroluum = 501
 building tuzor = 502
 
-# Terran factional units
-military cohort = 50
-military luminary = 150
-military aspirant = 194
-military tarasque = 210
-military philoc = 328
-military hotshot = 395
-military qilin = 398
-military auriel = 399
-military cyclops_futurist = 410
-military harakan_golden = 413
-military cleric_futurist = 418
-military blackjack_golden = 431
-military eidolon_nydus = 432
-military tiangou = 433
-military maverick_futurist = 435
-military blackguard = 489
-military arhaun = 490
-military cannibal = 496
-military madrigal_hecaton = 504
-military vulture_hecaton = 506
-military madrigal_hecaton_furia = 508
-military valkyrie_hecaton = 520
-military quadriga = 541
-military serathiel = 547
-military goremast = 567
-military broadside = 568
-military vulture_upstart = 570
-military maverick_upstart = 573
-military eidolon_upstart = 575
-military ajax = 576
-military maverick_golden = 580
-military shaman_upstart = 581
-military nuriel = 598
-military phoenix = 599
-military archbishop = 600
-military camazotz = 620
-@spellcaster(serathiel)
-
-# Protoss factional units
-military adherent = 400
-military extatus = 401
-military zealot_starbound = 411
-military ecclesiast_khalendric = 412
-military cicatus = 414
-military renesair = 423
-military ashguard = 424
-military dracadin_order = 430
-military manifold_starbound = 437
-military simulacrum_astral = 522
-military warlock = 523
-military simulacrum_khalendric = 621
-military idol_khalendric = 622
-military cabalist_starbound = 623
-
-# Zerg factional units
-military nathrelisk = 402
-military iziralisk = 403
-military inzorthrokor = 415
-military quazrokor = 422
-military lakizilisk_zorthos = 425
-military hydralisk_orkoti = 436
-military yblyleth = 438
-military azanthrokor = 511
-military sovrokor = 519
-military garvrokor = 521
-military zethalor = 559
-military scrylyleth = 560
-military zoltorokor = 604
-military rozirokor = 616
-military alzurokor = 626
-military hydrokor = 627
-military zethalisk = 630
-
 # Terran military units
 military maverick = 0
 military eidolon = 1
@@ -185,6 +111,45 @@ military emperor = 300
 military jester = 301
 military madrigal_furia = 381
 military triton = 512
+
+# Terran factional units
+military cohort = 50
+military luminary = 150
+military aspirant = 194
+military tarasque = 210
+military philoc = 328
+military hotshot = 395
+military qilin = 398
+military auriel = 399
+military cyclops_futurist = 410
+military harakan_golden = 413
+military cleric_futurist = 418
+military blackjack_golden = 431
+military eidolon_nydus = 432
+military tiangou = 433
+military maverick_futurist = 435
+military blackguard = 489
+military arhaun = 490
+military cannibal = 496
+military madrigal_hecaton = 504
+military vulture_hecaton = 506
+military madrigal_hecaton_furia = 508
+military valkyrie_hecaton = 520
+military quadriga = 541
+military serathiel = 547
+military goremast = 567
+military broadside = 568
+military vulture_upstart = 570
+military maverick_upstart = 573
+military morrigan = 575
+military ajax = 576
+military maverick_golden = 580
+military shaman_upstart = 581
+military nuriel = 598
+military phoenix = 599
+military archbishop = 600
+military camazotz = 620
+@spellcaster(serathiel)
 
 # Terran buildings
 building mason = 7
@@ -298,6 +263,23 @@ military bulwark = 331
 military monogram = 348
 military vassal = 360
 
+# Protoss factional units
+military adherent = 400
+military extatus = 401
+military zealot_starbound = 411
+military ecclesiast_khalendric = 412
+military cicatus = 414
+military renesair = 423
+military ashguard = 424
+military dracadin_order = 430
+military manifold_starbound = 437
+military simulacrum_astral = 522
+military warlock = 523
+military simulacrum_khalendric = 621
+military idol_khalendric = 622
+military vestige = 623
+military gladius_order = 628
+
 # Protoss buildings
 building scribe = 64
 #
@@ -400,6 +382,25 @@ military kethrostalor = 326
 military rakzilisk = 327
 military sasyrvoleth = 407
 military skryrokor = 503
+
+# Zerg factional units
+military nathrelisk = 402
+military iziralisk = 403
+military inzorthrokor = 415
+military quazrokor = 422
+military lakizilisk_zorthos = 425
+military hydralisk_orkoti = 436
+military yblyleth = 438
+military azanthrokor = 511
+military sovrokor = 519
+military garvrokor = 521
+military zethalor = 559
+military scrylyleth = 560
+military zoltorokor = 604
+military rozirokor = 616
+military alzurokor = 626
+military hydrokor = 627
+military zethalisk = 630
 
 # Zerg misc
 military larva = 35
@@ -529,6 +530,9 @@ building lotiro = 578
 building domain = 579
 building lekrot = 596
 building hearthshard = 597
+
+# Askosi factional units
+military scralia = 615
 
 # Forerunner units
 military ferrum = 605

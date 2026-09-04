@@ -4963,7 +4963,7 @@ BuildingRubbleHeaderDeath:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 393 Vorvrokor (cm\zerg\vorvrokor.grp)
+# 2045 Vorvrokor (cm\zerg\vorvrokor.grp)
 .headerstart
 IsId          	220
 Type          	26
@@ -4999,9 +4999,9 @@ Enable        	[NONE]
 # ----------------------------------------------------------------------------- #
 
 VorvrokorInit:
-	imgul             	1772 -1 -5 # Vorvrokor Shadow (cm\zerg\vorvrokor-shadow.grp)
+	imgul             	1772 0 0 # Vorvrokor Shadow (cm\zerg\vorvrokor-shadow.grp)
 VorvrokorGndAttkToIdle:
-	playfram          	0x55
+	playfram          	0x00
 	goto              	ZethrokorLocal00
 
 VorvrokorDeath:
@@ -14279,25 +14279,25 @@ MortothrokorLocal03:
 	goto              	MortothrokorGndAttkToIdle
 
 MortothrokorDeath:
-	playsnd           	878 # Zerg\Ultra\ZUlDth00.WAV
-	setfldirect       	0
-	playfram          	595
-	wait              	2
-	playfram          	596
-	wait              	2
-	playfram          	597
-	wait              	2
-	playfram          	598
-	wait              	2
-	playfram          	599
-	wait              	2
-	playfram          	600
-	wait              	2
-	playfram          	601
-	wait              	2
-	lowsprul			868 0 0 # Mortothrokor Remnants (cm\zerg\mortothrokor-remnants.grp)
-	wait              	1
-	end
+    playsnd             878 # Zerg\Ultra\ZUlDth00.WAV
+    setfldirect         0
+    playfram            578
+    wait                2
+    playfram            579
+    wait                2
+    playfram            580
+    wait                2
+    playfram            581
+    wait                2
+    playfram            582
+    wait                2
+    playfram            583
+    wait                2
+    playfram            584
+    wait                2
+    lowsprul            868 0 0 # Mortothrokor Remnants (cm\zerg\mortothrokor-remnants.grp)
+    wait                1
+    end
 	
 MortothrokorUnused1:
 	wait				1
@@ -14442,7 +14442,7 @@ IsId          	754
 Type          	13
 Init          	ZergMutateInit
 Death         	EggDeath
-GndAttkInit   	[NONE]
+GndAttkInit   	ZergMutateInit
 AirAttkInit   	[NONE]
 Unused1       	[NONE]
 GndAttkRpt    	[NONE]
@@ -17936,7 +17936,7 @@ ZethalorGndAttkInit:
 ZethalorGndAttkRpt:
     wait                1
     nobrkcodestart
-    playsndbtwn         2014 2015 # Liiralisk attack 01, 02
+    playsndbtwn         3467 3469 # Zethalor weaponfire 01, 02, 03
     playfram            0x1A0
     wait                1
     playfram            0x1E0
@@ -19187,7 +19187,7 @@ SovrokorGndAttkInit:
 	wait              	1
 	nobrkcodestart
 	playfram          	0x22
-	attackmelee       	1 894 # Zerg\Ultra\zulHit00.WAV
+	attackmelee			3 3835 3836 3837 # Sovrokor weaponhit 01, 02, 03
 	wait              	1
 	playfram          	0x33
 	wait              	1
@@ -19670,7 +19670,7 @@ AlzurokorGndAttkRpt:
 	playfram          	0xdd
 	wait              	1
 	playfram          	0xcc
-	playsndbtwn			894 895 # Zerg\Ultra\zulHit00.WAV | Zerg\Ultra\zulHit01.WAV
+	playsndbtwn			4299 4301 # Alzurokor weaponhit 01, 02, 03
 	attackwith 			1
 	wait              	2
 	playfram          	0xbb
@@ -19781,3 +19781,142 @@ AlzurokorUnBurrow:
 	wait              	1 
 	sigorder          	4 
 	goto              	AlzurokorGndAttkToIdle
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2204 Garvrokor (cm\zerg\garvrokor.grp)
+.headerstart
+IsId          	848
+Type          	26
+Init          	GarvrokorInit
+Death         	GarvrokorDeath
+GndAttkInit   	GarvrokorGndAttkInit
+AirAttkInit   	[NONE]
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	GarvrokorGndAttkInit
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	GarvrokorGndAttkToIdle
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	GarvrokorWalking
+WalkingToIdle 	GarvrokorGndAttkToIdle
+SpecialState1 	[NONE]
+SpecialState2 	GarvrokorSpecialState2
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	GarvrokorBurrow
+UnBurrow      	GarvrokorUnBurrow
+Enable        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+GarvrokorInit:
+	imgul				2466 -1 -5 # Garvrokor Shadow (cm\zerg\garvrokor-shadow.grp)
+GarvrokorGndAttkToIdle:
+	playfram          	0x55
+	goto              	ZethrokorLocal00
+
+GarvrokorDeath:
+	playsnd           	1160 # Garvrokor death 01
+	setfldirect       	0
+	playfram          	0x121
+	wait              	2
+	playfram          	290
+	wait              	2
+	playfram          	291
+	wait              	2
+	playfram          	292
+	wait              	2
+	playfram          	293
+	wait              	2
+	playfram          	294
+	wait              	2
+	playfram          	295
+	wait              	2
+	lowsprul          	942 0 0 # Garvrokor Remnants (cm\zerg\garvrokor-death.grp)
+	wait              	1 
+	end
+
+GarvrokorGndAttkInit:
+	playfram          	0x00
+	wait              	1
+	nobrkcodestart
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+	attackmelee       	1 894 # Zerg\Ultra\zulHit00.WAV
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x44
+	wait              	1
+	nobrkcodeend
+	gotorepeatattk
+	goto              	GarvrokorGndAttkToIdle
+
+GarvrokorWalking:
+	move              	7
+	wait              	1
+	playfram          	0x66
+	move              	7
+	wait              	1
+	playfram          	0x77
+	move              	7
+	wait              	1
+	playfram          	0x88
+	move              	7
+	wait              	1
+	playfram          	0x99
+	move              	7
+	wait              	1
+	playfram          	0xaa
+	move              	7
+	wait              	1
+	playfram          	0xbb
+	move              	7
+	wait              	1
+	playfram          	0x55
+	goto              	GarvrokorWalking
+
+GarvrokorSpecialState2:
+	playfram          	0x110
+	goto              	SkryrokorLocal00
+
+GarvrokorBurrow:
+	imgol             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	playfram          	0xcc
+	wait              	1
+	playfram          	0xdd
+	wait              	1
+	playfram          	0xee
+	wait              	1
+	playfram          	0xff
+	wait              	1
+	playfram          	0x110
+	wait              	1
+	sigorder          	4
+	goto              	SkryrokorLocal00
+
+GarvrokorUnBurrow:
+	wait 				1
+	waitrand          	1 2
+	imgul             	423 0 0	# Burrowing Dust (thingy\bDust.grp)
+	playfram          	0xff
+	wait              	1
+	playfram          	0xee
+	wait              	1
+	playfram          	0xdd
+	wait              	1
+	playfram          	0xcc
+	wait              	1
+	sigorder          	4
+	goto              	GarvrokorGndAttkToIdle

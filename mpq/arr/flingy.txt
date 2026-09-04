@@ -713,13 +713,13 @@ Acqui
 Alzurokor (Imicren)
 Hydrokor (Goszirith)
 Nihilist
-Extended Flingy #507
-Extended Flingy #508
-Extended Flingy #509
-Extended Flingy #510
-Extended Flingy #511
-Extended Flingy #512
-Extended Flingy #513
+Maverick (Golden)
+Gladius (Order)
+Shaman (Upstart, Support)
+Shaman (Upstart, Adrenaline)
+Ammo Crate
+Medkit
+Battery Cell
 Extended Flingy #514
 Extended Flingy #515
 Extended Flingy #516

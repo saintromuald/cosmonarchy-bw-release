@@ -14093,17 +14093,37 @@ MagnetarUnused1:
 	goto				SkryrokorLocal00
 
 MagnetarGndAttkInit:
+	playfram			0x00
 	wait              	1
 	nobrkcodestart
-	wait				2
-	playfram			0x00
 	wait				1
 	playfram			0x11
+	wait				1
+	playfram			0x22
+	wait				1
+	playfram			0x33
+	wait				1
+	playfram			0x44
+	wait				1
+	playfram			0x55
+	wait				1
+	playfram			0x66
 	playsndbtwn			1876 1879 # Magnetar weapon fire 01, 02, 03, 04
 	attack
 	wait				1
-	playfram			0x00
 	nobrkcodeend
+	playfram			0x55
+	wait				1
+	playfram			0x44
+	wait				1
+	playfram			0x33
+	wait				1
+	playfram			0x22
+	wait				1
+	playfram			0x11
+	wait				1
+	playfram			0x00
+	wait				1
 	gotorepeatattk
 	goto              	SkryrokorLocal00
 
@@ -14112,8 +14132,58 @@ MagnetarLocal00:
 	goto              	MagnetarLocal00
 	
 MagnetarCastSpell:
+	wait              	1
+	nobrkcodestart
+	wait              	1
+	playfram			0x00
 	imgolorig         	543 # Yamato Gun Overlay (thingy\eycBlast.grp)
 	sigorder			32
+	wait              	1
+	playfram			0x11
+	wait				1
+	playfram			0x22
+	wait				1
+	playfram			0x33
+	wait				1
+	playfram			0x44
+	wait				1
+	playfram			0x55
+	wait				1
+	playfram			0x66
+	wait				1
+	playfram			0x55
+	wait				1
+	playfram			0x44
+	wait				1
+	playfram			0x33
+	wait				1
+	playfram			0x22
+	wait				1
+	playfram			0x11
+	wait				1
+	playfram			0x22
+	wait				1
+	playfram			0x33
+	wait				1
+	playfram			0x44
+	wait				1
+	playfram			0x55
+	wait				1
+	playfram			0x66
+	wait				1
+	playfram			0x55
+	wait				1
+	playfram			0x44
+	wait				1
+	playfram			0x33
+	wait				1
+	playfram			0x22
+	wait				1
+	playfram			0x11
+	wait				1
+	playfram			0x00
+	wait				1
+	nobrkcodeend
 	goto				MagnetarLocal00
 
 MagnetarWalking:
@@ -15461,7 +15531,7 @@ SpecialState1 	ShamanSupportModeSpecialState1
 # ----------------------------------------------------------------------------- #
 
 ShamanSupportModeInit:
-	imgul             	1227 0 4 # Shaman Shadow (cm\terran\shaman-shadow.grp)
+	imgulnextid			0 0 # Shaman Shadow (cm\terran\shaman-shadow.grp)
 	playfram          	0x00
 	goto              	ShamanSupportModeGndAttkToIdle
 
@@ -20965,18 +21035,25 @@ CamazotzGndAttkInit:
 CamazotzGndAttkRpt:
 	wait              	1
 	nobrkcodestart
+	wait              	1
 	playsndbtwn			4261 4263 # Camazotz weaponfire 01, 02, 03
 	imgoluselo			2056 0 0 # Green projection attack
-	playfram          	0x20
+	playfram			0x20
+	attkshiftproj		24
 	sigorder			32
 	wait              	1
-	attkshiftproj     	52
+	attkshiftproj		54
+	sigorder			32
+	wait				1
+	attkshiftproj		82
 	sigorder			32
 	wait              	1
-	attkshiftproj     	80
+	playfram			0x00
+	attkshiftproj		112
 	sigorder			32
-	wait              	5
-	playfram          	0x00
+	wait              	1
+	attkshiftproj		140
+	sigorder			32
 	wait              	2
 	ignorerest
 CamazotzGndAttkToIdle:
@@ -21229,3 +21306,929 @@ CyclopsFuturistGndAttkToIdle:
     playfram			0x00
     wait				1
     goto				CyclopsWalkingToIdle
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 256 Raynor Vulture (cm\h\raynor-vulture.grp)
+.headerstart
+IsId          	851
+Type          	13
+Init          	RaynorVultureInit
+Death         	RaynorVultureDeath
+GndAttkInit   	RaynorVultureGndAttkInit
+AirAttkInit   	[NONE]
+Unused1       	RaynorVultureUnused1
+GndAttkRpt    	RaynorVultureGndAttkInit
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	RaynorVultureGndAttkToIdle
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	RaynorVultureWalking
+WalkingToIdle 	RaynorVultureGndAttkToIdle
+SpecialState1 	RaynorVultureSpecialState1
+.headerend
+# ----------------------------------------------------------------------------- #
+
+RaynorVultureInit:
+	imgulnextid			0 7 # Raynor (Vulture) Shadow (cm\h\raynor-vulture.grp)
+	playfram          	0x00
+	goto              	RaynorVultureGndAttkToIdle
+
+RaynorVultureGndAttkToIdle:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	RaynorVultureGndAttkToIdle
+
+RaynorVultureDeath:
+	playsnd           	353 # Terran\VULTURE\TVuDth00.WAV
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			813 0 0 # RaynorVulture Remains
+	end
+	
+RaynorVultureUnused1:
+	wait				1
+	nobrkcodestart
+	tmprmgraphicstart
+	playsnd           	1699 # RaynorVulture revive 01
+	sprol				742 0 0
+	wait				10
+	setfldirect			12
+	tmprmgraphicend
+	nobrkcodeend
+	goto				RaynorVultureGndAttkToIdle
+
+RaynorVultureGndAttkInit:
+	wait              	1
+	nobrkcodestart
+	attackwith        	1
+	playsnd           	106 # Bullet\tvuFir00.wav
+	wait				3
+	attackwith        	1
+	playsnd           	106 # Bullet\tvuFir00.wav
+	wait				3
+	attackwith        	1
+	playsnd           	106 # Bullet\tvuFir00.wav
+	wait				1
+	nobrkcodeend
+	gotorepeatattk
+	goto              	RaynorVultureGndAttkToIdle
+
+RaynorVultureWalking:
+	playfram          	0x00
+	setvertpos        	0
+	imgol             	2394 0 0 # Raynor (Vulture) Engines
+	goto				SkryrokorLocal00
+
+RaynorVultureSpecialState1:
+	attackwith        	1
+	sigorder          	1
+	wait              	1
+	end
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 852 Duke (Minotaur) (terran\BattleCr.grp)
+.headerstart
+IsId          	852
+Type          	12
+Init          	DukeMinotaurInit
+Death         	DukeMinotaurDeath
+GndAttkInit   	DukeMinotaurGndAttkInit
+AirAttkInit   	DukeMinotaurAirAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	DukeMinotaurGndAttkInit
+AirAttkRpt    	DukeMinotaurAirAttkInit
+CastSpell     	DukeMinotaurCastSpell
+GndAttkToIdle 	SkryrokorLocal00
+AirAttkToIdle 	SkryrokorLocal00
+Unused2       	[NONE]
+Walking       	DukeMinotaurWalking
+WalkingToIdle 	MinotaurWalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+DukeMinotaurInit:
+	imgulnextid			0 42 # Duke (Minotaur) Shadow (terran\BattleCr.grp)
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+DukeMinotaurDeath:
+	playsnd           	177 # Terran\BATTLE\tbaDth00.wav
+	imgol             	333 0 0 # Explosion2 (Medium) (thingy\tBangL.grp)
+	wait              	3
+	lowsprul			273 0 42 # Terran Building Rubble Small
+	wait              	1
+	end
+
+DukeMinotaurGndAttkInit:
+	imgol             	446 0 0 # Minotaur Attack Overlay (thingy\elbBat.grp)
+	goto              	DukeMinotaurLocal00
+
+DukeMinotaurLocal00:
+	wait              	1
+	attackwith        	1
+	playsndbtwn			1302 1306 # Minotaur weapon fire 01, 02, 03, 04, 05
+	gotorepeatattk
+	goto              	SkryrokorLocal00
+
+DukeMinotaurAirAttkInit:
+	imgol             	446 0 0 # Minotaur Attack Overlay (thingy\elbBat.grp)
+	goto              	DukeMinotaurLocal01
+
+DukeMinotaurLocal01:
+	wait              	1
+	attackwith        	2
+	playsndbtwn			1302 1306 # Minotaur weapon fire 01, 02, 03, 04, 05
+	gotorepeatattk
+	goto              	SkryrokorLocal00
+
+DukeMinotaurCastSpell:
+	imgolorig         	543 # Yamato Gun Overlay (thingy\eycBlast.grp)
+	goto              	SkryrokorLocal00
+
+DukeMinotaurWalking:
+	imgol             	220 0 0 # Minotaur Engines (thingy\tbaGlow.grp)
+	goto              	SkryrokorLocal00
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 239 MaverickGolden (cm\f-t\maverick-golden.grp)
+.headerstart
+IsId          	853
+Type          	12
+Init          	MaverickGoldenInit
+Death         	MaverickGoldenDeath
+GndAttkInit   	MaverickGoldenGndAttkInit
+AirAttkInit   	MaverickGoldenGndAttkInit
+Unused1       	MaverickGoldenUnused1
+GndAttkRpt    	MaverickGoldenGndAttkRpt
+AirAttkRpt    	MaverickGoldenGndAttkRpt
+CastSpell     	[NONE]
+GndAttkToIdle 	MaverickGoldenGndAttkToIdle
+AirAttkToIdle 	MaverickGoldenGndAttkToIdle
+Unused2       	[NONE]
+Walking       	MaverickGoldenWalking
+WalkingToIdle 	MaverickGoldenWalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+MaverickGoldenInit:
+	imgulnextid			0 0 # Maverick (Golden) Shadow (cm\f-t\maverick-golden-shadow.grp)
+MaverickGoldenWalkingToIdle:
+	playfram          	0x80
+MaverickGoldenLocal00:
+	wait				63
+	randcondjmp       	25 MaverickGoldenLocal01
+	randcondjmp       	128 MaverickGoldenLocal02
+	goto              	MaverickGoldenLocal00
+
+MaverickGoldenLocal01:
+	playfram          	0x00
+	wait              	1
+	playfram          	0x20
+	wait              	1
+	playfram          	0x40
+	randcondjmp       	192 MaverickGoldenLocal03
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	wait              	6
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	wait              	6
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	goto              	MaverickGoldenLocal04
+
+MaverickGoldenLocal04:
+	playfram          	0x20
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	goto              	MaverickGoldenWalkingToIdle
+
+MaverickGoldenLocal03:
+	wait              	13
+	playfram          	0x20
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	goto              	MaverickGoldenWalkingToIdle
+
+MaverickGoldenLocal02:
+	playfram          	0xA0
+	wait              	1
+	playfram          	0xC0
+	wait              	1
+	turnrand          	3
+	wait              	1
+	playfram          	0xA0
+	wait              	1
+	goto              	MaverickGoldenWalkingToIdle
+
+MaverickGoldenDeath:
+	playsndbtwn       	276 277 # Terran\MARINE\TMaDth00.WAV | Terran\MARINE\TMaDth01.WAV
+	setfldirect       	0
+	playfram          	416
+	wait              	2
+	playfram          	417
+	wait              	2
+	playfram          	418
+	wait              	2
+	playfram          	419
+	wait              	2
+	playfram          	420
+	wait              	2
+	playfram          	421
+	wait              	2
+	playfram          	422
+	wait              	2
+	playfram          	423
+	wait              	2
+	lowsprul          	1187 0 0 # Maverick (Golden) Remnants (terran\maverick-death.grp)
+	wait              	1
+	end
+	
+MaverickGoldenUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect       	0
+	playsndbtwn			1161 1162 # Maverick revive 01, 02
+	playfram			422
+	wait				2
+	playfram			421
+	wait				2
+	playfram			420
+	wait				2
+	playfram			419
+	wait				2
+	playfram			418
+	wait				2
+	playfram			417
+	wait				2
+	playfram			416
+	wait              	2
+	setfldirect       	12
+	nobrkcodeend
+	goto				MaverickGoldenWalkingToIdle
+
+MaverickGoldenGndAttkInit:
+	playfram          	0x00
+	wait              	1
+	playfram          	0x20
+	wait              	1
+	playfram          	0x40
+MaverickGoldenGndAttkRpt:
+	wait              	1
+	nobrkcodestart
+	attackwith        	1
+	playsndbtwn			1427 1434 # Simulacrum weapon fire 01, 02, 03, 04, 05, 06, 07, 08
+	playfram          	0x60
+	wait              	1
+	playfram          	0x40
+	wait              	1
+	playfram          	0x60
+	wait              	1
+	playfram          	0x40
+	wait              	1
+	playfram          	0x60
+	wait              	1
+	playfram          	0x40
+	wait              	1
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+MaverickGoldenGndAttkToIdle:
+	playfram          	0x20
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	goto              	MaverickGoldenWalkingToIdle
+
+MaverickGoldenWalking:
+	move              	4
+	wait              	1
+	playfram          	0xA0
+	move              	4
+	wait              	1
+	playfram          	0xC0
+	move              	4
+	wait              	1
+	playfram          	0xE0
+	move              	4
+	wait              	1
+	playfram          	0x100
+	move              	4
+	wait              	1
+	playfram          	0x120
+	move              	4
+	wait              	1
+	playfram          	0x140
+	move              	4
+	wait              	1
+	playfram          	0x160
+	move              	4
+	wait              	1
+	playfram          	0x180
+	move              	4
+	wait              	1
+	playfram          	0x80
+	goto              	MaverickGoldenWalking
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2475 Shaman (Upstart) Support Mode (cm\f-t\shaman-upstart.grp)
+.headerstart
+IsId          	854
+Type          	13
+Init          	ShamanUpstartSupportModeInit
+Death         	ShamanUpstartSupportModeDeath
+GndAttkInit   	ShamanUpstartSupportGndAttkInit
+AirAttkInit   	ShamanUpstartSupportGndAttkInit
+Unused1       	ShamanUpstartSupportModeUnused1
+GndAttkRpt    	ShamanUpstartSupportGndAttkInit
+AirAttkRpt    	ShamanUpstartSupportGndAttkInit
+CastSpell     	ShamanUpstartSupportModeCastSpell
+GndAttkToIdle 	ShamanUpstartSupportModeGndAttkToIdle
+AirAttkToIdle 	ShamanUpstartSupportModeGndAttkToIdle
+Unused2       	[NONE]
+Walking       	ShamanUpstartSupportModeWalking
+WalkingToIdle 	ShamanUpstartSupportModeGndAttkToIdle
+SpecialState1 	ShamanUpstartSupportModeSpecialState1
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ShamanUpstartSupportModeInit:
+	imgulnextid			0 0 # Shaman (Upstart) Shadow (cm\f-t\shaman-upstart-shadow.grp)
+	playfram          	0x00
+	goto              	ShamanUpstartSupportModeGndAttkToIdle
+
+ShamanUpstartSupportModeGndAttkToIdle:
+	playfram          	0x00
+	setvertpos        	1
+	wait 				8
+	setvertpos        	2
+	wait 				8
+	setvertpos        	1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	ShamanUpstartSupportModeGndAttkToIdle
+
+ShamanUpstartSupportModeDeath:
+	playsndbtwn       	2834 2835 # Shaman Death 01, 02
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			821 0 0 # Shaman Remains
+	wait				1
+	end
+
+ShamanUpstartSupportModeUnused1:
+	wait				1
+	nobrkcodestart
+	playsndbtwn			1705 1706 # Shaman Death Reversed 01, 02
+	sprol				742 0 0 # Orange Explosion Medium Reversed
+	setfldirect			12
+	wait				12
+	nobrkcodeend
+	goto				ShamanUpstartSupportModeGndAttkToIdle
+	
+ShamanUpstartSupportGndAttkInit:
+	wait				1
+	playfram			0x20
+	playsndbtwn			2775 2776 # Cuirass weapon fire 01, 02
+	attack
+	wait				1
+	playfram			0x00
+	gotorepeatattk
+	goto				ShamanUpstartSupportModeGndAttkToIdle
+
+ShamanUpstartSupportModeCastSpell:
+	playfram          	0x00
+	wait              	6
+	goto              	ShamanUpstartSupportModeGndAttkToIdle
+
+ShamanUpstartSupportModeWalking:
+	setvertpos        	0 
+	goto              	SkryrokorLocal00
+
+ShamanUpstartSupportModeSpecialState1:
+	attackwith        	1
+	sigorder          	1
+	wait              	1
+	end
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2477 Shaman Adrenaline Mode (cm\f-t\shaman-upstart.grp)
+.headerstart
+IsId          	855
+Type          	14
+Init          	ShamanAdrenalineModeInit
+Death         	ShamanAdrenalineModeDeath
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	ShamanAdrenalineModeUnused1
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	ShamanAdrenalineModeGndAttkToIdle
+GndAttkToIdle 	ShamanAdrenalineModeGndAttkToIdle
+AirAttkToIdle 	ShamanAdrenalineModeGndAttkToIdle
+Unused2       	[NONE]
+Walking       	SkryrokorLocal00
+WalkingToIdle 	SkryrokorLocal00
+SpecialState1 	ShamanAdrenalineModeSpecialState2
+SpecialState2 	ShamanAdrenalineModeSpecialState2
+AlmostBuilt   	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ShamanAdrenalineModeInit:
+	imgul				2476 0 0 # Shaman Shadow (cm\f-t\shaman-upstart-shadow.grp)
+	wait              	1
+	playsnd           	2429 # Shaman Adrenaline Transform
+	setflspeed        	0
+	playfram          	0x00
+	wait              	2
+	playfram          	0x40
+	wait              	3
+	playfram          	0x60
+	wait              	1
+	playfram          	0x80
+	wait              	1
+	playfram          	0xA0
+	wait              	1
+	playfram          	0xC0
+	wait              	1
+	playfram          	0xE0
+	wait              	6
+	sigorder          	1
+	goto              	ShamanAdrenalineModeGndAttkToIdle
+
+ShamanAdrenalineModeGndAttkToIdle:
+	playfram          	0x100
+	wait              	2
+	playfram          	0x120
+	wait              	2
+	playfram          	0x140
+	wait              	2
+	playfram          	0x160
+	wait              	2
+	playfram          	0x180
+	wait              	2
+	playfram          	0x1A0
+	wait              	2
+	playfram          	0x1C0
+	wait              	2
+	playfram          	0x1E0
+	wait              	2
+	goto				ShamanAdrenalineModeGndAttkToIdle
+
+ShamanAdrenalineModeDeath:
+	playsndbtwn       	2834 2835 # Shaman Death 01, 02
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			845 0 0 # Terran Unit Rubble Small
+	wait              	1
+	end
+
+ShamanAdrenalineModeUnused1:
+	wait				1
+	nobrkcodestart
+	playsndbtwn			1705 1706 # Shaman Death Reversed 01, 02
+	sprol				742 0 0 # Orange Explosion Medium Reversed
+	setfldirect			12
+	wait				12
+	nobrkcodeend
+	goto				ShamanAdrenalineModeGndAttkToIdle
+
+ShamanAdrenalineModeSpecialState2:
+	playsnd           	2430 # Matador Tank Transform
+	playfram          	0xE0
+	wait              	1
+	playfram          	0xC0
+	wait              	1
+	playfram          	0xA0
+	wait              	1
+	playfram          	0x80
+	wait              	1
+	playfram          	0x60
+	wait              	3
+	playfram          	0x40
+	wait              	1
+	playfram          	0x00
+	wait              	6
+	sigorder          	1
+	goto              	SkryrokorLocal00
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2313 Morrigan (cm\f-t\morrigan.grp)
+.headerstart
+IsId          	856
+Type          	13
+Init          	MorriganInit
+Death         	MorriganDeath
+GndAttkInit   	MorriganGndAttkInit
+AirAttkInit   	MorriganGndAttkInit
+Unused1       	MorriganUnused1
+GndAttkRpt    	MorriganGndAttkRpt
+AirAttkRpt    	MorriganGndAttkRpt
+CastSpell     	MorriganCastSpell
+GndAttkToIdle 	MorriganGndAttkToIdle
+AirAttkToIdle 	MorriganGndAttkToIdle
+Unused2       	[NONE]
+Walking       	MorriganWalking
+WalkingToIdle 	MorriganWalkingToIdle
+SpecialState1 	MorriganSpecialState1
+.headerend
+# ----------------------------------------------------------------------------- #
+
+MorriganInit:
+	imgulnextid			0 0 # Morrigan Shadow (cm\f-t\morrigan-shadow.grp)
+MorriganWalkingToIdle:
+	playfram          	0x60
+MorriganLocal00:
+	wait				63
+	randcondjmp       	25 MorriganLocal01
+	randcondjmp       	128 MorriganLocal02
+	goto              	MorriganLocal00
+
+MorriganLocal01:
+	playfram          	0x00
+	wait              	1
+	playfram          	0x20
+	wait              	1
+	playfram          	0x40
+	randcondjmp       	192 MorriganLocal03
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	wait              	6
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	wait              	6
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	goto              	MorriganLocal04
+
+MorriganLocal04:
+	playfram          	0x20
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	goto              	MorriganWalkingToIdle
+
+MorriganLocal03:
+	wait              	13
+	playfram          	0x20
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	goto              	MorriganWalkingToIdle
+
+MorriganLocal02:
+	playfram          	0x80
+	wait              	1
+	playfram          	0xA0
+	wait              	1
+	turnrand          	3
+	wait              	1
+	playfram          	0x80
+	wait              	1
+	goto              	MorriganWalkingToIdle
+
+MorriganDeath:
+	playsnd           	238 # Terran\GHOST\TGhDth00.wav
+	goto				EidolonDeathInit
+	
+MorriganUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect			0
+	playsnd				1166 # Morrigan revive 01
+	playfram			423
+	wait				2
+	playfram			422
+	wait				2
+	playfram			421
+	wait				2
+	playfram			420
+	wait				2
+	playfram			419
+	wait				2
+	playfram			418
+	wait				2
+	playfram			417
+	wait				2
+	playfram			416
+	wait				2
+	setfldirect			12
+	nobrkcodeend
+	goto				MorriganWalkingToIdle
+
+MorriganGndAttkInit:
+	playfram          	0x00
+	wait              	1
+	playfram          	0x20
+	wait              	1
+	sigorder			32
+	playfram          	0x40
+	wait				1
+MorriganGndAttkRpt:
+	wait              	1
+	nobrkcodestart
+	attack
+	playsndbtwn			4324 4329 # Morrigan weaponfire 01, 02, 03, 04, 05, 06
+	playfram          	0x180
+	wait              	1
+	playfram          	0x40
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+MorriganGndAttkToIdle:
+	playfram          	0x11
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	goto              	MorriganWalkingToIdle
+
+MorriganCastSpell:
+	nobrkcodestart
+	wait              	1
+	playsnd           	240 # Terran\GHOST\TGhLkd00.wav
+	castspell
+	playfram          	0x180
+	wait              	2
+	playfram          	0x40
+	nobrkcodeend
+	gotorepeatattk
+	sigorder          	2
+	goto              	MorriganGndAttkToIdle
+
+MorriganWalking:
+	move              	4
+	wait              	1
+	playfram          	0x80
+	move              	4
+	wait              	1
+	playfram          	0xA0
+	move              	4
+	wait              	1
+	playfram          	0xC0
+	move              	4
+	wait              	1
+	playfram          	0xE0
+	move              	4
+	wait              	1
+	playfram          	0x100
+	move              	4
+	wait              	1
+	playfram          	0x120
+	move              	4
+	wait              	1
+	playfram          	0x140
+	move              	4
+	wait              	1
+	playfram          	0x160
+	move              	4
+	wait              	1
+	playfram          	0x60
+	goto              	MorriganWalking
+
+MorriganSpecialState1:
+	playfram          	0x00
+	wait              	1
+	playfram          	0x20
+	wait              	1
+	playfram          	0x40
+	wait              	1
+	goto              	SkryrokorLocal00
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 226 Harakan (Golden) (cm\f-t\harakan-golden.grp)
+.headerstart
+IsId          	857
+Type          	12
+Init          	HarakanGoldenInit
+Death         	HarakanGoldenDeath
+GndAttkInit   	HarakanGoldenGndAttkInit
+AirAttkInit   	[NONE]
+Unused1       	HarakanGoldenUnused1
+GndAttkRpt    	HarakanGoldenGndAttkRpt
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	HarakanGoldenGndAttkToIdle
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	HarakanGoldenWalking
+WalkingToIdle 	HarakanGoldenWalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+HarakanGoldenInit:
+	imgulnextid			0 0 # Harakan (Golden) Shadow (cm\f-t\harakan-golden-shadow.grp)
+HarakanGoldenWalkingToIdle:
+	playfram          	0x40
+HarakanGoldenLocal00:
+	wait				63
+	randcondjmp       	25 HarakanGoldenLocal01
+	randcondjmp       	128 HarakanGoldenLocal02
+	goto              	HarakanGoldenLocal00
+
+HarakanGoldenLocal01:
+	playfram          	0x00
+	wait              	1
+	randcondjmp       	192 HarakanGoldenLocal03
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	wait              	6
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	wait              	6
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	goto              	HarakanGoldenWalkingToIdle
+
+HarakanGoldenLocal03:
+	wait              	13 
+	goto              	HarakanGoldenWalkingToIdle
+
+HarakanGoldenLocal02:
+	playfram          	0x60
+	wait              	1
+	playfram          	0x80
+	wait              	1
+	turnrand          	3
+	wait              	1
+	playfram          	0x60
+	wait              	1
+	goto              	HarakanGoldenWalkingToIdle
+
+HarakanGoldenDeath:
+	playsndbtwn       	296 298 # Terran\Firebat\TFBDth00.WAV | Terran\Firebat\TFBDth02.WAV
+	imgol             	3 0 0 # Skryrokor Death (zerg\zavDeath.grp)
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	setfldirect       	0
+#	playfram          	170
+	wait              	2
+#	playfram          	171
+	wait              	2
+#	playfram          	172
+	wait              	2
+#	playfram          	173
+	wait              	2
+#	playfram          	174
+#	wait              	2
+#	playfram          	175
+#	wait              	2
+#	playfram          	176
+#	wait              	2
+#	playfram          	177
+#	wait              	2
+	lowsprul          	615 0 0 # HarakanGolden Remnants (cm\terran\harakan-remnants.grp)
+	wait              	1
+	end
+	
+HarakanGoldenUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect       	0
+	playsndbtwn			1163 1165 # Harakan (Golden) revive 01, 02, 03
+	sprol				742 0 0 # Explosion Small Reversed
+#	playfram			176
+	wait				2
+#	playfram			175
+	wait				2
+#	playfram			174
+	wait				2
+#	playfram			173
+	wait				2
+#	playfram			172
+	wait				2
+#	playfram			171
+	wait				2
+#	playfram			170
+	wait              	2
+	setfldirect       	12
+	nobrkcodeend
+	goto				HarakanGoldenWalkingToIdle
+
+HarakanGoldenGndAttkInit:
+	playfram          	0x00
+HarakanGoldenGndAttkRpt:
+	wait              	1
+	nobrkcodestart
+	imgol             	2487 0 0 # Flamethrower (Blue) (thingy\flamer.grp)
+	playfram          	0x20
+	attkshiftproj     	24
+	sigorder			32
+	wait              	1
+	attkshiftproj     	52
+	sigorder			32
+	wait              	1
+	attkshiftproj     	80
+	sigorder			32
+	wait              	5
+	playfram          	0x00
+	wait              	2
+	ignorerest
+HarakanGoldenGndAttkToIdle:
+	goto              	HarakanGoldenWalkingToIdle
+
+HarakanGoldenWalking:
+	move              	4
+	wait              	1
+	playfram          	0x60
+	move              	4
+	wait              	1
+	playfram          	0x80
+	move              	4
+	wait              	1
+	playfram          	0xA0
+	move              	4
+	wait              	1
+	playfram          	0xC0
+	move              	4
+	wait              	1
+	playfram          	0xE0
+	move              	4
+	wait              	1
+	playfram          	0x100
+	move              	4
+	wait              	1
+	playfram          	0x120
+	move              	4
+	wait              	1
+	playfram          	0x40
+	goto              	HarakanGoldenWalking

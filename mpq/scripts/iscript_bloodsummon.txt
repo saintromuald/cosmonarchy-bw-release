@@ -1180,6 +1180,8 @@ NihilistGndAttkInit:
     playfram            0x400
 	playsndbtwn			2536 2538 # Protathalor weaponfire 01, 02, 03
 	attack
+	attack
+	attack
     wait                1
     playfram            0x420
     wait                1

@@ -7003,15 +7003,15 @@ WorkingToIdle 	InfestedTerranWalkingToIdle
 WarpIn        	ArgosyAlmostBuilt
 Unused3       	[NONE]
 StarEditInit  	[NONE]
-Disable       	InfestedTerranWalkingToIdle
+Disable       	ArgosyDisable
 Burrow        	[NONE]
 UnBurrow      	[NONE]
-Enable        	InfestedTerranWalkingToIdle
+Enable        	ArgosyEnable
 .headerend
 # ----------------------------------------------------------------------------- #
 
 ArgosyInit:
-	imgul             	1123 0 0 # Argosy Shadow (cm\protoss\argosy-shad.grp)
+	imgulnextid			0 0 # Argosy Shadow (cm\protoss\argosy-shadow.grp)
 	goto              	InfestedTerranWalkingToIdle
 
 ArgosyDeath:
@@ -7036,27 +7036,35 @@ ArgosyAlmostBuilt:
 	goto              	SkryrokorLocal00
 
 ArgosyIsWorking:
-	playfram          	1
-	wait              	2
-	playfram          	2
-	wait              	2
-	playfram          	3
-	wait              	2
-	playfram          	4
-	wait              	2
-	playfram          	5
-	wait              	2
+	playfram			1
+	wait				2
+	playfram			2
+	wait				2
+	playfram			3
+	wait				2
+	playfram			4
+	wait				2
+	playfram			5
+	waitrand			2 5
+	playfram			4
+	wait				2
+	playfram			3
+	wait				2
+	playfram			2
+	wait				2
+	goto              	ArgosyIsWorking
+
+ArgosyDisable:
+	playfram			6
+	wait				2
+	playfram			7
+	wait				2
+	goto              	SkryrokorLocal00
+
+ArgosyEnable:
 	playfram          	6
 	wait              	2
-	playfram          	7
-	wait              	2
-	playfram          	8
-	wait              	2
-	playfram          	9
-	wait              	2
-	playfram          	0x00
-	wait              	2
-	goto              	ArgosyIsWorking
+	goto              	InfestedTerranWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -13211,7 +13219,7 @@ Enable        	ArdentAuthorityEnable
 
 ArdentAuthorityInit:
 	playfram          	0x00
-	imgul             	1637 0 0 # Ardent Authority Shadow (cm\protoss\ardent-authority-shadow.grp)
+	imgulnextid			0 0 # Ardent Authority Shadow (cm\protoss\ardent-authority-shadow.grp)
 	goto              	ArdentAuthorityLanding
 
 ArdentAuthorityLanding:
@@ -13235,9 +13243,14 @@ ArdentAuthorityIsWorking:
 	wait				2
 	playfram			2
 	wait				2
-	playfram			1
+	playfram			3
 	wait				2
-	playfram			0
+	playfram			4
+	waitrand			2 5
+	playfram			3
+	wait				2
+	playfram			2
+	wait				2
 	goto				ArdentAuthorityIsWorking
 	
 ArdentAuthorityWarpIn:
@@ -13245,13 +13258,15 @@ ArdentAuthorityWarpIn:
 	goto              	ArdentAuthorityLanding
 
 ArdentAuthorityDisable:
-	playfram			3
-	wait				1
-	goto              	ArdentAuthorityBuilt
+	playfram			6
+	wait				2
+	playfram			7
+	wait				2
+	goto              	ArdentAuthorityLanding
 
 ArdentAuthorityEnable:
-	playfram          	0x00
-	wait              	1
+	playfram          	6
+	wait              	2
 	goto              	ArdentAuthorityBuilt
 	
 # ----------------------------------------------------------------------------- #
@@ -15974,3 +15989,80 @@ CabalistStarboundWalkingToIdle:
 CabalistStarboundWarpIn:
 	imgol             	2123 0 0 # CabalistStarbound Warp Flash (cm\protoss\cabalist-starbound.grp)
 	goto              	CabalistStarboundWalkingToIdle
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2470 Gladius (Order) (cm\f-p\gladius-order.grp)
+.headerstart
+IsId          	737
+Type          	21
+Init          	GladiusOrderInit
+Death         	GladiusOrderDeath
+GndAttkInit   	GladiusOrderGndAttkInit
+AirAttkInit   	GladiusOrderGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	GladiusOrderGndAttkInit
+AirAttkRpt    	GladiusOrderGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	GladiusOrderGndAttkToIdle
+AirAttkToIdle 	GladiusOrderGndAttkToIdle
+Unused2       	[NONE]
+Walking       	GladiusOrderWalking
+WalkingToIdle 	GladiusOrderWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	GladiusOrderWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+GladiusOrderInit:
+	imgulnextid			0 42 # Gladius (Order) Shadow (cm\f-p\gladius-order.grp)
+GladiusOrderGndAttkToIdle:
+	playfram          	0x00
+	goto              	GladiusOrderWalkingToIdle
+
+GladiusOrderWalkingToIdle:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	GladiusOrderWalkingToIdle
+
+GladiusOrderDeath:
+	playsnd           	533	# Protoss\Scout\PScDth00.WAV
+	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			846 0 42 # Protoss Unit Rubble Medium
+	wait              	1
+	end
+
+GladiusOrderGndAttkInit:
+	nobrkcodestart
+	playsndbtwn       	1926 1928 # GladiusOrder weaponfire 01, 02, 03
+	playfram			0x20
+	attackwith        	1
+	wait              	2
+	playfram			0x00
+	nobrkcodeend
+	gotorepeatattk
+	goto              	SkryrokorLocal00
+
+GladiusOrderWalking:
+	setvertpos        	0
+	imgol             	2472 0 0 # Gladius (Order) Engines (cm\f-p\gladius-order-engine.grp)
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+GladiusOrderWarpIn:
+	imgol             	2473 0 0 # Gladius (Order) Warp Flash (cm\f-p\gladius-order.grp)
+	goto              	GladiusOrderWalkingToIdle
