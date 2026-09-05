@@ -9068,7 +9068,7 @@ AirAttkToIdle 	ZoryusthalethGndAttkToIdle
 Unused2       	[NONE]
 Walking       	ZoryusthalethWalking
 WalkingToIdle 	ZoryusthalethGndAttkToIdle
-SpecialState1 	[NONE]
+SpecialState1 	SkryrokorLocal00
 SpecialState2 	ZoryusthalethSpecialState2
 AlmostBuilt   	[NONE]
 Built         	[NONE]

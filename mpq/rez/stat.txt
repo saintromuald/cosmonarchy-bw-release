@@ -319,7 +319,7 @@ Piety Wards<0>
 Morrigan Requires:<10>   Covenant<0>
 f<1><4>Train Morrigan <1>(<3>G<1>)<10>Crowd-control infantry.<0>
 ¤<3><4>Dampening Field <2>(passive)<10>This combatant becomes cloaked for 2 seconds after attacking.<0>
-f<1><4>Bestow Maverick <1>(<3>F<1>)<10>Disciplined infantry.<0>
+a<1><4>Bestow Maverick <1>(<3>F<1>)<10>Disciplined infantry.<0>
 ¤<3><4>Accelerated Speech <2>(passive)<10>While the Missionary is within 2 range of its target, it gains +2 armor penetration.<0>
 ¤<3><4>Flanking Spines <2>(passive)<10>When targeting debuffed enemies, Almaksalisk attacks ignore armor.<0>
 Anchor Attack requires:<10>   Loaded ranged combatant<0>
@@ -406,7 +406,7 @@ r<1><4>Warp in Archon <1>(<3>R<1>)<10>Frontline martyr.<0>
 ¤<3><4>Deconstruction <2>(passive)<10>Targets struck by the Pazuzu are debuffed for 5 seconds, and deal 5% of their weapon damage per stack to themselves when attacking.<0>
 e<1><4>Build Pazuzu <1>(<3>E<1>)<10>Anti-mech hovertank.<0>
 a<1><4>Mutate into Vornath Pond <1>(<3>A<1>)<10>Swarm node. Enables Nathrokors and Vorvrokors.<0>
-a<1><4>Raise Aspirant <1>(<3>A<1>)<10>Ascendent walker.<0>
+g<1><4>Raise Aspirant <1>(<3>G<1>)<10>Ascendent walker.<0>
 t<1><4>Mutate into Skibact Scab <1>(<3>T<1>)<10>Assault node. Enables Skithrokors and Bactalisks.<0>
 Terran Infantry Armor<0>
 Terran Vehicle Plating<0>
@@ -435,12 +435,12 @@ Axitrilisk requires:<10>   Axtoth Axis<0>
 ¤<3><4>Anodyne Annex <2>(passive)<10>Dying hostiles that were struck by the Empress in the last 2 seconds become subserviant and zombified.<10>Zombies are stunned if allied masters are outside 8 range for longer than 1 second, and expire if outside 8 range for 5 seconds. Zombies have their corpses avenged 1 second after death.<0>
 b<1><4>Bestow Blackjack <1>(<3>B<1>)<10>Dutiful walker drone.<0>
 ¤<3><4>Gamete Meiosis <2>(passive)<10>Whenever a broodspawn is birthed, allied Matraleths within 6 range of the birthing site gain +5 energy.<0>
-z<1><4>Bestow Luminary <1>(<3>Z<1>)<10>Disruptive specialist craft. Provides detection.<0>
+s<1><4>Bestow Luminary <1>(<3>S<1>)<10>Disruptive specialist craft. Provides detection.<0>
 a<1><4>Bestow Aspirant <1>(<3>A<1>)<10>Unstable strider.<0>
 s<1><4>Train Striga <1>(<3>S<1>)<10>Isolating infantry.<0>
 z<1><4>Raise Luminary <1>(<3>Z<1>)<10>Disruptive craft. Provides detection.<0>
 ¤<3><4>Incineration <2>(passive)<10>Victims of this combatant take 4 damage per second for 2 seconds.<10>If they take fatal damage during this time, their corpse explodes into a landborne fire field that applies Apollyoid Adhesive.<0>
-q<1><4>Splice Tarasque <1>(<3>Q<1>)<10>Frontal biotank.<0>
+t<1><4>Splice Tarasque <1>(<3>T<1>)<10>Frontal biotank.<0>
 g<1><4>Assemble Analogue <1>(<3>G<1>)<10>Durable disruption drone.<0>
 z<1><4>Splice Anticthon <1>(<3>Z<1>)<10>Corpse engine.<0>
 c<1><4>Mutate to Chokral Chaszal <1>(<3>C<1>)<10>Assault node. Enables Cherbrathalors, Okrimnilisks, and Algoztalisks.<0>
@@ -480,7 +480,7 @@ Sovrol Aspect requires:<10>   Tosvrol Haunt<0>
 d<1><4>Morph into Sovroleths <1>(<3>D<1>)<10>Symbiote strain.<0>
 ¤<3><4>Whetted Appetite <2>(passive)<10>Seeing death empowers the Mortothrokor, granting 5% lifesteal and increased attack speed.<10><10>This bonus can stack and expires after being out of combat for 2 seconds.<0>
 ¤<3><4>Excoriation Assembly <2>(passive)<10>Upon taking fatal damage while mobile and above solid ground, Tirades descend and embed themselves into the surface, becoming immobile and more heavily-armored.<10>During this time, they target all hostiles within their weapon range.<0>
-c<1><4>Splice Cohort <1>(<3>C<1>)<10>Everlasting infantry.<0>
+r<1><4>Splice Cohort <1>(<3>R<1>)<10>Everlasting infantry.<0>
 ¤<3><4>Mitosal Fog <2>(passive)<10>When the Nathrelisk attacks, it releases a cloud that heals all units within 1 range for 2 HP before dissipating.<0>
 z<0><4>Swarming Strains <1>(<3>Z<1>)<0>
 x<0><4>Assault Strains <1>(<3>X<1>)<0>
@@ -1108,7 +1108,7 @@ a<1><4>Assemble Renesair <1>(<3>A<1>)<10>Reconstructing interceptor.<0>
 ¤<3><4>Triumphant Rise <2>(passive)<10>Victims of this warrior's attacks become energized for 1.5 seconds. Attacks on energized enemies bleed 2 shield points to all allies of the warrior within 3 range.<0>
 d<1><4>Train Madcap <1>(<3>D<1>)<10>Mechanized infantry.<0>
 ¤<3><4>Cabeirus Feeders <2>(passive)<10>While stationary, the Madcap gains a 15% attack speed bonus per attack, capping at a 150% bonus. This bonus falls off by 20% for every second the Madcap spends moving.<0>
-¤<3><4>Miasma <2>(passive)<10>This strain's attacks infect its victims with Miasma for 1.5 seconds.<10>Miasma deals 50 damage over 5 seconds, cannot kill its victims, and reduces healing by 50%.<0>
+¤<3><4>Miasma <2>(passive)<10>This strain's attacks infect its victims with Miasma for 1.5 seconds.<10>Miasma deals 15 damage over that time, cannot kill its victims, and reduces healing by 50%.<0>
 g<3><4>Land Grab <1>(<3>G<1>)<10>Orders the Wyvern to fire its weapon at the target site.<0>
 r<1><4>Warp in Strident Stratum <1>(<3>R<1>)<10>Utilitarian production.<0>
 Mantle requires:<10>   Atlas<0>
@@ -1139,7 +1139,7 @@ w<1><4>Build Cuirass <1>(<3>W<1>)<10>Durable frontline walker.<0>
 g<1><4>Warp in Gladius <1>(<3>G<1>)<10>Sustaining corvette.<0>
 r<5><4>Morph into Iroleth <1>(<3>R<1>)<10>Transport strain. Provides detection.<0>
 <0>
-t<1><4>Build Lodestone <1>(<3>T<1>)<10>Defensive emplacement. Detects hidden enemies.<0>
+d<1><4>Build Lodestone <1>(<3>D<1>)<10>Defensive emplacement. Detects hidden enemies.<0>
 t<1><4>Build Parthenon <1>(<3>T<1>)<10>Supportive production.<0>
 d<1><4>Build Madrigal <1>(<3>D<1>)<10>Versatile hovertank.<0>
 r<1><4>Build Scrapyard <1>(<3>R<1>)<10>Enables Blackjacks and Matadors.<0>
@@ -1499,7 +1499,7 @@ Olympian requires:<10> Guildhall<0>
 Autocrat requires:<10>   Guildhall<0>
 Anticthon requires:<10>   Biotic Bastion<0>
 Aion requires:<10>   Biotic Bastion<0>
-z<1><4>Build Serathiel <1>(<3>Z<1>)<10>Vanguard specialist craft.<0>
+s<1><4>Build Serathiel <1>(<3>S<1>)<10>Vanguard specialist craft.<0>
 Serathiel requires:<10>   Commandment<0>
 <0>
 Expansion Zerg Campaign Area Town<0>
@@ -1508,7 +1508,7 @@ Expansion Zerg Campaign Area Town<0>
 ¤<3><4>Harmony Drive <2>(passive)<10>Clarions gain increased movement speed and acceleration based on shields.<0>
 Expansion Protoss Campaign Area Town<0>
 <0>
-c<1><4>Build Philoc <1>(<3>C<1>)<10>All-purpose fighter.<0>
+w<1><4>Build Philoc <1>(<3>W<1>)<10>All-purpose fighter.<0>
 ¤<3><4>Death Cycle <2>(passive)<10>Broodspawn have timed life when away from cagra and sires. On attack, they gain 1 second of timed life back. On death, Broodspawn apply Corrosive Touch to hostiles within 3 range for 1 second.<0>
 Expansion Terran Campaign Area Town<0>
 <0>
@@ -1776,7 +1776,7 @@ e<3><4>Support Mode <1>(<3>E<1>)<10>Returns the Shaman's vision, Nanite Field ra
 ¤<3><4>Fossilizer Rounds <2>(passive)<10>Negative effects, such as stuns and slows, have their durations extended by Goska's attacks.<0>
 <0>
 ¤<3><4>Relentless Aggression <2>(passive)<10>Ghitorokors gain 10% increased attack speed with each attack until they reach the attack speed cap. This bonus falls off after 2 seconds of not being refreshed.<0>
-g<1><4>Train Silvertongue <1>(<3>G<1>)<10>Deceiving infantry.<0>
+t<1><4>Train Silvertongue <1>(<3>T<1>)<10>Deceiving infantry.<0>
 ¤<3><4>Recursion Rounds <2>(passive)<10>Each Cyclops attack leaves behind a smart munition that detonates after 2 seconds, damaging all hostiles within 2 range.<0><10><0>
 g<1><4>Build Dugout <1>(<3>G<1>)<10>Light garrison.<0>
 z<1><4>Build Azazel <1>(<3>Z<1>)<10>Defensive support craft.<0>

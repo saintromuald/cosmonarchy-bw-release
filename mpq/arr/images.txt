@@ -2486,8 +2486,8 @@ Battery Cell
 Battery Cell Shadow
 Battery Cell Shadow (Carried)
 Flamethrower (Blue)
-Extended Image #1486
-Extended Image #1487
+Watchdog Engine
+Watchdog Engine Idle
 Extended Image #1488
 Extended Image #1489
 Extended Image #1490

@@ -1444,9 +1444,9 @@ SpecialState1 	[NONE]
 # ----------------------------------------------------------------------------- #
 
 WraithAfterburnersInit:
-	wait              	1 
-	engframe          	0 
-	wait              	1 
+	wait              	1
+	engframe          	0
+	wait              	1
 	engframe          	17
 	goto              	WraithAfterburnersInit
 
@@ -3632,8 +3632,8 @@ CastSpell     	[NONE]
 GndAttkToIdle 	SkryrokorLocal00
 AirAttkToIdle 	SkryrokorLocal00
 Unused2       	[NONE]
-Walking       	SkryrokorLocal00
-WalkingToIdle 	SkryrokorLocal00
+Walking       	Watchdog_Base_Walking
+WalkingToIdle 	Watchdog_Base_WalkingToIdle
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	Watchdog_Base_AlmostBuilt
@@ -3656,38 +3656,52 @@ Watchdog_Base_AlmostBuilt:
 	goto              	SkryrokorLocal00
 	
 Watchdog_Base_LiftOff:
-	nobrkcodestart
-	playsnd           	471	# Misc\LiftOff.WAV
-	playfram			3
-	wait				1
-#	playfram          	5
-	wait              	8
-#	playfram          	2
-	wait              	8
-#	playfram          	3
-	wait              	8
-#	playfram          	4
-	sigorder          	16
-	nobrkcodeend
-	goto              	SkryrokorLocal00
+    nobrkcodestart
+    playsnd             471 # Misc\LiftOff.WAV
+    playfram			3
+    imgol               2489 0 0 # Watchdog Engines Idle (cm\t\watchdog-engine.grp)
+    wait                1
+    playfram            4
+    wait                4
+    playfram            5
+    wait                4
+    playfram            6
+    wait                4
+    playfram            7
+    wait                12
+    sigorder            16
+    nobrkcodeend
+    goto                Watchdog_Base_WalkingToIdle
 
 Watchdog_Base_Landing:
-	nobrkcodestart
-	wait              	15
-	playsnd           	472 # Misc\Land.WAV
-#	playfram          	4
-	wait              	8
-#	playfram          	3
-	wait              	8
-#	playfram          	2
-	wait              	8
-#	playfram          	5
-	wait              	8
-	playfram          	0x00
-	sigorder          	16
-	nobrkcodeend
-	playfram          	2
-	goto              	SkryrokorLocal00
+    nobrkcodestart
+    imgol               2488 0 0 # Watchdog Engines (cm\t\watchdog-engine.grp)
+    wait                15
+    playsnd             472 # Misc\Land.WAV
+    playfram            6
+    wait                4
+    playfram            5
+    wait                4
+	sigorder			32
+    playfram            4
+    wait                8
+    playfram            3
+    wait                8
+    playfram            2
+    wait                8
+    playfram            0x00
+    sigorder            16
+    nobrkcodeend        
+    playfram            2
+    goto                Watchdog_Base_WorkingToIdle
+
+Watchdog_Base_Walking:
+    imgol               2488 0 0 # Watchdog Engines (cm\t\watchdog-engine.grp)
+	goto				SkryrokorLocal00
+
+Watchdog_Base_WalkingToIdle:
+    imgol               2489 0 0 # Watchdog Engines Idle (cm\t\watchdog-engine.grp)
+	goto				SkryrokorLocal00
 
 Watchdog_Base_Built:
 	imgol             	297 0 0 # Watchdog (Turret) (terran\missileT.grp)
@@ -22232,3 +22246,57 @@ HarakanGoldenWalking:
 	wait              	1
 	playfram          	0x40
 	goto              	HarakanGoldenWalking
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2488 Watchdog Engine (cm\watchdog-engine.grp)
+# 2489 Watchdog Engine 2 (cm\watchdog-engine-2.grp)
+.headerstart
+IsId          	858
+Type          	20
+Init          	BuildingEngineInit
+Death         	Generic_Wait1End
+GndAttkInit   	Generic_Wait1End
+AirAttkInit   	Generic_Wait1End
+Unused1       	[NONE]
+GndAttkRpt    	Generic_Wait1End
+AirAttkRpt    	Generic_Wait1End
+CastSpell     	Generic_Wait1End
+GndAttkToIdle 	Generic_Wait1End
+AirAttkToIdle 	Generic_Wait1End
+Unused2       	[NONE]
+Walking       	BuildingEngineInit
+WalkingToIdle 	Generic_Wait1End
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	Generic_Wait1End
+Built         	Generic_Wait1End
+Landing       	BuildingEngineLanding
+LiftOff       	Generic_Wait1End
+IsWorking     	Generic_Wait1End
+WorkingToIdle 	Generic_Wait1End
+WarpIn        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+BuildingEngineInit:
+	playfram			0
+	wait              	1
+	playfram			1
+	wait              	1
+	goto              	BuildingEngineInit
+
+BuildingEngineLanding:
+	playfram			0
+	wait              	1
+	playfram			1
+	wait              	1
+	playfram			0
+	wait              	1
+	playfram			1
+	wait              	1
+	playfram			0
+	wait              	1
+	playfram			1
+	wait              	1
+	end

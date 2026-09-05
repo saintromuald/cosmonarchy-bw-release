@@ -22,11 +22,16 @@
 	- **Known issues:** the `wait` crig action does not currently operate
 - **A new campaign menu has been achieved!** (c. Jesse)
 	- It's so epic... please enjoy!
+- **Options menu now allows for:** (c. Jesse)
+	- Advisor selection
+	- Player color selection
+	- Validation on save to prevent errors
 
 ## Game Modes
 - **NEW: Mindshare** (b. BtyB)
 	- Resource pool is shared among allies!
 		- *Caveat: Starting resources are not yet doubled in all cases*
+		- *Caveat: Cancelling units may result in oddities until fixed*
 
 ## Bugfixes
 - **Stability:**
@@ -47,9 +52,11 @@
 
 ## Audiovisuals
 - New models for:
+	- Watchdog (c. Solstice)
 	- Magnetar, Ardent Authority, Argosy (c. DeltaCadimus)
 	- Vorvrokor (c. Baelethal)
 	- Landlock, Radix, Cipher, Function, Proscenium (c. fasswawds)
+	- All new wireframes c. jun3hong!
 - Resized model for:
 	- Talos, Cyprian
 - Modified model (mostly shaders) for:
@@ -59,7 +66,7 @@
 - Added weapon launch offsets for:
 	- Aphorist, Silversoul, Ghostwrit, Phontis, Iconoclast, Crematorium
 - Modified unit responses for Vorvrokor
-- New unit responses for Cardinal
+- New unit responses for Cardinal, Intendent
 - New error and structure placement SFX for Askosi (c. lolrsk8s)
 - New weapon SFX for:
 	- Alzurokor (c. lolrsk8s)

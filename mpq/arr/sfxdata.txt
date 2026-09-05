@@ -4372,25 +4372,25 @@ Zethalisk Weaponfire 01
 Zethalisk Weaponfire 02
 Zethalisk Weaponfire 03
 Bloodsummon Structure Placement 01
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Intendent Ready 01
+Intendent Ready 02
+Intendent Ready 03
+Intendent Selected 01
+Intendent Selected 02
+Intendent Selected 03
+Intendent Selected 04
+Intendent Order Passive 01
+Intendent Order Passive 02
+Intendent Order Passive 03
+Intendent Order Passive 04
+Intendent Order Aggressive 01
+Intendent Order Aggressive 02
+Intendent Order Aggressive 03
+Intendent Order Aggressive 04
+Intendent Under Attack 01
+Intendent Under Attack 02
+Intendent Under Attack 03
+Intendent Under Attack 04
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1
