@@ -17936,7 +17936,7 @@ ZethalorGndAttkInit:
 ZethalorGndAttkRpt:
     wait                1
     nobrkcodestart
-    playsndbtwn         3467 3469 # Zethalor weaponfire 01, 02, 03
+    playsndbtwn         4367 4369 # Zethalor weaponfire 01, 02, 03
     playfram            0x1A0
     wait                1
     playfram            0x1E0
@@ -19920,3 +19920,43 @@ GarvrokorUnBurrow:
 	wait              	1
 	sigorder          	4
 	goto              	GarvrokorGndAttkToIdle
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2490 Seeker Spores Silent (cm\z\okrimnilisk-spore.grp)
+.headerstart
+IsId          	849
+Type          	2
+Init          	OkrimniliskSporeInit
+Death         	OkrimniliskSporeDeath
+GndAttkInit   	OkrimniliskSporeGndAttkInit
+AirAttkInit   	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+OkrimniliskSporeInit:
+	playfram          	0x00
+	wait              	1
+	sigorder          	1
+	wait              	1
+OkrimniliskSporeGndAttkInit:
+	sprol             	1197 0 0 # Spore Trail (White) (cm\z\spore-trail-white.grp)
+	playfram          	0x00
+	wait              	1
+	sprol             	1197 0 0 # Spore Trail (White) (cm\z\spore-trail-white.grp)
+	playfram          	1
+	wait              	1
+	sprol             	1197 0 0 # Spore Trail (White) (cm\z\spore-trail-white.grp)
+	playfram          	2
+	wait              	1
+	sprol             	1197 0 0 # Spore Trail (White) (cm\z\spore-trail-white.grp)
+	playfram          	3
+	wait              	1
+	sprol             	1197 0 0 # Spore Trail (White) (cm\z\spore-trail-white.grp)
+	goto              	OkrimniliskSporeGndAttkInit
+
+OkrimniliskSporeDeath:
+	sprol             	1196 0 0 # Spore Hit (White) (cm\z\spore-hit-white.grp)
+	domissiledmg
+	wait              	1
+	end

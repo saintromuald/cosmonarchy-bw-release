@@ -310,30 +310,30 @@ Prophet 2
 Bloodsummon Advisor
 Vestige
 Rozirokor
-Extended Portrait #203
-Extended Portrait #204
-Extended Portrait #205
-Extended Portrait #206
-Extended Portrait #207
-Extended Portrait #208
-Extended Portrait #209
-Extended Portrait #210
-Extended Portrait #211
-Extended Portrait #212
-Extended Portrait #213
-Extended Portrait #214
-Extended Portrait #215
-Extended Portrait #216
-Extended Portrait #217
-Extended Portrait #218
-Extended Portrait #219
-Extended Portrait #220
-Extended Portrait #221
-Extended Portrait #222
-Extended Portrait #223
-Extended Portrait #224
-Extended Portrait #225
-Extended Portrait #226
+Vespene Node
+Ajax
+Alzurokor
+Arquebus
+Azanthrokor
+Broadside
+Cutlass
+Cyprian (Hecaton)
+Garvrokor
+Goremast
+Morrigan
+Quadriga
+Serathiel
+Shaman (Upstart)
+Sovrokor
+Tartarus Mine
+Valkyrie (Hecaton)
+Vulture (Hecaton)
+Vulture (Upstart)
+Eidolon (Golden)
+Dredge
+Ixodid
+Camazotz
+Cannibal
 Extended Portrait #227
 Extended Portrait #228
 Extended Portrait #229

@@ -2488,22 +2488,22 @@ Battery Cell Shadow (Carried)
 Flamethrower (Blue)
 Watchdog Engine
 Watchdog Engine Idle
-Extended Image #1488
-Extended Image #1489
-Extended Image #1490
-Extended Image #1491
-Extended Image #1492
-Extended Image #1493
-Extended Image #1494
-Extended Image #1495
-Extended Image #1496
-Extended Image #1497
-Extended Image #1498
-Extended Image #1499
-Extended Image #1500
-Extended Image #1501
-Extended Image #1502
-Extended Image #1503
+Okrimnilisk Spore
+Spore Hit (White)
+Spore Trail (White)
+Raynor (Maverick)
+Raynor (Maverick) Shadow
+Raynor (Maverick) Remains
+Cyprian (Hecaton)
+Cyprian (Hecaton) Shadow
+Memphis (Tank Mode)
+Memphis Turret (Tank Mode)
+Memphis (Tank Mode) Shadow
+Memphis (Flak Mode)
+Memphis Turret (Flak Mode)
+Fragmentary Shells (with damage)
+Floor Flame Trap
+Floor Flame Trap Turret
 Extended Image #1504
 Extended Image #1505
 Extended Image #1506

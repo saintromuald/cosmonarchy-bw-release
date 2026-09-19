@@ -13824,8 +13824,8 @@ CastSpell     	[NONE]
 GndAttkToIdle 	EngramGndAttkToIdle
 AirAttkToIdle 	EngramGndAttkToIdle
 Unused2       	[NONE]
-Walking       	[NONE]
-WalkingToIdle 	[NONE]
+Walking       	SkryrokorLocal00
+WalkingToIdle 	SkryrokorLocal00
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]

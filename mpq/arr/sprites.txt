@@ -1193,18 +1193,18 @@ Ammo Crate
 Medkit
 Battery Cell
 Flamethrower (Blue)
-Extended Sprite #679
-Extended Sprite #680
-Extended Sprite #681
-Extended Sprite #682
-Extended Sprite #683
-Extended Sprite #684
-Extended Sprite #685
-Extended Sprite #686
-Extended Sprite #687
-Extended Sprite #688
-Extended Sprite #689
-Extended Sprite #690
+Okrimnilisk Spore
+Spore Hit (White)
+Spore Trail (White)
+Raynor (Maverick)
+Raynor (Maverick) Remains
+Cyprian (Hecaton)
+Memphis (Tank Mode)
+Memphis (Flak Mode)
+Memphis Turret (Tank Mode)
+Memphis Turret (Flak Mode)
+Fragmentary Shells (with damage)
+Floor Flame Trap
 Extended Sprite #691
 Extended Sprite #692
 Extended Sprite #693

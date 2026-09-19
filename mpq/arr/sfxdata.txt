@@ -4391,21 +4391,21 @@ Intendent Under Attack 01
 Intendent Under Attack 02
 Intendent Under Attack 03
 Intendent Under Attack 04
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Pit Door Open 01
+Pit Door Open 02
+Pit Door Close 01
+Pit Door Close 02
+Upper Door Open 01
+Upper Door Open 02
+Upper Door Close 01
+Upper Door Close 02
+Memphis Weaponfire 01
+Memphis Weaponfire 02
+Memphis Weaponfire 03
+Memphis Weaponhit 2 01
+Memphis Weaponhit 2 02
+Memphis Weaponhit 2 03
+Memphis Weaponhit 2 04
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

@@ -29,7 +29,7 @@ Arclite Shock Cannon (Phalanx, Siege)
 Monstrous Maw (Zoryusthaleth)
 Longbolt Missiles (Watchdog)
 Yamato Cannon (Magnetar ability)
-Nuclear Missile
+Nuclear Payload (Morningstar)
 Lobotomy Grenade (Goska)
 Psi Assault (Tassadar)
 Irradiate (Seraph ability)
@@ -307,14 +307,14 @@ Epitaph Grenade Launcher (Morrigan)
 Scalpel Cannon (Shaman Upstart)
 Reactive Blaster (Manifold Starbound)
 Plasmathrower (Harakan Golden)
-Extended Weapon #180
-Extended Weapon #181
-Extended Weapon #182
-Extended Weapon #183
-Extended Weapon #184
-Extended Weapon #185
-Extended Weapon #186
-Extended Weapon #187
+High-Tonnage Payload (Eveningstar)
+Gauss Launcher (Raynor Maverick)
+Boreal Railguns (Cyprian Hecaton)
+Twinstrike Cannons (Memphis)
+Twinflak Cannons (Memphis)
+Hellfire Missile Pack (Missile Trap)
+Vigil Autocannon (Gun Trap)
+Flamethrower (Flame Trap)
 Extended Weapon #188
 Extended Weapon #189
 Extended Weapon #190

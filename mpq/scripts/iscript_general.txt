@@ -1924,6 +1924,7 @@ InstallationDoodadAlmostBuilt:
 	goto              	SkryrokorLocal00
 
 InstallationDoodadStarEditInit:
+	playsndbtwn			4395 4396 # Pit Door close 01, 02
 	playfram          	9
 	wait              	2
 	playfram          	8
@@ -1943,10 +1944,11 @@ InstallationDoodadStarEditInit:
 	playfram          	1
 	wait              	2
 	playfram          	0x00
-	sigorder          	1
+	sigorder          	64
 	goto              	SkryrokorLocal00
 
 InstallationDoodadDisable:
+	playsndbtwn			4393 4394 # Pit Door open 01, 02
 	playfram          	0x00
 	wait              	2
 	playfram          	1
@@ -1966,7 +1968,7 @@ InstallationDoodadDisable:
 	playfram          	8
 	wait              	2
 	playfram          	9
-	sigorder          	1
+	sigorder          	32
 	goto              	SkryrokorLocal00
 
 # ----------------------------------------------------------------------------- #
@@ -2018,6 +2020,7 @@ InstallationDoodad2AlmostBuilt:
 	goto              	SkryrokorLocal00
 
 InstallationDoodad2Enable:
+	playsndbtwn			4395 4396 # Pit Door close 01, 02
 	playfram          	9
 	setflipstate      	1
 	wait              	2
@@ -2038,10 +2041,11 @@ InstallationDoodad2Enable:
 	playfram          	1
 	wait              	2
 	playfram          	0x00
-	sigorder          	1
+	sigorder          	64
 	goto              	SkryrokorLocal00
 
 InstallationDoodad2Disable:
+	playsndbtwn			4393 4394 # Pit Door open 01, 02
 	playfram          	1
 	wait              	2
 	playfram          	2
@@ -2059,7 +2063,7 @@ InstallationDoodad2Disable:
 	playfram          	8
 	wait              	2
 	playfram          	9
-	sigorder          	1
+	sigorder          	32
 	goto              	SkryrokorLocal00
 
 # ----------------------------------------------------------------------------- #
@@ -2162,13 +2166,13 @@ Type          	27
 Init          	FloorMissileTrapInit
 Death         	FloorMissileTrapDeath
 GndAttkInit   	FloorMissileTrapGndAttkInit
-AirAttkInit   	[NONE]
+AirAttkInit   	FloorMissileTrapGndAttkInit
 Unused1       	[NONE]
 GndAttkRpt    	FloorMissileTrapGndAttkInit
-AirAttkRpt    	[NONE]
+AirAttkRpt    	FloorMissileTrapGndAttkInit
 CastSpell     	[NONE]
 GndAttkToIdle 	SkryrokorLocal00
-AirAttkToIdle 	[NONE]
+AirAttkToIdle 	SkryrokorLocal00
 Unused2       	[NONE]
 Walking       	[NONE]
 WalkingToIdle 	[NONE]
@@ -2201,7 +2205,7 @@ FloorMissileTrapDeath:
 
 FloorMissileTrapGndAttkInit:
 	wait              	1
-	attackwith        	1
+	attack
 	gotorepeatattk
 	ignorerest
 	goto              	SkryrokorLocal00
@@ -2273,13 +2277,13 @@ Type          	24
 Init          	FloorMissileTrapTurretInit
 Death         	Generic_Wait1End
 GndAttkInit   	SkryrokorLocal00
-AirAttkInit   	[NONE]
+AirAttkInit   	SkryrokorLocal00
 Unused1       	[NONE]
 GndAttkRpt    	SkryrokorLocal00
-AirAttkRpt    	[NONE]
+AirAttkRpt    	SkryrokorLocal00
 CastSpell     	[NONE]
 GndAttkToIdle 	SkryrokorLocal00
-AirAttkToIdle 	[NONE]
+AirAttkToIdle 	SkryrokorLocal00
 Unused2       	[NONE]
 Walking       	[NONE]
 WalkingToIdle 	[NONE]
@@ -2321,13 +2325,13 @@ Type          	27
 Init          	FloorGunTrapInit
 Death         	FloorGunTrapDeath
 GndAttkInit   	FloorGunTrapGndAttkInit
-AirAttkInit   	[NONE]
+AirAttkInit   	FloorGunTrapGndAttkInit
 Unused1       	[NONE]
-GndAttkRpt    	FloorGunTrapGndAttkInit
-AirAttkRpt    	[NONE]
+GndAttkRpt    	FloorGunTrapGndAttkRpt
+AirAttkRpt    	FloorGunTrapGndAttkRpt
 CastSpell     	[NONE]
 GndAttkToIdle 	FloorGunTrapGndAttkToIdle
-AirAttkToIdle 	[NONE]
+AirAttkToIdle 	FloorGunTrapGndAttkToIdle
 Unused2       	[NONE]
 Walking       	[NONE]
 WalkingToIdle 	[NONE]
@@ -2359,18 +2363,14 @@ FloorGunTrapDeath:
 	end
 
 FloorGunTrapGndAttkInit:
+	wait				1
+	sigorder			32
+	wait				4
+FloorGunTrapGndAttkRpt:
 	wait              	1
 	nobrkcodestart
 	playsnd           	70 # Bullet\TGoFir00.wav
 	attackwith        	1
-	playfram          	11
-	wait              	1
-	playfram          	10
-	wait              	1
-	playfram          	11
-	wait              	1
-	playfram          	10
-	wait              	1
 	playfram          	11
 	wait              	1
 	playfram          	10
@@ -2650,10 +2650,13 @@ WallFlameTrapType1GndAttkInit:
 	imgoluselo        	421 0 0 # FlameThrower (thingy\flamer.grp)
 	setfldirect       	12
 	attkshiftproj     	24
+	sigorder			32
 	wait              	2
 	attkshiftproj     	52
+	sigorder			32
 	wait              	1
 	attkshiftproj     	80
+	sigorder			32
 	wait              	10
 	ignorerest
 	goto              	SkryrokorLocal00
@@ -2758,10 +2761,13 @@ WallFlameTrapType2GndAttkInit:
 	imgoluselo        	421 0 0 # FlameThrower (thingy\flamer.grp)
 	setfldirect       	20
 	attkshiftproj     	24
+	sigorder			32
 	wait              	2
 	attkshiftproj     	52
+	sigorder			32
 	wait              	1
 	attkshiftproj     	80
+	sigorder			32
 	wait              	10
 	ignorerest
 	goto              	SkryrokorLocal00
@@ -4984,7 +4990,6 @@ VicereDeath:
 VicereGndAttkInit:
 	wait				1
 	attack
-	attack
 	wait				2
 	gotorepeatattk
 	ignorerest
@@ -5226,3 +5231,311 @@ AmmoCrateDeath:
 	imgol             	332 0 0	# Explosion2 (Small) (thingy\tBangS.grp)
 	wait              	3 
 	end
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 742 Left Upper Level Door (thingy\tileset\install\CRDoor1.grp)
+.headerstart
+IsId          	386
+Type          	27
+Init          	UpperDoorInit
+Death         	Generic_Wait1End
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	UpperDoorAlmostBuilt
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	UpperDoorStarEditInit
+Disable       	UpperDoorDisable
+Burrow        	[NONE]
+UnBurrow      	[NONE]
+Enable        	UpperDoorStarEditInit
+.headerend
+# ----------------------------------------------------------------------------- #
+
+UpperDoorInit:
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+UpperDoorAlmostBuilt:
+	playfram          	9
+	goto              	SkryrokorLocal00
+
+UpperDoorStarEditInit:
+	playsndbtwn			4399 4400 # Upper Door close 01, 02
+	playfram          	9
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	0x00
+	sigorder          	64
+	goto              	SkryrokorLocal00
+
+UpperDoorDisable:
+	playsndbtwn			4397 4398 # Upper Door open 01, 02
+	playfram          	0x00
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	9
+	sigorder          	32
+	goto              	SkryrokorLocal00
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 743 Right Upper Level Door (thingy\tileset\install\CRDoor1.grp)
+.headerstart
+IsId          	389
+Type          	27
+Init          	UpperDoor2Init
+Death         	Generic_Wait1End
+GndAttkInit   	[NONE]
+AirAttkInit   	[NONE]
+Unused1       	[NONE]
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	[NONE]
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	UpperDoor2AlmostBuilt
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	UpperDoor2Disable
+Burrow        	[NONE]
+UnBurrow      	[NONE]
+Enable        	UpperDoor2Enable
+.headerend
+# ----------------------------------------------------------------------------- #
+
+UpperDoor2Init:
+	playfram          	0x00
+	setflipstate      	1
+	goto              	SkryrokorLocal00
+
+UpperDoor2AlmostBuilt:
+	playfram          	9
+	setflipstate      	1
+	goto              	SkryrokorLocal00
+
+UpperDoor2Enable:
+	playsndbtwn			4399 4400 # Upper Door close 01, 02
+	playfram          	9
+	setflipstate      	1
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	1
+	wait              	2
+	playfram          	0x00
+	sigorder          	64
+	goto              	SkryrokorLocal00
+
+UpperDoor2Disable:
+	playsndbtwn			4397 4398 # Upper Door open 01, 02
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	9
+	sigorder          	32
+	goto              	SkryrokorLocal00
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2504 Floor Flame Trap (cm\n\floor-flame-trap.grp)
+.headerstart
+IsId          	390
+Type          	27
+Init          	FloorFlameTrapInit
+Death         	FloorFlameTrapDeath
+GndAttkInit   	FloorFlameTrapGndAttkInit
+AirAttkInit   	FloorFlameTrapGndAttkInit
+Unused1       	[NONE]
+GndAttkRpt    	FloorFlameTrapGndAttkInit
+AirAttkRpt    	FloorFlameTrapGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	SkryrokorLocal00
+AirAttkToIdle 	SkryrokorLocal00
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	FloorFlameTrapSpecialState1
+SpecialState2 	FloorFlameTrapSpecialState2
+AlmostBuilt   	SkryrokorLocal00
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	FloorFlameTrapSpecialState2
+Burrow        	[NONE]
+UnBurrow      	[NONE]
+Enable        	SkryrokorLocal00
+.headerend
+# ----------------------------------------------------------------------------- #
+
+FloorFlameTrapInit:
+	playfram          	1
+	goto              	SkryrokorLocal00
+
+FloorFlameTrapDeath:
+	imgol             	332 0 0 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	1
+	end
+
+FloorFlameTrapGndAttkInit:
+	wait              	1
+	nobrkcodestart
+	imgol	        	421 0 0 # FlameThrower (thingy\flamer.grp)
+	attkshiftproj     	24
+	sigorder			32
+	wait              	2
+	attkshiftproj     	52
+	sigorder			32
+	wait              	1
+	attkshiftproj     	80
+	sigorder			32
+	wait              	5
+	nobrkcodeend
+	ignorerest
+	goto              	SkryrokorLocal00
+
+FloorFlameTrapSpecialState1:
+	playfram          	1
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	10
+	wait              	2
+	playfram          	11
+	imgol             	2505 0 0 # Floor Flame Trap Turret (cm\n\floor-flame-trap-turret.grp)
+	sigorder          	1
+	goto              	SkryrokorLocal00
+
+FloorFlameTrapSpecialState2:
+	setspawnframe     	20
+	wait              	1
+FloorFlameTrapLocal00:
+	curdirectcondjmp  	160 10 FloorFlameTrapLocal01
+	wait              	2
+	goto              	FloorFlameTrapLocal00
+
+FloorFlameTrapLocal01:
+	wait              	1
+	playfram          	10
+	wait              	2
+	playfram          	9
+	wait              	2
+	playfram          	8
+	wait              	2
+	playfram          	7
+	wait              	2
+	playfram          	6
+	wait              	2
+	playfram          	5
+	wait              	2
+	playfram          	4
+	wait              	2
+	playfram          	3
+	wait              	2
+	playfram          	2
+	wait              	2
+	playfram          	1
+	sigorder          	1
+	goto              	SkryrokorLocal00

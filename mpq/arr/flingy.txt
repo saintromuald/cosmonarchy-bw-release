@@ -720,15 +720,15 @@ Shaman (Upstart, Adrenaline)
 Ammo Crate
 Medkit
 Battery Cell
-Extended Flingy #514
-Extended Flingy #515
-Extended Flingy #516
-Extended Flingy #517
-Extended Flingy #518
-Extended Flingy #519
-Extended Flingy #520
-Extended Flingy #521
-Extended Flingy #522
+Okrimnilisk Spore
+Raynor (Maverick)
+Cyprian (Hecaton)
+Memphis (Tank Mode)
+Memphis (Flak Mode)
+Memphis Turret (Tank Mode)
+Memphis Turret (Flak Mode)
+Fragmentary Shells (with damage)
+Floor Flame Trap
 Extended Flingy #523
 Extended Flingy #524
 Extended Flingy #525
