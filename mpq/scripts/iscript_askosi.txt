@@ -512,7 +512,7 @@ Burrow        	[NONE]
 ChantryInit:
 	playfram          	0x00
 	imgul             	2072 0 0 # Chantry Shadow (cm\a\chantry-shadow.grp)
-	goto              	ChantryIsWorking
+	goto              	ChantryLocal00
 	
 ChantryDeath:
 	playsndbtwn			4145 4147 # Askosi explosion medium 01, 02, 03
@@ -527,23 +527,38 @@ ChantrySpecialState1:
 	goto              	SkryrokorLocal00
 
 ChantryAlmostBuilt:
-	playfram          	4
+	playfram          	1
 	goto              	SkryrokorLocal00
 
 ChantryBuilt:
 	playfram          	0x00
-	goto              	SkryrokorLocal00
-
+	goto              	ChantryLocal00
+	
 ChantryIsWorking:
-	playfram          	1
-	wait              	1
+	goto				ChantryLocal00
+
+ChantryLocal00:
 	playfram          	2
 	wait              	1
 	playfram          	3
 	wait              	1
+	playfram          	4
+	wait              	1
+	playfram          	5
+	wait              	1
+	playfram          	6
+	wait              	1
+	playfram          	7
+	wait              	1
+	playfram          	8
+	wait              	1
+	playfram          	9
+	wait              	1
+	playfram          	10
+	wait              	1
 	playfram          	0
 	wait				12
-	goto              	ChantryIsWorking
+	goto              	ChantryLocal00
 
 ChantryDisable:
 	goto              	SkryrokorLocal00
@@ -4228,20 +4243,25 @@ IconoclastGndAttkInit:
 	setvertpos			0
 	wait				1
 	nobrkcodestart
-	playfram			0x00
-	playsndbtwn			4345 4347 # Iconoclast weaponfire 01, 02, 03
-	attackwith			1
-	wait 				2
+	wait				1
+	playfram			0x20
 	playsndbtwn			4345 4347 # Iconoclast weaponfire 01, 02, 03
 	attackwith			1
 	wait 				1
+	playfram			0x00
+	wait				1
+	playfram			0x20
+	playsndbtwn			4345 4347 # Iconoclast weaponfire 01, 02, 03
+	attackwith			1
+	wait 				1
+	playfram			0x00
 	nobrkcodeend
 	gotorepeatattk
 	goto				IconoclastGndAttkToIdle
 
 IconoclastWalking:
 	setvertpos        	0
-#	imgol             	225 0 5 # Iconoclast Engines (thingy\tdrGlow.grp)
+	imgol             	2506 0 0 # Iconoclast Engines (cm\a\iconoclast-engines.grp)
 	goto              	SkryrokorLocal00
 	
 IconoclastSpecialState1:

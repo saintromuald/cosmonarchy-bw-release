@@ -14793,7 +14793,7 @@ AirAttkToIdle 	SkryrokorLocal00
 Unused2       	[NONE]
 Walking       	SkryrokorLocal00
 WalkingToIdle 	SkryrokorLocal00
-SpecialState1 	[NONE]
+SpecialState1 	SkryrokorLocal00
 SpecialState2 	[NONE]
 AlmostBuilt   	Sentinel_Base_AlmostBuilt
 Built         	Sentinel_Base_Built
@@ -16179,6 +16179,7 @@ DurendalGndAttkRpt:
 	nobrkcodestart
 	wait				1
 	playfram			0x260
+	playsndbtwn			4411 4414 # Durendal weaponfire 01, 02, 03, 04
 	imgol             	421 0 0 # Flamethrower (thingy\flamer.grp)
 	attkshiftproj     	24
 	sigorder			32
@@ -20517,14 +20518,19 @@ QuadrigaDeath:
 QuadrigaAirAttkInit:
 	wait              	2
 	nobrkcodestart
+	playsndbtwn			4473 4475 # Quadriga weaponfire 01, 02, 03
 	attackwith        	2
 	wait				6
+	playsndbtwn			4473 4475 # Quadriga weaponfire 01, 02, 03
 	attackwith        	2
 	wait				6
+	playsndbtwn			4473 4475 # Quadriga weaponfire 01, 02, 03
 	attackwith        	2
 	wait				6
+	playsndbtwn			4473 4475 # Quadriga weaponfire 01, 02, 03
 	attackwith        	2
 	wait				6
+	playsndbtwn			4473 4475 # Quadriga weaponfire 01, 02, 03
 	attackwith        	2
 	nobrkcodeend
 	gotorepeatattk
@@ -21151,7 +21157,7 @@ ArquebusGndAttkInit:
 	wait				1
 	nobrkcodestart
 	playfram			0x220
-	playsndbtwn			2347 2350 # Arquebus weapon fire 01, 02, 03, 04
+	playsndbtwn			4478 4480 # Arquebus weapon fire 01, 02, 03
 	attackwith			1
 	wait				1
 	playfram			0x00
@@ -21739,7 +21745,7 @@ ShamanUpstartSupportModeUnused1:
 ShamanUpstartSupportGndAttkInit:
 	wait				1
 	playfram			0x20
-	playsndbtwn			2775 2776 # Cuirass weapon fire 01, 02
+	playsndbtwn			4476 4477 # Shaman (Upstart) weaponfire 01, 02
 	attack
 	wait				1
 	playfram			0x00
@@ -22573,7 +22579,7 @@ CyprianHecatonGndAttkRpt:
 	wait              	1
 	nobrkcodestart
 	playfram          	0x1E0
-	playsndbtwn       	1189 1193 # Cyprian (Hecaton) weaponfire 01, 02, 03, 04, 05
+	playsndbtwn       	4456 4460 # Cyprian (Hecaton) weaponfire 01, 02, 03, 04, 05
 	attackwith        	1
 	wait              	1
 	playfram          	0x1C0
@@ -22944,3 +22950,310 @@ CyclopsFragmentaryExplosionDamageInit:
 CyclopsFragmentaryExplosionDamageDeath:
 	wait              	1
 	end
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2520 Phalanx (Hecaton) Tank Mode (cm\f-t\phalanx-hecaton.grp)
+.headerstart
+IsId          	866
+Type          	23
+Init          	IfritInit
+Death         	IfritDeath
+GndAttkInit   	IfritGndAttkInit
+AirAttkInit   	IfritGndAttkInit
+Unused1       	IfritUnused1
+GndAttkRpt    	IfritGndAttkInit
+AirAttkRpt    	IfritGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	InfestedTerranWalkingToIdle
+AirAttkToIdle 	InfestedTerranWalkingToIdle
+Unused2       	[NONE]
+Walking       	IfritWalking
+WalkingToIdle 	InfestedTerranWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	Ifrit_Tank_BaseStarEditInit
+.headerend
+# ----------------------------------------------------------------------------- #
+
+IfritInit:
+	imgulnextid 		0 0 # Phalanx (Hecaton) Shadow (cm\f-t\phalanx-hecaton-shadow.grp)
+	playfram          	0x00
+	goto              	InfestedTerranWalkingToIdle
+
+IfritDeath:
+	playsndbtwn       	1385 1386 # Phalanx (Hecaton) death 01, 02
+	imgol             	332 0 -5 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			845 0 0 # Terran Unit Rubble Small
+	wait              	1
+	end
+
+IfritUnused1:
+	wait				1
+	nobrkcodestart
+	playsndbtwn			1705 1706
+	sprol				742 0 0
+	setfldirect			12
+	wait				12
+	nobrkcodeend
+	goto				InfestedTerranWalkingToIdle
+
+IfritGndAttkInit:
+	playfram          	0x00
+	wait              	1
+	nobrkcodestart
+	playfram          	0x100
+	playsndbtwn			4461 4466 # Ifrit (Tank) weaponfire 01, 02, 03, 04, 05, 06
+	attack
+	wait				1
+	playfram          	0x00
+	wait				5
+	playfram          	0x100
+	playsndbtwn			4461 4466 # Ifrit (Tank) weaponfire 01, 02, 03, 04, 05, 06
+	attack
+	wait				1
+	playfram          	0x00
+	wait				5
+	playfram          	0x100
+	playsndbtwn			4461 4466 # Ifrit (Tank) weaponfire 01, 02, 03, 04, 05, 06
+	attack
+	wait				1
+	playfram          	0x00
+	wait				5
+	nobrkcodeend
+	gotorepeatattk
+	goto              	InfestedTerranWalkingToIdle
+
+IfritWalking:
+	playfram			0x20
+	move				4
+	wait				1
+	playfram			0x40
+	move				4
+	wait				1
+	playfram			0x60
+	move				4
+	wait				1
+	playfram			0x80
+	move				4
+	wait				1
+	playfram			0xA0
+	move				4
+	wait				1
+	playfram			0xC0
+	move				4
+	wait				1
+	playfram			0xE0
+	move				4
+	wait				1
+	goto              	IfritWalking
+
+Ifrit_Tank_BaseStarEditInit:
+	setfldirect       	12
+	imgoluselo        	2522 2 0 # Phalanx (Hecaton, Tank) Turret (cm\f-t\phalanx-hecaton-turret.grp)
+	wait              	1
+	imgul             	2521 0 0 # Phalanx (Hecaton, Tank) Base Shadow (cm\f-t\phalanx-hecaton-shadow.grp)
+	setfldirect       	12
+	playfram          	0x00
+	goto              	InfestedTerranWalkingToIdle
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1726 Phalanx (Hecaton) Siege Mode (cm\f-t\phalanx-hecaton.grp)
+.headerstart
+IsId          	867
+Type          	23
+Init          	IfritSiegeModeInit
+Death         	IfritSiegeModeDeath
+GndAttkInit   	IfritSiegeModeGndAttkInit
+AirAttkInit   	IfritSiegeModeGndAttkInit
+Unused1       	IfritSiegeModeUnused1
+GndAttkRpt    	[NONE]
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	IfritSiegeModeGndAttkToIdle
+AirAttkToIdle 	IfritSiegeModeGndAttkToIdle
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	SkryrokorLocal00
+SpecialState1 	IfritSiegeModeSpecialState2
+SpecialState2 	IfritSiegeModeSpecialState2
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	IfritSiegeModeStarEditInit
+.headerend
+# ----------------------------------------------------------------------------- #
+
+IfritSiegeModeInit:
+	imgul             	2524 0 0 # Phalanx (Hecaton) Shadow (cm\f-t\hecaton-shadow.grp)
+	wait              	1
+	playsnd           	2429 # Phalanx (Hecaton) Siege Transform
+	setflspeed        	0
+	playfram          	0x120
+	wait              	1
+	playfram          	0x140
+	wait              	1
+	playfram          	0x160
+	wait              	1
+	playfram          	0x180
+	wait              	12
+	sigorder          	1
+	goto              	IfritSiegeModeGndAttkToIdle
+
+IfritSiegeModeGndAttkToIdle:
+	playfram          	0x180
+	goto				SkryrokorLocal00
+
+IfritSiegeModeDeath:
+	playsndbtwn       	1385 1386 # Ifrit death 01, 02
+	imgol             	332 0 -5 # Explosion2 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			845 0 0 # Terran Unit Rubble Small
+	wait              	1
+	end
+
+IfritSiegeModeUnused1:
+	wait				1
+	nobrkcodestart
+	playsndbtwn			1705 1706
+	sprol				742 0 0
+	setfldirect			12
+	wait				12
+	nobrkcodeend
+	goto				IfritSiegeModeGndAttkToIdle
+
+IfritSiegeModeGndAttkInit:
+	playfram          	0x180
+	wait              	1
+	nobrkcodestart
+	playfram          	0x1A0
+	playsndbtwn			4467 4472 # Ifrit (Siege) weaponfire 01, 02, 03, 04, 05, 06
+	imgoluselo        	537 2 0	# Phalanx (Siege) Turret Attack Overlay (thingy\esiFire.grp)
+	attack
+	wait				1
+	playfram          	0x180
+	wait              	8
+	playfram          	0x1A0
+	playsndbtwn			4467 4472 # Ifrit (Siege) weaponfire 01, 02, 03, 04, 05, 06
+	imgoluselo        	537 2 0	# Phalanx (Siege) Turret Attack Overlay (thingy\esiFire.grp)
+	attack
+	wait				1
+	playfram          	0x180
+	wait              	8
+	playfram          	0x1A0
+	playsndbtwn			4467 4472 # Ifrit (Siege) weaponfire 01, 02, 03, 04, 05, 06
+	imgoluselo        	537 2 0	# Phalanx (Siege) Turret Attack Overlay (thingy\esiFire.grp)
+	attack
+	wait				1
+	playfram          	0x180
+	wait              	8
+	nobrkcodeend
+	gotorepeatattk
+	goto              	IfritSiegeModeGndAttkToIdle
+
+IfritSiegeModeSpecialState2:
+	playsnd           	2430 # Phalanx (Hecaton) Tank Transform
+	playfram          	0x160
+	wait              	1
+	playfram          	0x140
+	wait              	1
+	playfram          	0x120
+	wait              	1
+	playfram          	0x00
+	wait              	12
+	sigorder          	1
+	goto              	SkryrokorLocal00
+
+IfritSiegeModeStarEditInit:
+	imgoluselo        	2525 2 0 # Phalanx (Hecaton) Siege Turret (cm\f-t\phalanx-hecaton-turret.grp)
+	imgul             	2524 0 0 # Phalanx (Hecaton) Siege Base Shadow (cm\f-t\phalanx-hecaton-shadow.grp)
+	wait              	1
+	setflspeed        	0
+	playsnd           	2430 # Phalanx (Hecaton) Tank Transform
+	playfram          	0x160
+	wait              	1
+	playfram          	0x140
+	wait              	1
+	playfram          	0x120
+	wait              	1
+	playfram          	0x00
+	wait              	12
+	sigorder          	1
+	goto              	SkryrokorLocal00
+
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1523 Ifrit Tank Mode Turret (cm\terran\matador-turret.grp)
+.headerstart
+IsId          	868
+Type          	13
+Init          	InfestedTerranWalkingToIdle
+Death         	Generic_Wait1End
+GndAttkInit   	IfritGndAttkInit
+AirAttkInit   	IfritGndAttkInit
+Unused1       	[NONE]
+GndAttkRpt    	IfritGndAttkInit
+AirAttkRpt    	IfritGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	InfestedTerranWalkingToIdle
+AirAttkToIdle 	InfestedTerranWalkingToIdle
+Unused2       	[NONE]
+Walking       	IfritWalking
+WalkingToIdle 	InfestedTerranWalkingToIdle
+SpecialState1 	SkryrokorLocal00
+.headerend
+# ----------------------------------------------------------------------------- #
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1726 Ifrit Turret Siege Mode (cm\terran\matador-turret.grp)
+.headerstart
+IsId          	869
+Type          	14
+Init          	IfritSiegeModeTurretInit
+Death         	Generic_Wait1End
+GndAttkInit   	IfritSiegeModeGndAttkInit
+AirAttkInit   	IfritSiegeModeGndAttkInit
+Unused1       	[NONE]
+GndAttkRpt    	IfritSiegeModeGndAttkInit
+AirAttkRpt    	IfritSiegeModeGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	IfritSiegeModeGndAttkToIdle
+AirAttkToIdle 	IfritSiegeModeGndAttkToIdle
+Unused2       	[NONE]
+Walking       	[NONE]
+WalkingToIdle 	[NONE]
+SpecialState1 	IfritSiegeModeSpecialState2
+SpecialState2 	IfritSiegeModeSpecialState2
+AlmostBuilt   	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+IfritSiegeModeTurretInit:
+	wait              	1
+	setflspeed        	0
+	playfram          	0x120
+	wait              	1
+	playfram          	0x140
+	wait              	1
+	playfram          	0x160
+	wait              	1
+	playfram          	0x180
+	wait              	6
+	sigorder          	1
+	goto              	IfritSiegeModeGndAttkToIdle

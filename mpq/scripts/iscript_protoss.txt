@@ -6867,6 +6867,7 @@ StarSovereignGndAttkInit:
 	playfram			0x00
 	wait				1
 	playfram			0x20
+	playsndbtwn			1227 1230 # Star Sovereign weaponfire 01, 02, 03, 04
 	attackwith        	1
 	attackwith        	1
 	wait              	2
@@ -13852,7 +13853,7 @@ EngramInit:
 EngramGndAttkInit:
 	wait              	1
 	attack
-	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
+	playsndbtwn			4421 4424 # Engram weaponfire 01, 02, 03, 04
 	imgol				1163 0 -20 # Warden impact
 	gotorepeatattk
 	ignorerest
@@ -13994,11 +13995,11 @@ AdherentGndAttkInit:
 	playfram          	0x100
 	nobrkcodestart
 	wait              	2
-	playsndbtwn			1231 1234 # Amaranth weaponfire 01, 02, 03, 04
+	playsndbtwn			4425 4427 # Adherent weaponfire 01, 02, 03
 	playfram          	0x120
 	wait              	1
 	playfram          	0x140
-	attackmelee       	1 1897 # Legionnaire weapon hit 01
+	attackmelee       	1 0
 	wait              	1
 	playfram          	0x160
 	wait              	1
@@ -15494,7 +15495,7 @@ AutocortDeath:
 	wait				1
 	playfram			20
 	wait				1
-	lowsprul          	691 0 0 # Autocort Remnants (cm\protoss\autocort-death.grp)
+	lowsprul			847 0 0 # Protoss Unit Rubble Small
 	wait              	1 
 	end
 	
@@ -16066,3 +16067,184 @@ GladiusOrderWalking:
 GladiusOrderWarpIn:
 	imgol             	2473 0 0 # Gladius (Order) Warp Flash (cm\f-p\gladius-order.grp)
 	goto              	GladiusOrderWalkingToIdle
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1284 Athuzelon (cm\f-p\athuzelon.grp)
+.headerstart
+IsId          	738
+Type          	21
+Init          	AthuzelonInit
+Death         	AthuzelonDeath
+GndAttkInit   	AthuzelonGndAttkInit
+AirAttkInit   	AthuzelonGndAttkInit
+Unused1       	AthuzelonUnused1
+GndAttkRpt    	AthuzelonGndAttkInit
+AirAttkRpt    	AthuzelonGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	AthuzelonGndAttkToIdle
+AirAttkToIdle 	AthuzelonGndAttkToIdle
+Unused2       	[NONE]
+Walking       	AthuzelonWalking
+WalkingToIdle 	AthuzelonWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	AthuzelonWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+AthuzelonInit:
+	imgul             	2514 0 0 # Athuzelon Shadow (cm\f-p\athuzelon.grp)
+AthuzelonLocal42:
+	playfram          	0x00
+	wait				1
+	goto              	AthuzelonLocal00
+
+AthuzelonLocal00:
+	playfram			0x20
+	wait				2
+	playfram			0x40
+	wait				2
+	playfram			0x60
+	wait				2
+	playfram			0x80
+	wait				2
+	playfram			0xA0
+	wait				2
+	playfram			0xC0
+	wait				2
+	playfram			0xE0
+	wait				2
+	playfram			0x100
+	wait				2
+	playfram			0x120
+	wait				2
+	playfram			0x140
+	wait				2
+	playfram			0x160
+	wait				2
+	playfram			0x00
+	wait				2
+	goto				AthuzelonLocal00
+
+AthuzelonDeath:
+	playsnd           	635	# Protoss\TEMPLAR\PTeDth00.WAV
+	playsnd           	533 # Protoss\Panoptus\PScDth00.WAV
+	imgol             	153 0 0 # Zealot Death (protoss\zealot.grp)
+	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
+	wait              	1
+	lowsprul			846 0 0 # Protoss Unit Rubble Medium
+	wait              	1
+	end
+	
+AthuzelonUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect       	0 
+	playsnd				1186 # Cantavis revive 01
+	imgol             	1445 0 0 # Zealot death reversed
+#	playfram			244
+	wait				2
+#	playfram			243
+	wait				2
+#	playfram			242
+	wait				2
+#	playfram			241
+	wait				2
+#	playfram			240
+	wait				2
+	wait				2
+	setfldirect       	12
+	nobrkcodeend
+	goto				AthuzelonLocal42
+
+AthuzelonGndAttkInit:
+	playfram          	0x200
+	wait              	1
+	nobrkcodestart
+	playfram          	0x220
+	wait              	1
+	playfram          	0x240
+	wait				1
+	playfram          	0x260
+	wait				1
+	playfram          	0x280
+	wait				1
+	playfram          	0x2A0
+	playsndbtwn			1231 1234 # Amaranth weaponfire 01, 02, 03, 04
+	playsndbtwn			2158 2160 # Athuzelon attack 01, 02, 03
+	attackwith        	1
+	wait				1
+	playfram          	0x2C0
+	wait				1
+	playfram          	0x2E0
+	wait				1
+	playfram          	0x300
+	wait				1
+	playfram          	0x320
+	wait				1
+	playfram          	0x340
+	playsndbtwn			1231 1234 # Amaranth weaponfire 01, 02, 03, 04
+	playsndbtwn			2158 2160 # Athuzelon attack 01, 02, 03
+	attackwith        	1
+	wait				1
+	playfram          	0x360
+	wait				1
+	playfram          	0x380
+	wait				1
+	playfram          	0x3A0
+	wait				1
+	nobrkcodeend
+	playfram          	0x3C0
+	wait				1
+	playfram          	0x3E0
+	wait				1
+	playfram          	0x400
+	wait				1
+	playfram          	0x420
+	wait				1
+	playfram          	0x440
+	wait				1
+	gotorepeatattk
+	wait				1
+	playfram          	0x00
+	wait				1
+	goto				AthuzelonGndAttkToIdle
+	
+AthuzelonGndAttkToIdle:
+	playfram 			0x00
+	wait 				1
+	goto              	AthuzelonLocal00
+
+AthuzelonWalking:
+	playfram          	0x180
+	wait              	1
+	playfram          	0x1A0
+	wait              	1
+	playfram          	0x1C0
+	wait              	1
+	playfram          	0x1E0
+	setvertpos        	0
+AthuzelonGlowLoop:
+	wait              	3
+	spruluselo        	1213 0 0 # Athuzelon Glow (cm\f-p\athuzelon-glow.grp)
+	goto              	AthuzelonGlowLoop
+	
+AthuzelonWalkingToIdle:
+	playfram          	0x1C0
+	wait              	1
+	playfram          	0x1A0
+	wait              	1
+	playfram          	0x180
+	wait              	1
+	goto				AthuzelonLocal00
+
+AthuzelonWarpIn:
+	imgol             	2515 0 0 # Athuzelon Warp Flash (cm\f-p\athuzelon.grp)
+	goto              	AthuzelonWalkingToIdle

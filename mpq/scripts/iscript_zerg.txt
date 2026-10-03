@@ -866,7 +866,7 @@ CastSpell     	[NONE]
 GndAttkToIdle 	[NONE]
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
-Walking       	[NONE]
+Walking       	SkryrokorLocal00
 WalkingToIdle 	[NONE]
 SpecialState1 	EggSpecialState1
 .headerend
@@ -11509,7 +11509,7 @@ GosvilethUnused1:
 
 GosvilethGndAttkInit:
 	setvertpos        	0
-	playsnd           	64	# Bullet\SpoogHit.wav
+	playsndbtwn			4428 4430 # Gosvileth weaponfire 01, 02, 03
 	sproluselo        	332 0 # Needle Spines (thingy\spooge.grp)
 	wait              	1
 	attackwith        	1
@@ -13573,7 +13573,7 @@ GhitorokorGndAttkInit:
 	wait				1
 	nobrkcodestart
 	playfram			0x77
-	playsnd           	113 # Bullet\zmuFir00.wav
+	playsndbtwn			4445 4447 # Ghitorokor weaponfire 01, 02, 03
 	attack
 	wait              	1
 	playfram          	0x66
@@ -13698,21 +13698,27 @@ ZobrioliskGndAttkInit:
 	playfram          	0xcc
 	wait              	1
 	playfram          	0xdd
+	playsndbtwn			4415 4417 # Zobriolisk weaponfire 01, 02, 03
 	attackwith			1
 	wait              	1
 	playfram          	0xcc
+	playsndbtwn			4415 4417 # Zobriolisk weaponfire 01, 02, 03
 	attackwith			1
 	wait              	1
 	playfram          	0xdd
+	playsndbtwn			4415 4417 # Zobriolisk weaponfire 01, 02, 03
 	attackwith			1
 	wait              	1
 	playfram          	0xcc
+	playsndbtwn			4415 4417 # Zobriolisk weaponfire 01, 02, 03
 	attackwith			1
 	wait              	1
 	playfram          	0xdd
+	playsndbtwn			4415 4417 # Zobriolisk weaponfire 01, 02, 03
 	attackwith			1
 	wait              	1
 	playfram          	0xcc
+	playsndbtwn			4415 4417 # Zobriolisk weaponfire 01, 02, 03
 	attackwith			1
 	wait              	1
 	playfram          	0xbb
@@ -13892,7 +13898,7 @@ TetcaerokorDeath:
 
 TetcaerokorGndAttkInit:
 	nobrkcodestart
-	playsndbtwn			1295 1296 # Tetcaerokor weapon fire 01, 02
+	playsndbtwn			4448 4450 # Tetcaerokor weapon fire 01, 02, 03
 	playfram 			0x440
 	wait 				1
 	playfram 			0x480
@@ -13901,7 +13907,7 @@ TetcaerokorGndAttkInit:
 	wait				1
 	playfram 			0x4E0
 	attackwith 			1
-	playsndbtwn			894 895	# Zerg\Ultra\zulHit00.WAV | Zerg\Ultra\zulHit01.WAV
+	playsndbtwn			4451 4452 # Tetcaerokor weaponhit 01, 02
 	wait 				1
 	playfram 			0x500
 	wait 				1
@@ -15441,7 +15447,7 @@ InzorthrokorGndAttkInit:
 	playfram          	0x00
 	wait				1
 	nobrkcodestart
-	playsndbtwn			1918 1919 # Zoryusthaleth weaponfire 01, 02
+	playsndbtwn			4418 4420 # Inzorthrokor weaponfire 01, 02, 03
 	playfram			0xaa
 	wait				1
 	playfram			0xbb
@@ -19853,7 +19859,7 @@ GarvrokorGndAttkInit:
 	playfram          	0x11
 	wait              	1
 	playfram          	0x22
-	attackmelee       	1 894 # Zerg\Ultra\zulHit00.WAV
+	attackmelee       	3 4453 4454 4455 # Garvrokor weaponhit 01, 02, 03
 	wait              	1
 	playfram          	0x33
 	wait              	1
@@ -19960,3 +19966,231 @@ OkrimniliskSporeDeath:
 	domissiledmg
 	wait              	1
 	end
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2507 Zethalisk (cm\f-z\zethalisk.grp)
+.headerstart
+IsId          	850
+Type          	26
+Init          	ZethaliskInit
+Death         	ZethaliskDeath
+GndAttkInit   	ZethaliskGndAttkInit
+AirAttkInit   	[NONE]
+Unused1       	ZethaliskUnused1
+GndAttkRpt    	ZethaliskGndAttkInit
+AirAttkRpt    	[NONE]
+CastSpell     	[NONE]
+GndAttkToIdle 	ZethaliskGndAttkToIdle
+AirAttkToIdle 	[NONE]
+Unused2       	[NONE]
+Walking       	ZethaliskWalking
+WalkingToIdle 	ZethaliskGndAttkToIdle
+SpecialState1 	SkryrokorLocal00
+SpecialState2 	ZethaliskSpecialState2
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	[NONE]
+Unused3       	[NONE]
+StarEditInit  	[NONE]
+Disable       	[NONE]
+Burrow        	ZethaliskBurrow
+UnBurrow      	ZethaliskUnBurrow
+Enable        	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+ZethaliskInit:
+	imgulnextid			0 0 # Zethalisk Shadow (cm\f-z\zethalisk-shadow.grp)
+ZethaliskGndAttkToIdle:
+	playfram          	0x00
+	goto              	ZethaliskLocal00
+
+ZethaliskLocal00:
+	wait              	63
+	randcondjmp       	25 ZethaliskLocal01
+	randcondjmp       	128 ZethaliskLocal02
+	goto              	ZethaliskLocal00
+
+ZethaliskLocal01:
+	playfram          	0x00
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	0x22
+	wait              	1
+	playfram          	0x33
+	wait              	12
+	playfram          	0x22
+	wait              	1
+	playfram          	0x11
+	wait              	1
+	playfram          	0x00
+	wait              	1
+	goto              	ZethaliskGndAttkToIdle
+
+ZethaliskLocal02:
+	randcondjmp       	128 ZethaliskLocal03
+	playfram          	0x66
+	wait              	1
+	turnccwise        	1
+	playfram          	0x77
+	wait              	1
+	turnccwise        	1
+	playfram          	0x88
+	wait              	1
+	turnccwise        	1
+	playfram          	0x99
+	wait              	1
+	turnccwise        	1
+	playfram          	0xaa
+	wait              	1
+	turnccwise        	1
+	playfram          	0xbb
+	wait              	1
+	turnccwise        	1
+	goto              	ZethaliskGndAttkToIdle
+
+ZethaliskLocal03:
+	playfram          	0x66
+	wait              	1
+	turncwise         	1
+	playfram          	0x77
+	wait              	1
+	turncwise         	1
+	playfram          	0x88
+	wait              	1
+	turncwise         	1
+	playfram          	0x99
+	wait              	1
+	turncwise         	1
+	playfram          	0xaa
+	wait              	1
+	turncwise         	1
+	playfram          	0xbb
+	wait              	1
+	turncwise         	1
+	goto              	ZethaliskGndAttkToIdle
+
+ZethaliskDeath:
+	imgol             	3 0 0 # Skryrokor Death (zerg\zavDeath.grp)
+	playsnd           	896 # Zerg\Zergling\ZZeDth00.WAV
+	setfldirect       	0
+	playfram          	289
+	wait              	2
+	playfram          	290
+	wait              	2
+ 	playfram          	291
+	wait              	2
+	playfram          	292
+	wait              	2
+	playfram          	293
+	wait              	2
+	playfram          	294
+	wait              	2
+	playfram          	295
+	wait              	1
+	lowsprul          	1211 0 0 # Zethalisk Remains (zerg\zethalisk-remains.grp)
+	wait              	1
+	end
+	
+ZethaliskUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect       	0
+	playsnd				1171
+	playfram			295
+	wait				2
+	playfram			294
+	wait				2
+	playfram			293
+	wait				2
+	playfram			292
+	wait				2
+	playfram			291
+	wait				2
+	playfram			290
+	wait				2
+	playfram			289
+	wait				2
+	setfldirect			10
+	nobrkcodeend
+	goto				ZethaliskGndAttkToIdle
+
+ZethaliskGndAttkInit:
+	playfram          	0x00
+	wait              	1
+	nobrkcodestart
+	playfram          	0x22
+	wait              	1
+	playfram          	0x33
+	wait              	1
+	playfram          	0x44
+	playsndbtwn			4370 4372 # Zethalisk weaponfire 01, 02, 03
+	attack
+	wait              	1
+	nobrkcodeend
+	gotorepeatattk
+	goto              	ZethaliskGndAttkToIdle
+
+ZethaliskWalking:
+	move              	6
+	wait              	1
+	playfram          	0x66
+	move              	6
+	wait              	1
+	playfram          	0x77
+	move              	6
+	wait              	1
+	playfram          	0x88
+	move              	6
+	wait              	1
+	playfram          	0x99
+	move              	6
+	wait              	1
+	playfram          	0xaa
+	move              	6
+	wait              	1
+	playfram          	0xbb
+	move              	6
+	wait              	1
+	playfram          	0x55
+	goto              	ZethaliskWalking
+
+ZethaliskSpecialState2:
+	playfram          	0x110
+	goto              	SkryrokorLocal00
+
+ZethaliskBurrow:
+	imgol             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
+	playfram          	0xcc
+	wait              	1
+	playfram          	0xdd
+	wait              	1
+	playfram          	0xee
+	wait              	1
+	playfram          	0xff
+	wait              	1
+	playfram          	0x110
+	wait              	1
+	sigorder          	4
+	goto              	SkryrokorLocal00
+
+ZethaliskUnBurrow:
+	wait 				1
+	waitrand          	1 2
+	imgul             	423 0 0 # Burrowing Dust (thingy\bDust.grp)
+	playfram          	0xff
+	wait              	1
+	playfram          	0xee
+	wait              	1
+	playfram          	0xdd
+	wait              	1
+	playfram          	0xcc
+	wait              	1
+	sigorder          	4
+	goto              	ZethaliskGndAttkToIdle

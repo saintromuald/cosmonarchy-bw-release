@@ -4906,15 +4906,15 @@ ExigoDeath:
 ExigoGndAttkInit:
 	wait				1
 	nobrkcodestart
-	attack
+	attackwith			1
 	wait				6
-	attack
+	attackwith			1
 	wait				6
-	attack
+	attackwith			1
 	wait				6
-	attack
+	attackwith			1
 	wait				6
-	attack
+	attackwith			1
 	wait				2
 	nobrkcodeend
 	gotorepeatattk
@@ -4989,7 +4989,7 @@ VicereDeath:
 
 VicereGndAttkInit:
 	wait				1
-	attack
+	attackwith			1
 	wait				2
 	gotorepeatattk
 	ignorerest

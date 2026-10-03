@@ -1,63 +1,76 @@
-# 19 September 2026
-## Year 4, month 9, patch 2
+# 3 October 2026
+## Year 4, month 9, patch 1
 
 ## Patch goals
-- Continue technical improvements, bugfixes, and audiovisual additions ahead of the Gauntlet Stages!
+- Continue technical improvements, bugfixes, and audiovisual additions ahead of each of the Gauntlet Stages!
 - [Subscribe on ko-fi](https://ko-fi.com/pr0nogoandveeq7) to get a sneak peek of the incoming changes!
 - Join our communities ([Discord](https://discord.com/invite/s5SKBmY) | [Fluxer](https://fluxer.gg/1rebBmBw)), or get in touch with Pr0nogo via email! pr0nogo@fraudsclub.com
 
-## Core
-- **User Interface:**
-	- The HUD can now be toggled with F11! (c. Jesse, b. Londier)
-		- *Send us your screenshots...*
-	- Shift-tab now correctly sets minimap colors to red, blue, etc for replay/witness (a. Jesse & DF)
-		- *Additional functionality forthcoming...*
-- **Triggers:**
-	- New custom trigger actions: (c. Jesse)
-		- `set_hud` - accepts racial names for racial HUDs
-		- `set_hud_visibility` - accepts `Visible` (default), `Hidden` (as with F11), or `Cinematic` (must be turned off manually in triggers)
-	- New custom trigger subcommand for **set_unit_stat**
-		- **transport_capacity** (b. Lucifirius) -- enables transporting via any unit, modifies transport capacity on any transport
-- **User-defined resource areas:** (c. DF)
-	- Our methodology for user-defined resource areas has changed from the previous system!
-	- **The location-based system has been removed.**
-	- To use the new system:
-		- Select the resource nodes you wish to assign to a specific resarea
-		- Tick **burrowed** (bottom-left-most status flag) in the unit property panel
-		- Set the **HP** field to the intended resarea id (a number between 1 and 255)
-- **Editor / UMS:**
-	- Installation traps have been reimplemented!
-	- The following unit ids are deprecated and should be updated to the new versions in maps (unit layer and triggers):
-		- **Unit id: old id -> new id**
-		- Nanite Assembly: 203 -> 261
-		- Kalkiir Lake: 204 -> 549
-		- Sentinel: 209 -> 260
-		- Tarasque: 210 -> 263
-		- Anticthon: 211 -> 289
-		- Kethraj Keep: 212 -> 303
+# Core
+
+## Music
+- The music system has been overhauled! (c. Jesse)
+	- As a result, Askosi now have their own music in melee, including a brand-new in-game track by Enozlliks!
+	- This also makes it so much easier to add music for forthcoming races!
+
+## User Interface
+- An options menu audio tab has arrived! (c. Jesse)
+	- *Please consult these newly-available options for background play and other useful settings!*
+- You can now right click on a unit to follow that unit in replay/witness mode (c. DF)
 
 ## Bugfixes
+- **Stability:**
+	- Resolved a briefing crash for Zerg scenarios (r. SgzzZ)
 - **Gameplay:**
-	- Fixed **Arquebus** attempting to attack air units (r. Londier)
-	- Installation doors can once again be disabled and enabled via triggers
+	- Fixed bad transport calculations allowing for "clown-car" interactions (r. Londier)
+	- Droleths can no longer morph into Agrileths in certain circumstances (r. jakulangski)
+	- Corrected Ultrokor Kaiser Rampage timeout (r. Londier)
+	- Fixed edge cases regarding Dorminge Crushing Delivery slow (r. Londier)
+	- Properly-restricted Dyad Salvage to one Dyad per target (r. Slav)
+	- Terran Mines and Askosi Wards now always benefit from Sublime Shepherd, as with structures (r. Londier)
+	- Hive Organ (from Malkothrokor) structures can no longer regress on cancel or death (r. jakulangski)
+	- Circitor on-hit effect has been corrected (r. jakulangski)
 - **Audiovisual:**
-	- Resolved error printout when loading recently-repowered **Engram**s (r. Concealed Organic)
-	- Corrected **Maverick (Golden)** weaponfire SFX (r. lolrsk8s)
-- **Triggers:**
-	- Allowed **set_player_color** to apply to player 12 (r. 3crow, c. Veeq7)
+	- Added garrison handling for project attacks and Golden Harakan flamethrower overlay (r. Londier)
+	- Added many missing aura displays (r. Londier & SkirmishBadger)
+	- Resolved iscript issues with Egg and Vilgoleth
+	- Fixed bad cropping on Apostle, Atreus (r. TheBeaver99)
+	- Fixed wrong weaponfire SFX for Star Sovereign (r. lolrsk8s)
+	- Fixed Autocort spawning the wrong corpse
+	- Fixed missing Insurant weapon name (r. jakulangski)
+	- Corrected Memphis Flak Mode string (r. beriso)
+	- Fixed missing randomization for Quazrokor weaponfire SFX
+	- Fixed 'terrain' flag being listed for Alacyne, Histrion weapons (r. jakulangski)
+	- Corrected many outdated tips (r. Londier)
 
 ## Audiovisuals
 - New models for:
-	- Ministry, Captaincy (c. Solstice & fasswawds)
-- Tweaked models for:
-	- Cyprian, Eidolon, Hippogriff, Watchdog, Treasury, Quarry, Starpad, Rotary, Zethrokor, Quazilisk (c. Solstice)
-- Modified weapon VFX for Okrimnilisk
-- Updated wireframes for Savant, Vulture (Upstart), Tartarus Mine, Piety Ward, Tarasque, Rotary, Witness, Cicatus, Vestige, Simulacrum, Phontis (c. jun3hong)
-- Added placeholder portrait for Vespene nodes (c. jun3hong)
-- Added factional portraits for: Alzurokor, Arquebus, Azanthrokor, Broadside, Camazotz, Cannibal, Cutlass, Garvrokor, Goremast, Morrigan, Quadriga, Serathiel, Shaman (Upstart), Sovrokor, Tartarus Mine, Valkyrie (Hecaton), Vulture (Hecaton), Vulture (Upstart) (c. jun3hong)
+	- Iconoclast, Chantry (c. fasswawds)
+- New VFX for Serathiel Rejoinder of Service
+- New portrait for Vassal (c. fasswawds & Solstice)
+- Updated placeholder portrait framerate for many portraits (c. jun3hong)
+- New selection responses for:
+	- Wellbore, Engram, Chokral Chazsal (c. jun3hong)
+- New weapon SFX for:
+	- Durendal, Cyprian (Hecaton), Shaman (Upstart), Arquebus, Quadriga, Adherent, Engram, Gosvileth, Ghitorokor, Inzorthrokor, Zobriolisk, Tetcaerokor, Garvrokor (c. lolrsk8s)
+- New unit responses for Gosvileth
 
 ## Terran factions
-- **NEW:** [Cyprian (Hecaton)](https://cosmonarchy.com/terran/cyprian-hecaton):
-	- Factional Cyprian variant for Hecaton Coalition; Has Kelvin Munitions
-- **NEW:** [Memphis](https://cosmonarchy.com/terran/memphis):
-	- Factional Matador replacement for Upstarts; Has anti-air Flak Mode
+- **NEW:** [Ifrit](https://cosmonarchy.com/terran/ifrit):
+	- Hecaton Coalition - Phalanx replacement. Incendiary artillery.
+	- Community milestone reward, thanks to TheNightFox!
+
+## Protoss
+- [Lattice](https://cosmonarchy.com/protoss/lattice/):
+	- Shields 300 » 350
+	- Armor 2 » 3
+
+## Protoss factions
+- **NEW:** [Athuzelon](https://cosmonarchy.com/protoss/athuzelon):
+	- Order of the Sacred Saber - Patriarch replacement. Peerless vanguard.
+	- Bountied by 3crow!
+
+## Zerg factions
+- **NEW:** [Zethalisk](https://cosmonarchy.com/zerg/zethalisk):
+	- Orkoti Tendril - Zethrokor replacement. Sustaining strain.
+	- Bartered for by lolrsk8s!
