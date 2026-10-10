@@ -6887,7 +6887,7 @@ OthstolethLocal00:
 	goto              	OthstolethLocal00
 
 OthstolethDeath:
-	playsnd           	910	# Zerg\ovileth\ZOvDth00.WAV
+	playsnd           	4484 # Othstoleth death 01
 	imgol             	45 0 0 # Ovileth Death (zerg\zovDeath.grp)
 	wait              	1
 	lowsprul			186 0 42 # Zerg Building Rubble Small
@@ -13430,7 +13430,7 @@ TosgriliskLocal00:
 	goto              	TosgriliskLocal00
 
 TosgriliskDeath:
-	playsnd           	942	# Zerg\Mutalid\ZMuDth00.WAV
+	playsnd           	4497 # Tosgrilisk death 01
 	imgol             	41 0 0 # Tosgrilisk Death (zerg\zmuDeath.grp)
 	wait              	1
 	lowsprul			848 0 42 # Zerg Unit Rubble Medium

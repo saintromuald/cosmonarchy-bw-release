@@ -660,7 +660,7 @@ Ifrit Turret (Tank)
 Terran Ifrit (Siege)
 Ifrit Turret (Siege)
 Askosi Magian
-Extended Unit #435
+Askosi Tirade (Deployed)
 Extended Unit #436
 Extended Unit #437
 Extended Unit #438

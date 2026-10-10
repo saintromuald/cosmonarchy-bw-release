@@ -1,5 +1,5 @@
-# 3 October 2026
-## Year 4, month 9, patch 1
+# 10 October 2026
+## Year 4, month 9, patch 2
 
 ## Patch goals
 - Continue technical improvements, bugfixes, and audiovisual additions ahead of each of the Gauntlet Stages!
@@ -23,6 +23,7 @@
 	- Resolved a briefing crash for Zerg scenarios (r. SgzzZ)
 - **Gameplay:**
 	- Fixed bad transport calculations allowing for "clown-car" interactions (r. Londier)
+	- Significantly improved Askosi teleportation accuracy!
 	- Droleths can no longer morph into Agrileths in certain circumstances (r. jakulangski)
 	- Corrected Ultrokor Kaiser Rampage timeout (r. Londier)
 	- Fixed edge cases regarding Dorminge Crushing Delivery slow (r. Londier)
@@ -45,15 +46,17 @@
 
 ## Audiovisuals
 - New models for:
-	- Iconoclast, Chantry (c. fasswawds)
+	- Tirade, Iconoclast, Chantry (c. fasswawds)
 - New VFX for Serathiel Rejoinder of Service
 - New portrait for Vassal (c. fasswawds & Solstice)
 - Updated placeholder portrait framerate for many portraits (c. jun3hong)
 - New selection responses for:
 	- Wellbore, Engram, Chokral Chazsal (c. jun3hong)
 - New weapon SFX for:
-	- Durendal, Cyprian (Hecaton), Shaman (Upstart), Arquebus, Quadriga, Adherent, Engram, Gosvileth, Ghitorokor, Inzorthrokor, Zobriolisk, Tetcaerokor, Garvrokor (c. lolrsk8s)
-- New unit responses for Gosvileth
+	- Durendal, Cyprian (Hecaton), Shaman (Upstart), Arquebus, Quadriga, Adherent, Vestige, Engram, Gosvileth, Ghitorokor, Inzorthrokor, Zobriolisk, Tetcaerokor, Garvrokor (c. lolrsk8s)
+- New unit responses for:
+	- Gosvileth
+	- Othstoleth, Tosgrilisk, Bactalisk (c. jun3hong)
 
 ## Terran factions
 - **NEW:** [Ifrit](https://cosmonarchy.com/terran/ifrit):

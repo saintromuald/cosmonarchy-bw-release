@@ -4479,46 +4479,46 @@ Shaman Upstart Weaponfire 02
 Arquebus Weaponfire 01
 Arquebus Weaponfire 02
 Arquebus Weaponfire 03
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Vestige Weaponfire 01
+Vestige Weaponfire 02
+Vestige Weaponfire 03
+Othstoleth Death 01
+Othstoleth Ready 01
+Othstoleth Selected 01
+Othstoleth Selected 02
+Othstoleth Selected 03
+Othstoleth Selected 04
+Othstoleth Order Passive 01
+Othstoleth Order Passive 02
+Othstoleth Order Passive 03
+Othstoleth Order Passive 04
+Othstoleth Under Attack 01
+Othstoleth Under Attack 02
+Othstoleth Under Attack 03
+Tosgrilisk Death 01
+Tosgrilisk Ready 01
+Tosgrilisk Selected 01
+Tosgrilisk Selected 02
+Tosgrilisk Selected 03
+Tosgrilisk Selected 04
+Tosgrilisk Order Passive 01
+Tosgrilisk Order Passive 02
+Tosgrilisk Order Passive 03
+Tosgrilisk Order Passive 04
+Tosgrilisk Under Attack 01
+Tosgrilisk Under Attack 02
+Tosgrilisk Under Attack 03
+Tosgrilisk Under Attack 04
+Bactalisk Ready 01
+Bactalisk Selected 01
+Bactalisk Selected 02
+Bactalisk Selected 03
+Bactalisk Order Passive 01
+Bactalisk Order Passive 02
+Bactalisk Order Passive 03
+Bactalisk Order Passive 04
+Bactalisk Under Attack 01
+Bactalisk Under Attack 02
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1

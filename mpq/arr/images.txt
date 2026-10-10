@@ -2524,10 +2524,10 @@ Ifrit (Tank Mode) Turret
 Ifrit (Siege Mode)
 Ifrit (Siege Mode) Shadow
 Ifrit (Siege Mode) Turret
-Extended Image #1524
-Extended Image #1525
-Extended Image #1526
-Extended Image #1527
+Tirade Engines
+Tirade Deployed
+Magian
+Magian Shadow
 Extended Image #1528
 Extended Image #1529
 Extended Image #1530

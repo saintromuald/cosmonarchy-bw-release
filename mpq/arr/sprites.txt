@@ -1216,8 +1216,8 @@ Ifrit (Tank Mode)
 Ifrit Turret (Tank Mode)
 Ifrit (Siege Mode)
 Ifrit Turret (Siege Mode)
-Extended Sprite #702
-Extended Sprite #703
+Tirade (Deployed)
+Magian
 Extended Sprite #704
 Extended Sprite #705
 Extended Sprite #706

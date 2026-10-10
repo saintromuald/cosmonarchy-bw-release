@@ -735,8 +735,8 @@ Ifrit (Tank Mode)
 Ifrit Turret (Tank Mode)
 Ifrit (Siege Mode)
 Ifrit Turret (Siege Mode)
-Extended Flingy #529
-Extended Flingy #530
+Tirade (Deployed)
+Magian
 Extended Flingy #531
 Extended Flingy #532
 Extended Flingy #533

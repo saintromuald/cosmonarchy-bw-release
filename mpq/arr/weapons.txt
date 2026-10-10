@@ -319,9 +319,9 @@ Zethal Spores (Zethalisk)
 Sacred Saber (Athuzelon)
 Incendiary Cannon (Ifrit, Tank)
 Incendiary Strike Cannon (Ifrit, Siege)
-Extended Weapon #192
-Extended Weapon #193
-Extended Weapon #194
+Ikta Driver (Tirade, Deployed)
+Erce Twinburst (Magian)
+Landfall (Askosi)
 Extended Weapon #195
 Extended Weapon #196
 Extended Weapon #197

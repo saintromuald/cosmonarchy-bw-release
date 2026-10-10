@@ -15878,23 +15878,23 @@ PathlightWarpIn:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1174 Cabalist (Starbound) (cm\f-p\cabalist-starbound.grp)
+# 1174 Vestige (cm\f-p\vestige.grp)
 .headerstart
 IsId          	736
 Type          	21
-Init          	CabalistStarboundInit
-Death         	CabalistStarboundDeath
-GndAttkInit   	CabalistStarboundGndAttkInit
-AirAttkInit   	CabalistStarboundGndAttkInit
+Init          	VestigeInit
+Death         	VestigeDeath
+GndAttkInit   	VestigeGndAttkInit
+AirAttkInit   	VestigeGndAttkInit
 Unused1       	SkryrokorLocal00
-GndAttkRpt    	CabalistStarboundGndAttkRpt
-AirAttkRpt    	CabalistStarboundGndAttkRpt
+GndAttkRpt    	VestigeGndAttkRpt
+AirAttkRpt    	VestigeGndAttkRpt
 CastSpell     	[NONE]
-GndAttkToIdle 	CabalistStarboundGndAttkToIdle
-AirAttkToIdle 	CabalistStarboundGndAttkToIdle
+GndAttkToIdle 	VestigeGndAttkToIdle
+AirAttkToIdle 	VestigeGndAttkToIdle
 Unused2       	[NONE]
-Walking       	CabalistStarboundWalking
-WalkingToIdle 	CabalistStarboundWalkingToIdle
+Walking       	VestigeWalking
+WalkingToIdle 	VestigeWalkingToIdle
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
@@ -15903,22 +15903,22 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	CabalistStarboundWarpIn
+WarpIn        	VestigeWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
-CabalistStarboundInit:
-	imgulnextid			0 0 # Cabalist (Starbound) Shadow (cm\f-p\cabalist-starbound-shadow.grp)
+VestigeInit:
+	imgulnextid			0 0 # Vestige Shadow (cm\f-p\vestige-shadow.grp)
 	playfram          	0x00
 	wait				2
 	goto 				SkryrokorLocal00
 	
-CabalistStarboundGndAttkToIdle:
+VestigeGndAttkToIdle:
 	playfram          	0x00
 	wait 				2
 	goto              	SkryrokorLocal00
 
-CabalistStarboundDeath:
+VestigeDeath:
 	playsnd           	741	# Protoss\DARKTEMPLAR\PDTDth00.WAV
 	imgol             	153 0 0	# Zealot Death (protoss\zealot.grp)
 	wait              	1
@@ -15926,18 +15926,18 @@ CabalistStarboundDeath:
 	wait              	1
 	end
 
-CabalistStarboundGndAttkInit:
+VestigeGndAttkInit:
 	playfram          	0x20
 	wait              	1
-	goto              	CabalistStarboundGndAttkRpt
-CabalistStarboundGndAttkRpt:
+	goto              	VestigeGndAttkRpt
+VestigeGndAttkRpt:
 	nobrkcodestart
 	playfram          	0x60
 	wait              	1
 	playfram 			0x80
 	wait 				1
 	playfram 			0xA0
-	attackmelee       	1 111 # Bullet\UZeFir00.wav
+	attackmelee       	3 4481 4482 4483 # Vestige weaponfire 01, 02, 03
 	wait 				1
 	playfram 			0xC0
 	wait 				1
@@ -15951,9 +15951,9 @@ CabalistStarboundGndAttkRpt:
 	playfram 			0x20
 	wait 				1
 	gotorepeatattk
-	goto				CabalistStarboundGndAttkToIdle
+	goto				VestigeGndAttkToIdle
 
-CabalistStarboundWalking:
+VestigeWalking:
 	move              	5
 	wait              	1
 	playfram          	0x120
@@ -15981,15 +15981,15 @@ CabalistStarboundWalking:
 	move				5
 	wait				1
 	playfram			0x220
-	goto				CabalistStarboundWalking
+	goto				VestigeWalking
 
-CabalistStarboundWalkingToIdle:
+VestigeWalkingToIdle:
 	playfram 0x00
 	goto              	SkryrokorLocal00
 
-CabalistStarboundWarpIn:
-	imgol             	2123 0 0 # CabalistStarbound Warp Flash (cm\protoss\cabalist-starbound.grp)
-	goto              	CabalistStarboundWalkingToIdle
+VestigeWarpIn:
+	imgol             	2123 0 0 # Vestige Warp Flash (cm\protoss\cabalist-starbound.grp)
+	goto              	VestigeWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:

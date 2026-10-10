@@ -305,7 +305,7 @@
 <0>
 <0>
 <0>
-<0>
+z<3><4>Landfall <1>(<3>Z<1>)<10>Leaps to the target ground ally within 5 range, activating Impact Dissipation for all allies within 3 range of the jump target.<10>After 3 seconds, if the Magian endures, all targets within 3 range of the jump site are teleported to the Magian.<0>
 e<3><4>Siege Mode <1>(<3>E<1>)<10>Switches forms, gaining splash radius and weapon range, while disabling movement.<0>
 e<0><4>Tank Mode <1>(<3>E<1>)<10>Returns the Ifrit's weapon and mobility to normal.<0>
 ¤<3><4>Plasma Conduit <2>(passive)<10>Effects that restore shields are twice as effective for this combatant.<0>
@@ -1445,8 +1445,8 @@ z<3><4>Blissful Embrace <1>(<3>Z<1>)<10>Channels onto the target. If the target 
 s<1><4>Morph into Skithrokor <1>(<3>S<1>)<10>Airborne duelist strain.<0>
 Skithrokor requires:<10>   Skibact Scab<0>
 a<1><4>Warp in Athuzelon <1>(<3>A<1>)<10>Peerless vanguard.<0>
-<0>
-<0>
+s<1><4>Raise Magian <1>(<3>S<1>)<10>Fickle trooper.<0>
+Magian requires:<10>   Radix OR Function<0>
 <0>
 Blackjack requires:<10>   Scrapyard<0>
 Matador requires:<10>   Scrapyard<0>
@@ -2318,9 +2318,9 @@ Zethal Spores<0>
 Sacred Saber<0>
 Incendiary Cannon<0>
 Incendiary Strike Cannon<0>
-<0>
-<0>
-<0>
+Ikta Driver<0>
+Erce Twinburst<0>
+Landfall<0>
 <0>
 <0>
 <0>
