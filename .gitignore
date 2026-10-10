@@ -1,0 +1,14 @@
+logs/
+
+**.ahk
+/*.log
+**.tmp
+/*.pcx
+**.png
+
+ddraw.ini
+BnetLog.txt
+SEXP_IX86_1xx_1161.mpq
+SpecialbusUpdater.exe
+temp.mpq
+hotloader.ini
