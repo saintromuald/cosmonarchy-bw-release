@@ -1,79 +1,32 @@
-# 10 October 2026
-## Year 4, month 9, patch 2
+# 17 October 2026
+## Year 4, month 10, patch 3
 
 ## Patch goals
+- Deploy **WIDESCREEN** support!
 - Continue technical improvements, bugfixes, and audiovisual additions ahead of each of the Gauntlet Stages!
 - [Subscribe on ko-fi](https://ko-fi.com/pr0nogoandveeq7) to get a sneak peek of the incoming changes!
 - Join our communities ([Discord](https://discord.com/invite/s5SKBmY) | [Fluxer](https://fluxer.gg/1rebBmBw)), or get in touch with Pr0nogo via email! pr0nogo@fraudsclub.com
 
 # Core
 
-## Music
-- The music system has been overhauled! (c. Jesse)
-	- As a result, Askosi now have their own music in melee, including a brand-new in-game track by Enozlliks!
-	- This also makes it so much easier to add music for forthcoming races!
+## Widescreen support has arrived!
+- A *huge* shout-out to Jesse, Handfish, Veeq7, and Batty for their contributions to this feature we once thought impossible!
+- **IMPORTANT SETUP STEPS:**
+	- If you use the legacy wmode feature (i.e. you cannot make the game fullscreen by pressing alt+enter), access your Cosmonarchy config via Fraud Launcher 2 and set `prefer-wmode` to `false`. This wmode feature is no longer supported by Cosmonarchy and has been removed from the options menu as a result.
+	- You will also want to make sure your `Cosmonarchy\Starcraft` directory has cnc-ddraw. You can find the default settings here: https://drive.google.com/file/d/16DVWwEDdJ_z42lpxS0R1Wd3qIjYM4baT/view?usp=sharing
+- **Caveats:**
+	- A few of the following issues are known and will be addressed soon!
+		- MMB panning doesn't block HUD interactions, causing "spikes" of movement when your invisible cursor moves over the minimap.
+		- Scrolling near map edges is sometimes faster than intended.
+		- Performance suffers in some cases -- try resetting your cnc-ddraw config! You can also navigate to your `plugins` folder and rename `aize_debug` to `_aize_debug` in order to stop it from loading, but you won't be able to use the console or speed up the game/replay without it. This shouldn't take us too long to resolve!
+		- Console commands that alter the display or account for mouse cursor are unwieldy currently. We will address this after performance is improved!
+		- F10 menu has a weird habit of glitching when the screen has a lot of cagra (creep) on it. This is an odd one, we'll look into it last.
+	- These issues need your help in creating reproduction cases!
+		- In rare cases, initial fog of war has stripes on it. This resolves itself after moving the camera, but we still want to fix it!
+	- If you spot an error not on this list, please let us know on discord or fluxer! Expect hotfixes deployed to release as we fix some of the more significant issues on this list.
 
-## User Interface
-- An options menu audio tab has arrived! (c. Jesse)
-	- *Please consult these newly-available options for background play and other useful settings!*
-- You can now right click on a unit to follow that unit in replay/witness mode (c. DF)
 
 ## Bugfixes
-- **Stability:**
-	- Resolved a briefing crash for Zerg scenarios (r. SgzzZ)
-- **Gameplay:**
-	- Fixed bad transport calculations allowing for "clown-car" interactions (r. Londier)
-	- Significantly improved Askosi teleportation accuracy!
-	- Droleths can no longer morph into Agrileths in certain circumstances (r. jakulangski)
-	- Corrected Ultrokor Kaiser Rampage timeout (r. Londier)
-	- Fixed edge cases regarding Dorminge Crushing Delivery slow (r. Londier)
-	- Properly-restricted Dyad Salvage to one Dyad per target (r. Slav)
-	- Terran Mines and Askosi Wards now always benefit from Sublime Shepherd, as with structures (r. Londier)
-	- Hive Organ (from Malkothrokor) structures can no longer regress on cancel or death (r. jakulangski)
-	- Circitor on-hit effect has been corrected (r. jakulangski)
 - **Audiovisual:**
-	- Added garrison handling for project attacks and Golden Harakan flamethrower overlay (r. Londier)
-	- Added many missing aura displays (r. Londier & SkirmishBadger)
-	- Resolved iscript issues with Egg and Vilgoleth
-	- Fixed bad cropping on Apostle, Atreus (r. TheBeaver99)
-	- Fixed wrong weaponfire SFX for Star Sovereign (r. lolrsk8s)
-	- Fixed Autocort spawning the wrong corpse
-	- Fixed missing Insurant weapon name (r. jakulangski)
-	- Corrected Memphis Flak Mode string (r. beriso)
-	- Fixed missing randomization for Quazrokor weaponfire SFX
-	- Fixed 'terrain' flag being listed for Alacyne, Histrion weapons (r. jakulangski)
-	- Corrected many outdated tips (r. Londier)
-
-## Audiovisuals
-- New models for:
-	- Tirade, Iconoclast, Chantry (c. fasswawds)
-- New VFX for Serathiel Rejoinder of Service
-- New portrait for Vassal (c. fasswawds & Solstice)
-- Updated placeholder portrait framerate for many portraits (c. jun3hong)
-- New selection responses for:
-	- Wellbore, Engram, Chokral Chazsal (c. jun3hong)
-- New weapon SFX for:
-	- Durendal, Cyprian (Hecaton), Shaman (Upstart), Arquebus, Quadriga, Adherent, Vestige, Engram, Gosvileth, Ghitorokor, Inzorthrokor, Zobriolisk, Tetcaerokor, Garvrokor (c. lolrsk8s)
-- New unit responses for:
-	- Gosvileth
-	- Othstoleth, Tosgrilisk, Bactalisk (c. jun3hong)
-
-## Terran factions
-- **NEW:** [Ifrit](https://cosmonarchy.com/terran/ifrit):
-	- Hecaton Coalition - Phalanx replacement. Incendiary artillery.
-	- Community milestone reward, thanks to TheNightFox!
-
-## Protoss
-- [Lattice](https://cosmonarchy.com/protoss/lattice/):
-	- Shields 300 » 350
-	- Armor 2 » 3
-
-## Protoss factions
-- **NEW:** [Athuzelon](https://cosmonarchy.com/protoss/athuzelon):
-	- Order of the Sacred Saber - Patriarch replacement. Peerless vanguard.
-	- Bountied by 3crow!
-
-## Zerg factions
-- **NEW:** [Zethalisk](https://cosmonarchy.com/zerg/zethalisk):
-	- Orkoti Tendril - Zethrokor replacement. Sustaining strain.
-	- Bartered for by lolrsk8s!
+	- Fixed wrong portrait for Zethalor (r. jun3hong)
+	- Corrected a unit acknowledgment sound for Tosgrilisk (r. jun3hong)
