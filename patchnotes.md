@@ -25,8 +25,10 @@
 		- In rare cases, initial fog of war has stripes on it. This resolves itself after moving the camera, but we still want to fix it!
 	- If you spot an error not on this list, please let us know on discord or fluxer! Expect hotfixes deployed to release as we fix some of the more significant issues on this list.
 
-
 ## Bugfixes
 - **Audiovisual:**
 	- Fixed wrong portrait for Zethalor (r. jun3hong)
 	- Corrected a unit acknowledgment sound for Tosgrilisk (r. jun3hong)
+
+## Hotfixes
+- **19 October 2026** - Resolved crashes on long tooltip hovers, fixed many tooltip formatting issues (c. Jesse)
