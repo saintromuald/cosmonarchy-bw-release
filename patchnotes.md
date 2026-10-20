@@ -32,3 +32,4 @@
 
 ## Hotfixes
 - **19 October 2026** - Resolved crashes on long tooltip hovers, fixed many tooltip formatting issues (c. Jesse)
+- **20 October 2026** - Resolved under-attack notifications not respecting camera bounds, and added Korean translations! (c. Jesse & Xetsumei)
