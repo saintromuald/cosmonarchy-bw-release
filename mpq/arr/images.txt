@@ -2504,30 +2504,30 @@ Memphis Turret (Flak Mode)
 Fragmentary Shells (with damage)
 Floor Flame Trap
 Floor Flame Trap Turret
-Extended Image #1504
-Extended Image #1505
-Extended Image #1506
-Extended Image #1507
-Extended Image #1508
-Extended Image #1509
-Extended Image #1510
-Extended Image #1511
-Extended Image #1512
-Extended Image #1513
-Extended Image #1514
-Extended Image #1515
-Extended Image #1516
-Extended Image #1517
-Extended Image #1518
-Extended Image #1519
-Extended Image #1520
-Extended Image #1521
-Extended Image #1522
-Extended Image #1523
-Extended Image #1524
-Extended Image #1525
-Extended Image #1526
-Extended Image #1527
+Iconoclast Engines
+Zethalisk
+Zethalisk Shadow
+Zethalisk Remains
+Zethalisk Birth
+Zethalisk Mutate
+Athuzelon
+Athuzelon Glow
+Athuzelon Shadow
+Athuzelon Warp Flash
+Rejoinder of Service (Small)
+Rejoinder of Service (Medium)
+Rejoinder of Service (Large)
+Rejoinder of Service (XLarge)
+Ifrit (Tank Mode)
+Ifrit (Tank Mode) Shadow
+Ifrit (Tank Mode) Turret
+Ifrit (Siege Mode)
+Ifrit (Siege Mode) Shadow
+Ifrit (Siege Mode) Turret
+Tirade Engines
+Tirade Deployed
+Magian
+Magian Shadow
 Extended Image #1528
 Extended Image #1529
 Extended Image #1530

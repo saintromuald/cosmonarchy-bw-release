@@ -512,7 +512,7 @@ Burrow        	[NONE]
 ChantryInit:
 	playfram          	0x00
 	imgul             	2072 0 0 # Chantry Shadow (cm\a\chantry-shadow.grp)
-	goto              	ChantryIsWorking
+	goto              	ChantryLocal00
 	
 ChantryDeath:
 	playsndbtwn			4145 4147 # Askosi explosion medium 01, 02, 03
@@ -527,23 +527,38 @@ ChantrySpecialState1:
 	goto              	SkryrokorLocal00
 
 ChantryAlmostBuilt:
-	playfram          	4
+	playfram          	1
 	goto              	SkryrokorLocal00
 
 ChantryBuilt:
 	playfram          	0x00
-	goto              	SkryrokorLocal00
-
+	goto              	ChantryLocal00
+	
 ChantryIsWorking:
-	playfram          	1
-	wait              	1
+	goto				ChantryLocal00
+
+ChantryLocal00:
 	playfram          	2
 	wait              	1
 	playfram          	3
 	wait              	1
+	playfram          	4
+	wait              	1
+	playfram          	5
+	wait              	1
+	playfram          	6
+	wait              	1
+	playfram          	7
+	wait              	1
+	playfram          	8
+	wait              	1
+	playfram          	9
+	wait              	1
+	playfram          	10
+	wait              	1
 	playfram          	0
 	wait				12
-	goto              	ChantryIsWorking
+	goto              	ChantryLocal00
 
 ChantryDisable:
 	goto              	SkryrokorLocal00
@@ -1646,15 +1661,19 @@ TiradeGndAttkInit:
 	wait				1
 	nobrkcodestart
 	playfram			0x00
+	wait				1
+	playfram			0x20
+	playsndbtwn			4052 4054 # Tirade weaponfire 01, 02, 03
 	attackwith			1
 	wait 				1
+	playfram			0x00
 	nobrkcodeend
 	gotorepeatattk
 	goto				TiradeGndAttkToIdle
 
 TiradeWalking:
 	setvertpos        	0
-#	imgol             	225 0 5 # Tirade Engines (thingy\tdrGlow.grp)
+	imgol             	2526 0 0 # Tirade Engines (cm\a\tirade-engine.grp)
 	goto              	SkryrokorLocal00
 	
 TiradeSpecialState1:
@@ -1849,6 +1868,7 @@ ProselyteGndAttkRpt:
 	wait              	1
 	nobrkcodestart
 	playfram          	0x40
+	playsndbtwn			4154 4157 # Proselyte weaponfire 01, 02, 03, 04
 	attackwith			1
 	wait              	1
 	playfram          	0x20
@@ -4228,20 +4248,25 @@ IconoclastGndAttkInit:
 	setvertpos			0
 	wait				1
 	nobrkcodestart
-	playfram			0x00
-	playsndbtwn			4345 4347 # Iconoclast weaponfire 01, 02, 03
-	attackwith			1
-	wait 				2
+	wait				1
+	playfram			0x20
 	playsndbtwn			4345 4347 # Iconoclast weaponfire 01, 02, 03
 	attackwith			1
 	wait 				1
+	playfram			0x00
+	wait				1
+	playfram			0x20
+	playsndbtwn			4345 4347 # Iconoclast weaponfire 01, 02, 03
+	attackwith			1
+	wait 				1
+	playfram			0x00
 	nobrkcodeend
 	gotorepeatattk
 	goto				IconoclastGndAttkToIdle
 
 IconoclastWalking:
 	setvertpos        	0
-#	imgol             	225 0 5 # Iconoclast Engines (thingy\tdrGlow.grp)
+	imgol             	2506 0 0 # Iconoclast Engines (cm\a\iconoclast-engine.grp)
 	goto              	SkryrokorLocal00
 	
 IconoclastSpecialState1:
@@ -6601,3 +6626,236 @@ ScraliaSpecialState1:
 	playfram			0x00
 	wait				12
 	goto				ScraliaGndAttkToIdle
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2527 Tirade (Deployed) (cm\a\tirade-deployed.grp)
+.headerstart
+IsId          	76
+Type          	21
+Init          	TiradeDeployedInit
+Death         	TiradeDeployedDeath
+GndAttkInit   	TiradeDeployedGndAttkInit
+AirAttkInit   	TiradeDeployedGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	TiradeDeployedGndAttkInit
+AirAttkRpt    	TiradeDeployedGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	TiradeDeployedGndAttkToIdle
+AirAttkToIdle 	TiradeDeployedGndAttkToIdle
+Unused2       	[NONE]
+Walking       	TiradeDeployedWalking
+WalkingToIdle 	TiradeDeployedLocal00
+SpecialState1 	TiradeDeployedSpecialState1
+.headerend
+# ----------------------------------------------------------------------------- #
+
+TiradeDeployedInit:
+	imgul				2179 0 5 # Tirade Shadow (cm\a\tirade.grp)
+TiradeDeployedGndAttkToIdle:
+	playfram          	0x00
+TiradeDeployedLocal00:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	TiradeDeployedLocal00
+
+TiradeDeployedDeath:
+	playsndbtwn			1249 1251 # Gorgon death 01, 02, 03
+	imgol             	333 0 0	# Explosion2 (Medium) (thingy\tBangL.grp)
+	wait              	3
+	lowsprul          	1065 0 0 # Askosi Unit Rubble (cm\a\a-rubble-tiny.grp)
+	wait              	1
+	end
+	
+TiradeDeployedGndAttkInit:
+	setvertpos			0
+	wait				1
+	nobrkcodestart
+	playfram			0x00
+	wait				1
+	playfram			0x20
+	playsndbtwn			4052 4054 # Tirade weaponfire 01, 02, 03
+	attackwith			1
+	wait 				1
+	playfram			0x00
+	nobrkcodeend
+	gotorepeatattk
+	goto				TiradeDeployedGndAttkToIdle
+
+TiradeDeployedWalking:
+	goto              	SkryrokorLocal00
+	
+TiradeDeployedSpecialState1:
+	playfram			0x00
+	wait				12
+	goto				SkryrokorLocal00
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2528 Magian (cm\f-a\magian.grp)
+.headerstart
+IsId          	77
+Type          	12
+Init          	MagianInit
+Death         	MagianDeath
+GndAttkInit   	MagianGndAttkInit
+AirAttkInit   	MagianGndAttkInit
+Unused1       	MagianUnused1
+GndAttkRpt    	MagianGndAttkRpt
+AirAttkRpt    	MagianGndAttkRpt
+CastSpell     	[NONE]
+GndAttkToIdle 	MagianGndAttkToIdle
+AirAttkToIdle 	MagianGndAttkToIdle
+Unused2       	[NONE]
+Walking       	MagianWalking
+WalkingToIdle 	MagianWalkingToIdle
+SpecialState1 	[NONE]
+.headerend
+# ----------------------------------------------------------------------------- #
+
+MagianInit:
+	imgulnextid			0 0 # Magian Shadow (cm\f-a\magian-shadow.grp)
+MagianWalkingToIdle:
+	playfram          	0x00
+MagianLocal00:
+	wait				63
+	randcondjmp       	25 MagianLocal01
+	randcondjmp       	128 MagianLocal02
+	goto              	MagianLocal00
+
+MagianLocal01:
+	playfram          	0x20
+	wait              	1
+	randcondjmp       	192 MagianLocal03
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	wait              	6
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	turncwise         	2
+	wait              	3
+	wait              	6
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	turnccwise        	2
+	wait              	3
+	goto              	MagianWalkingToIdle
+
+MagianLocal03:
+	wait              	13 
+	goto              	MagianWalkingToIdle
+
+MagianLocal02:
+	playfram          	0x80
+	wait              	1
+	playfram          	0xA0
+	wait              	1
+	turnrand          	3
+	wait              	1
+	playfram          	0x80
+	wait              	1
+	goto              	MagianWalkingToIdle
+
+MagianDeath:
+	playsndbtwn       	296 298 # Terran\Firebat\TFBDth00.WAV | Terran\Firebat\TFBDth02.WAV
+	imgol             	2089 0 0 # Askosi Death Explosion Small (cm\a\a-death-small.grp)
+	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
+	setfldirect       	0
+	wait              	8
+	lowsprul          	1064 0 0 # Magian Remnants (cm\a\proselyte-remnants.grp)
+	wait              	1
+	end
+	
+MagianUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect       	0
+	playsndbtwn			1163 1165
+	sprol				742 0 0 # Explosion Small Reversed
+#	playfram			176
+	wait				2
+#	playfram			175
+	wait				2
+#	playfram			174
+	wait				2
+#	playfram			173
+	wait				2
+#	playfram			172
+	wait				2
+#	playfram			171
+	wait				2
+#	playfram			170
+	wait              	2
+	setfldirect       	12
+	nobrkcodeend
+	goto				MagianWalkingToIdle
+
+MagianGndAttkInit:
+	playfram          	0x20
+MagianGndAttkRpt:
+	wait              	1
+	nobrkcodestart
+	playfram          	0x40
+	playsndbtwn			4154 4157 # Proselyte weaponfire 01, 02, 03, 04
+	attackwith			1
+	wait              	1
+	playfram          	0x20
+	wait              	1
+	nobrkcodeend
+	playfram          	0x40
+	wait              	1
+	playfram          	0x20
+	wait              	1
+	gotorepeatattk
+	ignorerest
+MagianGndAttkToIdle:
+	goto              	MagianWalkingToIdle
+
+MagianWalking:
+	move              	4
+	wait              	1
+	playfram          	0x80
+	move              	4
+	wait              	1
+	playfram          	0xA0
+	move              	4
+	wait              	1
+	playfram          	0xC0
+	move              	4
+	wait              	1
+	playfram          	0xE0
+	move              	4
+	wait              	1
+	playfram          	0x100
+	move              	4
+	wait              	1
+	playfram          	0x120
+	move              	4
+	wait              	1
+	playfram          	0x140
+	move              	4
+	wait              	1
+	playfram          	0x60
+	goto              	MagianWalking

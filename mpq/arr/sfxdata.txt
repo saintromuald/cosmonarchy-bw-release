@@ -4406,119 +4406,119 @@ Memphis Weaponhit 2 01
 Memphis Weaponhit 2 02
 Memphis Weaponhit 2 03
 Memphis Weaponhit 2 04
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
-Extended Sound #1
+Engram Selected 01
+Wellbore Selected 01
+Chokral Chazsal Selected 01
+Durendal Weaponfire 01
+Durendal Weaponfire 02
+Durendal Weaponfire 03
+Durendal Weaponfire 04
+Zobriolisk Weaponfire 01
+Zobriolisk Weaponfire 02
+Zobriolisk Weaponfire 03
+Inzorthrokor Weaponfire 01
+Inzorthrokor Weaponfire 02
+Inzorthrokor Weaponfire 03
+Engram Weaponfire 01
+Engram Weaponfire 02
+Engram Weaponfire 03
+Engram Weaponfire 04
+Adherent Weaponfire 01
+Adherent Weaponfire 02
+Adherent Weaponfire 03
+Gosvileth Weaponfire 01
+Gosvileth Weaponfire 02
+Gosvileth Weaponfire 03
+Gosvileth Ready 01
+Gosvileth Selected 01
+Gosvileth Selected 02
+Gosvileth Selected 03
+Gosvileth Selected 04
+Gosvileth Selected 05
+Gosvileth Order Passive 01
+Gosvileth Order Passive 02
+Gosvileth Order Passive 03
+Gosvileth Order Passive 04
+Gosvileth Order Passive 05
+Gosvileth Under Attack 01
+Gosvileth Under Attack 02
+Gosvileth Under Attack 03
+Ghitorokor Weaponfire 01
+Ghitorokor Weaponfire 02
+Ghitorokor Weaponfire 03
+Tetcaerokor Weaponfire 01
+Tetcaerokor Weaponfire 02
+Tetcaerokor Weaponfire 03
+Tetcaerokor Weaponhit 01
+Tetcaerokor Weaponhit 02
+Garvrokor Weaponhit 01
+Garvrokor Weaponhit 02
+Garvrokor Weaponhit 03
+Cyprian Hecaton Weaponfire 01
+Cyprian Hecaton Weaponfire 02
+Cyprian Hecaton Weaponfire 03
+Cyprian Hecaton Weaponfire 04
+Cyprian Hecaton Weaponfire 05
+Ifrit Tank Weaponfire 01
+Ifrit Tank Weaponfire 02
+Ifrit Tank Weaponfire 03
+Ifrit Tank Weaponfire 04
+Ifrit Tank Weaponfire 05
+Ifrit Tank Weaponfire 06
+Ifrit Siege Weaponfire 01
+Ifrit Siege Weaponfire 02
+Ifrit Siege Weaponfire 03
+Ifrit Siege Weaponfire 04
+Ifrit Siege Weaponfire 05
+Ifrit Siege Weaponfire 06
+Quadriga Weaponfire 01
+Quadriga Weaponfire 02
+Quadriga Weaponfire 03
+Shaman Upstart Weaponfire 01
+Shaman Upstart Weaponfire 02
+Arquebus Weaponfire 01
+Arquebus Weaponfire 02
+Arquebus Weaponfire 03
+Vestige Weaponfire 01
+Vestige Weaponfire 02
+Vestige Weaponfire 03
+Othstoleth Death 01
+Othstoleth Ready 01
+Othstoleth Selected 01
+Othstoleth Selected 02
+Othstoleth Selected 03
+Othstoleth Selected 04
+Othstoleth Order Passive 01
+Othstoleth Order Passive 02
+Othstoleth Order Passive 03
+Othstoleth Order Passive 04
+Othstoleth Under Attack 01
+Othstoleth Under Attack 02
+Othstoleth Under Attack 03
+Tosgrilisk Death 01
+Tosgrilisk Ready 01
+Tosgrilisk Selected 01
+Tosgrilisk Selected 02
+Tosgrilisk Selected 03
+Tosgrilisk Selected 04
+Tosgrilisk Order Passive 01
+Tosgrilisk Order Passive 02
+Tosgrilisk Order Passive 03
+Tosgrilisk Order Passive 04
+Tosgrilisk Under Attack 01
+Tosgrilisk Under Attack 02
+Tosgrilisk Under Attack 03
+Tosgrilisk Under Attack 04
+Bactalisk Ready 01
+Bactalisk Selected 01
+Bactalisk Selected 02
+Bactalisk Selected 03
+Bactalisk Order Passive 01
+Bactalisk Order Passive 02
+Bactalisk Order Passive 03
+Bactalisk Order Passive 04
+Bactalisk Under Attack 01
+Bactalisk Under Attack 02
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1
