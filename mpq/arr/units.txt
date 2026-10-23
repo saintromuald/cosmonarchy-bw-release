@@ -654,13 +654,13 @@ Forerunner Insignis
 Forerunner Incaendium
 Forerunner Ossum
 Forerunner Voluntatis
-Extended Unit #429
-Extended Unit #430
-Extended Unit #431
-Extended Unit #432
-Extended Unit #433
-Extended Unit #434
-Extended Unit #435
+Protoss Athuzelon
+Terran Ifrit (Tank)
+Ifrit Turret (Tank)
+Terran Ifrit (Siege)
+Ifrit Turret (Siege)
+Askosi Magian
+Askosi Tirade (Deployed)
 Extended Unit #436
 Extended Unit #437
 Extended Unit #438

@@ -305,10 +305,10 @@
 <0>
 <0>
 <0>
-<0>
-<0>
-<0>
-<0>
+z<3><4>Landfall <1>(<3>Z<1>)<10>Leaps to the target ground ally within 5 range, activating Impact Dissipation for all allies within 3 range of the jump target.<10>After 3 seconds, if the Magian endures, all targets within 3 range of the jump site are teleported to the Magian.<0>
+e<3><4>Siege Mode <1>(<3>E<1>)<10>Switches forms, gaining splash radius and weapon range, while disabling movement.<0>
+e<0><4>Tank Mode <1>(<3>E<1>)<10>Returns the Ifrit's weapon and mobility to normal.<0>
+¤<3><4>Plasma Conduit <2>(passive)<10>Effects that restore shields are twice as effective for this combatant.<0>
 a<1><4>Build Memphis <1>(<3>A<1>)<10>Flak microtank.<0>
 Memphis Requires:<10>   Scrapyard<0>
 e<3><4>Flak Mode <1>(<3>E<1>)<10>Switches forms, gaining splash radius and targeting only airborne hostiles, while disabling movement.<0>
@@ -331,7 +331,7 @@ t<3><4>Inject Stimpack <1>(<3>T<1>)<10>Take a dangerous injection that deals 5 d
 ¤<3><4>Swarming Omen <2>(passive)<10>Hostiles afflicted by the this strain's attacks grant 125% movement speed to any of this strain's allies within 10 range.<0>
 e<3><4>Plant Goremast <1>(<3>E<1>)<10>Places a Goremast at the target site. Goremasts damage and cripple targets that trip them.<0>
 d<3><4>Divine Discipline <1>(<3>D<1>)<10>Creates an alchemical field at the target location. Allies within the field gain 25% increased attack speed, while enemies within the field suffer 25% reduced attack speed.<0>
-d<3><4>Rejoinder of Service <1>(<3>D<1>)<10>Augments the combatant for 5 seconds, empowering their attacks to ignore armor.<10>If a combatant dies while under this effect, all hostiles within its vision range are pulled towards it by 2 range.<0>
+r<3><4>Rejoinder of Service <1>(<3>R<1>)<10>Augments the combatant for 5 seconds, empowering their attacks to ignore armor.<10>If a combatant dies while under this effect, all hostiles within its vision range are pulled towards it by 2 range.<0>
 t<3><4>Inject Stimpack <1>(<3>T<1>)<10>Take a dangerous injection that deals 10 damage. After a 1.5 second delay, gain 75% movement speed and 100% attack speed for 7.5 seconds.<0>
 e<3><4>Lay Lobotomy Mines <1>(<3>E<1>)<10>Places a Lobotomy Mine at the target site. Lobotomy Mines stun and slow targets that trip them.<0>
 e<3><4>Lay Tartarus Mines <1>(<3>E<1>)<10>Places a Tartarus Mine at the target site. Tartarus Mines incinerate and rend the armor of targets that trip them.<0>
@@ -568,7 +568,7 @@ g<1><4>Morph into Agrileth <1>(<3>G<1>)<10>Construction strain.<0>
 x<1><4>Build Aion <1>(<3>X<1>)<10>Reclaiming armor.<0>
 r<1><4>Morph into Nathrelisk <1>(<3>R<1>)<10>Sustaining fighter strain.<0>
 ¤<3><4>Corrosive Pathogen <2>(passive)<10>This strain's attacks debuff all hostiles within 4 range of their target, reducing their attack speed by 25% and armor by 1 for 3 seconds.<0>
-¤<3><4>Corrosive Touch <2>(passive)<10>This strain's attacks debuff enemies, increasing attack cooldown by 25% and reducing armor by 1 for 3 seconds.<0>
+¤<3><4>Corrosive Touch <2>(passive)<10>This strain's attacks debuff enemies, reducing their attack speed by 25% and armor by 1 for 3 seconds.<0>
 Nathrelisk requires:<10>  Vornath Pond<0>
 Stewards<0>
 ESC<0>
@@ -1092,7 +1092,7 @@ t<1><4>Build Mantle <1>(<3>T<1>)<10>Walker outpost.<0>
 ¤<3><4>Sustaining Sermon <2>(passive)<10>Every strike, the Cardinal's weapon releases a restorative pulse, healing 10 hit points for all allies within 3 range.<0>
 ¤<3><4>Impact Dissipation <2>(passive)<10>After being attacked by a hostile, this combatant gains 50% increased movement speed for 2 seconds, and blocks the next attack.<0>
 Mining Efficiency<0>
-¤<3><4>Schematic Unity <2>(passive)<10>Up to 5 Askosi workers can collaborate on construction efforts.<10>When Dyads assist in construction, they increase construction rate by 30%.<0>
+¤<3><4>Schematic Unity <2>(passive)<10>Up to 5 Askosi workers can collaborate on construction efforts.<10>When Dyads assist in construction, they increase construction rate by 40%.<0>
 ¤<3><4>Shared Designs <2>(passive)<10>Up to 5 Askosi workers can collaborate on construction efforts.<10>Each additional Pilgrim increases construction rate by 25%.<0>
 d<1><4>Assemble Idol <1>(<3>D<1>)<10>Ranged assault drone.<0>
 Mutath Spire requires:<10>   Irol Iris<0>
@@ -1104,7 +1104,7 @@ Alkag Iteth requires:<10>   Irol Iris<0>
 e<3><4>Place Piety Ward <1>(<3>E<1>)<10>Places a defensive ward that shields allies from attacks.<0>
 a<1><4>Assemble Renesair <1>(<3>A<1>)<10>Reconstructing interceptor.<0>
 ¤<3><4>Lucilleri Pheremones <2>(passive)<10>Allies within 5 range of the Sasyrvoleth have 100% base lifesteal.<0>
-¤<3><4>Astral Tether <2>(passive)<10>When the Matrix attacks, it radiates power from both itself and its target, restoring 2 shields to any allies of the Matrix within 3 range.<0>
+¤<3><4>Astral Tether <2>(passive)<10>When the Matrix attacks, it radiates power from both itself and its target, restoring 5 shields to any allies of the Matrix within 3 range.<0>
 ¤<3><4>Triumphant Rise <2>(passive)<10>Victims of this warrior's attacks become energized for 1.5 seconds. Attacks on energized enemies bleed 2 shield points to all allies of the warrior within 3 range.<0>
 d<1><4>Train Madcap <1>(<3>D<1>)<10>Mechanized infantry.<0>
 ¤<3><4>Cabeirus Feeders <2>(passive)<10>While stationary, the Madcap gains a 15% attack speed bonus per attack, capping at a 150% bonus. This bonus falls off by 20% for every second the Madcap spends moving.<0>
@@ -1127,7 +1127,7 @@ v<1><4>Train Sevenstep <1>(<3>V<1>)<10>Area-denial infantry.<0>
 g<1><4>Train Hypnagogue <1>(<3>G<1>)<10>Relocating specialist.<0>
 a<1><4>Build Nanite Assembly <1>(<3>A<1>)<10>Advanced vehicle and spacecraft production.<0>
 Nanite Assembly requires:<10>   Daedala<0>
-<0>
+Forerunner Capacitors<0>
 ¤<3><4>Law of Attraction <2>(passive)<10>Enemies struck by this combatant are pulled 2 range closer.<0>
 a<1><4>Warp in Aurora <1>(<3>A<1>)<10>Nimble fighter.<0>
 c<1><4>Build Centaur <1>(<3>C<1>)<10>All-purpose destroyer.<0>
@@ -1138,7 +1138,7 @@ w<1><4>Build Cuirass <1>(<3>W<1>)<10>Durable frontline walker.<0>
 ¤<3><4>Stonewall Protocol <2>(passive)<10>Upon taking fatal damage, the Cuirass deactivates, regains 50 HP, and begins self-repairing for 15 HP per second until fully-healed. If the Cuirass is dealt fatal damage again before it can fully repair, it is destroyed.<0>
 g<1><4>Warp in Gladius <1>(<3>G<1>)<10>Sustaining corvette.<0>
 r<5><4>Morph into Iroleth <1>(<3>R<1>)<10>Transport strain. Provides detection.<0>
-<0>
+c<2><4>Advance Capacitors <1>(<3>C<1>)<10>Weapons enhancement.<0>
 d<1><4>Build Lodestone <1>(<3>D<1>)<10>Defensive emplacement. Detects hidden enemies.<0>
 t<1><4>Build Parthenon <1>(<3>T<1>)<10>Supportive production.<0>
 d<1><4>Build Madrigal <1>(<3>D<1>)<10>Versatile hovertank.<0>
@@ -1160,7 +1160,7 @@ r<1><4>Warp in Ashguard <1>(<3>R<1>)<10>Conquering strider.<0>
 ¤<3><4>Skyward Stare <2>(passive)<10>While burrowed, this strain can attack airborne hostiles.<0>
 d<1><4>Train Blackguard <1>(<3>D<1>)<10>Mechanized sniper.<0>
 y<0><4>Build Addon <1>(<3>Y<1>)<0>
-<0>
+a<2><4>Advance Alloys <1>(<3>C<1>)<10>Plating enhancement.<0>
 Askosi Structure Bolting<0>
 1<0><4>Select Faction 1 <1>(<3>1<1>)<10><2>Inoa Scatterguard<0>
 2<0><4>Select Faction 2 <1>(<3>2<1>)<10><2>Sons of Ash<0>
@@ -1210,15 +1210,15 @@ Askosi Structure Bolting<0>
 <0>
 <0>
 <0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
+Alloy L1 Requires:<10>   Nothing<0>
+Alloy L1 Requires:<10>   Insignis<0>
+Alloy L1 Requires:<10>   Voluntatis<0>
+Capacitors L1 Requires:<10>   Nothing<0>
+Capacitors L1 Requires:<10>   Insignis<0>
+Capacitors L1 Requires:<10>   Voluntatis<0>
+¤<3><4>Dermal Spores <2>(passive)<10>Zethalisk projectiles heal allies that they pass through for 3 HP.<0>
+z<1><4>Morph into Zethalisks <1>(<3>Z<1>)<10>Sustaining strain.<0>
+Zethalisks Require:<10>   Quazeth Pool<0>
 w<1><4>Warp in Xenolith <1>(<3>W<1>)<10>Recalling relay.<0>
 Advanced Warps require:<10>   Basic Warp<0>
 Empowered Warps require:<10>   Advanced Warp<0>
@@ -1233,8 +1233,8 @@ Nanite Drones:<10>   Must be in Smithy Mode<0>
 ¤<3><4>Retaliation Assembly<2>(passive)<10>Upon taking fatal damage while mobile, Thaumalogues embed themselves into the surface, becoming immobile and more heavily-armored. During this time, they gain increased 50% attack speed when damaged.<0>
 ¤<3><4>Scrapworld: Ash Heap <2>(passive)<10>This combatant's attacks debuff hostiles for 2 seconds. While debuffed, the hostiles lose 1 armor every 2 seconds.<10>If a victim dies during this time, its corpse is turned to ash, spreading the armor debuff to hostiles within 2 range.<0>
 ¤<3><4>Corpse Cocoon <2>(passive)<10>Corpses touched by this strain are consumed, transforming into eggs that spawn an additional combatant. The gestation time is equal to half of the strain's build time.<0>
-<0>
-<0>
+t<1><4>Build Ifrit <1>(<3>T<1>)<10>Incendiary artillery.<0>
+Ifrit requires:<10>   Palladium<0>
 <0>
 <0>
 ¤<3><4>Villanous Fervor <2>(passive)<10>As long as the Mind Tyrant remains within 10 range, damage dealt to the malefactor is first inflicted upon the Mind Tyrant's energy, they gain 33% increased movement speed, and hostiles they strike are tyrannized on death.<0>
@@ -1444,9 +1444,9 @@ z<3><4>Blissful Embrace <1>(<3>Z<1>)<10>Channels onto the target. If the target 
 <27><0><4>Cancel Embrace <1>(<3>ESC<1>)<0>
 s<1><4>Morph into Skithrokor <1>(<3>S<1>)<10>Airborne duelist strain.<0>
 Skithrokor requires:<10>   Skibact Scab<0>
-<0>
-<0>
-<0>
+a<1><4>Warp in Athuzelon <1>(<3>A<1>)<10>Peerless vanguard.<0>
+s<1><4>Raise Magian <1>(<3>S<1>)<10>Fickle trooper.<0>
+Magian requires:<10>   Radix OR Function<0>
 <0>
 Blackjack requires:<10>   Scrapyard<0>
 Matador requires:<10>   Scrapyard<0>
@@ -2314,13 +2314,13 @@ Twinflak Cannons<0>
 Hellfire Missile Pack<0>
 Vigil Autocannon<0>
 Flamethrower<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
+Zethal Spores<0>
+Sacred Saber<0>
+Incendiary Cannon<0>
+Incendiary Strike Cannon<0>
+Ikta Driver<0>
+Erce Twinburst<0>
+Landfall<0>
 <0>
 <0>
 <0>

@@ -729,14 +729,14 @@ Memphis Turret (Tank Mode)
 Memphis Turret (Flak Mode)
 Fragmentary Shells (with damage)
 Floor Flame Trap
-Extended Flingy #523
-Extended Flingy #524
-Extended Flingy #525
-Extended Flingy #526
-Extended Flingy #527
-Extended Flingy #528
-Extended Flingy #529
-Extended Flingy #530
+Zethalisk
+Athuzelon
+Ifrit (Tank Mode)
+Ifrit Turret (Tank Mode)
+Ifrit (Siege Mode)
+Ifrit Turret (Siege Mode)
+Tirade (Deployed)
+Magian
 Extended Flingy #531
 Extended Flingy #532
 Extended Flingy #533

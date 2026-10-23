@@ -202,7 +202,7 @@ Terran Scrapyard<0>*<0>Buildings<0>
 Protoss Crucible<0>*<0>Buildings<0>
 Dark Swarm<0>*<0>Special<0>
 Floor Missile Trap<0>*<0>Special<0>
-Zerg Kalkiir Lake<0>*<0>Buildings<0>
+Floor Hatch<0>*<0>Special<0>
 Left Upper Level Door<0>*<0>Doors<0>
 Right Upper Level Door<0>*<0>Doors<0>
 Left Pit Door<0>*<0>Doors<0>
@@ -547,7 +547,7 @@ Askosi Zylode<0>*<0>Buildings<0>
 Askosi Astrolabe<0>*<0>Buildings<0>
 Terran Serathiel<0>Hecaton Coalition<0>Factional Units<0>
 Zerg Malkothrokor<0>*<0>Ground Units<0>
-<0>
+Zerg Kalkiir Lake<0>*<0>Buildings<0>
 Askosi Panoply<0>*<0>Structures<0>
 Askosi Aphorist<0>*<0>Ground Units<0>
 Askosi Doronin<0>*<0>Ground Units<0>
@@ -644,22 +644,22 @@ Terran Memphis<0>Tank<0>Factional Units<0>
 Memphis Turret<0>Tank<0>Factional Units<0>
 Terran Memphis<0>Flak<0>Factional Units<0>
 Memphis Turret<0>Flak<0>Factional Units<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
+Forerunner Processus<0>*<0>Buildings<0>
+Forerunner Aestuarius<0>*<0>Buildings<0>
+Forerunner Corcillum<0>*<0>Buildings<0>
+Floor Flame Trap<0>*<0>Special<0>
+Forerunner Bastilius<0>*<0>Buildings<0>
+Forerunner Molaris<0>*<0>Buildings<0>
+Forerunner Insignis<0>*<0>Buildings<0>
+Forerunner Incaendium<0>*<0>Buildings<0>
+Forerunner Ossum<0>*<0>Air Units<0>
+Forerunner Voluntatis<0>*<0>Buildings<0>
+Protoss Athuzelon<0>Order of the Sacred Saber<0>Factional Units<0>
+Terran Ifrit<0>Tank Mode<0>Factional Units<0>
+Ifrit Turret<0>Tank Mode<0>Factional Units<0>
+Terran Ifrit<0>Siege Mode<0>Factional Units<0>
+Ifrit Turret<0>Siege Mode<0>Factional Units<0>
+Askosi Magian<0>Sons of Ash<0>Factional Units<0>
 <0>
 <0>
 <0>

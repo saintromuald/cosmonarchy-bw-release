@@ -315,13 +315,13 @@ Twinflak Cannons (Memphis)
 Hellfire Missile Pack (Missile Trap)
 Vigil Autocannon (Gun Trap)
 Flamethrower (Flame Trap)
-Extended Weapon #188
-Extended Weapon #189
-Extended Weapon #190
-Extended Weapon #191
-Extended Weapon #192
-Extended Weapon #193
-Extended Weapon #194
+Zethal Spores (Zethalisk)
+Sacred Saber (Athuzelon)
+Incendiary Cannon (Ifrit, Tank)
+Incendiary Strike Cannon (Ifrit, Siege)
+Ikta Driver (Tirade, Deployed)
+Erce Twinburst (Magian)
+Landfall (Askosi)
 Extended Weapon #195
 Extended Weapon #196
 Extended Weapon #197

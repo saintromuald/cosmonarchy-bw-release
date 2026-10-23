@@ -4906,15 +4906,15 @@ ExigoDeath:
 ExigoGndAttkInit:
 	wait				1
 	nobrkcodestart
-	attack
+	attackwith			1
 	wait				6
-	attack
+	attackwith			1
 	wait				6
-	attack
+	attackwith			1
 	wait				6
-	attack
+	attackwith			1
 	wait				6
-	attack
+	attackwith			1
 	wait				2
 	nobrkcodeend
 	gotorepeatattk
@@ -4989,7 +4989,7 @@ VicereDeath:
 
 VicereGndAttkInit:
 	wait				1
-	attack
+	attackwith			1
 	wait				2
 	gotorepeatattk
 	ignorerest
@@ -5010,7 +5010,7 @@ VicereWarpIn:
 # 2347 Athla (hl\fr\athla.grp)
 .headerstart
 IsId          	383
-Type          	15
+Type          	21
 Init          	AthlaInit
 Death         	AthlaDeath
 GndAttkInit   	AthlaGndAttkInit
@@ -5027,6 +5027,12 @@ WalkingToIdle 	AthlaGndAttkToIdle
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	AthlaAlmostBuilt
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn		   	ExigoWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
