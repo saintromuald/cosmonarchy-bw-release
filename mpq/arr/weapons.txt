@@ -29,7 +29,7 @@ Arclite Shock Cannon (Phalanx, Siege)
 Monstrous Maw (Zoryusthaleth)
 Longbolt Missiles (Watchdog)
 Yamato Cannon (Magnetar ability)
-Nuclear Payload (Morningstar)
+Nuclear Missile
 Lobotomy Grenade (Goska)
 Psi Assault (Tassadar)
 Irradiate (Seraph ability)
@@ -254,74 +254,74 @@ Logi Rockets (Valkyrie Hecaton)
 C-10 Canister Rifle (Kerrigan)
 Claws (Kerrigan)
 None (new)
-Corto Railgun (Cutlass)
-Elxe Twinshot (Insurant)
-Apathetic Sermon (Nihilist)
-Leopold Cannon (Broadside)
-Sentinel Beam (Ferrum)
-Sentinel Beam (Chalyb)
-Sentinel Boltbeam (Circitor)
-Enforcer Rift-Rocket (Exigo)
-Champion Stormbeam (Vicere)
-Phase Claws (Cicatus)
-Phase Blades (Zealot Starbound)
-Ondo Moonbeam (Ghostwrit)
-Rotating Blaster (Renesair)
-Slice Cannon (Simulacrum Astral)
-Garvrol Claws (Garvrokor)
-Biotic Wingblades (Akreno)
-Horlain Chemthrower (Camazotz)
-Hydrok Claws (Hydrokor)
-Spewing Spores (Zethalor)
-Embracing Mandibles (Alzurokor)
-Azgok Beastblades (Zonguard)
-Agturrik Beaststick (Zonguard)
-Bladed Appendage (Rozirokor)
-Inqo Scaleshot (Alacyne)
-Alru Driver (Phontis)
-Kalgolok Beaststick (Tortare)
-Onji Driver (Iconoclast)
-Ognirrius Beaststick (Paraclete)
-Oldu Tripshard (Silversoul)
-Emto Moonbeam (Histrion)
-Reforming Carbine (Avatar)
-Irko Octorshard (Endbore)
-Ofra Ashray (Limire)
-Reactive Cells (Thrombocyte)
-Fragmentation Barrage (Raynor Vulture)
-Asterion Laser Battery (Duke Minotaur)
-Ardi Tripshot (Elgird)
-Ascending Blaster (Ecclesiast Khalendric)
-Lukankazi Railguns (Arquebus)
-Omen Blade (Vestige)
-Magnate's Maw (Stroluum)
-Lobotomy Mines (Vulture)
-Piety Wards (Cleric Futurist)
-Tartarus Mines (Vulture Hecaton)
-Goremasts (Vulture Upstart)
-Eyelets (Proselyte)
-Alko Ashgun (Scralia)
-Phase Rifle (Maverick Golden)
-Plasma Flurry (Gladius Order)
-Epitaph Grenade Launcher (Morrigan)
-Scalpel Cannon (Shaman Upstart)
-Reactive Blaster (Manifold Starbound)
-Plasmathrower (Harakan Golden)
-High-Tonnage Payload (Eveningstar)
-Gauss Launcher (Raynor Maverick)
-Boreal Railguns (Cyprian Hecaton)
-Twinstrike Cannons (Memphis)
-Twinflak Cannons (Memphis)
-Hellfire Missile Pack (Missile Trap)
-Vigil Autocannon (Gun Trap)
-Flamethrower (Flame Trap)
-Zethal Spores (Zethalisk)
-Sacred Saber (Athuzelon)
-Incendiary Cannon (Ifrit, Tank)
-Incendiary Strike Cannon (Ifrit, Siege)
-Ikta Driver (Tirade, Deployed)
-Erce Twinburst (Magian)
-Landfall (Askosi)
+Extended Weapon #127
+Extended Weapon #128
+Extended Weapon #129
+Extended Weapon #130
+Extended Weapon #131
+Extended Weapon #132
+Extended Weapon #133
+Extended Weapon #134
+Extended Weapon #135
+Extended Weapon #136
+Extended Weapon #137
+Extended Weapon #138
+Extended Weapon #139
+Extended Weapon #140
+Extended Weapon #141
+Extended Weapon #142
+Extended Weapon #143
+Extended Weapon #144
+Extended Weapon #145
+Extended Weapon #146
+Extended Weapon #147
+Extended Weapon #148
+Extended Weapon #149
+Extended Weapon #150
+Extended Weapon #151
+Extended Weapon #152
+Extended Weapon #153
+Extended Weapon #154
+Extended Weapon #155
+Extended Weapon #156
+Extended Weapon #157
+Extended Weapon #158
+Extended Weapon #159
+Extended Weapon #160
+Extended Weapon #161
+Extended Weapon #162
+Extended Weapon #163
+Extended Weapon #164
+Extended Weapon #165
+Extended Weapon #166
+Extended Weapon #167
+Extended Weapon #168
+Extended Weapon #169
+Extended Weapon #170
+Extended Weapon #171
+Extended Weapon #172
+Extended Weapon #173
+Extended Weapon #174
+Extended Weapon #175
+Extended Weapon #176
+Extended Weapon #177
+Extended Weapon #178
+Extended Weapon #179
+Extended Weapon #180
+Extended Weapon #181
+Extended Weapon #182
+Extended Weapon #183
+Extended Weapon #184
+Extended Weapon #185
+Extended Weapon #186
+Extended Weapon #187
+Extended Weapon #188
+Extended Weapon #189
+Extended Weapon #190
+Extended Weapon #191
+Extended Weapon #192
+Extended Weapon #193
+Extended Weapon #194
 Extended Weapon #195
 Extended Weapon #196
 Extended Weapon #197
@@ -998,4 +998,3 @@ Extended Weapon #867
 Extended Weapon #868
 Extended Weapon #869
 Extended Weapon #870
-Extended Weapon #871
