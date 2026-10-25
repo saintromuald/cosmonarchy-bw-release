@@ -1118,7 +1118,7 @@ Maverick (Upstart)
 Maverick (Upstart) Remains
 Vulture (Upstart)
 Goremast
-Eidolon (Upstart)
+Morrigan
 Cutlass
 Cutlass Turret
 Broadside
@@ -1176,48 +1176,48 @@ Thrombocyte
 Vestige (Starbound)
 Arquebus (Hecaton)
 Acqui
-Extended Sprite #662
-Extended Sprite #663
-Extended Sprite #664
-Extended Sprite #665
-Extended Sprite #666
-Extended Sprite #667
-Extended Sprite #668
-Extended Sprite #669
-Extended Sprite #670
-Extended Sprite #671
-Extended Sprite #672
-Extended Sprite #673
-Extended Sprite #674
-Extended Sprite #675
-Extended Sprite #676
-Extended Sprite #677
-Extended Sprite #678
-Extended Sprite #679
-Extended Sprite #680
-Extended Sprite #681
-Extended Sprite #682
-Extended Sprite #683
-Extended Sprite #684
-Extended Sprite #685
-Extended Sprite #686
-Extended Sprite #687
-Extended Sprite #688
-Extended Sprite #689
-Extended Sprite #690
-Extended Sprite #691
-Extended Sprite #692
-Extended Sprite #693
-Extended Sprite #694
-Extended Sprite #695
-Extended Sprite #696
-Extended Sprite #697
-Extended Sprite #698
-Extended Sprite #699
-Extended Sprite #700
-Extended Sprite #701
-Extended Sprite #702
-Extended Sprite #703
+Alzurokor (Imicren)
+Hydrokor (Goszirith)
+Alzurokor Remains
+Hydrokor Remains
+Nihilist
+Sovrokor Remains
+Eidolon (Nydus) Remains
+Morrigan Remains
+Maverick (Golden)
+Maverick (Golden) Remains
+Gladius (Order)
+Shaman (Upstart, Support)
+Shaman (Upstart, Adrenaline)
+Ammo Crate
+Medkit
+Battery Cell
+Flamethrower (Blue)
+Okrimnilisk Spore
+Spore Hit (White)
+Spore Trail (White)
+Raynor (Maverick)
+Raynor (Maverick) Remains
+Cyprian (Hecaton)
+Memphis (Tank Mode)
+Memphis (Flak Mode)
+Memphis Turret (Tank Mode)
+Memphis Turret (Flak Mode)
+Fragmentary Shells (with damage)
+Floor Flame Trap
+Cikralisk Attack Overlay
+Striga Attack Overlay
+Pariah Attack Overlay
+Zethalisk
+Zethalisk Remains
+Athuzelon
+Athuzelon Glow
+Ifrit (Tank Mode)
+Ifrit Turret (Tank Mode)
+Ifrit (Siege Mode)
+Ifrit Turret (Siege Mode)
+Tirade (Deployed)
+Magian
 Extended Sprite #704
 Extended Sprite #705
 Extended Sprite #706
