@@ -305,34 +305,34 @@
 <0>
 <0>
 <0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
+z<3><4>Landfall <1>(<3>Z<1>)<10>Leaps to the target ground ally within 5 range, activating Impact Dissipation for all allies within 3 range of the jump target.<10>After 3 seconds, if the Magian endures, all targets within 3 range of the jump site are teleported to the Magian.<0>
+e<3><4>Siege Mode <1>(<3>E<1>)<10>Switches forms, gaining splash radius and weapon range, while disabling movement.<0>
+e<0><4>Tank Mode <1>(<3>E<1>)<10>Returns the Ifrit's weapon and mobility to normal.<0>
+¤<3><4>Plasma Conduit <2>(passive)<10>Effects that restore shields are twice as effective for this combatant.<0>
+a<1><4>Build Memphis <1>(<3>A<1>)<10>Flak microtank.<0>
+Memphis Requires:<10>   Scrapyard<0>
+e<3><4>Flak Mode <1>(<3>E<1>)<10>Switches forms, gaining splash radius and targeting only airborne hostiles, while disabling movement.<0>
+e<0><4>Tank Mode <1>(<3>E<1>)<10>Returns the Memphis's weapon and mobility to normal.<0>
 Spider Mines<0>
 Goremasts<0>
 Piety Wards<0>
-<0>
-<0>
-<0>
-<0>
-<0>
+Morrigan Requires:<10>   Covenant<0>
+g<1><4>Train Morrigan <1>(<3>G<1>)<10>Crowd-control infantry.<0>
+¤<3><4>Dampening Field <2>(passive)<10>This combatant becomes cloaked for 2 seconds after attacking.<0>
+a<1><4>Bestow Maverick <1>(<3>A<1>)<10>Disciplined infantry.<0>
+¤<3><4>Accelerated Speech <2>(passive)<10>While the Missionary is within 2 range of its target, it gains +2 armor penetration.<0>
 ¤<3><4>Flanking Spines <2>(passive)<10>When targeting debuffed enemies, Almaksalisk attacks ignore armor.<0>
 Anchor Attack requires:<10>   Loaded ranged combatant<0>
-<0>
+¤<3><4>Fabrication <2>(passive)<10>Raynor's Vulture automatically restocks one Spider Mine every 10 seconds.<0>
 e<3><4>Lay Spider Mines <1>(<3>E<1>)<10>Places a Spider Mine at the target site. Spider Mines explode on hostiles that trip them, dealing significant splash damage.<0>
 ¤<3><4>Autophagy <2>(passive)<10>On death, Vilgorokors transform into Vilgoleths and immediately spawn 2 Rilirokors.<0>
 ¤<3><4>Heretical Bedlam <2>(passive)<10>Dying hostiles that were struck by the Pariah in the last 2 seconds have their corpses ascended after 1 second.<0>
-<0>
+t<3><4>Inject Stimpack <1>(<3>T<1>)<10>Take a dangerous injection that deals 5 damage, instantly increasing movement and attack speeds by 50% for 5 seconds.<0>
 ¤<3><4>Swarming Omen <2>(passive)<10>Hostiles afflicted by the this strain's attacks grant 125% movement speed to any of this strain's allies within 10 range.<0>
 e<3><4>Plant Goremast <1>(<3>E<1>)<10>Places a Goremast at the target site. Goremasts damage and cripple targets that trip them.<0>
 d<3><4>Divine Discipline <1>(<3>D<1>)<10>Creates an alchemical field at the target location. Allies within the field gain 25% increased attack speed, while enemies within the field suffer 25% reduced attack speed.<0>
-d<3><4>Rejoinder of Service <1>(<3>D<1>)<10>Augments the combatant for 5 seconds, empowering their attacks to ignore armor.<10>If a combatant dies while under this effect, all hostiles within its vision range are pulled towards it by 2 range.<0>
-t<3><4>Inject Stimpack <1>(<3>T<1>)<10>Take a dangerous injection that deals 5 damage. After a 1.5 second delay, gain 75% movement speed and 100% attack speed for 7.5 seconds.<0>
+r<3><4>Rejoinder of Service <1>(<3>R<1>)<10>Augments the combatant for 5 seconds, empowering their attacks to ignore armor.<10>If a combatant dies while under this effect, all hostiles within its vision range are pulled towards it by 2 range.<0>
+t<3><4>Inject Stimpack <1>(<3>T<1>)<10>Take a dangerous injection that deals 10 damage. After a 1.5 second delay, gain 75% movement speed and 100% attack speed for 7.5 seconds.<0>
 e<3><4>Lay Lobotomy Mines <1>(<3>E<1>)<10>Places a Lobotomy Mine at the target site. Lobotomy Mines stun and slow targets that trip them.<0>
 e<3><4>Lay Tartarus Mines <1>(<3>E<1>)<10>Places a Tartarus Mine at the target site. Tartarus Mines incinerate and rend the armor of targets that trip them.<0>
 e<3><4>Siege Mode <1>(<3>E<1>)<10>Switches forms, gaining enhanced range and splash radius and disabling movement.<0>
@@ -390,7 +390,7 @@ Constituent Requires:<10>   Proscenium OR Zylode<0>
 a<1><4>Build Cutlass <1>(<3>A<1>)<10>Assault armor.<0>
 c<1><4>Raise Constituent <1>(<3>C<1>)<10>Skybound worker.<0>
 e<3><4>Salvage <1>(<3>E<1>)<10>Orders the builder to deconstruct the target mechanical unit or structure, returning up to 33% of its resource cost during the channel.<0>
-e<3><4>Rapid Rendezvous <1>(<3>E<1>)<10>Leaps to the target ground ally within 5 range, activating Impact Dissipation for all allies within 3 range of the jump target.<0>
+z<3><4>Rapid Rendezvous <1>(<3>Z<1>)<10>Leaps to the target ground ally within 5 range, activating Impact Dissipation for all allies within 3 range of the jump target.<0>
 c<3><4>Hijack <1>(<3>C<1>)<10>Leaps to the target hostile, attaching to the victim and slowing their movement speed by 50%.<10><10>After 5 seconds, the Askosi combatant becomes the target.<0>
 e<3><4>Rematerialize <1>(<3>E<1>)<10>Pulls allies within 3 range of the target to the combatant's location, and grants them Impact Dissipation.<0>
 e<1><4>Mutate into Kalkiir Lake <1>(<3>E<1>)<10>Swarm node. Enables Liiralisks and Kalkalisks.<0>
@@ -406,7 +406,7 @@ r<1><4>Warp in Archon <1>(<3>R<1>)<10>Frontline martyr.<0>
 ¤<3><4>Deconstruction <2>(passive)<10>Targets struck by the Pazuzu are debuffed for 5 seconds, and deal 5% of their weapon damage per stack to themselves when attacking.<0>
 e<1><4>Build Pazuzu <1>(<3>E<1>)<10>Anti-mech hovertank.<0>
 a<1><4>Mutate into Vornath Pond <1>(<3>A<1>)<10>Swarm node. Enables Nathrokors and Vorvrokors.<0>
-a<1><4>Raise Aspirant <1>(<3>A<1>)<10>Ascendent walker.<0>
+g<1><4>Raise Aspirant <1>(<3>G<1>)<10>Ascendent walker.<0>
 t<1><4>Mutate into Skibact Scab <1>(<3>T<1>)<10>Assault node. Enables Skithrokors and Bactalisks.<0>
 Terran Infantry Armor<0>
 Terran Vehicle Plating<0>
@@ -424,7 +424,7 @@ Zerg Flyer Attacks<0>
 Protoss Ground Weapons<0>
 Protoss Air Weapons<0>
 Plasma Shields<0>
-¤<3><4>Reconstitution <2>(passive)<10>2 seconds after taking direct damage, this strain releases a Carapace Swarm that lasts up to 5 seconds and absorbs up to 200 damage.<0>
+¤<3><4>Reconstitution <2>(passive)<10>2 seconds after taking direct damage from hostiles, this strain releases a Carapace Swarm that lasts up to 5 seconds and absorbs up to 300 damage.<0>
 t<1><4>Warp in Monument of Sin <1>(<3>T<1>)<10>Capital stellar production.<0>
 Axtoth Axis requires:<10>   Othstol Oviform<0>
 f<1><4>Bestow Harakan <1>(<3>F<1>)<10>Dutiful frontline infantry.<0>
@@ -435,12 +435,12 @@ Axitrilisk requires:<10>   Axtoth Axis<0>
 ¤<3><4>Anodyne Annex <2>(passive)<10>Dying hostiles that were struck by the Empress in the last 2 seconds become subserviant and zombified.<10>Zombies are stunned if allied masters are outside 8 range for longer than 1 second, and expire if outside 8 range for 5 seconds. Zombies have their corpses avenged 1 second after death.<0>
 b<1><4>Bestow Blackjack <1>(<3>B<1>)<10>Dutiful walker drone.<0>
 ¤<3><4>Gamete Meiosis <2>(passive)<10>Whenever a broodspawn is birthed, allied Matraleths within 6 range of the birthing site gain +5 energy.<0>
-z<1><4>Bestow Luminary <1>(<3>Z<1>)<10>Disruptive specialist craft. Provides detection.<0>
+s<1><4>Bestow Luminary <1>(<3>S<1>)<10>Disruptive specialist craft. Provides detection.<0>
 a<1><4>Bestow Aspirant <1>(<3>A<1>)<10>Unstable strider.<0>
 s<1><4>Train Striga <1>(<3>S<1>)<10>Isolating infantry.<0>
 z<1><4>Raise Luminary <1>(<3>Z<1>)<10>Disruptive craft. Provides detection.<0>
 ¤<3><4>Incineration <2>(passive)<10>Victims of this combatant take 4 damage per second for 2 seconds.<10>If they take fatal damage during this time, their corpse explodes into a landborne fire field that applies Apollyoid Adhesive.<0>
-q<1><4>Splice Tarasque <1>(<3>Q<1>)<10>Frontal biotank.<0>
+t<1><4>Splice Tarasque <1>(<3>T<1>)<10>Frontal biotank.<0>
 g<1><4>Assemble Analogue <1>(<3>G<1>)<10>Durable disruption drone.<0>
 z<1><4>Splice Anticthon <1>(<3>Z<1>)<10>Corpse engine.<0>
 c<1><4>Mutate to Chokral Chaszal <1>(<3>C<1>)<10>Assault node. Enables Cherbrathalors, Okrimnilisks, and Algoztalisks.<0>
@@ -467,7 +467,7 @@ t<1><4>Morph into Gosvileth <1>(<3>T<1>)<10>Advanced worker strain.<0>
 ¤<3><4>Criticality <2>(passive)<10>Victims of the Aspirant are debuffed for 2 seconds. If killed during this time, they create a 2-range energy field that lasts 5 seconds and restores 4 shields or HP per second for all allied ground combatants.<0>
 Abutment requires:<10>   Cipher AND Gauntlet<0>
 Gosvil Aspect requires:<10>   Irol Iris<0>
-r<1><4>Install Abutment <1>(<3>R<1>)<10>Vespene processor.<0>
+a<1><4>Install Abutment <1>(<3>A<1>)<10>Vespene processor.<0>
 a<1><4>Assemble Artisan <1>(<3>A<1>)<10>Advanced harvester.<0>
 ¤<3><4>Caustic Discharge <2>(passive)<10>Keskathalor attacks create a pool of acid that deals 30 impact damage over 5 seconds to all ground targets. Targets that move through the acid gain 150% movement speed for 3 seconds.<0>
 ¤<3><4>Ion Field <2>(passive)<10>Diadem attacks leave behind a field that deals 100 damage over 10 seconds to all ground targets. Units that move through the field gain 150% attack speed for 2 seconds.<0>
@@ -480,7 +480,7 @@ Sovrol Aspect requires:<10>   Tosvrol Haunt<0>
 d<1><4>Morph into Sovroleths <1>(<3>D<1>)<10>Symbiote strain.<0>
 ¤<3><4>Whetted Appetite <2>(passive)<10>Seeing death empowers the Mortothrokor, granting 5% lifesteal and increased attack speed.<10><10>This bonus can stack and expires after being out of combat for 2 seconds.<0>
 ¤<3><4>Excoriation Assembly <2>(passive)<10>Upon taking fatal damage while mobile and above solid ground, Tirades descend and embed themselves into the surface, becoming immobile and more heavily-armored.<10>During this time, they target all hostiles within their weapon range.<0>
-c<1><4>Splice Cohort <1>(<3>C<1>)<10>Everlasting infantry.<0>
+r<1><4>Splice Cohort <1>(<3>R<1>)<10>Everlasting infantry.<0>
 ¤<3><4>Mitosal Fog <2>(passive)<10>When the Nathrelisk attacks, it releases a cloud that heals all units within 1 range for 2 HP before dissipating.<0>
 z<0><4>Swarming Strains <1>(<3>Z<1>)<0>
 x<0><4>Assault Strains <1>(<3>X<1>)<0>
@@ -496,7 +496,7 @@ r<3><4>Aural Assault <1>(<3>R<1>)<10>Fires a projectile that blinds all targets 
 Okrimnil Aspect requires:<10>   Chokral Chazsal<0>
 ¤<3><4>Fleeting Focus <2>(passive)<10>When struck by a mobile hostile within 2 range, Strigas repulse their attacker backwards by 1 range.<0>
 z<3><4>Lobotomize <1>(<3>Z<1>)<10>Detonates the Lobotomy Mine immediately, applying its slow effects to all combatants within 2 range.<0>
-c<3><4>Conflagrate <1>(<3>Z<1>)<10>Detonates the Tartarus Mine immediately, applying its armor rend to all combatants within 2 range.<0>
+c<3><4>Conflagrate <1>(<3>C<1>)<10>Detonates the Tartarus Mine immediately, applying its armor rend to all combatants within 2 range.<0>
 c<3><4>Controlled Demolition <1>(<3>C<1>)<10>After 10 seconds, the structure explodes in a controlled demolition, dealing no damage to nearby targets. This process can be cancelled.<0>
 e<3><4>Emergency Detonation <1>(<3>E<1>)<10>After 3 seconds, the structure self-destructs violently, dealing up to 250 damage to all targets within 3 range.<0>
 ¤<3><4>Scrapworld: Gold Rush <2>(passive)<10>This combatant's attacks debuff hostiles for 2 seconds. If a victim dies during this time, its corpse is salvaged, granting this combatant's owner 25% of their victim's resource cost.<0>
@@ -539,7 +539,7 @@ a<1><4>Build Paladin <1>(<3>A<1>)<10>Artillery walker.<0>
 ¤<3><4>Multi-Attack V <2>(passive)<10>This combatant's primary weapon can fire at up to five targets.<0>
 ¤<3><4>Multi-Attack III <2>(passive)<10>This combatant's primary weapon can fire at up to three targets.<0>
 x<1><4>Build Hadron <1>(<3>X<1>)<10>Enables Hippogriffs and Phoboses.<0>
-1<0><4>Select Faction 1 <1>(<3>1<1>)<10><2>Orion Imperium, Divine Primacy, Ataltreth Tendril<0>
+1<0><4>Select Faction 1 <1>(<3>1<1>)<10><2>Orion Imperium<0>
 ¤<3><4>Offset: Linear <2>(passive)<10>This combatant's weapon fires its projectiles in a line pattern.<0>
 f<1><4>Build Hippogriff <1>(<3>F<1>)<10>Siege corvette.<0>
 ¤<3><4>Empathy Core <2>(passive)<10>Each time the Analogue is hit by an attack, it expends 5 energy. If they survive the attack, they clone it as a phantom strike, retaliating against their attacker for half damage.<0>
@@ -566,9 +566,9 @@ s<1><4>Raise Missionary <1>(<3>S<1>)<10>All-purpose trooper.<0>
 s<1><4>Raise Proselyte <1>(<3>S<1>)<10>Nimble trooper.<0>
 g<1><4>Morph into Agrileth <1>(<3>G<1>)<10>Construction strain.<0>
 x<1><4>Build Aion <1>(<3>X<1>)<10>Reclaiming armor.<0>
-t<1><4>Morph into Nathrelisk <1>(<3>R<1>)<10>Sustaining fighter strain.<0>
+r<1><4>Morph into Nathrelisk <1>(<3>R<1>)<10>Sustaining fighter strain.<0>
 ¤<3><4>Corrosive Pathogen <2>(passive)<10>This strain's attacks debuff all hostiles within 4 range of their target, reducing their attack speed by 25% and armor by 1 for 3 seconds.<0>
-¤<3><4>Corrosive Touch <2>(passive)<10>This strain's attacks debuff enemies, increasing attack cooldown by 25% and reducing armor by 1 for 3 seconds.<0>
+¤<3><4>Corrosive Touch <2>(passive)<10>This strain's attacks debuff enemies, reducing their attack speed by 25% and armor by 1 for 3 seconds.<0>
 Nathrelisk requires:<10>  Vornath Pond<0>
 Stewards<0>
 ESC<0>
@@ -640,16 +640,16 @@ r<1><4>Warp in Lattice <1>(<3>R<1>)<10>Light robotic production.<0>
 Cikralisk requires:<10>   Mutath Spire<0>
 a<1><4>Warp in Ancestral Archives <1>(<3>A<1>)<10>Core disciple production.<0>
 s<1><4>Warp in Stargate <1>(<3>S<1>)<10>Core stellar production.<0>
-2<0><4>Select Faction 2 <1>(<3>2<1>)<10><2>Hecaton Coalition, Order of the Sacred Saber, Imicren Tendril<0>
+2<0><4>Select Faction 2 <1>(<3>2<1>)<10><2>Hecaton Coalition<0>
 d<1><4>Warp in Synthetic Synod <1>(<3>D<1>)<10>Absorbing robotic production.<0>
-3<0><4>Select Faction 3 <1>(<3>3<1>)<10><2>Futurist Federation, Khalendric Knights, Orkoti Tendril<0>
-4<0><4>Select Faction 4 <1>(<3>4<1>)<10><2>Golden Republic, Starbound, Goszirith Tendril<0>
+3<0><4>Select Faction 3 <1>(<3>3<1>)<10><2>Futurist Federation<0>
+4<0><4>Select Faction 4 <1>(<3>4<1>)<10><2>Golden Republic<0>
 c<1><4>Build Ministry <1>(<3>C<1>)<10>Town center and worker production.<0>
 r<1><4>Build Reservoir <1>(<3>R<1>)<10>Vespene processor.<0>
 b<1><4>Build Stockade <1>(<3>B<1>)<10>Infantry production.<0>
 e<1><4>Build Atlas <1>(<3>E<1>)<10>Tier 2 tech center.<0>
 t<1><4>Build Watchdog <1>(<3>T<1>)<10>Anti-air tower.<0>
-5<0><4>Select Faction 5 <1>(<3>5<1>)<10><2>Nydus Trinity, Astral Omen, Zorthos Tendril<0>
+5<0><4>Select Faction 5 <1>(<3>5<1>)<10><2>Nydus Trinity<0>
 e<1><4>Build Anchor <1>(<3>E<1>)<10>Infantry garrison.<0>
 f<1><4>Build Fulcrum <1>(<3>F<1>)<10>Vehicle production.<0>
 a<1><4>Build Starport <1>(<3>A<1>)<10>Spacecraft production.<0>
@@ -817,7 +817,7 @@ Game Menu (<3>F10<1>)<0>
 ¤<3><4>Astral Splendor <2>(passive)<10>Once every 2 seconds, this core restores 10 shields to allies within 8 range. Allies can only be restored once every 2 seconds.<0>
 x<1><4>Build Cestus <1>(<3>X<1>)<10>Warding outpost.<0>
 b<1><4>Warp in Bulwark <1>(<3>B<1>)<10>Protective core.<0>
-v<1><4>Morph into Yblyleth <1>(<3>V<1>)<10>Expanding strain.<0>
+g<1><4>Morph into Yblyleth <1>(<3>G<1>)<10>Expanding strain.<0>
 ¤<3><4>Cagra Autophagy <2>(passive)<10>Every 2 seconds while burrowed, Yblyleths consume the closest corpse within 5 range, spawning 2 Rilirokors.<0>
 ¤<3><4>Cagragenesis <2>(passive)<10>While burrowed, this strain generates cagra in an 8-tile radius.<0>
 ¤<3><4>Corrosive Touch <2>(passive)<10>This strain's air attacks debuff enemies, increasing attack cooldown by 25% and reducing armor by 1 for 3 seconds.<0>
@@ -954,7 +954,7 @@ Crematorium requires:<10>   Conduit<0>
 Paraclete requires:<10>   Bestiary<0>
 v<1><4>Morph into Zethalor <1>(<3>V<1>)<10>Swarming artillery strain.<0>
 Zethar Aspect requires:<10>   Vornath Pond<0>
-r<1><4>Morph into Scrylyleth <1>(<3>V<1>)<10>Territorial strain.<0>
+g<1><4>Morph into Scrylyleth <1>(<3>G<1>)<10>Territorial strain.<0>
 Scrylyl Aspect requires:<10>   Irol Iris<0>
 c<1><4>Install Conduit <1>(<3>C<1>)<10>Ashen relay.<0>
 Conduit Requires<10>   Proscenium OR Zylode<0>
@@ -1000,23 +1000,23 @@ v<1><4>Meld Tortare <1>(<3>V<1>)<10>Heavy corvette.<0>
 d<1><4>Meld Cybrene <1>(<3>D<1>)<10>Supreme cruiser.<0>
 Tortare requires:<10>   Lekrot<0>
 Cybrene requires:<10>   Hearthshard<0>
-c<1><4>Install Lekrot <1>(<3>S<1>)<10>Manipulation relay.<0>
+c<1><4>Install Lekrot <1>(<3>C<1>)<10>Manipulation relay.<0>
 Lekrot Requires<10>   Panoply OR Lotiro<0>
-t<1><4>Install Hearthshard <1>(<3>S<1>)<10>Immortal relay.<0>
+t<1><4>Install Hearthshard <1>(<3>T<1>)<10>Immortal relay.<0>
 Hearthshard Requires<10>   Panoply OR Lotiro<0>
 Zytryleth Requires:<10>   Othstol Oviform<0>
 t<1><4>Bleed Thrombocyte <1>(<3>T<1>)<10>Regenerative biode.<0>
 b<3><4>Bloody Burst <1>(<3>B<1>)<10>Bursts the Thrombocyte, releasing a pulse that heals allies within 3 range for the Thrombocyte's current health.<0>
 ¤<3><4>Coagulation <2>(passive)<10>This combatant's attacks heal allies equal to damage dealt.<0>
 ¤<3><4>Portents <2>(passive)<10>When this combatant receives damage, it becomes cloaked, and decloaks after 2 seconds of not taking damage.<0>
-t<1><4>Build Arquebus <1>(<3>C<1>)<10>Incendiary platform.<0>
+c<1><4>Build Arquebus <1>(<3>C<1>)<10>Incendiary platform.<0>
 ¤<3><4>Forlorn Haste <2>(passive)<10>While isolated within 3 range, this combatant gains 200% movement speed.<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
+t<1><4>Morph into Alzurokor <1>(<3>T<1>)<10>Subjugation strain.<0>
+Alzur Aspect requires:<10>   Ulgorg Cavern<0>
+h<1><4>Morph into Hydrokors <1>(<3>H<1>)<10>Swift melee strain.<0>
+Hydrokor requires:<10>   Hydrith Den<0>
+t<1><4>Meld Scralia <1>(<3>T<1>)<10>Assault craft.<0>
+Scralia Requires:<10>   Gauntlet<0>
 Bloodsummon Stigmata<0>
 <0>
 Bloodsummon Sacrament<0>
@@ -1025,7 +1025,7 @@ a<1><4>Construct Athla <1>(<3>A<1>)<10>Constructor model.<0>
 f<1><4>Construct Ferrum <1>(<3>F<1>)<10>Aggressor model.<0>
 c<1><4>Construct Chalyb <1>(<3>C<1>)<10>Defender model.<0>
 t<1><4>Construct Circitor <1>(<3>T<1>)<10>Pursuit model.<0>
-x<1><4>Construct Exigo <1>(<3>X<1>)<10>Defense platform.<0>
+x<1><4>Construct Exigo <1>(<3>X<1>)<10>Enforcer platform.<0>
 v<1><4>Construct Vicere <1>(<3>V<1>)<10>Assault platform.<0>
 Forerunner Alloy<0>
 Forerunner Lattice<0>
@@ -1092,8 +1092,8 @@ t<1><4>Build Mantle <1>(<3>T<1>)<10>Walker outpost.<0>
 ¤<3><4>Sustaining Sermon <2>(passive)<10>Every strike, the Cardinal's weapon releases a restorative pulse, healing 10 hit points for all allies within 3 range.<0>
 ¤<3><4>Impact Dissipation <2>(passive)<10>After being attacked by a hostile, this combatant gains 50% increased movement speed for 2 seconds, and blocks the next attack.<0>
 Mining Efficiency<0>
-¤<3><4>Schematic Unity <2>(passive)<10>Up to 5 Askosi workers can collaborate on construction efforts.<10>When Dyads assist in construction, they increase construction rate by 30%.<0>
-¤<3><4>Shared Designs <2>(passive)<10>Up to 5 Askosi workers can collaborate on construction efforts.<10>Each additional Pilgrim increases construction rate by 20%.<0>
+¤<3><4>Schematic Unity <2>(passive)<10>Up to 5 Askosi workers can collaborate on construction efforts.<10>When Dyads assist in construction, they increase construction rate by 40%.<0>
+¤<3><4>Shared Designs <2>(passive)<10>Up to 5 Askosi workers can collaborate on construction efforts.<10>Each additional Pilgrim increases construction rate by 25%.<0>
 d<1><4>Assemble Idol <1>(<3>D<1>)<10>Ranged assault drone.<0>
 Mutath Spire requires:<10>   Irol Iris<0>
 ¤<3><4>Stellar Enforcement <2>(passive)<10>Magisters mark their victims for 3 seconds, granting +2 weapon range to any attacks while the debuff holds.<0>
@@ -1104,15 +1104,15 @@ Alkag Iteth requires:<10>   Irol Iris<0>
 e<3><4>Place Piety Ward <1>(<3>E<1>)<10>Places a defensive ward that shields allies from attacks.<0>
 a<1><4>Assemble Renesair <1>(<3>A<1>)<10>Reconstructing interceptor.<0>
 ¤<3><4>Lucilleri Pheremones <2>(passive)<10>Allies within 5 range of the Sasyrvoleth have 100% base lifesteal.<0>
-¤<3><4>Astral Tether <2>(passive)<10>When the Matrix attacks, it radiates power from both itself and its target, restoring 2 shields to any allies of the Matrix within 3 range.<0>
+¤<3><4>Astral Tether <2>(passive)<10>When the Matrix attacks, it radiates power from both itself and its target, restoring 5 shields to any allies of the Matrix within 3 range.<0>
 ¤<3><4>Triumphant Rise <2>(passive)<10>Victims of this warrior's attacks become energized for 1.5 seconds. Attacks on energized enemies bleed 2 shield points to all allies of the warrior within 3 range.<0>
 d<1><4>Train Madcap <1>(<3>D<1>)<10>Mechanized infantry.<0>
 ¤<3><4>Cabeirus Feeders <2>(passive)<10>While stationary, the Madcap gains a 15% attack speed bonus per attack, capping at a 150% bonus. This bonus falls off by 20% for every second the Madcap spends moving.<0>
-¤<3><4>Miasma <2>(passive)<10>This strain's attacks infect its victims with Plague for 1.5 seconds. Plagued victims release Miasma fields on death, spreading the infection to all nearby targets.<10>Plague cannot kill its victims, and reduces healing by 50%.<0>
+¤<3><4>Miasma <2>(passive)<10>This strain's attacks infect its victims with Miasma for 1.5 seconds.<10>Miasma deals 15 damage over that time, cannot kill its victims, and reduces healing by 50%.<0>
 g<3><4>Land Grab <1>(<3>G<1>)<10>Orders the Wyvern to fire its weapon at the target site.<0>
 r<1><4>Warp in Strident Stratum <1>(<3>R<1>)<10>Utilitarian production.<0>
 Mantle requires:<10>   Atlas<0>
-¤<3><4>Power Overload <2>(passive)<10>Victims of this combatant sustain 5 damage once per second for every point of armor they have.<0>
+¤<3><4>Power Overload <2>(passive)<10>Victims of this combatant have their armor stolen and given to the attacker, to a maximum of 4 bonus armor.<0>
 r<1><4>Build Wyvern <1>(<3>R<1>)<10>Area-denial corvette.<0>
 v<1><4>Train Savant <1>(<3>V<1>)<10>Versatile infantry.<0>
 z<1><4>Build Apothecary <1>(<3>Z<1>)<10>Alchemical outpost.<0>
@@ -1127,19 +1127,19 @@ v<1><4>Train Sevenstep <1>(<3>V<1>)<10>Area-denial infantry.<0>
 g<1><4>Train Hypnagogue <1>(<3>G<1>)<10>Relocating specialist.<0>
 a<1><4>Build Nanite Assembly <1>(<3>A<1>)<10>Advanced vehicle and spacecraft production.<0>
 Nanite Assembly requires:<10>   Daedala<0>
-<0>
+Forerunner Capacitors<0>
 ¤<3><4>Law of Attraction <2>(passive)<10>Enemies struck by this combatant are pulled 2 range closer.<0>
 a<1><4>Warp in Aurora <1>(<3>A<1>)<10>Nimble fighter.<0>
 c<1><4>Build Centaur <1>(<3>C<1>)<10>All-purpose destroyer.<0>
 t<1><4>Build Magnetar <1>(<3>T<1>)<10>Undeniable cruiser.<0>
 ¤<3><4>Sunchaser Salvo <2>(passive)<10>While the Centaur is within 4 range of its target, it will also fire its secondary weapon.<0>
-¤<3><4>Mitosis <2>(passive)<10>Upon taking damage, the Zoryusthaleth incubates, spawning one Rilirokor after a two-second delay.<0>
+¤<3><4>Mitosis <2>(passive)<10>Upon taking damage, this strain incubates, spawning one Rilirokor after a two-second delay.<10>This status cannot be applied if the strain is already incubating.<0>
 w<1><4>Build Cuirass <1>(<3>W<1>)<10>Durable frontline walker.<0>
 ¤<3><4>Stonewall Protocol <2>(passive)<10>Upon taking fatal damage, the Cuirass deactivates, regains 50 HP, and begins self-repairing for 15 HP per second until fully-healed. If the Cuirass is dealt fatal damage again before it can fully repair, it is destroyed.<0>
-<0>
+g<1><4>Warp in Gladius <1>(<3>G<1>)<10>Sustaining corvette.<0>
 r<5><4>Morph into Iroleth <1>(<3>R<1>)<10>Transport strain. Provides detection.<0>
-<0>
-t<1><4>Build Lodestone <1>(<3>T<1>)<10>Defensive emplacement. Detects hidden enemies.<0>
+c<2><4>Advance Capacitors <1>(<3>C<1>)<10>Weapons enhancement.<0>
+d<1><4>Build Lodestone <1>(<3>D<1>)<10>Defensive emplacement. Detects hidden enemies.<0>
 t<1><4>Build Parthenon <1>(<3>T<1>)<10>Supportive production.<0>
 d<1><4>Build Madrigal <1>(<3>D<1>)<10>Versatile hovertank.<0>
 r<1><4>Build Scrapyard <1>(<3>R<1>)<10>Enables Blackjacks and Matadors.<0>
@@ -1150,8 +1150,8 @@ Sasyrvoleth requires:<10>   Axtoth Axis<0>
 e<1><4>Warp in Cicatus <1>(<3>E<1>)<10>Destitute skirmisher.<0>
 ¤<3><4>Servile Vigor <2>(passive)<10>Cohorts revive once after death, gaining a 10-second timed life. They can consume a nearby corpse to become permanent again.<0>
 a<1><4>Warp in Extatus <1>(<3>A<1>)<10>Stolid fighter.<0>
-<0>
-<0>
+c<1><4>Erect Machinamentum <1>(<3>C<1>)<10>Core installation.<0>
+r<1><4>Train Cyprian <1>(<3>R<1>)<10>Suppressing infantry.<0>
 s<1><4>Assemble Oscilliant <1>(<3>S<1>)<10>Assault drone.<0>
 a<1><4>Assemble Unar <1>(<3>A<1>)<10>Sniper drone.<0>
 r<1><4>Warp in Ashguard <1>(<3>R<1>)<10>Conquering strider.<0>
@@ -1160,8 +1160,26 @@ r<1><4>Warp in Ashguard <1>(<3>R<1>)<10>Conquering strider.<0>
 ¤<3><4>Skyward Stare <2>(passive)<10>While burrowed, this strain can attack airborne hostiles.<0>
 d<1><4>Train Blackguard <1>(<3>D<1>)<10>Mechanized sniper.<0>
 y<0><4>Build Addon <1>(<3>Y<1>)<0>
-<0>
+a<2><4>Advance Alloys <1>(<3>C<1>)<10>Plating enhancement.<0>
 Askosi Structure Bolting<0>
+1<0><4>Select Faction 1 <1>(<3>1<1>)<10><2>Inoa Scatterguard<0>
+2<0><4>Select Faction 2 <1>(<3>2<1>)<10><2>Sons of Ash<0>
+3<0><4>Select Faction 3 <1>(<3>3<1>)<10><2>Unimplemented<0>
+4<0><4>Select Faction 4 <1>(<3>4<1>)<10><2>Unimplemented<0>
+5<0><4>Select Faction 5 <1>(<3>5<1>)<10><2>Unimplemented<0>
+6<0><4>Select Faction 6 <1>(<3>6<1>)<10><2>Unimplemented<0>
+1<0><4>Select Faction 1 <1>(<3>1<1>)<10><2>Divine Primacy<0>
+2<0><4>Select Faction 2 <1>(<3>2<1>)<10><2>Order of the Sacred Saber<0>
+3<0><4>Select Faction 3 <1>(<3>3<1>)<10><2>Khalendric Knights<0>
+4<0><4>Select Faction 4 <1>(<3>4<1>)<10><2>Starbound<0>
+5<0><4>Select Faction 5 <1>(<3>5<1>)<10><2>Astral Omen<0>
+6<0><4>Select Faction 6 <1>(<3>6<1>)<10><2>Unimplemented<0>
+1<0><4>Select Faction 1 <1>(<3>1<1>)<10><2>Ataltreth Tendril<0>
+2<0><4>Select Faction 2 <1>(<3>2<1>)<10><2>Imicren Tendril<0>
+3<0><4>Select Faction 3 <1>(<3>3<1>)<10><2>Goszirith Tendril<0>
+4<0><4>Select Faction 4 <1>(<3>4<1>)<10><2>Orkoti Tendril<0>
+5<0><4>Select Faction 5 <1>(<3>5<1>)<10><2>Zorthos Tendril<0>
+6<0><4>Select Faction 6 <1>(<3>6<1>)<10><2>Unimplemented<0>
 <0>
 <0>
 <0>
@@ -1192,33 +1210,15 @@ Askosi Structure Bolting<0>
 <0>
 <0>
 <0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
-<0>
+Alloy L1 Requires:<10>   Nothing<0>
+Alloy L1 Requires:<10>   Insignis<0>
+Alloy L1 Requires:<10>   Voluntatis<0>
+Capacitors L1 Requires:<10>   Nothing<0>
+Capacitors L1 Requires:<10>   Insignis<0>
+Capacitors L1 Requires:<10>   Voluntatis<0>
+¤<3><4>Dermal Spores <2>(passive)<10>Zethalisk projectiles heal allies that they pass through for 3 HP.<0>
+z<1><4>Morph into Zethalisks <1>(<3>Z<1>)<10>Sustaining strain.<0>
+Zethalisks Require:<10>   Quazeth Pool<0>
 w<1><4>Warp in Xenolith <1>(<3>W<1>)<10>Recalling relay.<0>
 Advanced Warps require:<10>   Basic Warp<0>
 Empowered Warps require:<10>   Advanced Warp<0>
@@ -1233,8 +1233,8 @@ Nanite Drones:<10>   Must be in Smithy Mode<0>
 ¤<3><4>Retaliation Assembly<2>(passive)<10>Upon taking fatal damage while mobile, Thaumalogues embed themselves into the surface, becoming immobile and more heavily-armored. During this time, they gain increased 50% attack speed when damaged.<0>
 ¤<3><4>Scrapworld: Ash Heap <2>(passive)<10>This combatant's attacks debuff hostiles for 2 seconds. While debuffed, the hostiles lose 1 armor every 2 seconds.<10>If a victim dies during this time, its corpse is turned to ash, spreading the armor debuff to hostiles within 2 range.<0>
 ¤<3><4>Corpse Cocoon <2>(passive)<10>Corpses touched by this strain are consumed, transforming into eggs that spawn an additional combatant. The gestation time is equal to half of the strain's build time.<0>
-<0>
-<0>
+t<1><4>Build Ifrit <1>(<3>T<1>)<10>Incendiary artillery.<0>
+Ifrit requires:<10>   Palladium<0>
 <0>
 <0>
 ¤<3><4>Villanous Fervor <2>(passive)<10>As long as the Mind Tyrant remains within 10 range, damage dealt to the malefactor is first inflicted upon the Mind Tyrant's energy, they gain 33% increased movement speed, and hostiles they strike are tyrannized on death.<0>
@@ -1242,7 +1242,7 @@ Engram requires:<10>   Advanced Warp<0>
 g<1><4>Build Ogun <1>(<3>G<1>)<10>Sturdy constructor.<0>
 Talos requires:<10>   Quarry<0>
 t<1><4>Build Talos <1>(<3>T<1>)<10>Airborne worker.<0>
-<0>
+Mason requires:<10>   Quarry<0>
 ¤<3><4>Deathless Procession <2>(passive)<10>This combatant gains 25% movement speed while its shields hold.<0>
 a<3><4>Nanorepair <1>(<3>A<1>)<10>Heals a target ground ally for 9 HP per second. While being healed by a Cleric, the ally gains +2 armor.<0>
 x<1><4>Warp in Engram <1>(<3>X<1>)<10>Heavy tower.<0>
@@ -1334,7 +1334,7 @@ Must target units with energy.<0>
 <0>
 <0>
 <0>
-<0>
+¤<3><4>War Atrophy <2>(passive)<10>When a target is damaged by the Nihilist, it becomes atrophied, reducing its movement speed by 33% when moving towards its enemies.<0>
 ¤<3><4>Necromastery <2>(passive)<10>The Grimoire can pay host to a single allied combatant. When other combatants of the same type die, a new one begins training at the Grimoire, free of cost.<0>
 ¤<3><4>Tragyle's Coagulants <2>(passive)<10>Victims of the Camazotz's attacks react favorably to the serum within, and bleed a miasma that restores 3 HP to allies of the Harakan within 2 range.<0>
 f<1><4>Train Camazotz <1>(<3>F<1>)<10>Sustaining infantry.<0>
@@ -1356,7 +1356,7 @@ z<3><4>Switch to Power Siphon <1>(<3>Z<1>)<10>Activates the Savant's sustained f
 v<1><4>Morph into Konvilisk <1>(<3>V<1>)<10>Reinforcing duelist strain.<0>
 ¤<3><4>Reactive Payload <2>(passive)<10>For every 4 range travelled, this combatant's missiles split into an additional projectiles, homing in on the closest combatants within 3 range of the original target.<0>
 x<1><4>Mutate to Othstol Oviform <1>(<3>X<1>)<10>Tier 3 tech node.<0>
-e<1><4>Mutate into Kethraj Keep <1>(<3>E<1>)<10>Artillery assault node.<0>
+x<1><4>Mutate into Kethraj Keep <1>(<3>X<1>)<10>Artillery assault node.<0>
 Entropy Gauntlets Require:<10>   Module switch<0>
 Power Siphon requires:<10>   Module switch<0>
 a<1><4>Morph to Kagralisk <1>(<3>A<1>)<10>Bursting ranged strain.<0>
@@ -1380,7 +1380,7 @@ s<1><4>Build Treasury <1>(<3>S<1>)<10>Frontier town center.<0>
 ¤<3><4>Tranquility Array <2>(passive)<10>Upon taking shield damage, the Golem radiates energy, restoring 2 shields for allies within 3 range.<0>
 <0>
 ¤<3><4>Interception <2>(passive)<10>This combatant's projectiles can be intercepted by hostiles.<0>
-t<3><4>Nanite Field <2>(passive)<10>Every second, Shamans release a pulse that heals allies within 3 range for 8 HP.<10>An ally cannot be healed by a Shaman more than once per second.<0>
+¤<3><4>Nanite Field <2>(passive)<10>Every second, Shamans release a pulse that heals allies within 3 range for 8 HP.<10>An ally cannot be healed by a Shaman more than once per second.<0>
 ¤<3><4>Virile Coating <2>(passive)<10>Victims of the Tetcaerokor's attacks begin incubating, birthing 1 Rililisk if they survive for 2 seconds.<10><10>This status cannot be applied if the target is already incubating.<0>
 r<1><4>Warp in Automaton Register <1>(<3>R<1>)<10>Heavy robotic production.<0>
 z<1><4>Mutate into Alkag Iteth <1>(<3>Z<1>)<10>Assault node. Enables Kagralisks, Evigrilisks, and Almaksalisks.<0>
@@ -1444,9 +1444,9 @@ z<3><4>Blissful Embrace <1>(<3>Z<1>)<10>Channels onto the target. If the target 
 <27><0><4>Cancel Embrace <1>(<3>ESC<1>)<0>
 s<1><4>Morph into Skithrokor <1>(<3>S<1>)<10>Airborne duelist strain.<0>
 Skithrokor requires:<10>   Skibact Scab<0>
-<0>
-<0>
-<0>
+a<1><4>Warp in Athuzelon <1>(<3>A<1>)<10>Peerless vanguard.<0>
+s<1><4>Raise Magian <1>(<3>S<1>)<10>Fickle trooper.<0>
+Magian requires:<10>   Radix OR Function<0>
 <0>
 Blackjack requires:<10>   Scrapyard<0>
 Matador requires:<10>   Scrapyard<0>
@@ -1499,7 +1499,7 @@ Olympian requires:<10> Guildhall<0>
 Autocrat requires:<10>   Guildhall<0>
 Anticthon requires:<10>   Biotic Bastion<0>
 Aion requires:<10>   Biotic Bastion<0>
-z<1><4>Build Serathiel <1>(<3>Z<1>)<10>Vanguard specialist craft.<0>
+s<1><4>Build Serathiel <1>(<3>S<1>)<10>Vanguard specialist craft.<0>
 Serathiel requires:<10>   Commandment<0>
 <0>
 Expansion Zerg Campaign Area Town<0>
@@ -1508,7 +1508,7 @@ Expansion Zerg Campaign Area Town<0>
 ¤<3><4>Harmony Drive <2>(passive)<10>Clarions gain increased movement speed and acceleration based on shields.<0>
 Expansion Protoss Campaign Area Town<0>
 <0>
-c<1><4>Build Philoc <1>(<3>C<1>)<10>All-purpose fighter.<0>
+w<1><4>Build Philoc <1>(<3>W<1>)<10>All-purpose fighter.<0>
 ¤<3><4>Death Cycle <2>(passive)<10>Broodspawn have timed life when away from cagra and sires. On attack, they gain 1 second of timed life back. On death, Broodspawn apply Corrosive Touch to hostiles within 3 range for 1 second.<0>
 Expansion Terran Campaign Area Town<0>
 <0>
@@ -1752,7 +1752,7 @@ t<1><4>Train Apostle <1>(<3>T<1>)<10>Reanimation specialist.<0>
 <0>
 <0>
 <0>
-<0>
+s<1><4>Build Shaman <1>(<3>S<1>)<10>Augmenting support vehicle.<0>
 ¤<3><4>Martyrous Tempest <2>(passive)<10>On death, Archons release a Psionic Storm that lasts for 10 seconds.<0>
 x<3><4>Skryspawn <1>(<3>X<1>)<10>Channels to spawn 6 Skryrokors over 3 seconds.<0>
 Gestating...<0>
@@ -1776,7 +1776,7 @@ e<3><4>Support Mode <1>(<3>E<1>)<10>Returns the Shaman's vision, Nanite Field ra
 ¤<3><4>Fossilizer Rounds <2>(passive)<10>Negative effects, such as stuns and slows, have their durations extended by Goska's attacks.<0>
 <0>
 ¤<3><4>Relentless Aggression <2>(passive)<10>Ghitorokors gain 10% increased attack speed with each attack until they reach the attack speed cap. This bonus falls off after 2 seconds of not being refreshed.<0>
-g<1><4>Train Silvertongue <1>(<3>G<1>)<10>Deceiving infantry.<0>
+t<1><4>Train Silvertongue <1>(<3>T<1>)<10>Deceiving infantry.<0>
 ¤<3><4>Recursion Rounds <2>(passive)<10>Each Cyclops attack leaves behind a smart munition that detonates after 2 seconds, damaging all hostiles within 2 range.<0><10><0>
 g<1><4>Build Dugout <1>(<3>G<1>)<10>Light garrison.<0>
 z<1><4>Build Azazel <1>(<3>Z<1>)<10>Defensive support craft.<0>
@@ -1804,10 +1804,1196 @@ Algoz Aspect requires:<10>   Chokral Chazsal<0>
 ¤<3><4>Fan of Teeth <2>(passive)<10>Upon taking damage, this strain launches a retaliatory bone in the direction of their attacker that travels up to 3 range, piercing any hostiles in its path.<0>
 Cherbrath Aspect requires:<10>   Chokral Chazsal<0>
 c<1><4>Morph into Cherbrathalor <1>(<3>C<1>)<10>Crowd-controlling artillery strain.<0>
-e<3><4>Sublime Shepherd <2>(passive)<10>All allies within 6 range of the source gain +2 armor when facing incoming attacks.<0>
+¤<3><4>Sublime Shepherd <2>(passive)<10>All allies within 6 range of the source gain +2 armor when facing incoming attacks.<0>
 ¤<3><4>Ocsal Gestation <2>(passive)<10>This cell generates one Ocsal Larva every 14 seconds. Ocsal Larvae morph directly into mutated strains.<0>
 ¤<3><4>Swarmhold <2>(passive)<10>This cell generates one Larva every 14 seconds. Larvae generated by this cell create twice as many Zerg.<0>
 ¤<3><4>Recursion Rounds <2>(passive)<10>Each Cyclops attack leaves behind a dangerous shell that detonates after 2 seconds, damaging all combatants within 2 range.<0>
 <0>
 e<3><4>Cinder Mode <1>(<3>E<1>)<10>Switches forms, gaining 25% bonus attack speed and 2 armor, while disabling movement.<0>
 e<0><4>Tank Mode <1>(<3>E<1>)<10>Returns the Matador's weapon, armor, and mobility to normal.<0>
+Ground<0>
+Air<0>
+Burrowed<0>
+Cloaked<0>
+Lifted Off<0>
+Deployed<0>
+Detector<0>
+Detector (disabled)<0>
+Structure<0>
+Factory<0>
+Addon<0>
+Worker<0>
+Hero<0>
+Invincible<0>
+Requires Cagra<0>
+<10>Movespeed: <0>
+<10>Sight Range: <0>
+<10>Status: <0>
+<10>Color: <0>
+<10>Plane: <0>
+<10>Flags: <0>
+<10>Acceleration: <0>
+<10>Turn Rate: <0>
+<10>Transport Space: <0>
+<10>Transport Capacity: <0>
+<10>-- Hold <03>Shift<02> for more details --<0>
+Size:<0>
+<06>Unsafe<02><0>
+<07>Safe<02><0>
+<07>Ally Safe<02><0>
+<03>Air Only<02><0>
+<04>Normal Hit<02><0>
+Non-Building<0>
+Terrain<0>
+<10>Armor Pen: <0>
+<10>Attack Speed: <0>
+<10>Cooldown: <0>
+<10>DPS: <0>
+<10>Range: <0>
+Melee<0>
+<10>Targets: <0>
+<10>Splash Radius: <0>
+<10>Splash Type: <0>
+Apollyoid Adhesive<0>
+Empowered<0>
+Siphoned<0>
+Deconstructed<0>
+Petrified<0>
+Observed<0>
+Ensnared<0>
+Whetted Appetite<0>
+Anodyne Annex<0>
+Shattered<0>
+Ash Heap<0>
+Cowardice<0>
+Malice<0>
+Controlled Demolition<0>
+Emergency Detonation<0>
+Ion Field<0>
+Incineration<0>
+Lobotomized<0>
+Kelvin Munitions<0>
+Hallucination<0>
+Triumphant Rise<0>
+Maelstrom<0>
+Autovitality<0>
+Terminal Surge<0>
+Crisis of Faith<0>
+Stellar Enforcement<0>
+Adrenal Frenzy<0>
+Caustic Discharge<0>
+Incubating<0>
+Kaiser Rampage<0>
+Blinded<0>
+Swarming Omen<0>
+Mitosal Fog<0>
+Pending Injection<0>
+Vengeance<0>
+Ascension<0>
+Nanoshielded<0>
+Activating Prying Eyes<0>
+Corrosive Touch<0>
+Hidebreaker<0>
+Booming Blast<0>
+Segmented Expansion<0>
+Impact Dissipation<0>
+Impact Prevarication<0>
+Retaliation Protocol<0>
+New Dominion<0>
+Imploded<0>
+Crippled<0>
+Mechanical Rage<0>
+Stunned<0>
+Ensnaring Brood<0>
+Cabeirus Feeders<0>
+Sublime Shepherd<0>
+Stonewall Protocol<0>
+Reconstitution<0>
+Controlled Opposition<0>
+Energy Decay<0>
+Khaydarin Charge<0>
+Reclaimed<0>
+Repentant Chorus<0>
+Concurring Chorus<0>
+Adaptive Amitosis<0>
+Lucilleri Pheremones<0>
+Solitary Focus<0>
+Malefactor<0>
+Prying Eyes<0>
+Embedded<0>
+Segmented Expansion<0>
+Vital Remians<0>
+Principal Augment<0>
+Crushed<0>
+Decided Armor<0>
+Decided Reach<0>
+Decided Piercing<0>
+Decided Damage<0>
+Decided Collateral (Inner)<0>
+Decided Collateral (Medium)<0>
+Decided Collateral (Outer)<0>
+Power Siphon<0>
+Entropy Gauntlets<0>
+Tempo Up<0>
+Tempo Down<0>
+Phase Link<0>
+Astral Rule<0>
+Blissfully Embraced<0>
+Tyrannized<0>
+Worshiping<0>
+Zombified<0>
+Observing<0>
+Dermal Accelerant<0>
+Blissful Embrace<0>
+Defensive Matrix<0>
+Stimpack Injected<0>
+Irradiated<0>
+Maelstromed<0>
+Plagued<0>
+In Stasis<0>
+Timed Life<0>
+Cannot Attack<0>
+Under Carapace Swarm<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+Gauss Rifle<0>
+Javelin Cannons<0>
+Coroner Rifle<0>
+Charon Rifle<0>
+Fragmentation Grenade<0>
+Haymaker Autogun<0>
+Spider Mines<0>
+Twin Autocannons<0>
+Contender Missiles<0>
+Danaan Autogun<0>
+Crusader Missile Salvo<0>
+Arclite Cannon<0>
+Fusion Battery<0>
+Fusion Cutter<0>
+Fusion Cutter<0>
+Monogun<0>
+Burst Lasers<0>
+Perdition Barrage<0>
+Artifice Battery<0>
+Asterion Laser Battery<0>
+Gauss Pistols<0>
+Furia Missiles<0>
+Imperioso Missiles<0>
+Artax Cannon<0>
+Sunchaser Missile Salvo<0>
+Flamethrower<0>
+Twin Railguns<0>
+Arclite Shock Cannon<0>
+Monstrous Maw<0>
+Longbolt Missiles<0>
+Yamato Cannon<0>
+Missile Strike<0>
+Lobotomy Grenade<0>
+Psi Assault<0>
+Irradiate<0>
+Zethrok Claws<0>
+Vorvrok Claws<0>
+Vestigial Strike<0>
+Needle Spines<0>
+Erebol Shock Cannon<0>
+Kaiser Blades<0>
+Screaming Venom<0>
+Toxic Spores<0>
+Spines<0>
+Spines<0>
+Plasmid Spores<0>
+Acid Spore<0>
+Serrated Cleavers<0>
+Glave Wurm<0>
+Dispatch Pistols<0>
+Corrosive Acid<0>
+Jupiter Driver<0>
+Seeker Spores<0>
+Subterranean Tentacle<0>
+Skittering Spores<0>
+Plasma Metamorphosis<0>
+Parasitic Excision<0>
+Twintorch<0>
+Screaming Venom<0>
+Carapace Swarm<0>
+Plague<0>
+Acid Barrage<0>
+Particle Beam<0>
+Particle Beam<0>
+Phase Blades<0>
+Pulse Blaster<0>
+Phase Disruptor<0>
+Plasma Flurry<0>
+Phase Cannon<0>
+Potentium Cannon<0>
+Psionic Shockwave<0>
+Plasma Barrage<0>
+Phase Signifier<0>
+Photon Blasters<0>
+Plasma Missiles<0>
+Aeon's Madness<0>
+Plasma Torpedo<0>
+Aruo Twinshot<0>
+Neutron Cannon<0>
+Pulse Cannons<0>
+Prismatic Cannon<0>
+Swarming Spores<0>
+Inoa Twinaxe<0>
+Stasis Field<0>
+Psionic Storm<0>
+Hollowed Glaves<0>
+Phase Spear<0>
+Harrying Talons<0>
+Discoid Railgun<0>
+Electromagnetic Explosion<0>
+Celestial Cannons<0>
+Intervention Missiles<0>
+Sovrol Spores<0>
+Flak Cannon<0>
+Argos Laser Batteries<0>
+Sowing Spines<0>
+Charybdal Rifle<0>
+Astral Blaster<0>
+Dauntless Disruption Cannon
+Phase Cleaver<0>
+Neutron Flare<0>
+Fervent Blaster<0>
+Acrid Barbs<0>
+Halo Rockets<0>
+Corrosive Spores<0>
+Maledictus<0>
+Galactic Weaver<0>
+Hallucination<0>
+Maelstrom<0>
+Subterranean Spines<0>
+Piercing Spines<0>
+Warp Blade<0>
+Prismatic Blaster<0>
+Phase Lances<0>
+Ray of Agony<0>
+Iconoclast's Flurry<0>
+Eminence Rifle<0>
+Viscous Acid<0>
+Phase Blaster<0>
+Dispersive Salvo<0>
+Harpoon Railgun<0>
+Aural Assault<0>
+Ospo Twinshard<0>
+Titan's Fist<0>
+Mountain Gun<0>
+Jackson Cannon<0>
+Elre Scaleshot<0>
+Orli Mallet<0>
+Final Hour<0>
+Hammerfall Beacon<0>
+None<0>
+Icarus Missiles<0>
+Litany Cannons<0>
+Projection Saber<0>
+Searing Venom<0>
+Hedon Cannon<0>
+Accelerated Plasmid<0>
+Encircling Mirror<0>
+Fading Bioplasma<0>
+Event Horizon<0>
+Emergency Detonation<0>
+Newtonian Shock Cannon<0>
+Energized Bioplasma<0>
+Gosvil Spines<0>
+Neutron Saber<0>
+Venomous Contagion<0>
+Brutish Tendrils<0>
+Cerberus Railgun<0>
+Vapid Blaster<0>
+Khaydarin Ray<0>
+Blindside Rockets<0>
+Twinstrike Flamethrowers<0>
+Bisecting Blades<0>
+Bones of Reflection<0>
+Orma Scrapray<0>
+Ersa Driver<0>
+Chimera Cannons<0>
+Booming Blast<0>
+Pegasus Missiles<0>
+Lazarus Salvo<0>
+Stellar Torch<0>
+Acid Salvo<0>
+Saber Array<0>
+Pungent Spores<0>
+Dissolving Sabers<0>
+Explosive Spores<0>
+Gnashing Tendrils<0>
+Rapid Spines<0>
+Fusion Saw<0>
+Knockout Drivers<0>
+Pharoah Cannons<0>
+Abaddon Flamethrowers<0>
+Philistine Salvo<0>
+Longinius Cannons<0>
+Upstart Rifle<0>
+Geometric Rifle<0>
+Kaleidoscope Cannon<0>
+Cleaving Maw<0>
+Spirtil Spores<0>
+Usko Scrapray<0>
+Skortra Tentacle<0>
+Ikta Driver<0>
+Arte Driver<0>
+Godhand Rockets<0>
+Wordsmith Railgun<0>
+Sunsplit Beam<0>
+Particle Ray<0>
+Ironhand Weaver<0>
+Angeltear Missiles<0>
+Massive Mandible<0>
+Apollyoid Conflagration<0>
+Plasma Shell<0>
+Wicked Incisors<0>
+Recycling Blaster<0>
+Antimatter Missile<0>
+Sparring Saber<0>
+Kissing Emoji<0>
+Khaydarin Plasma Laser<0>
+Ion Cannon<0>
+Discoid Railgun<0>
+Geometric Rifle<0>
+Piety Wards<0>
+Cylindrical Blaster<0>
+Heirloom Batteries<0>
+Nathrok Claws<0>
+Calcification<0>
+Talismanic Weaver<0>
+Remote Hijack<0>
+Dispatch Shotgun<0>
+Quarternary Rifle<0>
+Phase Blade<0>
+Signaling Spores<0>
+Bottomless Spinestacks<0>
+Azanthrok Spew<0>
+Omnispores<0>
+Contagion Bursts<0>
+Angeltear Rockets<0>
+Brontes Payload<0>
+Flak Cannon<0>
+Sensory Overload<0>
+Onla Drivers<0>
+Corrosive Bioplasma<0>
+Korozzet Beastblades<0>
+Utso Carbine<0>
+Okli Quadshard<0>
+Rotating Ray<0>
+Ansa Sunshot<0>
+Repeating Blaster<0>
+Autonomous Ray<0>
+Phase Cremator<0>
+Sucessive Spines<0>
+Rapid Spines<0>
+Quazrok Spray<0>
+Phase Disruptor<0>
+Moonbound Salvo<0>
+Revenant Rifle<0>
+Gauss Slugger<0>
+Needle Spores<0>
+Inzor Reflux<0>
+Mining Saber<0>
+Asoni Carbine<0>
+Plegethon Cannon<0>
+Homing Spores<0>
+Zulu Sidekicks<0>
+Staggered Spores<0>
+Hydria Cannons<0>
+Lobotomy Warhead<0>
+Rapid Rendezvous<0>
+Micken Melter<0>
+Medusa Rifle<0>
+Sovrol Claws<0>
+Tunneling Maw<0>
+Logi Rockets<0>
+C-10 Canister Rifle<0>
+Claws<0>
+None<0>
+Corto Railgun<0>
+Elxe Twinshot<0>
+Apathetic Sermon<0>
+Leopold Cannon<0>
+Sentinel Beam<0>
+Sentinel Beam<0>
+Sentinel Boltbeam<0>
+Enforcer Rift-Rocket<0>
+Champion Stormbeam<0>
+Phase Claws<0>
+Phase Blades<0>
+Ondo Moonbeam<0>
+Rotating Blaster<0>
+Slice Cannon<0>
+Garvrol Claws<0>
+Biotic Wingblades<0>
+Horlain Chemthrower<0>
+Hydrok Claws<0>
+Spewing Spores<0>
+Embracing Mandibles<0>
+Azgok Beastblades<0>
+Agturrik Beaststick<0>
+Bladed Appendage<0>
+Inqo Scaleshot<0>
+Alru Driver<0>
+Kalgolok Beaststick<0>
+Onji Driver<0>
+Ognirrius Beaststick<0>
+Odlu Triphshard<0>
+Emto Moonbeam<0>
+Reforming Carbine<0>
+Irko Octorshard<0>
+Ofra Ashray<0>
+Reactive Cells<0>
+Fragmentation Barrage<0>
+Asterion Laser Battery<0>
+Ardi Tripshot<0>
+Ascending Blaster<0>
+Lukankazi Railguns<0>
+Omen Blade<0>
+Magnate's Maw<0>
+Lobotomy Mines<0>
+Piety Wards<0>
+Tartarus Mines<0>
+Goremasts<0>
+Eyelets<0>
+Alko Ashgun<0>
+Phase Rifle<0>
+Plasma Flurry<0>
+Epitaph Grenade Launcher<0>
+Scalpel Cannon<0>
+Reactive Blaster<0>
+Plasmathrower<0>
+High-Tonnage Payload<0>
+Gauss Launcher<0>
+Boreal Railguns<0>
+Twinstrike Cannons<0>
+Twinflak Cannons<0>
+Hellfire Missile Pack<0>
+Vigil Autocannon<0>
+Flamethrower<0>
+Zethal Spores<0>
+Sacred Saber<0>
+Incendiary Cannon<0>
+Incendiary Strike Cannon<0>
+Ikta Driver<0>
+Erce Twinburst<0>
+Landfall<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>
+<0>

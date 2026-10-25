@@ -602,7 +602,7 @@ ArchonSwirlLocal00:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 112 Solarion (protoss\carrier.grp)
+# 112 Solarion (protoss\solarion.grp)
 .headerstart
 IsId          	151
 Type          	21
@@ -632,7 +632,7 @@ WarpIn        	SolarionWarpIn
 # ----------------------------------------------------------------------------- #
 
 SolarionInit:
-	imgulnextid       	0 42
+	imgulnextid       	0 42 # Solarion shadow (protoss\solarion.grp)
 	playfram          	0x00
 	goto              	SkryrokorLocal00
 
@@ -670,11 +670,11 @@ SolarionUnused1:
 	goto				SkryrokorLocal00
 
 SolarionWalking:
-	imgol             	114 0 0	# Solarion Engines (thingy\pcaGlow.grp)
+	imgol             	114 0 0	# Solarion Engines (protoss\solarion-engine.grp)
 	goto              	SkryrokorLocal00
 
 SolarionWarpIn:
-	imgol             	115 0 0	# Solarion Warp Flash (protoss\carrier.grp)
+	imgol             	115 0 0	# Solarion Warp Flash (protoss\solarion.grp)
 	goto              	SkryrokorLocal00
 
 # ----------------------------------------------------------------------------- #
@@ -936,7 +936,7 @@ DracadinWarpIn:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 116 Steward (protoss\Intercep.grp)
+# 116 Steward (protoss\steward.grp)
 .headerstart
 IsId          	155
 Type          	12
@@ -958,7 +958,7 @@ SpecialState1 	[NONE]
 # ----------------------------------------------------------------------------- #
 
 StewardInit:
-	imgul             	117 0 42 # Steward Shadow (protoss\Intercep.grp)
+	imgulnextid			0 42 # Steward Shadow (protoss\steward.grp)
 	playfram          	0x00
 	goto              	SolarionLocal00
 
@@ -969,9 +969,10 @@ StewardDeath:
 	end
 
 StewardGndAttkInit:
-	wait              	1
+	playfram          	0x00
+	wait              	2
 	attackwith        	1
-	playfram          	0x11
+	playfram          	0x20
 	wait              	1
 	playfram          	0x00
 	gotorepeatattk
@@ -5555,13 +5556,24 @@ ExemplarDeath:
 	end
 
 ExemplarGndAttkInit:
-	nobrkcodestart
-	playsndbtwn       	1222 1226 # Exemplar weaponfire 01, 02, 03, 04, 05
-	playfram			0x11
-	attackwith        	1
-	wait              	2
+	setvertpos			0
 	playfram			0x00
+	wait				1
+	nobrkcodestart
+	playfram			0x20
+	playsndbtwn       	1222 1226 # Exemplar weaponfire 01, 02, 03, 04, 05
+	attackwith        	1
+	wait				1
+	playfram			0x40
+	wait				1
+	playfram			0x60
+	wait              	1
+	playfram			0x40
 	nobrkcodeend
+	wait				1
+	playfram			0x20
+	wait				1
+	playfram			0x00
 	gotorepeatattk
 	goto              	SkryrokorLocal00
 
@@ -6542,15 +6554,15 @@ AugurDeathDeath:
 .headerstart
 IsId          	797
 Type          	21
-Init          	ZealotInit
+Init          	ZealotStarboundInit
 Death         	ZealotDeath
-GndAttkInit   	ZealotGndAttkInit
+GndAttkInit   	ZealotStarboundGndAttkInit
 AirAttkInit   	[NONE]
 Unused1       	ZealotUnused1
-GndAttkRpt    	ZealotGndAttkRpt
+GndAttkRpt    	ZealotStarboundGndAttkRpt
 AirAttkRpt    	[NONE]
 CastSpell     	[NONE]
-GndAttkToIdle 	ZealotGndAttkToIdle
+GndAttkToIdle 	ZealotStarboundGndAttkToIdle
 AirAttkToIdle 	[NONE]
 Unused2       	[NONE]
 Walking       	ZealotWalking
@@ -6566,11 +6578,39 @@ WorkingToIdle 	[NONE]
 WarpIn        	ZealotStarboundWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
-	
+
+ZealotStarboundInit:
+	imgulnextid			0 0 # Zealot (Starbound) Shadow (cm\f-p\zealot-starbound-shadow.grp)
+	goto				ZealotWalkingToIdle
+
 ZealotStarboundGndAttkInit:
 	playfram          	0x00
 	wait              	1
-	goto				ZealotWalkingToIdle
+ZealotStarboundGndAttkRpt:
+	playsndrand       	2 662 663 # Protoss\ZEALOT\pzeAtt00.WAV | Protoss\ZEALOT\pzeAtt01.WAV
+	playfram          	0x20
+	wait              	1
+	nobrkcodestart
+	playfram          	0x40
+	wait              	1
+	playfram          	0x60
+	wait              	1
+	playfram          	0x80
+    attackmelee         1 3228 # Legionnaire weapon hit 01
+	wait              	1
+	playfram          	0x60
+	wait              	1
+	playfram          	0x40
+	attackmelee       	1 0
+	wait              	1
+	playfram          	0x20
+	wait              	1
+	playfram          	0x00
+	nobrkcodeend
+	gotorepeatattk
+	ignorerest
+ZealotStarboundGndAttkToIdle:
+	goto              	ZealotWalkingToIdle
 
 ZealotStarboundWarpIn:
 	imgol             	2166 0 0 # Zealot (Starbound) Warp Flash (cm\faction-p\zealot-starbound.grp)
@@ -6827,6 +6867,7 @@ StarSovereignGndAttkInit:
 	playfram			0x00
 	wait				1
 	playfram			0x20
+	playsndbtwn			1227 1230 # Star Sovereign weaponfire 01, 02, 03, 04
 	attackwith        	1
 	attackwith        	1
 	wait              	2
@@ -6883,7 +6924,7 @@ StarSovereignLocal03:
 
 StarSovereignWalking:
 	setvertpos        	0 
-#	imgol				1205 0 0 # Star Sovereign Engines (cm\protoss\starsovereign-engine.grp)
+	imgol				1205 0 0 # Star Sovereign Engines (cm\protoss\starsovereign-engine.grp)
 	goto              	SkryrokorLocal00
 
 StarSovereignWarpIn:
@@ -6963,15 +7004,15 @@ WorkingToIdle 	InfestedTerranWalkingToIdle
 WarpIn        	ArgosyAlmostBuilt
 Unused3       	[NONE]
 StarEditInit  	[NONE]
-Disable       	InfestedTerranWalkingToIdle
+Disable       	ArgosyDisable
 Burrow        	[NONE]
 UnBurrow      	[NONE]
-Enable        	InfestedTerranWalkingToIdle
+Enable        	ArgosyEnable
 .headerend
 # ----------------------------------------------------------------------------- #
 
 ArgosyInit:
-	imgul             	1123 0 0 # Argosy Shadow (cm\protoss\argosy-shad.grp)
+	imgulnextid			0 0 # Argosy Shadow (cm\protoss\argosy-shadow.grp)
 	goto              	InfestedTerranWalkingToIdle
 
 ArgosyDeath:
@@ -6996,27 +7037,35 @@ ArgosyAlmostBuilt:
 	goto              	SkryrokorLocal00
 
 ArgosyIsWorking:
-	playfram          	1
-	wait              	2
-	playfram          	2
-	wait              	2
-	playfram          	3
-	wait              	2
-	playfram          	4
-	wait              	2
-	playfram          	5
-	wait              	2
+	playfram			1
+	wait				2
+	playfram			2
+	wait				2
+	playfram			3
+	wait				2
+	playfram			4
+	wait				2
+	playfram			5
+	waitrand			2 5
+	playfram			4
+	wait				2
+	playfram			3
+	wait				2
+	playfram			2
+	wait				2
+	goto              	ArgosyIsWorking
+
+ArgosyDisable:
+	playfram			6
+	wait				2
+	playfram			7
+	wait				2
+	goto              	SkryrokorLocal00
+
+ArgosyEnable:
 	playfram          	6
 	wait              	2
-	playfram          	7
-	wait              	2
-	playfram          	8
-	wait              	2
-	playfram          	9
-	wait              	2
-	playfram          	0x00
-	wait              	2
-	goto              	ArgosyIsWorking
+	goto              	InfestedTerranWalkingToIdle
 	
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
@@ -12796,10 +12845,14 @@ WarpIn        	ServitorWarpIn
 # ----------------------------------------------------------------------------- #
 
 ServitorInit:
-	imgul             	1661 0 7 # Servitor shadow (cm\protoss\servitor.grp)
+	imgulnextid			0 0 # Servitor shadow (cm\protoss\servitor.grp)
 	goto              	InfestedTerranWalkingToIdle
 
 ServitorWalkingToIdle:
+	playfram			0x00
+	goto				ServitorHover
+	
+ServitorHover:
 	setvertpos        	0
 	wait 				8
 	setvertpos        	0
@@ -12808,7 +12861,7 @@ ServitorWalkingToIdle:
 	wait 				8
 	setvertpos        	0
 	wait 				8
-	goto              	ServitorWalkingToIdle
+	goto              	ServitorHover
 
 ServitorDeath:
 	playsnd           	533 # Protoss\Aurora\PScDth00.WAV
@@ -12830,7 +12883,7 @@ ServitorUnused1:
 	goto				ServitorWalkingToIdle
 
 ServitorGndAttkInit:
-	playfram			0x11
+	playfram			0x20
 	playsndbtwn			2167 2171 # Servitor weaponfire 01, 02, 03, 04, 05
 	attackwith        	1
 	wait				2
@@ -12841,7 +12894,18 @@ ServitorGndAttkInit:
 
 ServitorWalking:
 	setvertpos        	0
-	goto              	InfestedTerranWalkingToIdle
+	goto              	ServitorWalkingLoop
+	
+ServitorWalkingLoop:
+	playfram			0x40
+	wait				1
+	playfram			0x60
+	wait				1
+	playfram			0x80
+	wait				1
+	playfram			0x60
+	wait				1
+	goto				ServitorWalkingLoop
 
 ServitorWarpIn:
 	imgol             	2135 0 0 # Servitor Warp Flash (cm\protoss\servitor.grp)
@@ -13156,7 +13220,7 @@ Enable        	ArdentAuthorityEnable
 
 ArdentAuthorityInit:
 	playfram          	0x00
-	imgul             	1637 0 0 # Ardent Authority Shadow (cm\protoss\ardent-authority-shadow.grp)
+	imgulnextid			0 0 # Ardent Authority Shadow (cm\protoss\ardent-authority-shadow.grp)
 	goto              	ArdentAuthorityLanding
 
 ArdentAuthorityLanding:
@@ -13180,9 +13244,14 @@ ArdentAuthorityIsWorking:
 	wait				2
 	playfram			2
 	wait				2
-	playfram			1
+	playfram			3
 	wait				2
-	playfram			0
+	playfram			4
+	waitrand			2 5
+	playfram			3
+	wait				2
+	playfram			2
+	wait				2
 	goto				ArdentAuthorityIsWorking
 	
 ArdentAuthorityWarpIn:
@@ -13190,13 +13259,15 @@ ArdentAuthorityWarpIn:
 	goto              	ArdentAuthorityLanding
 
 ArdentAuthorityDisable:
-	playfram			3
-	wait				1
-	goto              	ArdentAuthorityBuilt
+	playfram			6
+	wait				2
+	playfram			7
+	wait				2
+	goto              	ArdentAuthorityLanding
 
 ArdentAuthorityEnable:
-	playfram          	0x00
-	wait              	1
+	playfram          	6
+	wait              	2
 	goto              	ArdentAuthorityBuilt
 	
 # ----------------------------------------------------------------------------- #
@@ -13754,8 +13825,8 @@ CastSpell     	[NONE]
 GndAttkToIdle 	EngramGndAttkToIdle
 AirAttkToIdle 	EngramGndAttkToIdle
 Unused2       	[NONE]
-Walking       	[NONE]
-WalkingToIdle 	[NONE]
+Walking       	SkryrokorLocal00
+WalkingToIdle 	SkryrokorLocal00
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
@@ -13782,7 +13853,7 @@ EngramInit:
 EngramGndAttkInit:
 	wait              	1
 	attack
-	playsndbtwn			2310 2313 # Optecton weapon fire 01, 02, 03, 04
+	playsndbtwn			4421 4424 # Engram weaponfire 01, 02, 03, 04
 	imgol				1163 0 -20 # Warden impact
 	gotorepeatattk
 	ignorerest
@@ -13924,11 +13995,11 @@ AdherentGndAttkInit:
 	playfram          	0x100
 	nobrkcodestart
 	wait              	2
-	playsndbtwn			1231 1234 # Amaranth weaponfire 01, 02, 03, 04
+	playsndbtwn			4425 4427 # Adherent weaponfire 01, 02, 03
 	playfram          	0x120
 	wait              	1
 	playfram          	0x140
-	attackmelee       	1 1897 # Legionnaire weapon hit 01
+	attackmelee       	1 0
 	wait              	1
 	playfram          	0x160
 	wait              	1
@@ -14805,6 +14876,7 @@ CicatusInit:
 CicatusGndAttkInit:
 	playfram          	0x100
 CicatusGndAttkRpt:
+	playsndbtwn       	3355 3357 # Cicatus weaponfire 01, 02, 03
     playfram            0x120
     nobrkcodestart
     wait                1
@@ -15423,7 +15495,7 @@ AutocortDeath:
 	wait				1
 	playfram			20
 	wait				1
-	lowsprul          	691 0 0 # Autocort Remnants (cm\protoss\autocort-death.grp)
+	lowsprul			847 0 0 # Protoss Unit Rubble Small
 	wait              	1 
 	end
 	
@@ -15806,23 +15878,23 @@ PathlightWarpIn:
 
 # ----------------------------------------------------------------------------- #
 # This header is used by images.dat entries:
-# 1174 Cabalist (Starbound) (cm\f-p\cabalist-starbound.grp)
+# 1174 Vestige (cm\f-p\vestige.grp)
 .headerstart
 IsId          	736
 Type          	21
-Init          	CabalistStarboundInit
-Death         	CabalistStarboundDeath
-GndAttkInit   	CabalistStarboundGndAttkInit
-AirAttkInit   	CabalistStarboundGndAttkInit
+Init          	VestigeInit
+Death         	VestigeDeath
+GndAttkInit   	VestigeGndAttkInit
+AirAttkInit   	VestigeGndAttkInit
 Unused1       	SkryrokorLocal00
-GndAttkRpt    	CabalistStarboundGndAttkRpt
-AirAttkRpt    	CabalistStarboundGndAttkRpt
+GndAttkRpt    	VestigeGndAttkRpt
+AirAttkRpt    	VestigeGndAttkRpt
 CastSpell     	[NONE]
-GndAttkToIdle 	CabalistStarboundGndAttkToIdle
-AirAttkToIdle 	CabalistStarboundGndAttkToIdle
+GndAttkToIdle 	VestigeGndAttkToIdle
+AirAttkToIdle 	VestigeGndAttkToIdle
 Unused2       	[NONE]
-Walking       	CabalistStarboundWalking
-WalkingToIdle 	CabalistStarboundWalkingToIdle
+Walking       	VestigeWalking
+WalkingToIdle 	VestigeWalkingToIdle
 SpecialState1 	[NONE]
 SpecialState2 	[NONE]
 AlmostBuilt   	[NONE]
@@ -15831,22 +15903,22 @@ Landing       	[NONE]
 LiftOff       	[NONE]
 IsWorking     	[NONE]
 WorkingToIdle 	[NONE]
-WarpIn        	CabalistStarboundWarpIn
+WarpIn        	VestigeWarpIn
 .headerend
 # ----------------------------------------------------------------------------- #
 
-CabalistStarboundInit:
-	imgulnextid			0 0 # Cabalist (Starbound) Shadow (cm\f-p\cabalist-starbound-shadow.grp)
+VestigeInit:
+	imgulnextid			0 0 # Vestige Shadow (cm\f-p\vestige-shadow.grp)
 	playfram          	0x00
 	wait				2
 	goto 				SkryrokorLocal00
 	
-CabalistStarboundGndAttkToIdle:
+VestigeGndAttkToIdle:
 	playfram          	0x00
 	wait 				2
 	goto              	SkryrokorLocal00
 
-CabalistStarboundDeath:
+VestigeDeath:
 	playsnd           	741	# Protoss\DARKTEMPLAR\PDTDth00.WAV
 	imgol             	153 0 0	# Zealot Death (protoss\zealot.grp)
 	wait              	1
@@ -15854,18 +15926,18 @@ CabalistStarboundDeath:
 	wait              	1
 	end
 
-CabalistStarboundGndAttkInit:
+VestigeGndAttkInit:
 	playfram          	0x20
 	wait              	1
-	goto              	CabalistStarboundGndAttkRpt
-CabalistStarboundGndAttkRpt:
+	goto              	VestigeGndAttkRpt
+VestigeGndAttkRpt:
 	nobrkcodestart
 	playfram          	0x60
 	wait              	1
 	playfram 			0x80
 	wait 				1
 	playfram 			0xA0
-	attackmelee       	1 111 # Bullet\UZeFir00.wav
+	attackmelee       	3 4481 4482 4483 # Vestige weaponfire 01, 02, 03
 	wait 				1
 	playfram 			0xC0
 	wait 				1
@@ -15879,9 +15951,9 @@ CabalistStarboundGndAttkRpt:
 	playfram 			0x20
 	wait 				1
 	gotorepeatattk
-	goto				CabalistStarboundGndAttkToIdle
+	goto				VestigeGndAttkToIdle
 
-CabalistStarboundWalking:
+VestigeWalking:
 	move              	5
 	wait              	1
 	playfram          	0x120
@@ -15909,12 +15981,270 @@ CabalistStarboundWalking:
 	move				5
 	wait				1
 	playfram			0x220
-	goto				CabalistStarboundWalking
+	goto				VestigeWalking
 
-CabalistStarboundWalkingToIdle:
+VestigeWalkingToIdle:
 	playfram 0x00
 	goto              	SkryrokorLocal00
 
-CabalistStarboundWarpIn:
-	imgol             	2123 0 0 # CabalistStarbound Warp Flash (cm\protoss\cabalist-starbound.grp)
-	goto              	CabalistStarboundWalkingToIdle
+VestigeWarpIn:
+	imgol             	2123 0 0 # Vestige Warp Flash (cm\protoss\cabalist-starbound.grp)
+	goto              	VestigeWalkingToIdle
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 2470 Gladius (Order) (cm\f-p\gladius-order.grp)
+.headerstart
+IsId          	737
+Type          	21
+Init          	GladiusOrderInit
+Death         	GladiusOrderDeath
+GndAttkInit   	GladiusOrderGndAttkInit
+AirAttkInit   	GladiusOrderGndAttkInit
+Unused1       	SkryrokorLocal00
+GndAttkRpt    	GladiusOrderGndAttkInit
+AirAttkRpt    	GladiusOrderGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	GladiusOrderGndAttkToIdle
+AirAttkToIdle 	GladiusOrderGndAttkToIdle
+Unused2       	[NONE]
+Walking       	GladiusOrderWalking
+WalkingToIdle 	GladiusOrderWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	GladiusOrderWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+GladiusOrderInit:
+	imgulnextid			0 42 # Gladius (Order) Shadow (cm\f-p\gladius-order.grp)
+GladiusOrderGndAttkToIdle:
+	playfram          	0x00
+	goto              	GladiusOrderWalkingToIdle
+
+GladiusOrderWalkingToIdle:
+	setvertpos        	0
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	setvertpos        	-1
+	wait 				8
+	setvertpos        	0
+	wait 				8
+	goto              	GladiusOrderWalkingToIdle
+
+GladiusOrderDeath:
+	playsnd           	533	# Protoss\Scout\PScDth00.WAV
+	imgol             	213 0 0	# Explosion1 (Small) (thingy\tBangS.grp)
+	wait              	3
+	lowsprul			846 0 42 # Protoss Unit Rubble Medium
+	wait              	1
+	end
+
+GladiusOrderGndAttkInit:
+	nobrkcodestart
+	playsndbtwn       	1926 1928 # GladiusOrder weaponfire 01, 02, 03
+	playfram			0x20
+	attackwith        	1
+	wait              	2
+	playfram			0x00
+	nobrkcodeend
+	gotorepeatattk
+	goto              	SkryrokorLocal00
+
+GladiusOrderWalking:
+	setvertpos        	0
+	imgol             	2472 0 0 # Gladius (Order) Engines (cm\f-p\gladius-order-engine.grp)
+	playfram          	0x00
+	goto              	SkryrokorLocal00
+
+GladiusOrderWarpIn:
+	imgol             	2473 0 0 # Gladius (Order) Warp Flash (cm\f-p\gladius-order.grp)
+	goto              	GladiusOrderWalkingToIdle
+	
+# ----------------------------------------------------------------------------- #
+# This header is used by images.dat entries:
+# 1284 Athuzelon (cm\f-p\athuzelon.grp)
+.headerstart
+IsId          	738
+Type          	21
+Init          	AthuzelonInit
+Death         	AthuzelonDeath
+GndAttkInit   	AthuzelonGndAttkInit
+AirAttkInit   	AthuzelonGndAttkInit
+Unused1       	AthuzelonUnused1
+GndAttkRpt    	AthuzelonGndAttkInit
+AirAttkRpt    	AthuzelonGndAttkInit
+CastSpell     	[NONE]
+GndAttkToIdle 	AthuzelonGndAttkToIdle
+AirAttkToIdle 	AthuzelonGndAttkToIdle
+Unused2       	[NONE]
+Walking       	AthuzelonWalking
+WalkingToIdle 	AthuzelonWalkingToIdle
+SpecialState1 	[NONE]
+SpecialState2 	[NONE]
+AlmostBuilt   	[NONE]
+Built         	[NONE]
+Landing       	[NONE]
+LiftOff       	[NONE]
+IsWorking     	[NONE]
+WorkingToIdle 	[NONE]
+WarpIn        	AthuzelonWarpIn
+.headerend
+# ----------------------------------------------------------------------------- #
+
+AthuzelonInit:
+	imgul             	2514 0 0 # Athuzelon Shadow (cm\f-p\athuzelon.grp)
+AthuzelonLocal42:
+	playfram          	0x00
+	wait				1
+	goto              	AthuzelonLocal00
+
+AthuzelonLocal00:
+	playfram			0x20
+	wait				2
+	playfram			0x40
+	wait				2
+	playfram			0x60
+	wait				2
+	playfram			0x80
+	wait				2
+	playfram			0xA0
+	wait				2
+	playfram			0xC0
+	wait				2
+	playfram			0xE0
+	wait				2
+	playfram			0x100
+	wait				2
+	playfram			0x120
+	wait				2
+	playfram			0x140
+	wait				2
+	playfram			0x160
+	wait				2
+	playfram			0x00
+	wait				2
+	goto				AthuzelonLocal00
+
+AthuzelonDeath:
+	playsnd           	635	# Protoss\TEMPLAR\PTeDth00.WAV
+	playsnd           	533 # Protoss\Panoptus\PScDth00.WAV
+	imgol             	153 0 0 # Zealot Death (protoss\zealot.grp)
+	imgol             	213 0 0 # Explosion1 (Small) (thingy\tBangS.grp)
+	wait              	1
+	lowsprul			846 0 0 # Protoss Unit Rubble Medium
+	wait              	1
+	end
+	
+AthuzelonUnused1:
+	wait				1
+	nobrkcodestart
+	setfldirect       	0 
+	playsnd				1186 # Cantavis revive 01
+	imgol             	1445 0 0 # Zealot death reversed
+#	playfram			244
+	wait				2
+#	playfram			243
+	wait				2
+#	playfram			242
+	wait				2
+#	playfram			241
+	wait				2
+#	playfram			240
+	wait				2
+	wait				2
+	setfldirect       	12
+	nobrkcodeend
+	goto				AthuzelonLocal42
+
+AthuzelonGndAttkInit:
+	playfram          	0x200
+	wait              	1
+	nobrkcodestart
+	playfram          	0x220
+	wait              	1
+	playfram          	0x240
+	wait				1
+	playfram          	0x260
+	wait				1
+	playfram          	0x280
+	wait				1
+	playfram          	0x2A0
+	playsndbtwn			1231 1234 # Amaranth weaponfire 01, 02, 03, 04
+	playsndbtwn			2158 2160 # Athuzelon attack 01, 02, 03
+	attackwith        	1
+	wait				1
+	playfram          	0x2C0
+	wait				1
+	playfram          	0x2E0
+	wait				1
+	playfram          	0x300
+	wait				1
+	playfram          	0x320
+	wait				1
+	playfram          	0x340
+	playsndbtwn			1231 1234 # Amaranth weaponfire 01, 02, 03, 04
+	playsndbtwn			2158 2160 # Athuzelon attack 01, 02, 03
+	attackwith        	1
+	wait				1
+	playfram          	0x360
+	wait				1
+	playfram          	0x380
+	wait				1
+	playfram          	0x3A0
+	wait				1
+	nobrkcodeend
+	playfram          	0x3C0
+	wait				1
+	playfram          	0x3E0
+	wait				1
+	playfram          	0x400
+	wait				1
+	playfram          	0x420
+	wait				1
+	playfram          	0x440
+	wait				1
+	gotorepeatattk
+	wait				1
+	playfram          	0x00
+	wait				1
+	goto				AthuzelonGndAttkToIdle
+	
+AthuzelonGndAttkToIdle:
+	playfram 			0x00
+	wait 				1
+	goto              	AthuzelonLocal00
+
+AthuzelonWalking:
+	playfram          	0x180
+	wait              	1
+	playfram          	0x1A0
+	wait              	1
+	playfram          	0x1C0
+	wait              	1
+	playfram          	0x1E0
+	setvertpos        	0
+AthuzelonGlowLoop:
+	wait              	3
+	spruluselo        	1213 0 0 # Athuzelon Glow (cm\f-p\athuzelon-glow.grp)
+	goto              	AthuzelonGlowLoop
+	
+AthuzelonWalkingToIdle:
+	playfram          	0x1C0
+	wait              	1
+	playfram          	0x1A0
+	wait              	1
+	playfram          	0x180
+	wait              	1
+	goto				AthuzelonLocal00
+
+AthuzelonWarpIn:
+	imgol             	2515 0 0 # Athuzelon Warp Flash (cm\f-p\athuzelon.grp)
+	goto              	AthuzelonWalkingToIdle

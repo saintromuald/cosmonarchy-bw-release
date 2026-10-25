@@ -11,4 +11,7 @@ BnetLog.txt
 SEXP_IX86_1xx_1161.mpq
 SpecialbusUpdater.exe
 temp.mpq
-hotloader.ini
+hotloader.inicosmo_plus.state.json
+cosmo_plus.selftest
+cosmo_plus.cmd
+cosmo_plus.repl.log
