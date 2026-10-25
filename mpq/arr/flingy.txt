@@ -662,7 +662,7 @@ Missionary Weaponhit
 Maverick (Upstart)
 Vulture (Upstart)
 Goremast
-Morrigan
+Eidolon (Upstart)
 Cutlass
 Cutlass Turret
 Broadside
@@ -710,33 +710,33 @@ Thrombocyte
 Vestige (Starbound)
 Arquebus (Hecaton)
 Acqui
-Alzurokor (Imicren)
-Hydrokor (Goszirith)
-Nihilist
-Maverick (Golden)
-Gladius (Order)
-Shaman (Upstart, Support)
-Shaman (Upstart, Adrenaline)
-Ammo Crate
-Medkit
-Battery Cell
-Okrimnilisk Spore
-Raynor (Maverick)
-Cyprian (Hecaton)
-Memphis (Tank Mode)
-Memphis (Flak Mode)
-Memphis Turret (Tank Mode)
-Memphis Turret (Flak Mode)
-Fragmentary Shells (with damage)
-Floor Flame Trap
-Zethalisk
-Athuzelon
-Ifrit (Tank Mode)
-Ifrit Turret (Tank Mode)
-Ifrit (Siege Mode)
-Ifrit Turret (Siege Mode)
-Tirade (Deployed)
-Magian
+Extended Flingy #504
+Extended Flingy #505
+Extended Flingy #506
+Extended Flingy #507
+Extended Flingy #508
+Extended Flingy #509
+Extended Flingy #510
+Extended Flingy #511
+Extended Flingy #512
+Extended Flingy #513
+Extended Flingy #514
+Extended Flingy #515
+Extended Flingy #516
+Extended Flingy #517
+Extended Flingy #518
+Extended Flingy #519
+Extended Flingy #520
+Extended Flingy #521
+Extended Flingy #522
+Extended Flingy #523
+Extended Flingy #524
+Extended Flingy #525
+Extended Flingy #526
+Extended Flingy #527
+Extended Flingy #528
+Extended Flingy #529
+Extended Flingy #530
 Extended Flingy #531
 Extended Flingy #532
 Extended Flingy #533
