@@ -139,7 +139,7 @@ Terran Olympian
 Zerg Matravil Nest
 Zerg Almakis Antre
 Zerg Ulgorg Cavern
-Zerg Muthrok Spire
+Zerg Mutath Spire
 Zerg Quazeth Pool
 Zerg Cagrant Cesiant
 Zerg Spraith Cesiant
@@ -148,7 +148,7 @@ Zerg Surkith Cesiant
 Terran Guildhall
 Terran Striga
 Zerg Excisant
-Terran Luminary (Golden Republic)
+Terran Luminary (Golden)
 Terran Siren
 Zerg Othstol Oviform
 Zerg Tethvith Swamp
@@ -201,17 +201,17 @@ Terran Captaincy
 Terran Scrapyard
 Protoss Crucible
 Carapace Swarm
-Terran Nanite Assembly
+Floor Missile Trap
 Zerg Kalkiir Lake
 Left Upper Level Door
 Right Upper Level Door
 Left Pit Door
 Right Pit Door
-Terran Sentinel
-Terran Tarasque (Nydus Trinity)
-Terran Anticthon
-Zerg Kethraj Keep
-Terran Atelier
+Floor Gun Trap
+Wall Missile Trap (Left)
+Wall Flame Trap (Left)
+Wall Missile Trap (Right)
+Wall Flame Trap (Right)
 Start Location
 Terran Treasury
 Zerg Larvosk Cesiant
@@ -258,10 +258,10 @@ Terran Matador (Tank Mode)
 Terran Future Station
 Zerg Zarcavrokor
 Terran Cestus
-Terran Aerie (unused)
-Terran Pegasus (unused)
+Terran Sentinel
+Terran Nanite Assembly
 Terran Hippogriff
-Terran Oberon (unused)
+Terran Tarasque (Nydus)
 Terran Aion
 Protoss Herald
 Protoss Epigraph
@@ -287,7 +287,7 @@ Terran Dilettante
 Terran Sevenstep
 Terran Hypnagogue
 Terran Parthenon
-Terran Armistice
+Terran Anticthon
 Terran Pythean
 Zerg Ogroszaleth
 Zerg Spirtith Cesiant
@@ -301,7 +301,7 @@ Terran Throneroom
 Terran Emperor
 Terran Jester
 Zerg Agrileth
-unused
+Zerg Kethraj Keep
 Protoss Sequestered Icon
 Protoss Unitary Union
 Protoss Servitor
@@ -411,7 +411,7 @@ Ackmed
 Terran Cyclops (Futurist)
 Protoss Zealot (Starbound)
 Protoss Ecclesiast (Khalendric Knights)
-Terran Harakan (Golden Republic)
+Terran Harakan (Golden)
 Protoss Cicatus (Starbound)
 Zerg Inzorthrokor (Imicren)
 Volatile Egg
@@ -429,8 +429,8 @@ Terran Facade
 Terran Savant (Power Siphon)
 Askosi Landlock
 Protoss Dracadin (Order)
-Terran Blackjack (Golden Republic)
-Terran Eidolon (Nydus Trinity)
+Terran Blackjack (Golden)
+Terran Eidolon (Nydus)
 Terran Tiangou (Base)
 Tiangou Turret
 Terran Maverick (Futurist)
@@ -539,7 +539,7 @@ Zerg Overmind (The Fall)
 Askosi Avatar
 Askosi Abutment
 Askosi Proscenium
-Terran Quadriga (Golden Republic)
+Terran Quadriga (Golden)
 Askosi Thaumalogue
 Askosi Petract
 Askosi Crematorium
@@ -547,7 +547,7 @@ Askosi Zylode
 Askosi Astrolabe
 Terran Serathiel (Hecaton)
 Zerg Malkothrokor
-unused
+Zerg Kalkiir Lake
 Askosi Panoply
 Askosi Aphorist
 Askosi Doronin
@@ -572,7 +572,7 @@ Terran Vulture (Upstart)
 Terran Cutlass (Futurist)
 Cutlass Turret (Futurist)
 Terran Maverick (Upstart)
-Protoss Ecclesiast (Astral)
+Protoss Tritius (Astral)
 Terran Morrigan (Upstart)
 Terran Ajax (Futurist)
 Askosi Dorminge
@@ -611,56 +611,56 @@ Forerunner Athla
 Forerunner Vicere
 Forerunner Machinamentum
 Big Infested Kerrigan
-Raynor Vulture
-Duke Battlecruiser
+Raynor (Vulture)
+Duke (Minotaur)
 Askosi Scralia
 Zerg Rozirokor (Imicren)
 Bloodsummon Thrombocyte
 Bloodsummon Grimoire
 Zerg Zytryleth (Zorthos)
-Terran Camazotz (Nydus Trinity)
+Terran Camazotz (Nydus)
 Protoss Simulacrum (Khalendric)
 Protoss Idol (Khalendric)
 Protoss Vestige (Starbound)
 Terran Arquebus (Hecaton)
 Bloodsummon Acqui
-Extended Unit #399
-Extended Unit #400
-Extended Unit #401
-Extended Unit #402
-Extended Unit #403
-Extended Unit #404
-Extended Unit #405
-Extended Unit #406
-Extended Unit #407
-Extended Unit #408
-Extended Unit #409
-Extended Unit #410
-Extended Unit #411
-Extended Unit #412
-Extended Unit #413
-Extended Unit #414
-Extended Unit #415
-Extended Unit #416
-Extended Unit #417
-Extended Unit #418
-Extended Unit #419
-Extended Unit #420
-Extended Unit #421
-Extended Unit #422
-Extended Unit #423
-Extended Unit #424
-Extended Unit #425
-Extended Unit #426
-Extended Unit #427
-Extended Unit #428
-Extended Unit #429
-Extended Unit #430
-Extended Unit #431
-Extended Unit #432
-Extended Unit #433
-Extended Unit #434
-Extended Unit #435
+Zerg Alzurokor (Imicren)
+Zerg Hydrokor (Goszirith)
+Protoss Gladius (Order)
+Terran Eidolon (Golden)
+Zerg Zethalisk (Orkoti)
+Bloodsummon Nihilist
+Faction Selection Askosi
+Terran Fleshthief (Nydus)
+Forerunner Lumen
+Ammo Crate
+Medkit
+Battery Cell
+Forerunner Buildings
+Terran Eveningstar
+Raynor (Maverick)
+Terran Cyprian (Hecaton)
+Terran Memphis (Tank)
+Terran Memphis (Tank, Turret)
+Terran Memphis (Flak)
+Terran Memphis (Flak, Turret)
+Forerunner Processus
+Forerunner Aestuarius
+Forerunner Corcillum
+Floor Flame Trap
+Forerunner Bastilius
+Forerunner Molaris
+Forerunner Insignis
+Forerunner Incaendium
+Forerunner Ossum
+Forerunner Voluntatis
+Protoss Athuzelon
+Terran Ifrit (Tank)
+Ifrit Turret (Tank)
+Terran Ifrit (Siege)
+Ifrit Turret (Siege)
+Askosi Magian
+Askosi Tirade (Deployed)
 Extended Unit #436
 Extended Unit #437
 Extended Unit #438
@@ -2998,3 +2998,6 @@ Extended Unit #2769
 Extended Unit #2770
 Extended Unit #2771
 Extended Unit #2772
+Extended Unit #2773
+Extended Unit #2774
+Extended Unit #2775
