@@ -1,6 +1,6 @@
 {
-  "build": {"version":"0.2.0","abi":1,"build_id":"0x1","rev":"6ce0734-dirty"},
-  "modules": {"gptp.qdp": {"base":"0x2570000","size":24940544}, "cosmo_plus.dll": {"base":"0x79e00000"}},
+  "build": {"version":"0.2.0","abi":1,"build_id":"0x1","rev":"b5cfa7d-dirty"},
+  "modules": {"gptp.qdp": {"base":"0x2570000","size":20873216}, "cosmo_plus.dll": {"base":"0x79e00000"}},
   "stage": "boot",
            "globals_bad": 0,
   "globals": {
@@ -14,11 +14,11 @@
     "G_SCREEN_Y": {"addr":"0x00628470","value":"0","ok":"true"},
     "CHAT_MESSAGE_TYPE": {"addr":"0x0068C144","value":"0x0","ok":"true"},
     "POPUP_DIALOG": {"addr":"0x006D5BF4","value":"0x0","ok":"true"},
-    "BW_PRINT_XY": {"addr":"0x004202B0","value":"0x26ab9be9","ok":"true"},
+    "BW_PRINT_XY": {"addr":"0x004202B0","value":"0x51ec8b55","ok":"true"},
     "BW_PRINT_ICON": {"addr":"0x0041D090","value":"0x83ec8b55","ok":"true"},
-    "SET_FONT_HANDLE": {"addr":"0x0041FB30","value":"0x26b33be9","ok":"true"},
-    "GET_COLOR_HANDLE": {"addr":"0x0041F610","value":"0x246aebe9","ok":"true"},
-    "DRAW_GAME_PROC_PTR": {"addr":"0x004BD68D","value":"0x26c9ba0","ok":"true"},
+    "SET_FONT_HANDLE": {"addr":"0x0041FB30","value":"0xca3bd233","ok":"true"},
+    "GET_COLOR_HANDLE": {"addr":"0x0041F610","value":"0x1c481be9","ok":"true"},
+    "DRAW_GAME_PROC_PTR": {"addr":"0x004BD68D","value":"0x2644eb0","ok":"true"},
     "SELECT_UNITS": {"addr":"0x0046FA00","value":"0x83ec8b55","ok":"true"}
  },
   "features": {
@@ -32,17 +32,17 @@
     "larva-pick": "armed (VK 0x7B)",
     "tab-cycle": "armed (VK 0x09)",
     "ultraload": "armed",
-    "zoom-floor": "armed (player floor 100%)"
+    "zoom-floor": "not patched (site missing or already modified)"
  },
   "config_keys": [
     "CM_PLUS_IDLE_WORKER_KEY",
     "CM_PLUS_IDLE_WORKER_KEY"
  ],
   "hooks": {
-    "draw-game-proc": "target=0x004BD68D old=0x026C9BA0 new=0x79E28B80",
-    "keyboard:cam-pan": "target=0x0002003A old=0x00000000 new=0x00000000",
-    "keyboard:idle-workers": "target=0x00020040 old=0x00000000 new=0x00000000",
-    "keyboard:larva-pick": "target=0x0002003C old=0x00000000 new=0x00000000",
+    "draw-game-proc": "target=0x004BD68D old=0x02644EB0 new=0x79E28B80",
+    "keyboard:cam-pan": "target=0x00020038 old=0x00000000 new=0x00000000",
+    "keyboard:idle-workers": "target=0x00020042 old=0x00000000 new=0x00000000",
+    "keyboard:larva-pick": "target=0x0002003E old=0x00000000 new=0x00000000",
     "keyboard:tab-cycle": "target=0x00020036 old=0x00000000 new=0x00000000"
  }
 }
