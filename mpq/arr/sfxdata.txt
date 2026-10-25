@@ -4291,234 +4291,234 @@ Vicar Under Attack 02
 Vicar Under Attack 03
 Vicar Under Attack 04
 Vicar Ability Use 01
-Landlock Ambient 01
-Conduit Selected 01
-Cyclops (Futurist) Weaponfire 01
-Cyclops (Futurist) Weaponfire 02
-Cyclops (Futurist) Weaponfire 03
-Cyclops (Futurist) Weaponfire 04
-Alzurokor Weaponhit 01
-Alzurokor Weaponhit 02
-Alzurokor Weaponhit 03
-Helion Weaponfire 01
-Helion Weaponfire 02
-Helion Weaponfire 03
-Vorvrokor Ready 01
-Vorvrokor Selected 01
-Vorvrokor Selected 02
-Vorvrokor Selected 03
-Vorvrokor Selected 04
-Vorvrokor Order Passive 01
-Vorvrokor Order Passive 02
-Vorvrokor Order Passive 03
-Vorvrokor Order Passive 04
-Vorvrokor Under Attack 01
-Vorvrokor Under Attack 02
-Vorvrokor Under Attack 03
-Mine Restock 01
-Paraclete Weaponfire 01
-Paraclete Weaponfire 02
-Paraclete Weaponfire 03
-Paraclete Cast 01
-Function Ambient 01
-Cosmoscope Ambient 01
-Morrigan Weaponfire 01
-Morrigan Weaponfire 02
-Morrigan Weaponfire 03
-Morrigan Weaponfire 04
-Morrigan Weaponfire 05
-Morrigan Weaponfire 06
-Error Askosi
-Maverick (Golden) Weaponfire 01
-Maverick (Golden) Weaponfire 02
-Maverick (Golden) Weaponfire 03
-Maverick (Golden) Weaponfire 04
-Maverick (Golden) Weaponfire 05
-Maverick (Golden) Weaponfire 06
-Cloak Attack On
-Cloak Attack Off
-Cloak Damage On 01
-Cloak Damage On 02
-Cloak Damage On 03
-Cloak Damage Off 01
-Cloak Damage Off 02
-Askosi Structure Placement 01
-Iconoclast Weaponfire 01
-Iconoclast Weaponfire 02
-Iconoclast Weaponfire 03
-Cardinal Ready 01
-Cardinal Ready 02
-Cardinal Ready 03
-Cardinal Selected 01
-Cardinal Selected 02
-Cardinal Selected 03
-Cardinal Selected 04
-Cardinal Order Passive 01
-Cardinal Order Passive 02
-Cardinal Order Passive 03
-Cardinal Order Passive 04
-Cardinal Order Aggressive 01
-Cardinal Order Aggressive 02
-Cardinal Order Aggressive 03
-Cardinal Order Aggressive 04
-Cardinal Under Attack 01
-Cardinal Under Attack 02
-Cardinal Under Attack 03
-Cardinal Under Attack 04
-Zethalor Weaponfire 01
-Zethalor Weaponfire 02
-Zethalor Weaponfire 03
-Zethalisk Weaponfire 01
-Zethalisk Weaponfire 02
-Zethalisk Weaponfire 03
-Bloodsummon Structure Placement 01
-Intendent Ready 01
-Intendent Ready 02
-Intendent Ready 03
-Intendent Selected 01
-Intendent Selected 02
-Intendent Selected 03
-Intendent Selected 04
-Intendent Order Passive 01
-Intendent Order Passive 02
-Intendent Order Passive 03
-Intendent Order Passive 04
-Intendent Order Aggressive 01
-Intendent Order Aggressive 02
-Intendent Order Aggressive 03
-Intendent Order Aggressive 04
-Intendent Under Attack 01
-Intendent Under Attack 02
-Intendent Under Attack 03
-Intendent Under Attack 04
-Pit Door Open 01
-Pit Door Open 02
-Pit Door Close 01
-Pit Door Close 02
-Upper Door Open 01
-Upper Door Open 02
-Upper Door Close 01
-Upper Door Close 02
-Memphis Weaponfire 01
-Memphis Weaponfire 02
-Memphis Weaponfire 03
-Memphis Weaponhit 2 01
-Memphis Weaponhit 2 02
-Memphis Weaponhit 2 03
-Memphis Weaponhit 2 04
-Engram Selected 01
-Wellbore Selected 01
-Chokral Chazsal Selected 01
-Durendal Weaponfire 01
-Durendal Weaponfire 02
-Durendal Weaponfire 03
-Durendal Weaponfire 04
-Zobriolisk Weaponfire 01
-Zobriolisk Weaponfire 02
-Zobriolisk Weaponfire 03
-Inzorthrokor Weaponfire 01
-Inzorthrokor Weaponfire 02
-Inzorthrokor Weaponfire 03
-Engram Weaponfire 01
-Engram Weaponfire 02
-Engram Weaponfire 03
-Engram Weaponfire 04
-Adherent Weaponfire 01
-Adherent Weaponfire 02
-Adherent Weaponfire 03
-Gosvileth Weaponfire 01
-Gosvileth Weaponfire 02
-Gosvileth Weaponfire 03
-Gosvileth Ready 01
-Gosvileth Selected 01
-Gosvileth Selected 02
-Gosvileth Selected 03
-Gosvileth Selected 04
-Gosvileth Selected 05
-Gosvileth Order Passive 01
-Gosvileth Order Passive 02
-Gosvileth Order Passive 03
-Gosvileth Order Passive 04
-Gosvileth Order Passive 05
-Gosvileth Under Attack 01
-Gosvileth Under Attack 02
-Gosvileth Under Attack 03
-Ghitorokor Weaponfire 01
-Ghitorokor Weaponfire 02
-Ghitorokor Weaponfire 03
-Tetcaerokor Weaponfire 01
-Tetcaerokor Weaponfire 02
-Tetcaerokor Weaponfire 03
-Tetcaerokor Weaponhit 01
-Tetcaerokor Weaponhit 02
-Garvrokor Weaponhit 01
-Garvrokor Weaponhit 02
-Garvrokor Weaponhit 03
-Cyprian Hecaton Weaponfire 01
-Cyprian Hecaton Weaponfire 02
-Cyprian Hecaton Weaponfire 03
-Cyprian Hecaton Weaponfire 04
-Cyprian Hecaton Weaponfire 05
-Ifrit Tank Weaponfire 01
-Ifrit Tank Weaponfire 02
-Ifrit Tank Weaponfire 03
-Ifrit Tank Weaponfire 04
-Ifrit Tank Weaponfire 05
-Ifrit Tank Weaponfire 06
-Ifrit Siege Weaponfire 01
-Ifrit Siege Weaponfire 02
-Ifrit Siege Weaponfire 03
-Ifrit Siege Weaponfire 04
-Ifrit Siege Weaponfire 05
-Ifrit Siege Weaponfire 06
-Quadriga Weaponfire 01
-Quadriga Weaponfire 02
-Quadriga Weaponfire 03
-Shaman Upstart Weaponfire 01
-Shaman Upstart Weaponfire 02
-Arquebus Weaponfire 01
-Arquebus Weaponfire 02
-Arquebus Weaponfire 03
-Vestige Weaponfire 01
-Vestige Weaponfire 02
-Vestige Weaponfire 03
-Othstoleth Death 01
-Othstoleth Ready 01
-Othstoleth Selected 01
-Othstoleth Selected 02
-Othstoleth Selected 03
-Othstoleth Selected 04
-Othstoleth Order Passive 01
-Othstoleth Order Passive 02
-Othstoleth Order Passive 03
-Othstoleth Order Passive 04
-Othstoleth Under Attack 01
-Othstoleth Under Attack 02
-Othstoleth Under Attack 03
-Tosgrilisk Death 01
-Tosgrilisk Ready 01
-Tosgrilisk Selected 01
-Tosgrilisk Selected 02
-Tosgrilisk Selected 03
-Tosgrilisk Selected 04
-Tosgrilisk Order Passive 01
-Tosgrilisk Order Passive 02
-Tosgrilisk Order Passive 03
-Tosgrilisk Order Passive 04
-Tosgrilisk Under Attack 01
-Tosgrilisk Under Attack 02
-Tosgrilisk Under Attack 03
-Tosgrilisk Under Attack 04
-Bactalisk Ready 01
-Bactalisk Selected 01
-Bactalisk Selected 02
-Bactalisk Selected 03
-Bactalisk Order Passive 01
-Bactalisk Order Passive 02
-Bactalisk Order Passive 03
-Bactalisk Order Passive 04
-Bactalisk Under Attack 01
-Bactalisk Under Attack 02
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
+Extended Sound #1
 Extended Sound #1
 Extended Sound #1
 Extended Sound #1
