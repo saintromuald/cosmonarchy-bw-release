@@ -187,7 +187,7 @@ Use Ability (Aural Assault)
 Use Ability (Maelstrom)
 Move (Junk Yard Dog)
 Fatal
-Use Ability (Landfall)
+Extended Order #1
 Extended Order #2
 Extended Order #3
 Extended Order #4
